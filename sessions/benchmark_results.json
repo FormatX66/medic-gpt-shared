@@ -1,0 +1,102 @@
+{
+  "spec": {
+    "n_train": 100,
+    "n_test": 50,
+    "n_qubits": 12,
+    "depth": 3,
+    "c_cal": "pi/4",
+    "rbf_gamma": 1.0,
+    "lambda_ridge": 0.001,
+    "lambda_psd": 1e-06,
+    "shot_s": 1024,
+    "seed": 7,
+    "primary_metric": "pairwise ranking accuracy",
+    "note": "simulator phase; no quantum-advantage claim permitted"
+  },
+  "verdict": {
+    "C_pairwise": 0.8966008771929824,
+    "B_pairwise": 0.9343201754385965,
+    "d_abs": -0.03771929824561404,
+    "d_rel": -0.04037084849196104,
+    "ci95": [
+      -0.1087719298245614,
+      0.0
+    ],
+    "p_perm": 0.5003499650034996,
+    "win": false,
+    "rule": "d_abs>=.05 and d_rel>=.10 and CI excludes 0 and p<.05"
+  },
+  "arms": {
+    "A": {
+      "pairwise": 0.9405701754385966,
+      "top1": 0.9230769230769231,
+      "kendall": 0.5919413919413918,
+      "mrr": 0.9615384615384616
+    },
+    "B": {
+      "pairwise": 0.9343201754385966,
+      "top1": 0.9230769230769231,
+      "kendall": 0.5560439560439561,
+      "mrr": 0.9487179487179488
+    },
+    "C": {
+      "pairwise": 0.8966008771929825,
+      "top1": 0.9230769230769231,
+      "kendall": 0.4974358974358974,
+      "mrr": 0.9487179487179488
+    },
+    "ablation": {
+      "pairwise": 0.9405701754385966,
+      "top1": 0.9230769230769231,
+      "kendall": 0.5919413919413918,
+      "mrr": 0.9615384615384616
+    },
+    "C_shot1024": {
+      "pairwise": 0.8923976608187134,
+      "top1": 0.8461538461538461,
+      "kendall": 0.4864468864468864,
+      "mrr": 0.9230769230769231
+    },
+    "random": {
+      "pairwise_mean": 0.48727521929824563,
+      "pairwise_std": 0.09946560918199607,
+      "trials": 100
+    }
+  },
+  "budgets": {
+    "A": {
+      "used": 50,
+      "ceiling": 10000
+    },
+    "B": {
+      "used": 9950,
+      "ceiling": 10000
+    },
+    "C": {
+      "used": 9950,
+      "ceiling": 10000
+    },
+    "ablation": {
+      "used": 50,
+      "ceiling": 10000
+    }
+  },
+  "elapsed_s": 820.4,
+  "track2_future_branch": [
+    {
+      "held_out_run": 0,
+      "kendall_rbf": 0.7142857142857143,
+      "kendall_quantum": 0.5
+    },
+    {
+      "held_out_run": 1,
+      "kendall_rbf": 0.9285714285714286,
+      "kendall_quantum": 0.5714285714285714
+    },
+    {
+      "held_out_run": 2,
+      "kendall_rbf": 0.7857142857142857,
+      "kendall_quantum": 0.5
+    }
+  ]
+}
