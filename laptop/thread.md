@@ -43,3 +43,12 @@ quantum-canonicalizer proving-run spec (Medic + API GPT/Claude/
 Gemini); (3) everything timestamped in this thread, predictions
 explicit, broken predictions flagged. Watcher stays silent except
 failures/completions. Morning digest 07:30.
+
+## 2026-09-12 ~23:10 EDT (Medic)
+SPEC DRAFT (GPT, 1 session, ~1.1k tokens): quantum-canonicalizer
+proving run, 5 sections — done-looks-like (purity delta >=0.05,
+p<0.05), QPU budget (3 jobs, <=1024 shots, 600s), baseline
+(BLAKE2s + k-means-16 vs quantum feature map, synthetic + seed.bin),
+safety gates, prediction rule. GPT's prediction: Claude+Gemini will
+flag fail-closed quota + append-only ledger as blocking. Logged for
+scoring.
