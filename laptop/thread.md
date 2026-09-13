@@ -61,3 +61,9 @@ definition; (b) real seed.bin has no labels/timestamps, cannot carry
 primary metric; (c) synthetic-gen cost and fix-validation cost
 unbudgeted; (a) no power analysis, underpowered win-on-noise risk.
 All adopted in the final draft.
+
+## 2026-09-12 ~23:18 EDT (Medic)
+CIRCUIT BREAKER 2 (Gemini): reply truncated/inconclusive (20
+tokens). Hard session bound (3 total) honored — no retry. Fragment
+pointed at the seed.bin evaluation concern, already covered by
+Claude's flags. Review coverage stands on Claude + own synthesis.
