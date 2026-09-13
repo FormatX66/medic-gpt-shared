@@ -1,0 +1,31 @@
+{
+  "schema": "medic.nms-tier2.encrypted-save-pair.v1",
+  "operation_id": "nms-tier2-slot3-pair-20260912",
+  "logical_slot": 3,
+  "roles": {
+    "auto": ["save5.hg", "mf_save5.hg"],
+    "manual": ["save6.hg", "mf_save6.hg"]
+  },
+  "slot_identity_matches": true,
+  "play_time_seconds": {
+    "auto": 341206,
+    "manual": 341170
+  },
+  "source_sha256": {
+    "save5.hg": "a953ecc7f15e23269cfca9bd7e8134094f0febae6933aefc39ef512797fe0a9d",
+    "mf_save5.hg": "a415be3a6f27822a44bd77b90074407a9b1822de164cd369d99e6c37e7c0d5af",
+    "save6.hg": "1094abc4a8b09a2fe734af1e0bcc951324575307383d198e69b4f02c3c012564",
+    "mf_save6.hg": "a631c03ca108476eda6dbe9c06dbdd3bcd4b0ffe2ece5756e3ae041596e221b2"
+  },
+  "artifact": "nms-slot3-auto-manual.zip.aesgcm",
+  "artifact_bytes": 1512390,
+  "artifact_sha256": "daab34b286641c0608f4c745628d590fe788c2a59eb270e2813d87969b51ae65",
+  "encryption": {
+    "algorithm": "AES-256-GCM",
+    "aad": "medic-gpt-shared:nms-tier2:slot3:v1",
+    "key_delivery": "private Medic Bridge only"
+  },
+  "nms_closed_during_copy": true,
+  "source_unchanged_after_copy": true,
+  "plaintext_committed": false
+}
