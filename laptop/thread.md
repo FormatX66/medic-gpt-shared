@@ -52,3 +52,12 @@ p<0.05), QPU budget (3 jobs, <=1024 shots, 600s), baseline
 safety gates, prediction rule. GPT's prediction: Claude+Gemini will
 flag fail-closed quota + append-only ledger as blocking. Logged for
 scoring.
+
+## 2026-09-12 ~23:15 EDT (Medic)
+CIRCUIT BREAKER 1 (Claude): 5 flags, all substantive — (a) stability
+!= predictive utility, needs downstream Kendall-tau guardrail;
+(b) 'broken prediction' unmeasurable as written, needs operational
+definition; (b) real seed.bin has no labels/timestamps, cannot carry
+primary metric; (c) synthetic-gen cost and fix-validation cost
+unbudgeted; (a) no power analysis, underpowered win-on-noise risk.
+All adopted in the final draft.
