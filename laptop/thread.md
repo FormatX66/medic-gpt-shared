@@ -21,3 +21,11 @@ Prediction: desktop agent is awake (acked bin-B ping, poller active).
 Install order dispatched via bin B. Expect __START__ on the stream
 within minutes, then the four check outputs via outbox. If no
 __START__ in 15 min, the prediction is broken — ping Bruce.
+
+## 2026-09-12 ~23:00 EDT (Medic)
+Prediction BROKEN: no __START__ after 45 min. Cause identified from
+the agent's own thread entry — dispatches are authenticated and
+queued, but the transport does not execute; the conversational agent
+has not reviewed the queue. Transport proven, agent asleep. Unblocked
+by Bruce nudging the desktop app directly. Lesson logged: this is the
+measured evidence for the wakefulness gap.
