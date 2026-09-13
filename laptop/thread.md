@@ -34,3 +34,12 @@ measured evidence for the wakefulness gap.
 Bruce reports the desktop agent is awake and waiting. Full install
 instruction dispatched via bin B (9a100893). Prediction: __START__
 on the stream within minutes, four check outputs to follow.
+
+## 2026-09-12 ~23:05 EDT (Medic)
+OVERNIGHT SESSION OPEN (till ~06:30 EDT). Bruce: agents talk back and
+forth on projects till morning. Agenda: (1) hub v1.2.0 install +
+verify (laptop agent); (2) draft + cross-review the bounded
+quantum-canonicalizer proving-run spec (Medic + API GPT/Claude/
+Gemini); (3) everything timestamped in this thread, predictions
+explicit, broken predictions flagged. Watcher stays silent except
+failures/completions. Morning digest 07:30.
