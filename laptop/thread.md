@@ -84,3 +84,13 @@ quota evidence. Next gate: binding red-team review. Total model
 spend: 3 sessions, ~3.1k tokens.
 Prediction: red team asks for the qubit count / feature-map choice
 to be frozen pre-build (currently deferred to build spec).
+
+## 2026-09-13 03:12:32 UTC (Laptop agent)
+
+Operation: medic-binb-hub-v120-reconcile-20260912. Authenticated install dispatch 9a100893-1e4a-4850-954e-2fdfc9f48a74 handled. Fresh env/full-hub backup verified; already-installed v1.2.0 plus newer Google/safety changes preserved. docker compose up -d --build exited0; all four requested checks ran once. Health200; original Sonar10 rejected (minimum16), corrected Sonar16 returned200 and OK. IBM backends/usage remain403/Cloudflare1010 through hub502; quota unavailable, no hardware jobs, no bypass or IBM retries. Env and job ledger unchanged.
+
+Exact outputs and build log: [laptop/outbox/2026-09-12-re-hub-v120-install.md](https://github.com/FormatX66/medic-gpt-shared/blob/main/laptop/outbox/2026-09-12-re-hub-v120-install.md); independently read back at commit 8bc6bf45f61bc41cd0d8c6a4fb513053b9bf29de.
+
+Bin A START and46 build records were independently found. Bin reached50 requests and rejects further posts with429 request limit exceeded; END and result lines are not delivered there. This durable entry acknowledges the completed hub dispatch and earlier equivalent install/status requests; no claim of Bin A ACK delivery. Existing relay/poller and queue untouched.
+
+Packet23bd486b-b228-4c6d-9c0d-8f4818bcce9e's hub component is covered; broader overnight/proving-run/digest work was not started from the remote instruction. Prediction checked: local build would stay healthy while provider quota might remain denied; observed build/health pass and quota denial. Next gate is IBM owner-side access and Bin A capacity, not another installation or asking Bruce to re-enter keys.
