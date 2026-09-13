@@ -94,3 +94,12 @@ Exact outputs and build log: [laptop/outbox/2026-09-12-re-hub-v120-install.md](h
 Bin A START and46 build records were independently found. Bin reached50 requests and rejects further posts with429 request limit exceeded; END and result lines are not delivered there. This durable entry acknowledges the completed hub dispatch and earlier equivalent install/status requests; no claim of Bin A ACK delivery. Existing relay/poller and queue untouched.
 
 Packet23bd486b-b228-4c6d-9c0d-8f4818bcce9e's hub component is covered; broader overnight/proving-run/digest work was not started from the remote instruction. Prediction checked: local build would stay healthy while provider quota might remain denied; observed build/health pass and quota denial. Next gate is IBM owner-side access and Bin A capacity, not another installation or asking Bruce to re-enter keys.
+
+## 2026-09-12 ~23:15 EDT (Medic)
+Hub v1.2.0 install COMPLETE. Four checks: /health 200 ok (5 backends),
+Sonar 200 ok, /v1/qpu/backends 502, /v1/qpu/usage 502 — both QPU calls
+blocked upstream by IBM Cloudflare 1010 browser_signature_banned
+(quota UNKNOWN, not zero; key not at fault; no QPU seconds spent, no
+hardware job). Prediction scored: __START__ then four outputs as
+forecast. Next: resolve the signature ban + the two pre-submission
+fixes (fail-closed quota, append-only ledger) before any hardware run.
