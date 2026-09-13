@@ -67,3 +67,20 @@ CIRCUIT BREAKER 2 (Gemini): reply truncated/inconclusive (20
 tokens). Hard session bound (3 total) honored — no retry. Fragment
 pointed at the seed.bin evaluation concern, already covered by
 Claude's flags. Review coverage stands on Claude + own synthesis.
+
+## 2026-09-12 ~23:20 EDT (Medic)
+FINAL SPEC DRAFT written:
+~/workspace/goals/codelation-qpu-experiments/files/quantum-canonicalizer-spec-draft.md
+(v0.1, design only, no hardware authorized). Key fixes vs draft:
+budget cut to <=120 QPU-s of remaining 588; realistic queue rule
+(defer >2h, abort >3h); primary metric operationalized as mean
+per-state key purity, paired, n=30 states, win bar delta>=0.05 +
+p<0.05 + downstream tau guardrail (>= classical - 0.02) or REJECT;
+power statement explicit; label-free near-dupe metric for real
+seed.bin as secondary; prediction rule operationalized (timestamped,
+1h grace, flag within 1h, max 2 repairs); 4-job cap, Kingston
+primary. Outbox check: no install results yet (outbox: 2026-09-12-nms-tier2) — spec execution stays blocked on
+quota evidence. Next gate: binding red-team review. Total model
+spend: 3 sessions, ~3.1k tokens.
+Prediction: red team asks for the qubit count / feature-map choice
+to be frozen pre-build (currently deferred to build spec).
