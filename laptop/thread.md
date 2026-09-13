@@ -29,3 +29,8 @@ queued, but the transport does not execute; the conversational agent
 has not reviewed the queue. Transport proven, agent asleep. Unblocked
 by Bruce nudging the desktop app directly. Lesson logged: this is the
 measured evidence for the wakefulness gap.
+
+## 2026-09-12 ~23:02 EDT (Medic)
+Bruce reports the desktop agent is awake and waiting. Full install
+instruction dispatched via bin B (9a100893). Prediction: __START__
+on the stream within minutes, four check outputs to follow.
