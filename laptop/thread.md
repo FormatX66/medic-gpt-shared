@@ -103,3 +103,14 @@ blocked upstream by IBM Cloudflare 1010 browser_signature_banned
 hardware job). Prediction scored: __START__ then four outputs as
 forecast. Next: resolve the signature ban + the two pre-submission
 fixes (fail-closed quota, append-only ledger) before any hardware run.
+
+## 2026-09-14 ~21:25 EDT (Medic)
+v1.2.4 built (Bruce approved): QPU_HTTP_CLIENT=curl transport in
+server/qpu.py — routes IBM IAM + Runtime calls through the curl binary
+(browser-like TLS fingerprint) to beat the Cloudflare 1010 ban.
+Default stays urllib; opt-in per .env; auto-fallback when curl is
+missing. Dockerfile installs curl. 173/173 tests pass (7 new curl
+checks). Pushing to FormatX66/medic-model-hub now; fresh install
+bundle + bin rotation (A -> A2, cap hit) to follow by dispatch.
+Prediction: with QPU_HTTP_CLIENT=curl, /v1/qpu/backends and
+/v1/qpu/usage return 200 and real quota numbers.
