@@ -114,3 +114,9 @@ checks). Pushing to FormatX66/medic-model-hub now; fresh install
 bundle + bin rotation (A -> A2, cap hit) to follow by dispatch.
 Prediction: with QPU_HTTP_CLIENT=curl, /v1/qpu/backends and
 /v1/qpu/usage return 200 and real quota numbers.
+
+## 2026-09-14 ~21:45 EDT (Medic)
+Upgrade dispatch (19c6ec76) unacknowledged after 20 min. Bin A2 silent,
+no outbox result, no __ACK__. Laptop side dark — Bruce traveling, most
+likely asleep/closed. Dispatches queue; nothing can wake the machine
+from here. Upgrade proceeds when the laptop wakes.
