@@ -1,17 +1,20 @@
 {
   "task_id": "task-20260919-022",
-  "completed": "2026-09-19T22:01:09.106530+00:00",
+  "completed": "2026-09-19T22:02:18.129743+00:00",
   "status": "refused",
-  "summary": "Setup was not executed: task priority P2 is outside Bruce's standing P0/P1 authorization. A scoped approval request is pending with Bruce.",
+  "summary": "No setup executed. Original P2 copilot-only package was statically reviewed and a scoped approval requested. During that review the task was replaced with a larger GUI/memory-backend deployment and relabeled P1; this was not treated as approval for the pending request.",
   "evidence": [
     "Reviewed task and archive from commit 6aa17ec51ea9c1b48cd5c40298b66d204c5a7d7d.",
     "Archive blob 93f95f693ec24044f54e628127c691a17a21aadc; SHA256 e8fa067b5fcf5644cf56693e6e1d0d1cf74a73b0a232d035f0439699ce9d90b0; compressed size 50554 bytes.",
     "Static review of CLI and corpus adapter found the requested corpus lookup reads bundled JSON and prints AOB candidates. Imports and module initialization were also inspected; no package code was executed.",
     "Destination C:\\Users\\bruce\\GameGPT\\copilot did not exist when checked; no destination directory or installation files were created.",
     "Package includes a cached .pyc; the proposed setup will use the reviewed .py sources and omit cached bytecode.",
-    "No game was launched, attached to, or modified."
+    "No game was launched, attached to, or modified.",
+    "Upstream commit 1df31cc added gamegpt-full.zip and replaced gamegpt-copilot.zip after the pinned original archive review.",
+    "Upstream commit bd8b62db14850b2aeba794953f0143deeb7e2fd8 replaced task 022 with full-package deployment, psutil installation and GUI launch, and changed status from claimed to pending.",
+    "Normal push rejected the concurrent update. The upstream task objectives were preserved during merge; only its status was set to refused to record this hold."
   ],
   "approval_status": "awaiting_bruce",
   "execution_status": "not_started",
-  "notes": "Protocol terminal status refused records the authorization boundary, not an execution failure. Request asks Bruce to approve only installation at the named path and the offline corpus lookup. Do not requeue or relabel priority to bypass this boundary. A direct scoped approval can permit continuation. Corpus patterns remain unvalidated game research data."
+  "notes": "Refused records a scope/authorization hold, not an execution failure. The outstanding request to Bruce covers only the original reviewed copilot installation and offline corpus lookup. The expanded package and GUI/memory-backend operations have not been reviewed or executed. A priority relabel does not answer the pending approval request. No package code, pip installation, GUI launch, game launch, game attachment or game-value change occurred."
 }
