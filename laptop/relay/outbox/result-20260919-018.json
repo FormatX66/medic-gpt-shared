@@ -1,0 +1,31 @@
+{
+  "task_id": "task-20260919-018",
+  "completed": "2026-09-19T21:01:12.5043804Z",
+  "status": "failed",
+  "summary": "The fresh IBM_API_KEY from the changed .env was supplied to the unchanged script. IAM token exchange again returned HTTP 400; backend listing and quota/usage were not reached.",
+  "exit_code": 3,
+  "stdout": "FAIL: IAM token exchange rejected the key (HTTP 400). The key may be bad or revoked.\n",
+  "stderr": "",
+  "input_evidence": {
+    "checked_at": "2026-09-19T21:00:09.1420601Z",
+    "last_write_utc": "2026-09-19T20:59:27.8327046Z",
+    "previous_check_env_write_utc": "2026-09-19T20:45:21.2403722Z"
+  },
+  "execution_evidence": {
+    "checked_at": "2026-09-19T17:00:38.102304-04:00",
+    "script_sha256": "38c81f3d1455e7308732b680ad3e716c325d741dc088f4dd5127df422f200b0d",
+    "credential_source_name": "IBM_API_KEY",
+    "credential_destination_name": "IBM_API_KEY",
+    "mapping_scope": "child process only; no .env or persistent environment changes",
+    "exit_code": 3,
+    "stdout": "FAIL: IAM token exchange rejected the key (HTTP 400). The key may be bad or revoked.\n",
+    "stderr": "",
+    "script_arguments": [],
+    "hardware_job_submission": false,
+    "env_unchanged_during_check": true
+  },
+  "iam_result": "HTTP 400; no access token obtained",
+  "backend_listing": "Not reached",
+  "quota_usage": "Not reached; unavailable, not zero",
+  "notes": "Exact script output is included. The script suggests the key may be bad or revoked, but does not expose the IAM response body; the precise rejection reason is unverified. The new run was justified by the externally modified input and explicit task request. Only IBM_API_KEY was supplied to the child process; no persistent environment, .env or key changes. No --confirm-qpu or hardware job submission; stopped after this run."
+}
