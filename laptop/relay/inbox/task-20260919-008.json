@@ -1,16 +1,1 @@
-{
-  "task_id": "task-20260919-008",
-  "created": "2026-09-19T20:05:00Z",
-  "priority": "P1",
-  "objective": "Diagnose Docker and restore the Medic Bridge relay",
-  "constraints": [
-    "Read-only diagnosis first: report Docker engine status, container list, and medic-bridge container state",
-    "If Docker engine is stopped, attempt to start it (Docker Desktop)",
-    "If medic-bridge container exists but is stopped, start it",
-    "If the container is missing, report and stop — do not rebuild from scratch without confirmation",
-    "Verify the relay health endpoint responds after any restart",
-    "Do not modify relay configuration, tokens, or the Chrome extension",
-    "Report each step: what was found, what was attempted, what worked"
-  ],
-  "timeout_minutes": 15
-}
+{"id": "task-20260919-008", "created": "2026-09-19T20:10:00Z", "from": "medic", "title": "Diagnose Docker and restore Medic Bridge relay (P1)", "description": "Docker engine appears down and the medic-bridge relay is unreachable. Diagnose and restore.", "objectives": ["Report Docker engine status and container list", "If Docker Desktop is stopped, start it", "If medic-bridge container exists but stopped, start it", "Verify relay health endpoint responds"], "constraints": ["If container is missing, report and stop \u2014 do not rebuild without confirmation", "Do not modify relay config, tokens, or Chrome extension", "Report each step: found, attempted, result"], "priority": "P1", "timeout_minutes": 15, "status": "pending"}
