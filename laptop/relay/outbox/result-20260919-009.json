@@ -1,12 +1,39 @@
 {
   "task_id": "task-20260919-009",
-  "completed": "2026-09-19T20:17:32.2571735Z",
-  "status": "failed",
-  "summary": "Hub startup is blocked by the unavailable Docker engine. Fresh health check still refuses connections; no compose start was executed against the known missing engine.",
-  "evidence": [
-    "GET http://127.0.0.1:8090/health: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
-    "Current task 008 diagnosis: Docker Desktop/backend and docker-desktop WSL distribution stopped; Docker API pipe missing; persistent socket error 1920 blocks startup.",
-    "Local source C:\\Users\\bruce\\MedicHub\\hub\\server\\hub.py declares version 1.2.0. Runtime version 1.2.4 is not verified."
+  "completed": "2026-09-19T20:34:01.5714233Z",
+  "status": "partial",
+  "summary": "Hub is now running and healthy on localhost:8090, but reports version 1.2.0 rather than 1.2.4. Both requested QPU endpoints returned HTTP 502.",
+  "checks": [
+    {
+      "path": "/health",
+      "http_status": 200,
+      "ok": true,
+      "version": "1.2.0"
+    },
+    {
+      "path": "/v1/qpu/backends",
+      "http_status": 502
+    },
+    {
+      "path": "/v1/qpu/usage",
+      "http_status": 502
+    }
   ],
-  "notes": "This is a blocked prerequisite, not a new compose execution failure. A known impossible compose start was pruned under the AGENTS.md no-unchanged-retry rule. No config/.env changes, rebuild, upgrade, or QPU submission. /v1/qpu/backends and /v1/qpu/usage were not requested while Hub was down. The earlier schema refusal is superseded by this corrected-task result."
+  "steps": [
+    "Found medic-model-hub already running after the external Docker restart.",
+    "No docker compose startup was needed or performed.",
+    "Read /health, /v1/qpu/backends and /v1/qpu/usage once in the bounded verification.",
+    "Captured only matching access-log lines; excluded unrelated logs and provider payloads."
+  ],
+  "sanitized_access_log": [
+    "GET /health -> GET /health HTTP/1.1 200 -",
+    "GET /v1/qpu/backends -> GET /v1/qpu/backends HTTP/1.1 502 -",
+    "GET /v1/qpu/usage -> GET /v1/qpu/usage HTTP/1.1 502 -",
+    "GET /health -> GET /health HTTP/1.1 200 -",
+    "GET /health -> GET /health HTTP/1.1 200 -",
+    "GET /v1/qpu/backends -> GET /v1/qpu/backends HTTP/1.1 502 -",
+    "GET /health -> GET /health HTTP/1.1 200 -",
+    "GET /v1/qpu/usage -> GET /v1/qpu/usage HTTP/1.1 502 -"
+  ],
+  "notes": "Supersedes earlier engine-unavailable result after verified external state change. The current task does not establish version 1.2.4 or QPU availability. No .env/configuration/image changes, rebuild, restart, hardware job, or repeated endpoint recovery attempt occurred. Provider error details and quota remain unverified."
 }

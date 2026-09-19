@@ -17,6 +17,6 @@
   ],
   "priority": "P1",
   "timeout_minutes": 15,
-  "status": "claimed",
+  "status": "failed",
   "retry": "Bruce restarted Docker Desktop, retrying"
 }
