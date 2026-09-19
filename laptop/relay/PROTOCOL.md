@@ -18,8 +18,8 @@ auditable task queue they both share.
 - `laptop/relay/outbox/` — Laptop agent writes `result-<id>.json` here.
 - `laptop/relay/archive/` — Completed pairs moved here (by Medic).
 
-**Poll cadence:** Laptop agent checks inbox every 2 minutes while tasks are pending.
-Medic checks outbox every 5 minutes while tasks are open.
+**Poll cadence:** Laptop agent checks inbox every 30 seconds. Medic checks outbox
+every 1 minute. (Tightened 2026-09-19 per ensemble review — zero-complexity speedup.)
 
 ## Task format
 
@@ -43,9 +43,15 @@ Medic checks outbox every 5 minutes while tasks are open.
     "Reversible changes only"
   ],
   "priority": "P0",
+  "timeout_minutes": 30,
   "status": "pending"
 }
 ```
+
+**Timeout:** `timeout_minutes` is the max time the laptop agent may spend. If it
+expires with no result, Medic marks the task `timeout` and re-queues or escalates.
+The agent should also write a `heartbeat` (see below) so Medic can detect a hang
+before the timeout.
 
 **Rules:**
 - `objectives` are WHAT, not HOW. No shell commands. No PowerShell. The laptop
@@ -79,6 +85,22 @@ Medic checks outbox every 5 minutes while tasks are open.
 - `evidence` is concrete output, not claims. Command output excerpts, file paths,
   screenshots described — something Medic can verify.
 - Never claim success from "command ran." Show the verification.
+
+## Heartbeat (reliability)
+
+The laptop agent writes `laptop/relay/heartbeat.json` every 30 seconds:
+
+```json
+{
+  "at": "2026-09-19T19:20:00Z",
+  "status": "working",
+  "current_task": "task-20260919-002"
+}
+```
+
+`status`: `idle` | `working` | `stuck`. If Medic sees a heartbeat older than
+2 minutes, it marks any `claimed` tasks as `timeout` and re-queues them.
+This solves the hang-forever problem (laptop sleeps mid-task, network drops).
 
 ## Safety
 
