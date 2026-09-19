@@ -1,0 +1,14 @@
+{
+  "task_id": "task-20260919-006",
+  "completed": "2026-09-19T19:46:27.2051144Z",
+  "status": "failed",
+  "summary": "Medic Hub is unavailable at its configured 127.0.0.1:8090 address. Health connection was refused; the Docker engine API is unavailable. No service was started.",
+  "evidence": [
+    "docker-compose.yml declares container medic-model-hub and host binding 127.0.0.1:8090:8090.",
+    "No listening TCP entry was found on port 8090.",
+    "GET http://127.0.0.1:8090/health: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "docker ps -a exited 1: failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.",
+    "Local source C:\\Users\\bruce\\MedicHub\\hub\\server\\hub.py:28 declares VERSION = 1.2.0; this is source evidence, not a running-image version."
+  ],
+  "notes": "Stopped as required when the Hub was found down. /v1/qpu/backends and /v1/qpu/usage were not requested; their HTTP status and runtime version 1.2.4 cannot be verified. Container state/uptime is unavailable because Docker API could not be queried. No config, .env, keys, images, or services were changed; no QPU job submitted."
+}
