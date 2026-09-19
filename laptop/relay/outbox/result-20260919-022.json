@@ -1,0 +1,17 @@
+{
+  "task_id": "task-20260919-022",
+  "completed": "2026-09-19T22:01:09.106530+00:00",
+  "status": "refused",
+  "summary": "Setup was not executed: task priority P2 is outside Bruce's standing P0/P1 authorization. A scoped approval request is pending with Bruce.",
+  "evidence": [
+    "Reviewed task and archive from commit 6aa17ec51ea9c1b48cd5c40298b66d204c5a7d7d.",
+    "Archive blob 93f95f693ec24044f54e628127c691a17a21aadc; SHA256 e8fa067b5fcf5644cf56693e6e1d0d1cf74a73b0a232d035f0439699ce9d90b0; compressed size 50554 bytes.",
+    "Static review of CLI and corpus adapter found the requested corpus lookup reads bundled JSON and prints AOB candidates. Imports and module initialization were also inspected; no package code was executed.",
+    "Destination C:\\Users\\bruce\\GameGPT\\copilot did not exist when checked; no destination directory or installation files were created.",
+    "Package includes a cached .pyc; the proposed setup will use the reviewed .py sources and omit cached bytecode.",
+    "No game was launched, attached to, or modified."
+  ],
+  "approval_status": "awaiting_bruce",
+  "execution_status": "not_started",
+  "notes": "Protocol terminal status refused records the authorization boundary, not an execution failure. Request asks Bruce to approve only installation at the named path and the offline corpus lookup. Do not requeue or relabel priority to bypass this boundary. A direct scoped approval can permit continuation. Corpus patterns remain unvalidated game research data."
+}
