@@ -1,12 +1,15 @@
 {
   "task_id": "task-20260919-008",
-  "completed": "2026-09-19T20:05:53.4056615Z",
-  "status": "refused",
-  "summary": "Not eligible for pickup: task has no status field, so pending status cannot be confirmed. Required protocol fields id and objectives are also absent.",
+  "completed": "2026-09-19T20:14:20.7002831Z",
+  "status": "failed",
+  "summary": "Docker recovery is blocked by the unchanged inaccessible AF_UNIX sockets that caused previous startup failures. Diagnosis completed; no new launch or container start was attempted.",
   "evidence": [
-    "Inspected laptop/relay/inbox/task-20260919-008.json at repo commit ef506f29c0be4bab76a7f04de910ae406486bdc6",
-    "Present aliases: task_id and objective. Missing protocol fields: id, status, objectives.",
-    "The current protocol and user polling instruction select tasks explicitly marked status pending."
+    "No Docker Desktop/backend processes found. wsl --list --verbose: Ubuntu Stopped; docker-desktop Stopped; both WSL2.",
+    "Docker Desktop executable version 4.84.0.234817; EnableDockerAI already false.",
+    "docker ps -a exited 1: failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.",
+    "Latest backend startup log at 2026-09-19T17:28:20Z: initializing Inference manager; cannot remove Docker/run/dockerInference; Windows error 1920.",
+    "Current fsutil reparsepoint query returned error 1920 for both Docker/run/dockerInference and docker-secrets-engine/engine.sock.",
+    "Previous parent-directory renaming and startup attempts failed to establish engine readiness. Microsoft documents that reparse operations require access to the file; current query cannot obtain that access."
   ],
-  "notes": "No task execution or claim occurred. Correct the inbox entry to use id, status: pending, and an objectives array while preserving its constraints, then the next poll can review it. This reports a schema problem; it does not require a new user approval or authorize broader work."
+  "notes": "Found: Desktop and WSL stopped, missing engine API, inaccessible socket state unchanged. Attempted this task: read-only process/service/WSL inspection, current Docker API query, backend log review, and two socket metadata queries. Worked: diagnosis and report. Held: unchanged relaunch and rename attempts, under the AGENTS.md no-unchanged-retry rule. Container list/state is unavailable; this does not prove medic-bridge is missing. No container rebuild, configuration/token/extension change, factory reset, data-disk operation, or host reboot. The earlier schema refusal is superseded by this corrected-task diagnosis."
 }
