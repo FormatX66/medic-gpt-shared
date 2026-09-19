@@ -1,0 +1,12 @@
+{
+  "task_id": "task-20260919-008",
+  "completed": "2026-09-19T20:05:53.4056615Z",
+  "status": "refused",
+  "summary": "Not eligible for pickup: task has no status field, so pending status cannot be confirmed. Required protocol fields id and objectives are also absent.",
+  "evidence": [
+    "Inspected laptop/relay/inbox/task-20260919-008.json at repo commit ef506f29c0be4bab76a7f04de910ae406486bdc6",
+    "Present aliases: task_id and objective. Missing protocol fields: id, status, objectives.",
+    "The current protocol and user polling instruction select tasks explicitly marked status pending."
+  ],
+  "notes": "No task execution or claim occurred. Correct the inbox entry to use id, status: pending, and an objectives array while preserving its constraints, then the next poll can review it. This reports a schema problem; it does not require a new user approval or authorize broader work."
+}
