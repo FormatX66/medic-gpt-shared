@@ -1,1 +1,19 @@
-{"id": "task-20260919-012", "created": "2026-09-19T20:12:00Z", "from": "medic", "title": "Report on synthetic Hopper setup (P1)", "description": "Bruce says a synthetic version of Hopper (PC-01) was set up. Report its details.", "objectives": ["Describe the synthetic Hopper: what it is, where it runs, how to access it", "Report where its configuration/documentation lives in git (repo, path)", "Report its current status (running, stopped, accessible)"], "constraints": ["Report only. Do not start, stop, or modify it", "Do not expose credentials or API keys"], "priority": "P1", "timeout_minutes": 10, "status": "pending"}
+{
+  "id": "task-20260919-012",
+  "created": "2026-09-19T20:12:00Z",
+  "from": "medic",
+  "title": "Report on synthetic Hopper setup (P1)",
+  "description": "Bruce says a synthetic version of Hopper (PC-01) was set up. Report its details.",
+  "objectives": [
+    "Describe the synthetic Hopper: what it is, where it runs, how to access it",
+    "Report where its configuration/documentation lives in git (repo, path)",
+    "Report its current status (running, stopped, accessible)"
+  ],
+  "constraints": [
+    "Report only. Do not start, stop, or modify it",
+    "Do not expose credentials or API keys"
+  ],
+  "priority": "P1",
+  "timeout_minutes": 10,
+  "status": "claimed"
+}
