@@ -1,6 +1,6 @@
 #Requires -RunAsAdministrator
 <#
-  Medic laptop setup — one-shot. v3 (daemon self-pairs; zero Bruce pastes).
+  Medic laptop setup — one-shot. v4 (installs Medic Mini app).
   Run as Administrator: right-click -> "Run with PowerShell" (as admin).
 
   What it does:
@@ -8,10 +8,12 @@
     2. Installs Tailscale (you complete the login click at the end).
     3. Installs TightVNC Server as a service, random 8-char password, tailnet-only firewall.
     4. Installs Python 3 (for the daemon) if missing.
-    5. Installs the Medic laptop daemon (always-on hands): polls Medic's
-       dispatches every 20s, runs them, streams results back. The daemon
-       pairs itself with Medic on first start — nothing for you to paste.
-       Scheduled task at logon + starts immediately.
+    5. Installs the Medic Mini app (always-on hands): polls Medic's
+       dispatches every 20s, runs them, streams results back, takes
+       screenshots on request, self-updates from the repo. Pairs itself
+       with Medic on first start — nothing for you to paste. Localhost
+       dashboard at http://127.0.0.1:8899. Scheduled task at logon +
+       starts immediately.
     6. Enables auto-login (you type your Windows password once; it never leaves this machine).
     7. Disables the lock screen / require-sign-in-on-wake; never sleeps on AC power.
 
@@ -30,8 +32,8 @@ $MedicPubKey = 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGGuzi1oaQ9dHKDahWBsalmAWH/R
 # Tailscale CGNAT range — firewall rules scope remote access to the tailnet only
 $TailnetRange = '100.64.0.0/10'
 
-$DaemonDir = Join-Path $env:USERPROFILE 'medic-daemon'
-$DaemonUrl = 'https://raw.githubusercontent.com/FormatX66/medic-gpt-shared/main/laptop/inbox/medic-laptop-daemon.py'
+$MiniDir = Join-Path $env:USERPROFILE 'medic-mini'
+$MiniUrl = 'https://raw.githubusercontent.com/FormatX66/medic-gpt-shared/main/laptop/inbox/medic-mini.py'
 
 # ---- 0. Sanity -------------------------------------------------------------
 Step 'Checking admin + winget'
@@ -96,31 +98,31 @@ $pythonExe = $py.Source
 Write-Host "Using Python: $pythonExe"
 
 # ---- 5. Medic daemon (always-on hands, self-pairing) --------------------------
-Step 'Installing Medic laptop daemon'
-New-Item -ItemType Directory -Force -Path $DaemonDir | Out-Null
-Invoke-WebRequest -Uri $DaemonUrl -OutFile (Join-Path $DaemonDir 'medic-laptop-daemon.py')
+Step 'Installing Medic Mini app'
+New-Item -ItemType Directory -Force -Path $MiniDir | Out-Null
+Invoke-WebRequest -Uri $MiniUrl -OutFile (Join-Path $MiniDir 'medic-mini.py')
 # No secret prompt: the daemon pairs itself with Medic on first start (TOFU).
 # Already paired (re-run)? Keep the existing secret.
-$secretFile = Join-Path $DaemonDir 'daemon-secret.txt'
-if (Test-Path $secretFile) { Write-Host 'Daemon already paired — keeping existing secret.' }
-else { Write-Host 'Daemon will pair itself with Medic on first start (nothing for you to paste).' }
+$secretFile = Join-Path $MiniDir 'mini-secret.txt'
+if (Test-Path $secretFile) { Write-Host 'Mini app already paired — keeping existing secret.' }
+else { Write-Host 'Mini app will pair itself with Medic on first start (nothing for you to paste).' }
 # Stash the VNC password where the daemon (and Medic, via daemon) picks it up —
 # no relay needed.
-$vncPass | Out-File -FilePath (Join-Path $DaemonDir 'vnc-password.txt') -Encoding ascii -NoNewline -Force
+$vncPass | Out-File -FilePath (Join-Path $MiniDir 'vnc-password.txt') -Encoding ascii -NoNewline -Force
 
-$taskName = 'MedicLaptopDaemon'
+$taskName = 'MedicMini'
 if (Get-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue) {
   Unregister-ScheduledTask -TaskName $taskName -Confirm:$false
 }
 $action = New-ScheduledTaskAction -Execute $pythonExe `
-  -Argument "`"$(Join-Path $DaemonDir 'medic-laptop-daemon.py')`""
+  -Argument "`"$(Join-Path $MiniDir 'medic-mini.py')`""
 $trigger = New-ScheduledTaskTrigger -AtLogOn -User $env:USERNAME
 $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries `
   -RestartCount 3 -RestartInterval (New-TimeSpan -Minutes 1)
 Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger `
   -Settings $settings -RunLevel Highest -Force | Out-Null
 Start-ScheduledTask -TaskName $taskName
-Write-Host 'Daemon installed as logon scheduled task and started.'
+Write-Host 'Medic Mini installed as logon scheduled task and started.'
 
 # ---- 6. Auto-login (survives restarts with zero interaction) ----------------
 Step 'Configuring auto-login'
