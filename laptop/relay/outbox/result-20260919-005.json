@@ -1,0 +1,14 @@
+{
+  "task_id": "task-20260919-005",
+  "completed": "2026-09-19T19:43:45.1194612Z",
+  "status": "failed",
+  "summary": "Connectivity could not be verified: IBM_API_KEY is absent from the script process environment. The reviewed script exited 2 before making any network request.",
+  "evidence": [
+    "Reviewed script SHA256: 38C81F3D1455E7308732B680AD3E716C325D741DC088F4DD5127DF422F200B0D",
+    "Executed in isolated Python with no job-submit flag.",
+    "Exit code: 2. Authentication: not attempted. Backends: not retrieved. Quota/usage: unavailable, not zero.",
+    "No hardware jobs submitted and no QPU seconds spent; the missing-key branch exits before IAM exchange."
+  ],
+  "script_output": "IBM_API_KEY is not set.\nSet it on this machine first, e.g.:\n  Windows (PowerShell):  $env:IBM_API_KEY = \"paste-your-key-here\"\n  macOS/Linux (bash):    export IBM_API_KEY=\"paste-your-key-here\"\nThen run this script again. The key is read from the\nenvironment only and is never stored or printed.\n",
+  "notes": "Exact script output is included, with no redaction needed because no credential was present or printed. No keys were searched for, provisioned, repaired, or modified. Stopped as instructed. A future recheck requires IBM_API_KEY to be available to the process environment."
+}
