@@ -1,0 +1,24 @@
+{
+  "id": "task-20260919-002",
+  "created": "2026-09-19T19:18:23Z",
+  "from": "medic",
+  "title": "Full stay-awake hardening (P0 follow-up)",
+  "description": "The power timeouts are set (P0 done). Now make sure NOTHING can put this laptop to sleep during long runs. Harden every sleep path.",
+  "objectives": [
+    "Disable hibernation at system level",
+    "Set lid close action to do nothing on AC power",
+    "Set power button action to do nothing on AC power",
+    "Set sleep button action to do nothing on AC power",
+    "Disable the screensaver",
+    "Disable the lock screen via policy if admin access permits",
+    "Verify all settings with powercfg and report every value"
+  ],
+  "constraints": [
+    "Do NOT enable Windows auto-login",
+    "AC power settings only; leave battery settings unchanged",
+    "Reversible changes only; document rollback for each change"
+  ],
+  "priority": "P0",
+  "destructive": false,
+  "status": "pending"
+}
