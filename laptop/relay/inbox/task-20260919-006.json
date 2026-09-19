@@ -9,7 +9,7 @@
     "GET /v1/qpu/backends and confirm HTTP 200",
     "GET /v1/qpu/usage and confirm HTTP 200",
     "Report the Hub's listening address/port and container/process status",
-    "If the Hub is not running, report that and stop \u2014 do not start it"
+    "If the Hub is not running, report that and stop — do not start it"
   ],
   "constraints": [
     "Read-only verification; do not modify Hub config or .env",
@@ -18,5 +18,5 @@
   ],
   "priority": "P1",
   "destructive": false,
-  "status": "pending"
+  "status": "claimed"
 }
