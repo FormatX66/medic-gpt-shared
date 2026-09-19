@@ -1,0 +1,23 @@
+{
+  "id": "task-20260919-004",
+  "created": "2026-09-19T19:37:24Z",
+  "from": "medic",
+  "title": "Extract Blind Distortion NMS RAR (inert)",
+  "description": "Extract the No Man's Sky cheat table RAR for research. The archive contains a .CT file and README. Extract ONLY \u2014 never execute anything, never open in Cheat Engine.",
+  "objectives": [
+    "Locate the RAR at laptop/inbox/nms-bd-table/tablica-dlja-cheat-engine-upd-07-11-2024_1731065431_411585.rar",
+    "Extract contents using 7-Zip or WinRAR to a working folder",
+    "Copy the .CT file and README (if present) to laptop/outbox/nms-bd-table/",
+    "Compute SHA256 hashes of extracted files and report them",
+    "List all extracted filenames and sizes"
+  ],
+  "constraints": [
+    "NEVER execute any extracted file",
+    "NEVER open the .CT in Cheat Engine or attach to any game",
+    "Inert handling only: extraction, hashing, and file listing",
+    "If the RAR is password-protected or corrupt, report and stop"
+  ],
+  "priority": "P1",
+  "destructive": false,
+  "status": "pending"
+}
