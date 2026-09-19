@@ -1,0 +1,13 @@
+{
+  "task_id": "task-20260919-004",
+  "completed": "2026-09-19T19:40:26.9162187Z",
+  "status": "done",
+  "summary": "Extracted the RAR as inert data and copied its sole CT file into laptop/outbox/nms-bd-table/. No README was present.",
+  "evidence": [
+    "7-Zip 26.02: Everything is Ok; archive contains one unencrypted regular file with no links.",
+    "Archive SHA256: F4D792FD70AD18C24097DDF9EDDC48BF04274F9FEA050FE93999D81739B5C849",
+    "Filename: No Man's Sky - BD - CT V1.32.CT; size: 160393 bytes; SHA256: B5313BC8CB05D3F73F9A78D5E9507E77310A823D36DFCA8A6D0D7597C99FE095",
+    "Extracted file and outbox copy have identical SHA256 hashes."
+  ],
+  "notes": "No extracted file was executed, opened in Cheat Engine, or attached to a game. Original RAR preserved. No existing outbox file was overwritten."
+}
