@@ -1,0 +1,62 @@
+{
+  "task_id": "task-20260919-015",
+  "completed": "2026-09-19T20:38:04.2395485Z",
+  "status": "partial",
+  "summary": "The existing Hub is already running in its Compose project. The requested version 1.2.4 and QPU HTTP 200 checks remain unmet in the recent task 009 verification; no relevant container/image change was observed.",
+  "steps": [
+    {
+      "step": "Compose startup",
+      "found": "docker compose ps: medic-model-hub running, Up 8 minutes",
+      "attempted": "Read Compose status and container identity; no startup needed",
+      "result": "Same container and image as the previous verification, started 20:29:06 UTC"
+    },
+    {
+      "step": "Version and QPU acceptance",
+      "found": "Most recent endpoint checks at 20:33:35 UTC: health 200/version 1.2.0; QPU backends 502; QPU usage 502",
+      "attempted": "Reviewed prior result and sanitized access logs; no repeated endpoint request",
+      "result": "Requested acceptance remains unmet; no new fix, configuration change or image update was specified"
+    }
+  ],
+  "current_container_evidence": {
+    "checked_at": "2026-09-19T20:37:25.6006227Z",
+    "state": "running",
+    "running": true,
+    "started_at": "2026-09-19T20:29:06.5851787Z",
+    "container_and_image": "3d5815acd9757460bbce14de2e7e3a75a02b2d90dd126774e7385235647399e7 sha256:c048e1949c14b3daf4d0c5f5c9bf2425bc703c2530592c0573f23e694b90232c"
+  },
+  "reused_endpoint_evidence": {
+    "checked_at": "2026-09-19T16:33:35.416527-04:00",
+    "checks": [
+      {
+        "path": "/health",
+        "http_status": 200,
+        "ok": true,
+        "version": "1.2.0"
+      },
+      {
+        "path": "/v1/qpu/backends",
+        "http_status": 502
+      },
+      {
+        "path": "/v1/qpu/usage",
+        "http_status": 502
+      }
+    ],
+    "methods": "GET only; no job endpoint",
+    "container": "medic-model-hub",
+    "lifecycle_action": "None; container already running"
+  },
+  "reused_sanitized_access_log": [
+    "GET /health -> GET /health HTTP/1.1 200 -",
+    "GET /v1/qpu/backends -> GET /v1/qpu/backends HTTP/1.1 502 -",
+    "GET /v1/qpu/usage -> GET /v1/qpu/usage HTTP/1.1 502 -",
+    "GET /health -> GET /health HTTP/1.1 200 -",
+    "GET /health -> GET /health HTTP/1.1 200 -",
+    "GET /v1/qpu/backends -> GET /v1/qpu/backends HTTP/1.1 502 -",
+    "GET /health -> GET /health HTTP/1.1 200 -",
+    "GET /v1/qpu/usage -> GET /v1/qpu/usage HTTP/1.1 502 -"
+  ],
+  "prior_result": "laptop/relay/outbox/result-20260919-009.json",
+  "prior_result_commit": "3353788941ec404ca4354750f6b84bc2b46925e6",
+  "notes": "AGENTS.md prohibits replaying unchanged failures solely because of a new request ID. The external Docker restart was already accounted for in task 009. Current container identity, image and started-at time show no subsequent lifecycle change. No docker compose up, restart, rebuild, .env/config edit, QPU job or credential action was performed. A reviewed implementation/input/state change is needed before retrying the failed checks; this is a held duplicate verification, not a newly executed failure."
+}
