@@ -1,0 +1,22 @@
+{
+  "id": "task-20260919-006",
+  "created": "2026-09-19T19:37:28Z",
+  "from": "medic",
+  "title": "Verify Medic Hub v1.2.4 and IBM endpoints",
+  "description": "Verify the Medic Hub is running the correct version and its IBM QPU endpoints respond.",
+  "objectives": [
+    "Check the Hub /health endpoint and confirm it reports version 1.2.4",
+    "GET /v1/qpu/backends and confirm HTTP 200",
+    "GET /v1/qpu/usage and confirm HTTP 200",
+    "Report the Hub's listening address/port and container/process status",
+    "If the Hub is not running, report that and stop \u2014 do not start it"
+  ],
+  "constraints": [
+    "Read-only verification; do not modify Hub config or .env",
+    "Do not submit any QPU jobs through the Hub",
+    "If the Hub is down, report status and stop"
+  ],
+  "priority": "P1",
+  "destructive": false,
+  "status": "pending"
+}
