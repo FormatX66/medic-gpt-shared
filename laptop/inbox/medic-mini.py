@@ -37,10 +37,11 @@ import uuid
 import pathlib
 import datetime
 
-BIN_B = "da708c88-feb6-4fae-a0ef-4ef3ed3bbcc4"  # inbound: Medic -> laptop
-BIN_A = "947df846-f999-43e4-bf9c-fdac4577ef89"  # outbound: laptop -> Medic
+BIN_B = "da708c88-feb6-4fae-a0ef-4ef3ed3bbcc4"  # the one bin, both directions:
+# Medic -> laptop: dispatch packets (JSON). Laptop -> Medic: results/acks/pairing.
+# (Bin A 947df846-fdac4577ef89 was rate-limited into the ground on 2026-09-19. RIP.)
 BASE = pathlib.Path(__file__).resolve().parent
-MEDIC_MINI_VERSION = "1.0.0"
+MEDIC_MINI_VERSION = "1.0.1"
 MINI_URL = "https://raw.githubusercontent.com/FormatX66/medic-gpt-shared/main/laptop/inbox/medic-mini.py"
 DASH_PORT = 8899
 
@@ -53,7 +54,7 @@ state = {
     "last_dispatch": None,
     "last_result": None,
 }
-POLL_SECONDS = 20
+POLL_SECONDS = 45
 CMD_TIMEOUT = 600  # seconds per exec packet
 
 
@@ -82,8 +83,8 @@ def curl_post(url, data):
     return r.returncode == 0
 
 
-def bin_a_post(text):
-    curl_post(f"https://webhook.site/{BIN_A}", text)
+def bin_post(text):
+    curl_post(f"https://webhook.site/{BIN_B}", text)
 
 
 def load_secret():
@@ -116,7 +117,7 @@ def handle(req, secret):
     pid = pkt.get("id") or str(uuid.uuid4())
     ptype = pkt.get("type")
     if ptype == "ping":
-        bin_a_post(f"__ACK__ {pid} daemon alive")
+        bin_post(f"__ACK__ {pid} daemon alive")
         return
     if ptype == "shot":
         take_shot(pid)
@@ -128,7 +129,7 @@ def handle(req, secret):
         return  # GPT-app dispatches etc. — not this daemon's to run
     body = pkt.get("body") or ""
     log(f"exec {pid}: {len(body)} chars")
-    bin_a_post(f"__START__ {pid}")
+    bin_post(f"__START__ {pid}")
     try:
         r = subprocess.run(
             ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass",
@@ -137,21 +138,21 @@ def handle(req, secret):
         out = (r.stdout or "") + (r.stderr or "")
         n = 0
         for i in range(0, len(out), 1800):
-            bin_a_post(out[i:i + 1800])
+            bin_post(out[i:i + 1800])
             n += 1
-        bin_a_post(f"__END__ {pid} exit={r.returncode} chunks={n}")
-        bin_a_post(f"__ACK__ {pid} exit={r.returncode}")
+        bin_post(f"__END__ {pid} exit={r.returncode} chunks={n}")
+        bin_post(f"__ACK__ {pid} exit={r.returncode}")
         log(f"exec {pid} done exit={r.returncode}")
         state["exec_count"] += 1
         state["last_dispatch"] = pid
         state["last_result"] = f"exit={r.returncode}"
     except subprocess.TimeoutExpired:
-        bin_a_post(f"__END__ {pid} TIMEOUT after {CMD_TIMEOUT}s")
-        bin_a_post(f"__ACK__ {pid} timeout")
+        bin_post(f"__END__ {pid} TIMEOUT after {CMD_TIMEOUT}s")
+        bin_post(f"__ACK__ {pid} timeout")
         log(f"exec {pid} TIMEOUT")
     except Exception as e:
-        bin_a_post(f"__END__ {pid} ERROR {e}")
-        bin_a_post(f"__ACK__ {pid} error")
+        bin_post(f"__END__ {pid} ERROR {e}")
+        bin_post(f"__ACK__ {pid} error")
         log(f"exec {pid} ERROR {e}")
 
 
@@ -238,22 +239,22 @@ def self_update(pid="manual"):
     try:
         new = curl_get(MINI_URL)
         if not new or "MEDIC_MINI_VERSION" not in new:
-            bin_a_post(f"__ACK__ {pid} update-failed (download)")
+            bin_post(f"__ACK__ {pid} update-failed (download)")
             log("self-update: download failed")
             return
         m = re.search(r'MEDIC_MINI_VERSION\s*=\s*"([^"]+)"', new)
         ver = m.group(1) if m else "?"
         if ver == MEDIC_MINI_VERSION:
-            bin_a_post(f"__ACK__ {pid} already-current {ver}")
+            bin_post(f"__ACK__ {pid} already-current {ver}")
             log(f"self-update: already current ({ver})")
             return
         (BASE / "medic-mini.py").write_text(new, encoding="utf-8")
-        bin_a_post(f"__ACK__ {pid} updated {MEDIC_MINI_VERSION} -> {ver}, restarting")
+        bin_post(f"__ACK__ {pid} updated {MEDIC_MINI_VERSION} -> {ver}, restarting")
         log(f"self-update {MEDIC_MINI_VERSION} -> {ver}; restarting")
         time.sleep(1)
         os.execv(sys.executable, [sys.executable, str(BASE / "medic-mini.py")])
     except Exception as e:
-        bin_a_post(f"__ACK__ {pid} update-error {e}")
+        bin_post(f"__ACK__ {pid} update-error {e}")
         log(f"self-update error: {e}")
 
 
@@ -283,20 +284,20 @@ $g.Dispose(); $bmp.Dispose()
             capture_output=True, text=True, timeout=60)
         b64 = "".join((r.stdout or "").split())
         if r.returncode != 0 or not b64:
-            bin_a_post(f"__IMG_END__ {pid} ERROR {(r.stderr or '')[:200]}")
-            bin_a_post(f"__ACK__ {pid} shot-failed")
+            bin_post(f"__IMG_END__ {pid} ERROR {(r.stderr or '')[:200]}")
+            bin_post(f"__ACK__ {pid} shot-failed")
             log(f"shot {pid} FAILED rc={r.returncode}")
             return
-        bin_a_post(f"__IMG_START__ {pid} chunks={(len(b64) + 1799) // 1800}")
+        bin_post(f"__IMG_START__ {pid} chunks={(len(b64) + 1799) // 1800}")
         for i in range(0, len(b64), 1800):
-            bin_a_post(f"__IMG__ {pid} {b64[i:i + 1800]}")
-        bin_a_post(f"__IMG_END__ {pid} ok")
-        bin_a_post(f"__ACK__ {pid} shot-ok")
+            bin_post(f"__IMG__ {pid} {b64[i:i + 1800]}")
+        bin_post(f"__IMG_END__ {pid} ok")
+        bin_post(f"__ACK__ {pid} shot-ok")
         log(f"shot {pid} sent ({len(b64)} b64 chars)")
         state["shot_count"] += 1
     except Exception as e:
-        bin_a_post(f"__IMG_END__ {pid} ERROR {e}")
-        bin_a_post(f"__ACK__ {pid} shot-error")
+        bin_post(f"__IMG_END__ {pid} ERROR {e}")
+        bin_post(f"__ACK__ {pid} shot-error")
         log(f"shot {pid} ERROR {e}")
 
 
@@ -309,7 +310,7 @@ def pairing_mode():
         if (BASE / "STOP").exists():
             return None
         code = f"{random.randint(0, 999999):06d}"
-        bin_a_post(f"__PAIR__ {code} medic-daemon awaiting pairing (code rotates in 90s)")
+        bin_post(f"__PAIR__ {code} medic-daemon awaiting pairing (code rotates in 90s)")
         log(f"pairing mode, code {code}")
         deadline = time.time() + 90
         while time.time() < deadline:
@@ -334,7 +335,7 @@ def pairing_mode():
                         if len(secret) >= 16:
                             (BASE / "mini-secret.txt").write_text(
                                 secret, encoding="utf-8")
-                            bin_a_post("__PAIRED__ medic-daemon paired")
+                            bin_post("__PAIRED__ medic-daemon paired")
                             log("paired successfully")
                             state["paired"] = True
                             return secret
@@ -357,7 +358,7 @@ def main():
     state["paired"] = True
     start_dashboard()
     log(f"medic-mini v{MEDIC_MINI_VERSION} up. polling every {POLL_SECONDS}s. base={BASE}")
-    bin_a_post("__STATUS__ medic-daemon online")
+    bin_post("__STATUS__ medic-daemon online")
     while True:
         if (BASE / "STOP").exists():
             log("STOP file present — exiting.")
