@@ -1,15 +1,1 @@
-{
-  "task_id": "task-20260919-011",
-  "created": "2026-09-19T20:08:00Z",
-  "priority": "P1",
-  "objective": "Search browser history for quantum QPU provider access",
-  "constraints": [
-    "Search Chrome/Edge browser history (SQLite History file) for visits to quantum computing providers",
-    "Look for: quantum.ibm.com, braket.aws.amazon.com, azure quantum, ionq.com, rigetti.com, dwavesys.com, or any quantum cloud console",
-    "Report: which provider sites were visited, when (most recent visit date), and any account/signup indicators in the URL or title",
-    "Read-only: do not log into any site, do not enter credentials",
-    "Do not extract passwords, API keys, or tokens from history or saved logins",
-    "Report only the provider names and visit recency — Bruce will identify which one is his active QPU access"
-  ],
-  "timeout_minutes": 10
-}
+{"id": "task-20260919-011", "created": "2026-09-19T20:10:00Z", "from": "medic", "title": "Search browser history for QPU provider access (P1)", "description": "Bruce has QPU access somewhere but cannot recall the provider. Search browser history.", "objectives": ["Search Chrome/Edge history for quantum provider sites (quantum.ibm.com, braket.aws.amazon.com, azure quantum, ionq.com, rigetti.com, dwavesys.com)", "Report provider names and most recent visit dates"], "constraints": ["Read-only. Do not log into any site", "Do not extract passwords, API keys, or tokens", "Report provider names and recency only"], "priority": "P1", "timeout_minutes": 10, "status": "pending"}
