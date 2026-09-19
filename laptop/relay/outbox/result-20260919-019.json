@@ -1,0 +1,155 @@
+{
+  "task_id": "task-20260919-019",
+  "completed": "2026-09-19T21:08:33.0437502Z",
+  "status": "failed",
+  "summary": "IAM token exchange now succeeds with the changed IBM_API_KEY input. Backend listing returns HTTP 401 with IBM error 1219, Error authenticating user. Quota/usage is not reached.",
+  "exit_code": 3,
+  "stdout": "FAIL: backend listing returned HTTP 401.\n",
+  "stderr": "",
+  "input_evidence": {
+    "checked_at": "2026-09-19T21:07:19.0436899Z",
+    "last_write_utc": "2026-09-19T21:06:11.8945363Z",
+    "previous_check_env_write_utc": "2026-09-19T20:59:27.8327046Z"
+  },
+  "execution_evidence": {
+    "checked_at": "2026-09-19T17:07:43.423802-04:00",
+    "exit_code": 3,
+    "script_sha256": "38c81f3d1455e7308732b680ad3e716c325d741dc088f4dd5127df422f200b0d",
+    "credential_source_name": "IBM_API_KEY",
+    "mapping_scope": "this temporary diagnostic process only; no persistent changes",
+    "stdout": "FAIL: backend listing returned HTTP 401.\n",
+    "stderr": "",
+    "script_output_redacted": false,
+    "requests": [
+      {
+        "method": "POST",
+        "url": "https://iam.cloud.ibm.com/identity/token"
+      },
+      {
+        "method": "GET",
+        "url": "https://quantum.cloud.ibm.com/api/v1/backends"
+      }
+    ],
+    "http_error_diagnostics": [
+      {
+        "url": "https://quantum.cloud.ibm.com/api/v1/backends",
+        "http_status": 401,
+        "headers": [
+          [
+            "Date",
+            "Sat, 19 Sep 2026 21:07:43 GMT"
+          ],
+          [
+            "Content-Type",
+            "application/json; charset=utf-8"
+          ],
+          [
+            "Content-Length",
+            "509"
+          ],
+          [
+            "Connection",
+            "close"
+          ],
+          [
+            "deprecation",
+            "@1735689600"
+          ],
+          [
+            "sunset",
+            "Fri, 01 Jan 2027 00:00:00 GMT"
+          ],
+          [
+            "etag",
+            "W/\"1fd-ii1+rEThQHA/Ev9ugXd8DaT/xHA\""
+          ],
+          [
+            "vary",
+            "Accept-Encoding"
+          ],
+          [
+            "x-envoy-upstream-service-time",
+            "3"
+          ],
+          [
+            "Server",
+            "cloudflare"
+          ],
+          [
+            "content-security-policy",
+            "default-src 'self';script-src 'self';style-src 'self' https:;base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+          ],
+          [
+            "cross-origin-opener-policy",
+            "same-origin"
+          ],
+          [
+            "cross-origin-resource-policy",
+            "same-origin"
+          ],
+          [
+            "origin-agent-cluster",
+            "?1"
+          ],
+          [
+            "referrer-policy",
+            "no-referrer"
+          ],
+          [
+            "strict-transport-security",
+            "max-age=15552000; includesubdomains"
+          ],
+          [
+            "x-content-type-options",
+            "nosniff"
+          ],
+          [
+            "x-dns-prefetch-control",
+            "off"
+          ],
+          [
+            "x-download-options",
+            "noopen"
+          ],
+          [
+            "x-frame-options",
+            "sameorigin"
+          ],
+          [
+            "x-permitted-cross-domain-policies",
+            "none"
+          ],
+          [
+            "x-xss-protection",
+            "0"
+          ],
+          [
+            "cf-cache-status",
+            "DYNAMIC"
+          ],
+          [
+            "set-cookie",
+            "[REDACTED]"
+          ],
+          [
+            "CF-RAY",
+            "a3db8fc44b8c7ed1-IAD"
+          ]
+        ],
+        "body": "{\"errors\":[{\"code\":1219,\"message\":\"Error authenticating user.\",\"solution\":\"Your IBM Quantum API token might be incorrect, expired, or revoked.\\nLog in to IBM Quantum Platform website and navigate to your account settings to generate a new API token.\\nUse IBMProvider.save_account(`APIKEY`, overwrite=True) to save the new API key, overwriting any outdated or incorrect credentials.\",\"more_info\":\"https://cloud.ibm.com/apidocs/quantum-computing#error-handling\"}],\"trace\":\"6166ec7a-ecd3-4465-a4d0-d4cd6cce9034\"}",
+        "redaction": "Credential matches, bearer tokens and sensitive header values redacted; other response content preserved."
+      }
+    ],
+    "env_unchanged_during_check": true,
+    "hardware_jobs_submitted": 0
+  },
+  "iam_result": "Access token obtained; the script advanced to the authenticated backend GET",
+  "backend_listing": "HTTP 401; IBM error 1219",
+  "quota_usage": "Not reached; unavailable",
+  "request_review": [
+    "Unchanged script sends Authorization: Bearer with the IAM access token, User-Agent, and Accept headers to the backend URL.",
+    "The script does not send Service-CRN or IBM-API-Version headers; whether that accounts for this response was not tested.",
+    "The response includes deprecation and sunset headers; the full sanitized response is attached in execution_evidence."
+  ],
+  "notes": "Exact script output and the observed backend HTTP response body/headers are included; set-cookie is redacted, and known key/token values were checked absent before publication. The error response contains generic token-replacement advice, but this run establishes successful IAM authentication and does not establish that another key replacement is necessary. No additional probe, login, key generation, .env edit, or hardware job submission occurred. The observer captured the existing error response without changing the script requests."
+}
