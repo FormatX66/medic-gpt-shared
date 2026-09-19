@@ -1,0 +1,16 @@
+{
+  "task_id": "task-20260919-002",
+  "completed": "2026-09-19T19:22:16.5492191Z",
+  "status": "refused",
+  "summary": "Constraint conflict: disabling hibernation at system level affects battery operation, but this task requires AC-only changes with battery settings unchanged. Protocol Safety rule 2 requires refusal. No Windows settings were changed.",
+  "evidence": [
+    "Reviewed task at origin/main f5fa1df2b60862a99db23976ffb05c4927e08e68; claim published as bfa9d66.",
+    "Objective: Disable hibernation at system level. Constraint: AC power settings only; leave battery settings unchanged.",
+    "Observed active scheme: f76895c6-850a-4be8-bdd8-a2b7f66d26f7 (ASUS Recommended).",
+    "Available power states: Standby (S0 Low Power Idle) Network Connected; Hibernate.",
+    "HIBERNATEIDLE query: Current AC Power Setting Index 0x00000000; Current DC Power Setting Index 0x00000000.",
+    "Microsoft documents hibernation disable as a computer-wide feature change: https://learn.microsoft.com/en-us/troubleshoot/windows-client/setup-upgrade-and-drivers/disable-and-re-enable-hibernation",
+    "Microsoft documents that a zero hibernate timeout can still use the adaptive threshold on Modern Standby systems: https://learn.microsoft.com/en-us/windows-hardware/customize/power-settings/sleep-settings-hibernate-idle-timeout"
+  ],
+  "notes": "Rollback: none needed because no OS mutation occurred. Task 001 proved the requested timeout values were zero; that is not proof that every sleep path is disabled. A revised task limited to AC lid/power/sleep-button actions can be reviewed under existing approval. Global hibernation, screensaver, and lock-screen objectives should be separated from the AC-only constraint. No auto-login changes. No guarantee that software can suppress critical battery or thermal shutdown. The user-approved poll schedule remains two minutes; the revised protocol requests 30-second heartbeats, which this scheduler has not been configured to provide."
+}
