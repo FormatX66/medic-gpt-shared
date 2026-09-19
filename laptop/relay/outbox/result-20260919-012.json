@@ -1,0 +1,42 @@
+{
+  "task_id": "task-20260919-012",
+  "completed": "2026-09-19T20:29:26.9028730Z",
+  "status": "done",
+  "summary": "Located V-Hopper: an offline bounded QEMU/OVMF Aurum test VM hosted in Ubuntu WSL on this Windows PC. It is currently stopped and its local viewer is unavailable. Live manager/configuration extensions remain local and uncommitted.",
+  "description": [
+    "4 generic x86-64 vCPUs, 3072 MiB RAM, Q35/OVMF, 512000000000-byte synthetic NVMe, virtual VGA and USB/PS2 input.",
+    "No guest NIC, shared folder, host disk, or device passthrough. This is a bounded test machine; exact HP hardware fidelity and physical correlation are incomplete.",
+    "Identity correction: Hopper is HP Pavilion Gaming 15-dk0056nr / 7WL10UA#ABA. The older ProDesk PC-01 identification refers to a different machine and must not be reused as Hopper evidence."
+  ],
+  "access": {
+    "viewer": "http://127.0.0.1:40739/",
+    "scope": "Local Windows host only",
+    "launcher": "C:\\Users\\bruce\\Documents\\Codex\\2026-09-03\\referenced-chatgpt-conversation-this-is-an-3\\outputs\\V-Hopper.ps1",
+    "instruction": "The existing launcher Open/Start actions can start the instance when separately requested. Neither was invoked. Even Status was not invoked because its WSL dependency would start the stopped distribution.",
+    "current": "Stopped; local HTTP connection failed and no port 40739 listener was present."
+  },
+  "source": {
+    "repository": "https://github.com/FormatX66/BoxBrain",
+    "local_worktree": "C:\\Users\\bruce\\Documents\\Codex\\2026-09-03\\referenced-chatgpt-conversation-this-is-an-3\\work\\BoxBrain-hopper-twin",
+    "local_base_commit": "613ce8243c2c3f3dfc744863fc18d10817011435",
+    "paths": [
+      "Projects/AurumVirtualLab/hopper_live.py",
+      "Projects/AurumVirtualLab/hopper_twin.py",
+      "Projects/AurumVirtualLab/HOPPER_TWIN.md",
+      "Projects/AurumVirtualLab/hopper-evidence-baseline.json",
+      "Projects/AurumVirtualLab/tests/"
+    ],
+    "publication": "These live-twin additions are untracked in the observed detached worktree. Hosted main at 3afa0de8b139f0c1832d19a43b076aa6075d0d6a has only results/ in Projects/AurumVirtualLab; the live-twin files were not present there. Other remote branches were not exhaustively searched.",
+    "runtime_state": "C:\\Users\\bruce\\Documents\\Codex\\2026-09-03\\referenced-chatgpt-conversation-this-is-an-3\\work\\vhopper-live",
+    "configuration_note": "Private lab.json contains the local viewer credential and was not read or published.",
+    "documentation": "C:\\Users\\bruce\\Documents\\Codex\\2026-09-03\\referenced-chatgpt-conversation-this-is-an-3\\outputs\\V-Hopper-live-status.md"
+  },
+  "evidence": [
+    "Fresh wsl --list --verbose: Ubuntu and docker-desktop both Stopped. No WSL command that starts a distro was used.",
+    "No matching Windows QEMU/viewer process or TCP 40739 listener; loopback HTTP connection failed.",
+    "Local runtime checkpoint and retained generation directories remain present. Disk content/hash readiness was not retested.",
+    "Historical qualification report dated 2026-09-04 records installed UEFI boot, primary desktop, reboot, 26 focused Linux tests and hash-checked checkpoint recovery. These historical successes are not a current running-state claim.",
+    "Prior source task: 01a069f9-018d-75c3-a23e-f19d061e9d43, Build Hopper virtual twin."
+  ],
+  "notes": "Report only. No VM start/stop, source edit, guest operation, credential read, QPU submission, physical Hopper access, or Last Known Good change occurred."
+}
