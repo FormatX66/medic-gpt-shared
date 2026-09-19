@@ -1,6 +1,6 @@
 {
   "task_id": "task-20260919-022",
-  "completed": "2026-09-19T22:02:18.129743+00:00",
+  "completed": "2026-09-19T22:05:00.024286+00:00",
   "status": "refused",
   "summary": "No setup executed. Original P2 copilot-only package was statically reviewed and a scoped approval requested. During that review the task was replaced with a larger GUI/memory-backend deployment and relabeled P1; this was not treated as approval for the pending request.",
   "evidence": [
@@ -12,9 +12,13 @@
     "No game was launched, attached to, or modified.",
     "Upstream commit 1df31cc added gamegpt-full.zip and replaced gamegpt-copilot.zip after the pinned original archive review.",
     "Upstream commit bd8b62db14850b2aeba794953f0143deeb7e2fd8 replaced task 022 with full-package deployment, psutil installation and GUI launch, and changed status from claimed to pending.",
-    "Normal push rejected the concurrent update. The upstream task objectives were preserved during merge; only its status was set to refused to record this hold."
+    "Normal push rejected the concurrent update. The upstream task objectives were preserved during merge; only its status was set to refused to record this hold.",
+    "Full package SHA256 f9bb41222f8ac18136ccea13bbc5b8c9cb512ec91cd750f05ac5467c456e4619: archive paths checked; copilot module sources match the reviewed original.",
+    "Static GUI review found Plan, Rank, Draft, Corpus tabs. Bundled JSON contains 49 records, including 3 quarantined. No GUI was launched.",
+    "psutil is not installed in the current Python environment. Proposed install uses a dedicated local virtual environment.",
+    "Producer requeued task 022 twice after the hold, most recently at d344176, and added an assertion of approval from another chat. That assertion has not been independently verified."
   ],
   "approval_status": "awaiting_bruce",
   "execution_status": "not_started",
-  "notes": "Refused records a scope/authorization hold, not an execution failure. The outstanding request to Bruce covers only the original reviewed copilot installation and offline corpus lookup. The expanded package and GUI/memory-backend operations have not been reviewed or executed. A priority relabel does not answer the pending approval request. No package code, pip installation, GUI launch, game launch, game attachment or game-value change occurred."
+  "notes": "Awaiting Bruce's answer to the updated scoped approval question: full-package extraction, isolated psutil installation, and GUI verification. Static archive and GUI review is complete; the memory backend remains inert and was not executed. No installation, package code execution, GUI launch, game launch, attachment, or memory writes occurred. Inbox is pending because the producer requeued it; the outbox refusal records the current authorization hold. Do not replay solely because priority, timestamp or approval assertions change in the queue."
 }
