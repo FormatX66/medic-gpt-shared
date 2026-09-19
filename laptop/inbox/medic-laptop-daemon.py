@@ -4,7 +4,15 @@ Medic laptop daemon — always-on hands for Medic's dispatches. Stdlib only.
 
 Polls bin B every 20s for `exec` packets from Medic, verifies the shared
 secret, runs the packet body as PowerShell, streams output to bin A with
-__START__/__END__ markers, and posts __ACK__.
+__START__/__END__ markers, and posts __ACK__. `shot` packets return a
+screen capture: PNG, downscaled to 1280px wide, base64-chunked to bin A
+(__IMG_START__/__IMG__/__IMG_END__), then reassembled by Medic.
+
+Pairing: if no daemon-secret.txt exists on first start, the daemon enters
+TOFU pairing mode — it posts a rotating __PAIR__ code to bin A, and accepts
+the first `pair` packet (via bin B) carrying the matching code, adopting the
+supplied secret. No human paste needed. Re-running setup keeps an existing
+secret (already paired).
 
 The daemon never thinks — it only executes. All judgment stays with Medic.
 Standing rules apply to every packet: read-only unless the packet authorizes
@@ -90,6 +98,9 @@ def handle(req, secret):
     if ptype == "ping":
         bin_a_post(f"__ACK__ {pid} daemon alive")
         return
+    if ptype == "shot":
+        take_shot(pid)
+        return
     if ptype != "exec":
         return  # GPT-app dispatches etc. — not this daemon's to run
     body = pkt.get("body") or ""
@@ -118,11 +129,99 @@ def handle(req, secret):
         log(f"exec {pid} ERROR {e}")
 
 
+
+def take_shot(pid):
+    shot_ps = r"""
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+$bounds = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+$bmp = New-Object System.Drawing.Bitmap($bounds.Width, $bounds.Height)
+$g = [System.Drawing.Graphics]::FromImage($bmp)
+$g.CopyFromScreen($bounds.Location, [System.Drawing.Point]::Empty, $bounds.Size)
+$maxw = 1280
+if ($bounds.Width -gt $maxw) {
+  $scale = $maxw / $bounds.Width
+  $small = New-Object System.Drawing.Bitmap($bmp, $maxw, [int]($bounds.Height * $scale))
+  $bmp.Dispose(); $bmp = $small
+}
+$p = "$env:USERPROFILE\medic-daemon\shot.png"
+$bmp.Save($p, [System.Drawing.Imaging.ImageFormat]::Png)
+$g.Dispose(); $bmp.Dispose()
+[Convert]::ToBase64String([IO.File]::ReadAllBytes($p))
+"""
+    try:
+        r = subprocess.run(
+            ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass",
+             "-Command", shot_ps],
+            capture_output=True, text=True, timeout=60)
+        b64 = "".join((r.stdout or "").split())
+        if r.returncode != 0 or not b64:
+            bin_a_post(f"__IMG_END__ {pid} ERROR {(r.stderr or '')[:200]}")
+            bin_a_post(f"__ACK__ {pid} shot-failed")
+            log(f"shot {pid} FAILED rc={r.returncode}")
+            return
+        bin_a_post(f"__IMG_START__ {pid} chunks={(len(b64) + 1799) // 1800}")
+        for i in range(0, len(b64), 1800):
+            bin_a_post(f"__IMG__ {pid} {b64[i:i + 1800]}")
+        bin_a_post(f"__IMG_END__ {pid} ok")
+        bin_a_post(f"__ACK__ {pid} shot-ok")
+        log(f"shot {pid} sent ({len(b64)} b64 chars)")
+    except Exception as e:
+        bin_a_post(f"__IMG_END__ {pid} ERROR {e}")
+        bin_a_post(f"__ACK__ {pid} shot-error")
+        log(f"shot {pid} ERROR {e}")
+
+
+def pairing_mode():
+    """TOFU pairing: no secret yet. Post rotating code to bin A, accept the
+    first `pair` packet via bin B with the matching code, adopt its secret."""
+    import random
+    seen = load_seen()
+    while True:
+        if (BASE / "STOP").exists():
+            return None
+        code = f"{random.randint(0, 999999):06d}"
+        bin_a_post(f"__PAIR__ {code} medic-daemon awaiting pairing (code rotates in 90s)")
+        log(f"pairing mode, code {code}")
+        deadline = time.time() + 90
+        while time.time() < deadline:
+            if (BASE / "STOP").exists():
+                return None
+            try:
+                raw = curl_get(f"https://webhook.site/token/{BIN_B}/requests")
+                items = json.loads(raw).get("data", []) if raw else []
+                for req in items:
+                    rid = req.get("uuid")
+                    if not rid or rid in seen:
+                        continue
+                    seen.add(rid)
+                    save_seen(seen)
+                    try:
+                        pkt = json.loads(req.get("content") or "")
+                    except Exception:
+                        continue
+                    if (isinstance(pkt, dict) and pkt.get("type") == "pair"
+                            and pkt.get("code") == code):
+                        secret = (pkt.get("secret") or "").strip()
+                        if len(secret) >= 16:
+                            (BASE / "daemon-secret.txt").write_text(
+                                secret, encoding="utf-8")
+                            bin_a_post("__PAIRED__ medic-daemon paired")
+                            log("paired successfully")
+                            return secret
+                        log("pair packet with too-short secret ignored")
+            except Exception as e:
+                log(f"pairing poll error: {e}")
+            time.sleep(10)
+
+
 def main():
     secret = load_secret()
     if not secret:
-        log("FATAL: daemon-secret.txt missing next to script. "
-            "Paste the daemon secret from Medic into it, then restart.")
+        log("no daemon-secret.txt — entering TOFU pairing mode")
+        secret = pairing_mode()
+    if not secret:
+        log("pairing failed or STOP requested — exiting.")
         return 2
     seen = load_seen()
     log(f"daemon up. polling every {POLL_SECONDS}s. base={BASE}")
