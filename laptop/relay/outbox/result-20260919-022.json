@@ -1,24 +1,23 @@
 {
   "task_id": "task-20260919-022",
-  "completed": "2026-09-19T22:05:00.024286+00:00",
-  "status": "refused",
-  "summary": "No setup executed. Original P2 copilot-only package was statically reviewed and a scoped approval requested. During that review the task was replaced with a larger GUI/memory-backend deployment and relabeled P1; this was not treated as approval for the pending request.",
+  "completed": "2026-09-19T22:14:25.146219+00:00",
+  "status": "done",
+  "summary": "Installed the reviewed full GameGPT package and launched GameGPT R&D Copilot. Desktop verification showed Plan, Rank, Draft and Corpus tabs; the Corpus tab displayed 49 patterns, 3 quarantined. psutil 7.2.2 installed in an isolated Python 3.12.10 virtual environment.",
   "evidence": [
-    "Reviewed task and archive from commit 6aa17ec51ea9c1b48cd5c40298b66d204c5a7d7d.",
-    "Archive blob 93f95f693ec24044f54e628127c691a17a21aadc; SHA256 e8fa067b5fcf5644cf56693e6e1d0d1cf74a73b0a232d035f0439699ce9d90b0; compressed size 50554 bytes.",
-    "Static review of CLI and corpus adapter found the requested corpus lookup reads bundled JSON and prints AOB candidates. Imports and module initialization were also inspected; no package code was executed.",
-    "Destination C:\\Users\\bruce\\GameGPT\\copilot did not exist when checked; no destination directory or installation files were created.",
-    "Package includes a cached .pyc; the proposed setup will use the reviewed .py sources and omit cached bytecode.",
-    "No game was launched, attached to, or modified.",
-    "Upstream commit 1df31cc added gamegpt-full.zip and replaced gamegpt-copilot.zip after the pinned original archive review.",
-    "Upstream commit bd8b62db14850b2aeba794953f0143deeb7e2fd8 replaced task 022 with full-package deployment, psutil installation and GUI launch, and changed status from claimed to pending.",
-    "Normal push rejected the concurrent update. The upstream task objectives were preserved during merge; only its status was set to refused to record this hold.",
-    "Full package SHA256 f9bb41222f8ac18136ccea13bbc5b8c9cb512ec91cd750f05ac5467c456e4619: archive paths checked; copilot module sources match the reviewed original.",
-    "Static GUI review found Plan, Rank, Draft, Corpus tabs. Bundled JSON contains 49 records, including 3 quarantined. No GUI was launched.",
-    "psutil is not installed in the current Python environment. Proposed install uses a dedicated local virtual environment.",
-    "Producer requeued task 022 twice after the hold, most recently at d344176, and added an assertion of approval from another chat. That assertion has not been independently verified."
+    "Direct approval in this task: Bruce requested running the new GameGPT build; previous approval hold resolved.",
+    "Extraction path: C:\\Users\\bruce\\GameGPT. Target absent before setup; 45 extracted files matched archive SHA256 f9bb41222f8ac18136ccea13bbc5b8c9cb512ec91cd750f05ac5467c456e4619. Cached .pyc files omitted.",
+    "Virtual environment: C:\\Users\\bruce\\GameGPT\\.venv. psutil 7.2.2 imported successfully; pip check reported No broken requirements found.",
+    "Launched GUI at 2026-09-19T22:12:42.1694499Z. Desktop computer-use observed window GameGPT R&D Copilot (window ID 71114) with all four tabs.",
+    "Clicked the Corpus tab and independently read its displayed text: Corpus: 49 patterns, 3 quarantined.",
+    "Offline corpus CLI completed with exit 0 and printed Unlimited Run Stamina with AOB F3 41 0F 5E F3 F3 0F 5C C6. This is corpus evidence, not live-game validation.",
+    "Package hashes independently rechecked after launch; GUI stderr remained empty. Reviewed archive and manifest preserved in the local task-022-deployment folder."
   ],
-  "approval_status": "awaiting_bruce",
-  "execution_status": "not_started",
-  "notes": "Awaiting Bruce's answer to the updated scoped approval question: full-package extraction, isolated psutil installation, and GUI verification. Static archive and GUI review is complete; the memory backend remains inert and was not executed. No installation, package code execution, GUI launch, game launch, attachment, or memory writes occurred. Inbox is pending because the producer requeued it; the outbox refusal records the current authorization hold. Do not replay solely because priority, timestamp or approval assertions change in the queue."
+  "installation_path": "C:\\Users\\bruce\\GameGPT",
+  "gui_launch_result": "open and visually verified",
+  "corpus_count": 49,
+  "quarantined_count": 3,
+  "psutil_install_result": "7.2.2 installed and import-verified in dedicated .venv; dependency check passed",
+  "verification_output": "Known AOB patterns from corpus (prior knowledge, not validated):\r\n  - Unlimited Run Stamina (stamina)\r\n    AOB: F3 41 0F 5E F3 F3 0F 5C C6  [9 bytes, 0 wildcards]  score=4\r\n  - Unlimited Blaze Javelin Ammo (multitool)\r\n    AOB: 89 43 18 48 8B 95 08 01 00 00  [10 bytes, 0 wildcards]  score=1\r\n  - Unlimited Boltcaster Ammo (multitool)\r\n    AOB: 41 2B C4 42 89 84 BF ?? ?? 00 00  [11 bytes, 2 wildcards]  score=1\r\n  - Unlimited Cloak (cloak)\r\n    AOB: 89 8B 9C 22 00 00  [6 bytes, 0 wildcards]  score=1\r\n  - Unlimited Environmental Suit - Oxygen / Thermals / Toxicity (hazard/environment)\r\n    AOB: F3 0F 5E C8 0F 28 C7 F3 0F 58 4C  [11 bytes, 0 wildcards]  score=1\r\n  - Unlimited Exocraft Boost (exocraft)\r\n    AOB: F3 41 0F 5C C0 0F 2F F8 F3 0F 11 87 ?? ?? ?? ?? 0F 82  [18 bytes, 4 wildcards]  score=1\r\n  - Unlimited Exocraft Fuel (exocraft)\r\n    AOB: 2B CB 85 C9 0F 4E CA  [7 bytes, 0 wildcards]  score=1\r\n  - Unlimited Exocraft Mining Laser (exocraft)\r\n    AOB: 2B C1 44 0F 49 E0  [6 bytes, 0 wildcards]  score=1\r\n  - Unlimited Exocraft Thruster (exocraft)\r\n    AOB: F3 0F 5C C1 F3 0F 11 87 F4 00 00 00  [12 bytes, 0 wildcards]  score=1\r\n  - Unlimited Grenades (multitool)\r\n    AOB: 45 33 FF 48 8D 55 A0  [7 bytes, 0 wildcards]  score=1\r\nThese are starting points for live validation, not confirmed addresses.\r\n",
+  "notes": "Setup and GUI/corpus verification only. No game was launched or attached to and no game values or process memory were written. The memory backend and CT research were extracted as inert files. The GUI remains open. Prior refusal was an authorization hold, resolved by direct user approval; prior results remain in Git history.",
+  "rollback": "Close only this launched copilot instance; move the newly created GameGPT directory into a workspace rollback folder after verifying its manifest and any new user files. No pre-existing installation was overwritten."
 }
