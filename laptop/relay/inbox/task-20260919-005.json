@@ -1,0 +1,22 @@
+{
+  "id": "task-20260919-005",
+  "created": "2026-09-19T19:37:26Z",
+  "from": "medic",
+  "title": "IBM QPU connectivity check (read-only)",
+  "description": "Run the read-only QPU connectivity check script. This verifies IBM Quantum credentials work WITHOUT submitting any hardware jobs or spending QPU seconds.",
+  "objectives": [
+    "Locate the script at laptop/inbox/2026-09-17-qpu-connectivity-check.py",
+    "Run the script in read-only mode (no --confirm-qpu flag)",
+    "Report: authentication success/failure, available backends, quota/usage info",
+    "Report the exact output of the script"
+  ],
+  "constraints": [
+    "NEVER use --confirm-qpu or submit any hardware job",
+    "Zero QPU seconds may be spent",
+    "Read-only connectivity verification only",
+    "If credentials are missing or invalid, report and stop \u2014 do not attempt to fix keys"
+  ],
+  "priority": "P1",
+  "destructive": false,
+  "status": "pending"
+}
