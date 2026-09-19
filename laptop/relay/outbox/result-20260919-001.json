@@ -1,0 +1,15 @@
+{
+  "task_id": "task-20260919-001",
+  "completed": "2026-09-19T19:04:35.5154084Z",
+  "status": "done",
+  "summary": "All three AC timeouts verified at 0 (never). Changed only AC display timeout from 1800 seconds to 0; AC standby and hibernate were already 0.",
+  "evidence": [
+    "Active scheme before and after: f76895c6-850a-4be8-bdd8-a2b7f66d26f7 (ASUS Recommended)",
+    "STANDBYIDLE: Current AC Power Setting Index: 0x00000000; Current DC Power Setting Index: 0x00000e10 (3600 seconds)",
+    "HIBERNATEIDLE: Current AC Power Setting Index: 0x00000000; Current DC Power Setting Index: 0x00000000",
+    "VIDEOIDLE: Current AC Power Setting Index: 0x00000000; Current DC Power Setting Index: 0x00000258 (600 seconds)",
+    "Before/after comparison: AC standby 0 -> 0, hibernate 0 -> 0, display 1800 -> 0 seconds. Battery standby 3600 -> 3600, hibernate 0 -> 0, display 600 -> 600 seconds.",
+    "Independent powercfg query readback completed at 09/19/2026 19:03:53"
+  ],
+  "notes": "Battery settings preserved. No auto-login or lock policies modified. This verifies configured timeouts, not a long-duration physical endurance test. Rollback: restore the AC display timeout to 30 minutes on the same scheme."
+}
