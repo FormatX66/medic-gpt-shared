@@ -14,9 +14,9 @@
     "NEVER use --confirm-qpu or submit any hardware job",
     "Zero QPU seconds may be spent",
     "Read-only connectivity verification only",
-    "If credentials are missing or invalid, report and stop \u2014 do not attempt to fix keys"
+    "If credentials are missing or invalid, report and stop — do not attempt to fix keys"
   ],
   "priority": "P1",
   "destructive": false,
-  "status": "pending"
+  "status": "claimed"
 }
