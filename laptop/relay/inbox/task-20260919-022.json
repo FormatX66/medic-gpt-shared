@@ -1,1 +1,22 @@
-{"id": "task-20260919-022", "created": "2026-09-19T22:00:00Z", "from": "medic", "title": "Set up GameGPT copilot on laptop for NMS testing (P2)", "description": "Extract the GameGPT R&D copilot package so Bruce can test it against No Man's Sky.", "objectives": ["Download laptop/inbox/gamegpt-copilot.zip from the repo", "Extract to C:\\Users\\bruce\\GameGPT\\copilot\\ (create the directory)", "Verify: run 'python copilot.py corpus \"unlimited stamina\"' in that directory and confirm it prints AOB patterns", "Report the extraction path and verification output"], "constraints": ["Do NOT launch No Man's Sky", "Do NOT attach to any game process", "Do NOT modify any game values", "Setup only \u2014 no live testing in this task"], "priority": "P2", "timeout_minutes": 15, "status": "pending"}
+{
+  "id": "task-20260919-022",
+  "created": "2026-09-19T22:00:00Z",
+  "from": "medic",
+  "title": "Set up GameGPT copilot on laptop for NMS testing (P2)",
+  "description": "Extract the GameGPT R&D copilot package so Bruce can test it against No Man's Sky.",
+  "objectives": [
+    "Download laptop/inbox/gamegpt-copilot.zip from the repo",
+    "Extract to C:\\Users\\bruce\\GameGPT\\copilot\\ (create the directory)",
+    "Verify: run 'python copilot.py corpus \"unlimited stamina\"' in that directory and confirm it prints AOB patterns",
+    "Report the extraction path and verification output"
+  ],
+  "constraints": [
+    "Do NOT launch No Man's Sky",
+    "Do NOT attach to any game process",
+    "Do NOT modify any game values",
+    "Setup only — no live testing in this task"
+  ],
+  "priority": "P2",
+  "timeout_minutes": 15,
+  "status": "claimed"
+}
