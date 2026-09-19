@@ -1,15 +1,58 @@
 {
   "task_id": "task-20260919-008",
-  "completed": "2026-09-19T20:14:20.7002831Z",
-  "status": "failed",
-  "summary": "Docker recovery is blocked by the unchanged inaccessible AF_UNIX sockets that caused previous startup failures. Diagnosis completed; no new launch or container start was attempted.",
-  "evidence": [
-    "No Docker Desktop/backend processes found. wsl --list --verbose: Ubuntu Stopped; docker-desktop Stopped; both WSL2.",
-    "Docker Desktop executable version 4.84.0.234817; EnableDockerAI already false.",
-    "docker ps -a exited 1: failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.",
-    "Latest backend startup log at 2026-09-19T17:28:20Z: initializing Inference manager; cannot remove Docker/run/dockerInference; Windows error 1920.",
-    "Current fsutil reparsepoint query returned error 1920 for both Docker/run/dockerInference and docker-secrets-engine/engine.sock.",
-    "Previous parent-directory renaming and startup attempts failed to establish engine readiness. Microsoft documents that reparse operations require access to the file; current query cannot obtain that access."
+  "completed": "2026-09-19T20:32:38.7140123Z",
+  "status": "done",
+  "summary": "After the user-reported restart, Docker Engine is healthy and the existing medic-bridge container is running. Relay health returned HTTP 200.",
+  "steps": [
+    {
+      "step": "Docker",
+      "found": "Desktop 4.84.0, Engine 29.6.2/API 1.55 responsive",
+      "attempted": "Read engine version and container list",
+      "result": "Engine available; no Desktop start needed"
+    },
+    {
+      "step": "medic-bridge",
+      "found": "Existing container running, up approximately 2 minutes",
+      "attempted": "No start/restart needed",
+      "result": "Loopback /health returned HTTP 200"
+    }
   ],
-  "notes": "Found: Desktop and WSL stopped, missing engine API, inaccessible socket state unchanged. Attempted this task: read-only process/service/WSL inspection, current Docker API query, backend log review, and two socket metadata queries. Worked: diagnosis and report. Held: unchanged relaunch and rename attempts, under the AGENTS.md no-unchanged-retry rule. Container list/state is unavailable; this does not prove medic-bridge is missing. No container rebuild, configuration/token/extension change, factory reset, data-disk operation, or host reboot. The earlier schema refusal is superseded by this corrected-task diagnosis."
+  "containers": [
+    {
+      "name": "medic-model-hub",
+      "image": "hub-hub",
+      "state": "running",
+      "status": "Up 3 minutes"
+    },
+    {
+      "name": "medic-bridge",
+      "image": "relay-medic-bridge",
+      "state": "running",
+      "status": "Up 3 minutes"
+    },
+    {
+      "name": "dazzling_golick",
+      "image": "aurum-pi3:0.02-156b68a9e321",
+      "state": "exited",
+      "status": "Exited (255) 5 weeks ago"
+    },
+    {
+      "name": "aurum-pi3",
+      "image": "aurum-pi3:0.02-156b68a9e321",
+      "state": "running",
+      "status": "Up 3 minutes (healthy)"
+    },
+    {
+      "name": "nginx-server",
+      "image": "nginx:latest",
+      "state": "exited",
+      "status": "Exited (137) 7 weeks ago"
+    }
+  ],
+  "evidence": [
+    "Fresh Docker server version and container-state queries succeeded.",
+    "http://127.0.0.1:8471/health responded HTTP 200.",
+    "Docker backend process creation was 2026-09-19 16:28:54 local; this is new runtime state relative to the prior socket-failure diagnosis."
+  ],
+  "notes": "Supersedes the earlier blocked result after a verified external state change. No relay config, token, Chrome extension, image, socket, or container lifecycle modification was made by this check. HTTP health is not an end-to-end relay message delivery test."
 }
