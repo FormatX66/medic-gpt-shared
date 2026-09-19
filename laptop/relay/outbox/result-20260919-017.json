@@ -1,0 +1,33 @@
+{
+  "task_id": "task-20260919-017",
+  "completed": "2026-09-19T20:49:29.2798795Z",
+  "status": "failed",
+  "summary": "The changed Hub .env was used for one diagnostic run. IBM IAM returned HTTP 400 before issuing an access token, so backend listing and quota/usage were not reached.",
+  "exit_code": 3,
+  "stdout": "FAIL: IAM token exchange rejected the key (HTTP 400). The key may be bad or revoked.\n",
+  "stderr": "",
+  "input_evidence": {
+    "env_last_write_utc": "2026-09-19T20:45:21.2403722Z",
+    "same_as_task016_backup": false
+  },
+  "execution_evidence": {
+    "checked_at": "2026-09-19T16:48:58.590376-04:00",
+    "exit_code": 3,
+    "script_sha256": "38c81f3d1455e7308732b680ad3e716c325d741dc088f4dd5127df422f200b0d",
+    "credential_source_name": "IBM_QUANTUM_API_KEY",
+    "mapping_scope": "this temporary diagnostic process only; no persistent changes",
+    "stdout": "FAIL: IAM token exchange rejected the key (HTTP 400). The key may be bad or revoked.\n",
+    "stderr": "",
+    "script_output_redacted": false,
+    "requests": [
+      {
+        "method": "POST",
+        "url": "https://iam.cloud.ibm.com/identity/token"
+      }
+    ],
+    "backend_http_diagnostics": [],
+    "env_unchanged_during_check": true,
+    "hardware_jobs_submitted": 0
+  },
+  "notes": "Exact non-secret script output is included. The script wording says the key may be bad or revoked, but the precise IAM rejection reason was not returned by this script and is not established. The requested conditional backend-401 body/header capture was not triggered because execution stopped at IAM HTTP 400. No backend response or quota values exist for this run. The observer did not alter script requests; it allowed only IAM POST and the reviewed GET routes. No .env/key changes or hardware jobs; no retry after this failure."
+}
