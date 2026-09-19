@@ -1,0 +1,22 @@
+{
+  "id": "task-20260919-007",
+  "created": "2026-09-19T19:37:30Z",
+  "from": "medic",
+  "title": "Confirm Medic Bridge v1.2.0 Stage 2",
+  "description": "Verify the Medic Bridge extension and Docker relay are installed and operational (Stage 2 completion check).",
+  "objectives": [
+    "Check Docker container 'medic-bridge' is running (docker ps) and report status/uptime",
+    "Check the relay health endpoint and report the response",
+    "Verify the Chrome extension v1.2.0 files exist in the expected location",
+    "Report whether the relay is polling its webhook bin (check logs or config)",
+    "Summarize: is Stage 2 (extension installed + relay running) complete or not"
+  ],
+  "constraints": [
+    "Read-only verification; do not reinstall or reconfigure",
+    "Do not modify relay tokens or config files",
+    "If components are missing, report exactly what is missing and stop"
+  ],
+  "priority": "P1",
+  "destructive": false,
+  "status": "pending"
+}
