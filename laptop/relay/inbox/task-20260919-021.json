@@ -1,1 +1,22 @@
-{"id": "task-20260919-021", "created": "2026-09-19T21:32:00Z", "from": "medic", "title": "Run FIXED QPU connectivity check (P1)", "description": "The script had missing headers. A fixed version is at laptop/inbox/2026-09-19-qpu-connectivity-check-fixed.py. Run it.", "objectives": ["Run laptop/inbox/2026-09-19-qpu-connectivity-check-fixed.py (NOT the old 2026-09-17 version)", "The fixed script adds Service-CRN and IBM-API-Version headers, and uses /usage instead of /instances/usage", "It reads IBM_API_KEY and IBM_QUANTUM_CRN from the environment", "Report the exact output"], "constraints": ["Use ONLY the fixed script (2026-09-19-qpu-connectivity-check-fixed.py)", "Read-only. Never use --confirm-qpu", "Submit no hardware job. Spend zero QPU seconds", "Do not modify .env or keys"], "priority": "P1", "timeout_minutes": 10, "status": "pending"}
+{
+  "id": "task-20260919-021",
+  "created": "2026-09-19T21:32:00Z",
+  "from": "medic",
+  "title": "Run FIXED QPU connectivity check (P1)",
+  "description": "The script had missing headers. A fixed version is at laptop/inbox/2026-09-19-qpu-connectivity-check-fixed.py. Run it.",
+  "objectives": [
+    "Run laptop/inbox/2026-09-19-qpu-connectivity-check-fixed.py (NOT the old 2026-09-17 version)",
+    "The fixed script adds Service-CRN and IBM-API-Version headers, and uses /usage instead of /instances/usage",
+    "It reads IBM_API_KEY and IBM_QUANTUM_CRN from the environment",
+    "Report the exact output"
+  ],
+  "constraints": [
+    "Use ONLY the fixed script (2026-09-19-qpu-connectivity-check-fixed.py)",
+    "Read-only. Never use --confirm-qpu",
+    "Submit no hardware job. Spend zero QPU seconds",
+    "Do not modify .env or keys"
+  ],
+  "priority": "P1",
+  "timeout_minutes": 10,
+  "status": "claimed"
+}
