@@ -1,0 +1,16 @@
+{
+  "task_id": "task-20260919-003",
+  "completed": "2026-09-19T19:30:47.8893724Z",
+  "status": "done",
+  "summary": "Verified AC lid close, power button, and sleep button actions at 0 (Do nothing). Changed only AC power-button 3 -> 0 and AC sleep-button 1 -> 0; AC lid action was already 0.",
+  "evidence": [
+    "Active scheme before/after: f76895c6-850a-4be8-bdd8-a2b7f66d26f7 (ASUS Recommended).",
+    "LIDACTION: Current AC Power Setting Index 0x00000000 (Do nothing); Current DC Power Setting Index 0x00000000 (Do nothing).",
+    "PBUTTONACTION: Current AC Power Setting Index 0x00000000 (Do nothing); Current DC Power Setting Index 0x00000003 (Shut down).",
+    "SBUTTONACTION: Current AC Power Setting Index 0x00000000 (Do nothing); Current DC Power Setting Index 0x00000001 (Sleep).",
+    "Full powercfg hidden-settings query before and after: all 178 battery values identical; every AC setting except the two intended button actions identical.",
+    "Independent readback completed at 09/19/2026 19:30:10.",
+    "Existing Medic GitHub relay automation updated through the app tool and persisted ACTIVE with a 30-second interval for this task."
+  ],
+  "notes": "Rollback on scheme f76895c6-850a-4be8-bdd8-a2b7f66d26f7: restore PBUTTONACTION AC index 3 (Shut down), restore SBUTTONACTION AC index 1 (Sleep), then reactivate that scheme. LIDACTION AC index 0 was unchanged and needs no rollback. Battery values were preserved. No global hibernation, screensaver, lock-screen, or auto-login changes were made. Verification establishes configuration readback; physical lid/button operation and indefinite stay-awake endurance were not tested."
+}
