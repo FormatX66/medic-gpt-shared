@@ -1,12 +1,14 @@
 {
   "task_id": "task-20260919-010",
-  "completed": "2026-09-19T20:05:53.5532474Z",
-  "status": "refused",
-  "summary": "Not eligible for pickup: task has no status field, so pending status cannot be confirmed. Required protocol fields id and objectives are also absent.",
+  "completed": "2026-09-19T20:18:44.1873150Z",
+  "status": "done",
+  "summary": "IBM_API_KEY is absent from Process/User/Machine environment scopes and the named Hub .env. A nonempty IBM_QUANTUM_API_KEY exists in that .env and is the variable the Hub actually reads.",
   "evidence": [
-    "Inspected laptop/relay/inbox/task-20260919-010.json at repo commit ef506f29c0be4bab76a7f04de910ae406486bdc6",
-    "Present aliases: task_id and objective. Missing protocol fields: id, status, objectives.",
-    "The current protocol and user polling instruction select tasks explicitly marked status pending."
+    "IBM_API_KEY: absent in process, user, and machine environment scopes.",
+    "C:\\Users\\bruce\\MedicHub\\hub\\.env exists; no IBM_API_KEY entry.",
+    "The same .env contains nonempty IBM_QUANTUM_API_KEY and IBM_QUANTUM_CRN entries; only names and presence were checked.",
+    "C:\\Users\\bruce\\MedicHub\\hub\\server\\qpu.py:33 reads IBM_QUANTUM_API_KEY; line 34 reads IBM_QUANTUM_CRN.",
+    "The reviewed standalone connectivity script reads IBM_API_KEY, explaining why that script exited with a missing-variable result."
   ],
-  "notes": "No task execution or claim occurred. Correct the inbox entry to use id, status: pending, and an objectives array while preserving its constraints, then the next poll can review it. This reports a schema problem; it does not require a new user approval or authorize broader work."
+  "notes": "No key value, CRN value, token, or credential hash is included. No authentication attempt, QPU submission, credential request, environment change, or file modification occurred. Credential validity is unverified. A future authorized connectivity run would need the existing key supplied under the script expected variable name, or an explicitly reviewed variable mapping; no new key is shown to be necessary. This corrected-task result supersedes the earlier schema refusal."
 }
