@@ -1,0 +1,159 @@
+{
+  "task_id": "task-20260919-020",
+  "completed": "2026-09-19T21:17:48.0259251Z",
+  "status": "failed",
+  "summary": "Updated-key run: IAM authentication succeeds, backend listing still returns HTTP 401/error 1219, and quota/usage is not reached. Official IBM request documentation confirms the script omits two documented backend headers.",
+  "exit_code": 3,
+  "stdout": "FAIL: backend listing returned HTTP 401.\n",
+  "stderr": "",
+  "input_evidence": {
+    "checked_at": "2026-09-19T21:16:14.6419967Z",
+    "last_write_utc": "2026-09-19T21:13:24.0572205Z",
+    "previous_check_env_write_utc": "2026-09-19T21:06:11.8945363Z",
+    "newer_input": true
+  },
+  "execution_evidence": {
+    "checked_at": "2026-09-19T17:16:33.058922-04:00",
+    "exit_code": 3,
+    "script_sha256": "38c81f3d1455e7308732b680ad3e716c325d741dc088f4dd5127df422f200b0d",
+    "credential_source_name": "IBM_API_KEY",
+    "mapping_scope": "this temporary diagnostic process only; no persistent changes",
+    "stdout": "FAIL: backend listing returned HTTP 401.\n",
+    "stderr": "",
+    "script_output_redacted": false,
+    "requests": [
+      {
+        "method": "POST",
+        "url": "https://iam.cloud.ibm.com/identity/token"
+      },
+      {
+        "method": "GET",
+        "url": "https://quantum.cloud.ibm.com/api/v1/backends"
+      }
+    ],
+    "http_error_diagnostics": [
+      {
+        "url": "https://quantum.cloud.ibm.com/api/v1/backends",
+        "http_status": 401,
+        "headers": [
+          [
+            "Date",
+            "Sat, 19 Sep 2026 21:16:33 GMT"
+          ],
+          [
+            "Content-Type",
+            "application/json; charset=utf-8"
+          ],
+          [
+            "Content-Length",
+            "509"
+          ],
+          [
+            "Connection",
+            "close"
+          ],
+          [
+            "deprecation",
+            "@1735689600"
+          ],
+          [
+            "sunset",
+            "Fri, 01 Jan 2027 00:00:00 GMT"
+          ],
+          [
+            "etag",
+            "W/\"1fd-q9wbr/ZbiOvhiqm6Tj+k4EIBFho\""
+          ],
+          [
+            "vary",
+            "Accept-Encoding"
+          ],
+          [
+            "x-envoy-upstream-service-time",
+            "4"
+          ],
+          [
+            "Server",
+            "cloudflare"
+          ],
+          [
+            "content-security-policy",
+            "default-src 'self';script-src 'self';style-src 'self' https:;base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src-attr 'none';upgrade-insecure-requests"
+          ],
+          [
+            "cross-origin-opener-policy",
+            "same-origin"
+          ],
+          [
+            "cross-origin-resource-policy",
+            "same-origin"
+          ],
+          [
+            "origin-agent-cluster",
+            "?1"
+          ],
+          [
+            "referrer-policy",
+            "no-referrer"
+          ],
+          [
+            "strict-transport-security",
+            "max-age=15552000; includesubdomains"
+          ],
+          [
+            "x-content-type-options",
+            "nosniff"
+          ],
+          [
+            "x-dns-prefetch-control",
+            "off"
+          ],
+          [
+            "x-download-options",
+            "noopen"
+          ],
+          [
+            "x-frame-options",
+            "sameorigin"
+          ],
+          [
+            "x-permitted-cross-domain-policies",
+            "none"
+          ],
+          [
+            "x-xss-protection",
+            "0"
+          ],
+          [
+            "cf-cache-status",
+            "DYNAMIC"
+          ],
+          [
+            "set-cookie",
+            "[REDACTED]"
+          ],
+          [
+            "CF-RAY",
+            "a3db9cb27c42ac9e-IAD"
+          ]
+        ],
+        "body": "{\"errors\":[{\"code\":1219,\"message\":\"Error authenticating user.\",\"solution\":\"Your IBM Quantum API token might be incorrect, expired, or revoked.\\nLog in to IBM Quantum Platform website and navigate to your account settings to generate a new API token.\\nUse IBMProvider.save_account(`APIKEY`, overwrite=True) to save the new API key, overwriting any outdated or incorrect credentials.\",\"more_info\":\"https://cloud.ibm.com/apidocs/quantum-computing#error-handling\"}],\"trace\":\"122160a0-f171-4d99-a899-ebb3abc774a8\"}",
+        "redaction": "Credential matches, bearer tokens and sensitive header values redacted; other response content preserved."
+      }
+    ],
+    "env_unchanged_during_check": true,
+    "hardware_jobs_submitted": 0
+  },
+  "iam_result": "Access token obtained",
+  "backend_listing": "HTTP 401; error 1219, Error authenticating user",
+  "quota_usage": "Not reached; unavailable",
+  "documentation_review": {
+    "source": "https://quantum.cloud.ibm.com/docs/en/api/qiskit-runtime-rest",
+    "reviewed_at": "2026-09-19T21:17:48.0326573Z",
+    "fact": "The Authentication section and GET /backends example specify Authorization: Bearer, Service-CRN and IBM-API-Version headers. The current documentation example uses API version 2026-04-15.",
+    "script_difference": "The reviewed script sends Authorization, User-Agent and Accept, but no Service-CRN or IBM-API-Version.",
+    "interpretation": "This is a documented request mismatch and a concrete next diagnosis; it is not yet proof that those omissions cause error 1219.",
+    "next_reviewed_change": "Correct the script request builder to use the intended instance CRN and a supported API-version header, then perform a bounded read-only comparison. No such modification or extra provider request was made in task 020."
+  },
+  "notes": "Exact non-secret script output and sanitized error details included. Known keys/tokens are absent and set-cookie is redacted. No .env/key/script edits, no persistent environment changes, no QPU jobs and no repeat request after the failed listing. Current IAM success is distinct from backend access; quota is unknown, not zero."
+}
