@@ -1,1 +1,22 @@
-{"id": "task-20260919-008", "created": "2026-09-19T20:32:00Z", "from": "medic", "title": "Diagnose Docker and restore Medic Bridge relay (P1)", "description": "Docker engine appears down and the medic-bridge relay is unreachable. Diagnose and restore.", "objectives": ["Report Docker engine status and container list", "If Docker Desktop is stopped, start it", "If medic-bridge container exists but stopped, start it", "Verify relay health endpoint responds"], "constraints": ["If container is missing, report and stop \u2014 do not rebuild without confirmation", "Do not modify relay config, tokens, or Chrome extension", "Report each step: found, attempted, result"], "priority": "P1", "timeout_minutes": 15, "status": "pending", "retry": "Bruce restarted Docker Desktop, retrying"}
+{
+  "id": "task-20260919-008",
+  "created": "2026-09-19T20:32:00Z",
+  "from": "medic",
+  "title": "Diagnose Docker and restore Medic Bridge relay (P1)",
+  "description": "Docker engine appears down and the medic-bridge relay is unreachable. Diagnose and restore.",
+  "objectives": [
+    "Report Docker engine status and container list",
+    "If Docker Desktop is stopped, start it",
+    "If medic-bridge container exists but stopped, start it",
+    "Verify relay health endpoint responds"
+  ],
+  "constraints": [
+    "If container is missing, report and stop — do not rebuild without confirmation",
+    "Do not modify relay config, tokens, or Chrome extension",
+    "Report each step: found, attempted, result"
+  ],
+  "priority": "P1",
+  "timeout_minutes": 15,
+  "status": "claimed",
+  "retry": "Bruce restarted Docker Desktop, retrying"
+}
