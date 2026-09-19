@@ -1,1 +1,21 @@
-{"id": "task-20260919-014", "created": "2026-09-19T20:36:00Z", "from": "medic", "title": "Start Docker containers and verify Bridge relay (P1)", "description": "Bruce confirmed Docker Desktop is now running. Start the Bridge relay container and verify.", "objectives": ["Verify Docker engine is responding (docker ps)", "Start the medic-bridge container if stopped", "Verify the relay health endpoint responds", "Report container status and uptime"], "constraints": ["Do not modify relay config, tokens, or Chrome extension", "If container is missing, report and stop", "Report each step with concrete evidence"], "priority": "P1", "timeout_minutes": 15, "status": "pending"}
+{
+  "id": "task-20260919-014",
+  "created": "2026-09-19T20:36:00Z",
+  "from": "medic",
+  "title": "Start Docker containers and verify Bridge relay (P1)",
+  "description": "Bruce confirmed Docker Desktop is now running. Start the Bridge relay container and verify.",
+  "objectives": [
+    "Verify Docker engine is responding (docker ps)",
+    "Start the medic-bridge container if stopped",
+    "Verify the relay health endpoint responds",
+    "Report container status and uptime"
+  ],
+  "constraints": [
+    "Do not modify relay config, tokens, or Chrome extension",
+    "If container is missing, report and stop",
+    "Report each step with concrete evidence"
+  ],
+  "priority": "P1",
+  "timeout_minutes": 15,
+  "status": "claimed"
+}
