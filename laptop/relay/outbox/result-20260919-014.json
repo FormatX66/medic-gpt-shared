@@ -1,0 +1,42 @@
+{
+  "task_id": "task-20260919-014",
+  "completed": "2026-09-19T20:36:51.5019755Z",
+  "status": "done",
+  "summary": "Docker responds; existing medic-bridge is already running and relay health returns HTTP 200 with ok=true.",
+  "steps": [
+    {
+      "step": "Engine",
+      "found": "Responsive",
+      "attempted": "docker ps -a",
+      "result": "Exit 0"
+    },
+    {
+      "step": "Relay container",
+      "found": "running",
+      "attempted": "No start needed",
+      "result": "Up 7 minutes"
+    },
+    {
+      "step": "Relay health",
+      "found": "Local endpoint reachable",
+      "attempted": "GET http://127.0.0.1:8471/health",
+      "result": "HTTP 200; ok=true"
+    }
+  ],
+  "evidence": {
+    "checked_at": "2026-09-19T20:36:51.4697842Z",
+    "docker_ps_exit": 0,
+    "container": {
+      "name": "medic-bridge",
+      "id": "7c66e874e855",
+      "image": "relay-medic-bridge",
+      "state": "running",
+      "uptime": "Up 7 minutes"
+    },
+    "started_at": "2026-09-19T20:29:06.5867191Z",
+    "health_http_status": 200,
+    "health_ok": true,
+    "lifecycle_action": "None; existing container already running"
+  },
+  "notes": "This confirms the successful task 008 result. No container restart/rebuild, configuration, token, or extension change. No end-to-end message delivery claim."
+}
