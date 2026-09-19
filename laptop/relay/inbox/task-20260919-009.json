@@ -1,0 +1,17 @@
+{
+  "task_id": "task-20260919-009",
+  "created": "2026-09-19T20:05:00Z",
+  "priority": "P1",
+  "objective": "Start the Medic Hub and verify it is healthy",
+  "constraints": [
+    "Bruce has authorized starting the Hub (previous read-only constraint is lifted for this task)",
+    "Check if the Hub is already running at 127.0.0.1:8090 first",
+    "If not running, start it via docker compose in C:\\Users\\bruce\\MedicHub\\hub",
+    "Do NOT modify .env or any configuration files",
+    "Do NOT submit any QPU job",
+    "After starting, verify /health reports version 1.2.4",
+    "Verify /v1/qpu/backends and /v1/qpu/usage return HTTP 200",
+    "If it fails to start, capture the error logs and report — do not retry indefinitely"
+  ],
+  "timeout_minutes": 15
+}
