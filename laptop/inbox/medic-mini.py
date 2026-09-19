@@ -26,6 +26,7 @@ Stop:   create a file named STOP next to this script, or disable the
          'MedicLaptopDaemon' scheduled task. Logs to mini.log beside it.
 """
 import http.server
+import urllib.parse
 import json
 import os
 import re
@@ -41,7 +42,7 @@ BIN_B = "da708c88-feb6-4fae-a0ef-4ef3ed3bbcc4"  # the one bin, both directions:
 # Medic -> laptop: dispatch packets (JSON). Laptop -> Medic: results/acks/pairing.
 # (Bin A 947df846-fdac4577ef89 was rate-limited into the ground on 2026-09-19. RIP.)
 BASE = pathlib.Path(__file__).resolve().parent
-MEDIC_MINI_VERSION = "1.0.1"
+MEDIC_MINI_VERSION = "1.0.2"
 MINI_URL = "https://raw.githubusercontent.com/FormatX66/medic-gpt-shared/main/laptop/inbox/medic-mini.py"
 DASH_PORT = 8899
 
@@ -159,6 +160,7 @@ def handle(req, secret):
 
 
 def dash_html():
+    tok = load_secret()
     p = BASE / "shot.png"
     shot_img = '<p><img src="/shot.png" style="max-width:100%"></p>' if p.exists() else "<i>none yet</i>"
     try:
@@ -177,9 +179,9 @@ def dash_html():
             f"execs: {state['exec_count']} | shots: {state['shot_count']}<br>"
             f"<b>Last dispatch:</b> {state['last_dispatch']} &rarr; {state['last_result']}</div>"
             "<div class='card'>"
-            "<form method='post' action='/api/shot' style='display:inline'><button>Take screenshot</button></form> "
-            "<form method='post' action='/api/update' style='display:inline'><button>Check for update</button></form> "
-            "<form method='post' action='/api/restart' style='display:inline'><button>Restart</button></form></div>"
+            f"<form method='post' action='/api/shot' style='display:inline'><input type='hidden' name='token' value='{tok}'><button>Take screenshot</button></form> "
+            f"<form method='post' action='/api/update' style='display:inline'><input type='hidden' name='token' value='{tok}'><button>Check for update</button></form> "
+            f"<form method='post' action='/api/restart' style='display:inline'><input type='hidden' name='token' value='{tok}'><button>Restart</button></form></div>"
             f"<div class='card'><h3>Latest screenshot</h3>{shot_img}</div>"
             f"<div class='card'><h3>Log (tail)</h3><div class='log'>{rows}</div></div>"
             "</body></html>")
@@ -209,12 +211,78 @@ class DashHandler(http.server.BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(html)
 
+    def _read_body(self):
+        try:
+            n = int(self.headers.get("Content-Length") or 0)
+        except ValueError:
+            n = 0
+        return self.rfile.read(n) if n > 0 else b""
+
+    def _api_token_ok(self, raw):
+        secret = load_secret()
+        if not secret:
+            return False
+        try:
+            if raw.strip().startswith(b"{") and json.loads(raw).get("token") == secret:
+                return True
+        except Exception:
+            pass
+        try:
+            f = urllib.parse.parse_qs(raw.decode("utf-8", "replace"))
+            if f.get("token", [""])[0] == secret:
+                return True
+        except Exception:
+            pass
+        try:
+            q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+            if q.get("token", [""])[0] == secret:
+                return True
+        except Exception:
+            pass
+        return False
+
+    def _json(self, obj, code=200):
+        data = json.dumps(obj).encode("utf-8")
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
     def do_POST(self):
-        if self.path == "/api/shot":
+        path = urllib.parse.urlparse(self.path).path
+        raw = self._read_body()
+        if not self._api_token_ok(raw):
+            self.send_error(403, "bad or missing token")
+            return
+        if path == "/api/exec":
+            try:
+                cmd = json.loads(raw).get("cmd") or ""
+            except Exception:
+                cmd = ""
+            pid = "api-" + uuid.uuid4().hex[:8]
+            log(f"api exec {pid}: {len(cmd)} chars")
+            try:
+                r = subprocess.run(
+                    ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass",
+                     "-Command", cmd],
+                    capture_output=True, text=True, timeout=CMD_TIMEOUT)
+                resp = {"ok": True, "exit": r.returncode,
+                        "output": (r.stdout or "") + (r.stderr or "")}
+            except subprocess.TimeoutExpired:
+                resp = {"ok": False, "error": f"timeout after {CMD_TIMEOUT}s"}
+            except Exception as e:
+                resp = {"ok": False, "error": str(e)[:200]}
+            state["exec_count"] += 1
+            state["last_dispatch"] = pid
+            state["last_result"] = f"exit={resp.get('exit')}"
+            self._json(resp)
+            return
+        if path == "/api/shot":
             take_shot("dash-" + uuid.uuid4().hex[:8])
-        elif self.path == "/api/update":
+        elif path == "/api/update":
             threading.Thread(target=self_update, daemon=True).start()
-        elif self.path == "/api/restart":
+        elif path == "/api/restart":
             self.send_response(303)
             self.send_header("Location", "/")
             self.end_headers()
