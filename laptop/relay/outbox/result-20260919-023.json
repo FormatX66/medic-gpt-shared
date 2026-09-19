@@ -1,0 +1,38 @@
+{
+  "task_id": "task-20260919-023",
+  "completed": "2026-09-19T22:41:08.523924+00:00",
+  "status": "done",
+  "summary": "Installed the reviewed GameGPT-System package in a separate directory and virtual environment. Dependency installation and pip check passed. Launcher --help exited 0 with usage and no stderr; package reports version 0.16.0.",
+  "installation_path": "C:\\Users\\bruce\\GameGPT-System",
+  "pip_install_result": "All requirements installed into C:\\Users\\bruce\\GameGPT-System\\.venv. pip check: No broken requirements found.",
+  "launcher_help_output": "usage: launcher.py [-h] [--config CONFIG]\r\n\r\nGTP Games Windows companion\r\n\r\noptions:\r\n  -h, --help       show this help message and exit\r\n  --config CONFIG  launcher configuration path\r\n",
+  "launcher_help_exit_code": 0,
+  "launcher_help_stderr": "",
+  "provenance": {
+    "module_file": "C:\\Users\\bruce\\GameGPT-System\\gtp_games\\__init__.py",
+    "version": "0.16.0",
+    "dependencies": {
+      "psutil": "7.2.2",
+      "pydantic": "2.13.5",
+      "pydantic_settings": "2.15.0",
+      "python-dotenv": "1.2.3",
+      "Pillow": "12.3.0",
+      "openai": "3.16.2",
+      "fastapi": "0.141.1",
+      "uvicorn": "0.53.0",
+      "httpx": "0.28.1",
+      "mcp": "2.2.0"
+    }
+  },
+  "evidence": [
+    "Task claimed and pushed at 13196df before execution; scope was installation and launcher --help only.",
+    "Archive SHA256: e27beedb7b0cce0a47438de72f5d28e12e33c98018abc0d28371eaa21dd8423d",
+    "65 extracted files match the reviewed manifest; target was absent before installation. Existing GameGPT copilot preserved.",
+    "Dedicated virtual environment dependency installation completed successfully; pip check reported No broken requirements found.",
+    "Help checked at 2026-09-19T22:40:04.373089+00:00; exit 0, usage printed, stderr empty.",
+    "Module provenance: C:\\Users\\bruce\\GameGPT-System\\gtp_games\\__init__.py; package version 0.16.0",
+    "All extracted source hashes independently rechecked after dependency installation and help invocation."
+  ],
+  "notes": "Help-only verification does not establish full desktop, server, plugin, scanner, or memory-backend runtime compatibility. No GUI/server or No Man's Sky launch, process attachment, scanning, memory writes, credential configuration, or API calls were performed. No existing installation was overwritten.",
+  "rollback": "Move the newly created GameGPT-System directory into a workspace rollback folder after verifying its manifest and any new user files. No pre-existing installation was overwritten."
+}
