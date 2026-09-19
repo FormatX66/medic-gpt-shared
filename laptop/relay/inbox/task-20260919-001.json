@@ -1,0 +1,21 @@
+{
+  "id": "task-20260919-001",
+  "created": "2026-09-19T18:54:09Z",
+  "from": "medic",
+  "title": "Fix sleep settings (P0)",
+  "description": "Prevent the laptop from sleeping, hibernating, or turning off the display during long runs. This is blocking all other work.",
+  "objectives": [
+    "Set AC standby timeout to never (0)",
+    "Set AC hibernate timeout to never (0)",
+    "Set AC monitor/display timeout to never (0)",
+    "Verify all three with powercfg /query and report the values"
+  ],
+  "constraints": [
+    "Do NOT enable Windows auto-login",
+    "AC power settings only; leave battery settings unchanged",
+    "Reversible changes only"
+  ],
+  "priority": "P0",
+  "destructive": false,
+  "status": "pending"
+}
