@@ -1,0 +1,16 @@
+{
+  "task_id": "task-20260919-013",
+  "completed": "2026-09-19T20:31:32.7814237Z",
+  "status": "failed",
+  "summary": "The existing key was loaded into the script child process. IAM token exchange succeeded, but backend listing returned HTTP 401; available backends and usage/quota remain unverified.",
+  "exit_code": 3,
+  "stdout": "FAIL: backend listing returned HTTP 401.\n",
+  "stderr": "",
+  "evidence": [
+    "Unchanged reviewed script SHA256 38C81F3D1455E7308732B680AD3E716C325D741DC088F4DD5127DF422F200B0D executed once with no flags.",
+    "IBM_QUANTUM_API_KEY from the named Hub .env was supplied as IBM_API_KEY only in the child process; no key value is included.",
+    "The script reached backend listing only after receiving an IAM access token. HTTP 401 came from backend listing; this does not establish that the API key is invalid.",
+    "The script exits before the usage endpoint following a backend-list failure. No quota values or backend inventory were obtained."
+  ],
+  "notes": "Exact script stdout and stderr are included. No .env, key, or persistent environment was modified. No hardware job endpoint or --confirm-qpu was used; this run submitted no hardware job. No further authentication or endpoint workaround was attempted."
+}
