@@ -1,12 +1,12 @@
 {
   "task_id": "task-20260919-009",
-  "completed": "2026-09-19T20:05:53.4919876Z",
-  "status": "refused",
-  "summary": "Not eligible for pickup: task has no status field, so pending status cannot be confirmed. Required protocol fields id and objectives are also absent.",
+  "completed": "2026-09-19T20:17:32.2571735Z",
+  "status": "failed",
+  "summary": "Hub startup is blocked by the unavailable Docker engine. Fresh health check still refuses connections; no compose start was executed against the known missing engine.",
   "evidence": [
-    "Inspected laptop/relay/inbox/task-20260919-009.json at repo commit ef506f29c0be4bab76a7f04de910ae406486bdc6",
-    "Present aliases: task_id and objective. Missing protocol fields: id, status, objectives.",
-    "The current protocol and user polling instruction select tasks explicitly marked status pending."
+    "GET http://127.0.0.1:8090/health: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+    "Current task 008 diagnosis: Docker Desktop/backend and docker-desktop WSL distribution stopped; Docker API pipe missing; persistent socket error 1920 blocks startup.",
+    "Local source C:\\Users\\bruce\\MedicHub\\hub\\server\\hub.py declares version 1.2.0. Runtime version 1.2.4 is not verified."
   ],
-  "notes": "No task execution or claim occurred. Correct the inbox entry to use id, status: pending, and an objectives array while preserving its constraints, then the next poll can review it. This reports a schema problem; it does not require a new user approval or authorize broader work."
+  "notes": "This is a blocked prerequisite, not a new compose execution failure. A known impossible compose start was pruned under the AGENTS.md no-unchanged-retry rule. No config/.env changes, rebuild, upgrade, or QPU submission. /v1/qpu/backends and /v1/qpu/usage were not requested while Hub was down. The earlier schema refusal is superseded by this corrected-task result."
 }
