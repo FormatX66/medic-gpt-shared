@@ -1,0 +1,22 @@
+{
+  "id": "task-20260919-003",
+  "created": "2026-09-19T19:25:54Z",
+  "from": "medic",
+  "title": "Stay-awake hardening: AC power actions (revised)",
+  "description": "Revised after task-002 refusal. This task covers AC-ONLY power actions. Global changes (hibernation, screensaver, lock screen) are separate and not included here.",
+  "objectives": [
+    "Set lid close action to do nothing on AC power",
+    "Set power button action to do nothing on AC power",
+    "Set sleep button action to do nothing on AC power",
+    "Verify all three with powercfg and report every value"
+  ],
+  "constraints": [
+    "Do NOT enable Windows auto-login",
+    "AC power settings only; leave battery settings unchanged",
+    "Do NOT disable hibernation at system level (out of scope for this task)",
+    "Reversible changes only; document rollback for each change"
+  ],
+  "priority": "P0",
+  "destructive": false,
+  "status": "pending"
+}
