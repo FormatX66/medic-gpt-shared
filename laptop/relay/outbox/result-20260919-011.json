@@ -1,11 +1,18 @@
 {
   "task_id": "task-20260919-011",
-  "completed": "2026-09-19T20:08:31.1972797Z",
-  "status": "refused",
-  "summary": "Not eligible for pickup: no status field is present, so pending status cannot be confirmed. Protocol fields id and objectives are also missing.",
-  "evidence": [
-    "Reviewed laptop/relay/inbox/task-20260919-011.json at d1bb99b39114ee45a82c92a5b1a05f34d5eab861.",
-    "Present aliases: task_id and objective. Missing protocol fields: id, status, objectives."
+  "completed": "2026-09-19T20:27:12.3029060Z",
+  "status": "partial",
+  "summary": "Chrome provider history identifies IBM Quantum. Edge history could not be read.",
+  "providers": [
+    {
+      "provider": "IBM Quantum",
+      "most_recent_visit_utc": "2026-09-19T20:24:12.424Z"
+    }
   ],
-  "notes": "No claim or execution occurred; browser history was not accessed. Correct the entry to use id, status: pending, and an objectives array while preserving its constraints. This is a schema validation result, not a request for new user approval."
+  "evidence": [
+    "Focused supported Chrome history query, bounded 2025-01-01 through 2026-09-19, returned 11 entries under a limit of 100; only provider label and recency are reported.",
+    "Both direct read-only SQLite history queries returned database is locked.",
+    "Connected-browser inventory includes Chrome and the in-app browser, but no Edge interface."
+  ],
+  "notes": "Provider visits do not prove an active account, entitlement, valid credential, or current QPU access. Edge and other unmatched provider history remain unverified. No login, credential extraction, browser closure, raw history copy, or URL/title export occurred. This corrected-task result supersedes the earlier schema refusal."
 }
