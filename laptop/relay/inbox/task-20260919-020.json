@@ -1,1 +1,20 @@
-{"id": "task-20260919-020", "created": "2026-09-19T21:16:00Z", "from": "medic", "title": "QPU connectivity check (P1)", "description": "Bruce updated the keys. Run the IBM QPU connectivity check.", "objectives": ["Run laptop/inbox/2026-09-17-qpu-connectivity-check.py", "Report IAM token result, backend listing, quota/usage", "Include exact script output"], "constraints": ["Read-only. Never use --confirm-qpu", "Submit no hardware job. Spend zero QPU seconds", "Do not modify .env or keys"], "priority": "P1", "timeout_minutes": 10, "status": "pending"}
+{
+  "id": "task-20260919-020",
+  "created": "2026-09-19T21:16:00Z",
+  "from": "medic",
+  "title": "QPU connectivity check (P1)",
+  "description": "Bruce updated the keys. Run the IBM QPU connectivity check.",
+  "objectives": [
+    "Run laptop/inbox/2026-09-17-qpu-connectivity-check.py",
+    "Report IAM token result, backend listing, quota/usage",
+    "Include exact script output"
+  ],
+  "constraints": [
+    "Read-only. Never use --confirm-qpu",
+    "Submit no hardware job. Spend zero QPU seconds",
+    "Do not modify .env or keys"
+  ],
+  "priority": "P1",
+  "timeout_minutes": 10,
+  "status": "claimed"
+}
