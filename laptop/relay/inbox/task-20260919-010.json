@@ -1,1 +1,20 @@
-{"id": "task-20260919-010", "created": "2026-09-19T20:10:00Z", "from": "medic", "title": "Check IBM Quantum API key availability (P1)", "description": "QPU connectivity check failed \u2014 IBM_API_KEY absent. Report key status only.", "objectives": ["Check for IBM_API_KEY in environment and in C:\\Users\\bruce\\MedicHub\\hub\\.env", "Report: present or absent, and location if found"], "constraints": ["Read-only. Do not modify .env", "Do not request key from Bruce \u2014 report only", "Do not submit QPU jobs or use --confirm-qpu", "Do not create, rotate, or alter any keys"], "priority": "P1", "timeout_minutes": 10, "status": "pending"}
+{
+  "id": "task-20260919-010",
+  "created": "2026-09-19T20:10:00Z",
+  "from": "medic",
+  "title": "Check IBM Quantum API key availability (P1)",
+  "description": "QPU connectivity check failed — IBM_API_KEY absent. Report key status only.",
+  "objectives": [
+    "Check for IBM_API_KEY in environment and in C:\\Users\\bruce\\MedicHub\\hub\\.env",
+    "Report: present or absent, and location if found"
+  ],
+  "constraints": [
+    "Read-only. Do not modify .env",
+    "Do not request key from Bruce — report only",
+    "Do not submit QPU jobs or use --confirm-qpu",
+    "Do not create, rotate, or alter any keys"
+  ],
+  "priority": "P1",
+  "timeout_minutes": 10,
+  "status": "claimed"
+}
