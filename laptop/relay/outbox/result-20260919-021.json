@@ -1,0 +1,43 @@
+{
+  "task_id": "task-20260919-021",
+  "completed": "2026-09-19T21:31:30.685602+00:00",
+  "status": "done",
+  "summary": "Ran the fixed connectivity script once. IAM and backend listing returned HTTP 200; three backend names were listed. Usage GET /api/v1/usage returned HTTP 404; quota remains unknown.",
+  "evidence": [
+    "Reviewed fixed script SHA256: 4cfd1d89c3977ca1db1c8adb4034e9179b546e44d4ee537b2c8edde0974b47fc",
+    "Independent request observation: POST IAM 200; GET backends 200; GET usage 404.",
+    "Backend and usage requests contained Service-CRN and IBM-API-Version 2025-05-01.",
+    "Listed names: ibm_fez, ibm_marrakesh, ibm_kingston. Operational status was not supplied by the script output.",
+    "Process exit code 0; stderr empty; exact stdout included below without redaction.",
+    ".env bytes unchanged during the check. No persistent environment or key changes; no hardware job endpoint called."
+  ],
+  "exact_output": {
+    "stdout": "PASS: IBM key reached live IBM Quantum backends.\nBackends (3):\n  - ibm_fez  [?]\n  - ibm_marrakesh  [?]\n  - ibm_kingston  [?]\nUsage read returned HTTP 404 (backends listing still passed).\nZero QPU seconds were spent by this check.\n",
+    "stderr": "",
+    "exit_code": 0
+  },
+  "request_observations": [
+    {
+      "method": "POST",
+      "url": "https://iam.cloud.ibm.com/identity/token",
+      "http_status": 200
+    },
+    {
+      "method": "GET",
+      "url": "https://quantum.cloud.ibm.com/api/v1/backends",
+      "service_crn_header_present": true,
+      "ibm_api_version": "2025-05-01",
+      "http_status": 200
+    },
+    {
+      "method": "GET",
+      "url": "https://quantum.cloud.ibm.com/api/v1/usage",
+      "service_crn_header_present": true,
+      "ibm_api_version": "2025-05-01",
+      "http_status": 404
+    }
+  ],
+  "usage_error_body": "{\"message\":\"Cannot GET /api/v1/usage\",\"error\":\"Not Found\",\"statusCode\":404}",
+  "checked_at": "2026-09-19T21:30:49.927301+00:00",
+  "notes": "Task objectives to run the fixed script and report its exact output are complete. This does not establish quota availability or backend operational readiness. The old script was not rerun. No hardware job, spend, configuration edit, or further provider probe was performed."
+}
