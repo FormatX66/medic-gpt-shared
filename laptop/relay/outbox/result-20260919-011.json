@@ -1,0 +1,11 @@
+{
+  "task_id": "task-20260919-011",
+  "completed": "2026-09-19T20:08:31.1972797Z",
+  "status": "refused",
+  "summary": "Not eligible for pickup: no status field is present, so pending status cannot be confirmed. Protocol fields id and objectives are also missing.",
+  "evidence": [
+    "Reviewed laptop/relay/inbox/task-20260919-011.json at d1bb99b39114ee45a82c92a5b1a05f34d5eab861.",
+    "Present aliases: task_id and objective. Missing protocol fields: id, status, objectives."
+  ],
+  "notes": "No claim or execution occurred; browser history was not accessed. Correct the entry to use id, status: pending, and an objectives array while preserving its constraints. This is a schema validation result, not a request for new user approval."
+}
