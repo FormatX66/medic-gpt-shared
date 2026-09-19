@@ -18,5 +18,5 @@
   ],
   "priority": "P1",
   "timeout_minutes": 20,
-  "status": "claimed"
+  "status": "failed"
 }

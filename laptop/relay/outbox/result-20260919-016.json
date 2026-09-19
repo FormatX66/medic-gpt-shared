@@ -1,0 +1,77 @@
+{
+  "task_id": "task-20260919-016",
+  "completed": "2026-09-19T20:45:40.1178147Z",
+  "status": "failed",
+  "summary": "Pinned Hub 1.2.4 built successfully but failed the isolated Docker reachability gate. The live Hub remains healthy at 1.2.0 with its original container, image, source and configuration unchanged.",
+  "source": {
+    "repository": "https://github.com/FormatX66/medic-model-hub",
+    "commit": "0661391e72d8b7da36ae999cce239067b9d61b86",
+    "version": "1.2.4",
+    "candidate_image": "sha256:be470311c690ac0be85de2b561f3a86bfedaac5f2a5d2e868acf8a06e9a9d356"
+  },
+  "steps": [
+    {
+      "step": "Preserve",
+      "result": "Backed up live dirty source/configuration/data and pinned existing image as medic-model-hub:rollback-task016-v120; .env backup matched"
+    },
+    {
+      "step": "Build",
+      "result": "Exact pinned upstream Dockerfile built successfully under candidate tag; no live source copy or git pull over dirty files"
+    },
+    {
+      "step": "Isolated canary",
+      "result": "Inside container /health returned HTTP 200/version 1.2.4/ok=true. Host-to-published-port health failed. No credentials or live data were provided"
+    },
+    {
+      "step": "Promotion",
+      "result": "Not performed because required host reachability gate failed"
+    },
+    {
+      "step": "Recovery",
+      "result": "Named temporary container stopped and removed. Original live 1.2.0 remained running throughout, so no replacement rollback was necessary"
+    }
+  ],
+  "blocking_findings": [
+    "Upstream server/hub.py hard-codes HTTPServer to 127.0.0.1 inside the Docker container and ignores the existing live BIND_HOST=0.0.0.0. This makes normal host-published access fail.",
+    "The upstream IBM curl option requires QPU_HTTP_CLIENT=curl, which is absent from current .env. Task 016 forbids configuration changes, so this setting was not enabled.",
+    "Static review additionally found _curl_http builds a curl command without appending the URL or specifying stdin as the request body. This path was not executed or repaired."
+  ],
+  "canary_evidence": {
+    "checked_at": "2026-09-19T20:44:18.0532062Z",
+    "source_commit": "0661391e72d8b7da36ae999cce239067b9d61b86",
+    "canary_image": "sha256:be470311c690ac0be85de2b561f3a86bfedaac5f2a5d2e868acf8a06e9a9d356",
+    "internal_health": {
+      "status": 200,
+      "version": "1.2.4",
+      "ok": true
+    },
+    "host_health": {
+      "reachable": false,
+      "status": null,
+      "error": "An error occurred while sending the request."
+    },
+    "logs": "medic-model-hub v1.2.4 on :8090  backends={'openai': False, 'anthropic': False, 'google': False, 'perplexity': False}\r\n127.0.0.1 GET /health -> GET /health HTTP/1.1 200 -\r\n",
+    "credentials_supplied": false,
+    "qpu_calls": 0,
+    "hardware_jobs": 0
+  },
+  "live_verification": {
+    "verified_at": "2026-09-19T20:44:47.0442752Z",
+    "live_version": "1.2.0",
+    "live_health_ok": true,
+    "original_container_unchanged": true,
+    "original_image_unchanged": true,
+    "env_unchanged": true,
+    "compose_unchanged": true,
+    "server_files_unchanged": true,
+    "temporary_canary_removed": true,
+    "rollback_required": false,
+    "rollback_reason": "Candidate failed before promotion; original 1.2.0 remained running throughout"
+  },
+  "rollback": {
+    "local_backup": "C:\\Users\\bruce\\Documents\\Codex\\2026-09-19\\medic-laptop-dispatch\\work\\task-016-backup",
+    "image_tag": "medic-model-hub:rollback-task016-v120",
+    "live_image": "sha256:c048e1949c14b3daf4d0c5f5c9bf2425bc703c2530592c0573f23e694b90232c"
+  },
+  "notes": "No live restart, version promotion, .env/configuration overwrite, Google adapter replacement, QPU request or hardware job occurred. A corrected reviewed release must honor Docker BIND_HOST before promotion; enabling another transport also needs authorization to change the configuration under this task constraint. No credentials or secret hashes are included. Candidate image/source and bounded logs are retained locally for review."
+}
