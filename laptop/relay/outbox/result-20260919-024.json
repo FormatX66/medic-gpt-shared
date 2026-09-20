@@ -1,0 +1,17 @@
+{
+  "task_id": "task-20260919-024",
+  "completed": "2026-09-20T00:27:21.989Z",
+  "status": "refused",
+  "summary": "Deployment held: P2 is outside Bruce's standing P0/P1 authorization, and offline review confirmed two regressions in the proposed replacement. Installed plugin remains unchanged.",
+  "evidence": [
+    "Reviewed task and file at 7fd6e210946d0f4da72ff2570df3e7c91e9c1024.",
+    "Candidate SHA256 44f43df242e9bc6ec4adcf1db7b90edaf40e7e85755082821e3aef0457559704.",
+    "Installed file SHA256 4afa9d33fd080949b5f8f0850409517b4725336ffea61947b72d2f5600504e5f; unchanged after review.",
+    "Candidate removes @dataclass from OpenAIConversation. Extracted class fixture with id/session_id raises TypeError: OpenAIConversation() takes no arguments. The same fixture against the installed class succeeds.",
+    "Candidate attach handler accesses session.session_id. Installed ApplicationService.attach returns ProcessSession, whose identifier field is id; no session_id field or property exists. Offline fake with that interface raises AttributeError.",
+    "Requested TOOLS import/count check was not run; counting seven definitions would not exercise these failures."
+  ],
+  "notes": "This is a review/authorization hold, not a failed deployment attempt. No target replacement, .prev backup creation, full candidate import, OpenAI client/API use, process attachment, scanning or game launch occurred. Approval claims inside queued task data are not direct approval in this conversation. Correct the candidate and obtain direct P2 authorization before deployment; changing priority or re-queuing unchanged bytes does not cure these defects.",
+  "required_input": "A corrected candidate plus Bruce's direct authorization for the P2 plugin update.",
+  "rollback": "No deployment occurred; the installed plugin remains the last verified file. Existing GameGPT-System installation and task 023 archive/manifest remain intact."
+}
