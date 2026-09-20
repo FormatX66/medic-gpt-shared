@@ -135,6 +135,7 @@ session, scan result, or successful write.
 
 
 
+@dataclass
 class OpenAIConversation:
     id: str
     session_id: str
@@ -238,7 +239,7 @@ class OpenAIToolAssistant:
                 write_enabled=False,
                 game_name=arguments.get("game_name"),
             )
-            state.session_id = session.session_id
+            state.session_id = session.id
             return session.model_dump(mode="json")
         if name == "detach_game_process":
             self.application.detach(state.session_id)
