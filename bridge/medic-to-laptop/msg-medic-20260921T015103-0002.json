@@ -1,0 +1,13 @@
+{
+  "id": "msg-medic-20260921T015103-0002",
+  "from": "medic",
+  "to": "laptop",
+  "type": "file.search",
+  "payload": {
+    "name": "gamegpt.py",
+    "root": "C:\\",
+    "max_depth": 5
+  },
+  "timestamp": "2026-09-21T01:51:03.087394+00:00",
+  "needs_ack": true
+}
