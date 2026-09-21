@@ -1,0 +1,258 @@
+{
+  "id": "msg-laptop-20260921T035340-0012",
+  "from": "laptop",
+  "to": "medic",
+  "type": "dir.list.response",
+  "in_reply_to": "msg-medic-20260921T031503-0001",
+  "payload": {
+    "path": "C:\\Users\\bruce\\Documents\\GitHub\\GameGPT\\.venv\\Scripts",
+    "entries": [
+      {
+        "name": "__pycache__",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "activate",
+        "type": "file",
+        "size": 2220
+      },
+      {
+        "name": "activate.bat",
+        "type": "file",
+        "size": 1022
+      },
+      {
+        "name": "Activate.ps1",
+        "type": "file",
+        "size": 27975
+      },
+      {
+        "name": "cffi-gen-src.exe",
+        "type": "file",
+        "size": 108363
+      },
+      {
+        "name": "coverage-3.12.exe",
+        "type": "file",
+        "size": 108385
+      },
+      {
+        "name": "coverage.exe",
+        "type": "file",
+        "size": 108363
+      },
+      {
+        "name": "coverage3.exe",
+        "type": "file",
+        "size": 108385
+      },
+      {
+        "name": "deactivate.bat",
+        "type": "file",
+        "size": 393
+      },
+      {
+        "name": "distro.exe",
+        "type": "file",
+        "size": 108360
+      },
+      {
+        "name": "dotenv.exe",
+        "type": "file",
+        "size": 108360
+      },
+      {
+        "name": "fastapi.exe",
+        "type": "file",
+        "size": 108358
+      },
+      {
+        "name": "gamegpt-glenn-overlay.exe",
+        "type": "file",
+        "size": 108370
+      },
+      {
+        "name": "gamegpt-workbench.exe",
+        "type": "file",
+        "size": 108374
+      },
+      {
+        "name": "gtp-games-api.exe",
+        "type": "file",
+        "size": 108359
+      },
+      {
+        "name": "gtp-games-companion.exe",
+        "type": "file",
+        "size": 108365
+      },
+      {
+        "name": "gtp-games-plugin-stdio.exe",
+        "type": "file",
+        "size": 108377
+      },
+      {
+        "name": "gtp-games-plugin.exe",
+        "type": "file",
+        "size": 108365
+      },
+      {
+        "name": "gtp-games-raw-plugin-stdio.exe",
+        "type": "file",
+        "size": 108381
+      },
+      {
+        "name": "gtp-games-raw-plugin.exe",
+        "type": "file",
+        "size": 108369
+      },
+      {
+        "name": "gtp-games.exe",
+        "type": "file",
+        "size": 108365
+      },
+      {
+        "name": "httpx.exe",
+        "type": "file",
+        "size": 108352
+      },
+      {
+        "name": "httpx2.exe",
+        "type": "file",
+        "size": 108359
+      },
+      {
+        "name": "idna.exe",
+        "type": "file",
+        "size": 108355
+      },
+      {
+        "name": "jsonschema.exe",
+        "type": "file",
+        "size": 108361
+      },
+      {
+        "name": "mcp.exe",
+        "type": "file",
+        "size": 108352
+      },
+      {
+        "name": "pip.exe",
+        "type": "file",
+        "size": 108421
+      },
+      {
+        "name": "pip3.12.exe",
+        "type": "file",
+        "size": 108421
+      },
+      {
+        "name": "pip3.exe",
+        "type": "file",
+        "size": 108421
+      },
+      {
+        "name": "py.test.exe",
+        "type": "file",
+        "size": 108369
+      },
+      {
+        "name": "pygmentize.exe",
+        "type": "file",
+        "size": 108363
+      },
+      {
+        "name": "pyi-archive_viewer.exe",
+        "type": "file",
+        "size": 108386
+      },
+      {
+        "name": "pyi-bindepend.exe",
+        "type": "file",
+        "size": 108381
+      },
+      {
+        "name": "pyi-grab_version.exe",
+        "type": "file",
+        "size": 108384
+      },
+      {
+        "name": "pyi-makespec.exe",
+        "type": "file",
+        "size": 108380
+      },
+      {
+        "name": "pyi-set_version.exe",
+        "type": "file",
+        "size": 108383
+      },
+      {
+        "name": "pyinstaller.exe",
+        "type": "file",
+        "size": 108397
+      },
+      {
+        "name": "pytest.exe",
+        "type": "file",
+        "size": 108369
+      },
+      {
+        "name": "python.exe",
+        "type": "file",
+        "size": 274424
+      },
+      {
+        "name": "pythonw.exe",
+        "type": "file",
+        "size": 263400
+      },
+      {
+        "name": "pywin32_postinstall.exe",
+        "type": "file",
+        "size": 108380
+      },
+      {
+        "name": "pywin32_postinstall.py",
+        "type": "file",
+        "size": 25576
+      },
+      {
+        "name": "pywin32_testall.exe",
+        "type": "file",
+        "size": 108376
+      },
+      {
+        "name": "pywin32_testall.py",
+        "type": "file",
+        "size": 3847
+      },
+      {
+        "name": "ruff.exe",
+        "type": "file",
+        "size": 26491392
+      },
+      {
+        "name": "tqdm.exe",
+        "type": "file",
+        "size": 108355
+      },
+      {
+        "name": "uvicorn.exe",
+        "type": "file",
+        "size": 108359
+      },
+      {
+        "name": "watchfiles.exe",
+        "type": "file",
+        "size": 108359
+      },
+      {
+        "name": "websockets.exe",
+        "type": "file",
+        "size": 108361
+      }
+    ]
+  },
+  "timestamp": "2026-09-21T03:53:40.271398+00:00"
+}
