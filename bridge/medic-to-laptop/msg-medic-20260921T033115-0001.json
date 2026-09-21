@@ -1,0 +1,11 @@
+{
+  "id": "msg-medic-20260921T033115-0001",
+  "from": "medic",
+  "to": "laptop",
+  "type": "dir.list",
+  "payload": {
+    "path": "C:\\Users\\bruce\\Documents\\GitHub\\GameGPT"
+  },
+  "timestamp": "2026-09-21T03:31:15.642479+00:00",
+  "needs_ack": true
+}
