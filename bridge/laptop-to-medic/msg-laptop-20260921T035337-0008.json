@@ -1,0 +1,12 @@
+{
+  "id": "msg-laptop-20260921T035337-0008",
+  "from": "laptop",
+  "to": "medic",
+  "type": "mcp.status.response",
+  "in_reply_to": "msg-medic-20260921T032328-0001",
+  "payload": {
+    "status": "ok",
+    "mcp_running": true
+  },
+  "timestamp": "2026-09-21T03:53:37.779230+00:00"
+}
