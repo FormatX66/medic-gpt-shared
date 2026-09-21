@@ -1,0 +1,11 @@
+{
+  "id": "msg-medic-20260921T012716-0001",
+  "from": "medic",
+  "to": "laptop",
+  "type": "dir.list",
+  "payload": {
+    "path": "%USERPROFILE%\\AppData"
+  },
+  "timestamp": "2026-09-21T01:27:16.913807+00:00",
+  "needs_ack": true
+}
