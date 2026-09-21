@@ -1,0 +1,188 @@
+{
+  "id": "msg-laptop-20260921T031557-0006",
+  "from": "laptop",
+  "to": "medic",
+  "type": "dir.list.response",
+  "in_reply_to": "msg-medic-20260921T031549-0001",
+  "payload": {
+    "path": "C:\\Users\\bruce\\Documents\\GitHub\\GameGPT",
+    "entries": [
+      {
+        "name": ".env.example",
+        "type": "file",
+        "size": 1391
+      },
+      {
+        "name": ".git",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": ".gitattributes",
+        "type": "file",
+        "size": 113
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "size": 188
+      },
+      {
+        "name": ".pytest_cache",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": ".ruff_cache",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": ".venv",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "build-recovery-0.15.5",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "build-recovery-0.16.0",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "catalogs",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "compose.yaml",
+        "type": "file",
+        "size": 617
+      },
+      {
+        "name": "CONTRIBUTING.md",
+        "type": "file",
+        "size": 1892
+      },
+      {
+        "name": "data",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "Dockerfile",
+        "type": "file",
+        "size": 299
+      },
+      {
+        "name": "docs",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "evidence",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "size": 1100
+      },
+      {
+        "name": "plugin",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "size": 1897
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "size": 43663
+      },
+      {
+        "name": "RECOVERY_PROVENANCE.md",
+        "type": "file",
+        "size": 3497
+      },
+      {
+        "name": "RECOVERY_REPAIR_0.16.0.md",
+        "type": "file",
+        "size": 2698
+      },
+      {
+        "name": "RELEASE_NOTES.md",
+        "type": "file",
+        "size": 34381
+      },
+      {
+        "name": "REPAIR_MANIFEST_0.16.0.sha256",
+        "type": "file",
+        "size": 20014
+      },
+      {
+        "name": "research",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "roadmap",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "schemas",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "scripts",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "SOURCE_MANIFEST.sha256",
+        "type": "file",
+        "size": 19844
+      },
+      {
+        "name": "src",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "Start GTP Games.cmd",
+        "type": "file",
+        "size": 101
+      },
+      {
+        "name": "system",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "templates",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "tests",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "THIRD_PARTY_NOTICES.md",
+        "type": "file",
+        "size": 1489
+      }
+    ]
+  },
+  "timestamp": "2026-09-21T03:15:57.355349+00:00"
+}
