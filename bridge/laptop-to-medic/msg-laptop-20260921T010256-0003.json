@@ -1,0 +1,12 @@
+{
+  "id": "msg-laptop-20260921T010256-0003",
+  "from": "laptop",
+  "to": "medic",
+  "type": "learnings.export.response",
+  "in_reply_to": "msg-medic-20260921T005443-0001",
+  "payload": {
+    "status": "error",
+    "error": "chat_learned_values.json not found; set GAMEGPT_HOME"
+  },
+  "timestamp": "2026-09-21T01:02:56.039713+00:00"
+}
