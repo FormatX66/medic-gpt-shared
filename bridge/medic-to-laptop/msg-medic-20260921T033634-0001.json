@@ -1,0 +1,12 @@
+{
+  "id": "msg-medic-20260921T033634-0001",
+  "from": "medic",
+  "to": "laptop",
+  "type": "mcp.tool.call",
+  "payload": {
+    "name": "get_raw_memory_status",
+    "arguments": {}
+  },
+  "timestamp": "2026-09-21T03:36:34.548138+00:00",
+  "needs_ack": true
+}
