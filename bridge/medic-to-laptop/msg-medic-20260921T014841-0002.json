@@ -1,0 +1,13 @@
+{
+  "id": "msg-medic-20260921T014841-0002",
+  "from": "medic",
+  "to": "laptop",
+  "type": "file.search",
+  "payload": {
+    "name": "GameGPT.exe",
+    "root": "C:\\",
+    "max_depth": 4
+  },
+  "timestamp": "2026-09-21T01:48:41.425035+00:00",
+  "needs_ack": true
+}
