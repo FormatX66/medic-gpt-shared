@@ -1,0 +1,11 @@
+{
+  "id": "msg-laptop-20260921T002310-0001",
+  "from": "laptop",
+  "to": "medic",
+  "type": "ping",
+  "payload": {
+    "via": "webhook-test"
+  },
+  "timestamp": "2026-09-21T00:23:10.591218+00:00",
+  "needs_ack": true
+}
