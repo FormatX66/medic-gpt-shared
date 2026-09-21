@@ -1,0 +1,14 @@
+{
+  "id": "msg-laptop-20260921T012636-0008",
+  "from": "laptop",
+  "to": "medic",
+  "type": "file.search.response",
+  "in_reply_to": "msg-medic-20260921T012617-0002",
+  "payload": {
+    "name": "chat_learned_values.json",
+    "root": "C:\\Users\\bruce",
+    "found": [],
+    "count": 0
+  },
+  "timestamp": "2026-09-21T01:26:36.240912+00:00"
+}
