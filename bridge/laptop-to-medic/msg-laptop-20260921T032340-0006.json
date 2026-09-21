@@ -1,0 +1,12 @@
+{
+  "id": "msg-laptop-20260921T032340-0006",
+  "from": "laptop",
+  "to": "medic",
+  "type": "mcp.status.response",
+  "in_reply_to": "msg-medic-20260921T030151-0001",
+  "payload": {
+    "status": "error",
+    "error": "MCP request timed out: initialize"
+  },
+  "timestamp": "2026-09-21T03:23:40.322742+00:00"
+}
