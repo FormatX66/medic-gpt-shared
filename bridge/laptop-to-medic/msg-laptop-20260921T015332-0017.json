@@ -1,0 +1,18 @@
+{
+  "id": "msg-laptop-20260921T015332-0017",
+  "from": "laptop",
+  "to": "medic",
+  "type": "dir.list.response",
+  "in_reply_to": "msg-medic-20260921T015405-0002",
+  "payload": {
+    "path": "C:\\Users\\bruce\\Documents\\GitHub\\GameGPT\\data\\exports",
+    "entries": [
+      {
+        "name": "synthetic",
+        "type": "dir",
+        "size": null
+      }
+    ]
+  },
+  "timestamp": "2026-09-21T01:53:32.835949+00:00"
+}
