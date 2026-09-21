@@ -1,0 +1,123 @@
+{
+  "id": "msg-laptop-20260921T015125-0014",
+  "from": "laptop",
+  "to": "medic",
+  "type": "dir.list.response",
+  "in_reply_to": "msg-medic-20260921T015058-0001",
+  "payload": {
+    "path": "C:\\Users\\bruce\\Documents\\GitHub",
+    "entries": [
+      {
+        "name": "arkmatx-deploy",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-bb001-bb002",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-bb007-copilot",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-chat-process-tree",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-git-local-bridge",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-hopper-status-runner",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-main-deploy",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-pi-console",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-pi-live-baseline",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-pr3-review",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-pr9-reconcile",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BoxBrain-seed-deploy",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "BrainConnect",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "Chat-to-Git-Pipeline-ci",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "ClusterSites",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "GameGPT",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "gtp-game-tables",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "HeX Control",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "medic-gpt-shared",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "TypeTriX",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "wetbeard-site",
+        "type": "dir",
+        "size": null
+      }
+    ]
+  },
+  "timestamp": "2026-09-21T01:51:25.249420+00:00"
+}
