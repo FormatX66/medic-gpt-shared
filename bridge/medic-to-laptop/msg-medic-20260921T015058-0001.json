@@ -1,0 +1,11 @@
+{
+  "id": "msg-medic-20260921T015058-0001",
+  "from": "medic",
+  "to": "laptop",
+  "type": "dir.list",
+  "payload": {
+    "path": "C:\\Users\\bruce\\Documents\\GitHub"
+  },
+  "timestamp": "2026-09-21T01:50:58.468714+00:00",
+  "needs_ack": true
+}
