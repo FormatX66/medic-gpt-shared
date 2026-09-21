@@ -1,0 +1,68 @@
+{
+  "id": "msg-laptop-20260921T015724-0020",
+  "from": "laptop",
+  "to": "medic",
+  "type": "dir.list.response",
+  "in_reply_to": "msg-medic-20260921T020000-0001",
+  "payload": {
+    "path": "C:\\Users\\bruce\\Documents\\GitHub\\GameGPT\\.git",
+    "entries": [
+      {
+        "name": "COMMIT_EDITMSG",
+        "type": "file",
+        "size": 52
+      },
+      {
+        "name": "config",
+        "type": "file",
+        "size": 660
+      },
+      {
+        "name": "description",
+        "type": "file",
+        "size": 73
+      },
+      {
+        "name": "HEAD",
+        "type": "file",
+        "size": 47
+      },
+      {
+        "name": "hooks",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "index",
+        "type": "file",
+        "size": 20669
+      },
+      {
+        "name": "info",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "logs",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "objects",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "packed-refs",
+        "type": "file",
+        "size": 2134
+      },
+      {
+        "name": "refs",
+        "type": "dir",
+        "size": null
+      }
+    ]
+  },
+  "timestamp": "2026-09-21T01:57:24.631490+00:00"
+}
