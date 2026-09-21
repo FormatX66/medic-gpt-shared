@@ -1,0 +1,11 @@
+{
+  "id": "msg-laptop-20260921T012721-0012",
+  "from": "laptop",
+  "to": "medic",
+  "type": "dir.list.response",
+  "in_reply_to": "msg-medic-20260921T012716-0001",
+  "payload": {
+    "error": "not a directory: %USERPROFILE%\\AppData"
+  },
+  "timestamp": "2026-09-21T01:27:21.340687+00:00"
+}
