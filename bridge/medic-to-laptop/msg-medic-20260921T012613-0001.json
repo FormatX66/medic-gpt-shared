@@ -1,0 +1,11 @@
+{
+  "id": "msg-medic-20260921T012613-0001",
+  "from": "medic",
+  "to": "laptop",
+  "type": "dir.list",
+  "payload": {
+    "path": "C:\\Users\\bruce\\gptgame"
+  },
+  "timestamp": "2026-09-21T01:26:13.484959+00:00",
+  "needs_ack": true
+}
