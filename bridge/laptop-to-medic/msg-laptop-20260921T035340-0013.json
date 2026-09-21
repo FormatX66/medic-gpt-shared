@@ -1,0 +1,11 @@
+{
+  "id": "msg-laptop-20260921T035340-0013",
+  "from": "laptop",
+  "to": "medic",
+  "type": "ack",
+  "in_reply_to": "msg-medic-20260921T030151-0001",
+  "payload": {
+    "status": "received"
+  },
+  "timestamp": "2026-09-21T03:53:40.889807+00:00"
+}
