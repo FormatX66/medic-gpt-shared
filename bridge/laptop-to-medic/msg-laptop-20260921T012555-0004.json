@@ -1,0 +1,91 @@
+{
+  "id": "msg-laptop-20260921T012555-0004",
+  "from": "laptop",
+  "to": "medic",
+  "type": "gamegpt.status.response",
+  "in_reply_to": "msg-medic-20260921T005448-0002",
+  "payload": {
+    "side": "laptop",
+    "learned_values_found": false,
+    "store_path": null,
+    "candidate_folders": {
+      "GameGPT-System": {
+        "path": "C:\\Users\\bruce\\GameGPT-System",
+        "entries": [
+          {
+            "name": ".venv",
+            "type": "dir",
+            "size": null
+          },
+          {
+            "name": "gtp_games",
+            "type": "dir",
+            "size": null
+          },
+          {
+            "name": "README.md",
+            "type": "file",
+            "size": 938
+          },
+          {
+            "name": "requirements.txt",
+            "type": "file",
+            "size": 88
+          },
+          {
+            "name": "run-gamegpt.bat",
+            "type": "file",
+            "size": 82
+          }
+        ]
+      },
+      "GameGPT": {
+        "path": "C:\\Users\\bruce\\GameGPT",
+        "entries": [
+          {
+            "name": ".venv",
+            "type": "dir",
+            "size": null
+          },
+          {
+            "name": "copilot",
+            "type": "dir",
+            "size": null
+          },
+          {
+            "name": "corpus",
+            "type": "dir",
+            "size": null
+          },
+          {
+            "name": "memory",
+            "type": "dir",
+            "size": null
+          },
+          {
+            "name": "README.md",
+            "type": "file",
+            "size": 1379
+          },
+          {
+            "name": "research",
+            "type": "dir",
+            "size": null
+          },
+          {
+            "name": "specs",
+            "type": "dir",
+            "size": null
+          },
+          {
+            "name": "tier1-tier2-harness.md",
+            "type": "file",
+            "size": 35173
+          }
+        ]
+      }
+    },
+    "userprofile": "C:\\Users\\bruce"
+  },
+  "timestamp": "2026-09-21T01:25:55.901469+00:00"
+}
