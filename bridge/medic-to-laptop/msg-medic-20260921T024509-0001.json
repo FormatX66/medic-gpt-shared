@@ -1,0 +1,9 @@
+{
+  "id": "msg-medic-20260921T024509-0001",
+  "from": "medic",
+  "to": "laptop",
+  "type": "mcp.status",
+  "payload": {},
+  "timestamp": "2026-09-21T02:45:09.791156+00:00",
+  "needs_ack": true
+}
