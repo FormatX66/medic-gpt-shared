@@ -1,0 +1,13 @@
+{
+  "id": "msg-laptop-20260921T010948-0004",
+  "from": "laptop",
+  "to": "medic",
+  "type": "gamegpt.status.response",
+  "in_reply_to": "msg-medic-20260921T005448-0002",
+  "payload": {
+    "side": "laptop",
+    "learned_values_found": false,
+    "store_path": null
+  },
+  "timestamp": "2026-09-21T01:09:48.752524+00:00"
+}
