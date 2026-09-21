@@ -1,0 +1,9 @@
+{
+  "id": "v17-test-001",
+  "from": "medic",
+  "to": "laptop",
+  "type": "test.connectivity",
+  "payload": {
+    "test": true
+  }
+}
