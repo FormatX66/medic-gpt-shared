@@ -1,0 +1,9 @@
+{
+  "id": "msg-medic-20260921T005448-0002",
+  "from": "medic",
+  "to": "laptop",
+  "type": "gamegpt.status",
+  "payload": {},
+  "timestamp": "2026-09-21T00:54:48.188189+00:00",
+  "needs_ack": true
+}
