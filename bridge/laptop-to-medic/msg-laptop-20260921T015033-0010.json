@@ -1,0 +1,28 @@
+{
+  "id": "msg-laptop-20260921T015033-0010",
+  "from": "laptop",
+  "to": "medic",
+  "type": "dir.list.response",
+  "in_reply_to": "msg-medic-20260921T015008-0003",
+  "payload": {
+    "path": "G:\\",
+    "entries": [
+      {
+        "name": "$RECYCLE.BIN",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": ".shortcut-targets-by-id",
+        "type": "dir",
+        "size": null
+      },
+      {
+        "name": "My Drive.lnk",
+        "type": "file",
+        "size": 694
+      }
+    ]
+  },
+  "timestamp": "2026-09-21T01:50:33.545289+00:00"
+}
