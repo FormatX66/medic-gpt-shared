@@ -1,0 +1,12 @@
+{
+  "id": "msg-medic-20260921T033112-0001",
+  "from": "medic",
+  "to": "laptop",
+  "type": "mcp.tool.call",
+  "payload": {
+    "name": "test",
+    "arguments": {}
+  },
+  "timestamp": "2026-09-21T03:31:12.869154+00:00",
+  "needs_ack": true
+}
