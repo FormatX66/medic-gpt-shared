@@ -1,0 +1,142 @@
+{
+  "id": "msg-laptop-20260921T035403-0016",
+  "from": "laptop",
+  "to": "medic",
+  "type": "mcp.tools.list.response",
+  "in_reply_to": "msg-medic-20260921T035359-0001",
+  "payload": {
+    "status": "ok",
+    "tools": [
+      {
+        "name": "get_raw_memory_status",
+        "description": "Report whether the local companion and game-memory writes are available."
+      },
+      {
+        "name": "negotiate_gamegpt_control",
+        "description": "Select a mutually supported canonical control protocol version."
+      },
+      {
+        "name": "list_game_processes",
+        "description": "List eligible local processes and the currently selected game session."
+      },
+      {
+        "name": "attach_game_process",
+        "description": "Attach to the selected local game. Set write_enabled true when the user wants to edit its memory and the process is in the companion allowlist."
+      },
+      {
+        "name": "detach_game_process",
+        "description": "Close the selected local game-memory session."
+      },
+      {
+        "name": "start_exact_value_scan",
+        "description": "Start a bounded exact scan for a value the user can currently see in the selected game. ChatGPT should choose the likely type and refine after the value changes."
+      },
+      {
+        "name": "start_unknown_value_scan",
+        "description": "Capture a bounded baseline when the current value is not displayed. ChatGPT must then ask for one clear game event and refine the same scan from that observation."
+      },
+      {
+        "name": "refine_value_scan",
+        "description": "Filter an existing scan after one observed game change. Supply value only for an exact comparison; omit it for changed, unchanged, increased, or decreased."
+      },
+      {
+        "name": "get_scan_candidates",
+        "description": "Read the remaining addresses and current values so ChatGPT can decide the next refinement or a user-requested verification write."
+      },
+      {
+        "name": "get_learned_game_values",
+        "description": "Load same-build saved value observations and stable game-table features before scanning. Raw addresses from another process launch are guidance only and are explicitly marked as requiring revalidation"
+      },
+      {
+        "name": "mount_game_accelerator_pack",
+        "description": "Immediately combine exact-build local recipes, portable locators, and read-only save evidence for the selected game. Matching values are staged as restart-safe candidates. This never executes imported"
+      },
+      {
+        "name": "refresh_public_game_sources",
+        "description": "Explicitly run a bounded public-source search for the selected game and cache only metadata, feature hints, and direct CT/source links. No downloaded code or table script is executed, and this refresh"
+      },
+      {
+        "name": "inspect_cheat_table_reference",
+        "description": "Statically parse a local or public HTTPS Cheat Engine table for value hints, AOB signatures, module offsets, and structures. Auto Assembler, Lua, injection logic, and table UI are never executed or lo"
+      },
+      {
+        "name": "observe_game_hud",
+        "description": "Capture the selected foreground game window once, detect visible numeric text and HUD bars locally, then discard the pixels. Screens from other apps are refused."
+      },
+      {
+        "name": "read_inventory_screen",
+        "description": "Capture the selected foreground game inventory once and read the visible selected item label plus current/max stack text locally. Pixels are discarded and no input or game-memory write occurs."
+      },
+      {
+        "name": "read_saved_inventory",
+        "description": "Read typed inventory slots from the newest local No Man's Sky save. Returns item identity, amount, maximum, container group, cargo/technology classification, and grid coordinates without requiring a p"
+      },
+      {
+        "name": "resolve_saved_inventory_stack",
+        "description": "Resolve one exact No Man's Sky saved stack in the current process without writing game memory. The fast path scans only a remembered same-process allocation and validates the 0x30-byte item record plu"
+      },
+      {
+        "name": "observe_moved_inventory_slot",
+        "description": "Open a short read-only learning window for a validated exact-build inventory instruction. Ask the user to move one item stack during the window. The companion uses a temporary hardware execution break"
+      },
+      {
+        "name": "start_moved_inventory_observer",
+        "description": "Validate the exact build and unique inventory signature, start a background hardware observer, and return only after it is genuinely armed. Perform one inventory move only after this tool returns. No "
+      },
+      {
+        "name": "get_moved_inventory_observer",
+        "description": "Return or briefly wait for one armed inventory observer result. A successful result includes the stable item identity and current-launch count/max addresses."
+      },
+      {
+        "name": "cancel_moved_inventory_observer",
+        "description": "Cancel one active inventory observer, restore its debug registers, and detach."
+      },
+      {
+        "name": "start_instruction_value_observer",
+        "description": "Arm a short read-only hardware observation from a data-only translated CT or source recipe. The exact executable build and unique AOB must match. It captures one x64 register and reads typed structure"
+      },
+      {
+        "name": "get_instruction_value_observer",
+        "description": "Return or briefly wait for a translated instruction observer result, including current-launch field addresses, values, and source provenance."
+      },
+      {
+        "name": "cancel_instruction_value_observer",
+        "description": "Cancel one translated instruction observer, restore debug registers, and detach."
+      },
+      {
+        "name": "sync_game_table_registry",
+        "description": "Inspect, pull, stage, or explicitly publish data-only exact-build game tables in the configured private registry. Attach auto-loads from the local checkout and never waits on the network. Raw addresse"
+      },
+      {
+        "name": "remember_value_scan",
+        "description": "Persist every candidate from an untruncated scan of at most 20 results. Supply verified_addresses only for candidates already confirmed by a write/readback test."
+      },
+      {
+        "name": "control_game_command_overlay",
+        "description": "Start, inspect, or stop the small always-on-top Windows command box. Ctrl+Shift+G toggles it and GPT Voice opens native Codex Voice. Stopping is cooperative and never terminates an unverified process."
+      },
+      {
+        "name": "wait_for_game_command",
+        "description": "Wait up to 30 seconds for a local keyboard or voice command from the overlay. Pass the prior command ID as acknowledge_id only after acting on it."
+      },
+      {
+        "name": "set_game_command_overlay_message",
+        "description": "Show a short GPT progress or result message in the in-game command overlay."
+      },
+      {
+        "name": "read_game_memory",
+        "description": "Read a typed scalar at a decimal memory address in the selected game. Supported types are i8, u8, i16, u16, i32, u32, i64, u64, f32, and f64."
+      },
+      {
+        "name": "write_game_memory",
+        "description": "Write a typed scalar at a decimal address in the selected write-enabled game and return the previous value plus verified readback. expected_current is optional; when supplied, a mismatch stops the wri"
+      },
+      {
+        "name": "rollback_game_memory_write",
+        "description": "Restore the original value using a receipt token. The rollback is refused if the process or current value changed after the verified write."
+      }
+    ],
+    "count": 32
+  },
+  "timestamp": "2026-09-21T03:54:03.845572+00:00"
+}
