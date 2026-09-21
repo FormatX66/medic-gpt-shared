@@ -1,4 +1,4 @@
-# Medic SSH setup - run this in PowerShell
-mkdir "$env:USERPROFILE\.ssh" -Force
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/FormatX66/medic-gpt-shared/main/laptop/inbox/medic-ssh-key.txt" -OutFile "$env:USERPROFILE\.ssh\authorized_keys"
-Write-Host "Done. Medic can now SSH in."
+# Medic SSH setup - paste into PowerShell and run
+mkdir "C:\Users\bruce\.ssh" -Force
+"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGGuzi1oaQ9dHKDahWBsalmAWH/RlvApmdQ2FvDTG1vJ hatch" | Out-File "C:\Users\bruce\.ssh\authorized_keys" -Encoding ascii -Force
+Write-Host "Done."
