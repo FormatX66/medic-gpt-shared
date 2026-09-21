@@ -1,0 +1,12 @@
+{
+  "id": "msg-medic-20260921T005208-0004",
+  "from": "medic",
+  "to": "laptop",
+  "type": "ping.response",
+  "in_reply_to": "msg-laptop-20260921T002310-0001",
+  "payload": {
+    "pong": true,
+    "side": "medic"
+  },
+  "timestamp": "2026-09-21T00:52:08.270370+00:00"
+}
