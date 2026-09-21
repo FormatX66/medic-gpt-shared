@@ -1,0 +1,21 @@
+{
+  "id": "msg-laptop-20260921T033132-0012",
+  "from": "laptop",
+  "to": "medic",
+  "type": "mcp.tool.call.response",
+  "in_reply_to": "msg-medic-20260921T033112-0001",
+  "payload": {
+    "status": "ok",
+    "tool": "test",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Unknown tool: test"
+        }
+      ],
+      "isError": true
+    }
+  },
+  "timestamp": "2026-09-21T03:31:32.168095+00:00"
+}
