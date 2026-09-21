@@ -1,0 +1,11 @@
+{
+  "id": "msg-medic-20260921T001232-0001",
+  "from": "medic",
+  "to": "laptop",
+  "type": "ping",
+  "payload": {
+    "check": 2
+  },
+  "timestamp": "2026-09-21T00:12:32.196926+00:00",
+  "needs_ack": true
+}
