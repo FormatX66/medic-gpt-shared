@@ -1,0 +1,9 @@
+{
+  "id": "msg-medic-20260921T005443-0001",
+  "from": "medic",
+  "to": "laptop",
+  "type": "learnings.export",
+  "payload": {},
+  "timestamp": "2026-09-21T00:54:43.259596+00:00",
+  "needs_ack": true
+}
