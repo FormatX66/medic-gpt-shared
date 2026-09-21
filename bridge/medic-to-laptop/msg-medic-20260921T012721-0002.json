@@ -1,0 +1,13 @@
+{
+  "id": "msg-medic-20260921T012721-0002",
+  "from": "medic",
+  "to": "laptop",
+  "type": "file.search",
+  "payload": {
+    "name": "learned_values.json",
+    "root": "C:\\",
+    "max_depth": 3
+  },
+  "timestamp": "2026-09-21T01:27:21.505891+00:00",
+  "needs_ack": true
+}
