@@ -1,0 +1,55 @@
+{
+  "id": "msg-laptop-20260921T033647-0014",
+  "from": "laptop",
+  "to": "medic",
+  "type": "mcp.tool.call.response",
+  "in_reply_to": "msg-medic-20260921T033634-0001",
+  "payload": {
+    "status": "ok",
+    "tool": "get_raw_memory_status",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"ready\",\n  \"version\": \"0.16.0\",\n  \"backend\": \"windows\",\n  \"writes_available\": false,\n  \"write_process_allowlist\": [\n    \"gtp-simulated-game\"\n  ],\n  \"scan_activity\": null,\n  \"table_registry\": {\n    \"action\": \"status\",\n    \"enabled\": false,\n    \"directory\": null,\n    \"repository_ready\": false,\n    \"remote_url\": null,\n    \"branch\": null,\n    \"dirty\": false,\n    \"exact_table_path\": null,\n    \"staged_table_path\": null,\n    \"commit\": null,\n    \"changed\": false,\n    \"notes\": []\n  },\n  \"safety_scope\": \"local personal offline games only\",\n  \"control_api\": \"gamegpt.control\",\n  \"control_protocol_versions\": [\n    \"1.0\"\n  ],\n  \"canonical_role\": \"gamegpt-companion\",\n  \"instance_id\": \"03ca493d40354a16879653eb18158457\",\n  \"started_at\": \"2026-09-21T03:21:41.543508Z\",\n  \"active_session_count\": 0,\n  \"write_receipt_count\": 0\n}"
+        }
+      ],
+      "structuredContent": {
+        "status": "ready",
+        "version": "0.16.0",
+        "backend": "windows",
+        "writes_available": false,
+        "write_process_allowlist": [
+          "gtp-simulated-game"
+        ],
+        "scan_activity": null,
+        "table_registry": {
+          "action": "status",
+          "enabled": false,
+          "directory": null,
+          "repository_ready": false,
+          "remote_url": null,
+          "branch": null,
+          "dirty": false,
+          "exact_table_path": null,
+          "staged_table_path": null,
+          "commit": null,
+          "changed": false,
+          "notes": []
+        },
+        "safety_scope": "local personal offline games only",
+        "control_api": "gamegpt.control",
+        "control_protocol_versions": [
+          "1.0"
+        ],
+        "canonical_role": "gamegpt-companion",
+        "instance_id": "03ca493d40354a16879653eb18158457",
+        "started_at": "2026-09-21T03:21:41.543508Z",
+        "active_session_count": 0,
+        "write_receipt_count": 0
+      },
+      "isError": false
+    }
+  },
+  "timestamp": "2026-09-21T03:36:47.646289+00:00"
+}
