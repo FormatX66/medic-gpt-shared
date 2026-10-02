@@ -1,0 +1,124 @@
+TAP version 13
+# Subtest: label omitted
+ok 1 - label omitted
+  ---
+  duration_ms: 428.401265
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 2 - label omitted
+  ---
+  duration_ms: 2.268499
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 3 - label omitted
+  ---
+  duration_ms: 1.044074
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 4 - label omitted
+  ---
+  duration_ms: 0.895903
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 5 - label omitted
+  ---
+  duration_ms: 1.781748
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 6 - label omitted
+  ---
+  duration_ms: 287.271439
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 7 - label omitted
+  ---
+  duration_ms: 446.702118
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 8 - label omitted
+  ---
+  duration_ms: 373.166171
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 9 - label omitted
+  ---
+  duration_ms: 309.945537
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 10 - label omitted
+  ---
+  duration_ms: 312.895327
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 11 - label omitted
+  ---
+  duration_ms: 366.073535
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 12 - label omitted
+  ---
+  duration_ms: 296.016194
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 13 - label omitted
+  ---
+  duration_ms: 301.559831
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 14 - label omitted
+  ---
+  duration_ms: 415.135057
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 15 - label omitted
+  ---
+  duration_ms: 1.946243
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 16 - label omitted
+  ---
+  duration_ms: 1.185405
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 17 - label omitted
+  ---
+  duration_ms: 0.976825
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 18 - label omitted
+  ---
+  duration_ms: 0.11962
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 19 - label omitted
+  ---
+  duration_ms: 471.05386
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4136.712602

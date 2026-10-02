@@ -1,0 +1,304 @@
+TAP version 13
+# Subtest: label omitted
+ok 1 - label omitted
+  ---
+  duration_ms: 2.3205
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 2 - label omitted
+  ---
+  duration_ms: 0.370746
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 3 - label omitted
+  ---
+  duration_ms: 0.245176
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 4 - label omitted
+  ---
+  duration_ms: 1.1887
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 5 - label omitted
+  ---
+  duration_ms: 0.964147
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 6 - label omitted
+  ---
+  duration_ms: 0.238077
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 7 - label omitted
+  ---
+  duration_ms: 0.312325
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 8 - label omitted
+  ---
+  duration_ms: 0.512194
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 9 - label omitted
+  ---
+  duration_ms: 0.232958
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 10 - label omitted
+  ---
+  duration_ms: 23.583435
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 11 - label omitted
+  ---
+  duration_ms: 0.873482
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 12 - label omitted
+  ---
+  duration_ms: 6.652262
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 13 - label omitted
+  ---
+  duration_ms: 3.427259
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 14 - label omitted
+  ---
+  duration_ms: 2.303873
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 15 - label omitted
+  ---
+  duration_ms: 2.280142
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 16 - label omitted
+  ---
+  duration_ms: 0.354078
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 17 - label omitted
+  ---
+  duration_ms: 0.194772
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 18 - label omitted
+  ---
+  duration_ms: 0.306038
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 19 - label omitted
+  ---
+  duration_ms: 0.604676
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 20 - label omitted
+  ---
+  duration_ms: 2.173937
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 21 - label omitted
+  ---
+  duration_ms: 3.595171
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 22 - label omitted
+  ---
+  duration_ms: 0.377714
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 23 - label omitted
+  ---
+  duration_ms: 1.501503
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 24 - label omitted
+  ---
+  duration_ms: 154.513888
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 25 - label omitted
+  ---
+  duration_ms: 121.315499
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 26 - label omitted
+  ---
+  duration_ms: 1.434413
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 27 - label omitted
+  ---
+  duration_ms: 0.637525
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 28 - label omitted
+  ---
+  duration_ms: 0.350265
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 29 - label omitted
+  ---
+  duration_ms: 1.980742
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 30 - label omitted
+  ---
+  duration_ms: 0.393813
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 31 - label omitted
+  ---
+  duration_ms: 0.179138
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 32 - label omitted
+  ---
+  duration_ms: 0.23858
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 33 - label omitted
+  ---
+  duration_ms: 4.307571
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 34 - label omitted
+  ---
+  duration_ms: 1.054879
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 35 - label omitted
+  ---
+  duration_ms: 4.569856
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 36 - label omitted
+  ---
+  duration_ms: 6.904133
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 37 - label omitted
+  ---
+  duration_ms: 4.207625
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 38 - label omitted
+  ---
+  duration_ms: 2.660379
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 39 - label omitted
+  ---
+  duration_ms: 1.869589
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 40 - label omitted
+  ---
+  duration_ms: 2.29311
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 41 - label omitted
+  ---
+  duration_ms: 2.698944
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 42 - label omitted
+  ---
+  duration_ms: 2.265589
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 43 - label omitted
+  ---
+  duration_ms: 2.305318
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 44 - label omitted
+  ---
+  duration_ms: 3.472408
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 45 - label omitted
+  ---
+  duration_ms: 0.73704
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 46 - label omitted
+  ---
+  duration_ms: 0.787547
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 47 - label omitted
+  ---
+  duration_ms: 0.826995
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 48 - label omitted
+  ---
+  duration_ms: 56.438689
+  type: 'test'
+  ...
+# Subtest: label omitted
+ok 49 - label omitted
+  ---
+  duration_ms: 170.183833
+  type: 'test'
+  ...
+1..49
+# tests 49
+# suites 0
+# pass 49
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 468.56616

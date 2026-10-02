@@ -1,0 +1,78 @@
+{
+  "schema": "factory.export-source-hashes.v1",
+  "candidateCommit": "9142cfd060ada159ef897801ca2b433dffe78941",
+  "files": [
+    {
+      "file": "factory/agent-core.mjs",
+      "sha256": "dc4b99811fe56984bde6a8742647d5d06e7bc1b21f33b39f1c6677f4f365cd34",
+      "gitBlob": "b025d585edf97bb31b9cf5c17e2387cbccb90f80",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/factory/agent-core.mjs"
+    },
+    {
+      "file": "factory/medic-bridge.mjs",
+      "sha256": "134d0f65d7d2b2969f3f829dc855bf9057350d001ee4f4a371972d87168157dd",
+      "gitBlob": "99a5cbdc52b36f42117dea6a91c3b458ac2e04cb",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/factory/medic-bridge.mjs"
+    },
+    {
+      "file": "factory/validation-executor.mjs",
+      "sha256": "f295174f29b70b3e008a527c1c275baa962fdc745a2b011552197190191e09c8",
+      "gitBlob": "300eb55d9236cfce79f60b125d28d845d3eda1b1",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/factory/validation-executor.mjs"
+    },
+    {
+      "file": "factory/workflow-controller.mjs",
+      "sha256": "a40020f31917b0f555505f2dc285fc399115d9d5d79684bbd0dd3808c88680fa",
+      "gitBlob": "2b09c0b1aa9d0f061d4f12532abd1a447c00a82f",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/factory/workflow-controller.mjs"
+    },
+    {
+      "file": "factory/qualification-manifest.json",
+      "sha256": "7a2c55ef609ebb5ad4401cad7de8edb820a5408ec9f9e0039d234f2e966b9ab2",
+      "gitBlob": "b45460b49ddbaee75bf8262eea615a412242ac3e",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/factory/qualification-manifest.json"
+    },
+    {
+      "file": "scripts/cli/medic-factory-job.mjs",
+      "sha256": "a665336bbde30c3b5d723a762a4f7edd2414e3046f8b9478a9dd08bebd03fda3",
+      "gitBlob": "74ad5bc8e7dbd2b85f8a02005e9afe0a5bdc643e",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/scripts/cli/medic-factory-job.mjs"
+    },
+    {
+      "file": "scripts/cli/factory-qualify-candidate.mjs",
+      "sha256": "e8e1f82a60f1ec2f62c6f0af0f6621eee45674398816701dd7a1c7134e968a87",
+      "gitBlob": "f850ba579d127805334675548259accccbedf9ea",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/scripts/cli/factory-qualify-candidate.mjs"
+    },
+    {
+      "file": "tests/unit/factory-admission-regression.test.mjs",
+      "sha256": "998869b09b265427793bd9cd610bb5e83a153494b970022bdf61cff87e39ac44",
+      "gitBlob": "3427c9bc54bf7a2c60539d3a310b447dfb7fd3c2",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/tests/unit/factory-admission-regression.test.mjs"
+    },
+    {
+      "file": "tests/unit/factory-medic-bridge.test.mjs",
+      "sha256": "f2e43ff39d5831c114aa412c4ee18b8900709521a5dd027417a1bd9aa6578e95",
+      "gitBlob": "30746e33e9fa715c4e3f18a2c83c66c7bec8b8ec",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/tests/unit/factory-medic-bridge.test.mjs"
+    },
+    {
+      "file": "tests/unit/factory-medic-lifecycle.test.mjs",
+      "sha256": "b38beeac1609008108ee0dea29e370d01d9e0e91854d513be29535a95e39d0a6",
+      "gitBlob": "7517fef909dfcf52411c609ecc2af457a9dded03",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/tests/unit/factory-medic-lifecycle.test.mjs"
+    },
+    {
+      "file": "tests/unit/factory-workflow-controller.test.mjs",
+      "sha256": "8588275fa30e5f163f0bb2a2ba021b1728df244926c4e0cede617e6cb7d0819a",
+      "gitBlob": "a099f1dbafa0344e23b26eb3b505eabc60189dc0",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/tests/unit/factory-workflow-controller.test.mjs"
+    },
+    {
+      "file": "tests/unit/factory-validation-executor.test.mjs",
+      "sha256": "3c4fb9cc51eef0f519b92ed2a194ed686ca0cd60d728dd8b4eb23d8183ec6a9b",
+      "gitBlob": "a41ce4abe18f75ef1d530302b28b7e77c56523ee",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/tests/unit/factory-validation-executor.test.mjs"
+    }
+  ]
+}

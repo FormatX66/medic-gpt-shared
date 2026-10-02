@@ -1,0 +1,142 @@
+{
+  "schema": "factory.sanitized-execution-record.v1",
+  "status": "succeeded",
+  "reason": "separate_verification_passed",
+  "acceptedAt": "2026-09-29T20:15:33.061Z",
+  "events": [
+    {
+      "status": "running",
+      "reason": "adapter_started",
+      "at": "2026-09-29T20:15:33.254Z"
+    },
+    {
+      "status": "verifying",
+      "reason": "execution_returned",
+      "at": "2026-09-29T20:15:37.774Z"
+    },
+    {
+      "status": "succeeded",
+      "reason": "separate_verification_passed",
+      "at": "2026-09-29T20:15:37.776Z"
+    }
+  ],
+  "attempts": 1,
+  "startedAt": "2026-09-29T20:15:33.254Z",
+  "checkinWindow": [
+    "2026-09-29T20:16:33.254Z",
+    "2026-09-29T20:17:33.254Z"
+  ],
+  "sourceSchema": "factory.execution-record.v1",
+  "job": {
+    "id": "validation-adapter-qualification",
+    "goal": "Qualify reviewed source: validation-adapter-qualification",
+    "kind": "test",
+    "scope": "validation-adapter-qualification",
+    "revision": "f295174f29b70b3e008a527c1c275baa962fdc745a2b011552197190191e09c8",
+    "classification": "private",
+    "dependencies": [],
+    "checkinMinutes": [
+      1,
+      2
+    ],
+    "fingerprint": "c4770975245dc0184cc0b809d29580f7cbf59e8bf422094def5f6f570f6ec169"
+  },
+  "statusTimeline": [
+    {
+      "status": "queued",
+      "reason": "accepted",
+      "at": "2026-09-29T20:15:33.061Z",
+      "derivedFrom": "acceptedAt and controller initial-state definition"
+    },
+    {
+      "status": "running",
+      "reason": "adapter_started",
+      "at": "2026-09-29T20:15:33.254Z"
+    },
+    {
+      "status": "verifying",
+      "reason": "execution_returned",
+      "at": "2026-09-29T20:15:37.774Z"
+    },
+    {
+      "status": "succeeded",
+      "reason": "separate_verification_passed",
+      "at": "2026-09-29T20:15:37.776Z"
+    }
+  ],
+  "result": {
+    "jobFingerprint": "c4770975245dc0184cc0b809d29580f7cbf59e8bf422094def5f6f570f6ec169",
+    "executorId": "factory-reviewed-test-executor",
+    "exitCode": 0,
+    "artifactDigest": "698f961c3fe673b3d8822e501562fa1f1d37cb053753626d119a196d95e69b68"
+  },
+  "verification": {
+    "schema": "factory.validation-verification.v1",
+    "verifierId": "factory-test-artifact-readback",
+    "jobFingerprint": "c4770975245dc0184cc0b809d29580f7cbf59e8bf422094def5f6f570f6ec169",
+    "artifactDigest": "698f961c3fe673b3d8822e501562fa1f1d37cb053753626d119a196d95e69b68",
+    "passed": true,
+    "summary": {
+      "tests": 19,
+      "pass": 19,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "checkedAt": "2026-09-29T20:15:37.776Z",
+    "runtime": "v22.16.0",
+    "scope": "Pinned reviewed source tests; not live desktop or untrusted-code isolation"
+  },
+  "execution": {
+    "schema": "factory.validation-execution.v1",
+    "jobFingerprint": "c4770975245dc0184cc0b809d29580f7cbf59e8bf422094def5f6f570f6ec169",
+    "recipe": "validation-adapter-qualification",
+    "revision": "f295174f29b70b3e008a527c1c275baa962fdc745a2b011552197190191e09c8",
+    "expectedTests": 19,
+    "sourceManifest": [
+      {
+        "file": "factory/agent-core.mjs",
+        "sha256": "dc4b99811fe56984bde6a8742647d5d06e7bc1b21f33b39f1c6677f4f365cd34"
+      },
+      {
+        "file": "factory/medic-bridge.mjs",
+        "sha256": "134d0f65d7d2b2969f3f829dc855bf9057350d001ee4f4a371972d87168157dd"
+      },
+      {
+        "file": "factory/validation-executor.mjs",
+        "sha256": "f295174f29b70b3e008a527c1c275baa962fdc745a2b011552197190191e09c8"
+      },
+      {
+        "file": "factory/workflow-controller.mjs",
+        "sha256": "a40020f31917b0f555505f2dc285fc399115d9d5d79684bbd0dd3808c88680fa"
+      },
+      {
+        "file": "scripts/cli/medic-factory-job.mjs",
+        "sha256": "a665336bbde30c3b5d723a762a4f7edd2414e3046f8b9478a9dd08bebd03fda3"
+      },
+      {
+        "file": "tests/unit/factory-validation-executor.test.mjs",
+        "sha256": "3c4fb9cc51eef0f519b92ed2a194ed686ca0cd60d728dd8b4eb23d8183ec6a9b"
+      }
+    ],
+    "runtime": "v22.16.0",
+    "platform": "linux",
+    "executorId": "factory-reviewed-test-executor",
+    "startedAt": "2026-09-29T20:15:33.548Z",
+    "exitCode": 0,
+    "stopReason": null,
+    "signal": null,
+    "completedAt": "2026-09-29T20:15:37.773Z",
+    "stdoutSha256": "698f961c3fe673b3d8822e501562fa1f1d37cb053753626d119a196d95e69b68",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "executionClosed": true
+  },
+  "exportedArtifacts": {
+    "stdout": "jobs/validation-adapter-qualification/stdout.sanitized.tap",
+    "stderr": "jobs/validation-adapter-qualification/stderr.txt",
+    "stdoutIsDerivative": true,
+    "originalStdoutSha256": "698f961c3fe673b3d8822e501562fa1f1d37cb053753626d119a196d95e69b68",
+    "exportedStdoutSha256": "31c341cb8df9df9b0cb5bdb8c63407a474c029acaaab76e6057a7d6eee2a2e0f"
+  }
+}

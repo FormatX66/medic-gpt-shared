@@ -1,0 +1,56 @@
+{
+  "schema": "factory.original-content-hashes.v1",
+  "archiveSha256": "1147d35a927376e3956b63b799268e3748e8359212dc39f0753a3431bf75e948",
+  "members": [
+    {
+      "archiveMember": "evidence/recorded-qualification/ledger/factory-repair-qualification.json",
+      "sha256": "05a1fd852fddce2adfaa5d62f5ebc4afc0419ee76d6af81afe227d2093cc151c",
+      "bytes": 2292
+    },
+    {
+      "archiveMember": "evidence/recorded-qualification/artifacts/factory-repair-qualification/execution.json",
+      "sha256": "c36b1c0f70450c437e6c896c8f2fbb1fa888fa46107ba3984e81287dc097eaa4",
+      "bytes": 2466
+    },
+    {
+      "archiveMember": "evidence/recorded-qualification/artifacts/factory-repair-qualification/verification.json",
+      "sha256": "5808b0e3545ea6060bb0b0fa0ae4692a0dc8258bb1b6f0d6e56acd9d6bfdd0bb",
+      "bytes": 574
+    },
+    {
+      "archiveMember": "evidence/recorded-qualification/artifacts/factory-repair-qualification/stdout.tap",
+      "sha256": "bfd8bb7a988613ea743cda433d30bb81731b47b2d3cbf6d79ad9356249c5ddf5",
+      "bytes": 8725
+    },
+    {
+      "archiveMember": "evidence/recorded-qualification/artifacts/factory-repair-qualification/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "archiveMember": "evidence/recorded-qualification/ledger/validation-adapter-qualification.json",
+      "sha256": "8559261dbd0424f3b42eecbbbde1296d97ac359289163b31de814245590e4586",
+      "bytes": 2336
+    },
+    {
+      "archiveMember": "evidence/recorded-qualification/artifacts/validation-adapter-qualification/execution.json",
+      "sha256": "033d51cf4f536367e668379ce3eaaf5ae32643b754c2b5ed169fdc36270b1361",
+      "bytes": 1866
+    },
+    {
+      "archiveMember": "evidence/recorded-qualification/artifacts/validation-adapter-qualification/verification.json",
+      "sha256": "9512aa722ad9a6f13dcf048e95c21b0b9dc5c70d86f9c6710c87eea4ff8fbeb3",
+      "bytes": 574
+    },
+    {
+      "archiveMember": "evidence/recorded-qualification/artifacts/validation-adapter-qualification/stdout.tap",
+      "sha256": "698f961c3fe673b3d8822e501562fa1f1d37cb053753626d119a196d95e69b68",
+      "bytes": 3276
+    },
+    {
+      "archiveMember": "evidence/recorded-qualification/artifacts/validation-adapter-qualification/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ]
+}

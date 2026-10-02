@@ -1,0 +1,60 @@
+{
+  "schema": "factory.sanitized-runtime-packet.v1",
+  "exportedAt": "2026-10-01T22:15:35.288555+00:00",
+  "candidateCommit": "9142cfd060ada159ef897801ca2b433dffe78941",
+  "qualificationSourceCandidate": "986bd7aec84d5e7ff3baae83de50a6d9df3f66e0",
+  "evidenceDate": "2026-09-29",
+  "runtime": {
+    "platform": "linux",
+    "node": "v22.16.0"
+  },
+  "jobs": [
+    {
+      "jobId": "factory-repair-qualification",
+      "fingerprint": "6aaea88791345c25f62cbe82daf013a0aa581d4aa10deee2fecfaf1446664d9a",
+      "record": "jobs/factory-repair-qualification/record.json",
+      "status": "passed",
+      "testsPassed": 49,
+      "startedAt": "2026-09-29T20:15:33.245Z",
+      "completedAt": "2026-09-29T20:15:33.765Z"
+    },
+    {
+      "jobId": "validation-adapter-qualification",
+      "fingerprint": "c4770975245dc0184cc0b809d29580f7cbf59e8bf422094def5f6f570f6ec169",
+      "record": "jobs/validation-adapter-qualification/record.json",
+      "status": "passed",
+      "testsPassed": 19,
+      "startedAt": "2026-09-29T20:15:33.548Z",
+      "completedAt": "2026-09-29T20:15:37.773Z"
+    }
+  ],
+  "testsPassed": 68,
+  "testsFailed": 0,
+  "testsSkipped": 0,
+  "parallelOverlapMs": 217,
+  "originalArchiveSha256": "1147d35a927376e3956b63b799268e3748e8359212dc39f0753a3431bf75e948",
+  "historicalReadback": {
+    "checksPassed": 21,
+    "idempotentReplay": "reported in preserved historical readback; not replayed in this export"
+  },
+  "freshExportValidation": {
+    "checkCount": 64,
+    "allPassed": true
+  },
+  "gates": {
+    "focusedLinuxNode22Qualification": "passed",
+    "farmerControllerAttempt": "failed_before_runner_assignment; historical run 36624137613, zero steps",
+    "windowsProcessTreeTermination": "unrun",
+    "windowsNode24Acceptance": "unrun",
+    "liveProviderFailover": "unrun",
+    "commanderParity": "unrun",
+    "genericWriteCapableBuildExecutor": "held_unregistered",
+    "productionPromotion": "held"
+  },
+  "delivery": {
+    "status": "prepared_locally_awaiting_publication_confirmation",
+    "destination": "FormatX66/medic-gpt-shared:laptop/outbox/factory/runtime/2026-10-01/",
+    "audience": "public internet",
+    "medicAcceptance": "not established"
+  }
+}

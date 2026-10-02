@@ -1,0 +1,18 @@
+{
+  "schema": "factory.validation-verification.v1",
+  "verifierId": "factory-test-artifact-readback",
+  "jobFingerprint": "c4770975245dc0184cc0b809d29580f7cbf59e8bf422094def5f6f570f6ec169",
+  "artifactDigest": "698f961c3fe673b3d8822e501562fa1f1d37cb053753626d119a196d95e69b68",
+  "passed": true,
+  "summary": {
+    "tests": 19,
+    "pass": 19,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "checkedAt": "2026-09-29T20:15:37.776Z",
+  "runtime": "v22.16.0",
+  "scope": "Pinned reviewed source tests; not live desktop or untrusted-code isolation"
+}

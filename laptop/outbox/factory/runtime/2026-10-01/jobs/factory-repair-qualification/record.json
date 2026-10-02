@@ -1,0 +1,154 @@
+{
+  "schema": "factory.sanitized-execution-record.v1",
+  "status": "succeeded",
+  "reason": "separate_verification_passed",
+  "acceptedAt": "2026-09-29T20:15:33.060Z",
+  "events": [
+    {
+      "status": "running",
+      "reason": "adapter_started",
+      "at": "2026-09-29T20:15:33.062Z"
+    },
+    {
+      "status": "verifying",
+      "reason": "execution_returned",
+      "at": "2026-09-29T20:15:33.767Z"
+    },
+    {
+      "status": "succeeded",
+      "reason": "separate_verification_passed",
+      "at": "2026-09-29T20:15:33.769Z"
+    }
+  ],
+  "attempts": 1,
+  "startedAt": "2026-09-29T20:15:33.062Z",
+  "checkinWindow": [
+    "2026-09-29T20:16:33.062Z",
+    "2026-09-29T20:17:33.062Z"
+  ],
+  "sourceSchema": "factory.execution-record.v1",
+  "job": {
+    "id": "factory-repair-qualification",
+    "goal": "Qualify reviewed source: factory-repair-qualification",
+    "kind": "test",
+    "scope": "factory-repair-qualification",
+    "revision": "986bd7aec84d5e7ff3baae83de50a6d9df3f66e0",
+    "classification": "private",
+    "dependencies": [],
+    "checkinMinutes": [
+      1,
+      2
+    ],
+    "fingerprint": "6aaea88791345c25f62cbe82daf013a0aa581d4aa10deee2fecfaf1446664d9a"
+  },
+  "statusTimeline": [
+    {
+      "status": "queued",
+      "reason": "accepted",
+      "at": "2026-09-29T20:15:33.060Z",
+      "derivedFrom": "acceptedAt and controller initial-state definition"
+    },
+    {
+      "status": "running",
+      "reason": "adapter_started",
+      "at": "2026-09-29T20:15:33.062Z"
+    },
+    {
+      "status": "verifying",
+      "reason": "execution_returned",
+      "at": "2026-09-29T20:15:33.767Z"
+    },
+    {
+      "status": "succeeded",
+      "reason": "separate_verification_passed",
+      "at": "2026-09-29T20:15:33.769Z"
+    }
+  ],
+  "result": {
+    "jobFingerprint": "6aaea88791345c25f62cbe82daf013a0aa581d4aa10deee2fecfaf1446664d9a",
+    "executorId": "factory-reviewed-test-executor",
+    "exitCode": 0,
+    "artifactDigest": "bfd8bb7a988613ea743cda433d30bb81731b47b2d3cbf6d79ad9356249c5ddf5"
+  },
+  "verification": {
+    "schema": "factory.validation-verification.v1",
+    "verifierId": "factory-test-artifact-readback",
+    "jobFingerprint": "6aaea88791345c25f62cbe82daf013a0aa581d4aa10deee2fecfaf1446664d9a",
+    "artifactDigest": "bfd8bb7a988613ea743cda433d30bb81731b47b2d3cbf6d79ad9356249c5ddf5",
+    "passed": true,
+    "summary": {
+      "tests": 49,
+      "pass": 49,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "checkedAt": "2026-09-29T20:15:33.769Z",
+    "runtime": "v22.16.0",
+    "scope": "Pinned reviewed source tests; not live desktop or untrusted-code isolation"
+  },
+  "execution": {
+    "schema": "factory.validation-execution.v1",
+    "jobFingerprint": "6aaea88791345c25f62cbe82daf013a0aa581d4aa10deee2fecfaf1446664d9a",
+    "recipe": "factory-repair-qualification",
+    "revision": "986bd7aec84d5e7ff3baae83de50a6d9df3f66e0",
+    "expectedTests": 49,
+    "sourceManifest": [
+      {
+        "file": "factory/agent-core.mjs",
+        "sha256": "dc4b99811fe56984bde6a8742647d5d06e7bc1b21f33b39f1c6677f4f365cd34"
+      },
+      {
+        "file": "factory/medic-bridge.mjs",
+        "sha256": "134d0f65d7d2b2969f3f829dc855bf9057350d001ee4f4a371972d87168157dd"
+      },
+      {
+        "file": "factory/validation-executor.mjs",
+        "sha256": "f295174f29b70b3e008a527c1c275baa962fdc745a2b011552197190191e09c8"
+      },
+      {
+        "file": "factory/workflow-controller.mjs",
+        "sha256": "a40020f31917b0f555505f2dc285fc399115d9d5d79684bbd0dd3808c88680fa"
+      },
+      {
+        "file": "scripts/cli/medic-factory-job.mjs",
+        "sha256": "a665336bbde30c3b5d723a762a4f7edd2414e3046f8b9478a9dd08bebd03fda3"
+      },
+      {
+        "file": "tests/unit/factory-admission-regression.test.mjs",
+        "sha256": "998869b09b265427793bd9cd610bb5e83a153494b970022bdf61cff87e39ac44"
+      },
+      {
+        "file": "tests/unit/factory-medic-bridge.test.mjs",
+        "sha256": "f2e43ff39d5831c114aa412c4ee18b8900709521a5dd027417a1bd9aa6578e95"
+      },
+      {
+        "file": "tests/unit/factory-medic-lifecycle.test.mjs",
+        "sha256": "b38beeac1609008108ee0dea29e370d01d9e0e91854d513be29535a95e39d0a6"
+      },
+      {
+        "file": "tests/unit/factory-workflow-controller.test.mjs",
+        "sha256": "8588275fa30e5f163f0bb2a2ba021b1728df244926c4e0cede617e6cb7d0819a"
+      }
+    ],
+    "runtime": "v22.16.0",
+    "platform": "linux",
+    "executorId": "factory-reviewed-test-executor",
+    "startedAt": "2026-09-29T20:15:33.245Z",
+    "exitCode": 0,
+    "stopReason": null,
+    "signal": null,
+    "completedAt": "2026-09-29T20:15:33.765Z",
+    "stdoutSha256": "bfd8bb7a988613ea743cda433d30bb81731b47b2d3cbf6d79ad9356249c5ddf5",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "executionClosed": true
+  },
+  "exportedArtifacts": {
+    "stdout": "jobs/factory-repair-qualification/stdout.sanitized.tap",
+    "stderr": "jobs/factory-repair-qualification/stderr.txt",
+    "stdoutIsDerivative": true,
+    "originalStdoutSha256": "bfd8bb7a988613ea743cda433d30bb81731b47b2d3cbf6d79ad9356249c5ddf5",
+    "exportedStdoutSha256": "019746fa97615b4ead80a9807c51cae5e685c3f960029c2bbd16c1c90bf4250a"
+  }
+}

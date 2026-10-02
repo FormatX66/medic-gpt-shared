@@ -1,0 +1,159 @@
+{
+  "checkedAt": "2026-10-01T22:14:07.300Z",
+  "repo": "FormatX66/medic-gpt-shared",
+  "visibility": "public",
+  "head": "2b9ddc1386f3a7fa4c0706b2d62fa855145ba56f",
+  "treeTruncated": false,
+  "factoryPaths": [
+    {
+      "path": "laptop/inbox/2026-10-01-factory-decision.md",
+      "sha": "372cc0b6eb64e8f0921acbcbe8c7f5354937289a",
+      "type": "blob"
+    },
+    {
+      "path": "laptop/outbox/2026-10-01-factory-handoff.md",
+      "sha": "a3f4a737610d303e88b4c8df2c67d12d1de73eb7",
+      "type": "blob"
+    },
+    {
+      "path": "laptop/outbox/factory",
+      "sha": "b47862ead2b85b49565ae2aa62bcf965f08cec74",
+      "type": "tree"
+    },
+    {
+      "path": "laptop/outbox/factory/README.md",
+      "sha": "0b9da9b35dd8bfb4ce35a4ed1b4565416f59198c",
+      "type": "blob"
+    },
+    {
+      "path": "laptop/outbox/factory/source",
+      "sha": "5b93ab175a37aa3f20a5cfc45b38efaaf75f554f",
+      "type": "tree"
+    },
+    {
+      "path": "laptop/outbox/factory/source/factory",
+      "sha": "dfc2bc53c9bd8cfb1533cbc6dbfdd3e5b89e7807",
+      "type": "tree"
+    },
+    {
+      "path": "laptop/outbox/factory/source/factory/EXECUTION.md",
+      "sha": "97ca54a335b37fbe77b45d1f766de9212c8e6d1f",
+      "type": "blob"
+    },
+    {
+      "path": "laptop/outbox/factory/source/factory/VALIDATION.md",
+      "sha": "4d7174b41b73ab3a23afc57a558dcfbde1b26c86",
+      "type": "blob"
+    },
+    {
+      "path": "laptop/outbox/factory/source/factory/agent-core.mjs",
+      "sha": "b025d585edf97bb31b9cf5c17e2387cbccb90f80",
+      "type": "blob"
+    },
+    {
+      "path": "laptop/outbox/factory/source/factory/medic-bridge.mjs",
+      "sha": "99a5cbdc52b36f42117dea6a91c3b458ac2e04cb",
+      "type": "blob"
+    },
+    {
+      "path": "laptop/outbox/factory/source/factory/validation-executor.mjs",
+      "sha": "300eb55d9236cfce79f60b125d28d845d3eda1b1",
+      "type": "blob"
+    },
+    {
+      "path": "laptop/outbox/factory/source/factory/workflow-controller.mjs",
+      "sha": "2b09c0b1aa9d0f061d4f12532abd1a447c00a82f",
+      "type": "blob"
+    },
+    {
+      "path": "laptop/outbox/factory/source/scripts",
+      "sha": "e91b669db70461b7f7088c7e1a23e7fea0caf02d",
+      "type": "tree"
+    },
+    {
+      "path": "laptop/outbox/factory/source/scripts/cli",
+      "sha": "45d9780364e151e82c566d4a98870472dc412bac",
+      "type": "tree"
+    },
+    {
+      "path": "laptop/outbox/factory/source/scripts/cli/factory-qualify-candidate.mjs",
+      "sha": "f850ba579d127805334675548259accccbedf9ea",
+      "type": "blob"
+    },
+    {
+      "path": "laptop/outbox/factory/source/scripts/cli/medic-factory-job.mjs",
+      "sha": "74ad5bc8e7dbd2b85f8a02005e9afe0a5bdc643e",
+      "type": "blob"
+    }
+  ],
+  "decisionBlob": "372cc0b6eb64e8f0921acbcbe8c7f5354937289a",
+  "factoryPR": {
+    "number": 10,
+    "head": "9142cfd060ada159ef897801ca2b433dffe78941",
+    "draft": true,
+    "merged": false,
+    "state": "open"
+  },
+  "sources": [
+    {
+      "path": "factory/agent-core.mjs",
+      "gitBlob": "b025d585edf97bb31b9cf5c17e2387cbccb90f80",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/factory/agent-core.mjs"
+    },
+    {
+      "path": "factory/medic-bridge.mjs",
+      "gitBlob": "99a5cbdc52b36f42117dea6a91c3b458ac2e04cb",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/factory/medic-bridge.mjs"
+    },
+    {
+      "path": "factory/validation-executor.mjs",
+      "gitBlob": "300eb55d9236cfce79f60b125d28d845d3eda1b1",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/factory/validation-executor.mjs"
+    },
+    {
+      "path": "factory/workflow-controller.mjs",
+      "gitBlob": "2b09c0b1aa9d0f061d4f12532abd1a447c00a82f",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/factory/workflow-controller.mjs"
+    },
+    {
+      "path": "factory/qualification-manifest.json",
+      "gitBlob": "b45460b49ddbaee75bf8262eea615a412242ac3e",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/factory/qualification-manifest.json"
+    },
+    {
+      "path": "scripts/cli/medic-factory-job.mjs",
+      "gitBlob": "74ad5bc8e7dbd2b85f8a02005e9afe0a5bdc643e",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/scripts/cli/medic-factory-job.mjs"
+    },
+    {
+      "path": "scripts/cli/factory-qualify-candidate.mjs",
+      "gitBlob": "f850ba579d127805334675548259accccbedf9ea",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/scripts/cli/factory-qualify-candidate.mjs"
+    },
+    {
+      "path": "tests/unit/factory-admission-regression.test.mjs",
+      "gitBlob": "3427c9bc54bf7a2c60539d3a310b447dfb7fd3c2",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/tests/unit/factory-admission-regression.test.mjs"
+    },
+    {
+      "path": "tests/unit/factory-medic-bridge.test.mjs",
+      "gitBlob": "30746e33e9fa715c4e3f18a2c83c66c7bec8b8ec",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/tests/unit/factory-medic-bridge.test.mjs"
+    },
+    {
+      "path": "tests/unit/factory-medic-lifecycle.test.mjs",
+      "gitBlob": "7517fef909dfcf52411c609ecc2af457a9dded03",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/tests/unit/factory-medic-lifecycle.test.mjs"
+    },
+    {
+      "path": "tests/unit/factory-workflow-controller.test.mjs",
+      "gitBlob": "a099f1dbafa0344e23b26eb3b505eabc60189dc0",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/tests/unit/factory-workflow-controller.test.mjs"
+    },
+    {
+      "path": "tests/unit/factory-validation-executor.test.mjs",
+      "gitBlob": "a41ce4abe18f75ef1d530302b28b7e77c56523ee",
+      "url": "https://github.com/FormatX66/factory-/blob/9142cfd060ada159ef897801ca2b433dffe78941/tests/unit/factory-validation-executor.test.mjs"
+    }
+  ]
+}

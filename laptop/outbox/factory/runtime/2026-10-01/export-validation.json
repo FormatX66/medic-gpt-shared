@@ -1,0 +1,266 @@
+{
+  "schema": "factory.export-validation.v1",
+  "checkedAt": "2026-10-01T22:15:35.289562+00:00",
+  "checkCount": 64,
+  "allPassed": true,
+  "checks": [
+    {
+      "check": "original_archive_sha256_matches_historical_receipt",
+      "passed": true
+    },
+    {
+      "check": "archive_crc",
+      "passed": true
+    },
+    {
+      "check": "archive_member_paths_safe",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:factory/agent-core.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:factory/agent-core.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:factory/medic-bridge.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:factory/medic-bridge.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:factory/validation-executor.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:factory/validation-executor.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:factory/workflow-controller.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:factory/workflow-controller.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:factory/qualification-manifest.json",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:factory/qualification-manifest.json",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:scripts/cli/medic-factory-job.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:scripts/cli/medic-factory-job.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:scripts/cli/factory-qualify-candidate.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:scripts/cli/factory-qualify-candidate.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:tests/unit/factory-admission-regression.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:tests/unit/factory-admission-regression.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:tests/unit/factory-medic-bridge.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:tests/unit/factory-medic-bridge.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:tests/unit/factory-medic-lifecycle.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:tests/unit/factory-medic-lifecycle.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:tests/unit/factory-workflow-controller.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:tests/unit/factory-workflow-controller.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_git_blob:tests/unit/factory-validation-executor.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "canonical_content:tests/unit/factory-validation-executor.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:fingerprint_recomputed",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:source_manifest",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:pinned_source:factory/agent-core.mjs",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:pinned_source:factory/medic-bridge.mjs",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:pinned_source:factory/validation-executor.mjs",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:pinned_source:factory/workflow-controller.mjs",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:pinned_source:scripts/cli/medic-factory-job.mjs",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:pinned_source:tests/unit/factory-admission-regression.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:pinned_source:tests/unit/factory-medic-bridge.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:pinned_source:tests/unit/factory-medic-lifecycle.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:pinned_source:tests/unit/factory-workflow-controller.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:stdout_digest",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:stderr_digest",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:successful_closed_process",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:separate_verifier",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:actual_tap_totals",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:ledger_verification_receipt",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:lifecycle",
+      "passed": true
+    },
+    {
+      "check": "factory-repair-qualification:timestamps_ordered",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:fingerprint_recomputed",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:source_manifest",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:pinned_source:factory/agent-core.mjs",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:pinned_source:factory/medic-bridge.mjs",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:pinned_source:factory/validation-executor.mjs",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:pinned_source:factory/workflow-controller.mjs",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:pinned_source:scripts/cli/medic-factory-job.mjs",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:pinned_source:tests/unit/factory-validation-executor.test.mjs",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:stdout_digest",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:stderr_digest",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:successful_closed_process",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:separate_verifier",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:actual_tap_totals",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:ledger_verification_receipt",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:lifecycle",
+      "passed": true
+    },
+    {
+      "check": "validation-adapter-qualification:timestamps_ordered",
+      "passed": true
+    },
+    {
+      "check": "parallel_overlap_recomputed",
+      "passed": true
+    },
+    {
+      "check": "historical_readback_consistent",
+      "passed": true
+    }
+  ],
+  "newExecutions": 0,
+  "note": "Read-only recomputation against preserved archive and canonical git blobs; no historical tests rerun."
+}
