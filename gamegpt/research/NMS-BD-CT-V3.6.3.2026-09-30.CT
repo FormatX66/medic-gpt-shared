@@ -1,0 +1,2916 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="46">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2361</ID>
+      <Description>"Enable/Disable all NMS Scripts"</Description>
+      <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+      <Color>A6B814</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2274</ID>
+          <Description>"General &gt;"</Description>
+          <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <Color>FF8000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2273</ID>
+              <Description>"Remove ALL Inventory Technology Overloads"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT,NMS.exe,8B 40 20 48 83 C4 20 5F C3 33 C0) // should be unique
+alloc(newmem,0x400,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+ // mov [rax+20],0 // Change for perm setting
+
+code:
+  mov eax,0
+  add rsp,20
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 2
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 8B 40 20 48 83 C4 20
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+40BCF2
+
+NMS.exe+40BCC2: 74 37                 - je NMS.exe+40BCFB
+NMS.exe+40BCC4: 48 81 C1 F0 01 00 00  - add rcx,000001F0
+NMS.exe+40BCCB: 48 89 5C 24 30        - mov [rsp+30],rbx
+NMS.exe+40BCD0: E8 2B 14 F7 FF        - call NMS.exe+37D100
+NMS.exe+40BCD5: 48 8B 5C 24 30        - mov rbx,[rsp+30]
+NMS.exe+40BCDA: 48 8D 0C 80           - lea rcx,[rax+rax*4]
+NMS.exe+40BCDE: 48 8B 87 00 02 00 00  - mov rax,[rdi+00000200]
+NMS.exe+40BCE5: 48 8D 04 C8           - lea rax,[rax+rcx*8]
+NMS.exe+40BCE9: 48 3B 87 08 02 00 00  - cmp rax,[rdi+00000208]
+NMS.exe+40BCF0: 74 09                 - je NMS.exe+40BCFB
+// ---------- INJECTING HERE ----------
+NMS.exe+40BCF2: 8B 40 20              - mov eax,[rax+20]
+// ---------- DONE INJECTING  ----------
+NMS.exe+40BCF5: 48 83 C4 20           - add rsp,20
+NMS.exe+40BCF9: 5F                    - pop rdi
+NMS.exe+40BCFA: C3                    - ret 
+NMS.exe+40BCFB: 33 C0                 - xor eax,eax
+NMS.exe+40BCFD: 48 83 C4 20           - add rsp,20
+NMS.exe+40BD01: 5F                    - pop rdi
+NMS.exe+40BD02: C3                    - ret 
+NMS.exe+40BD03: CC                    - int 3 
+NMS.exe+40BD04: CC                    - int 3 
+NMS.exe+40BD05: CC                    - int 3 
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>12172</ID>
+              <Description>"Unlimited Starship Shields / Pulse Engine / Lunch Thruster / Ammo / Granades"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT,NMS.exe,0F 11 4B 10 0F 10 45 20 0F 11 43 20 E8) // should be unique
+alloc(newmem,$1000,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  movups [rbx+10],xmm1
+  push eax
+  mov eax,[rbx+20]
+  mov [rbx+18],eax
+  pop eax
+  movups xmm0,[rbp+20]
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 3
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 0F 11 4B 10 0F 10 45 20
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+549577
+
+NMS.exe+54954F: 0F 10 4B 10     - movups xmm1,[rbx+10]
+NMS.exe+549553: 49 8B D6        - mov rdx,r14
+NMS.exe+549556: 48 8B CE        - mov rcx,rsi
+NMS.exe+549559: 0F 11 44 24 20  - movups [rsp+20],xmm0
+NMS.exe+54955E: 0F 10 43 20     - movups xmm0,[rbx+20]
+NMS.exe+549562: 0F 11 4C 24 30  - movups [rsp+30],xmm1
+NMS.exe+549567: 0F 11 44 24 40  - movups [rsp+40],xmm0
+NMS.exe+54956C: 0F 10 45 00     - movups xmm0,[rbp+00]
+NMS.exe+549570: 0F 11 03        - movups [rbx],xmm0
+NMS.exe+549573: 0F 10 4D 10     - movups xmm1,[rbp+10]
+// ---------- INJECTING HERE ----------
+NMS.exe+549577: 0F 11 4B 10     - movups [rbx+10],xmm1
+// ---------- DONE INJECTING  ----------
+NMS.exe+54957B: 0F 10 45 20     - movups xmm0,[rbp+20]
+NMS.exe+54957F: 0F 11 43 20     - movups [rbx+20],xmm0
+NMS.exe+549583: E8 18 1A 00 00  - call NMS.exe+54AFA0
+NMS.exe+549588: EB 76           - jmp NMS.exe+549600
+NMS.exe+54958A: 4C 8B C5        - mov r8,rbp
+NMS.exe+54958D: 48 8D 54 24 78  - lea rdx,[rsp+78]
+NMS.exe+549592: 48 8B CF        - mov rcx,rdi
+NMS.exe+549595: E8 E6 48 F8 FF  - call NMS.exe+4CDE80
+NMS.exe+54959A: 83 7C 24 78 FF  - cmp dword ptr [rsp+78],-01
+NMS.exe+54959F: 74 5F           - je NMS.exe+549600
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>11940</ID>
+              <Description>"Instant Interaction with items or creatures (E Key)"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+aobscanmodule(AOBWordLearn,NMS.exe,F3 44 0F 58 27 F3) // should be unique
+alloc(newmem,0x400,AOBWordLearn)
+
+label(code return)
+
+newmem:
+
+code:
+  mov [rdi],(float)1.0
+  movss xmm12,[rdi]
+  jmp return
+
+AOBWordLearn:
+  jmp newmem
+return:
+registersymbol(AOBWordLearn)
+
+[DISABLE]
+
+AOBWordLearn:
+  db F3 44 0F 58 27
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+1327113
+
+NMS.exe+13270D8: E8 93 DF BB FF                    - call NMS.exe+EE5070
+NMS.exe+13270DD: 48 8D 8E 60 04 00 00              - lea rcx,[rsi+00000460]
+NMS.exe+13270E4: 44 88 BE 81 18 00 00              - mov [rsi+00001881],r15b
+NMS.exe+13270EB: E8 80 D8 00 00                    - call NMS.exe+1334970
+NMS.exe+13270F0: 48 C7 86 38 09 00 00 03 00 00 00  - mov qword ptr [rsi+00000938],00000003
+NMS.exe+13270FB: 48 8B CE                          - mov rcx,rsi
+NMS.exe+13270FE: 44 88 A6 D1 09 00 00              - mov [rsi+000009D1],r12b
+NMS.exe+1327105: E8 66 61 00 00                    - call NMS.exe+132D270
+NMS.exe+132710A: 48 8D BE 3C 09 00 00              - lea rdi,[rsi+0000093C]
+NMS.exe+1327111: EB 0A                             - jmp NMS.exe+132711D
+// ---------- INJECTING HERE ----------
+NMS.exe+1327113: F3 44 0F 58 2F                    - addss xmm13,[rdi]
+// ---------- DONE INJECTING  ----------
+NMS.exe+1327118: F3 44 0F 11 2F                    - movss [rdi],xmm13
+NMS.exe+132711D: 48 8B 0D 94 53 66 05              - mov rcx,[NMS.exe+698C4B8]
+NMS.exe+1327124: 48 8D 55 C0                       - lea rdx,[rbp-40]
+NMS.exe+1327128: 4C 8B 8E 78 18 00 00              - mov r9,[rsi+00001878]
+NMS.exe+132712F: 48 81 C1 00 C1 81 00              - add rcx,0081C100
+NMS.exe+1327136: F3 0F 10 17                       - movss xmm2,[rdi]
+NMS.exe+132713A: 44 88 7C 24 6C                    - mov [rsp+6C],r15b
+NMS.exe+132713F: 4C 89 64 24 60                    - mov [rsp+60],r12
+NMS.exe+1327144: C7 44 24 68 25 B8 E7 1E           - mov [rsp+68],1EE7B825
+NMS.exe+132714C: 0F 28 44 24 60                    - movaps xmm0,[rsp+60]
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1973</ID>
+              <Description>"Money - (Access Inventory to Get all Unit Types)"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(AOBMoneyPointer,NMS.exe,45 8B 80 DC C1 00 00) // should be unique
+alloc(newmem,0x400,AOBMoneyPointer)
+
+label(code)
+label(return unitBasePointer)
+
+newmem:
+  mov [unitBasePointer],r8
+
+code:
+  mov r8d,[r8+0000C1DC] // Will break with updates....
+  jmp return
+
+unitBasePointer:
+  dq 0
+
+AOBMoneyPointer:
+  jmp newmem
+  nop 2
+return:
+registersymbol(AOBMoneyPointer unitBasePointer)
+
+[DISABLE]
+
+AOBMoneyPointer:
+  db 45 8B 80 DC C1 00 00
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+87B791
+
+NMS.exe+87B74A: 83 BF 88 5D 01 00 18     - cmp dword ptr [rdi+00015D88],18
+NMS.exe+87B751: 75 49                    - jne NMS.exe+87B79C
+NMS.exe+87B753: F3 0F 10 0D 51 23 69 04  - movss xmm1,[NMS.exe+4F0DAAC]
+NMS.exe+87B75B: F3 0F 10 15 4D 23 69 04  - movss xmm2,[NMS.exe+4F0DAB0]
+NMS.exe+87B763: F3 0F 58 8F 44 1E 00 00  - addss xmm1,[rdi+00001E44]
+NMS.exe+87B76B: F3 0F 58 97 48 1E 00 00  - addss xmm2,[rdi+00001E48]
+NMS.exe+87B773: F3 0F 11 8F 44 1E 00 00  - movss [rdi+00001E44],xmm1
+NMS.exe+87B77B: F3 0F 11 97 48 1E 00 00  - movss [rdi+00001E48],xmm2
+NMS.exe+87B783: 48 8B 05 CE 75 23 06     - mov rax,[NMS.exe+6AB2D58]
+NMS.exe+87B78A: 48 8B 88 18 14 90 00     - mov rcx,[rax+00901418]
+// ---------- INJECTING HERE ----------
+NMS.exe+87B791: 48 8B 41 10              - mov rax,[rcx+10]
+// ---------- DONE INJECTING  ----------
+NMS.exe+87B795: 48 83 C1 10              - add rcx,10
+NMS.exe+87B799: FF 50 38                 - call qword ptr [rax+38]
+NMS.exe+87B79C: 44 88 B7 40 B1 01 00     - mov [rdi+0001B140],r14b
+NMS.exe+87B7A3: 48 8B 05 AE 75 23 06     - mov rax,[NMS.exe+6AB2D58]
+NMS.exe+87B7AA: 8B 88 8C BD 00 00        - mov ecx,[rax+0000BD8C]
+NMS.exe+87B7B0: 89 8F 78 32 00 00        - mov [rdi+00003278],ecx
+NMS.exe+87B7B6: 48 8B 05 9B 75 23 06     - mov rax,[NMS.exe+6AB2D58]
+NMS.exe+87B7BD: 8B 88 94 BD 00 00        - mov ecx,[rax+0000BD94]
+NMS.exe+87B7C3: 89 8F 7C 32 00 00        - mov [rdi+0000327C],ecx
+NMS.exe+87B7C9: 48 8B 05 88 75 23 06     - mov rax,[NMS.exe+6AB2D58]
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2089</ID>
+                  <Description>"Units"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>4080FF</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>unitBasePointer</Address>
+                  <Offsets>
+                    <Offset>C1DC</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2095</ID>
+                  <Description>"Nanites"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>4080FF</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>unitBasePointer</Address>
+                  <Offsets>
+                    <Offset>C1DC+4</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2097</ID>
+                  <Description>"Quicksilver"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>4080FF</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>unitBasePointer</Address>
+                  <Offsets>
+                    <Offset>C1DC+8</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2140</ID>
+              <Description>"Get Race &amp; Faction Standings (Takes a few seconds to load up.)"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+aobscanmodule(INJECT,NMS.exe,48 8B 40 10 0F 28 DE) // should be unique
+alloc(newmem,$100,INJECT)
+
+label(code)
+label(return time)
+registersymbol(time)
+
+newmem:
+cmp [rax+C0],0
+je code
+mov [time],rax
+
+code:
+  mov rax,[rax+10]
+  movaps xmm3,xmm6
+  jmp return
+
+time:
+  dq 0
+
+INJECT:
+  jmp newmem
+  nop 2
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 48 8B 40 10 0F 28 DE
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+5C799D
+
+NMS.exe+5C7972: 48 85 C0              - test rax,rax
+NMS.exe+5C7975: 0F 84 C1 01 00 00     - je NMS.exe+5C7B3C
+NMS.exe+5C797B: 48 8B D6              - mov rdx,rsi
+NMS.exe+5C797E: 48 8D 4B 18           - lea rcx,[rbx+18]
+NMS.exe+5C7982: E8 F9 8F C7 FF        - call NMS.exe+240980
+NMS.exe+5C7987: 48 8D 04 40           - lea rax,[rax+rax*2]
+NMS.exe+5C798B: 48 C1 E0 03           - shl rax,03
+NMS.exe+5C798F: 48 03 43 28           - add rax,[rbx+28]
+NMS.exe+5C7993: 48 3B 43 30           - cmp rax,[rbx+30]
+NMS.exe+5C7997: 0F 84 B0 02 00 00     - je NMS.exe+5C7C4D
+// ---------- INJECTING HERE ----------
+NMS.exe+5C799D: 48 8B 40 10           - mov rax,[rax+10]
+// ---------- DONE INJECTING  ----------
+NMS.exe+5C79A1: 0F 28 DE              - movaps xmm3,xmm6
+NMS.exe+5C79A4: 4C 8B C5              - mov r8,rbp
+NMS.exe+5C79A7: 48 89 44 24 40        - mov [rsp+40],rax
+NMS.exe+5C79AC: 48 8B D6              - mov rdx,rsi
+NMS.exe+5C79AF: 4C 89 6C 24 20        - mov [rsp+20],r13
+NMS.exe+5C79B4: 48 8B CB              - mov rcx,rbx
+NMS.exe+5C79B7: E8 B4 36 00 00        - call NMS.exe+5CB070
+NMS.exe+5C79BC: 0F 57 C0              - xorps xmm0,xmm0
+NMS.exe+5C79BF: 4C 8D 2D 72 E5 03 04  - lea r13,[NMS.exe+4605F38]
+NMS.exe+5C79C6: 45 33 C0              - xor r8d,r8d
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2117</ID>
+                  <Description>"LifeForm Standings &gt;"</Description>
+                  <Color>5BC4E6</Color>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>2111</ID>
+                      <Description>"Gek Standing Total"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>4080FF</Color>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>[time]+10 + 648</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>2116</ID>
+                      <Description>"Vy'keen Standing Total"</Description>
+                      <ShowAsSigned>1</ShowAsSigned>
+                      <Color>4080FF</Color>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>[time]+10-2e08</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>2113</ID>
+                      <Description>"Korvax Standing Total"</Description>
+                      <ShowAsSigned>1</ShowAsSigned>
+                      <Color>4080FF</Color>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>[time]+10+960</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>2118</ID>
+                  <Description>"Faction Standings &gt;"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <Color>5BC4E6</Color>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>2143</ID>
+                      <Description>"Merchants Guild Total"</Description>
+                      <ShowAsSigned>1</ShowAsSigned>
+                      <Color>4080FF</Color>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>[time]+10-1920</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>2120</ID>
+                      <Description>"Mercenaries Guild Total"</Description>
+                      <ShowAsSigned>1</ShowAsSigned>
+                      <Color>4080FF</Color>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>[time]+10+F30</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>2121</ID>
+                      <Description>"Explorers Guild Total"</Description>
+                      <ShowAsSigned>1</ShowAsSigned>
+                      <Color>4080FF</Color>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>[time]+10-2b50</Address>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>4467</ID>
+                      <Description>"Outlaws Total"</Description>
+                      <ShowAsSigned>1</ShowAsSigned>
+                      <Color>4080FF</Color>
+                      <VariableType>4 Bytes</VariableType>
+                      <Address>[time]+438+10</Address>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>11996</ID>
+          <Description>"Speed &gt;"</Description>
+          <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <Color>FF8000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>11992</ID>
+              <Description>"Jetpack Speed"</Description>
+              <Options moHideChildren="1"/>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+//Player global pointers start with 33, anything after changes. last checked on NMS cursed update
+
+
+aobscanmodule(forwardforce,NMS.exe,F3 0F 10 ?? ?? ?? ?? ?? 0F 10 87 ?? ?? 00 00 48 8D) // should be unique
+alloc(newmem,$1000,forwardforce)// Jetpack max speed
+alloc(savedForwardBytes, 8)
+label(code)
+label(return)
+
+
+aobscanmodule(leftrightforce,NMS.exe,EB ?? F3 0F 10 05 ?? ?? ?? ?? F3 0F 11 81 ?? ?? 00 00 F3 0F 10 0D) // should be unique
+alloc(newmem2,$1000,leftrightforce)// Jetpack aeriel force (or left right force)
+alloc(savedLeftRightBytes, 8)
+label(code2)
+label(return2)
+
+
+aobscanmodule(upwardforce,NMS.exe,F3 0F 10 0D ?? ?? ?? ?? F3 0F 11 89 ?? ?? 00 00 F3 0F 10 05 ?? ?? ?? ?? 48 8B 9C) // should be unique
+alloc(newmem3,$1000,upwardforce)// Jetpack up force
+alloc(savedUpwardBytes, 8)
+label(code3)
+label(return3)
+
+label(fforce)
+label(lrforce)
+label(uforce)
+
+savedForwardBytes: // readmem the bytes in memory and store it in this
+readmem(forwardforce,8)
+
+savedLeftRightBytes:// readmem the bytes in memory and store it in this
+readmem(leftrightforce + 2,8)
+
+savedUpwardBytes:// readmem the bytes in memory and store it in this
+readmem(upwardforce,8)
+
+
+
+
+//jetpack max forward speed
+newmem:
+code:
+  movss xmm2,[fforce] //[NMS.exe+335B9B4]
+  jmp return
+fforce:
+  dd (float)200 // Default is 5 || Pref is 299
+
+forwardforce:
+  jmp newmem
+  nop 3
+return:
+  registersymbol(forwardforce)
+  registersymbol(fforce)
+  registersymbol(savedForwardBytes)
+
+
+
+
+//aerial movement force
+newmem2:
+code2:
+  movss xmm0,[lrforce] //[NMS.exe+335B9D4]
+  jmp return2
+lrforce:
+  dd (float)90 // Default is 31 || Pref is 500
+
+leftrightforce + 2:
+  jmp newmem2
+  nop 3
+
+return2:
+  registersymbol(leftrightforce)
+  registersymbol(lrforce)
+  registersymbol(savedLeftRightBytes)
+
+
+
+//upward jetpack force
+newmem3:
+code3:
+  movss xmm1,[uforce]//[NMS.exe+335B9EC]
+  jmp return3
+uforce:
+  dd (float)100 //Default is 30 || Pref is 200
+
+upwardforce:
+  jmp newmem3
+  nop 3
+return3:
+  registersymbol(upwardforce)
+  registersymbol(uforce)
+  registersymbol(savedUpwardBytes)
+[DISABLE]
+
+forwardforce:// readmem the from the bytes we stored and store it back into this
+  readmem(savedForwardBytes,8)//db F3 0F 10 15 3D AA 1D 02
+
+leftrightforce + 2: // readmem the from the bytes we stored and store it back into this
+  readmem(savedLeftRightBytes,8)//db F3 0F 10 05 9B 3D 1F 02
+
+upwardforce: // readmem the from the bytes we stored and store it back into this
+  readmem(savedUpwardBytes,8)// idk
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+keep for future reference
+
+jetpack max speed  (forward force)
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+117EDFF
+
+NMS.exe+117EDD5: 0F 2F C1                 - comiss xmm0,xmm1
+NMS.exe+117EDD8: 0F 86 2D 0D 00 00        - jbe NMS.exe+117FB0B
+NMS.exe+117EDDE: 41 0F 2E C8              - ucomiss xmm1,xmm8
+NMS.exe+117EDE2: 7A 06                    - jp NMS.exe+117EDEA
+NMS.exe+117EDE4: 0F 84 21 0D 00 00        - je NMS.exe+117FB0B
+NMS.exe+117EDEA: 44 0F B6 74 24 52        - movzx r14d,byte ptr [rsp+52]
+NMS.exe+117EDF0: 45 84 F6                 - test r14b,r14b
+NMS.exe+117EDF3: 74 0A                    - je NMS.exe+117EDFF
+NMS.exe+117EDF5: F3 0F 10 15 F3 AD 1D 02  - movss xmm2,[NMS.exe+3359BF0]
+NMS.exe+117EDFD: EB 08                    - jmp NMS.exe+117EE07
+// ---------- INJECTING HERE ----------
+NMS.exe+117EDFF: F3 0F 10 15 3D ?? 1D 02  - movss xmm2,[NMS.exe+3359844]
+// ---------- DONE INJECTING  ----------
+NMS.exe+117EE07: 0F 10 87 70 2E 00 00     - movups xmm0,[rdi+00002E70]
+NMS.exe+117EE0E: 48 8D 95 00 0F 00 00     - lea rdx,[rbp+00000F00]
+NMS.exe+117EE15: 0F 59 45 80              - mulps xmm0,[rbp-80]
+NMS.exe+117EE19: 41 0F 28 E6              - movaps xmm4,xmm14
+NMS.exe+117EE1D: 0F C6 E4 00              - shufps xmm4,xmm4,00
+NMS.exe+117EE21: 0F 59 A7 70 2E 00 00     - mulps xmm4,[rdi+00002E70]
+NMS.exe+117EE28: 0F 28 C8                 - movaps xmm1,xmm0
+NMS.exe+117EE2B: 0F C6 C8 A9              - shufps xmm1,xmm0,-57
+NMS.exe+117EE2F: F3 0F 58 C8              - addss xmm1,xmm0
+NMS.exe+117EE33: 0F 28 D9                 - movaps xmm3,xmm1
+
+
+jetpack left right/turning force
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+1165A81
+
+NMS.exe+1165A46: C3                       - ret
+NMS.exe+1165A47: 48 8B 05 5A 2A 02 04     - mov rax,[NMS.exe+51884A8]
+NMS.exe+1165A4E: 83 B8 34 07 45 00 01     - cmp dword ptr [rax+00450734],01
+NMS.exe+1165A55: 75 2A                    - jne NMS.exe+1165A81
+NMS.exe+1165A57: F3 0F 10 05 89 41 1F 02  - movss xmm0,[NMS.exe+3359BE8]
+NMS.exe+1165A5F: F3 0F 11 81 F0 31 00 00  - movss [rcx+000031F0],xmm0
+NMS.exe+1165A67: F3 0F 10 0D 85 41 1F 02  - movss xmm1,[NMS.exe+3359BF4]
+NMS.exe+1165A6F: F3 0F 11 89 EC 31 00 00  - movss [rcx+000031EC],xmm1
+NMS.exe+1165A77: F3 0F 10 05 6D 41 1F 02  - movss xmm0,[NMS.exe+3359BEC]
+NMS.exe+1165A7F: EB 28                    - jmp NMS.exe+1165AA9
+// ---------- INJECTING HERE ----------
+NMS.exe+1165A81: F3 0F 10 05 9B ?? 1F 02  - movss xmm0,[NMS.exe+3359824]
+// ---------- DONE INJECTING  ----------
+NMS.exe+1165A89: F3 0F 11 81 F0 31 00 00  - movss [rcx+000031F0],xmm0
+NMS.exe+1165A91: F3 0F 10 0D C3 3D 1F 02  - movss xmm1,[NMS.exe+335985C]
+NMS.exe+1165A99: F3 0F 11 89 EC 31 00 00  - movss [rcx+000031EC],xmm1
+NMS.exe+1165AA1: F3 0F 10 05 87 3D 1F 02  - movss xmm0,[NMS.exe+3359830]
+NMS.exe+1165AA9: 48 8B 9C 24 90 05 00 00  - mov rbx,[rsp+00000590]
+NMS.exe+1165AB1: F3 0F 11 81 F4 31 00 00  - movss [rcx+000031F4],xmm0
+NMS.exe+1165AB9: 48 81 C4 70 05 00 00     - add rsp,00000570
+NMS.exe+1165AC0: 5D                       - pop rbp
+NMS.exe+1165AC1: C3                       - ret
+NMS.exe+1165AC2: CC                       - int 3
+
+not the initial upward force but the normal  up force
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+1167521
+
+NMS.exe+11674DE: 83 B8 34 07 45 00 01     - cmp dword ptr [rax+00450734],01
+NMS.exe+11674E5: 75 2A                    - jne NMS.exe+1167511
+NMS.exe+11674E7: F3 0F 10 05 89 48 1F 02  - movss xmm0,[NMS.exe+335BD78]
+NMS.exe+11674EF: F3 0F 11 81 F0 31 00 00  - movss [rcx+000031F0],xmm0
+NMS.exe+11674F7: F3 0F 10 0D 85 48 1F 02  - movss xmm1,[NMS.exe+335BD84]
+NMS.exe+11674FF: F3 0F 11 89 EC 31 00 00  - movss [rcx+000031EC],xmm1
+NMS.exe+1167507: F3 0F 10 05 6D 48 1F 02  - movss xmm0,[NMS.exe+335BD7C]
+NMS.exe+116750F: EB 28                    - jmp NMS.exe+1167539
+NMS.exe+1167511: F3 0F 10 05 9B 44 1F 02  - movss xmm0,[NMS.exe+335B9B4]
+NMS.exe+1167519: F3 0F 11 81 F0 31 00 00  - movss [rcx+000031F0],xmm0
+// ---------- INJECTING HERE ----------
+NMS.exe+1167521: F3 0F 10 0D C3 44 1F 02  - movss xmm1,[NMS.exe+335B9EC]
+// ---------- DONE INJECTING  ----------
+NMS.exe+1167529: F3 0F 11 89 EC 31 00 00  - movss [rcx+000031EC],xmm1
+NMS.exe+1167531: F3 0F 10 05 87 44 1F 02  - movss xmm0,[NMS.exe+335B9C0]
+NMS.exe+1167539: 48 8B 9C 24 90 05 00 00  - mov rbx,[rsp+00000590]
+NMS.exe+1167541: F3 0F 11 81 F4 31 00 00  - movss [rcx+000031F4],xmm0
+NMS.exe+1167549: 48 81 C4 70 05 00 00     - add rsp,00000570
+NMS.exe+1167550: 5D                       - pop rbp
+NMS.exe+1167551: C3                       - ret
+NMS.exe+1167552: CC                       - int 3
+NMS.exe+1167553: CC                       - int 3
+NMS.exe+1167554: CC                       - int 3
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>11993</ID>
+                  <Description>"Jetpack Speed        (Default = 5.0)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>39AFD7</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>fforce</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>11994</ID>
+                  <Description>"Aerial Force            (Default = 31.0)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>39AFD7</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>lrforce</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>11995</ID>
+                  <Description>"Upward Force         (Default = 30.0)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>39AFD7</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>uforce</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>11988</ID>
+              <Description>"Ship Engine Speed"</Description>
+              <Options moHideChildren="1"/>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+// F3 41 0F 11 ?? ?? C3(starting bytes)
+aobscanmodule(engineControls,NMS.exe,F3 0F 58 ?? ?? F3 41 0F 11 ?? ?? C3)
+alloc(newmem,$1000,engineControls)
+alloc(storeEngineControlBytes,6)
+
+label(code)
+label(return)
+
+label(setValAndLoop)
+label(engineControlOffsets)
+label(multiplyFinalResult)
+
+registersymbol(engineControls)
+registersymbol(multiplyFinalResult)
+registersymbol(storeEngineControlBytes)
+
+storeEngineControlBytes:
+ readmem(engineControls+5,6)
+
+newmem:
+  pushf
+  push rax
+  push rdx
+  xor rax,rax
+  lea rdx,[engineControlOffsets]
+
+setValAndLoop:
+  mov eax, dword ptr [rdx]
+  movss xmm1,[r8+eax]
+  mulss xmm1,[multiplyFinalResult]
+  movss [r8+eax],xmm1
+  add rdx,4
+  cmp dword ptr [rdx],FFFFFFFF
+  je code
+  jmp setValAndLoop
+
+code:
+  pop rdx
+  pop rax
+  popf
+  jmp return
+
+multiplyFinalResult:
+  dd (float)4  // Default = 1 || Pref = 20
+engineControlOffsets:
+  dd 10 14 44 64 FFFFFFFF
+{Old Offsets}
+{ dd 0 4 10 14 18 24 28 2C 30 40 FFFFFFFF }
+
+engineControls+5:
+  jmp newmem
+  nop
+return:
+
+[DISABLE]
+
+engineControls+5:
+ readmem(storeEngineControlBytes,6)
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+Original creator removed generated comments, I'll
+leave some for someone in the future if they want
+to update.
+
+If you don't know how to find NMS globals in files
+you'll not be able to update this script. Find a
+tutorial before attempting update.
+
+offsets
+  0 = BalanceTimeMax          // removed (unsure this is correct)
+  4 = BalanceTimeMin          // removed (unsure this is correct)
+  10 = BoostMaxSpeed          // alreay added        (40k limit ??)
+  14 = BoostThrustForce       // alread added
+  18 = ReverseBrake           // not needed
+  24 = FollowDerivativeGain   // removed
+  28 = FollowDerivativeLimit  // removed
+  2C = FollowIntegralDecay    // removed
+  30 = FollowIntegralGain     // removed
+  38 = FollowProportionalGain // removed
+  3C = FollowProportionalLimit// removed
+  40 = LowSpeedTurnDamper     // removed (multiplying this ruined turn speed)
+  44 = MaxSpeed               // added myself
+  58 = RollAmount             // not needed
+  60 = RollForce              // not needed
+  64 = ThrustForce            // added myself
+
+^Unsure if offsets are the same as they were in echo, these are NMS 5.22 offsets^
+           removed some from script because idk what they did??
+
+
+Dont know if the original creator injected in the same location I did so
+i'm just going to make new bytes and someone else in the future can make
+it more unique.
+
+
+
+r8 hasn't changed in the past year.
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+187E7EB
+
+11/3/24                                                          9/1/23
+NEW Cursed 5.22 Bytes                                          OLD Echo 4.45 Bytes
+
+NMS.exe+187E7B9: F3 41 0F 11 50 28  - movss [r8+28],xmm2
+NMS.exe+187E7BF: F3 0F 10 4A 34     - movss xmm1,[rdx+34]
+NMS.exe+187E7C4: F3 0F 5C 49 34     - subss xmm1,[rcx+34]
+NMS.exe+187E7C9: F3 0F 59 CB        - mulss xmm1,xmm3
+NMS.exe+187E7CD: F3 0F 58 ?? ??     - addss xmm1,[rcx+34]      F3 ?? ?? ?? ??
+NMS.exe+187E7D2: F3 41 0F 11 48 34  - movss [r8+34],xmm1       6C F3 ?? ?? ?? 70
+NMS.exe+187E7D8: F3 0F 10 42 2C     - movss xmm0,[rdx+2C]      //
+NMS.exe+187E7DD: F3 0F 5C 41 2C     - subss xmm0,[rcx+2C]      //
+NMS.exe+187E7E2: F3 0F 59 C3        - mulss xmm0,xmm3          F3 ?? ?? ??
+NMS.exe+187E7E6: F3 0F 58 ?? ??     - addss xmm0,[rcx+2C]      F3 ?? ?? ?? 70
+// ---------- INJECTING HERE ----------
+NMS.exe+187E7EB: F3 41 0F 11 ?? ??  - movss [r8+2C],xmm0       F3 ?? ?? ?? ?? 70 // inject point
+// ---------- DONE INJECTING  ----------
+NMS.exe+187E7F1: C3                 - ret                      C3  -ret
+NMS.exe+187E7F2: CC                 - int 3
+NMS.exe+187E7F3: CC                 - int 3
+NMS.exe+187E7F4: CC                 - int 3
+NMS.exe+187E7F5: CC                 - int 3
+NMS.exe+187E7F6: CC                 - int 3
+NMS.exe+187E7F7: CC                 - int 3
+NMS.exe+187E7F8: CC                 - int 3
+NMS.exe+187E7F9: CC                 - int 3
+NMS.exe+187E7FA: CC                 - int 3
+
+
+For future aobscanregion reference
+  -Cursed 5.22 inject addr: NMS.exe+187E7EB
+
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>11989</ID>
+                  <Description>"Multiplier (Default = 1.0)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>39AFD7</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>multiplyFinalResult</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>11990</ID>
+              <Description>"Pulse Engine Speed"</Description>
+              <Options moHideChildren="1"/>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{ Game   : No Man's Sky
+  Version:
+  Date   : 2024-11-02
+  Author : lucar
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+
+aobscanmodule(actualminiwarp,NMS.exe,F3 0F 5F C8 F3 0F 59 0D ?? ?? ?? ?? 0F 28 C1) // should be unique
+alloc(newmem,$1000,actualminiwarp)
+alloc(storedActualMiniWarpBytes,12)
+
+label(code)
+label(return)
+label(warpmult)
+
+storedActualMiniWarpBytes:
+  readmem(actualminiwarp,12)
+
+newmem:
+code:
+  maxss xmm1,xmm0
+  reassemble(actualminiwarp+4) // mulss xmm1,[NMS.exe+333E42C] &lt;-- pointer might change
+  mulss xmm1,[warpmult]        // Hijack xmm2
+  jmp return
+warpmult:
+  dd (float)4                 // Default = 1 || Pref = 30
+
+actualminiwarp:
+  jmp newmem
+  nop 7
+return:
+registersymbol(actualminiwarp)
+registersymbol(warpmult)
+registersymbol(storedActualMiniWarpBytes)
+
+[DISABLE]
+
+actualminiwarp:
+  readmem(storedActualMiniWarpBytes,12)
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+13F7CCF
+
+NMS.exe+13F7C9D: 48 89 44 24 38           - mov [rsp+38],rax
+NMS.exe+13F7CA2: 48 81 C1 A0 B4 00 00     - add rcx,0000B4A0
+NMS.exe+13F7CA9: 48 89 44 24 30           - mov [rsp+30],rax
+NMS.exe+13F7CAE: 45 33 C9                 - xor r9d,r9d
+NMS.exe+13F7CB1: 88 44 24 28              - mov [rsp+28],al
+NMS.exe+13F7CB5: BA 99 00 00 00           - mov edx,00000099
+NMS.exe+13F7CBA: 44 8D 40 03              - lea r8d,[rax+03]
+NMS.exe+13F7CBE: 88 44 24 20              - mov [rsp+20],al
+NMS.exe+13F7CC2: E8 D9 B0 0D FF           - call NMS.exe+4D2DA0
+NMS.exe+13F7CC7: F3 0F 10 0D 1D D8 93 01  - movss xmm1,[NMS.exe+2D354EC]
+// ---------- INJECTING HERE ----------
+NMS.exe+13F7CCF: F3 0F 5F C8              - maxss xmm1,xmm0
+// ---------- DONE INJECTING  ----------
+NMS.exe+13F7CD3: F3 0F 59 0D 51 67 F4 01  - mulss xmm1,[NMS.exe+333E42C]
+NMS.exe+13F7CDB: 0F 28 C1                 - movaps xmm0,xmm1
+NMS.exe+13F7CDE: 48 83 C4 48              - add rsp,48
+NMS.exe+13F7CE2: C3                       - ret
+NMS.exe+13F7CE3: CC                       - int 3
+NMS.exe+13F7CE4: CC                       - int 3
+NMS.exe+13F7CE5: CC                       - int 3
+NMS.exe+13F7CE6: CC                       - int 3
+NMS.exe+13F7CE7: CC                       - int 3
+NMS.exe+13F7CE8: CC                       - int 3
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>11991</ID>
+                  <Description>"Multiplier (Default = 1.0)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>39AFD7</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>warpmult</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4455</ID>
+              <Description>"Walk and Run Speed Multiplier X2 Default"</Description>
+              <Options moHideChildren="1"/>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+aobscanmodule(AOBSpeed,NMS.exe,48 8D 8F ?? ?? 00 00 E8 ?? ?? ?? ?? 84 C0 ?? ?? 48 8D 8F ?? ?? ?? ?? E8 ?? ?? ?? ?? 84 CO 75 ** 48 8B 87) // 48 8D 8F ?? ?? 00 00 E8 ?? ?? ?? ?? 84 C0 ?? ?? 48 8D 8F ?? ?? ?? ?? E8 ?? ?? ?? ?? 84 CO 75 ** 48 8B 87
+alloc(newmem,0x400,AOBSpeed)
+alloc(memRestore,12)
+
+label(code)
+label(return)
+label(multiplier)
+
+memRestore:
+  readmem(AOBSpeed,12)
+
+newmem:
+code:
+  reassemble(AOBSpeed)
+  mulss xmm6,[multiplier]
+  jmp return
+multiplier:
+  dd (float)2.0
+AOBSpeed:
+  jmp newmem
+  nop 2
+return:
+  registersymbol(multiplier)
+  registersymbol(AOBSpeed)
+  registersymbol(memRestore)
+
+[DISABLE]
+
+AOBSpeed:
+  readmem(memRestore,12)
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+12B6B60
+
+NMS.exe+12B6B30: F3 0F 10 35 6C 9B AC 03  - movss xmm6,[NMS.exe+4D806A4]
+NMS.exe+12B6B38: 48 8D 0D 41 59 6D 05     - lea rcx,[NMS.exe+698C480]
+NMS.exe+12B6B3F: E8 6C 47 01 FF           - call NMS.exe+2CB2B0
+NMS.exe+12B6B44: 84 C0                    - test al,al
+NMS.exe+12B6B46: 74 18                    - je NMS.exe+12B6B60
+NMS.exe+12B6B48: 48 8D 8F 20 2B 00 00     - lea rcx,[rdi+00002B20]
+NMS.exe+12B6B4F: E8 8C BD FC FF           - call NMS.exe+12828E0
+NMS.exe+12B6B54: 84 C0                    - test al,al
+NMS.exe+12B6B56: 74 08                    - je NMS.exe+12B6B60
+NMS.exe+12B6B58: F3 0F 10 35 48 9B AC 03  - movss xmm6,[NMS.exe+4D806A8]
+// ---------- INJECTING HERE ----------
+NMS.exe+12B6B60: 48 8D 8F A0 02 00 00     - lea rcx,[rdi+000002A0]
+// ---------- DONE INJECTING  ----------
+NMS.exe+12B6B67: E8 34 B0 38 FF           - call NMS.exe+641BA0
+NMS.exe+12B6B6C: 84 C0                    - test al,al
+NMS.exe+12B6B6E: 75 31                    - jne NMS.exe+12B6BA1
+NMS.exe+12B6B70: 48 8D 8F A0 02 00 00     - lea rcx,[rdi+000002A0]
+NMS.exe+12B6B77: E8 B4 AE 38 FF           - call NMS.exe+641A30
+NMS.exe+12B6B7C: 84 C0                    - test al,al
+NMS.exe+12B6B7E: 75 21                    - jne NMS.exe+12B6BA1
+NMS.exe+12B6B80: 48 8B 87 50 01 00 00     - mov rax,[rdi+00000150]
+NMS.exe+12B6B87: 48 63 88 98 01 00 00     - movsxd  rcx,dword ptr [rax+00000198]
+NMS.exe+12B6B8E: 48 8B 05 1B 04 80 03     - mov rax,[NMS.exe+4AB6FB0]
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>4456</ID>
+                  <Description>"Multiplier (Game Default = 1)"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>39AFD7</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>multiplier</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2151</ID>
+          <Description>"Inventory &gt;"</Description>
+          <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <Color>FF8000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2412</ID>
+              <Description>"Last Moved Item into Slot"</Description>
+              <Options moHideChildren="1"/>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(MovedItemMEM,8)
+registersymbol(MovedItemMEM)
+
+aobscanmodule(LastMovedItem,NMS.exe,0F 11 48 10 0F 10 43 20 0F 11 40 20 0F 11) // should be unique
+alloc(newmem,0x400,LastMovedItem)
+
+label(code)
+label(return MovedItem)
+registersymbol(MovedItem)
+
+MovedItemMEM:
+readmem(LastMovedItem,8)
+
+newmem:
+  mov [MovedItem],rax
+code:
+  movups [rax+10],xmm1
+  movups xmm0,[rbx+20]
+  jmp return
+MovedItem:
+  dq 0
+
+LastMovedItem:
+  jmp newmem
+  nop 3
+return:
+registersymbol(LastMovedItem)
+
+[DISABLE]
+
+LastMovedItem:
+  readmem(MovedItemMEM,8)
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+665F4E
+
+NMS.exe+665F2D: 4C 8B FB        - mov r15,rbx
+NMS.exe+665F30: 48 8B 4D F8     - mov rcx,[rbp-08]
+NMS.exe+665F34: 48 8D 54 24 60  - lea rdx,[rsp+60]
+NMS.exe+665F39: 48 83 C1 10     - add rcx,10
+NMS.exe+665F3D: 49 03 CF        - add rcx,r15
+NMS.exe+665F40: E8 EB 39 18 01  - call NMS.exe+17E9930
+NMS.exe+665F45: 84 C0           - test al,al
+NMS.exe+665F47: 74 57           - je NMS.exe+665FA0
+NMS.exe+665F49: 4D 85 ED        - test r13,r13
+NMS.exe+665F4C: 74 2B           - je NMS.exe+665F79
+// ---------- INJECTING HERE ----------
+NMS.exe+665F4E: 48 8B 4D F8     - mov rcx,[rbp-08]
+// ---------- DONE INJECTING  ----------
+NMS.exe+665F52: 8B 44 19 18     - mov eax,[rcx+rbx+18]
+NMS.exe+665F56: 41 3B 45 18     - cmp eax,[r13+18]
+NMS.exe+665F5A: 7F 1D           - jg NMS.exe+665F79
+NMS.exe+665F5C: 7C 15           - jl NMS.exe+665F73
+NMS.exe+665F5E: 49 8B 45 08     - mov rax,[r13+08]
+NMS.exe+665F62: 48 39 44 19 08  - cmp [rcx+rbx+08],rax
+NMS.exe+665F67: 75 0A           - jne NMS.exe+665F73
+NMS.exe+665F69: 49 8B 45 00     - mov rax,[r13+00]
+NMS.exe+665F6D: 48 39 04 19     - cmp [rcx+rbx],rax
+NMS.exe+665F71: 74 15           - je NMS.exe+665F88
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>2413</ID>
+                  <Description>"Number of items now in old Slot? Move them to get Number."</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>4080FF</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>MovedItem</Address>
+                  <Offsets>
+                    <Offset>18</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2362</ID>
+          <Description>"ExoSuit &gt;"</Description>
+          <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <Color>FF8000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>12053</ID>
+              <Description>"Take no Damage (Ship and ExoSuit)"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT,NMS.exe,48 8B C4 4C 89 48 20 44 89 40 18 55 53 56) // should be unique
+alloc(newmem,0x400,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  ret
+  mov rax,rsp
+  mov [rax+20],r9
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 2
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 48 8B C4 4C 89 48 20
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+1327A80
+
+NMS.exe+1327A6B: 49 8B 5B 30           - mov rbx,[r11+30]
+NMS.exe+1327A6F: 49 8B 6B 38           - mov rbp,[r11+38]
+NMS.exe+1327A73: 49 8B E3              - mov rsp,r11
+NMS.exe+1327A76: 41 5F                 - pop r15
+NMS.exe+1327A78: 41 5E                 - pop r14
+NMS.exe+1327A7A: 41 5C                 - pop r12
+NMS.exe+1327A7C: C3                    - ret 
+NMS.exe+1327A7D: CC                    - int 3 
+NMS.exe+1327A7E: CC                    - int 3 
+NMS.exe+1327A7F: CC                    - int 3 
+// ---------- INJECTING HERE ----------
+NMS.exe+1327A80: 48 8B C4              - mov rax,rsp
+// ---------- DONE INJECTING  ----------
+NMS.exe+1327A83: 4C 89 48 20           - mov [rax+20],r9
+NMS.exe+1327A87: 44 89 40 18           - mov [rax+18],r8d
+NMS.exe+1327A8B: 55                    - push rbp
+NMS.exe+1327A8C: 56                    - push rsi
+NMS.exe+1327A8D: 57                    - push rdi
+NMS.exe+1327A8E: 41 54                 - push r12
+NMS.exe+1327A90: 41 55                 - push r13
+NMS.exe+1327A92: 41 56                 - push r14
+NMS.exe+1327A94: 41 57                 - push r15
+NMS.exe+1327A96: 48 8D A8 48 FE FF FF  - lea rbp,[rax-000001B8]
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2414</ID>
+              <Description>"Unlimited Run Stamina"</Description>
+              <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(RunStaminaMem,8)
+aobscanmodule(AOBRunStamina,NMS.exe,F3 41 0F 5E C0 F3 0F 5C C8 F3) // should be unique
+
+RunStaminaMem:
+readmem(AOBRunStamina+5,4)
+
+AOBRunStamina+5:
+  nop 4
+registersymbol(AOBRunStamina RunStaminaMem)
+
+[DISABLE]
+
+AOBRunStamina+5:
+readmem(RunStaminaMem,4)
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+132D82B
+
+NMS.exe+132D7F2: 3B 05 38 F7 8A 03                 - cmp eax,[NMS.exe+4BDCF30]
+NMS.exe+132D7F8: 75 08                             - jne NMS.exe+132D802
+NMS.exe+132D7FA: F3 0F 59 35 2A F7 8A 03           - mulss xmm6,[NMS.exe+4BDCF2C]
+NMS.exe+132D802: 48 8D 0D C7 CE 6E 05              - lea rcx,[NMS.exe+6A1A6D0]
+NMS.exe+132D809: E8 02 B1 FA FE                    - call NMS.exe+2D8910
+NMS.exe+132D80E: 48 8D 88 B0 B2 2F 00              - lea rcx,[rax+002FB2B0]
+NMS.exe+132D815: E8 C6 56 0F FF                    - call NMS.exe+422EE0
+NMS.exe+132D81A: F3 0F 10 8F 10 51 00 00           - movss xmm1,[rdi+00005110]
+NMS.exe+132D822: F3 0F 59 C6                       - mulss xmm0,xmm6
+NMS.exe+132D826: F3 41 0F 59 C4                    - mulss xmm0,xmm12
+// ---------- INJECTING HERE ----------
+NMS.exe+132D82B: F3 41 0F 5E C0                    - divss xmm0,xmm8
+// ---------- DONE INJECTING  ----------
+NMS.exe+132D830: F3 0F 5C C8                       - subss xmm1,xmm0
+NMS.exe+132D834: F3 0F 11 8F 10 51 00 00           - movss [rdi+00005110],xmm1
+NMS.exe+132D83C: 44 0F 2F 97 10 51 00 00           - comiss xmm10,[rdi+00005110]
+NMS.exe+132D844: 72 4E                             - jb NMS.exe+132D894
+NMS.exe+132D846: 48 8D 0D 83 CE 6E 05              - lea rcx,[NMS.exe+6A1A6D0]
+NMS.exe+132D84D: 48 C7 87 0C 51 00 00 01 00 00 00  - mov qword ptr [rdi+0000510C],00000001
+NMS.exe+132D858: E8 33 B1 FA FE                    - call NMS.exe+2D8990
+NMS.exe+132D85D: 4C 8B 87 C0 02 00 00              - mov r8,[rdi+000002C0]
+NMS.exe+132D864: 48 8D 55 F0                       - lea rdx,[rbp-10]
+NMS.exe+132D868: C6 85 9C 03 00 00 01              - mov byte ptr [rbp+0000039C],01
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>12170</ID>
+              <Description>"Unlimited Jetpack Propulsion"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT,NMS.exe,F3 0F 58 CA F3 41 0F 59 CC F3 0F 59) // should be unique
+alloc(newmem,$1000,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  xorps xmm1,xmm1
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 4
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db F3 0F 58 CA F3 41 0F 59 CC
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+1460799
+
+NMS.exe+1460761: 41 0F 28 DA              - movaps xmm3,xmm10
+NMS.exe+1460765: 4C 8D 85 80 01 00 00     - lea r8,[rbp+00000180]
+NMS.exe+146076C: 48 8D 54 24 60           - lea rdx,[rsp+60]
+NMS.exe+1460771: 48 8B CF                 - mov rcx,rdi
+NMS.exe+1460774: E8 07 43 00 00           - call NMS.exe+1464A80
+NMS.exe+1460779: F3 0F 10 0D CB E2 DD 03  - movss xmm1,[NMS.exe+523EA4C]
+NMS.exe+1460781: F3 0F 10 15 7F 40 6B 03  - movss xmm2,[NMS.exe+4B14808]
+NMS.exe+1460789: F3 0F 5C CA              - subss xmm1,xmm2
+NMS.exe+146078D: F3 0F 59 C8              - mulss xmm1,xmm0
+NMS.exe+1460791: F3 0F 10 87 D4 34 00 00  - movss xmm0,[rdi+000034D4]
+// ---------- INJECTING HERE ----------
+NMS.exe+1460799: F3 0F 58 CA              - addss xmm1,xmm2
+// ---------- DONE INJECTING  ----------
+NMS.exe+146079D: F3 41 0F 59 CC           - mulss xmm1,xmm12
+NMS.exe+14607A2: F3 0F 59 CE              - mulss xmm1,xmm6
+NMS.exe+14607A6: F3 0F 5C C1              - subss xmm0,xmm1
+NMS.exe+14607AA: F3 0F 11 87 D4 34 00 00  - movss [rdi+000034D4],xmm0
+NMS.exe+14607B2: E9 21 FE FF FF           - jmp NMS.exe+14605D8
+NMS.exe+14607B7: 41 0F 28 C4              - movaps xmm0,xmm12
+NMS.exe+14607BB: 48 8D 0D 2E 10 A2 05     - lea rcx,[NMS.exe+6E817F0]
+NMS.exe+14607C2: F3 0F 58 87 10 35 00 00  - addss xmm0,[rdi+00003510]
+NMS.exe+14607CA: F3 0F 11 87 10 35 00 00  - movss [rdi+00003510],xmm0
+NMS.exe+14607D2: E8 39 76 E7 FE           - call NMS.exe+2D7E10
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2268</ID>
+              <Description>"Unlimited Marine Jet Propulsion"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT,NMS.exe,F3 0F 5C CA F3 44 0F 5F C1) // should be unique
+alloc(newmem,0x400,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  // subss xmm1,xmm2
+  maxss xmm8,xmm1
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 4
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db F3 0F 5C CA F3 44 0F 5F C1
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+121AC0D
+
+NMS.exe+121ABD8: B2 1A                       - mov dl,1A
+NMS.exe+121ABDA: F3 0F 5C 15 9E 08 12 03     - subss xmm2,[NMS.exe+433B480]
+NMS.exe+121ABE2: F3 0F 59 D0                 - mulss xmm2,xmm0
+NMS.exe+121ABE6: F3 0F 58 15 92 08 12 03     - addss xmm2,[NMS.exe+433B480]
+NMS.exe+121ABEE: 0F 28 C2                    - movaps xmm0,xmm2
+NMS.exe+121ABF1: E8 8A 27 43 01              - call NMS.exe+264D380
+NMS.exe+121ABF6: 0F 28 D0                    - movaps xmm2,xmm0
+NMS.exe+121ABF9: F3 0F 10 8F E4 32 00 00     - movss xmm1,[rdi+000032E4]
+NMS.exe+121AC01: F3 41 0F 59 D4              - mulss xmm2,xmm12
+NMS.exe+121AC06: C6 87 0D 33 00 00 01        - mov byte ptr [rdi+0000330D],01
+// ---------- INJECTING HERE ----------
+NMS.exe+121AC0D: F3 0F 5C CA                 - subss xmm1,xmm2
+// ---------- DONE INJECTING  ----------
+NMS.exe+121AC11: F3 44 0F 5F C1              - maxss xmm8,xmm1
+NMS.exe+121AC16: F3 44 0F 11 87 E4 32 00 00  - movss [rdi+000032E4],xmm8
+NMS.exe+121AC1F: EB 59                       - jmp NMS.exe+121AC7A
+NMS.exe+121AC21: 66 C7 87 DC 32 00 00 00 00  - mov word ptr [rdi+000032DC],0000
+NMS.exe+121AC2A: EB 4E                       - jmp NMS.exe+121AC7A
+NMS.exe+121AC2C: C6 87 0D 33 00 00 00        - mov byte ptr [rdi+0000330D],00
+NMS.exe+121AC33: 66 C7 87 DC 32 00 00 00 00  - mov word ptr [rdi+000032DC],0000
+NMS.exe+121AC3C: F3 44 0F 59 25 FF B8 78 03  - mulss xmm12,[NMS.exe+49A6544]
+NMS.exe+121AC45: F3 44 0F 58 A7 E4 32 00 00  - addss xmm12,[rdi+000032E4]
+NMS.exe+121AC4E: E8 5D C7 FD FF              - call NMS.exe+11F73B0
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>12124</ID>
+              <Description>"Unlimited Environmental Suit - Oxygen / Thermals / Toxicity"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(AOBEnvironmentalSuit,NMS.exe,40 55 56 57 48 8D 6C 24 B0) // should be unique
+alloc(newmem,0x400,AOBEnvironmentalSuit)
+
+label(return code)
+
+newmem:
+
+code:
+  ret
+  jmp return
+
+AOBEnvironmentalSuit:
+  jmp newmem
+  nop 4
+return:
+registersymbol(AOBEnvironmentalSuit)
+
+[DISABLE]
+
+AOBEnvironmentalSuit:
+  db 40 55 56 57 48 8D 6C 24 B0
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+14D57E0
+
+NMS.exe+14D57D6: CC                          - int 3
+NMS.exe+14D57D7: CC                          - int 3
+NMS.exe+14D57D8: CC                          - int 3
+NMS.exe+14D57D9: CC                          - int 3
+NMS.exe+14D57DA: CC                          - int 3
+NMS.exe+14D57DB: CC                          - int 3
+NMS.exe+14D57DC: CC                          - int 3
+NMS.exe+14D57DD: CC                          - int 3
+NMS.exe+14D57DE: CC                          - int 3
+NMS.exe+14D57DF: CC                          - int 3
+// ---------- INJECTING HERE ----------
+NMS.exe+14D57E0: 40 55                       - push rbp
+// ---------- DONE INJECTING  ----------
+NMS.exe+14D57E2: 56                          - push rsi
+NMS.exe+14D57E3: 57                          - push rdi
+NMS.exe+14D57E4: 48 8D 6C 24 B0              - lea rbp,[rsp-50]
+NMS.exe+14D57E9: 48 81 EC 50 01 00 00        - sub rsp,00000150
+NMS.exe+14D57F0: 48 8B 35 F1 52 9A 05        - mov rsi,[NMS.exe+6E7AAE8]
+NMS.exe+14D57F7: 48 8B F9                    - mov rdi,rcx
+NMS.exe+14D57FA: 44 0F 29 9C 24 D0 00 00 00  - movaps [rsp+000000D0],xmm11
+NMS.exe+14D5803: 44 0F 28 D9                 - movaps xmm11,xmm1
+NMS.exe+14D5807: 48 8D 8E 90 5A 8F 00        - lea rcx,[rsi+008F5A90]
+NMS.exe+14D580E: E8 FD 92 1B FF              - call NMS.exe+68EB10
+}
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2363</ID>
+          <Description>"StarShip &gt;"</Description>
+          <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <Color>FF8000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2176</ID>
+              <Description>"Rocket Launcher - No Cool Down"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(AOBMissiles,NMS.exe,41 C7 84 86 B4 5F 00 00 00 00 80 3F 49 63 86) // should be unique
+alloc(newmem,0x400,AOBMissiles)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  // mov [r14+rax*4+00005FB4],3F800000 // No Cooldown
+  jmp return
+
+AOBMissiles:
+  jmp newmem
+  nop 7
+return:
+registersymbol(AOBMissiles)
+
+[DISABLE]
+
+AOBMissiles:
+  db 41 C7 84 86 B4 5F 00 00 00 00 80 3F
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+17A2599
+
+NMS.exe+17A256C: FF 50 40                             - call qword ptr [rax+40]
+NMS.exe+17A256F: 0F 2F C7                             - comiss xmm0,xmm7
+NMS.exe+17A2572: 49 63 86 A4 00 00 00                 - movsxd  rax,dword ptr [r14+000000A4]
+NMS.exe+17A2579: 76 1E                                - jna NMS.exe+17A2599
+NMS.exe+17A257B: 41 0F 28 CC                          - movaps xmm1,xmm12
+NMS.exe+17A257F: F3 0F 5E C8                          - divss xmm1,xmm0
+NMS.exe+17A2583: F3 41 0F 58 8C 86 B4 5F 00 00        - addss xmm1,[r14+rax*4+00005FB4]
+AOBLaserCoolDown: E9 6E DA 75 FE                       - jmp 7FF62DD70000
+NMS.exe+17A2592: 0F 1F 44 00 00                       - nop dword ptr [rax+rax+00]
+NMS.exe+17A2597: EB 0C                                - jmp NMS.exe+17A25A5
+// ---------- INJECTING HERE ----------
+NMS.exe+17A2599: 41 C7 84 86 B4 5F 00 00 00 00 80 3F  - mov [r14+rax*4+00005FB4],3F800000
+// ---------- DONE INJECTING  ----------
+NMS.exe+17A25A5: 49 63 86 A4 00 00 00                 - movsxd  rax,dword ptr [r14+000000A4]
+NMS.exe+17A25AC: F3 41 0F 10 84 86 B4 5F 00 00        - movss xmm0,[r14+rax*4+00005FB4]
+NMS.exe+17A25B6: 0F 2F 05 03 07 37 03                 - comiss xmm0,[NMS.exe+4B12CC0]
+NMS.exe+17A25BD: 72 44                                - jb NMS.exe+17A2603
+NMS.exe+17A25BF: 42 80 BC 30 EC 5F 00 00 00           - cmp byte ptr [rax+r14+00005FEC],00
+NMS.exe+17A25C8: 75 10                                - jne NMS.exe+17A25DA
+NMS.exe+17A25CA: 42 C6 84 30 EC 5F 00 00 01           - mov byte ptr [rax+r14+00005FEC],01
+NMS.exe+17A25D3: 49 8D BE FC 5F 00 00                 - lea rdi,[r14+00005FFC]
+NMS.exe+17A25DA: 49 63 86 A4 00 00 00                 - movsxd  rax,dword ptr [r14+000000A4]
+NMS.exe+17A25E1: 41 C7 84 86 B4 5F 00 00 00 00 80 3F  - mov [r14+rax*4+00005FB4],3F800000
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2025</ID>
+              <Description>"Zero Thermal Load (Heat) for Photo Cannon"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(AOBLaserCoolDown,NMS.exe,F3 41 0F 11 8C 86 B4 5F 00 00) // should be unique
+alloc(newmem,0x400,AOBLaserCoolDown)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  // movss [r14+rax*4+00005FB4],xmm1 // Do not increment
+  jmp return
+
+AOBLaserCoolDown:
+  jmp newmem
+  nop 5
+return:
+registersymbol(AOBLaserCoolDown)
+
+[DISABLE]
+
+AOBLaserCoolDown:
+  db F3 41 0F 11 8C 86 B4 5F 00 00
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+17A258D
+
+NMS.exe+17A2562: 49 8B CE                             - mov rcx,r14
+NMS.exe+17A2565: 49 8B 06                             - mov rax,[r14]
+NMS.exe+17A2568: 48 C1 E6 06                          - shl rsi,06
+NMS.exe+17A256C: FF 50 40                             - call qword ptr [rax+40]
+NMS.exe+17A256F: 0F 2F C7                             - comiss xmm0,xmm7
+NMS.exe+17A2572: 49 63 86 A4 00 00 00                 - movsxd  rax,dword ptr [r14+000000A4]
+NMS.exe+17A2579: 76 1E                                - jna NMS.exe+17A2599
+NMS.exe+17A257B: 41 0F 28 CC                          - movaps xmm1,xmm12
+NMS.exe+17A257F: F3 0F 5E C8                          - divss xmm1,xmm0
+NMS.exe+17A2583: F3 41 0F 58 8C 86 B4 5F 00 00        - addss xmm1,[r14+rax*4+00005FB4]
+// ---------- INJECTING HERE ----------
+NMS.exe+17A258D: F3 41 0F 11 8C 86 B4 5F 00 00        - movss [r14+rax*4+00005FB4],xmm1
+// ---------- DONE INJECTING  ----------
+NMS.exe+17A2597: EB 0C                                - jmp NMS.exe+17A25A5
+NMS.exe+17A2599: 41 C7 84 86 B4 5F 00 00 00 00 80 3F  - mov [r14+rax*4+00005FB4],3F800000
+NMS.exe+17A25A5: 49 63 86 A4 00 00 00                 - movsxd  rax,dword ptr [r14+000000A4]
+NMS.exe+17A25AC: F3 41 0F 10 84 86 B4 5F 00 00        - movss xmm0,[r14+rax*4+00005FB4]
+NMS.exe+17A25B6: 0F 2F 05 03 07 37 03                 - comiss xmm0,[NMS.exe+4B12CC0]
+NMS.exe+17A25BD: 72 44                                - jb NMS.exe+17A2603
+NMS.exe+17A25BF: 42 80 BC 30 EC 5F 00 00 00           - cmp byte ptr [rax+r14+00005FEC],00
+NMS.exe+17A25C8: 75 10                                - jne NMS.exe+17A25DA
+NMS.exe+17A25CA: 42 C6 84 30 EC 5F 00 00 01           - mov byte ptr [rax+r14+00005FEC],01
+NMS.exe+17A25D3: 49 8D BE FC 5F 00 00                 - lea rdi,[r14+00005FFC]
+}
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>438</ID>
+          <Description>"MultiTool &gt;"</Description>
+          <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <Color>FF8000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>12217</ID>
+              <Description>"Instant Mining / No Damage To Industrial Waste/ One Shot Kills - Disable/Enable below as desired. (To the right)"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+aobscanmodule(AOBMiningDamage,NMS.exe,89 77 50 C6 47 48 01 80)
+alloc(newmem,0x400,AOBMiningDamage)
+
+label(code)
+label(return enableOneShotKill enableInstantMining oneShotKill noDamageToIndustrialWaste byPass)
+registersymbol(enableOneShotKill)
+
+newmem:
+//  cmp r15,F34E6
+//  jg code
+  push rax
+  mov rax,[rdi+A8]
+  test rax,rax
+  je byPass
+  cmp [rax+20],1
+  je noDamageToIndustrialWaste
+  jmp byPass
+
+byPass:
+  pop rax
+  cmp [enableOneShotKill],1
+  je oneShotKill
+  cmp [rdi+268],0
+  jne code
+
+oneShotKill:
+  push r15
+  mov r15,[rdi-50]
+  mov [rdi+50],r15
+  pop r15
+  mov byte ptr [rdi+48],01
+  jmp return
+
+code:
+  mov [rdi+50],esi
+  mov byte ptr [rdi+48],01
+  jmp return
+
+noDamageToIndustrialWaste:
+  pop rax
+  mov [rdi+50],0
+  mov r15,0
+  mov byte ptr [rdi+48],01
+  jmp return
+
+enableOneShotKill:
+  dd 1 // Enabled
+
+enableInstantMining:
+  dd 1 // Enabled
+
+AOBMiningDamage:
+  jmp newmem
+  nop 2
+return:
+registersymbol(AOBMiningDamage)
+
+[DISABLE]
+
+AOBMiningDamage:
+  db 89 77 50 C6 47 48 01
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+13DDE55
+
+NMS.exe+13DDE3B: 48 8B 07              - mov rax,[rdi]
+NMS.exe+13DDE3E: 48 8B CF              - mov rcx,rdi
+NMS.exe+13DDE41: FF 50 18              - call qword ptr [rax+18]
+NMS.exe+13DDE44: 84 C0                 - test al,al
+NMS.exe+13DDE46: 74 14                 - je NMS.exe+13DDE5C
+NMS.exe+13DDE48: 48 8B 07              - mov rax,[rdi]
+NMS.exe+13DDE4B: 48 8B CF              - mov rcx,rdi
+NMS.exe+13DDE4E: FF 50 10              - call qword ptr [rax+10]
+NMS.exe+13DDE51: 84 C0                 - test al,al
+NMS.exe+13DDE53: 74 07                 - je NMS.exe+13DDE5C
+// ---------- INJECTING HERE ----------
+NMS.exe+13DDE55: 89 77 50              - mov [rdi+50],esi
+// ---------- DONE INJECTING  ----------
+NMS.exe+13DDE58: C6 47 48 01           - mov byte ptr [rdi+48],01
+NMS.exe+13DDE5C: 80 BB 8A 0A 00 00 00  - cmp byte ptr [rbx+00000A8A],00
+NMS.exe+13DDE63: 74 0B                 - je NMS.exe+13DDE70
+NMS.exe+13DDE65: 48 8B 83 90 01 00 00  - mov rax,[rbx+00000190]
+NMS.exe+13DDE6C: 80 48 08 20           - or byte ptr [rax+08],20
+NMS.exe+13DDE70: 8B 83 78 03 00 00     - mov eax,[rbx+00000378]
+NMS.exe+13DDE76: 8B 8B 18 04 00 00     - mov ecx,[rbx+00000418]
+NMS.exe+13DDE7C: 3B E8                 - cmp ebp,eax
+NMS.exe+13DDE7E: 7D 2C                 - jnl NMS.exe+13DDEAC
+NMS.exe+13DDE80: 3B C8                 - cmp ecx,eax
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>12218</ID>
+                  <Description>"One Shot Kills (Creatures and Drones)"</Description>
+                  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Disabled
+1:Enabled
+</DropDownList>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>39AFD7</Color>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>enableOneShotKill</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4454</ID>
+              <Description>"Instant Charge for Blaze Javelin"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+alloc(BlazeAmmoMem,7)
+registersymbol(BlazeAmmoMem)
+
+aobscanmodule(AOBBlazeAmmo,NMS.exe,41 0F 28 F5 48 8B CE F3 0F 58 B6 88) // should be unique
+alloc(newmem,0x400,AOBBlazeAmmo)
+
+label(code)
+label(return)
+label(charge)
+
+BlazeAmmoMem:
+readmem(AOBBlazeAmmo,7)
+
+newmem:
+
+code:
+  movaps xmm6,xmm13
+  mov rcx,rsi
+  movss xmm6,[charge]
+  jmp return
+
+charge:
+  dq (float)3.00
+
+AOBBlazeAmmo:
+  jmp newmem
+  nop 2
+return:
+registersymbol(AOBBlazeAmmo)
+
+[DISABLE]
+
+AOBBlazeAmmo:
+readmem(BlazeAmmoMem,7)
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+14025EA
+
+NMS.exe+14025AD: F3 0F 11 B6 A0 23 00 00  - movss [rsi+000023A0],xmm6
+NMS.exe+14025B5: E8 26 59 FF FF           - call NMS.exe+13F7EE0
+NMS.exe+14025BA: 0F 2F F0                 - comiss xmm6,xmm0
+NMS.exe+14025BD: 0F 82 FE 03 00 00        - jb NMS.exe+14029C1
+NMS.exe+14025C3: 44 88 B6 AC 23 00 00     - mov [rsi+000023AC],r14b
+NMS.exe+14025CA: 44 89 B6 A0 23 00 00     - mov [rsi+000023A0],r14d
+NMS.exe+14025D1: 44 89 B6 88 25 00 00     - mov [rsi+00002588],r14d
+NMS.exe+14025D8: E9 E4 03 00 00           - jmp NMS.exe+14029C1
+NMS.exe+14025DD: 44 38 B6 86 25 00 00     - cmp [rsi+00002586],r14b
+NMS.exe+14025E4: 0F 84 D7 03 00 00        - je NMS.exe+14029C1
+// ---------- INJECTING HERE ----------
+NMS.exe+14025EA: 41 0F 28 F5              - movaps xmm6,xmm13
+// ---------- DONE INJECTING  ----------
+NMS.exe+14025EE: 48 8B CE                 - mov rcx,rsi
+NMS.exe+14025F1: F3 0F 58 B6 88 25 00 00  - addss xmm6,[rsi+00002588]
+NMS.exe+14025F9: F3 0F 11 B6 88 25 00 00  - movss [rsi+00002588],xmm6
+NMS.exe+1402601: E8 6A B0 00 00           - call NMS.exe+140D670
+NMS.exe+1402606: 0F 2F F0                 - comiss xmm6,xmm0
+NMS.exe+1402609: 48 8B CE                 - mov rcx,rsi
+NMS.exe+140260C: 76 0F                    - jna NMS.exe+140261D
+NMS.exe+140260E: E8 5D B0 00 00           - call NMS.exe+140D670
+NMS.exe+1402613: F3 0F 11 86 88 25 00 00  - movss [rsi+00002588],xmm0
+NMS.exe+140261B: EB 56                    - jmp NMS.exe+1402673
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>12</ID>
+              <Description>"No Mining Beam Overheat"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(BeamHeatMem,8)
+registersymbol(BeamHeatMem)
+aobscanmodule(AOBMiningBeamHeat,NMS.exe,41 0F 28 C5 41 0F 28 F5 F3) // should be unique
+
+BeamHeatMem:
+readmem(AOBMiningBeamHeat+8,8)
+
+AOBMiningBeamHeat+8:
+  nop 8
+return:
+registersymbol(AOBMiningBeamHeat)
+
+[DISABLE]
+
+AOBMiningBeamHeat+8:
+readmem(BeamHeatMem,8)
+
+unregistersymbol(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+11EABEE
+
+NMS.exe+11EABB6: F3 44 0F 11 64 24 20     - movss [rsp+20],xmm12
+NMS.exe+11EABBD: F3 0F 5F C8              - maxss xmm1,xmm0
+NMS.exe+11EABC1: 0F 28 85 00 07 00 00     - movaps xmm0,[rbp+00000700]
+NMS.exe+11EABC8: 66 0F 7F 85 A0 00 00 00  - movdqa [rbp+000000A0],xmm0
+NMS.exe+11EABD0: F3 0F 5D D1              - minss xmm2,xmm1
+NMS.exe+11EABD4: E8 77 E5 6D 01           - call NMS.exe+28C9150
+NMS.exe+11EABD9: E9 FE 02 00 00           - jmp NMS.exe+11EAEDC
+NMS.exe+11EABDE: 80 BE 28 13 00 00 00     - cmp byte ptr [rsi+00001328],00
+NMS.exe+11EABE5: 48 8B CE                 - mov rcx,rsi
+NMS.exe+11EABE8: 0F 84 DA 01 00 00        - je NMS.exe+11EADC8
+// ---------- INJECTING HERE ----------
+NMS.exe+11EABEE: 41 0F 28 C5              - movaps xmm0,xmm13
+// ---------- DONE INJECTING  ----------
+NMS.exe+11EABF2: 41 0F 28 F5              - movaps xmm6,xmm13
+NMS.exe+11EABF6: F3 0F 58 86 B0 22 00 00  - addss xmm0,[rsi+000022B0]
+NMS.exe+11EABFE: F3 0F 11 86 B0 22 00 00  - movss [rsi+000022B0],xmm0
+NMS.exe+11EAC06: F3 0F 58 B6 B4 22 00 00  - addss xmm6,[rsi+000022B4]
+NMS.exe+11EAC0E: F3 0F 11 B6 B4 22 00 00  - movss [rsi+000022B4],xmm6
+NMS.exe+11EAC16: E8 75 60 FF FF           - call NMS.exe+11E0C90
+NMS.exe+11EAC1B: 0F 2F F0                 - comiss xmm6,xmm0
+NMS.exe+11EAC1E: 0F 86 91 00 00 00        - jbe NMS.exe+11EACB5
+NMS.exe+11EAC24: 48 8D 0D F5 52 5E 05     - lea rcx,[NMS.exe+67CFF20]
+NMS.exe+11EAC2B: E8 70 46 09 FF           - call NMS.exe+27F2A0
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2450</ID>
+              <Description>"Instant Identification for Analysis Scanner "</Description>
+              <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(AOBScanner,NMS.exe,F3 0F 11 49 24 48 85)
+alloc(newmem,0x400,AOBScanner)
+
+label(code)
+label(return scanner)
+
+newmem:
+
+code:
+  movss xmm1,[scanner]
+  movss [rcx+24],xmm1
+  jmp return
+
+  scanner:
+  dq (float)1.0
+
+AOBScanner:
+  jmp newmem
+return:
+registersymbol(AOBScanner)
+
+[DISABLE]
+
+AOBScanner:
+  db F3 0F 11 49 24
+
+unregistersymbol(AOBScanner)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+1014010
+
+NMS.exe+1013FF0: 27                    - daa 
+NMS.exe+1013FF1: 3D 01 01 27 3D        - cmp eax,3D270101
+NMS.exe+1013FF6: 01 01                 - add [rcx],eax
+NMS.exe+1013FF8: 27                    - daa 
+NMS.exe+1013FF9: 3D 01 01 27 3D        - cmp eax,3D270101
+NMS.exe+1013FFE: 01 01                 - add [rcx],eax
+NMS.exe+1014000: 40 53                 - push rbx
+NMS.exe+1014002: 48 83 EC 20           - sub rsp,20
+NMS.exe+1014006: 48 8B 91 B0 07 00 00  - mov rdx,[rcx+000007B0]
+NMS.exe+101400D: 48 8B D9              - mov rbx,rcx
+// ---------- INJECTING HERE ----------
+NMS.exe+1014010: F3 0F 11 49 24        - movss [rcx+24],xmm1
+// ---------- DONE INJECTING  ----------
+NMS.exe+1014015: 48 85 D2              - test rdx,rdx
+NMS.exe+1014018: 74 08                 - je NMS.exe+1014022
+NMS.exe+101401A: 0F 28 D1              - movaps xmm2,xmm1
+NMS.exe+101401D: E8 2E 00 00 00        - call NMS.exe+1014050
+NMS.exe+1014022: 48 8B 93 B8 07 00 00  - mov rdx,[rbx+000007B8]
+NMS.exe+1014029: 48 85 D2              - test rdx,rdx
+NMS.exe+101402C: 74 0F                 - je NMS.exe+101403D
+NMS.exe+101402E: F3 0F 10 53 24        - movss xmm2,[rbx+24]
+NMS.exe+1014033: 48 83 C4 20           - add rsp,20
+NMS.exe+1014037: 5B                    - pop rbx
+}
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>11938</ID>
+                  <Description>"True Instant Analysis Scanner"</Description>
+                  <Color>008000</Color>
+                  <VariableType>Auto Assembler Script</VariableType>
+                  <AssemblerScript>[ENABLE]
+
+aobscanmodule(onlykeytoscan,NMS.exe,DB 0F 84 48 02 00 00 48) // should be unique
+alloc(newmem,0x400,onlykeytoscan)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  // je NMS.exe+118AC8B
+  jmp return
+
+onlykeytoscan+01:
+  jmp newmem
+  nop
+return:
+registersymbol(onlykeytoscan)
+
+[DISABLE]
+
+onlykeytoscan+01:
+  db 0F 84 48 02 00 00
+
+unregistersymbol(onlykeytoscan)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+118AA3D
+
+NMS.exe+118AA1E: 0F B6 BD B8 04 00 00  - movzx edi,byte ptr [rbp+000004B8]
+NMS.exe+118AA25: 84 C0                 - test al,al
+NMS.exe+118AA27: 75 09                 - jne NMS.exe+118AA32
+NMS.exe+118AA29: 40 84 FF              - test dil,dil
+NMS.exe+118AA2C: 75 04                 - jne NMS.exe+118AA32
+NMS.exe+118AA2E: B0 01                 - mov al,01
+NMS.exe+118AA30: EB 02                 - jmp NMS.exe+118AA34
+NMS.exe+118AA32: 32 C0                 - xor al,al
+NMS.exe+118AA34: 41 88 86 BC 02 00 00  - mov [r14+000002BC],al
+NMS.exe+118AA3B: 84 DB                 - test bl,bl
+// ---------- INJECTING HERE ----------
+NMS.exe+118AA3D: 0F 84 48 02 00 00     - je NMS.exe+118AC8B
+// ---------- DONE INJECTING  ----------
+NMS.exe+118AA43: 48 8B 0D 3E 9A 89 05  - mov rcx,[NMS.exe+6A24488]
+NMS.exe+118AA4A: 48 8D 95 30 03 00 00  - lea rdx,[rbp+00000330]
+NMS.exe+118AA51: 48 81 C1 A8 3E 2F 00  - add rcx,002F3EA8
+NMS.exe+118AA58: E8 A3 4B 36 FF        - call NMS.exe+4EF600
+NMS.exe+118AA5D: 32 DB                 - xor bl,bl
+NMS.exe+118AA5F: 44 8B F8              - mov r15d,eax
+NMS.exe+118AA62: 88 9D 98 04 00 00     - mov [rbp+00000498],bl
+NMS.exe+118AA68: 85 C0                 - test eax,eax
+NMS.exe+118AA6A: 7E 2F                 - jle NMS.exe+118AA9B
+NMS.exe+118AA6C: 48 8B 0D 15 9A 89 05  - mov rcx,[NMS.exe+6A24488]
+}
+
+
+{
+NMS.exe+118A96B - 48 8D A8 78FBFFFF     - lea rbp,[rax-00000488]
+NMS.exe+118A972 - 48 81 EC 48050000     - sub rsp,00000548
+NMS.exe+118A979 - 0F29 78 98            - movaps [rax-68],xmm7
+NMS.exe+118A97D - 33 F6                 - xor esi,esi
+NMS.exe+118A97F - 89 71 30              - mov [rcx+30],esi
+NMS.exe+118A982 - 4C 8B F2              - mov r14,rdx
+NMS.exe+118A985 - 44 0F29 40 88         - movaps [rax-78],xmm8
+NMS.exe+118A98A - 48 8D 8D 30030000     - lea rcx,[rbp+00000330]
+NMS.exe+118A991 - 44 0F29 88 78FFFFFF   - movaps [rax-00000088],xmm9
+NMS.exe+118A999 - 44 0F29 90 68FFFFFF   - movaps [rax-00000098],xmm10
+NMS.exe+118A9A1 - C7 82 B0020000 0000003F - mov [rdx+000002B0],3F000000
+NMS.exe+118A9AB - E8 A03A01FF           - call NMS.AK::MemoryMgr::StartProfileThreadUsage+2B0
+NMS.exe+118A9B0 - 48 8B 15 D19A8905     - mov rdx,[NMS.exe+6A24488]
+NMS.exe+118A9B7 - 4C 8D 85 30030000     - lea r8,[rbp+00000330]
+NMS.exe+118A9BE - 8B 8D A0040000        - mov ecx,[rbp+000004A0]
+NMS.exe+118A9C4 - 48 8B 92 700F5600     - mov rdx,[rdx+00560F70]
+NMS.exe+118A9CB - E8 50A429FF           - call NMS.exe+424E20
+NMS.exe+118A9D0 - 84 C0                 - test al,al
+NMS.exe+118A9D2 - 0F84 CF020000         - je NMS.exe+118ACA7
+NMS.exe+118A9D8 - 0FB6 9D B0040000      - movzx ebx,byte ptr [rbp+000004B0]
+NMS.exe+118A9DF - 48 8B 0D A29A8905     - mov rcx,[NMS.exe+6A24488]
+NMS.exe+118A9E6 - 84 DB                 - test bl,bl
+NMS.exe+118A9E8 - 74 21                 - je NMS.exe+118AA0B
+NMS.exe+118A9EA - 48 8B 81 700F5600     - mov rax,[rcx+00560F70]
+NMS.exe+118A9F1 - 48 C1 E8 20           - shr rax,20
+NMS.exe+118A9F5 - C1 E8 14              - shr eax,14
+NMS.exe+118A9F8 - A8 0F                 - test al,0F
+NMS.exe+118A9FA - 75 0F                 - jne NMS.exe+118AA0B
+NMS.exe+118A9FC - 8B 85 68030000        - mov eax,[rbp+00000368]
+NMS.exe+118AA02 - 83 C0 FD              - add eax,-03
+NMS.exe+118AA05 - 83 F8 02              - cmp eax,02
+NMS.exe+118AA08 - 0F46 DE               - cmovbe ebx,esi
+NMS.exe+118AA0B - 48 81 C1 E0BA8200     - add rcx,0082BAE0
+NMS.exe+118AA12 - 48 8D 95 30030000     - lea rdx,[rbp+00000330]
+NMS.exe+118AA19 - E8 B27DF8FF           - call NMS.exe+11127D0
+NMS.exe+118AA1E - 0FB6 BD B8040000      - movzx edi,byte ptr [rbp+000004B8]
+NMS.exe+118AA25 - 84 C0                 - test al,al
+NMS.exe+118AA27 - 75 09                 - jne NMS.exe+118AA32
+NMS.exe+118AA29 - 40 84 FF              - test dil,dil
+NMS.exe+118AA2C - 75 04                 - jne NMS.exe+118AA32
+NMS.exe+118AA2E - B0 01                 - mov al,01
+NMS.exe+118AA30 - EB 02                 - jmp NMS.exe+118AA34
+NMS.exe+118AA32 - 32 C0                 - xor al,al
+NMS.exe+118AA34 - 41 88 86 BC020000     - mov [r14+000002BC],al
+NMS.exe+118AA3B - 84 DB                 - test bl,bl
+
+// ---------- INJECTING HERE ----------
+NMS.exe+118AA3D: 0F 84 48 02 00 00     - je NMS.exe+118AC8B
+// ---------- DONE INJECTING  ----------
+
+NMS.exe+118AA43 - 48 8B 0D 3E9A8905     - mov rcx,[NMS.exe+6A24488]
+NMS.exe+118AA4A - 48 8D 95 30030000     - lea rdx,[rbp+00000330]
+NMS.exe+118AA51 - 48 81 C1 A83E2F00     - add rcx,002F3EA8
+NMS.exe+118AA58 - E8 A34B36FF           - call NMS.exe+4EF600
+NMS.exe+118AA5D - 32 DB                 - xor bl,bl
+NMS.exe+118AA5F - 44 8B F8              - mov r15d,eax
+NMS.exe+118AA62 - 88 9D 98040000        - mov [rbp+00000498],bl
+NMS.exe+118AA68 - 85 C0                 - test eax,eax
+NMS.exe+118AA6A - 7E 2F                 - jle NMS.exe+118AA9B
+NMS.exe+118AA6C - 48 8B 0D 159A8905     - mov rcx,[NMS.exe+6A24488]
+NMS.exe+118AA73 - 48 8B 99 80B02B00     - mov rbx,[rcx+002BB080]
+NMS.exe+118AA7A - E8 F1097A01           - call NMS.exe+292B470
+NMS.exe+118AA7F - 4C 8D 8D 98040000     - lea r9,[rbp+00000498]
+NMS.exe+118AA86 - 44 8B C0              - mov r8d,eax
+NMS.exe+118AA89 - 48 8D 95 30030000     - lea rdx,[rbp+00000330]
+NMS.exe+118AA90 - 48 8B CB              - mov rcx,rbx
+NMS.exe+118AA93 - E8 A8FE29FF           - call NMS.exe+42A940
+NMS.exe+118AA98 - 0FB6 D8               - movzx ebx,al
+NMS.exe+118AA9B - 48 8D 8D 38030000     - lea rcx,[rbp+00000338]
+NMS.exe+118AAA2 - E8 F93601FF           - call NMS.AK::MemoryMgr::VerifyMemoryArenaIntegrity
+NMS.exe+118AAA7 - 84 DB                 - test bl,bl
+NMS.exe+118AAA9 - 75 0D                 - jne NMS.exe+118AAB8
+NMS.exe+118AAAB - 40 38 B5 98040000     - cmp [rbp+00000498],sil
+NMS.exe+118AAB2 - 0F84 D3010000         - je NMS.exe+118AC8B
+NMS.exe+118AAB8 - 48 8B 0D C9998905     - mov rcx,[NMS.exe+6A24488]
+NMS.exe+118AABF - 48 8D 95 30030000     - lea rdx,[rbp+00000330]
+NMS.exe+118AAC6 - 48 81 C1 A83E2F00     - add rcx,002F3EA8
+NMS.exe+118AACD - 44 0FB6 C7            - movzx r8d,dil
+NMS.exe+118AAD1 - E8 7A2C36FF           - call NMS.exe+4ED750
+NMS.exe+118AAD6 - 40 84 FF              - test dil,dil
+NMS.exe+118AAD9 - 0F85 AC010000         - jne NMS.exe+118AC8B
+NMS.exe+118AADF - F3 0F10 05 51B8A503   - movss xmm0,[NMS.exe+4BE6338]
+NMS.exe+118AAE7 - 48 8D 0D 62998905     - lea rcx,[NMS.exe+6A24450]
+NMS.exe+118AAEE - F3 41 0F11 86 B0020000  - movss [r14+000002B0],xmm0
+NMS.exe+118AAF7 - 45 89 BE A4020000     - mov [r14+000002A4],r15d
+NMS.exe+118AAFE - E8 CDE014FF           - call NMS.exe+2D8BD0
+NMS.exe+118AB03 - 48 8B C8              - mov rcx,rax
+NMS.exe+118AB06 - E8 85856FFF           - call NMS.exe+883090
+NMS.exe+118AB0B - 49 89 86 A8020000     - mov [r14+000002A8],rax
+NMS.exe+118AB12 - 48 85 C0              - test rax,rax
+NMS.exe+118AB15 - 0F84 70010000         - je NMS.exe+118AC8B
+NMS.exe+118AB1B - 8B 8D A0040000        - mov ecx,[rbp+000004A0]
+NMS.exe+118AB21 - 33 D2                 - xor edx,edx
+NMS.exe+118AB23 - E8 A8A607FF           - call NMS.AK::Monitor::PostCode+FE90
+NMS.exe+118AB28 - 4C 8B F8              - mov r15,rax
+NMS.exe+118AB2B - 48 85 C0              - test rax,rax
+NMS.exe+118AB2E - 74 57                 - je NMS.exe+118AB87
+NMS.exe+118AB30 - 48 8D 55 B0           - lea rdx,[rbp-50]
+NMS.exe+118AB34 - 48 8B C8              - mov rcx,rax
+NMS.exe+118AB37 - E8 B48829FF           - call NMS.exe+4233F0
+NMS.exe+118AB3C - 48 8B C8              - mov rcx,rax
+NMS.exe+118AB3F - E8 DC8D03FF           - call NMS.AK::WriteBytesCount::Reserve+55F0
+NMS.exe+118AB44 - 48 85 C0              - test rax,rax
+NMS.exe+118AB47 - 74 3E                 - je NMS.exe+118AB87
+NMS.exe+118AB49 - 49 8B BE A8020000     - mov rdi,[r14+000002A8]
+NMS.exe+118AB50 - 48 8D 8D 60010000     - lea rcx,[rbp+00000160]
+NMS.exe+118AB57 - 33 D2                 - xor edx,edx
+NMS.exe+118AB59 - 41 B8 C0000000        - mov r8d,000000C0
+NMS.exe+118AB5F - E8 D89AF201           - call NMS.exe+30B463C
+NMS.exe+118AB64 - 48 8D 8D 60010000     - lea rcx,[rbp+00000160]
+NMS.exe+118AB6B - E8 40F606FF           - call NMS.AK::Monitor::PostCode+4E70
+NMS.exe+118AB70 - 48 8D 55 B0           - lea rdx,[rbp-50]
+NMS.exe+118AB74 - 49 8B CF              - mov rcx,r15
+NMS.exe+118AB77 - 48 8B D8              - mov rbx,rax
+NMS.exe+118AB7A - E8 718829FF           - call NMS.exe+4233F0
+NMS.exe+118AB7F - 48 8D 4D 80           - lea rcx,[rbp-80]
+NMS.exe+118AB83 - 8B 10                 - mov edx,[rax]
+NMS.exe+118AB85 - EB 34                 - jmp NMS.exe+118ABBB
+NMS.exe+118AB87 - 49 8B BE A8020000     - mov rdi,[r14+000002A8]
+NMS.exe+118AB8E - 48 8D 8D 60010000     - lea rcx,[rbp+00000160]
+NMS.exe+118AB95 - 33 D2                 - xor edx,edx
+NMS.exe+118AB97 - 41 B8 C0000000        - mov r8d,000000C0
+NMS.exe+118AB9D - E8 9A9AF201           - call NMS.exe+30B463C
+NMS.exe+118ABA2 - 48 8D 8D 60010000     - lea rcx,[rbp+00000160]
+NMS.exe+118ABA9 - E8 02F606FF           - call NMS.AK::Monitor::PostCode+4E70
+NMS.exe+118ABAE - 8B 95 A0040000        - mov edx,[rbp+000004A0]
+NMS.exe+118ABB4 - 48 8D 4D B0           - lea rcx,[rbp-50]
+NMS.exe+118ABB8 - 48 8B D8              - mov rbx,rax
+NMS.exe+118ABBB - 45 33 C0              - xor r8d,r8d
+NMS.exe+118ABBE - E8 8D147801           - call NMS.exe+290C050
+NMS.exe+118ABC3 - 4C 8B CB              - mov r9,rbx
+NMS.exe+118ABC6 - 45 33 C0              - xor r8d,r8d
+NMS.exe+118ABC9 - 48 8B CF              - mov rcx,rdi
+NMS.exe+118ABCC - 8B 10                 - mov edx,[rax]
+NMS.exe+118ABCE - E8 CD6D9201           - call NMS.exe+2AB19A0
+NMS.exe+118ABD3 - 49 8B 9E A8020000     - mov rbx,[r14+000002A8]
+NMS.exe+118ABDA - 48 8D 55 10           - lea rdx,[rbp+10]
+NMS.exe+118ABDE - 48 8B CB              - mov rcx,rbx
+NMS.exe+118ABE1 - 89 75 10              - mov [rbp+10],esi
+NMS.exe+118ABE4 - E8 B7F206FF           - call NMS.AK::Monitor::PostCode+4B60
+NMS.exe+118ABE9 - 4C 8D 15 947F5703     - lea r10,[NMS.exe+4702B84]
+NMS.exe+118ABF0 - 44 8B C6              - mov r8d,esi
+NMS.exe+118ABF3 - 41 B1 50              - mov r9b,50
+NMS.exe+118ABF6 - 66 66 0F1F 84 00 00000000  - nop word ptr [rax+rax+00000000]
+NMS.exe+118AC00 - 41 0FB6 D1            - movzx edx,r9b
+NMS.exe+118AC04 - 4D 8D 52 01           - lea r10,[r10+01]
+NMS.exe+118AC08 - 41 80 E9 61           - sub r9b,61
+
+}
+
+
+</AssemblerScript>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2081</ID>
+              <Description>"Unlimited Boltcaster Ammo"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(BOLTCASTERAMMOMEM,7)
+registersymbol(BOLTCASTERAMMOMEM)
+aobscanmodule(BOLTCASTERAMMO,NMS.exe,41 2B C6 45 8B C6)
+alloc(newmem,$100,BOLTCASTERAMMO)
+
+label(code)
+label(return)
+
+BOLTCASTERAMMOMEM:
+readmem(BOLTCASTERAMMO,6)
+
+newmem:
+
+code:
+  mov eax,40
+  mov r8d,r14d
+  jmp return
+
+BOLTCASTERAMMO:
+  jmp newmem
+  nop
+return:
+registersymbol(BOLTCASTERAMMO)
+
+[DISABLE]
+
+BOLTCASTERAMMO:
+readmem(BOLTCASTERAMMOMEM,6)
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+12CEAB5
+
+NMS.exe+12CEA89: 48 8D 55 A0                 - lea rdx,[rbp-60]
+NMS.exe+12CEA8D: F3 44 0F 2C F0              - cvttss2si r14d,xmm0
+NMS.exe+12CEA92: 4C 89 64 24 20              - mov [rsp+20],r12
+NMS.exe+12CEA97: 66 0F 6F 05 61 86 50 03     - movdqa xmm0,[NMS.exe+47D7100]
+NMS.exe+12CEA9F: 44 3B F3                    - cmp r14d,ebx
+NMS.exe+12CEAA2: F3 0F 7F 45 A0              - movdqu [rbp-60],xmm0
+NMS.exe+12CEAA7: 44 0F 4C F3                 - cmovl r14d,ebx
+NMS.exe+12CEAAB: 41 3B C6                    - cmp eax,r14d
+NMS.exe+12CEAAE: 44 0F 4C F0                 - cmovl r14d,eax
+NMS.exe+12CEAB2: 45 33 C9                    - xor r9d,r9d
+// ---------- INJECTING HERE ----------
+NMS.exe+12CEAB5: 41 2B C6                    - sub eax,r14d
+// ---------- DONE INJECTING  ----------
+NMS.exe+12CEAB8: 45 8B C6                    - mov r8d,r14d
+NMS.exe+12CEABB: 41 89 84 B7 F0 23 00 00     - mov [r15+rsi*4+000023F0],eax
+NMS.exe+12CEAC3: 48 8B 0D 3E BC 74 05        - mov rcx,[NMS.exe+6A1A708]
+NMS.exe+12CEACA: 48 81 C1 E0 44 2F 00        - add rcx,002F44E0
+NMS.exe+12CEAD1: E8 6A 4C 30 FF              - call NMS.exe+5D3740
+NMS.exe+12CEAD6: 44 0F 28 5D D0              - movaps xmm11,[rbp-30]
+NMS.exe+12CEADB: 44 8B A5 40 0C 00 00        - mov r12d,[rbp+00000C40]
+NMS.exe+12CEAE2: 41 83 BC B7 F0 23 00 00 00  - cmp dword ptr [r15+rsi*4+000023F0],00
+NMS.exe+12CEAEB: 0F 8F 54 09 00 00           - jg NMS.exe+12CF445
+NMS.exe+12CEAF1: 48 8B 05 10 BC 74 05        - mov rax,[NMS.exe+6A1A708]
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2360</ID>
+              <Description>"Unlimited Topographic Scanner - No Recharge"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT,NMS.exe,44 89 6E 10 44 89 6E 40) // should be unique
+alloc(newmem,$100,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [rsi+3C],r13d
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 3
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 44 89 6E 10 44 89 6E 40
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+11CFAFD
+
+NMS.exe+11CFAC4: 44 38 2D E9 5A D0 03     - cmp [NMS.exe+4ED55B4],r13b
+NMS.exe+11CFACB: 0F 84 47 FC FF FF        - je NMS.exe+11CF718
+NMS.exe+11CFAD1: 44 38 AE B0 00 00 00     - cmp [rsi+000000B0],r13b
+NMS.exe+11CFAD8: 0F 85 3A FC FF FF        - jne NMS.exe+11CF718
+NMS.exe+11CFADE: F3 0F 10 05 BE 0D 9D 05  - movss xmm0,[NMS.exe+6BA08A4]
+NMS.exe+11CFAE6: 48 8D 55 40              - lea rdx,[rbp+40]
+NMS.exe+11CFAEA: 4C 8B 06                 - mov r8,[rsi]
+NMS.exe+11CFAED: F3 0F 11 46 18           - movss [rsi+18],xmm0
+NMS.exe+11CFAF2: C6 86 B0 00 00 00 01     - mov byte ptr [rsi+000000B0],01
+NMS.exe+11CFAF9: 44 89 6E 34              - mov [rsi+34],r13d
+// ---------- INJECTING HERE ----------
+NMS.exe+11CFAFD: 44 89 6E 10              - mov [rsi+10],r13d
+// ---------- DONE INJECTING  ----------
+NMS.exe+11CFB01: 44 89 6E 3C              - mov [rsi+3C],r13d
+NMS.exe+11CFB05: 41 0F 10 07              - movups xmm0,[r15]
+NMS.exe+11CFB09: 0F 11 46 50              - movups [rsi+50],xmm0
+NMS.exe+11CFB0D: C6 45 9C 01              - mov byte ptr [rbp-64],01
+NMS.exe+11CFB11: 41 0F 10 4F 10           - movups xmm1,[r15+10]
+NMS.exe+11CFB16: 0F 11 4E 60              - movups [rsi+60],xmm1
+NMS.exe+11CFB1A: 4C 89 6D 90              - mov [rbp-70],r13
+NMS.exe+11CFB1E: 41 0F 10 47 20           - movups xmm0,[r15+20]
+NMS.exe+11CFB23: 0F 11 46 70              - movups [rsi+70],xmm0
+NMS.exe+11CFB27: C7 45 98 B2 EE 22 80     - mov [rbp-68],8022EEB2
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2489</ID>
+              <Description>"Unlimited Runic Lens - Cloak"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(RunicMem,5)
+registersymbol(RunicMem)
+
+aobscanmodule(AOBRunicCloak,NMS.exe,33 D2 85 C9 0F 4F D1 3B 15)
+alloc(newmem,0x400,AOBRunicCloak)
+
+label(code)
+label(return)
+
+RunicMem:
+readmem(AOBRunicCloak+2,5)
+
+newmem:
+
+code:
+  test ecx,ecx
+  cmovg edx,ecx
+  mov edx,C8 // Max out Runic Clock (200)
+  jmp return
+
+AOBRunicCloak+2:
+  jmp newmem
+return:
+registersymbol(AOBRunicCloak)
+
+[DISABLE]
+
+AOBRunicCloak+2:
+readmem(RunicMem,5)
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+11FCC45
+
+NMS.exe+11FCC24: 0F 2F C7                       - comiss xmm0,xmm7
+NMS.exe+11FCC27: 76 07                          - jna NMS.exe+11FCC30
+NMS.exe+11FCC29: E8 08 4C C2 01                 - call NMS.exe+2E21836
+NMS.exe+11FCC2E: EB 05                          - jmp NMS.exe+11FCC35
+NMS.exe+11FCC30: E8 19 4C C2 01                 - call NMS.exe+2E2184E
+NMS.exe+11FCC35: F3 0F 2C C8                    - cvttss2si ecx,xmm0
+NMS.exe+11FCC39: 85 C9                          - test ecx,ecx
+NMS.exe+11FCC3B: 74 2A                          - je NMS.exe+11FCC67
+NMS.exe+11FCC3D: 03 8B 0C 23 00 00              - add ecx,[rbx+0000230C]
+NMS.exe+11FCC43: 33 D2                          - xor edx,edx
+// ---------- INJECTING HERE ----------
+NMS.exe+11FCC45: 85 C9                          - test ecx,ecx
+// ---------- DONE INJECTING  ----------
+NMS.exe+11FCC47: 0F 4F D1                       - cmovg edx,ecx
+NMS.exe+11FCC4A: 3B 15 A4 84 95 03              - cmp edx,[NMS.exe+4B550F4]
+NMS.exe+11FCC50: 0F 4D 15 9D 84 95 03           - cmovge edx,[NMS.exe+4B550F4]
+NMS.exe+11FCC57: 89 93 0C 23 00 00              - mov [rbx+0000230C],edx
+NMS.exe+11FCC5D: C7 83 08 23 00 00 00 00 00 00  - mov [rbx+00002308],00000000
+NMS.exe+11FCC67: 48 8B 5C 24 68                 - mov rbx,[rsp+68]
+NMS.exe+11FCC6C: 48 8B 74 24 70                 - mov rsi,[rsp+70]
+NMS.exe+11FCC71: 0F 28 74 24 40                 - movaps xmm6,[rsp+40]
+NMS.exe+11FCC76: 0F 28 7C 24 30                 - movaps xmm7,[rsp+30]
+NMS.exe+11FCC7B: 48 83 C4 50                    - add rsp,50
+}
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2328</ID>
+          <Description>"Crafting &gt;"</Description>
+          <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <Color>FF8000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2240</ID>
+              <Description>"Crafting consumes no inventory resources"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+aobscanmodule(AOBCrafting,NMS.exe,44 29 63 18 45 2B FC) // should be unique
+alloc(newmem,0x400,AOBCrafting)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  // sub [rbx+18],r12d
+  sub r15d,r12d
+  jmp return
+
+AOBCrafting:
+  jmp newmem
+  nop 2
+return:
+registersymbol(AOBCrafting)
+
+[DISABLE]
+
+AOBCrafting:
+  db 44 29 63 18 45 2B FC
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+555440
+NMS.exe+5553A2 - 8B 55 CB              - mov edx,[rbp-35]
+NMS.exe+5553A5 - 8B 4D C7              - mov ecx,[rbp-39]
+NMS.exe+5553A8 - 48 89 75 CF           - mov [rbp-31],rsi
+NMS.exe+5553AC - 48 83 C3 30           - add rbx,30
+NMS.exe+5553B0 - 49 3B DC              - cmp rbx,r12
+NMS.exe+5553B3 - 0F85 19FFFFFF         - jne NMS.exe+5552D2
+NMS.exe+5553B9 - 44 8B 7D 7F           - mov r15d,[rbp+7F]
+NMS.exe+5553BD - 44 0FB6 4D 7F         - movzx r9d,byte ptr [rbp+7F]
+NMS.exe+5553C2 - 48 8B CE              - mov rcx,rsi
+NMS.exe+5553C5 - 44 8B C2              - mov r8d,edx
+NMS.exe+5553C8 - 4A 8D 14 C6           - lea rdx,[rsi+r8*8]
+NMS.exe+5553CC - E8 FFDB0200           - call NMS.exe+582FD0
+NMS.exe+5553D1 - 48 8B 75 CF           - mov rsi,[rbp-31]
+NMS.exe+5553D5 - 8B 4D CB              - mov ecx,[rbp-35]
+NMS.exe+5553D8 - 48 8D 04 CE           - lea rax,[rsi+rcx*8]
+NMS.exe+5553DC - 48 89 45 BF           - mov [rbp-41],rax
+NMS.exe+5553E0 - 48 3B F0              - cmp rsi,rax
+NMS.exe+5553E3 - 74 73                 - je NMS.exe+555458
+NMS.exe+5553E5 - 66 66 66 0F1F 84 00 00000000  - nop word ptr [rax+rax+00000000]
+NMS.exe+5553F0 - 4C 8B 36              - mov r14,[rsi]
+NMS.exe+5553F3 - 45 8B E7              - mov r12d,r15d
+NMS.exe+5553F6 - 49 8B 9D 90000000     - mov rbx,[r13+00000090]
+NMS.exe+5553FD - 41 8B 85 8C000000     - mov eax,[r13+0000008C]
+NMS.exe+555404 - 45 39 7E 18           - cmp [r14+18],r15d
+NMS.exe+555408 - 45 0F4C 66 18         - cmovl r12d,[r14+18]
+NMS.exe+55540D - 48 8D 3C 40           - lea rdi,[rax+rax*2]
+NMS.exe+555411 - 48 C1 E7 04           - shl rdi,04
+NMS.exe+555415 - 48 03 FB              - add rdi,rbx
+NMS.exe+555418 - 48 3B DF              - cmp rbx,rdi
+NMS.exe+55541B - 74 21                 - je NMS.exe+55543E
+NMS.exe+55541D - 0F1F 00               - nop dword ptr [rax]
+NMS.exe+555420 - 48 8D 53 10           - lea rdx,[rbx+10]
+NMS.exe+555424 - 49 8D 4E 10           - lea rcx,[r14+10]
+NMS.exe+555428 - E8 83963201           - call NMS.exe+187EAB0
+NMS.exe+55542D - 84 C0                 - test al,al
+NMS.exe+55542F - 0F85 94000000         - jne NMS.exe+5554C9
+NMS.exe+555435 - 48 83 C3 30           - add rbx,30
+NMS.exe+555439 - 48 3B DF              - cmp rbx,rdi
+NMS.exe+55543C - 75 E2                 - jne NMS.exe+555420
+NMS.exe+55543E - 33 DB                 - xor ebx,ebx
+// ---------- INJECTING HERE ----------
+NMS.exe+555440: 44 29 63 18              - sub [rbx+18],r12d
+// ---------- DONE INJECTING  ----------
+NMS.exe+555444 - 45 2B FC              - sub r15d,r12d
+NMS.exe+555447 - 48 83 C6 08           - add rsi,08
+NMS.exe+55544B - 48 3B 75 BF           - cmp rsi,[rbp-41]
+NMS.exe+55544F - 75 9F                 - jne NMS.exe+5553F0
+NMS.exe+555451 - 48 8B 75 CF           - mov rsi,[rbp-31]
+NMS.exe+555455 - 8B 4D CB              - mov ecx,[rbp-35]
+NMS.exe+555458 - 4C 8B A4 24 D8000000  - mov r12,[rsp+000000D8]
+NMS.exe+555460 - 85 C9                 - test ecx,ecx
+NMS.exe+555462 - B8 00000000           - mov eax,00000000
+NMS.exe+555467 - 0F45 C8               - cmovne ecx,eax
+NMS.exe+55546A - 89 4D CB              - mov [rbp-35],ecx
+NMS.exe+55546D - 48 85 F6              - test rsi,rsi
+NMS.exe+555470 - 74 12                 - je NMS.exe+555484
+NMS.exe+555472 - 41 B8 FFFFFFFF        - mov r8d,FFFFFFFF
+NMS.exe+555478 - 48 8D 4D C7           - lea rcx,[rbp-39]
+NMS.exe+55547C - 48 8B D6              - mov rdx,rsi
+NMS.exe+55547F - E8 7C053D02           - call NMS.exe+2925A00
+NMS.exe+555484 - 48 8B 75 5F           - mov rsi,[rbp+5F]
+NMS.exe+555488 - 49 8B CD              - mov rcx,r13
+NMS.exe+55548B - E8 00120400           - call NMS.exe+596690
+NMS.exe+555490 - 48 8B 55 67           - mov rdx,[rbp+67]
+NMS.exe+555494 - 48 8D 8E 00050000     - lea rcx,[rsi+00000500]
+NMS.exe+55549B - E8 20A2FCFF           - call NMS.exe+51F6C0
+NMS.exe+5554A0 - 48 FF 86 28040000     - inc qword ptr [rsi+00000428]
+NMS.exe+5554A7 - 4C 8B AC 24 D0000000  - mov r13,[rsp+000000D0]
+NMS.exe+5554AF - 48 8B 9C 24 20010000  - mov rbx,[rsp+00000120]
+NMS.exe+5554B7 - 41 8B C7              - mov eax,r15d
+NMS.exe+5554BA - 48 81 C4 E0000000     - add rsp,000000E0
+NMS.exe+5554C1 - 41 5F                 - pop r15
+NMS.exe+5554C3 - 41 5E                 - pop r14
+NMS.exe+5554C5 - 5F                    - pop rdi
+NMS.exe+5554C6 - 5E                    - pop rsi
+NMS.exe+5554C7 - 5D                    - pop rbp
+NMS.exe+5554C8 - C3                    - ret
+NMS.exe+5554C9 - 49 8D 8D 98000000     - lea rcx,[r13+00000098]
+NMS.exe+5554D0 - 81 79 04 00010000     - cmp [rcx+04],00000100
+NMS.exe+5554D7 - 0F83 63FFFFFF         - jae NMS.exe+555440
+NMS.exe+5554DD - 48 8B D3              - mov rdx,rbx
+NMS.exe+5554E0 - E8 9B57F4FF           - call NMS.exe+49AC80
+NMS.exe+5554E5 - E9 56FFFFFF           - jmp NMS.exe+555440
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>12128</ID>
+              <Description>"Always have resources for Crafting"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+aobscanmodule(AOBAlwaysHaveResource,NMS.exe,5B C3 CC CC 4C 89 44 24 18 89 54 24 10 55) // should be unique
+alloc(newmem,0x400,AOBAlwaysHaveResource)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  ret
+  jmp return
+
+AOBAlwaysHaveResource+04:
+  jmp newmem
+return:
+registersymbol(AOBAlwaysHaveResource)
+
+[DISABLE]
+
+AOBAlwaysHaveResource+04:
+  db 4C 89 44 24 18
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+595C2D
+
+NMS.exe+595C0C: 4C 8B C0                    - mov r8,rax
+NMS.exe+595C0F: 48 8B CB                    - mov rcx,rbx
+NMS.exe+595C12: 48 C7 44 24 60 FF FF FF FF  - mov qword ptr [rsp+60],FFFFFFFFFFFFFFFF
+NMS.exe+595C1B: 33 D2                       - xor edx,edx
+NMS.exe+595C1D: E8 0E 00 00 00              - call NMS.exe+595C30
+NMS.exe+595C22: 48 83 C4 40                 - add rsp,40
+NMS.exe+595C26: 5B                          - pop rbx
+NMS.exe+595C27: C3                          - ret
+NMS.exe+595C28: 48 83 C4 40                 - add rsp,40
+NMS.exe+595C2C: 5B                          - pop rbx
+// ---------- INJECTING HERE ----------
+NMS.exe+595C2D: C3                          - ret
+// ---------- DONE INJECTING  ----------
+NMS.exe+595C2E: CC                          - int 3
+NMS.exe+595C2F: CC                          - int 3
+NMS.exe+595C30 - 4C 89 44 24 18        - mov [rsp+18],r8
+NMS.exe+595C35 - 89 54 24 10           - mov [rsp+10],edx
+NMS.exe+595C39 - 55                    - push rbp
+NMS.exe+595C3A - 53                    - push rbx
+NMS.exe+595C3B - 56                    - push rsi
+NMS.exe+595C3C - 41 54                 - push r12
+NMS.exe+595C3E - 41 55                 - push r13
+NMS.exe+595C40 - 41 56                 - push r14
+NMS.exe+595C42 - 41 57                 - push r15
+NMS.exe+595C44 - 48 8D 6C 24 F1        - lea rbp,[rsp-0F]
+NMS.exe+595C49 - 48 81 EC E0000000     - sub rsp,000000E0
+NMS.exe+595C50 - 4C 8B 7D 77           - mov r15,[rbp+77]
+NMS.exe+595C54 - 45 33 F6              - xor r14d,r14d
+NMS.exe+595C57 - 45 8B E1              - mov r12d,r9d
+NMS.exe+595C5A - 49 8B F0              - mov rsi,r8
+NMS.exe+595C5D - 8B DA                 - mov ebx,edx
+NMS.exe+595C5F - 4C 8B E9              - mov r13,rcx
+NMS.exe+595C62 - 4D 85 FF              - test r15,r15
+NMS.exe+595C65 - 74 0A                 - je NMS.exe+595C71
+NMS.exe+595C67 - 45 39 77 04           - cmp [r15+04],r14d
+NMS.exe+595C6B - 76 04                 - jna NMS.exe+595C71
+NMS.exe+595C6D - 45 89 77 04           - mov [r15+04],r14d
+NMS.exe+595C71 - 45 38 B0 F5020000     - cmp [r8+000002F5],r14b
+NMS.exe+595C78 - 74 41                 - je NMS.exe+595CBB
+NMS.exe+595C7A - 48 8B 89 48870100     - mov rcx,[rcx+00018748]
+NMS.exe+595C81 - 41 8B 95 44870100     - mov edx,[r13+00018744]
+NMS.exe+595C88 - 48 C1 E2 04           - shl rdx,04
+NMS.exe+595C8C - 48 03 D1              - add rdx,rcx
+NMS.exe+595C8F - 48 3B CA              - cmp rcx,rdx
+NMS.exe+595C92 - 74 27                 - je NMS.exe+595CBB
+NMS.exe+595C94 - 4D 8B 80 58010000     - mov r8,[r8+00000158]
+NMS.exe+595C9B - 0F1F 44 00 00         - nop dword ptr [rax+rax+00]
+NMS.exe+595CA0 - 4C 3B 41 08           - cmp r8,[rcx+08]
+NMS.exe+595CA4 - 75 0C                 - jne NMS.exe+595CB2
+NMS.exe+595CA6 - 48 8B 01              - mov rax,[rcx]
+NMS.exe+595CA9 - 48 39 86 50010000     - cmp [rsi+00000150],rax
+NMS.exe+595CB0 - 74 1E                 - je NMS.exe+595CD0
+NMS.exe+595CB2 - 48 83 C1 10           - add rcx,10
+NMS.exe+595CB6 - 48 3B CA              - cmp rcx,rdx
+NMS.exe+595CB9 - 75 E5                 - jne NMS.exe+595CA0
+NMS.exe+595CBB - 32 C0                 - xor al,al
+NMS.exe+595CBD - 48 81 C4 E0000000     - add rsp,000000E0
+NMS.exe+595CC4 - 41 5F                 - pop r15
+NMS.exe+595CC6 - 41 5E                 - pop r14
+NMS.exe+595CC8 - 41 5D                 - pop r13
+NMS.exe+595CCA - 41 5C                 - pop r12
+NMS.exe+595CCC - 5E                    - pop rsi
+NMS.exe+595CCD - 5B                    - pop rbx
+NMS.exe+595CCE - 5D                    - pop rbp
+NMS.exe+595CCF - C3                    - ret
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2332</ID>
+              <Description>"Unlimited Refiner Resources"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(resMem,5)
+aobscanmodule(AOBResources,NMS.exe,89 50 18 48 8B 4F 78) // should be unique
+alloc(newmem,$1000,AOBResources)
+
+resMem:
+readmem(AOBResources-5,5)
+
+AOBResources-5:
+  nop 5
+registersymbol(AOBResources resMem)
+
+[DISABLE]
+
+AOBResources-5:
+  readmem(resMem,5)
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+F94AF0
+
+NMS.exe+F94ACB: 48 8D 0C 40     - lea rcx,[rax+rax*2]
+NMS.exe+F94ACF: 48 8B 43 78     - mov rax,[rbx+78]
+NMS.exe+F94AD3: 48 8D 14 C8     - lea rdx,[rax+rcx*8]
+NMS.exe+F94AD7: 48 8B CF        - mov rcx,rdi
+NMS.exe+F94ADA: E8 91 24 00 00  - call NMS.exe+F96F70
+NMS.exe+F94ADF: 48 85 C0        - test rax,rax
+NMS.exe+F94AE2: 74 37           - je NMS.exe+F94B1B
+NMS.exe+F94AE4: 48 8B 4B 78     - mov rcx,[rbx+78]
+NMS.exe+F94AE8: 8B 50 18        - mov edx,[rax+18]
+NMS.exe+F94AEB: 41 2B 54 0F 10  - sub edx,[r15+rcx+10]
+// ---------- INJECTING HERE ----------
+NMS.exe+F94AF0: 89 50 18        - mov [rax+18],edx
+// ---------- DONE INJECTING  ----------
+NMS.exe+F94AF3: 48 8B 4B 78     - mov rcx,[rbx+78]
+NMS.exe+F94AF7: 41 3B 54 0F 10  - cmp edx,[r15+rcx+10]
+NMS.exe+F94AFC: 7D 1D           - jnl NMS.exe+F94B1B
+NMS.exe+F94AFE: 83 FA 01        - cmp edx,01
+NMS.exe+F94B01: 7F 18           - jg NMS.exe+F94B1B
+NMS.exe+F94B03: 0F 10 48 10     - movups xmm1,[rax+10]
+NMS.exe+F94B07: 45 33 C0        - xor r8d,r8d
+NMS.exe+F94B0A: 48 8D 4F 58     - lea rcx,[rdi+58]
+NMS.exe+F94B0E: 0F 29 4D A7     - movaps [rbp-59],xmm1
+NMS.exe+F94B12: 48 8B 55 A7     - mov rdx,[rbp-59]
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2327</ID>
+              <Description>"Unlimited Refiner Fuel"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT,NMS.exe,4C 8B 7C 24 40 89 47 18) // should be unique
+alloc(newmem,$1000,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov r15,[rsp+40]
+  push eax
+  mov eax,[rdi+20]
+  mov [rdi+18],eax
+  pop eax
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 3
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 4C 8B 7C 24 40 89 47 18
+
+unregistersymbol(*)
+dealloc(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+1022A39
+
+NMS.exe+1022A16: 49 3B FE                       - cmp rdi,r14
+NMS.exe+1022A19: 75 E5                          - jne NMS.exe+1022A00
+NMS.exe+1022A1B: 45 33 C0                       - xor r8d,r8d
+NMS.exe+1022A1E: 41 8B F8                       - mov edi,r8d
+NMS.exe+1022A21: 8B 43 20                       - mov eax,[rbx+20]
+NMS.exe+1022A24: 45 85 FF                       - test r15d,r15d
+NMS.exe+1022A27: 4C 8B B5 D0 00 00 00           - mov r14,[rbp+000000D0]
+NMS.exe+1022A2E: 45 0F 4E F8                    - cmovle r15d,r8d
+NMS.exe+1022A32: 44 3B F8                       - cmp r15d,eax
+NMS.exe+1022A35: 41 0F 4C C7                    - cmovl eax,r15d
+// ---------- INJECTING HERE ----------
+NMS.exe+1022A39: 4C 8B 7C 24 40                 - mov r15,[rsp+40]
+// ---------- DONE INJECTING  ----------
+NMS.exe+1022A3E: 89 47 18                       - mov [rdi+18],eax
+NMS.exe+1022A41: EB 23                          - jmp NMS.exe+1022A66
+NMS.exe+1022A43: 81 BE EC 00 00 00 00 01 00 00  - cmp [rsi+000000EC],00000100
+NMS.exe+1022A4D: 73 0F                          - jae NMS.exe+1022A5E
+NMS.exe+1022A4F: 48 8D 8E E8 00 00 00           - lea rcx,[rsi+000000E8]
+NMS.exe+1022A56: 48 8B D7                       - mov rdx,rdi
+NMS.exe+1022A59: E8 72 03 4A FF                 - call NMS.exe+4C2DD0
+NMS.exe+1022A5E: 45 33 C0                       - xor r8d,r8d
+NMS.exe+1022A61: EB BE                          - jmp NMS.exe+1022A21
+NMS.exe+1022A63: 45 33 C0                       - xor r8d,r8d
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4477</ID>
+              <Description>"Refiner Finishes Instantly"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>// Game Executable   : NMS.exe
+// Author            : gir489
+// Executable Version: 20548.0.0.0
+// MD5 Signature     : 178D40ED9D51C2F21A9387207E9F4398
+// EXE Compile Date  : September 05, 2025 12:06 PM
+// Script Date       : September 09, 2025 06:30 PM
+[ENABLE]
+aobscanmodule(aob_CalculateRefineTime,$process,0F 5B C9 F3 0F 5E C1 48 83 C4 ? 5B)
+registersymbol(aob_CalculateRefineTime)
+alloc(newmem_CalculateRefineTime,1024,$process)
+label(return_CalculateRefineTime)
+
+newmem_CalculateRefineTime:
+  push rax
+  mov eax, (float)0.00000001
+  movd xmm0, eax
+  pop rax
+  jmp return_CalculateRefineTime
+
+aob_CalculateRefineTime:
+  jmp newmem_CalculateRefineTime
+  nop 2
+return_CalculateRefineTime:
+
+[DISABLE]
+aob_CalculateRefineTime:
+ db 0F 5B C9 F3 0F 5E C1
+
+unregistersymbol(aob_CalculateRefineTime)
+dealloc(newmem_CalculateRefineTime)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+F6583F
+
+NMS.exe+F657DF: CC                       - int 3
+NMS.exe+F657E0: 40 53                    - push rbx
+NMS.exe+F657E2: 48 83 EC 20              - sub rsp,20
+NMS.exe+F657E6: 48 8B 0D CB A5 A1 05     - mov rcx,[NMS.exe+697FDB8]
+NMS.exe+F657ED: 48 8B DA                 - mov rbx,rdx
+NMS.exe+F657F0: 48 83 C1 60              - add rcx,60
+NMS.exe+F657F4: 48 83 C2 60              - add rdx,60
+NMS.exe+F657F8: E8 43 81 E7 FF           - call NMS.exe+DDD940
+NMS.exe+F657FD: 48 85 C0                 - test rax,rax
+NMS.exe+F65800: 48 8B 05 B1 A5 A1 05     - mov rax,[NMS.exe+697FDB8]
+NMS.exe+F65807: 74 16                    - je NMS.exe+F6581F
+NMS.exe+F65809: 83 B8 3C 4A 22 00 01     - cmp dword ptr [rax+00224A3C],01
+NMS.exe+F65810: 8B 0D 72 5C B4 03        - mov ecx,[NMS.exe+4AAB488]
+NMS.exe+F65816: 0F 4F 0D 6F 5C B4 03     - cmovg ecx,[NMS.exe+4AAB48C]
+NMS.exe+F6581D: EB 14                    - jmp NMS.exe+F65833
+NMS.exe+F6581F: 83 B8 3C 4A 22 00 01     - cmp dword ptr [rax+00224A3C],01
+NMS.exe+F65826: 8B 0D 54 5C B4 03        - mov ecx,[NMS.exe+4AAB480]
+NMS.exe+F6582C: 0F 4F 0D 51 5C B4 03     - cmovg ecx,[NMS.exe+4AAB484]
+NMS.exe+F65833: F3 0F 10 83 88 00 00 00  - movss xmm0,[rbx+00000088]
+NMS.exe+F6583B: 66 0F 6E C9              - movd xmm1,ecx
+// ---------- INJECTING HERE ----------
+NMS.exe+F6583F: 0F 5B C9                 - cvtdq2ps xmm1,xmm1
+// ---------- DONE INJECTING  ----------
+NMS.exe+F65842: F3 0F 5E C1              - divss xmm0,xmm1
+NMS.exe+F65846: 48 83 C4 20              - add rsp,20
+NMS.exe+F6584A: 5B                       - pop rbx
+NMS.exe+F6584B: C3                       - ret
+NMS.exe+F6584C: CC                       - int 3
+NMS.exe+F6584D: CC                       - int 3
+NMS.exe+F6584E: CC                       - int 3
+NMS.exe+F6584F: CC                       - int 3
+NMS.exe+F65850: 40 55                    - push rbp
+NMS.exe+F65852: 56                       - push rsi
+NMS.exe+F65853: 41 54                    - push r12
+NMS.exe+F65855: 41 56                    - push r14
+NMS.exe+F65857: 41 57                    - push r15
+NMS.exe+F65859: 48 83 EC 20              - sub rsp,20
+NMS.exe+F6585D: F6 81 3E 05 00 00 06     - test byte ptr [rcx+0000053E],06
+NMS.exe+F65864: 48 8B E9                 - mov rbp,rcx
+NMS.exe+F65867: 75 1E                    - jne NMS.exe+F65887
+NMS.exe+F65869: 48 8B 81 60 05 00 00     - mov rax,[rcx+00000560]
+NMS.exe+F65870: 8B 88 E4 03 00 00        - mov ecx,[rax+000003E4]
+NMS.exe+F65876: 85 C9                    - test ecx,ecx
+}
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2293</ID>
+          <Description>"Exocraft &gt;"</Description>
+          <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+          <Color>FF8000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>2307</ID>
+              <Description>"Unlimited Exocraft Fuel"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(INJECT,NMS.exe,2B CB 85 C9 0F 4E CA) // should be unique
+alloc(newmem,0x400,INJECT)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  // sub ecx,ebx
+  test ecx,ecx
+  cmovle ecx,edx
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 2
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 2B CB 85 C9 0F 4E CA
+
+unregistersymbol(INJECT)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+13E9295
+
+NMS.exe+13E9268: 41 B9 01 00 00 00        - mov r9d,00000001
+NMS.exe+13E926E: C7 44 24 20 FF FF FF FF  - mov [rsp+20],FFFFFFFF
+NMS.exe+13E9276: 48 81 C1 00 B4 00 00     - add rcx,0000B400
+NMS.exe+13E927D: BA AB 00 00 00           - mov edx,000000AB
+NMS.exe+13E9282: 45 8D 41 09              - lea r8d,[r9+09]
+NMS.exe+13E9286: E8 F5 99 0C FF           - call NMS.exe+4B2C80
+NMS.exe+13E928B: 48 85 C0                 - test rax,rax
+NMS.exe+13E928E: 74 0F                    - je NMS.exe+13E929F
+NMS.exe+13E9290: 8B 48 18                 - mov ecx,[rax+18]
+NMS.exe+13E9293: 33 D2                    - xor edx,edx
+// ---------- INJECTING HERE ----------
+NMS.exe+13E9295: 2B CB                    - sub ecx,ebx
+// ---------- DONE INJECTING  ----------
+NMS.exe+13E9297: 85 C9                    - test ecx,ecx
+NMS.exe+13E9299: 0F 4E CA                 - cmovle ecx,edx
+NMS.exe+13E929C: 89 48 18                 - mov [rax+18],ecx
+NMS.exe+13E929F: 48 83 C4 30              - add rsp,30
+NMS.exe+13E92A3: 5B                       - pop rbx
+NMS.exe+13E92A4: C3                       - ret 
+NMS.exe+13E92A5: CC                       - int 3 
+NMS.exe+13E92A6: CC                       - int 3 
+NMS.exe+13E92A7: CC                       - int 3 
+NMS.exe+13E92A8: CC                       - int 3 
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>2292</ID>
+              <Description>"Unlimited Exocraft Boost"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+aobscanmodule(AOBBoost,NMS.exe,F3 0F 5C C7 44 0F 2F C0 F3 0F 11 87) // should be unique
+alloc(newmem,$100,AOBBoost)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  //subss xmm0,xmm7
+  comiss xmm8,xmm0
+  jmp return
+
+AOBBoost:
+  jmp newmem
+  nop 3
+return:
+registersymbol(AOBBoost)
+
+[DISABLE]
+
+AOBBoost:
+  db F3 0F 5C C7 44 0F 2F C0
+
+unregistersymbol(AOBBoost)
+dealloc(newmem)
+
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+14FBF90
+
+NMS.exe+14FBF5F: BA B7 00 00 00           - mov edx,000000B7
+NMS.exe+14FBF64: 44 88 7C 24 20           - mov [rsp+20],r15b
+NMS.exe+14FBF69: E8 D2 0D 01 FF           - call NMS.exe+50CD40
+NMS.exe+14FBF6E: 44 0F 2F C0              - comiss xmm8,xmm0
+NMS.exe+14FBF72: 72 04                    - jb NMS.exe+14FBF78
+NMS.exe+14FBF74: 41 0F 28 C1              - movaps xmm0,xmm9
+NMS.exe+14FBF78: 48 8B 47 38              - mov rax,[rdi+38]
+NMS.exe+14FBF7C: F3 0F 59 80 AC 03 00 00  - mulss xmm0,[rax+000003AC]
+NMS.exe+14FBF84: F3 0F 5E F8              - divss xmm7,xmm0
+NMS.exe+14FBF88: F3 0F 10 87 10 08 00 00  - movss xmm0,[rdi+00000810]
+// ---------- INJECTING HERE ----------
+NMS.exe+14FBF90: F3 0F 5C C7              - subss xmm0,xmm7
+// ---------- DONE INJECTING  ----------
+NMS.exe+14FBF94: 44 0F 2F C0              - comiss xmm8,xmm0
+NMS.exe+14FBF98: F3 0F 11 87 10 08 00 00  - movss [rdi+00000810],xmm0
+NMS.exe+14FBFA0: 0F 82 69 03 00 00        - jb NMS.exe+14FC30F
+NMS.exe+14FBFA6: 44 89 BF 10 08 00 00     - mov [rdi+00000810],r15d
+NMS.exe+14FBFAD: 40 88 33                 - mov [rbx],sil
+NMS.exe+14FBFB0: E9 5A 03 00 00           - jmp NMS.exe+14FC30F
+NMS.exe+14FBFB5: 84 DB                    - test bl,bl
+NMS.exe+14FBFB7: 0F 84 52 03 00 00        - je NMS.exe+14FC30F
+NMS.exe+14FBFBD: 48 8B 0D 24 82 09 05     - mov rcx,[NMS.exe+65941E8]
+NMS.exe+14FBFC4: 4C 8D 0D 45 24 D7 02     - lea r9,[NMS.exe+426E410]
+}
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>4462</ID>
+              <Description>"Unlimited Nautilon Boost"</Description>
+              <Color>008000</Color>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(memNaBoost,4)
+aobscanmodule(INJECT,NMS.exe,F3 0F 5C C7 44 0F 2F C0) // should be unique
+
+memNaBoost:
+readmem(INJECT,4)
+
+INJECT:
+  nop 4
+registersymbol(INJECT memNaBoost)
+
+[DISABLE]
+
+INJECT:
+  readmem(memNaBoost,4) //db F3 0F 5C C7 44 0F 2F C0
+unregistersymbol(*)
+
+{
+// ORIGINAL CODE - INJECTION POINT: NMS.exe+1619D16
+
+NMS.exe+1619CE1: C6 44 24 20 00                 - mov byte ptr [rsp+20],00
+NMS.exe+1619CE6: E8 25 3C F4 FE                 - call NMS.exe+55D910
+NMS.exe+1619CEB: 44 0F 2F C0                    - comiss xmm8,xmm0
+NMS.exe+1619CEF: 0F 28 74 24 60                 - movaps xmm6,[rsp+60]
+NMS.exe+1619CF4: 72 08                          - jb NMS.exe+1619CFE
+NMS.exe+1619CF6: F3 0F 10 05 06 9D 0D 03        - movss xmm0,[NMS.exe+46F3A04]
+NMS.exe+1619CFE: 48 8B 43 40                    - mov rax,[rbx+40]
+NMS.exe+1619D02: F3 0F 59 80 D8 03 00 00        - mulss xmm0,[rax+000003D8]
+NMS.exe+1619D0A: F3 0F 5E F8                    - divss xmm7,xmm0
+NMS.exe+1619D0E: F3 0F 10 83 58 07 00 00        - movss xmm0,[rbx+00000758]
+// ---------- INJECTING HERE ----------
+NMS.exe+1619D16: F3 0F 5C C7                    - subss xmm0,xmm7
+// ---------- DONE INJECTING  ----------
+NMS.exe+1619D1A: 44 0F 2F C0                    - comiss xmm8,xmm0
+NMS.exe+1619D1E: F3 0F 11 83 58 07 00 00        - movss [rbx+00000758],xmm0
+NMS.exe+1619D26: 72 15                          - jb NMS.exe+1619D3D
+NMS.exe+1619D28: C7 83 58 07 00 00 00 00 00 00  - mov [rbx+00000758],00000000
+NMS.exe+1619D32: 66 C7 83 5C 07 00 00 01 00     - mov word ptr [rbx+0000075C],0001
+NMS.exe+1619D3B: EB 1E                          - jmp NMS.exe+1619D5B
+NMS.exe+1619D3D: C6 83 5D 07 00 00 01           - mov byte ptr [rbx+0000075D],01
+NMS.exe+1619D44: EB 15                          - jmp NMS.exe+1619D5B
+NMS.exe+1619D46: 84 C0                          - test al,al
+NMS.exe+1619D48: 74 0A                          - je NMS.exe+1619D54
+}
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
