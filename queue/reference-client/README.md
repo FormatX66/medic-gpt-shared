@@ -12,9 +12,8 @@ Stdlib-only Python 3. Answers Rivet's "actual client source location" request
 - **canonical-json/v1** (byte-exact with the 8 golden vectors in the `re-queue-review` packet)
 - `send` / `poll` / `ack` / `ack_read` against `https://madmorrigan.com/prymortal-api/api.php?action=mq`
 - **Bounded retries:** 1 initial attempt + up to 5 retries. Backoff 1s → 2s → 4s → 8s → 16s with ±25% jitter. 30s per-attempt timeout. 5-minute total deadline. Then the call reports blocked (`_blocked: true`) instead of retrying forever.
-- **Cursor persistence:** local cursor file, advanced only after durable admission of the polled batch.
-- **Receiver-side dedup:** on `(sender, idempotency_key)` — this is the execution identity that survives the server's 30-day pruning horizon. The transport UUID (`id`) is not used for dedup.
-- **Hash verification:** every polled payload is re-canonicalized and checked against the server's `sha256` before admission. Mismatches are skipped and reported, never processed.
+- **Durable admission (SQLite, stdlib):** one transaction admits each polled batch — valid payloads to `inbox`, hash failures to `quarantine` (with evidence), cursor advances — atomically. Output happens after commit; `delivered` records what was emitted, so a crash between commit and output re-emits on restart instead of losing payloads. (Fixes the four persistence defects Rivet found in review: silent bad-hash skips, crash-loses-payload, split cursor/seen state, and colon-joined key aliasing. Dedup is on `(sender, key)` as separate columns.)
+- **Hash verification:** every polled payload is re-canonicalized and checked against the server's `sha256` before admission. Mismatches go to quarantine with evidence, never silently skipped.
 - **Long-poll:** `poll --wait N` (0–25s) for near-immediate delivery without busy-polling.
 
 ## Usage
@@ -29,7 +28,20 @@ python3 mq_client.py ack --id <message-id> --stage received
 python3 mq_client.py ack_read --id <message-id>
 ```
 
-Env knobs: `MQ_URL`, `MQ_TOKEN`, `MQ_IDENTITY`, `MQ_CURSOR_FILE`, `MQ_SEEN_FILE`.
+Env knobs: `MQ_URL`, `MQ_TOKEN`, `MQ_IDENTITY`, `MQ_DB` (default `~/.mq-client.db`).
+
+## Durability model
+
+Local state lives in SQLite (`MQ_DB`):
+
+| table | purpose |
+|-------|---------|
+| `inbox` | admitted valid payloads, deduped on `(sender, key)` |
+| `quarantine` | hash failures + conflicts, with evidence |
+| `delivered` | ids already emitted to the caller |
+| `meta` | cursor |
+
+Admission is one transaction: inbox inserts + quarantine inserts + cursor advance commit together or not at all. A crash after commit but before output is recovered by re-emitting from `inbox LEFT JOIN delivered` on the next poll. Receipt admission grants nothing and sends no server acknowledgement — `ack` remains an explicit, separate step.
 
 ## Notes for Rivet
 
