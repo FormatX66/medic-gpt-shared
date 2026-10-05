@@ -1,0 +1,772 @@
+{
+ "provenance": {
+  "table": "No Man's Sky - BD - CT V3.6.3 CT.CT",
+  "author": "Blind Distortion (FearLess Cheat Engine)",
+  "thread": "https://fearlessrevolution.com/viewtopic.php?t=30442",
+  "mirror_page": "https://www.gamepressure.com/download/no-mans-sky-cheat-table-ct-for-cheat-engine-v363-cheat-engine/z91589b",
+  "mirror_note": "GamePressure mirror, item page listed update Oct 3 2026, packed 20.2 KB. FR's own attachment (file.php?id=81850) now 404s; new FR attachment ID not resolvable without a logged-in session.",
+  "file_date": "2026-09-30 (OP 'Last edited' Wed Sep 30, 2026 6:25 pm, 345 total edits)",
+  "op_notes": [
+   "28/Sep/2026 - V3.6.2 - Bug fix where game crashes when creating Exocraft. Now fixed.",
+   "30/Sep/2026 - V3.6.3 - Bug fix where game crashes when using the terrain manipulator and update unlimited health and ship shields. Now fixed."
+  ],
+  "local_file": "research/no-mans-sky/tables/NMS-BD-CT-V3.6.3.2026-09-30.CT",
+  "sha256": "1832b14ed1b9deff91c90552ea1989a9a18a509add4bd22390eac687bf34d698",
+  "size_bytes": 111614,
+  "zip_sha256": "6823ad5a88aa1fc9f875c904ee39200780d13d8cfa7a5c86c9e789f66759e767",
+  "zip_size_bytes": 20662,
+  "downloaded": "2026-10-05 via GamePressure mirror (no login/payment/CAPTCHA required); live-browser download task, download-only",
+  "parsed": "2026-10-05",
+  "parse_method": "XML parse only (xml.etree) + regex for aobscan patterns. No Lua/AA executed.",
+  "cheat_engine_table_version": "46"
+ },
+ "verification_status": "UNVERIFIED — every address and AOB pattern in this file MUST be confirmed against the running game before any GameGPT profile use. Targets NMS 7.x (Cosmos-era) builds; released same day as patch 7.05.",
+ "entries": [
+  {
+   "id": "2361",
+   "description": "Enable/Disable all NMS Scripts",
+   "path": [],
+   "type": "group"
+  },
+  {
+   "id": "2274",
+   "description": "General >",
+   "path": [
+    "Enable/Disable all NMS Scripts"
+   ],
+   "type": "group"
+  },
+  {
+   "id": "2273",
+   "description": "Remove ALL Inventory Technology Overloads",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "General >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "INJECT",
+      "module": "NMS.exe",
+      "pattern": "8B 40 20 48 83 C4 20 5F C3 33 C0"
+     }
+    ],
+    "script_lines": 57,
+    "script_sha256": "5eadac3977c49eff04bfa74907c1ab8fe9b41160002cf0b1ff0076bc2f3fd2ec"
+   }
+  },
+  {
+   "id": "12172",
+   "description": "Unlimited Starship Shields / Pulse Engine / Lunch Thruster / Ammo / Granades",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "General >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "INJECT",
+      "module": "NMS.exe",
+      "pattern": "0F 11 4B 10 0F 10 45 20 0F 11 43 20 E8"
+     }
+    ],
+    "script_lines": 60,
+    "script_sha256": "d8cf4c51ba4c020b8738253a0c53123b6502b93165b4bbe084a6e77dc810843a"
+   }
+  },
+  {
+   "id": "11940",
+   "description": "Instant Interaction with items or creatures (E Key)",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "General >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBWordLearn",
+      "module": "NMS.exe",
+      "pattern": "F3 44 0F 58 27 F3"
+     }
+    ],
+    "script_lines": 53,
+    "script_sha256": "187a52081c14e31e5528cb88c4ad2e3a36106f2e68d945a6ed71b5f5539b1187"
+   }
+  },
+  {
+   "id": "1973",
+   "description": "Money - (Access Inventory to Get all Unit Types)",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "General >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBMoneyPointer",
+      "module": "NMS.exe",
+      "pattern": "45 8B 80 DC C1 00 00"
+     }
+    ],
+    "script_lines": 59,
+    "script_sha256": "5793bf59f0287e71b45357d0e566e472f9be2e156d279a2a97547544ca09f728"
+   }
+  },
+  {
+   "id": "2140",
+   "description": "Get Race & Faction Standings (Takes a few seconds to load up.)",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "General >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "INJECT",
+      "module": "NMS.exe",
+      "pattern": "48 8B 40 10 0F 28 DE"
+     }
+    ],
+    "script_lines": 62,
+    "script_sha256": "fb3efc93d5c72100fb90af71dffc5da2223907b97648d8137c9e132721174742"
+   }
+  },
+  {
+   "id": "11996",
+   "description": "Speed >",
+   "path": [
+    "Enable/Disable all NMS Scripts"
+   ],
+   "type": "group"
+  },
+  {
+   "id": "11992",
+   "description": "Jetpack Speed",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Speed >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "forwardforce",
+      "module": "NMS.exe",
+      "pattern": "F3 0F 10 ?? ?? ?? ?? ?? 0F 10 87 ?? ?? 00 00 48 8D"
+     },
+     {
+      "symbol": "leftrightforce",
+      "module": "NMS.exe",
+      "pattern": "EB ?? F3 0F 10 05 ?? ?? ?? ?? F3 0F 11 81 ?? ?? 00 00 F3 0F 10 0D"
+     },
+     {
+      "symbol": "upwardforce",
+      "module": "NMS.exe",
+      "pattern": "F3 0F 10 0D ?? ?? ?? ?? F3 0F 11 89 ?? ?? 00 00 F3 0F 10 05 ?? ?? ?? ?? 48 8B 9C"
+     }
+    ],
+    "script_lines": 192,
+    "script_sha256": "f37bef34c868ddee07a5112b179ee99f6daeef09af10b8540e86913a32e5d6ec"
+   }
+  },
+  {
+   "id": "11988",
+   "description": "Ship Engine Speed",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Speed >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "engineControls",
+      "module": "NMS.exe",
+      "pattern": "F3 0F 58 ?? ?? F3 41 0F 11 ?? ?? C3"
+     }
+    ],
+    "script_lines": 136,
+    "script_sha256": "1fbe331f3c5ef72ab7c8783f60df8506d4201e2b7bd1ff2aa16638573f525c0b"
+   }
+  },
+  {
+   "id": "11990",
+   "description": "Pulse Engine Speed",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Speed >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "actualminiwarp",
+      "module": "NMS.exe",
+      "pattern": "F3 0F 5F C8 F3 0F 59 0D ?? ?? ?? ?? 0F 28 C1"
+     }
+    ],
+    "script_lines": 73,
+    "script_sha256": "d31b1e1c7a7a42a15196db1967eb0a982f943fe5703e31276d6651560b7c47d0"
+   }
+  },
+  {
+   "id": "4455",
+   "description": "Walk and Run Speed Multiplier X2 Default",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Speed >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [],
+    "script_lines": 62,
+    "script_sha256": "b0e533d0fd587db5337dd41a4740f8810803731b22f30e8ff5bb907215fe05eb"
+   }
+  },
+  {
+   "id": "2151",
+   "description": "Inventory >",
+   "path": [
+    "Enable/Disable all NMS Scripts"
+   ],
+   "type": "group"
+  },
+  {
+   "id": "2412",
+   "description": "Last Moved Item into Slot",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Inventory >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "LastMovedItem",
+      "module": "NMS.exe",
+      "pattern": "0F 11 48 10 0F 10 43 20 0F 11 40 20 0F 11"
+     }
+    ],
+    "script_lines": 64,
+    "script_sha256": "0450e664065b711f937754ce98a111e7daa4bff0cda58fefe82e9dbd17d53e41"
+   }
+  },
+  {
+   "id": "2362",
+   "description": "ExoSuit >",
+   "path": [
+    "Enable/Disable all NMS Scripts"
+   ],
+   "type": "group"
+  },
+  {
+   "id": "12053",
+   "description": "Take no Damage (Ship and ExoSuit)",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "ExoSuit >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "INJECT",
+      "module": "NMS.exe",
+      "pattern": "48 8B C4 4C 89 48 20 44 89 40 18 55 53 56"
+     }
+    ],
+    "script_lines": 57,
+    "script_sha256": "ecbc71df28af50dedd48630df164195a9d15015f019aa1279d387fb1c9ab93e1"
+   }
+  },
+  {
+   "id": "2414",
+   "description": "Unlimited Run Stamina",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "ExoSuit >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBRunStamina",
+      "module": "NMS.exe",
+      "pattern": "F3 41 0F 5E C0 F3 0F 5C C8 F3"
+     }
+    ],
+    "script_lines": 46,
+    "script_sha256": "aa745dab9d32c7154228dfe51586a5e25888fc9467183d14f0fe3874fdce64ac"
+   }
+  },
+  {
+   "id": "12170",
+   "description": "Unlimited Jetpack Propulsion",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "ExoSuit >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "INJECT",
+      "module": "NMS.exe",
+      "pattern": "F3 0F 58 CA F3 41 0F 59 CC F3 0F 59"
+     }
+    ],
+    "script_lines": 55,
+    "script_sha256": "517fb642e59998ce8cbe36118d87bf086293564224ca1c1404214900c2e8d860"
+   }
+  },
+  {
+   "id": "2268",
+   "description": "Unlimited Marine Jet Propulsion",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "ExoSuit >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "INJECT",
+      "module": "NMS.exe",
+      "pattern": "F3 0F 5C CA F3 44 0F 5F C1"
+     }
+    ],
+    "script_lines": 56,
+    "script_sha256": "9b2289e86ea2c6a8b66c2074490b0283630d586be40c524f96552107e86b9766"
+   }
+  },
+  {
+   "id": "12124",
+   "description": "Unlimited Environmental Suit - Oxygen / Thermals / Toxicity",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "ExoSuit >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBEnvironmentalSuit",
+      "module": "NMS.exe",
+      "pattern": "40 55 56 57 48 8D 6C 24 B0"
+     }
+    ],
+    "script_lines": 54,
+    "script_sha256": "adb89f08714db3eb645044f239b54a6ac249f0af070eb7efd4822017d69acfbc"
+   }
+  },
+  {
+   "id": "2363",
+   "description": "StarShip >",
+   "path": [
+    "Enable/Disable all NMS Scripts"
+   ],
+   "type": "group"
+  },
+  {
+   "id": "2176",
+   "description": "Rocket Launcher - No Cool Down",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "StarShip >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBMissiles",
+      "module": "NMS.exe",
+      "pattern": "41 C7 84 86 B4 5F 00 00 00 00 80 3F 49 63 86"
+     }
+    ],
+    "script_lines": 55,
+    "script_sha256": "d1ff780cbcd628f4e217906153abb8436d40b360ef840c6c44a993d16a43f8c7"
+   }
+  },
+  {
+   "id": "2025",
+   "description": "Zero Thermal Load (Heat) for Photo Cannon",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "StarShip >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBLaserCoolDown",
+      "module": "NMS.exe",
+      "pattern": "F3 41 0F 11 8C 86 B4 5F 00 00"
+     }
+    ],
+    "script_lines": 55,
+    "script_sha256": "85d489bdca3ed5451bf7866a19e7872130184684fc900a7cbbe9add86a52eddc"
+   }
+  },
+  {
+   "id": "438",
+   "description": "MultiTool >",
+   "path": [
+    "Enable/Disable all NMS Scripts"
+   ],
+   "type": "group"
+  },
+  {
+   "id": "12217",
+   "description": "Instant Mining / No Damage To Industrial Waste/ One Shot Kills - Disable/Enable below as desired. (To the right)",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "MultiTool >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBMiningDamage",
+      "module": "NMS.exe",
+      "pattern": "89 77 50 C6 47 48 01 80"
+     }
+    ],
+    "script_lines": 93,
+    "script_sha256": "cf697b83bf82e311bed84258571504490a9772ba971605b02aed271c1718cc57"
+   }
+  },
+  {
+   "id": "4454",
+   "description": "Instant Charge for Blaze Javelin",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "MultiTool >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBBlazeAmmo",
+      "module": "NMS.exe",
+      "pattern": "41 0F 28 F5 48 8B CE F3 0F 58 B6 88"
+     }
+    ],
+    "script_lines": 67,
+    "script_sha256": "cb7a12c6b954a8f3d180d25e95d8d9778a46ac2feaac5a9701cbcaa41c864f05"
+   }
+  },
+  {
+   "id": "12",
+   "description": "No Mining Beam Overheat",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "MultiTool >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBMiningBeamHeat",
+      "module": "NMS.exe",
+      "pattern": "41 0F 28 C5 41 0F 28 F5 F3"
+     }
+    ],
+    "script_lines": 47,
+    "script_sha256": "436f6576579d71d5b9a55c0cb1ef74c5e34226be213a9dc368af020b71d4454b"
+   }
+  },
+  {
+   "id": "2450",
+   "description": "Instant Identification for Analysis Scanner ",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "MultiTool >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBScanner",
+      "module": "NMS.exe",
+      "pattern": "F3 0F 11 49 24 48 85"
+     }
+    ],
+    "script_lines": 58,
+    "script_sha256": "61d376505e52426dd6116580f921d92411cce96af852504820942693ba353fd5"
+   }
+  },
+  {
+   "id": "2081",
+   "description": "Unlimited Boltcaster Ammo",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "MultiTool >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "BOLTCASTERAMMO",
+      "module": "NMS.exe",
+      "pattern": "41 2B C6 45 8B C6"
+     }
+    ],
+    "script_lines": 60,
+    "script_sha256": "8a4f53c864bd396f94a54a603b71624867106587d7932140efd4e629f591ed38"
+   }
+  },
+  {
+   "id": "2360",
+   "description": "Unlimited Topographic Scanner - No Recharge",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "MultiTool >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "INJECT",
+      "module": "NMS.exe",
+      "pattern": "44 89 6E 10 44 89 6E 40"
+     }
+    ],
+    "script_lines": 55,
+    "script_sha256": "73f802733fb99335cf0f6e6b5453546416627aacde94e93889da85207dd06e2b"
+   }
+  },
+  {
+   "id": "2489",
+   "description": "Unlimited Runic Lens - Cloak",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "MultiTool >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBRunicCloak",
+      "module": "NMS.exe",
+      "pattern": "33 D2 85 C9 0F 4F D1 3B 15"
+     }
+    ],
+    "script_lines": 61,
+    "script_sha256": "fe4a3639d7d9eda0f251be7b6d56dc33a23b97760e25b6489c367b06faa88abd"
+   }
+  },
+  {
+   "id": "2328",
+   "description": "Crafting >",
+   "path": [
+    "Enable/Disable all NMS Scripts"
+   ],
+   "type": "group"
+  },
+  {
+   "id": "2240",
+   "description": "Crafting consumes no inventory resources",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Crafting >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBCrafting",
+      "module": "NMS.exe",
+      "pattern": "44 29 63 18 45 2B FC"
+     }
+    ],
+    "script_lines": 114,
+    "script_sha256": "2383482433f28e0291abe12050a6a601e12572d82014bc542508858bcd6fb334"
+   }
+  },
+  {
+   "id": "12128",
+   "description": "Always have resources for Crafting",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Crafting >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBAlwaysHaveResource",
+      "module": "NMS.exe",
+      "pattern": "5B C3 CC CC 4C 89 44 24 18 89 54 24 10 55"
+     }
+    ],
+    "script_lines": 95,
+    "script_sha256": "0a3864efa812469fb75942ddf26ee5406fa8aed7acbf1f329e51ef72aa5a49e5"
+   }
+  },
+  {
+   "id": "2332",
+   "description": "Unlimited Refiner Resources",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Crafting >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBResources",
+      "module": "NMS.exe",
+      "pattern": "89 50 18 48 8B 4F 78"
+     }
+    ],
+    "script_lines": 47,
+    "script_sha256": "4df082dba4b6db7df9ebcd1e1773106c3e38ee8b4ed8770957acb1d9eaac7764"
+   }
+  },
+  {
+   "id": "2327",
+   "description": "Unlimited Refiner Fuel",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Crafting >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "INJECT",
+      "module": "NMS.exe",
+      "pattern": "4C 8B 7C 24 40 89 47 18"
+     }
+    ],
+    "script_lines": 59,
+    "script_sha256": "5398a18f91daf681deab9cc40a5ac7fc0c6c0d03c13c3a1fd08fe89fb5ec766d"
+   }
+  },
+  {
+   "id": "4477",
+   "description": "Refiner Finishes Instantly",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Crafting >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "aob_CalculateRefineTime",
+      "module": "$process",
+      "pattern": "0F 5B C9 F3 0F 5E C1 48 83 C4 ? 5B"
+     }
+    ],
+    "script_lines": 78,
+    "script_sha256": "83113c29b28f94df2e871b230a407b768424caa46ece587ffcf0528f580376bc"
+   }
+  },
+  {
+   "id": "2293",
+   "description": "Exocraft >",
+   "path": [
+    "Enable/Disable all NMS Scripts"
+   ],
+   "type": "group"
+  },
+  {
+   "id": "2307",
+   "description": "Unlimited Exocraft Fuel",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Exocraft >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "INJECT",
+      "module": "NMS.exe",
+      "pattern": "2B CB 85 C9 0F 4E CA"
+     }
+    ],
+    "script_lines": 57,
+    "script_sha256": "e248c4fe0a85f6eddae4c589aa96dab74af2e316a90513a96c42ca914d84f07f"
+   }
+  },
+  {
+   "id": "2292",
+   "description": "Unlimited Exocraft Boost",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Exocraft >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "AOBBoost",
+      "module": "NMS.exe",
+      "pattern": "F3 0F 5C C7 44 0F 2F C0 F3 0F 11 87"
+     }
+    ],
+    "script_lines": 57,
+    "script_sha256": "93c1e6690a12b78549e8febe5ca3cd3de692eedbd549aa1b50ef0e0055f1a484"
+   }
+  },
+  {
+   "id": "4462",
+   "description": "Unlimited Nautilon Boost",
+   "path": [
+    "Enable/Disable all NMS Scripts",
+    "Exocraft >"
+   ],
+   "type": "Auto Assembler Script",
+   "address": null,
+   "aa": {
+    "aob_scans": [
+     {
+      "symbol": "INJECT",
+      "module": "NMS.exe",
+      "pattern": "F3 0F 5C C7 44 0F 2F C0"
+     }
+    ],
+    "script_lines": 44,
+    "script_sha256": "0cb47a73502e66befd0377866daf86770fb54e542fd144df096880a62b3a1785"
+   }
+  }
+ ]
+}
