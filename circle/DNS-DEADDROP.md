@@ -14,8 +14,10 @@ not what it means.
 
 ## Domain
 
-TBD — Bruce registers at some point. (This spec uses `winterbloom.club`
-as a placeholder; any domain works.)
+`winterbloom.arkmatx.com` — LIVE since 2026-10-08 (Bruce added the three TXT
+records via the Bluehost domain panel). The future dedicated domain
+(Bruce will register at some point) replaces this when ready; the record
+layout is identical.
 
 ## Naming
 
