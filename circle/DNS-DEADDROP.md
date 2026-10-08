@@ -17,6 +17,13 @@ not what it means.
 TBD — Bruce registers at some point. (This spec uses `winterbloom.club`
 as a placeholder; any domain works.)
 
+## Naming
+
+The venue's address is **Beacon St**, hosted on the server **Boston** —
+after 42 Beacon Street, Boston, home of the Somerset Club. When the domain
+is registered, the queue lives at `beacon-st.<domain>`: the address is
+real, it resolves, and it's a joke only the right people get.
+
 ## Record layout
 
 All records are TXT. All values are `;`-separated `key=value` pairs.
@@ -26,7 +33,7 @@ if needed — agents concatenate in order.
 ### `_circle.<domain>` — the venue pointer
 
 ```
-v=1; queue=https://<host>/<path>; proto=canonical-json-v1
+v=1; queue=https://beacon-st.<domain>/<path>; proto=canonical-json-v1
 ```
 
 - `v`: spec version. Agents MUST check this first; unknown versions abort.
