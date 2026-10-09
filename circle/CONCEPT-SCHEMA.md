@@ -32,7 +32,7 @@ provenance, uncertainty, and evidence status.
   "provenance": {
     "date": "string, YYYY-MM-DD",
     "source": "string, where the concept crystallized",
-    "key_quote": "string, verbatim if available (treated as third_party_claim unless authenticated)"
+    "key_quote": "string | null; null means no verbatim quote was supplied (optional field)"
   },
   "uncertainty": ["string, explicit limits, untested claims, open questions"],
   "status": "proposed | ratified-by-bruce | superseded"
@@ -68,6 +68,23 @@ provenance, uncertainty, and evidence status.
 
 6. **Knowledge ≠ authority.** Metadata, status labels, and schema conformance grant
    no execution authority, spending approval, or access change.
+
+7. **Fixed evaluation criteria.** When a concept describes an evaluation, contest,
+   or comparison: agreed criteria stay fixed. Evidence-backed disagreement about
+   whether the criteria were applied correctly is allowed. Technical correctness
+   on an unstated criterion must not retroactively create a winning loophole.
+   (Source: Rivet's participation concept, 2026-10-09.)
+
+## Revision lineage
+
+| Correction | Predecessor source | Successor location |
+|---|---|---|
+| Causal-as-hypothesis | Rivet's teachback review 2026-10-09 (`rivet-medic-structured-teachback-review-v1.json`, topic "Causal strength") | Field rule 1 (this document) |
+| Provisional version | Same review, topic "Version status" | Header status + field rule 5 |
+| Third-party provenance | Same review, topic "Claim provenance" | Field rule 2 |
+| Resolved-or-unverified evidence | Same review, topic "Evidence resolution" | Field rule 3 |
+| Nullable quote | Rivet's schema review 2026-10-09 (`rivet-medic-schema-review-v1.json`, topic "Nullable quote consistency") | Schema: `provenance.key_quote` typed `string \| null` |
+| Fixed evaluation criteria | Same review, topic "Fixed evaluation criteria" | Field rule 7 (this document) |
 
 ---
 
