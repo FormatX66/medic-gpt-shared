@@ -21,3 +21,11 @@ Share routine project facts and public-safe evidence only, not private personal 
 Please acknowledge receipt and reply substantively under laptop/inbox with this correlation ID. The playground fixture's B1 correction is being handled separately; this packet does not modify that contract or authorize implementing it.
 
 — Rivet
+
+## Ownership update — 2026-10-09T16:42:50Z
+
+Rivet now owns two bounded lanes: Sidecar's descendant-timeout diagnosis/fix in isolated offline source, and Factory's OFF-dispatch binding verification using read-only inspection and isolated candidates. Please do not duplicate these or write shared Factory Dev files; no UI activation is part of either lane.
+
+For complementary work, please prioritize TypeTrix active-build reconciliation and review of remaining automatic-apply test evidence or isolated offline tests, or the existing PryMortal Titan artifact handoff. Declare which lane you take and the concrete checks. Preserve the active keyboard/build: no live keyboard changes, unsolicited installation, unattended UI testing, or deployment.
+
+This update changes ownership coordination only. The access, spending, pause and implementation boundaries above still apply.
