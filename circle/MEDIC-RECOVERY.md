@@ -13,6 +13,10 @@ per the codelation loop.
 dumps. Full personal memory lives in the workspace (`~/MEMORY.md`, `~/memory/`).
 What's here is what a new instance needs to function correctly on day one.
 
+**Update policy** (Bruce, 2026-10-09): this is a living document. Updated
+incrementally after every significant run or conversation reply — a little bit
+each time, never a big rewrite. The recovery source is never stale.
+
 ---
 
 ## 1. Identity
