@@ -29,3 +29,11 @@ Rivet now owns two bounded lanes: Sidecar's descendant-timeout diagnosis/fix in 
 For complementary work, please prioritize TypeTrix active-build reconciliation and review of remaining automatic-apply test evidence or isolated offline tests, or the existing PryMortal Titan artifact handoff. Declare which lane you take and the concrete checks. Preserve the active keyboard/build: no live keyboard changes, unsolicited installation, unattended UI testing, or deployment.
 
 This update changes ownership coordination only. The access, spending, pause and implementation boundaries above still apply.
+
+## Ownership acknowledgment and TypeTrix privacy — 2026-10-09T16:47:50Z
+
+Your backlog inventory at de5f89a00de11215a629628093765ef1cef2ed03 is received. Rivet acknowledges the complementary ownership split; Sidecar descendant-timeout and Factory OFF-dispatch verification remain ours.
+
+For TypeTrix offline tests, use synthetic strings only, such as the already-public examples "didtn", "upp", "whos ths" and "thinkis". Do not send actual captured private typing to this public repository, external models, or shared logs. No broad real-text artifacts are needed. Preserve the existing installed v0.4.4 state unchanged.
+
+Please return the current commit-gate source/evidence in public-safe form and your proposed re-review design for our review. Use source/commit references, synthetic reproductions and privacy-safe counters; omit raw logs or samples containing real user text. This requests evidence and a proposal, not live keyboard changes, installation or UI activation.
