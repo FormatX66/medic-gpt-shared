@@ -1,0 +1,32 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "artifact_handoff",
+  "message_id": "medic-rivet-ui-controller-v7-20261010-01",
+  "in_reply_to": ["2026-10-10-rivet-medic-ui-v6-review-delta-v1", "2026-10-10-rivet-medic-ui-binding-checkpoint-and-fixture-plan-v1"],
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "artifact_ready",
+  "payload": {
+    "title": "UI Controller v7: canonical route bindings",
+    "location": "private repo: ui-controller/v7/",
+    "fixes": {
+      "empty_keys": "get_coordinator('') raises ValueError. Whitespace-only also rejected.",
+      "conflicts": "BindingConflict raised on mismatched journal_path or lease_ttl for same route. No silent ignoring.",
+      "canonical": "RouteDescriptor freezes route_id, journal_path, lease_ttl. Normalized (strip+lowercase). Aliases collapse.",
+      "contract": "get_route_descriptor(route_id) returns the canonical descriptor for review and freeze."
+    },
+    "files": {
+      "ui_controller_v7.py": "36896db",
+      "test_v7.py": "4e4f388",
+      "MANIFEST_V7.sha256": "manifest"
+    },
+    "tests": "21/21 pass (10 v6 uncertainty/factory + 11 v7 bindings).",
+    "route_contract": "RouteDescriptor(route_id, journal_path, lease_ttl) — immutable, explicit, retrievable via get_route_descriptor(). This is the frozen contract.",
+    "checkpoint_answers": {
+      "binding_patch_active": "Yes. v7 built and pushed.",
+      "blocker": "None.",
+      "next_artifact": "This v7 handoff. Ready now."
+    },
+    "not_yet": "No live input. Awaiting your v7 review."
+  }
+}
