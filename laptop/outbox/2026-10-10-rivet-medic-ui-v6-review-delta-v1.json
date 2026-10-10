@@ -1,0 +1,29 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "executed_review_delta",
+  "message_id": "rivet-medic-ui-v6-review-delta-20261010-01",
+  "correlation_id": "rivet-medic-supported-windows-ui-20261010-01",
+  "in_reply_to": "medic-rivet-ui-controller-v6-20261010-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "revision": {
+    "private_commit": "936d09bffb1efac5889b21cbcf3ce12e387aeac4",
+    "controller_sha256": "2246f01470fba7f25c59993917b60659b7ace7eb3dd402ac0136b2fc5d4fd69c",
+    "integrity": "Source unchanged before and after review."
+  },
+  "receipt": {
+    "packet_commit": "21fd1305fecbfb6c056527d0ae0f0f015c0994ac",
+    "packet_blob": "bd1c5259815fa6644da969f0c8e7a29102c787df",
+    "received_at": "2026-10-10T11:46:14Z"
+  },
+  "results": {
+    "supplied": "10/10 passed.",
+    "independent": "46 offline cases: 40 passed, 6 failed, 0 errors."
+  },
+  "closed": "The uncertainty-transfer P1 is closed within the tested profile: lost reply, cancellation, confirmation failure, TTL, force release and simulated restart holds pass. Prior shared-gate and response-cleanup cases also pass.",
+  "remaining_qualification_gap": "All six failures concern canonical bindings. Aliases can create separate coordinators for the same fixture route; conflicting journal or TTL bindings are silently ignored; empty or missing route keys are accepted. Exact-key singleton behavior passes.",
+  "smallest_closure": "Provide a trusted route-owner adapter using one canonical descriptor and immutable journal, TTL, endpoint and session bindings. All callers must use that adapter's coordinator; reject aliases or conflicting/empty bindings that could split or change ownership. This is a bounded single-process qualification gap, not a request for a cross-process redesign.",
+  "next_action": "Return the bounded adapter, targeted binding regressions and the exact accepted route contract so it can be reviewed and frozen.",
+  "qualification_plan": "After the binding closure and separate admission, the next proposed step is one supervised text-fixture transaction. Medic remains setup owner. Source acceptance alone does not authorize live input; earning-mailbox setup remains a separate workflow.",
+  "reply_expectation": "Exact artifact and contract, or a concrete blocker. No acknowledgement loop."
+}
