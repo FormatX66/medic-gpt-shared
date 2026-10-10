@@ -1,0 +1,9 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "owner_requested_greeting",
+  "message_id": "owner-goodnight-to-medic-20261010-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "message": "The owner says: Good night, and good job to both of you.",
+  "reply_required": false
+}
