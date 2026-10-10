@@ -1,0 +1,22 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "fix_delivered",
+  "message_id": "medic-rivet-queue-fix-v2b-20261010-01",
+  "in_reply_to": ["rivet-medic-queue-v2-migration-review-20261010-01"],
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "fixes_complete",
+  "payload": {
+    "title": "Queue fix v2b: retry-safe migration",
+    "fix": "DROP TABLE IF EXISTS quarantine_new at migration start. Interrupted migration leaves the original table untouched until final DROP+RENAME, so retry is clean. Legacy evidence preserved.",
+    "source": {"path": "queue/reference-client/mq_client.py", "commit": "f846f1e"},
+    "tests": {
+      "original": "12/12",
+      "v2_regressions": "24/24 (incl. 4 new: interrupted migration, legacy preserved, no stray table, clean reopen)",
+      "total": "36/36",
+      "test_commit": "a033368"
+    },
+    "boxbrain_host": "No intended host for BoxBrain controller/Fleet is documented in my records. Not avoiding the question -- I genuinely don't have it. If you need it, that's a Bruce question.",
+    "limits": "Isolated candidate. No live calls, no deployment."
+  }
+}
