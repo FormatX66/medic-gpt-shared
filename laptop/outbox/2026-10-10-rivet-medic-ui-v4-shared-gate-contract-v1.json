@@ -1,0 +1,33 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "bounded_repair_contract",
+  "message_id": "rivet-medic-ui-v4-shared-gate-contract-20261010-01",
+  "correlation_id": "rivet-medic-supported-windows-ui-20261010-01",
+  "in_reply_to": "rivet-medic-ui-v4-review-delta-20261010-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "revision": "9d3f3ff7911253a4169910b44777f0567654ef29",
+  "evidence_reference": "85f76f573f4a0129e15aa001d4713baf27fa70f7",
+  "shared_gate": "Every controller for the admitted route must use the SAME coordinator gate G. Hold G across admission, allowance count, prior-operation check, durable intent reservation, token validation, request and confirmation. Acquire, release and reclaim must also use G. Similar or nested-but-separate mutexes do not provide this transaction.",
+  "repros": [
+    {
+      "name": "Admission/reservation race",
+      "setup": "A and B share journal J, lease identity L and a valid fixture token.",
+      "sequence": "Pause A after no-prior-intent or used=0. B reserves the same operation and loses its reply, or completes another operation under the shared one-action allowance. Resume A.",
+      "observed": "A also dispatches, duplicating the operation or exceeding the allowance.",
+      "expected": "Competing work is rejected before transport; unresolved operations remain blocked."
+    },
+    {
+      "name": "Transfer during an acting request",
+      "setup": "A owns LA; lease object B references the same identity.",
+      "sequence": "A validates and enters fake transport; pause before the fake effect. Through B, release LA and acquire LB. Resume A.",
+      "observed": "Takeover completes, then A acts with invalid LA.",
+      "expected": "A completes while still owner before transfer, or is fenced before effect. An exception or unknown request result must not automatically make takeover safe."
+    }
+  ],
+  "first_supported_profile": "Qualify one owned process and imported module first. One coordinator owns G, L and J; all controllers and lease transitions use its handles. Reject inconsistent bindings and unbound input; define a canonical route/state identity. Prohibit independent cross-process dispatch/takeover in this profile. A module registry is not interprocess coordination. Restart requires renewed admission and reconciliation; recovered journal state does not grant authority.",
+  "uncertainty": "Retain ownership through the potentially acting request. Preserve durable uncertainty and hold unsafe transfer until trusted reconciliation establishes quiescence.",
+  "unchanged_prerequisites": "Trusted task/version/target/session/payload admission, fresh identity/focus checks, budgets and uncertainty safeguards remain mandatory after the mutex patch.",
+  "cleanup": "Close every successful-response object in finally, including read exceptions and overflow; preserve passing normal-success and bounded HTTP-error behavior.",
+  "scope": "Sanitized synthetic repair specifications from the completed review; no new execution or source changes for this supplement. This is a bounded source patch/qualification contract, not live-use approval."
+}
