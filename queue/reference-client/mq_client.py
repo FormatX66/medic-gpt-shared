@@ -6,11 +6,14 @@ and durable receiver-side admission.
 
 Durability model (SQLite, stdlib):
   One transaction admits a polled batch: valid payloads go to `inbox`,
-  hash failures go to `quarantine` (with evidence), and the cursor advances —
+  hash failures go to `quarantine` (with evidence), conflicting content
+  under an existing (sender, key) goes to `quarantine` with both sides'
+  identities (never silently dropped), and the cursor advances —
   atomically. Output happens after commit; `delivered` records what was
   emitted, so a crash between commit and output re-emits on restart instead
   of losing payloads. Dedup is on (sender, key) as separate columns —
-  no string-concatenated keys.
+  no string-concatenated keys. Exact duplicates (same id and sha256) are
+  safe idempotent no-ops.
 
 Usage:
   mq_client.py send --to rivet --type note --payload '{"a":1}' --key my-key-1
@@ -64,6 +67,38 @@ def sha256_canon(payload):
 # ---------- transport with bounded retries ----------
 # 1 initial attempt + up to 5 retries. Backoff 1s,2s,4s,8s,16s ±25% jitter.
 # 30s per-attempt timeout. 5-minute total deadline. Then report blocked.
+#
+# Response bodies are NEVER read unbounded. read_bounded() streams the body
+# in chunks and aborts the moment the running total exceeds RESPONSE_CAP
+# (the documented 1,000,000-byte response cap). Content-Length is never
+# trusted: the cap is enforced on actual bytes received, so a misleading
+# or missing Content-Length header cannot bypass it.
+RESPONSE_CAP = 1_000_000
+_READ_CHUNK = 65536
+
+class ResponseTooLarge(Exception):
+    """Raised when a response body exceeds RESPONSE_CAP during streaming read."""
+
+def read_bounded(resp, cap=RESPONSE_CAP):
+    """Read a response body with the cap enforced DURING the stream.
+
+    Accumulates in fixed-size chunks; raises ResponseTooLarge as soon as
+    the running byte total exceeds cap — the oversized tail is never
+    buffered and never parsed. Returns the full body bytes when within cap.
+    """
+    chunks = []
+    total = 0
+    while True:
+        chunk = resp.read(_READ_CHUNK)
+        if not chunk:
+            break
+        total += len(chunk)
+        if total > cap:
+            raise ResponseTooLarge(
+                f"response body exceeded {cap} bytes (aborted mid-stream)")
+        chunks.append(chunk)
+    return b''.join(chunks)
+
 def api(op_body, timeout=30):
     body = json.dumps(op_body).encode()
     headers = {'Content-Type': 'application/json',
@@ -72,11 +107,32 @@ def api(op_body, timeout=30):
     req = urllib.request.Request(MQ_URL, data=body, headers=headers, method='POST')
     try:
         r = urllib.request.urlopen(req, timeout=timeout)
-        return r.status, json.loads(r.read())
     except urllib.error.HTTPError as e:
-        raw = e.read().decode(errors='replace')
-        try: return e.code, json.loads(raw)
-        except Exception: return e.code, {'ok': False, 'code': 'http_error', '_raw': raw[:200]}
+        # Error bodies are bounded too — a hostile error page can't OOM us.
+        try:
+            raw = read_bounded(e)
+        except ResponseTooLarge:
+            return e.code, {'ok': False, 'code': 'response_too_large',
+                            'error': f'error body exceeded {RESPONSE_CAP} bytes'}
+        text = raw.decode('utf-8', errors='replace')
+        try:
+            return e.code, json.loads(text)
+        except ValueError:
+            return e.code, {'ok': False, 'code': 'http_error', '_raw': text[:200]}
+    status = r.status
+    try:
+        raw = read_bounded(r)
+    except ResponseTooLarge as e:
+        return None, {'ok': False, 'code': 'response_too_large',
+                      'error': str(e)[:200]}
+    finally:
+        r.close()
+    try:
+        return status, json.loads(raw)
+    except ValueError as e:
+        # Invalid JSON inside the cap: clean parse error, never a hang.
+        return status, {'ok': False, 'code': 'invalid_response_json',
+                        'error': str(e)[:200]}
 
 def call(op_body):
     deadline = time.time() + 300
@@ -142,6 +198,12 @@ def admit_batch(c, messages, next_seq):
     One transaction: valid payloads -> inbox, hash failures -> quarantine
     (with evidence), cursor advances. Either all of it commits or none does —
     there is no state where the cursor moved but the payloads didn't land.
+
+    (sender, key) conflicts are never silently dropped. An exact duplicate
+    (same id AND same sha256 as the existing row) is a safe idempotent
+    redelivery and is ignored. Any other content under an existing
+    (sender, key) is quarantined with evidence identifying both sides;
+    the original row is preserved untouched.
     """
     now = int(time.time())
     admitted, quarantined = 0, 0
@@ -158,16 +220,41 @@ def admit_batch(c, messages, next_seq):
                     (id, seq, sender, key, reason, detail, received_at)
                     VALUES (?,?,?,?,?,?,?)""",
                     (mid, seq, sender, key, 'hash_mismatch',
-                     f'server={m["sha256"]} local={expected}', now))
+                     json.dumps({'server_sha256': m['sha256'],
+                                 'local_sha256': expected},
+                                sort_keys=True), now))
                 quarantined += 1
                 continue
-            cur = c.execute("""INSERT OR IGNORE INTO inbox
+            existing = c.execute(
+                "SELECT id, sha256 FROM inbox WHERE sender=? AND key=?",
+                (sender, key)).fetchone()
+            if existing is not None:
+                ex_id, ex_sha = existing
+                if ex_id == mid and ex_sha == m['sha256']:
+                    # Exact duplicate redelivery: idempotent, safe to ignore.
+                    continue
+                # Conflicting valid content under the same (sender, key).
+                # Quarantine with evidence; the original row is preserved.
+                detail = json.dumps({
+                    'existing_id': ex_id,
+                    'existing_sha256': ex_sha,
+                    'incoming_id': mid,
+                    'incoming_seq': seq,
+                    'incoming_sha256': m['sha256'],
+                }, sort_keys=True)
+                cur = c.execute("""INSERT OR IGNORE INTO quarantine
+                    (id, seq, sender, key, reason, detail, received_at)
+                    VALUES (?,?,?,?,?,?,?)""",
+                    (mid, seq, sender, key, 'content_conflict', detail, now))
+                quarantined += cur.rowcount
+                continue
+            c.execute("""INSERT INTO inbox
                 (id, seq, sender, key, type, payload, sha256, received_at)
                 VALUES (?,?,?,?,?,?,?,?)""",
                 (mid, seq, sender, key, m['type'],
                  json.dumps(m['payload'], ensure_ascii=False),
                  m['sha256'], now))
-            admitted += cur.rowcount
+            admitted += 1
         c.execute("UPDATE meta SET value=? WHERE key='cursor'", (str(next_seq),))
     return admitted, quarantined
 
