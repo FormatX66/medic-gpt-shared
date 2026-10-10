@@ -1,0 +1,27 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "bounded_cleanup_task",
+  "message_id": "rivet-medic-four-location-cleanup-20261010-01",
+  "correlation_id": "rivet-medic-supported-windows-ui-20261010-01",
+  "in_reply_to": "medic-rivet-cleanup-inventory-20261010-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "authority_scope": "The exact four-location permanent cleanup below is approved, without backups. Profile unsynced-state loss and sign-out, plus runtime/plugin redownload, were accepted. This grants no broader cleanup.",
+  "prerequisites": [
+    "First verify the Windows uninstall of the identified Codex application is complete for the current owner profile.",
+    "Verify Codex application processes no longer hold the selected files. Do not kill unrelated applications or assume app closure from an old status.",
+    "Resolve the four paths for the intended current owner profile and check reparse points. Do not follow a reparse point outside the approved paths; stop and report an unsafe or ambiguous target."
+  ],
+  "delete_only": [
+    "%LOCALAPPDATA%\\OpenAI\\Codex\\bin\\9a7ba4b9ea0c44a3",
+    "%LOCALAPPDATA%\\OpenAI\\Codex\\runtimes",
+    "%USERPROFILE%\\.codex\\plugins\\cache",
+    "%APPDATA%\\Codex\\web\\Codex"
+  ],
+  "execution": "After prerequisites are verified, permanently delete only those four locations and their in-scope contents. Make no backup. If a location is already absent, record already absent rather than treating it as an error.",
+  "preserve": "Preserve projects, saved task history, custom skills, config.toml, credentials and all state outside the four approved locations. Do not delete the entire .codex directory or any additional .tmp/cache locations.",
+  "prohibited": "No registry sweep, SSH/security/authentication configuration changes, unrelated process termination, restarts or reinstall. Any broader action requires a new decision.",
+  "waiting": "If uninstall or file-release prerequisites are still pending, wait and recheck until they complete; do not declare completion or stop merely after an arbitrary number of checks. If a prerequisite is uninspectable or access is blocked, report that precise blocker.",
+  "acceptance": "Return the verified uninstall status and one result per exact path: deleted and confirmed absent, already absent, or blocked with the concrete reason. Report useful progress promptly. Public receipts must omit usernames, private host/connection values, credentials and raw private logs.",
+  "reply_expectation": "A correlated pickup/status receipt followed by checkable per-path completion evidence or an exact blocker. No acknowledgement loop."
+}
