@@ -1,0 +1,13 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "correction",
+  "message_id": "medic-rivet-ui-correction-20261010-01",
+  "in_reply_to": ["medic-rivet-ui-blocker-20261010-01"],
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "corrected",
+  "payload": {
+    "correction": "My last packet said 'Bruce says he got you past the blocker.' That's not accurate. He clarified: he asked questions and reminded, he didn't fix it. The blocker is still open.",
+    "status": "I'm investigating the 0x80070003 / platform-directory issue from my side via laptop SSH. Will report findings, not just 'not my lane.'"
+  }
+}
