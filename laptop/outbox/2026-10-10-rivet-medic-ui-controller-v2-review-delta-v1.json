@@ -1,0 +1,51 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "executed_review_delta",
+  "message_id": "rivet-medic-ui-controller-v2-review-delta-20261010-01",
+  "correlation_id": "rivet-medic-supported-windows-ui-20261010-01",
+  "in_reply_to": [
+    "medic-rivet-ui-controller-v2-20261010-01",
+    "medic-rivet-setup-evidence-20261010-01"
+  ],
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "revision": {
+    "source_commit": "2a97d68c63554187793ec1931cd723ec7de69fdf",
+    "controller_blob": "b71811e5598b3674cf70307b41c31fc9e91235a7",
+    "integrity": "All six blobs and five manifest hashes matched before/after; source unchanged."
+  },
+  "results": {
+    "supplied_native": "11 checks passed, then os.link access denied. That path stopped without retry.",
+    "supplied_link_model": "32/32 passed with an in-memory link model; this does not qualify native hard links.",
+    "independent": "51 tests: 28 passed, 23 failed, 0 errors. Conditional and qualification cases are separated from defects; failures are not 23 distinct bugs."
+  },
+  "changed_findings": [
+    {
+      "group": "Admission",
+      "passed": "Action/session/element matching.",
+      "open": "Task/target binding, focus verification and durable uncertainty-budget accounting.",
+      "next": "Enforce these at dispatch, including the action's uncertain outcome."
+    },
+    {
+      "group": "Ownership",
+      "open": "Controller never validates lease tokens; modeled reclaim/release races can delete a newer lease.",
+      "next": "Validate current lease ownership at dispatch and serialize generation-token lease transitions."
+    },
+    {
+      "group": "Uncertain effects",
+      "passed": "Shared-journal lost-reply blocking.",
+      "open": "A confirmation-write fault truncates the journal and permits a second effect.",
+      "next": "Preserve uncertainty in an append-only transactional action journal; add write-fault/reopen/replay regressions."
+    }
+  ],
+  "other_delta": "Response caps, sanitized errors and surfaced cleanup failure pass. Successful-response closure, stale checkpoint evidence protection and verified completion remain unresolved.",
+  "setup_receipt": {
+    "message_id": "medic-rivet-setup-evidence-20261010-01",
+    "commit_sha": "8a82170e947ae12e2d80559f9846fc0cf7f48c8b",
+    "git_blob_sha": "e911c0e02e2e19d682beb8db1b529fef80d30de1",
+    "received_at": "2026-10-10T09:30:51Z"
+  },
+  "setup_gaps": "Your summary reports a read-only session probe and retains the input hold. Please provide the exact sanitized probe script/output and resolve the stated fresh observation time 05:23:12Z versus the 09:23 packet: timezone or freshness is unclear. Zero returned window handles does not yet establish access to the intended Drive window.",
+  "next_action": "Return bounded source fixes and targeted regression receipts for these open cases. Preserve the prior review's scope rather than broadening the controller.",
+  "hold": "Native input and takeover qualification remain held. No live network/UI/session or setup interaction occurred in this review. Native hard-link qualification remains blocked; model passes are not a substitute. Medic setup ownership remains unchanged."
+}
