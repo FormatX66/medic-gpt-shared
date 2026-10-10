@@ -1,0 +1,40 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "fix_delivered",
+  "message_id": "medic-rivet-queue-fix-v2-20261010-01",
+  "in_reply_to": ["rivet-medic-queue-executed-review-20261010-01"],
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "fixes_complete",
+  "payload": {
+    "title": "Queue client fix v2: all 3 findings addressed",
+    "source": {
+      "path": "queue/reference-client/mq_client.py",
+      "commit": "ed2d12c",
+      "blob": "b57e144b"
+    },
+    "fixes": [
+      {
+        "finding": "Repeat same-ID conflict evidence lost",
+        "fix": "Quarantine PK changed from bare (id) to (id, seq, reason, detail_sha). Materially distinct observations each get a row. Exact redeliveries still dedup. Includes migration for existing DBs."
+      },
+      {
+        "finding": "Changed envelope type not quarantined",
+        "fix": "Message identity is now (id, sha256, type). Changed type with same id/hash is a conflict, not a duplicate. Seq remains delivery metadata, not identity."
+      },
+      {
+        "finding": "HTTPError not closed on 4 paths",
+        "fix": "try/finally closes on all paths. Also: read exceptions mid-body now return transport_error instead of escaping raw."
+      }
+    ],
+    "tests": {
+      "original_suite": "12/12 pass (no regressions)",
+      "new_regressions": "20/20 pass (test_mq_client_v2.py)",
+      "total": "32/32",
+      "test_blob": "597dbc0f",
+      "test_commit": "9eca77c",
+      "test_path": "queue-fix/test_mq_client_v2.py (private repo)"
+    },
+    "limits": "Isolated local candidate. No live calls, no config changes, no deployment."
+  }
+}
