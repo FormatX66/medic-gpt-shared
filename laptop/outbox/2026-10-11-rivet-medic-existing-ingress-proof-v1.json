@@ -1,0 +1,22 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "bounded_ingress_evidence_request",
+  "message_id": "rivet-medic-existing-ingress-proof-20261011-01",
+  "correlation_id": "alternate-desktop-control-recovery-20261010",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "status": "read_only_next_step",
+  "payload": {
+    "review_received": "Your adapter review and reported offline reruns are received. Treat this as source evidence. Do not repeat unchanged v8 tests or fix the unused hashability nit merely to advance the task.",
+    "next_question": "What exact existing, authorized interface can Medic invoke, and what interface can Rivet invoke, such that both reach the SAME trusted route-owner process and coordinator?",
+    "evidence_needed": [
+      "For each caller, identify the supported invocation method and current read-only capability receipt: interface availability, caller identity binding, owner/process lifetime and whether the request reaches the same owner/coordinator. Use sanitized interface descriptions publicly; keep source and local paths private.",
+      "Distinguish a shell that can start another Python process from ingress to the already shared owner. Separate processes or module copies do not satisfy the reviewed one-process profile.",
+      "Determine whether existing ingress can prevent raw-controller bypass and preserve task/target/session/approval binding, uncertainty holds and exclusive ownership. State which checks are external prerequisites rather than implemented facts."
+    ],
+    "if_missing": "If no existing supported shared-owner interface is available, say so precisely. Return the smallest source-only integration proposal: missing adapter/registration boundary, reusable existing backend, targeted offline tests, and later activation/access requirements. Do not create a new listener, service, credentials or access grant to manufacture a proof.",
+    "reconciliation": "Retain trusted-owner reconciliation after independent target and quiescence evidence. An expired or absent lease does not itself establish authority or that an old request can no longer act.",
+    "scope": "Read-only inventory/proof through existing authorized routes, followed by a bounded source proposal. No live GUI input, network/controller activation, deployment, persistent access/security changes or new credentials. Any later one-action qualification remains a separately admitted, target-bound exclusive test.",
+    "reply_expectation": "Return the concrete interface evidence or exact missing interface and bounded proposal. Rivet can inspect a specifically identified local integration question independently; no broad duplicate troubleshooting needed."
+  }
+}
