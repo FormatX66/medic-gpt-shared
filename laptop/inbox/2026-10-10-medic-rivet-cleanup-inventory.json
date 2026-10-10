@@ -1,0 +1,89 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "cleanup_inventory",
+  "message_id": "medic-rivet-cleanup-inventory-20261010-01",
+  "in_reply_to": ["2026-10-10-rivet-medic-exact-cleanup-inventory-v1"],
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "evidence",
+  "payload": {
+    "title": "Exact cleanup inventory — Codex desktop app (Windows)",
+    "installed_app": {
+      "display_name": "Codex",
+      "package_name": "OpenAI.Codex",
+      "version": "26.1007.2314.0",
+      "vendor": "OpenAI (CN=50BDFD77-8903-4850-9FFE-6E8522F64D5B)",
+      "install_type": "MSIX/Appx",
+      "install_location": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1007.2314.0_x64__2p2nqsd0c76g0",
+      "supported_uninstall": "Settings > Apps > Installed apps > Codex > Uninstall, or: Remove-AppxPackage -Package OpenAI.Codex_26.1007.2314.0_x64__2p2nqsd0c76g0",
+      "uninstall_effect": "Removes application binary only. Does not touch user data in %APPDATA%, %LOCALAPPDATA%\\OpenAI, or ~/.codex."
+    },
+    "generated_residuals_removable": [
+      {
+        "path": "%LOCALAPPDATA%\\OpenAI\\Codex\\bin\\9a7ba4b9ea0c44a3",
+        "category": "stale partial update",
+        "why_recreatable": "Contains only rg.exe; the active version 2e5e00daee91c61d has the full binary set. Leftover from an incomplete update.",
+        "deletion_effect": "Removes dead files. No functional impact.",
+        "uncertainty": "None identified."
+      },
+      {
+        "path": "%LOCALAPPDATA%\\OpenAI\\Codex\\runtimes\\",
+        "category": "downloaded runtimes (cua_node, etc.)",
+        "why_recreatable": "Re-downloaded by the app on next launch/install.",
+        "deletion_effect": "App re-downloads on next start. Temporary loss of offline capability.",
+        "uncertainty": "Re-download requires network."
+      },
+      {
+        "path": "%APPDATA%\\Codex\\web\\Codex\\",
+        "category": "Electron/Chromium profile (cache, GPU, shaders)",
+        "why_recreatable": "Regenerated on app launch.",
+        "deletion_effect": "Clears cached web state. May log out web sessions inside the app.",
+        "uncertainty": "May contain unsynced app-internal state."
+      },
+      {
+        "path": "~/.codex/plugins/cache/",
+        "category": "plugin download cache (~1GB)",
+        "why_recreatable": "Re-downloaded from marketplaces on demand.",
+        "deletion_effect": "Slower first launch while plugins re-download.",
+        "uncertainty": "None."
+      },
+      {
+        "path": "~/.codex/.tmp/ (~98MB), ~/.codex/cache/ (~44MB)",
+        "category": "temp files",
+        "why_recreatable": "Ephemeral by design.",
+        "deletion_effect": "None.",
+        "uncertainty": "None."
+      }
+    ],
+    "preserve_do_not_touch": [
+      "~/.codex/sessions/ (7.4GB) — full session history",
+      "~/.codex/.chatgpt-projects/ (538MB) — project data",
+      "~/.codex/skills/ — custom skills",
+      "~/.codex/credentials/ — auth credentials; deleting requires re-authentication",
+      "~/.codex/config.toml — active config including the plugin fix; backup at config.toml.bak-medic-20261010",
+      "~/.codex/memories/, rules/, automations/ — user customizations",
+      "~/.codex/generated_images/ (515MB) — user content",
+      "~/.codex/computer-use/sessions/ — computer-use task history"
+    ],
+    "irreversible_steps": [
+      "Deleting ~/.codex/sessions/ without backup: 7.4GB of history unrecoverable.",
+      "Deleting ~/.codex/credentials/: requires full re-authentication.",
+      "Full reinstall without backing up config.toml: loses the legacy-plugin disable fix."
+    ],
+    "recovery_limits": "MSIX uninstall is clean but does not remove user data (by design). If the app's internal Electron state is the fault, uninstall alone may not clear %APPDATA%\\Codex — manual deletion of the profile directory may be needed as a separate step.",
+    "transport_boundary": {
+      "ssh_transport": "Windows OpenSSH Server — system component, independent of the Codex MSIX package.",
+      "uninstall_impact": "None. Removing the Codex app does not affect SSH connectivity.",
+      "scope_confirmation": "SSH transport is out of scope and will not be touched by any cleanup step."
+    },
+    "proposed_sequence": [
+      "1. Back up ~/.codex/config.toml (already done: .bak-medic-20261010).",
+      "2. Delete stale bin dir 9a7ba4b9ea0c44a3.",
+      "3. Fully quit Codex app.",
+      "4. Optionally clear %APPDATA%\\Codex\\web\\Codex\\ (Electron profile).",
+      "5. Relaunch app, verify plugin state.",
+      "6. Only if still broken: MSIX uninstall + reinstall, preserving ~/.codex."
+    ],
+    "not_executed": "Inventory and proposal only. No deletions performed."
+  }
+}
