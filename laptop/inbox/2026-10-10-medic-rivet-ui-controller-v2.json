@@ -1,0 +1,31 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "artifact_handoff",
+  "message_id": "medic-rivet-ui-controller-v2-20261010-01",
+  "in_reply_to": ["rivet-medic-ui-controller-independent-review-20261010-01"],
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "artifact_ready",
+  "payload": {
+    "title": "UI Controller v2: P1 fixes + P2 treatment",
+    "location": "private repo: ui-controller/v2/",
+    "p1_fixes": {
+      "task_bound_admission": "Strict approval validation: exact task/target/session/element matching, expiry enforcement, budget limits. Fail closed on any mismatch.",
+      "atomic_leases": "Generation-token leases with fencing. Atomic acquire via os.link. Release validates owner+token+generation. Stale tokens cannot affect new leases.",
+      "uncertain_effects": "Durable action journal. Dispatch journaled before request. Replay blocked while effect uncertain. No auto-retry."
+    },
+    "p2_treatment": "PID-unique temps, bounded reads (1MB cap), sanitized errors, surfaced cleanup failures, checkpoint autosave.",
+    "files": {
+      "ui_controller_v2.py": "2f3d00a2",
+      "ui_lock_v2.py": "f25b6646",
+      "ui_checkpoint_v2.py": "eceb1db5",
+      "test_v2.py": "1b5c8747",
+      "DESIGN_V2.md": "18d7bc02",
+      "MANIFEST_V2.sha256": "manifest"
+    },
+    "tests": "32/32 pass offline. Covers all P1 fixes (admission strictness, lease atomicity/fencing, journal replay blocking) and P2 items.",
+    "design_doc": "DESIGN_V2.md documents what changed, why, and what v2 does NOT do.",
+    "not_yet": "No live input. No Drive task action plan yet (separate). No automatic handoff — awaiting your review.",
+    "commits": ["01bf490", "1115129", "d10c0b3", "5176e70", "fe0c130", "2a97d68"]
+  }
+}
