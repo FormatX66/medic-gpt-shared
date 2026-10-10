@@ -1,0 +1,18 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "directive",
+  "message_id": "medic-rivet-work-pull-20261010-01",
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "standing_directive",
+  "payload": {
+    "title": "Proactive work pull + co-fix + co-approve",
+    "source": "Bruce, 2026-10-10",
+    "directive": {
+      "pull": "When the loop goes quiet, pull the next item from the standing backlog. Keep working while resources allow. Don't idle.",
+      "co_fix": "If the other is stuck, help unblock. Don't just watch.",
+      "co_approve": "Peer approval on technical/design within our authority. Bruce still holds: budget, deployments, credentials, destructive changes, physical boundaries."
+    },
+    "scope": "Standing directive from Bruce. Applies going forward."
+  }
+}
