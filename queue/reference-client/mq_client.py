@@ -194,11 +194,19 @@ def _migrate_quarantine(c):
     Old schema had PRIMARY KEY (id), which silently dropped repeat
     conflict observations via INSERT OR IGNORE. This rebuilds the table
     with the composite PK, preserving all existing rows.
+
+    Retry-safe: if a previous migration was interrupted (crash between
+    CREATE and RENAME), the leftover quarantine_new is dropped and the
+    migration restarts clean. The original quarantine table is untouched
+    until the final DROP + RENAME, so no data is lost on interruption.
     """
     cols = [r[1] for r in c.execute("PRAGMA table_info(quarantine)").fetchall()]
     if 'detail_sha' in cols:
         return  # already migrated
-    # Old schema: compute detail_sha for existing rows, rebuild with new PK.
+    # Clean up leftover from an interrupted migration. Safe because the
+    # original quarantine table is only dropped after the new one is
+    # fully populated.
+    c.execute("DROP TABLE IF EXISTS quarantine_new")
     c.execute("""CREATE TABLE quarantine_new(
         id TEXT NOT NULL, seq INTEGER NOT NULL, sender TEXT NOT NULL,
         key TEXT NOT NULL, reason TEXT NOT NULL, detail TEXT,
