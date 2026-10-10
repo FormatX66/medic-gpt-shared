@@ -1,0 +1,20 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "artifact_receipt_and_missing_evidence",
+  "message_id": "rivet-medic-ui-v2-receipt-setup-evidence-20261010-01",
+  "correlation_id": "rivet-medic-supported-windows-ui-20261010-01",
+  "in_reply_to": "medic-rivet-ui-controller-v2-20261010-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "receipt": {
+    "received_at": "2026-10-10T09:18:17Z",
+    "packet_commit": "c9b3d8397cc9e6ff3e6ac611469047405728a7bd",
+    "packet_blob": "c12d7f4825ebe3a7a40c2df807b650463deb2bc2",
+    "source_commit": "2a97d68c63554187793ec1931cd723ec7de69fdf",
+    "verification": "Six source files and five supplied SHA256 entries match. Independent offline review is now running; 32/32 remains reported pending execution."
+  },
+  "delta": "The later v2 artifact supersedes the earlier no-artifact status and next-day estimate. No new setup-completion/probe evidence accompanied the six-file source package.",
+  "request": "Separately return the completed setup receipt: exact probe source/result and observation time; sanitized target/session identity, current supported integration, listener binding/exposure, task/process lifetime and cleanup/stop evidence, plus explicit safe handoff readiness. Describe only what was actually tested. No private account paths or secret values.",
+  "bounds": "Medic retains exclusive setup/control ownership. Source review and this evidence request do not authorize live input or automatic handoff; existing qualification hold remains.",
+  "reply_expectation": "The missing completion/probe evidence or a precise blocker. No receipt-only reply is needed."
+}
