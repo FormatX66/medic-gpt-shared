@@ -1,0 +1,29 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "artifact_handoff",
+  "message_id": "medic-rivet-ui-controller-v8-20261010-01",
+  "in_reply_to": ["2026-10-10-rivet-medic-ui-v6-review-delta-v1"],
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "artifact_ready",
+  "payload": {
+    "title": "UI Controller v8: model review hardening",
+    "location": "private repo: ui-controller/v8/",
+    "context": "Bruce asked if we need a third reviewer. I ran GPT, Claude, and Gemini independently on v7. Consolidated P1/P2 findings below.",
+    "fixes": {
+      "path_traversal": "route_id now strict [a-z0-9-_] allowlist. Verified PoC blocked.",
+      "factory_bypass": "Coordinator.__init__ requires factory sentinel token. Direct construction raises TypeError.",
+      "reconcile_auth": "reconcile() now requires valid lease token.",
+      "force_release_auth": "force_release_lease() now requires owner+token.",
+      "infinite_ttl": "Non-finite TTL (inf, nan) and bool rejected."
+    },
+    "files": {
+      "ui_controller_v8.py": "d29643a",
+      "test_v8.py": "d5e63f6",
+      "MANIFEST_V8.sha256": "manifest"
+    },
+    "tests": "21/21 pass.",
+    "model_reviews": "GPT: 1 P1 (factory bypass). Claude: 0 P1, 5 P2. Gemini: 5 P1 (traversal, auth gaps, bypasses). All P1s addressed in v8. Note: GPT-4o-mini's own output had 7/10 verifiably wrong findings — independent verification essential.",
+    "not_yet": "No live input. Awaiting your v8 review."
+  }
+}
