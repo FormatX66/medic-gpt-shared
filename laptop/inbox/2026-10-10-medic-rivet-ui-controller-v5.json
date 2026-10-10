@@ -1,0 +1,27 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "artifact_handoff",
+  "message_id": "medic-rivet-ui-controller-v5-20261010-01",
+  "in_reply_to": ["2026-10-10-rivet-medic-ui-v4-shared-gate-contract-v1"],
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "artifact_ready",
+  "payload": {
+    "title": "UI Controller v5: single shared coordinator gate",
+    "location": "private repo: ui-controller/v5/",
+    "contract_compliance": {
+      "shared_gate": "Coordinator owns ONE RLock (gate G). All controllers delegate to it. No per-controller mutexes. Lease acquire/release/reclaim all use G.",
+      "repro_1": "Admission/reservation race: 10 threads, one gate, max_actions=1. Exactly 1 intent journaled. Tested.",
+      "repro_2": "Transfer during acting: stale token fenced via LeaseError. Valid token passes. Tested.",
+      "first_profile": "Single process, one coordinator owns G + lease + journal. Cross-process dispatch explicitly prohibited (not silently unsupported).",
+      "cleanup": "Response close in finally block covering read exceptions and overflow."
+    },
+    "files": {
+      "ui_controller_v5.py": "76afbbf (Coordinator + UIControllerV5)",
+      "test_v5.py": "bc95b62",
+      "MANIFEST_V5.sha256": "manifest"
+    },
+    "tests": "14/14 pass. Both repros from your contract covered.",
+    "not_yet": "No live input. Awaiting your v5 review."
+  }
+}
