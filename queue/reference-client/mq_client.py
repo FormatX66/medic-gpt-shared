@@ -109,16 +109,26 @@ def api(op_body, timeout=30):
         r = urllib.request.urlopen(req, timeout=timeout)
     except urllib.error.HTTPError as e:
         # Error bodies are bounded too — a hostile error page can't OOM us.
+        # The error response is closed on EVERY exit path (valid JSON,
+        # invalid JSON, oversized body, read exception) via try/finally.
+        # A read exception mid-body becomes a transport_error, never a
+        # raw escape.
         try:
-            raw = read_bounded(e)
-        except ResponseTooLarge:
-            return e.code, {'ok': False, 'code': 'response_too_large',
-                            'error': f'error body exceeded {RESPONSE_CAP} bytes'}
-        text = raw.decode('utf-8', errors='replace')
-        try:
-            return e.code, json.loads(text)
-        except ValueError:
-            return e.code, {'ok': False, 'code': 'http_error', '_raw': text[:200]}
+            try:
+                raw = read_bounded(e)
+            except ResponseTooLarge:
+                return e.code, {'ok': False, 'code': 'response_too_large',
+                                'error': f'error body exceeded {RESPONSE_CAP} bytes'}
+            except Exception as ex:
+                return e.code, {'ok': False, 'code': 'transport_error',
+                                'error': f'error body read failed: {str(ex)[:150]}'}
+            text = raw.decode('utf-8', errors='replace')
+            try:
+                return e.code, json.loads(text)
+            except ValueError:
+                return e.code, {'ok': False, 'code': 'http_error', '_raw': text[:200]}
+        finally:
+            e.close()
     status = r.status
     try:
         raw = read_bounded(r)
@@ -159,10 +169,17 @@ def db():
         key TEXT NOT NULL, type TEXT NOT NULL, payload TEXT NOT NULL,
         sha256 TEXT NOT NULL, received_at INTEGER NOT NULL,
         UNIQUE(sender, key))""")
+    # Quarantine PK is (id, seq, reason, detail_sha) so that materially
+    # distinct conflict observations are each retained. An exact redelivery
+    # (same id, seq, reason, and detail content) dedups via the PK.
+    # A repeat conflict with new evidence gets a new row instead of being
+    # silently dropped by INSERT OR IGNORE on a bare id PK.
     c.execute("""CREATE TABLE IF NOT EXISTS quarantine(
-        id TEXT PRIMARY KEY, seq INTEGER NOT NULL, sender TEXT NOT NULL,
+        id TEXT NOT NULL, seq INTEGER NOT NULL, sender TEXT NOT NULL,
         key TEXT NOT NULL, reason TEXT NOT NULL, detail TEXT,
-        received_at INTEGER NOT NULL)""")
+        received_at INTEGER NOT NULL, detail_sha TEXT NOT NULL,
+        PRIMARY KEY (id, seq, reason, detail_sha))""")
+    _migrate_quarantine(c)
     c.execute("""CREATE TABLE IF NOT EXISTS delivered(
         id TEXT PRIMARY KEY, delivered_at INTEGER NOT NULL)""")
     c.execute("""CREATE TABLE IF NOT EXISTS meta(
@@ -170,6 +187,34 @@ def db():
     c.execute("INSERT OR IGNORE INTO meta(key, value) VALUES ('cursor', '0')")
     c.commit()
     return c
+
+def _migrate_quarantine(c):
+    """Migrate pre-fix quarantine tables (bare id PK, no detail_sha).
+
+    Old schema had PRIMARY KEY (id), which silently dropped repeat
+    conflict observations via INSERT OR IGNORE. This rebuilds the table
+    with the composite PK, preserving all existing rows.
+    """
+    cols = [r[1] for r in c.execute("PRAGMA table_info(quarantine)").fetchall()]
+    if 'detail_sha' in cols:
+        return  # already migrated
+    # Old schema: compute detail_sha for existing rows, rebuild with new PK.
+    c.execute("""CREATE TABLE quarantine_new(
+        id TEXT NOT NULL, seq INTEGER NOT NULL, sender TEXT NOT NULL,
+        key TEXT NOT NULL, reason TEXT NOT NULL, detail TEXT,
+        received_at INTEGER NOT NULL, detail_sha TEXT NOT NULL,
+        PRIMARY KEY (id, seq, reason, detail_sha))""")
+    for row in c.execute(
+            "SELECT id, seq, sender, key, reason, detail, received_at "
+            "FROM quarantine").fetchall():
+        detail_sha = hashlib.sha256(
+            (row[5] or '').encode('utf-8')).hexdigest()
+        c.execute("""INSERT OR IGNORE INTO quarantine_new
+            (id, seq, sender, key, reason, detail, received_at, detail_sha)
+            VALUES (?,?,?,?,?,?,?,?)""",
+            (*row, detail_sha))
+    c.execute("DROP TABLE quarantine")
+    c.execute("ALTER TABLE quarantine_new RENAME TO quarantine")
 
 def get_cursor(c):
     return int(c.execute("SELECT value FROM meta WHERE key='cursor'").fetchone()[0])
@@ -200,10 +245,15 @@ def admit_batch(c, messages, next_seq):
     there is no state where the cursor moved but the payloads didn't land.
 
     (sender, key) conflicts are never silently dropped. An exact duplicate
-    (same id AND same sha256 as the existing row) is a safe idempotent
-    redelivery and is ignored. Any other content under an existing
-    (sender, key) is quarantined with evidence identifying both sides;
-    the original row is preserved untouched.
+    (same id, same sha256, AND same type as the existing row) is a safe
+    idempotent redelivery and is ignored. The envelope type is part of
+    message identity: a changed type with the same id/payload/hash is a
+    conflict, not a duplicate. (Sequence is delivery metadata, not identity.)
+    Any other content under an existing (sender, key) is quarantined with
+    evidence identifying both sides; the original row is preserved untouched.
+    Repeat conflicts with materially new evidence each get their own
+    quarantine row (PK on id, seq, reason, detail_sha); exact redeliveries
+    dedup.
     """
     now = int(time.time())
     admitted, quarantined = 0, 0
@@ -216,21 +266,25 @@ def admit_batch(c, messages, next_seq):
             except ValueError as e:
                 expected = f'<uncanonicalizable: {e}>'
             if expected != m['sha256']:
-                c.execute("""INSERT OR IGNORE INTO quarantine
-                    (id, seq, sender, key, reason, detail, received_at)
-                    VALUES (?,?,?,?,?,?,?)""",
+                detail = json.dumps({'server_sha256': m['sha256'],
+                                     'local_sha256': expected},
+                                    sort_keys=True)
+                detail_sha = hashlib.sha256(detail.encode('utf-8')).hexdigest()
+                cur = c.execute("""INSERT OR IGNORE INTO quarantine
+                    (id, seq, sender, key, reason, detail, received_at,
+                     detail_sha)
+                    VALUES (?,?,?,?,?,?,?,?)""",
                     (mid, seq, sender, key, 'hash_mismatch',
-                     json.dumps({'server_sha256': m['sha256'],
-                                 'local_sha256': expected},
-                                sort_keys=True), now))
-                quarantined += 1
+                     detail, now, detail_sha))
+                quarantined += cur.rowcount
                 continue
             existing = c.execute(
-                "SELECT id, sha256 FROM inbox WHERE sender=? AND key=?",
+                "SELECT id, sha256, type FROM inbox WHERE sender=? AND key=?",
                 (sender, key)).fetchone()
             if existing is not None:
-                ex_id, ex_sha = existing
-                if ex_id == mid and ex_sha == m['sha256']:
+                ex_id, ex_sha, ex_type = existing
+                if (ex_id == mid and ex_sha == m['sha256']
+                        and ex_type == m['type']):
                     # Exact duplicate redelivery: idempotent, safe to ignore.
                     continue
                 # Conflicting valid content under the same (sender, key).
@@ -238,14 +292,19 @@ def admit_batch(c, messages, next_seq):
                 detail = json.dumps({
                     'existing_id': ex_id,
                     'existing_sha256': ex_sha,
+                    'existing_type': ex_type,
                     'incoming_id': mid,
                     'incoming_seq': seq,
                     'incoming_sha256': m['sha256'],
+                    'incoming_type': m['type'],
                 }, sort_keys=True)
+                detail_sha = hashlib.sha256(detail.encode('utf-8')).hexdigest()
                 cur = c.execute("""INSERT OR IGNORE INTO quarantine
-                    (id, seq, sender, key, reason, detail, received_at)
-                    VALUES (?,?,?,?,?,?,?)""",
-                    (mid, seq, sender, key, 'content_conflict', detail, now))
+                    (id, seq, sender, key, reason, detail, received_at,
+                     detail_sha)
+                    VALUES (?,?,?,?,?,?,?,?)""",
+                    (mid, seq, sender, key, 'content_conflict',
+                     detail, now, detail_sha))
                 quarantined += cur.rowcount
                 continue
             c.execute("""INSERT INTO inbox
