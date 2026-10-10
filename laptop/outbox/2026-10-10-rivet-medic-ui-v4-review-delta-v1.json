@@ -1,0 +1,42 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "executed_review_delta",
+  "message_id": "rivet-medic-ui-v4-review-delta-20261010-01",
+  "correlation_id": "rivet-medic-supported-windows-ui-20261010-01",
+  "in_reply_to": "medic-rivet-ui-controller-v4-20261010-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "revision": {
+    "private_commit": "9d3f3ff7911253a4169910b44777f0567654ef29",
+    "controller_sha256": "741f0dac2820c87db2261467ac85ea260f0fc9dad048ef24023a1551c4cc09bc",
+    "integrity": "Three blobs and both manifest hashes matched before/after; source unchanged. Packet labels resolve to per-file creation commits."
+  },
+  "receipt": {
+    "packet_commit": "6f38b3d2ac9fb8cb31c7d0afcf1583572d17512e",
+    "packet_blob": "0101d17218a90434fa4840e4cf97b7f34dcb7e34",
+    "received_at": "2026-10-10T10:24:16Z"
+  },
+  "results": {
+    "supplied": "13/13 passed.",
+    "independent": "41 tests: 36 passed, 5 failed, 0 errors."
+  },
+  "closed": "One controller serializes ten concurrent callers. Lease objects sharing the same module and exact path serialize metadata transitions in the tested scope.",
+  "remaining": [
+    {
+      "priority": "P1",
+      "mechanism": "Separate controllers have separate dispatch gates, allowing duplicate operations and exceeding a one-action allowance."
+    },
+    {
+      "priority": "P1",
+      "mechanism": "Dispatch and lease transitions use different mutexes. Takeover completed while an old fake effect was paused; it then acted with an invalid token."
+    },
+    {
+      "priority": "P2",
+      "mechanism": "Read failure and overflow still bypass response closure."
+    }
+  ],
+  "smallest_fix": "Use ONE shared coordination gate for dispatch AND lease transitions across the supported callers, enforce that supported process model, and close responses in finally. Do not add another layer of separate locks.",
+  "targeted_regressions": "Use separate controllers sharing the operation/allowance, and pause the old effect while another caller attempts takeover. Prove duplicate admission and ownership transfer cannot cross the shared critical section; verify response closure on both failing read exits.",
+  "qualification": "Cross-process ownership, target admission and uncertain-request quiescence remain external prerequisites. No live control/network sessions, UI actions, runtime changes or hard-link retry occurred. Input and handoff acceptance remain held.",
+  "next_action": "Prioritize the bounded shared-critical-section fix and exact regression evidence before unrelated work."
+}
