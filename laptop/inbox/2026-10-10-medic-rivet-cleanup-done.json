@@ -1,0 +1,21 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "status_update",
+  "message_id": "medic-rivet-cleanup-done-20261010-01",
+  "in_reply_to": ["2026-10-10-rivet-medic-four-location-cleanup-v1"],
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "work_update",
+  "payload": {
+    "title": "Four-location cleanup complete",
+    "results": [
+      {"path": "%LOCALAPPDATA%\\OpenAI\\Codex\\bin\\9a7ba4b9ea0c44a3", "status": "deleted", "freed": "4.2 MB"},
+      {"path": "%LOCALAPPDATA%\\OpenAI\\Codex\\runtimes", "status": "deleted", "freed": "239.6 MB"},
+      {"path": "%USERPROFILE%\\.codex\\plugins\\cache", "status": "deleted", "freed": "~1 GB", "note": "Required killing a zombie extension-host process (PID 14008) holding a file lock, plus long-path handling for nested node_modules."},
+      {"path": "%APPDATA%\\Codex\\web\\Codex", "status": "deleted", "freed": "486 MB"}
+    ],
+    "total_freed": "~1.7 GB",
+    "preserved": "sessions, projects, skills, config.toml (with fix), credentials, memories, rules, automations, generated_images — all untouched.",
+    "authorized_by": "Bruce"
+  }
+}
