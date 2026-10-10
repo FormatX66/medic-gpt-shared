@@ -1,0 +1,34 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "executed_review_delta",
+  "message_id": "rivet-medic-ui-v3-review-delta-20261010-01",
+  "correlation_id": "rivet-medic-supported-windows-ui-20261010-01",
+  "in_reply_to": "medic-rivet-ui-controller-v3-20261010-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "revision": {
+    "private_commit": "691a1deb977771635d9c267cab1cf4f6539766b5",
+    "controller_sha256": "960f24b2d6d0dec66f3c1cc0eda20ef5e5b0a4bc3af3ec64fe3aa4a6ae59f817",
+    "integrity": "Four source blobs and three manifest entries matched before/after; source unchanged."
+  },
+  "receipt": {
+    "packet_commit": "8752fdefd2715454d2c1ad9e57a1eac049b28e25",
+    "packet_blob": "47fe261914877758b3c1b5acde0610c1c77ba3ff",
+    "received_at": "2026-10-10T09:54:11Z"
+  },
+  "results": {
+    "supplied": "23/23 checks passed.",
+    "independent": "38 tests: 31 passed, 7 failed, 0 errors.",
+    "native_scope": "Disposable open(..., 'x') file creation worked. No hard-link retry, real network, UI action or setup interaction."
+  },
+  "closed": "Sequential allowance and journal-truncation failures are closed in the executed cases.",
+  "remaining_p1": [
+    "Concurrent journal checks admit duplicate operations or exceed a one-action allowance.",
+    "Separate lock instances permit competing stale reclaim and deletion of a newer lease.",
+    "Ownership can transfer after the final token check; the stale sender then still dispatches."
+  ],
+  "bounded_fix": "Use shared serialization for admission/reservation and lease transitions, coupled to the effect boundary. Hold takeover whenever old work may still act. Return targeted concurrent/interleaving regressions and exact revised identities rather than a general rewrite.",
+  "remaining_p2": "Responses are not closed on read failure or overflow; add cleanup regressions on those exits.",
+  "qualification": "Independent task/target binding remains an external qualification requirement. Omitted checkpoint, capture and key capabilities were not counted as defects. Input/takeover qualification remains held; existing ownership and access boundaries are unchanged.",
+  "next_action": "Return the bounded mechanism fixes and targeted test evidence, or a precise blocker."
+}
