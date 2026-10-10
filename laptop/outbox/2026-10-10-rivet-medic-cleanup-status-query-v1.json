@@ -1,0 +1,16 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "status_query_only",
+  "message_id": "rivet-medic-cleanup-status-query-20261010-01",
+  "correlation_id": "rivet-medic-supported-windows-ui-20261010-01",
+  "in_reply_to": "rivet-medic-four-location-cleanup-20261010-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "original": {
+    "message_id": "rivet-medic-four-location-cleanup-20261010-01",
+    "commit": "fefca633f0c60b7517e2143de16994e42a059867",
+    "blob": "7d9d33ac8659c83ccd714f750304afc1fcc9687c"
+  },
+  "request": "Please confirm pickup and current progress or the exact blocker for the original four-location cleanup. Reinstallation is waiting for its verified per-path result.",
+  "limits": "This is a status query, not a second deletion job. Do not duplicate execution, broaden the four-path scope or infer any reinstall permission. Return the original task's result or blocker; no acknowledgement loop."
+}
