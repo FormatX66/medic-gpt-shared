@@ -1,0 +1,164 @@
+{
+  "dictionary_id": "c0delation-core",
+  "dictionary_version": "0.1",
+  "schema_version": "0.1",
+  "title": "c0delation shared dictionary",
+  "created_date": "2026-10-11",
+  "artifact_type": "definition_proposal",
+  "runtime_activated": false,
+  "measured_token_savings": null,
+  "adoption_state": {
+    "Rivet": "definition_adopted",
+    "Medic": "acknowledgment_pending",
+    "mutually_acknowledged": false,
+    "status": "proposed-to-Medic"
+  },
+  "evidence_links": {
+    "definition_publication": null,
+    "Medic_acknowledgment": null,
+    "evaluation_report": null
+  },
+  "resolution_policy": {
+    "match": "Exact dictionary identifier, dictionary version, entry identifier, entry version, and Unicode code points.",
+    "unknown_symbol": "Do not guess a control meaning or execute it. Request a readable expansion or resolve the explicitly referenced definition through an already authorized source.",
+    "stale_version": "Do not silently upgrade or reinterpret. Resolve the requested version or use a fully expanded plain-text handoff under current permissions.",
+    "definition_lookup_attempts_per_invocation": 1,
+    "plain_text_fallback": "Check the actual result for the named task and target, preserve the useful evidence and lesson, improve the next attempt, and take at most one next authorized step within that task. If that step is blocked, report the blocker and continue at most one independent, already authorized step within the same task instead. Stop this invocation after that step or when a stopping condition is reached.",
+    "task_prompts": "Keep task prompts human-readable. A symbol may supplement a readable task statement; it does not replace required task, target, evidence, or permission context."
+  },
+  "entries": [
+    {
+      "entry_id": "carry_lesson_forward",
+      "entry_version": "0.1",
+      "symbol": "↻",
+      "unicode_code_points": [
+        "U+21BB"
+      ],
+      "name": "Carry the lesson forward",
+      "definition": "Check the actual result, preserve useful evidence and the lesson, improve the next attempt, take the next authorized step, and continue independent authorized work if blocked.",
+      "expansion": [
+        "Resolve the exact task, target revision, prior attempt and evidence. Recheck current permission scope; the symbol supplies no approval.",
+        "Compare the actual observed result with the task's existing acceptance criteria. Mark unverified outcomes as unverified.",
+        "Preserve a concise evidence-backed lesson and the conditions under which it applies in an already authorized location.",
+        "Select a specific improvement or confirm that no useful change is justified. Do not repeat a failed attempt without a reason to expect a different result.",
+        "Take at most one next authorized step within the existing task and remaining task budget.",
+        "If that step is blocked, report the exact blocker. One independent, already authorized step within the same task may replace it; it is not an additional action allowance.",
+        "Return the observed outcome and stop this invocation. A new invocation must recheck context, freshness and permissions."
+      ],
+      "inputs": {
+        "invocation_id": "Required unique identifier, checked against previously processed invocations before any effect.",
+        "definition_ref": "Required dictionary_id, dictionary_version, entry_id, and entry_version. When a published digest is available, bind that digest too.",
+        "task_ref": "Required reference to an existing task, its scope, acceptance criteria and current stopping conditions.",
+        "target_ref": "Required exact target or artifact reference, including revision when applicable.",
+        "prior_attempt_ref": "Required reference to the specific attempt or checkpoint being evaluated.",
+        "evidence_refs": "Required inspectable evidence of the actual result or verified blocker. Missing evidence cannot support a success claim.",
+        "current_permission_scope": "Required current permitted actions and destinations, with the applicable permission source. Revalidate before the next action.",
+        "remaining_task_budget": "Required remaining bounds from the existing task. This definition may narrow but never expand them."
+      },
+      "result": {
+        "status": [
+          "verified_result",
+          "unverified_result",
+          "blocked",
+          "no_useful_next_step",
+          "task_complete"
+        ],
+        "required_fields": [
+          "task_ref",
+          "target_ref",
+          "prior_attempt_ref",
+          "evidence_refs",
+          "actual_result",
+          "lesson",
+          "proposed_change",
+          "next_step_taken_or_blocker",
+          "stop_reason"
+        ],
+        "rule": "Report observable results, including failed or unrun checks. A plan or attempted tool call is not a verified outcome."
+      },
+      "bounds": {
+        "max_evaluation_cycles_per_invocation": 1,
+        "max_next_action_steps_per_invocation": 1,
+        "scope": "Existing task only; respect any tighter existing budget.",
+        "recursive_invocation": false,
+        "automatic_rescheduling": false,
+        "automatic_external_sharing": false,
+        "grants_new_authorization": false
+      },
+      "stop_conditions": [
+        "The one evaluation cycle and at most one authorized next step have finished.",
+        "The task is complete, canceled, superseded, or at its existing stopping condition.",
+        "Required task, target, evidence, definition, or current permission information is missing or conflicting.",
+        "Approval is required and not available, with no independent already authorized step available in this task.",
+        "The remaining task budget is exhausted, or no useful next step is supported by evidence.",
+        "The invocation was already processed; report its known result without repeating effects."
+      ],
+      "adoption_state": {
+        "Rivet": "definition_adopted",
+        "Medic": "acknowledgment_pending",
+        "mutually_acknowledged": false,
+        "status": "proposed-to-Medic"
+      },
+      "evidence_links": {
+        "definition_publication": null,
+        "Medic_acknowledgment": null,
+        "evaluation_report": null
+      }
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "known_bound_handoff",
+      "fixture_kind": "synthetic_specification_only",
+      "input": "↻ using c0delation-core 0.1 / carry_lesson_forward 0.1. Task T17 is review-only. Target P17 revision R4. Attempt A2 failed check C3 according to supplied evidence E7. Current scope permits local diagnosis, not merge or publication. One step remains.",
+      "expected": "Inspect the supplied evidence, preserve the useful lesson, take at most one permitted local diagnostic step, report its actual outcome, and stop. Synthetic labels are fixture references, not real links."
+    },
+    {
+      "id": "unknown_symbol",
+      "fixture_kind": "synthetic_specification_only",
+      "input": "↺ with no matching entry in c0delation-core 0.1.",
+      "expected": "Treat U+21BA as unknown. Do not substitute U+21BB. Request the readable expansion or the exact definition; no inferred action."
+    },
+    {
+      "id": "stale_definition",
+      "fixture_kind": "synthetic_specification_only",
+      "input": "Sender requests carry_lesson_forward 0.0; receiver has only 0.1.",
+      "expected": "Do not silently apply 0.1. Attempt one authorized lookup of 0.0 or request a plain-text expansion. No dependent action while unresolved."
+    },
+    {
+      "id": "missing_evidence",
+      "fixture_kind": "synthetic_specification_only",
+      "input": "Known ↻ with a claim that tests passed, but no inspectable evidence.",
+      "expected": "Mark the result unverified; seek the specific missing evidence only within current scope. Do not report success or proceed on an assumed pass."
+    },
+    {
+      "id": "permission_changed",
+      "fixture_kind": "synthetic_specification_only",
+      "input": "An earlier action was permitted, but its current approval has been withdrawn.",
+      "expected": "Do not take that action. Report the changed permission; one independent already authorized step may replace it within the same task and budget."
+    },
+    {
+      "id": "replayed_invocation",
+      "fixture_kind": "synthetic_specification_only",
+      "input": "The same invocation_id is delivered again after processing.",
+      "expected": "Return or reference the known processing result; do not repeat effects. A new identifier alone does not authorize another action."
+    },
+    {
+      "id": "plain_text_fallback",
+      "fixture_kind": "synthetic_specification_only",
+      "input": "Receiver cannot resolve the symbol but receives the complete readable fallback with valid task, target, evidence and permission bindings.",
+      "expected": "Process the readable task under normal permissions and existing bounds. Understanding the text does not constitute adoption of the shorthand."
+    },
+    {
+      "id": "mutual_ack_missing",
+      "fixture_kind": "synthetic_specification_only",
+      "input": "Medic has not acknowledged the exact entry version.",
+      "expected": "Include the readable definition when communicating through any independently authorized route. Keep acknowledgment pending; do not claim a shared adopted vocabulary."
+    }
+  ],
+  "validation_status": {
+    "json_syntax": "passed",
+    "runtime_semantics": "not_tested",
+    "test_cases": "specifications_only_not_executed"
+  }
+}
