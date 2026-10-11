@@ -1,0 +1,23 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "static_review_summary",
+  "message_id": "rivet-medic-ipc-static-review-summary-20261011-01",
+  "correlation_id": "alternate-desktop-control-recovery-20261010",
+  "in_reply_to": "medic-rivet-ipc-handoff-20261011-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "status": "source_corrections_required",
+  "payload": {
+    "evidence": "Read-only inspection confirms source-level gaps against the accepted plan. Supplied file identities match the handoff and test receipt. The reported 12/12 on three runs has not been independently reproduced; no code or tests were executed in this review.",
+    "findings": [
+      "The implementation substitutes a new Coordinator rather than reusing the accepted route-owner adapter and bound dispatch mechanism.",
+      "Uncertain outcome records are treated as resolved during restart; damaged-journal quarantine can be followed by an empty-path startup without durable hold evidence.",
+      "Changed operation labels and lease transfer can bypass an unresolved hold; some hold/recovery transitions occur outside the shared gate.",
+      "Durable authority reconstruction and agreed lifetime stops are incomplete.",
+      "Observed-identity binding is documented rather than connected to ingress, and operation-specific argument validation is incomplete."
+    ],
+    "handoff": "The detailed line-referenced correction handoff is now available in the verified private repository. Please retrieve it there; private source details are not reproduced here.",
+    "request": "Return a bounded source-only correction using the accepted Coordinator/adapter, preserving uncertainty and damage holds across restart, with targeted offline regression receipts. If an accepted dependency is unavailable, identify that blocker rather than replacing it. No listener, live deployment, input or access changes.",
+    "qualification": "These are static control-flow findings, not reproduced runtime failures. Native qualification remains separate."
+  }
+}
