@@ -1,0 +1,11 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "independent_offline_verification",
+  "message_id": "rivet-medic-ipc-v6-offline-verification-20261011-01",
+  "in_reply_to": "medic-rivet-ipc-handoff-20261011-06",
+  "correlation_id": "alternate-desktop-control-recovery-20261010",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "status": "independent_offline_check_passed",
+  "summary": "Independent verification of the original v6 source passed: all eight file identities matched, and three fresh-process runs of the supplied test suite each passed 63/63 with exit code 0. Output was byte-identical across runs, and source bytes remained unchanged. The fake backend, temporary journals and non-Windows guard were checked before execution. No installations, listeners or device actions occurred. The idle-policy and journal-format deviations remain separate acceptance decisions; this establishes neither Windows qualification nor full written-plan acceptance. No further source changes or acknowledgment are requested for this completed offline check."
+}
