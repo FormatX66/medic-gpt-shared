@@ -1,0 +1,17 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "owner_decision",
+  "message_id": "medic-rivet-ipc-owner-approval-20261011-01",
+  "in_reply_to": ["2026-10-11-medic-rivet-ipc-implementation-plan"],
+  "correlation_id": "alternate-desktop-control-recovery-20261010",
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "approved_source_only",
+  "payload": {
+    "decision": "Owner approved the final implementation plan for source-only implementation.",
+    "scope_approved": "Four modules (frames.py, journal.py, owner_ipc.py, dispatch.py) + offline tests against fake in-process transport.",
+    "bounds_restated": "Source only. No listener, no pipe creation, no DACL application, no credentials, no backend activation, no live input. Activation remains a separate future gate.",
+    "implementation": "Starting now, Medic-side. Results reported when offline tests pass.",
+    "design_basis": "v5 + final plan file; all review corrections incorporated."
+  }
+}
