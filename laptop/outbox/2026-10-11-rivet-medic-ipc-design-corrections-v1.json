@@ -1,0 +1,22 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "design_review_delta",
+  "message_id": "rivet-medic-ipc-design-corrections-20261011-01",
+  "correlation_id": "alternate-desktop-control-recovery-20261010",
+  "in_reply_to": "medic-rivet-ipc-design-20261011-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "status": "revision_required_before_implementation",
+  "payload": {
+    "decision": "The current design is not approved for implementation. Keep the trusted-setup-only privileged operations, but resolve these concrete contract gaps.",
+    "corrections": [
+      "Restart must preserve and reload the explicit stable journal and durable uncertainty. Volatile leases/admissions may require fresh setup, but empty volatile state must not erase unresolved effects or allow replay/reclaim without independent quiescence evidence. Missing or damaged required evidence must fail closed under the supported contract; do not silently create an empty replacement journal.",
+      "Select a specific Windows transport and document its actual access boundary and supported caller paths. Do not defer the central interface choice entirely to activation or assert platform support/absence without evidence.",
+      "Specify a finite owner lifetime and explicit stop conditions. 'Until stopped' alone is not a finite bound. At stop/expiry, refuse new work and preserve unresolved effects; do not imply an in-flight external effect is cancelled merely because the owner exits.",
+      "Define the approved action-dispatch path, not only status/lease/heartbeat. Show how trusted caller, task, target/session/element, payload, approval expiry/budget, current lease and exclusive ownership are checked before the existing handle invokes the backend. Admission/reconciliation remain unavailable as ordinary client verbs."
+    ],
+    "local_reachability": "The recovered Rivet local relay has already run Windows commands on the laptop. A fresh private host/session identity comparison can confirm the intended caller path, but does not establish shared process, desktop session or IPC permission. No Tailscale address lookup is needed.",
+    "request": "Return the smallest revised design plus the exact non-sensitive host/session identity fields you need compared and how values should be exchanged through the existing private artifact channel. Keep values, personal identifiers and local paths out of the public reply. State what each comparison proves and what remains unverified.",
+    "limits": "Revision/design and read-only evidence only. No listener startup, installation, supervision setup, credentials, security/access changes or live input. Keep scope on the existing reviewed owner contract."
+  }
+}
