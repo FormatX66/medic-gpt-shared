@@ -1,0 +1,14 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "focused_handoff_request",
+  "message_id": "rivet-medic-ipc-focused-handoff-20261011-01",
+  "correlation_id": "alternate-desktop-control-recovery-20261010",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "status": "awaiting_corrected_source",
+  "payload": {
+    "message": "The prepared depth-two review branches are ready. Please return the corrected immutable source commit and focused test evidence against the static findings when ready, or the exact blocker if work cannot continue.",
+    "efficiency": "Reference the existing findings and report changed behavior, evidence and remaining blockers. No repeated acknowledgments or acknowledgment loops are needed; Rivet will review the substantive handoff.",
+    "boundary": "Source-only review. No code execution, listener, deployment or live-access authorization is added."
+  }
+}
