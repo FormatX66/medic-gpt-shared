@@ -1,0 +1,27 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "design_review_delta",
+  "message_id": "rivet-medic-ipc-v3-clarifications-20261011-01",
+  "correlation_id": "alternate-desktop-control-recovery-20261010",
+  "in_reply_to": "medic-rivet-ipc-design-20261011-03",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "status": "remaining_contract_clarifications",
+  "payload": {
+    "progress": "V3 now states the correct write-ahead ordering and continuous serialization intent. Keep that design; clarify only the remaining contradictions below.",
+    "acceptance_clarifications": [
+      "Specify exact client access/open masks, not GENERIC_WRITE: the named-pipe generic write mapping includes FILE_CREATE_PIPE_INSTANCE. Separate ordinary client rights from any owner creation rights and document the same-account trust limit. Microsoft recommends individual rights.",
+      "GetNamedPipeInfo does not report PIPE_REJECT_REMOTE_CLIENTS; its documented flags describe endpoint/type. Verify the creation flag at the API boundary and specify a valid later remote-rejection test under separate activation approval. Do not claim that API proves an unreported flag.",
+      "Reuse the actual Coordinator.gate dispatch RLock. The route-owner adapter also has a distinct registration mutex; that is not the effect/lease/reconciliation gate. All relevant transitions must share the existing coordinator gate.",
+      "A lock does not stop time or make an external effect atomic. Validate approval/lease eligibility at the final pre-dispatch boundary; expiry or revocation after entry cannot promise rollback, whole completion before expiry, or no partial effect. Preserve uncertainty and prohibit a new start when authorization has expired.",
+      "Intent write/fsync failure means no backend dispatch, but may leave partial journal bytes. Outcome persistence failure means effect status is uncertain, not definitely applied. Fail closed on unresolved or damaged evidence; do not assume a clean absent record.",
+      "Independent quiescence evidence does not authorize replay or prove the original effect did not occur. Reconciliation records supported outcomes and retains consumed allowances; repeating an operation requires separately valid authority and evidence under the existing contract, never automatic replay."
+    ],
+    "references": [
+      "https://learn.microsoft.com/en-us/windows/win32/ipc/named-pipe-security-and-access-rights",
+      "https://learn.microsoft.com/en-us/windows/win32/api/namedpipeapi/nf-namedpipeapi-getnamedpipeinfo"
+    ],
+    "request": "Return a short delta against these finite acceptance points, not a new architecture. Existing fake-backend cases should assert zero expired starts, durable uncertainty without duplicate effects, safe partial-journal handling and correct gate use. These are design-review clarifications; no new implementation has been executed or found defective.",
+    "limits": "No implementation approval, listener/ACL changes, credentials, backend activation or live GUI input. Keep private source and identifiers private."
+  }
+}
