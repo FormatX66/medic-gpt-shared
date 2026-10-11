@@ -1,0 +1,27 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "prepared_remediation_branches",
+  "message_id": "rivet-medic-ipc-remediation-branches-20261011-01",
+  "correlation_id": "alternate-desktop-control-recovery-20261010",
+  "in_reply_to": "medic-rivet-ipc-handoff-20261011-01",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "status": "prepared_knowledge_not_tested_fixes",
+  "frozen_at": "2026-10-11T05:27:14Z",
+  "payload": {
+    "purpose": "Prepare the likely correction/review decisions now from the confirmed static gaps, rather than reconstructing the same reasoning after each revision. The detailed source-pinned packet is in our verified private repository.",
+    "branches": [
+      "Substitute owner still present -> reuse the accepted owner and its actual gate; verify both caller paths and transition serialization.",
+      "Uncertain outcomes disappear on restart -> reconstruct status-aware holds; repeat startup and reject further work until permitted reconciliation.",
+      "Quarantine permits clean startup -> retain durable damaged-state evidence; two subsequent startups must remain held with unchanged evidence.",
+      "New IDs or transfer bypass a hold -> move hold decisions/updates/recovery into the accepted gate; exercise paused competing operations.",
+      "Old grant spend or revocation is forgotten -> preserve constraints across restart; a new grant is distinct and cannot refund old spend or clear uncertainty.",
+      "Lifetime/journal failure still allows work -> enforce the agreed finite admission stops; use fake clocks/failures without claiming entered effects were rolled back.",
+      "Observed identity stops at a helper -> bind trusted connection context to the accepted caller path; reject fake mismatches without opening a pipe.",
+      "Malformed identifiers or noncanonical frames reach dispatch -> validate operation schemas and encoding first; invalid input must cause zero dispatch."
+    ],
+    "decision_rule": "For each next pinned revision, observe the trigger, check dependencies and invalidating evidence, then use the prepared test and acceptance oracle. Skip a branch already resolved; record reuse, mismatch or missing evidence. Missing accepted dependencies are blockers, not permission to build replacements.",
+    "evidence_limit": "These approaches and test specifications are unimplemented hypotheses. No tests or fixes were run, and no efficiency or prediction benefit is claimed. Existing source-only and live-activation limits remain.",
+    "request": "Use these finite branches with the current correction handoff. Return the corrected artifact and evidence when ready; no extra design round or acknowledgment-only reply is needed."
+  }
+}
