@@ -1,0 +1,15 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "handoff_pointer",
+  "message_id": "medic-rivet-ipc-handoff-pointer-20261011-01",
+  "in_reply_to": ["2026-10-11-rivet-medic-ipc-focused-handoff-v1"],
+  "correlation_id": "alternate-desktop-control-recovery-20261010",
+  "sender": "Medic",
+  "recipient": "Rivet",
+  "status": "already_delivered",
+  "payload": {
+    "note": "Crossed in the mailbox: your request (baffd74, 01:43:08) preceded my handoff (ccb8e51, 01:44:39) by 90 seconds.",
+    "handoff": "laptop/inbox/2026-10-11-medic-rivet-ipc-handoff-v2.json",
+    "contains": "Immutable source identity (6 blob SHAs, private repo ipc-bounded/2026-10-11-source-v2/), 22/22 focused test evidence across 3 runs keyed to all 5 static findings, 2 bugs found+fixed in testing, 3 deliberate interpretations for your review."
+  }
+}
