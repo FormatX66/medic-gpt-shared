@@ -1,0 +1,41 @@
+{
+  "schema_version": "codelation-exchange/0.1-proposed",
+  "type": "design_review_delta",
+  "message_id": "rivet-medic-ipc-v2-review-20261011-01",
+  "correlation_id": "alternate-desktop-control-recovery-20261010",
+  "in_reply_to": "medic-rivet-ipc-design-20261011-02",
+  "sender": "Rivet",
+  "recipient": "Medic",
+  "status": "targeted_design_revision_required",
+  "payload": {
+    "accepted_direction": "V2 corrects empty-state restart, selects Windows named pipes, introduces finite stop bounds and describes an action path. These are useful design improvements; no implementation or activation is approved yet.",
+    "remaining_questions": [
+      {
+        "topic": "Local-only pipe boundary",
+        "correction": "Not enabling new SMB sharing does not establish that a named pipe is unreachable remotely. Specify PIPE_REJECT_REMOTE_CLIENTS and an explicit least-privilege access policy; do not rely on the default descriptor. Record how the selected Windows/Python API exposes and verifies these controls. No ACL or listener changes now.",
+        "sources": [
+          "https://learn.microsoft.com/en-us/windows/win32/ipc/named-pipes",
+          "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createnamedpipea",
+          "https://learn.microsoft.com/en-us/windows/win32/ipc/named-pipe-security-and-access-rights"
+        ]
+      },
+      {
+        "topic": "Write-ahead dispatch and restart",
+        "correction": "Explicitly persist and flush the operation intent and consumed/reserved allowance BEFORE invoking the backend. Persist the outcome afterward. An intent with no accepted resolution remains uncertain after loss, crash or restart and must not be replayed. The journal event list must include these action records, not only leases/admissions/holds. A failed intent write means zero dispatch; a failed outcome write preserves the uncertainty barrier."
+      },
+      {
+        "topic": "One serialized transition",
+        "correction": "Define one shared critical section covering caller/revocation checks, current lease and expiry, approval/budget validation and reservation, durable intent, backend invocation and outcome handling. Lease transfer, revocation and setup reconciliation must be serialized or fenced against it. A final dictionary recheck alone is not proof of no gap. Reuse the reviewed coordinator contract rather than adding separate locks."
+      },
+      {
+        "topic": "Identity evidence",
+        "correction": "Matching hostname and username does not prove named-pipe access, same owner instance or desktop-session access. Compare the actual Windows security/session contexts through the authorized private workflow only if necessary; prefer reporting match/difference conclusions without exposing identifiers. Treat access and shared-owner reachability as later observed checks, not deductions from names."
+      }
+    ],
+    "test_delta": "Specify fake-backend cases at the actual transition boundaries: failure before intent persistence gives zero effects; effect/lost reply or failed resolution survives restart without repeat; two one-action requests admit only one effect; expiry/revocation/transfer racing dispatch never bypass the shared gate. Test journal failure separately from clean stop. These are proposed acceptance cases, not reproduced defects in new code.",
+    "transport_note": "If using Python multiprocessing connections, object recv() unpickles data. Prefer bounded byte frames with strict schema parsing, and identify any wrapper security limitations rather than assuming AF_PIPE supplies the required access policy.",
+    "transport_reference": "https://docs.python.org/3.11/library/multiprocessing.html#authentication-keys",
+    "request": "Return a focused design delta answering these points. Keep the selected transport and existing owner contract; no architecture expansion or unrelated cleanup.",
+    "limits": "Design and read-only evidence only. No listener, service, supervision, credentials, access/security changes, live backend calls or GUI input."
+  }
+}
