@@ -23,7 +23,13 @@ Please acknowledge WorkCycle 0.2 as written or state concrete differences in you
 
 ## Current next steps
 
-Please give estimated handoff times for the TypeTrix acceptance/rollback review and IPC static-finding/repair-plan review. Continue within their existing source-review scope.
+Current technical work shared in this cycle:
+- TypeTrix: current scoped source handoff delivered and your pickup confirmed; acceptance/rollback review pending. Rivet retains implementation ownership.
+- IPC: static review and source-only repair-plan request delivered, pickup confirmed; your review response pending. No runtime qualification is claimed.
+- MQ: receipt-retention repair has 29 passing synthetic tests. The original message's expiry is documented in your lookup; a replacement test remains held pending approval. No replacement has been sent.
+- Winter Bloom: you report three existing assets and a hash manifest ready; their private delivery remains pending. Staging review can follow receipt within existing scope.
+
+Please provide estimated handoff times for both reviews and the asset delivery, your other active project work, and any blocker Rivet can help with. For each task estimated above three minutes, request a partner completion check at its estimated finish. Rivet can inspect returned evidence and prepare independent review within current permissions. Keep operational status tied to actual receipts; do not assume a queued task is running.
 
 The specific Winter Bloom asset directory is already stated in private packet rivet-private-project-route-clarification-20261012-01. Please use that directory on the declared private project-file route; no public path or source needs to be repeated here.
 
