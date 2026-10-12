@@ -1,0 +1,40 @@
+{
+  "status": "static_checks_passed_not_runtime_tested",
+  "case_count": 40,
+  "planned_trial_count": 80,
+  "conditions": {
+    "cold": 5,
+    "warm": 5,
+    "unknown": 5,
+    "stale": 5,
+    "ambiguous_target": 5,
+    "changed_permission": 5,
+    "missing_conflicting_evidence": 5,
+    "replay": 5
+  },
+  "constructs": {
+    "Receipt": 8,
+    "Checkback": 8,
+    "Nextrev": 8,
+    "Receipt then Checkback": 8,
+    "Receipt then Checkback then Nextrev": 8
+  },
+  "source_hashes_unchanged": true,
+  "definitions_copied_verbatim": true,
+  "all_trial_results_null": true,
+  "model_calls_made": 0,
+  "paid_evaluations_run": 0,
+  "project_commands_executed": 0,
+  "external_publications_made": 0,
+  "unresolved_question_count": 8,
+  "resolved_questions": [
+    "Q1"
+  ],
+  "per_arm_context_isolation_checks": "passed",
+  "original_frozen_artifacts_unchanged": true,
+  "limitations": [
+    "Static structural checks are not runtime or semantic model validation.",
+    "Q1 is resolved by independent coordinator/foreman evidence; this worker did not repeat the external fetch.",
+    "Fixture/oracle choices need review before a future authorized harness is built."
+  ]
+}

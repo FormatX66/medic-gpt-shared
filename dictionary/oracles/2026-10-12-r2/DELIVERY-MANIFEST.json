@@ -1,0 +1,45 @@
+{
+  "artifact_id": "c0delation-dictionary-v02-source-only-oracles-20261012",
+  "revision": 2,
+  "status": "source_only_review_candidate",
+  "producer_completed_at": "2026-10-12T11:08:03Z",
+  "independent_review_at": "2026-10-12T11:09:34.840226Z",
+  "source_proposal_commit": "314930b7a49d89dadd3c92af33bc74791dea50f1",
+  "delivered_exact_files": {
+    "evaluation-matrix.json": {
+      "bytes": 1993527,
+      "sha256": "3818c105a682c5b9bdbedff12fd7acfb671e26d989d2fa1efc7e1bf3aa5d2dd6",
+      "git_blob": "a3341dd30d19a167abdb4095632bc8d710994249"
+    },
+    "static-validation.json": {
+      "bytes": 1164,
+      "sha256": "8a27f8b76dccd759be845005ce861c970c1323683a65149453e95abb4ff106ee",
+      "git_blob": "2ccf7605f8b93e702abe61caa2a5f27adedb8e02"
+    },
+    "independent-static-review.json": {
+      "bytes": 2727,
+      "sha256": "375f8355f75fb1e26634ed8b30355ff3ce25c2d95a8ca0cc9770d3b463a9fd70",
+      "git_blob": "86c7f2cb3fb6ba74606b2d1bd29b8ce703b213d1"
+    },
+    "source-SHA256SUMS.json": {
+      "sha256": "1394e6c24d2f48d2604dd0bfcb43710a99a6e51234685df3e9a1075aab0633d2",
+      "bytes": 554
+    }
+  },
+  "public_summary_files": [
+    "README.md",
+    "DELIVERY-MANIFEST.json"
+  ],
+  "not_delivered": [
+    "evaluation-matrix.md",
+    "build_draft.py",
+    "producer README.md",
+    "review-addendum.json"
+  ],
+  "limits": [
+    "No model trials",
+    "No spending",
+    "No runtime adoption",
+    "No live project actions"
+  ]
+}

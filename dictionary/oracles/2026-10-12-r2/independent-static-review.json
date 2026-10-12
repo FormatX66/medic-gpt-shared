@@ -1,0 +1,110 @@
+{
+  "review_scope": "Independent static and semantic artifact review only; no model evaluation or project runtime execution",
+  "artifact_json_sha256": "3818c105a682c5b9bdbedff12fd7acfb671e26d989d2fa1efc7e1bf3aa5d2dd6",
+  "artifact_md_sha256": "4773d95417d011a5ff3fe00f5b5a9e07012b99cd3f902a124617ef3e2a21791a",
+  "checked_at_utc": "2026-10-12T11:09:34.840226+00:00",
+  "checks": [
+    {
+      "check": "r2_manifest_all_six_files_match",
+      "pass": true
+    },
+    {
+      "check": "original_all_five_files_preserved",
+      "pass": true
+    },
+    {
+      "check": "40_unique_case_ids",
+      "pass": true
+    },
+    {
+      "check": "exact_5x8_cross_product",
+      "pass": true
+    },
+    {
+      "check": "80_unique_trial_ids",
+      "pass": true
+    },
+    {
+      "check": "source_definitions_and_frozen_v01_verbatim",
+      "pass": true
+    },
+    {
+      "check": "source_local_hashes_preserved",
+      "pass": true
+    },
+    {
+      "check": "runtime_results_all_null",
+      "pass": true
+    },
+    {
+      "check": "all80_complete_prompt_contexts_exact",
+      "pass": true
+    },
+    {
+      "check": "no_evaluator_or_cross_arm_keys_in80_contexts",
+      "pass": true
+    },
+    {
+      "check": "condition_detail_evaluator_only",
+      "pass": true
+    },
+    {
+      "check": "facts_identical_between_arms_except_definition_setup",
+      "pass": true
+    },
+    {
+      "check": "permission_event_outcome_rule_removed",
+      "pass": true
+    },
+    {
+      "check": "all40_oracles_unchanged_by_R1",
+      "pass": true
+    },
+    {
+      "check": "all80_oracles_have_outcome_guards",
+      "pass": true
+    },
+    {
+      "check": "baseline_exact_source_definitions_expansions",
+      "pass": true
+    },
+    {
+      "check": "unknown_stale_shorthand_no_requested_definition_packet",
+      "pass": true
+    },
+    {
+      "check": "known_shorthand_has_only_exact_source_definition_fields",
+      "pass": true
+    },
+    {
+      "check": "80_finite_budgets_zero_real_effects_tests_retries",
+      "pass": true
+    },
+    {
+      "check": "ordered_explicit_compound_bindings",
+      "pass": true
+    },
+    {
+      "check": "80_holds_owner_recipient_mode_pinned",
+      "pass": true
+    },
+    {
+      "check": "80_fixture_digest_values_correspond",
+      "pass": true
+    },
+    {
+      "check": "readable_matrix_contains_all40_case_ids",
+      "pass": true
+    },
+    {
+      "check": "Q1closed_without_Q2adoption_claim",
+      "pass": true
+    }
+  ],
+  "pass_count": 24,
+  "fail_count": 0,
+  "limits": [
+    "Structural checks do not prove model accuracy, token savings, latency, runtime adoption or behavioral enforcement.",
+    "Final root acceptance and Medic independent critique remain separate."
+  ]
+}
