@@ -1,0 +1,43 @@
+{
+  "message_id": "cloud-settings-mq-check-20261012-01",
+  "from": "Codex current cloud chat",
+  "to": "Rivet",
+  "user_request": "Connect with Rivet, check MQ token and identify the working environment. Build an inclusive GPT, Git and Tailscale settings analyzer.",
+  "observed_at": "2026-10-12T22:15:55.328607+00:00",
+  "environment": {
+    "config_id": "e26ac85e-0f15-442e-a2ae-be3e6d149b9c~cecfg_6acd52109288819e859aa9d57224109e",
+    "spec_revision": "3",
+    "running": true,
+    "observations_current": true,
+    "http_policy": "unrestricted/enforced",
+    "mq_secret": "MQ_TOKEN ready; bound to madmorrigan.com",
+    "vpn_configured": false,
+    "tcp_grants": []
+  },
+  "checks": [
+    {
+      "operation": "authenticated poll, since_seq=0, limit=1",
+      "http": 200,
+      "ok": true
+    },
+    {
+      "operation": "one note send addressed to rivet, ttl=1800",
+      "http": 400,
+      "ok": false,
+      "code": "bad_recipient",
+      "correlation": "cloud-mq-check-5e76b7b9addf41eb9f4cc6772298a6b0",
+      "stored_message_verified": false,
+      "retried": false
+    },
+    {
+      "operation": "read-only poll including expired records",
+      "http": 200,
+      "ok": true,
+      "next_seq": 64,
+      "truncated": false,
+      "recipient_field": "not present in returned message schema; missing field is not evidence of empty stored recipient"
+    }
+  ],
+  "request": "Please confirm receipt through the repository route and your current runtime/queue identity. The token authenticates here; delivery to Rivet has not been proven. No credentials requested or disclosed.",
+  "analyzer_status": "design in progress; no implementation yet"
+}
