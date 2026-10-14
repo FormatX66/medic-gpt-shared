@@ -31,6 +31,18 @@ module constant to itself. Run against the round-1 module
 (af731fb3...), the round-2 tests fail; see
 IMPL-FIX-REPORT-20261014-ROUND2.md.
 
+Round-3 fix pass 2026-10-14 (Rivet verdict
+rivet-crew-round2-verdict-20261014-2022-v1; round-2 fixes 1, 3, 4, 6
+and the rest of 2/5 accepted as addressed): TestRound3Residuals
+covers the two residual races — (1) fencing retained through the
+cancellation interval (open effects or an unconfirmed cancellation
+on another revision) for the admission-effect path and for the start
+gate of an already-admitted later revision; (2) a late admission
+callback, clean or failed, preserving an authoritative resolution
+and a confirmed cancellation that landed while it was outstanding.
+Run against the round-2 module (e36d46be...), the round-3 tests
+fail; see IMPL-FIX-REPORT-20261014-ROUND3.md.
+
 Run: python3 test_crew_queue_v2.py
 """
 
@@ -1329,6 +1341,175 @@ class TestFix5Round2CrossRevisionFencing(QueueTestBase):
             self.q.admit("task-a", 2, {"v": 2}, route="doc",
                          owner="medic", now=T0 + 5,
                          completion_deadline_ts=T0 + 9000)
+
+
+class TestRound3Residuals(QueueTestBase):
+    """Round-3 (Rivet verdict rivet-crew-round2-verdict-20261014-2022
+    -v1): the two residual races left after round 2. Residual 1: the
+    round-2 fence keyed off revision STATE, but cancel_request moves
+    a revision to cancellation-requested without resolving its
+    effects — fencing must persist through that interval while open
+    effects or an unconfirmed cancellation remain. Residual 2: an
+    admission callback still outstanding while its effect is
+    authoritatively resolved and the cancellation confirmed must not
+    reopen the ledger when it finally completes — in either branch,
+    including the returned status."""
+
+    # ---- residual 1: fencing through the cancellation interval
+
+    def test_cancellation_interval_fences_second_effect(self):
+        q = self.q
+
+        def timeout(effect_id):
+            raise TimeoutError("admission effect timed out")
+
+        # Revision 1's admission effect times out: uncertain
+        # ownership, effect unresolved.
+        res = q.admit_with_effect(
+            "task-r3a", 1, {"v": 1}, route="mq", owner="medic",
+            attempter="medic", effect_fn=timeout, effect_id="eff-r3a",
+            now=T0, completion_deadline_ts=T0 + 9000)
+        self.assertEqual(res["status"], "admission-uncertain")
+        self.assertEqual(q.get_rev("task-r3a", 1)["effects"][0]["state"],
+                         "uncertain")
+        # The cancellation lands WITHOUT resolving the effect. The
+        # state string leaves the round-2 fence's vocabulary — the
+        # interval this regression exists for.
+        q.cancel_request("task-r3a", revision=1, by="bruce", now=T0 + 1)
+        rev1 = q.get_rev("task-r3a", 1)
+        self.assertEqual(rev1["state"], "cancellation-requested")
+        self.assertEqual(rev1["effects"][0]["state"], "uncertain")
+        self.assertIsNone(rev1["cancellation"]["confirmed_ts"])
+        # Revision 2's admission effect must NEVER run.
+        invoked = []
+
+        def second(effect_id):
+            invoked.append(effect_id)
+
+        with self.assertRaises(OwnershipFenced):
+            q.admit_with_effect(
+                "task-r3a", 2, {"v": 2}, route="mq", owner="medic",
+                attempter="medic", effect_fn=second,
+                effect_id="eff-r3a-2", now=T0 + 2,
+                completion_deadline_ts=T0 + 9000)
+        self.assertEqual(invoked, [])
+        self.assertNotIn("2", q.get_item("task-r3a")["revisions"])
+        # Plain admission of revision 2 is fenced in the interval too.
+        with self.assertRaises(OwnershipFenced):
+            q.admit("task-r3a", 2, {"v": 2}, route="doc", owner="medic",
+                    now=T0 + 2, completion_deadline_ts=T0 + 9000)
+        # Resolve the effect and confirm the cancellation: ownership
+        # is safely resolved and the fence lifts.
+        q.reconcile_effect("task-r3a", "eff-r3a", found=True, now=T0 + 3)
+        q.cancel_confirm("task-r3a", revision=1, by="bruce", now=T0 + 4)
+        self.assertEqual(q.get_rev("task-r3a", 1)["state"], "canceled")
+        res2 = q.admit("task-r3a", 2, {"v": 2}, route="doc",
+                       owner="medic", now=T0 + 5,
+                       completion_deadline_ts=T0 + 9000)
+        self.assertEqual(res2["status"], "admitted")
+
+    def test_cancellation_interval_fences_start_of_admitted_revision(self):
+        q = self.q
+        # Both revisions admitted while neither owns execution.
+        q.admit("task-r3b", 1, {"v": 1}, route="doc", owner="medic",
+                now=T0, completion_deadline_ts=T0 + 9000)
+        q.admit("task-r3b", 2, {"v": 2}, route="doc", owner="medic",
+                now=T0 + 1, completion_deadline_ts=T0 + 9000)
+        # Revision 1 takes an externally visible effect (uncertain
+        # ownership recorded against it) and is then cancelled — the
+        # request lands without resolving the effect.
+        q.register_effect("task-r3b", revision=1, effect_id="eff-r3b",
+                          owner="medic", uncertain=True, now=T0 + 2)
+        q.cancel_request("task-r3b", revision=1, by="bruce", now=T0 + 3)
+        rev1 = q.get_rev("task-r3b", 1)
+        self.assertEqual(rev1["state"], "cancellation-requested")
+        self.assertEqual(rev1["effects"][0]["state"], "uncertain")
+        # The already-admitted later revision may not start: fenced
+        # at can_dispatch and at the start gate.
+        self.assertFalse(q.can_dispatch("task-r3b", revision=2))
+        with self.assertRaises(OwnershipFenced):
+            q.start("task-r3b", revision=2, now=T0 + 4)
+        self.assertEqual(q.get_rev("task-r3b", 2)["state"], "admitted")
+        # Resolve revision 1 terminally; revision 2 may now start.
+        q.reconcile_effect("task-r3b", "eff-r3b", found=True, revision=1,
+                           now=T0 + 5)
+        q.cancel_confirm("task-r3b", revision=1, by="bruce", now=T0 + 6)
+        self.assertEqual(q.get_rev("task-r3b", 1)["state"], "canceled")
+        self.assertTrue(q.can_dispatch("task-r3b", revision=2))
+        q.start("task-r3b", revision=2, now=T0 + 7)
+        self.assertEqual(q.get_rev("task-r3b", 2)["state"], "started")
+
+    # ---- residual 2: late callback preserves authoritative state
+
+    def _resolve_and_confirm(self, q, task, effect_id, observed):
+        """Inside the outstanding admission callback: request the
+        cancellation, resolve the pending effect against destination
+        evidence, then confirm the cancellation — all BEFORE the
+        callback completes. The state of record at that instant is
+        captured in `observed`."""
+        q.cancel_request(task, by="bruce", now=T0 + 1)
+        q.reconcile_effect(task, effect_id, found=True,
+                           detail="destination journal has it",
+                           now=T0 + 2)
+        q.cancel_confirm(task, by="bruce", now=T0 + 3)
+        rev = q.get_rev(task)
+        observed["state"] = rev["state"]
+        observed["effect_state"] = rev["effects"][0]["state"]
+
+    def test_late_success_callback_preserves_resolution(self):
+        q = self.q
+        observed = {}
+
+        def effect_fn(effect_id):
+            self._resolve_and_confirm(q, "task-r3c", effect_id, observed)
+            return None  # the callback then returns cleanly, late
+
+        res = q.admit_with_effect(
+            "task-r3c", 1, {"job": "send"}, route="mq", owner="medic",
+            attempter="medic", effect_fn=effect_fn, effect_id="eff-r3c",
+            now=T0, completion_deadline_ts=T0 + 9000)
+        # The authoritative sequence really did complete first.
+        self.assertEqual(observed, {"state": "canceled",
+                                    "effect_state": "resolved"})
+        # The late clean callback reopened nothing: effect stays
+        # resolved, item stays canceled, returned status is the
+        # terminal state of record.
+        self.assertEqual(res["status"], "canceled")
+        rev = q.get_rev("task-r3c")
+        self.assertEqual(rev["state"], "canceled")
+        self.assertEqual(rev["effects"][0]["state"], "resolved")
+        self.assertIsNotNone(rev["cancellation"]["confirmed_ts"])
+        # Recovery has nothing to reopen either.
+        self.assertEqual(q.recover_cancellations(now=T0 + 9), [])
+        self.assertEqual(q.get_rev("task-r3c")["effects"][0]["state"],
+                         "resolved")
+
+    def test_late_exception_callback_preserves_resolution(self):
+        q = self.q
+        observed = {}
+
+        def effect_fn(effect_id):
+            self._resolve_and_confirm(q, "task-r3d", effect_id, observed)
+            raise TimeoutError("callback reports failure, late")
+
+        res = q.admit_with_effect(
+            "task-r3d", 1, {"job": "send"}, route="mq", owner="medic",
+            attempter="medic", effect_fn=effect_fn, effect_id="eff-r3d",
+            now=T0, completion_deadline_ts=T0 + 9000)
+        self.assertEqual(observed, {"state": "canceled",
+                                    "effect_state": "resolved"})
+        # The late failure must not overwrite resolved with uncertain
+        # (the round-2 exception branch did exactly that), nor disturb
+        # the confirmed cancellation; the returned status is the
+        # terminal state of record.
+        self.assertEqual(res["status"], "canceled")
+        rev = q.get_rev("task-r3d")
+        self.assertEqual(rev["state"], "canceled")
+        self.assertEqual(rev["effects"][0]["state"], "resolved")
+        self.assertIsNotNone(rev["cancellation"]["confirmed_ts"])
+        self.assertEqual(q.recover_cancellations(now=T0 + 9), [])
+        self.assertEqual(q.get_rev("task-r3d")["effects"][0]["state"],
+                         "resolved")
 
 
 if __name__ == "__main__":
