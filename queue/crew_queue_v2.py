@@ -385,7 +385,10 @@ class CrewQueue:
     # execution). While any revision of a task owns execution, no OTHER
     # revision may be admitted, take an effect, or start: exactly one
     # executing ownership per task, until that ownership is safely
-    # resolved (a terminal state).
+    # resolved (a terminal state). Round-3 (verdict 2022, residual 1)
+    # extends the fence in _ownership_fence: open effects and an
+    # unconfirmed cancellation also retain ownership, covering the
+    # cancellation interval the state strings alone miss.
     @staticmethod
     def _owning_state(rev):
         if rev["state"] in ("started", "admission-uncertain"):
@@ -404,6 +407,25 @@ class CrewQueue:
             if other["revision"] == revision:
                 continue
             owning = self._owning_state(other)
+            if owning is None:
+                # Round-3 (verdict 2022, residual 1): ownership also
+                # persists through the CANCELLATION INTERVAL. The
+                # state-based check above goes blind there:
+                # cancel_request rewrites the state string to
+                # cancellation-requested WITHOUT resolving the
+                # revision's effects, so a timed-out admission effect
+                # stopped fencing at exactly the moment the earlier
+                # work was least resolved, and a later revision could
+                # invoke a second effect. Fencing is retained while
+                # another revision holds open (pending/dispatched/
+                # uncertain) effects, or while a cancellation of that
+                # work remains unconfirmed.
+                if self._open_effects(other):
+                    owning = "open-effects"
+                elif other["cancellation"] is not None and \
+                        other["cancellation"].get("confirmed_ts") \
+                        is None:
+                    owning = "cancellation-unresolved"
             if owning is not None:
                 return ("task %s revision %d is %s; revision %d may "
                         "not be admitted, take an effect, or start "
@@ -519,6 +541,21 @@ class CrewQueue:
                    result["rejected_sha256"]))
         return result
 
+    @staticmethod
+    def _preserved_callback_status(rev):
+        """The status of record after a late admission callback whose
+        effect was authoritatively resolved during the callback window
+        (round-3 residual 2): a terminal state stands exactly as it is;
+        a still-unconfirmed cancellation reports
+        cancellation-requested; otherwise the revision's current state
+        is the truth (reconciliation already promoted it, e.g. to
+        admitted). The callback's own outcome never rewrites it."""
+        if rev["state"] in TERMINAL_STATES:
+            return rev["state"]
+        if rev["cancellation"] is not None:
+            return "cancellation-requested"
+        return rev["state"]
+
     def admit_with_effect(self, task_id, revision, payload, route, owner,
                           attempter, effect_fn, effect_id=None, now=None,
                           pickup_deadline_ts=None,
@@ -527,7 +564,11 @@ class CrewQueue:
         has taken effect (section 4). Intent is persisted FIRST with the
         item in admission-uncertain and the effect owned by the attempter;
         only a clean effect_fn return finalizes the admission. A timeout
-        leaves ownership with the attempter and never permits replay."""
+        leaves ownership with the attempter and never permits replay.
+        If the effect is authoritatively resolved while the callback is
+        still outstanding (round-3 residual 2), the late callback —
+        clean or failed — preserves that resolution and any terminal
+        state the item has since reached."""
         ts = _now(now)
         effect_id = effect_id or ("eff-" + uuid.uuid4().hex[:16])
         with self._txn() as st:
@@ -579,22 +620,59 @@ class CrewQueue:
             with self._txn() as st:
                 _, rev = self._get_rev(st, task_id, revision)
                 eff = self._find_effect(rev, effect_id)
-                eff["state"] = "uncertain"
-                eff["error"] = type(exc).__name__
-                self._record(rev, "effect-uncertain", ts,
-                             effect_id=effect_id, attempt_id=rev[
-                                 "current_attempt_id"],
-                             payload_sha256=rev["payload_sha256"],
-                             owner=attempter)
-            return {"status": "admission-uncertain", "task_id": task_id,
+                if eff["state"] == "resolved":
+                    # Round-3 (verdict 2022, residual 2): while this
+                    # callback was outstanding, the effect was
+                    # AUTHORITATIVELY resolved against destination
+                    # evidence — and any cancellation on the item may
+                    # since have been confirmed to its terminal state.
+                    # The late failure must not reopen the ledger by
+                    # overwriting resolved with uncertain, nor disturb
+                    # that terminal state. The callback outcome is
+                    # recorded as evidence only; the state of record
+                    # stands, and is also the returned status.
+                    self._record(rev, "effect-callback", ts,
+                                 outcome="error-after-resolution",
+                                 error=type(exc).__name__,
+                                 effect_id=effect_id,
+                                 attempt_id=rev["current_attempt_id"],
+                                 payload_sha256=rev["payload_sha256"],
+                                 owner=attempter)
+                    status = self._preserved_callback_status(rev)
+                else:
+                    eff["state"] = "uncertain"
+                    eff["error"] = type(exc).__name__
+                    self._record(rev, "effect-uncertain", ts,
+                                 effect_id=effect_id, attempt_id=rev[
+                                     "current_attempt_id"],
+                                 payload_sha256=rev["payload_sha256"],
+                                 owner=attempter)
+                    status = "admission-uncertain"
+            return {"status": status, "task_id": task_id,
                     "revision": int(revision), "effect_id": effect_id,
                     "attempt_id": rev["current_attempt_id"]}
         with self._txn() as st:
             _, rev = self._get_rev(st, task_id, revision)
             eff = self._find_effect(rev, effect_id)
-            eff["state"] = "dispatched"
             attempt_id = rev["current_attempt_id"]
-            if rev["cancellation"] is not None:
+            if eff["state"] == "resolved":
+                # Round-3 (verdict 2022, residual 2): the clean
+                # callback lands AFTER an authoritative resolution of
+                # its effect (and possibly a confirmed cancellation).
+                # It finalizes NOTHING: overwriting resolved with
+                # dispatched would reopen the ledger under a terminal
+                # item, where cancellation recovery no longer looks.
+                # Preserve the resolution and the revision's state —
+                # terminal states included — record the callback as
+                # evidence, and report the state of record.
+                self._record(rev, "effect-callback", ts,
+                             outcome="success-after-resolution",
+                             effect_id=effect_id, attempt_id=attempt_id,
+                             payload_sha256=rev["payload_sha256"],
+                             owner=owner, route=route)
+                status = self._preserved_callback_status(rev)
+            elif rev["cancellation"] is not None:
+                eff["state"] = "dispatched"
                 # Round-2 fix 2: a cancellation requested while the
                 # effect was in flight (the callback runs outside the
                 # store lock, so a cancel_request can land in that
@@ -614,6 +692,7 @@ class CrewQueue:
                              cancellation_pending=True)
                 status = "cancellation-requested"
             else:
+                eff["state"] = "dispatched"
                 rev["state"] = "admitted"
                 rev["attempts"][-1]["state"] = "admitted"
                 self._record(rev, "admission", ts, route=route,
