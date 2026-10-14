@@ -25,7 +25,38 @@ absent (verification/acceptance stay None).
 Payload: the payload of an imported revision is the v1 item dict,
 verbatim. Its sha256 (module canonical form) is the revision's
 payload_sha256, and the verbatim item is preserved inside the import
-record so the hash can be recomputed from the store alone.
+record (the record's v1_item field) so the hash can be recomputed
+from the store alone. Revisions carry no payload field of their
+own — payload_sha256 plus the import record are the whole story.
+
+Operational history (correction fix 2): history is NOT carried as
+metadata only — the v2 watcher consumes records and escalation keys,
+so imports write the operational forms, import-marked: an item whose
+v1 history shows pickup (a pickup_evidence string, or a picked-up /
+done state) gets a "pickup" record (imported=True, the v1 evidence
+attached), which is exactly what the watcher's pickup check reads;
+an item v1 marked missed gets import-marked entries in the
+revision's escalations list keyed exactly as the watcher computes
+them for the imported deadlines, because the v1 escalation for
+those deadlines already fired pre-migration. Deadlines set after
+import carry new keys and escalate normally.
+
+Claim-less continuation (correction fix 3): imported revisions in
+assigned / reported-complete carry no section-11 completion claim,
+and the live API rightly rejects start / complete_claim / verify on
+revision 1 — that rejection is the safety property. The importer
+flags them CLAIM-LESS, marks them with an import_continuation
+record-field, and prints the continuation path in the mapping
+report: admit revision 2 through the public API with the preserved
+v1 payload and fresh deadlines, then run the normal lifecycle on
+revision 2. No claim is ever fabricated on revision 1.
+
+Target classification (correction fix 1): whether a pre-existing
+apply target is empty / this exact import / foreign is decided
+UNDER the destination lock, on the store as loaded inside the
+module's transaction — never from a pre-check outside the lock,
+whose result could go stale before the write and whose loaded
+contents the old code then cleared sight unseen.
 
 State mapping (v1 effective state = "status" when present and non-empty,
 else "state"; the status field is the later overlay in every dual-field
@@ -84,8 +115,8 @@ import time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from crew_queue_v2 import (  # noqa: E402
-    CrewQueue, QUEUE_LANE_CADENCE_S, SPEC_SHA256, _attempt_id,
-    canonical_bytes, payload_sha256,
+    CrewQueue, QUEUE_LANE_CADENCE_S, SPEC_SHA256, StoreCorrupt,
+    _attempt_id, canonical_bytes, payload_sha256,
 )
 
 LIVE_STORE_PATH = os.path.expanduser(
@@ -95,6 +126,16 @@ LIVE_STORE_PATH = os.path.expanduser(
 IMPORTER_ID = "crew_queue_import_v1"
 IMPORT_REVISION = 1
 
+CONTINUATION_DETAIL = (
+    "claim-less import: revision 1 carries no section-11 completion "
+    "claim, and the live API rightly rejects start / complete_claim "
+    "/ verify on it. Continuation path: admit revision 2 through "
+    "the public API (CrewQueue.admit) with the preserved v1 payload "
+    "and fresh deadlines, then pickup -> start -> complete_claim "
+    "-> verify -> accept on revision 2. Revision 1 remains the "
+    "untouched historical record; no claim is ever fabricated on "
+    "it.")
+
 
 class ImportFailure(Exception):
     """Input is invalid, corrupt, or in conflict. Nothing is written."""
@@ -102,6 +143,12 @@ class ImportFailure(Exception):
 
 class ImportRefusal(Exception):
     """The requested write target is forbidden. Nothing is written."""
+
+
+class _NoOpImport(Exception):
+    """Internal control flow: raised INSIDE the destination
+    transaction when the target already holds this exact import, so
+    the transaction aborts and the file stays byte-unchanged."""
 
 
 # ------------------------------------------------------------------ input
@@ -137,10 +184,18 @@ def load_v1(path):
             raise ImportFailure(
                 "v1 item #%d in %s is not an object; failing closed"
                 % (i, path))
-        if not item.get("id"):
+        iid = item.get("id")
+        if not isinstance(iid, str) or not iid.strip():
+            # Correction fix 6: ids are validated HERE, before
+            # anything is built or written. A numeric id previously
+            # passed a truthiness check, the target store was
+            # written, and only the post-write lookup failed (JSON
+            # object keys are strings); list/dict ids raised
+            # unhandled errors downstream.
             raise ImportFailure(
-                "v1 item #%d in %s has no id; it cannot be keyed and "
-                "will not be silently dropped" % (i, path))
+                "v1 item #%d in %s has an unusable id (%r); ids must "
+                "be non-empty strings — it cannot be keyed and will "
+                "not be silently dropped" % (i, path, iid))
     return data
 
 
@@ -260,12 +315,25 @@ def analyze(v1):
         if _as_ts(item.get("eta_ts")) is None and \
                 _as_ts(item.get("escalate_ts")) is None:
             flags.append("NO-DEADLINE")
+        eff_value, _eff_field = _effective(item)
+        pickup_happened = bool(
+            isinstance(item.get("pickup_evidence"), str)
+            and item["pickup_evidence"].strip()) or \
+            eff_value in ("picked-up", "done") or \
+            item.get("state") == "picked-up"
+        continuation = None
+        if state in ("assigned", "reported-complete") \
+                and not unresolved:
+            flags.append("CLAIM-LESS")
+            continuation = CONTINUATION_DETAIL
         entries.append({
             "id": task_id, "duplicate": False, "item": item,
             "v1_state": item.get("state"), "v1_status": item.get(
                 "status"),
             "v2_state": state, "unresolved": unresolved,
-            "flags": flags, "detail": detail, "sha256": sha})
+            "flags": flags, "detail": detail, "sha256": sha,
+            "pickup_happened": pickup_happened,
+            "continuation": continuation})
     if conflicts:
         raise ImportFailure(
             "duplicate id(s) with differing payloads are rejected "
@@ -340,6 +408,42 @@ def build_store(v1, entries, source_path, source_sha256, import_ts):
                 "requested_ts": created, "by": IMPORTER_ID,
                 "confirmed_ts": None, "pre_request_state": "admitted",
                 "import_asserted": True}
+        if entry.get("pickup_happened"):
+            # Correction fix 2: the watcher consumes pickup RECORDS,
+            # so the import writes one — import-marked, carrying the
+            # v1 evidence, never disguised as a live pickup call.
+            CrewQueue._record(
+                rev, "pickup", import_ts, by=owner,
+                attempt_id=attempt_id, payload_sha256=sha,
+                imported=True,
+                v1_evidence=item.get("pickup_evidence"),
+                detail="pickup occurred pre-migration per the v1 "
+                       "record (state / pickup evidence); import-"
+                       "marked operational history so the watcher "
+                       "consumes it — the v1 pickup time is not "
+                       "recorded in v1 and is not invented here")
+        if "MISSED-CARRIED" in entry["flags"]:
+            # Correction fix 2: mark the escalation keys the watcher
+            # computes for the imported deadlines as already fired
+            # (they fired in v1 — that is what 'missed' means), so
+            # nothing re-fires. New post-import deadlines carry new
+            # keys and escalate normally.
+            for kind in ("pickup", "completion"):
+                for dl in rev["deadlines"][kind]:
+                    rev["escalations"].append({
+                        "key": [task_id, IMPORT_REVISION, kind,
+                                dl["ts"], rev["material_epoch"]],
+                        "notification_id": None, "ts": import_ts,
+                        "imported": True,
+                        "detail": "the v1 ETA escalation for this "
+                                  "deadline already fired pre-"
+                                  "migration (v1 state 'missed'); "
+                                  "marked so the watcher does not "
+                                  "re-fire it"})
+        if entry.get("continuation"):
+            rev["import_continuation"] = {
+                "path": "new-revision",
+                "detail": entry["continuation"]}
         if entry["unresolved"]:
             rev["import_unresolved"] = {
                 "v1_state": entry["v1_state"],
@@ -391,6 +495,8 @@ def format_report(source_path, source_sha256, entries, mode,
                ("flags=" + ",".join(e["flags"]) + "  ") if e["flags"]
                else ""))
         lines.append("      %s" % e["detail"])
+        if e.get("continuation"):
+            lines.append("      CONTINUATION: %s" % e["continuation"])
     unresolved = [e for e in entries if e.get("unresolved")]
     if unresolved:
         lines.append("UNRESOLVED (carried visibly, non-terminal):")
@@ -420,20 +526,24 @@ def _refuse_live_or_source(source, target):
             "the input" % target)
 
 
-def _existing_target_state(target):
-    """Classify a pre-existing apply target: 'v2' (parsed store dict),
-    'foreign', or 'corrupt'. Read-only."""
-    try:
-        with open(target, "r", encoding="utf-8") as fh:
-            data = json.load(fh)
-    except ValueError:
-        return "corrupt", None
-    except OSError:
-        return "corrupt", None
-    if isinstance(data, dict) and data.get("version") == 2 and \
-            isinstance(data.get("items"), dict):
-        return "v2", data
-    return "foreign", None
+def _classify_loaded_store(st):
+    """Classify a store dict AS LOADED INSIDE the destination
+    transaction (correction fix 1): 'empty' — a fresh store with
+    nothing in it, safe to fill; 'v2' — a populated v2 store;
+    'foreign' — anything else (a v1-shaped dict, an unrecognized
+    shape). The classification is only ever applied to the dict the
+    transaction itself loaded under the destination lock, so the
+    decision and the write are atomic with respect to other
+    writers: content inserted by anyone else is seen, classified,
+    and refused — never cleared sight unseen."""
+    if not isinstance(st, dict) or st.get("version") != 2 or \
+            not isinstance(st.get("items"), dict):
+        return "foreign"
+    if not st["items"] and not st.get("notifications") and \
+            not st.get("outbox") and not st.get("deliveries") and \
+            "import" not in st:
+        return "empty"
+    return "v2"
 
 
 def _same_import(existing, built):
@@ -477,21 +587,40 @@ def import_v1(source, target=None, apply=False, now=None):
         raise ImportFailure("--apply requires an explicit --target")
     _refuse_live_or_source(source, target)
     built = build_store(v1, entries, source, source_sha, import_ts)
-    if os.path.exists(target):
-        kind, existing = _existing_target_state(target)
-        if kind == "v2" and existing.get("spec_sha256") == \
-                SPEC_SHA256 and _same_import(existing, built):
-            report = format_report(source, source_sha, entries,
-                                   "apply (no-op: target already "
-                                   "holds this import)", target)
-            return 0, report
-        raise ImportFailure(
-            "target %s already exists (%s) and does not hold this "
-            "exact import; refusing to overwrite it" % (target, kind))
     queue = CrewQueue(target)
-    with queue._txn() as st:
-        st.clear()
-        st.update(built)
+    try:
+        with queue._txn() as st:
+            # Correction fix 1: classify the target HERE, on the
+            # store as loaded under the destination lock. Only an
+            # empty store is filled; a populated store is either
+            # this exact import (no-op — abort the transaction so
+            # the file stays byte-unchanged) or a refusal. Nothing
+            # the transaction loaded is ever cleared before this
+            # decision.
+            kind = _classify_loaded_store(st)
+            if kind == "v2":
+                if st.get("spec_sha256") == SPEC_SHA256 and \
+                        _same_import(st, built):
+                    raise _NoOpImport
+                raise ImportFailure(
+                    "target %s already exists (v2) and does not "
+                    "hold this exact import; refusing to overwrite "
+                    "it" % target)
+            if kind == "foreign":
+                raise ImportFailure(
+                    "target %s already exists (foreign content) "
+                    "and does not hold this exact import; refusing "
+                    "to overwrite it" % target)
+            st.clear()
+            st.update(built)
+    except _NoOpImport:
+        return 0, format_report(source, source_sha, entries,
+                                "apply (no-op: target already "
+                                "holds this import)", target)
+    except StoreCorrupt as exc:
+        raise ImportFailure(
+            "target %s is corrupt or unreadable (%s); refusing to "
+            "overwrite it" % (target, type(exc).__name__))
     # Validate the written store through the module's public read API.
     check = CrewQueue(target)
     for e in entries:
