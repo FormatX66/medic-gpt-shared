@@ -122,12 +122,150 @@ Corrected artifacts: importer `50e562ed…` (29,815 B), tests
 `39c09779…` (46,656 B), runbook `2856568f…` (13,478 B). Suite:
 importer 38/38, module 54/54, combined 92/92.
 
+## Residual round (2026-10-14, answer to verdict rivet-g1g2-corrected-verdict-20261014-2332-v1)
+
+The corrected package was verified (92/92 independently, all
+advertised pins), fixes 2/4/6 were closed, and fixes 1/3/5 were
+found PARTIAL with three residuals. Her residual texts (verbatim;
+the COMMS LOG rendering collapses some spacing):
+
+> R1 (original 1): importer _classify_loaded_store 529-545 accepts
+> any pre-existing empty v2 ledger, then transaction 592-615 clears
+> it. Existing empty wrong-spec and valid-empty with
+> critical_provenance both return 0, change bytes and delete
+> provenance. Empty is not absent. Under lock allow new
+> initialization ONLY for genuinely absent destination; existing
+> exact import byte-preserving no-op, all other existing targets
+> refuse. Retain populated-race test; add empty/wrong-spec/
+> metadata-bearing and competing-import cases.
+
+> R2 (original 3): documented rev2 lifecycle test 524-556 accepts
+> successor but unresolved_revisions still contains rev1 assigned
+> for imported open and reported-complete for imported done. Marker
+> is not operational retirement. Define/test evidence-preserving
+> administrative reconciliation/supersession via authorized public
+> operations, linking predecessor/successor, with no orphan after
+> authorized retirement. Already-done continuation must be
+> verification/reconciliation work, not replay of old work.
+> Preserve historical facts and no fabricated completion evidence.
+> This may be bounded workflow/tests; do not change accepted core
+> unnecessarily.
+
+> R3 (original 5): rollback_preflight 638-664 and runbook 99-112
+> verify whatever entries a manifest contains, not all three
+> required restore members. Manifest listing only valid v1 queue
+> baseline and omitting both Tower files returns True; sha256sum -c
+> returns 0. Python also accepts empty manifest. Require complete
+> expected restore set and trusted pinned manifest integrity BEFORE
+> any reconcile/restore writes; reject empty/incomplete/conflicting
+> manifest or missing/tampered members. Use three-member success
+> fixture plus each omission/mismatch, drill/runbook same rules.
+> This is a validation defect, not a claim actual private baselines
+> missing.
+
+All three are addressed below; the accepted module and its suite
+remain untouched (`83f3aa42…` / `fd805a4a…` re-confirmed after this
+round), and no fix required a module change.
+
+**R1 — empty is not absent (importer).** Root cause: the module's
+loader synthesizes an empty store for a path that does not exist,
+so the loaded dict alone cannot distinguish a genuinely absent
+destination from a saved, still-empty v2 ledger. Existence is now
+decided as part of the classification, read INSIDE the destination
+transaction (the lock is held; the loaded store came from the same
+path under it): a content-free target that EXISTS on disk refuses
+with "empty is not absent", byte-preserved — wrong-spec empty and
+valid-empty-with-`critical_provenance` included. Initialization is
+allowed only for a genuinely absent destination, and the
+populated/foreign/exact-import branches are unchanged (the
+populated-race test is retained and passing). Companion hole
+closed in the same residual: `_same_import` now also binds the
+store-level import provenance (importer + `source_sha256`), so a
+competing import is never mistaken for a no-op — previously two
+different EMPTY sources both produced the empty item set and the
+second silently "no-oped" over the first's import record.
+Regression evidence: the four new `TestEmptyIsNotAbsent` tests
+FAIL against the corrected importer `50e562ed…` (no refusal raised;
+the empty ledgers are filled and the provenance deleted) and PASS
+against this round's importer; the same-source empty re-apply is
+still a byte-preserving no-op.
+
+**R2 — reconciliation/supersession (importer).** New bounded
+operator step, `reconcile_import_continuations(queue, by, now)`
+(CLI: `--reconcile-continuations --target <v2 store> [--by …]`).
+For each claim-less imported revision 1 still in the unresolved
+view, retirement is authorized ONLY when the item's current
+successor revision carries the same payload hash and is
+verified-accepted with a recorded acceptance — the successor's
+real §11 evidence (claim → verify → accept, all on the successor)
+is the reconciliation evidence; for an already-done import that
+lifecycle is the verification of the historical completion, not a
+replay of the old work. When authorized, an import-marked
+`import-reconciliation` record is appended to revision 1 linking
+predecessor/successor and citing the successor's acceptance
+artifact sha256, and revision 1 is canceled through the module's
+public `cancel_request` / `cancel_confirm`; its cancellation
+record preserves `pre_request_state` (assigned /
+reported-complete). Revision 1's prior records are an unchanged
+prefix of its final record list, and it gains no completion
+claim, verification, or acceptance. Anything not yet authorized
+is reported `awaiting-continuation` and left unresolved and
+visible. Regression evidence: the three new
+`TestContinuationReconciliation` tests error against the
+corrected importer (the step did not exist) and pass here — the
+lead test first reproduces the residual itself (rev2
+verified-accepted, rev1 still listed unresolved), then retires
+rev1 and proves: no orphan in `unresolved_revisions`, no
+double-escalation from the retired revision, history append-only,
+§11 fields on rev1 still `None`. Companion tests pin
+no-retirement-before-acceptance, idempotency, and scope (a live,
+non-import revision 1 is never touched).
+
+**R3 — manifest completeness (tests + runbook).** The drill's
+preflight now verifies the manifest as a complete, pinned SET via
+`_verify_baseline_manifest`: MANIFEST.sha256 must exist and be
+non-empty; its member set must equal `EXPECTED_RESTORE_MEMBERS`
+(`crew-queue-v1-baseline.json`, `clock-tower-state-baseline.json`,
+`clock_tower_agent-v1.1-baseline.py`) exactly — missing, extra, or
+duplicate (conflicting) entries abort; every member must exist
+and hash-match; and MANIFEST.json — the trusted pin written at
+snapshot time — must exist, pin the same complete set, and agree
+with MANIFEST.sha256 on every hash. All of it still runs BEFORE
+any reconcile or restore write. The preflight success fixture is
+now the complete three-member baseline (the old one-member fixture
+embodied the defect), and runbook step 2.0 carries the same rules
+with an executable check (its bare `sha256sum -c` remains only as
+the per-member confirmation after the set/pin gate — verified
+against a synthetic subset manifest that `-c` exits 0 on it,
+exactly as Rivet reported). Regression evidence, old preflight vs
+new, on identical fixtures: complete 3-member set + pin — passes
+both (control); only the v1 member listed (her exact repro) —
+passes old, ABORTS new; one member omitted — passes old, ABORTS
+new; empty manifest — passes old, ABORTS new; MANIFEST.json
+missing — passes old, ABORTS new; extra member listed — passes
+old, ABORTS new. Seven new `TestRollbackManifestCompleteness`
+tests pin these in the suite (each abort leaves the drill store's
+uncertain notification untouched on disk), and the complete-set
+success path is exercised by the updated `TestRollbackPreflight`.
+The REAL baseline under `hidden_files/` passes the new preflight
+(read-only check, this round) — as she noted, this was a
+validation defect, not a missing-baseline finding.
+
+Residual-round artifacts: importer `3e3545d2…` (43,782 B), tests
+`36a7b1e9…` (70,216 B), runbook `0bd16592…` (17,364 B). Suite:
+importer 52/52, module 54/54, combined 106/106. Real-store dry-run
+re-run with this round's importer (read-only): 20 imported, 0
+duplicate conflicts, 0 unresolved.
+
 ## G1 — v1→v2 importer
 
-### `crew_queue_import_v1.py` (29,815 B, sha256 `50e562ed28514251a2c48e7f955a55055994c063370af551c687d2012f2e148e`)
+### `crew_queue_import_v1.py` (43,782 B, sha256 `3e3545d26a3948b4ecf67cb37cbd6d574534c676aae09080376f4ff81f319e28`)
 
 - CLI: `python3 crew_queue_import_v1.py --source <v1.json>` = dry-run
   (default; prints the full item mapping, writes nothing).
+  `--reconcile-continuations --target <v2.json> [--by <id>]` runs
+  the residual-R2 retirement step on an imported store (no import
+  is performed in that mode; the live v1 path is refused).
   `--apply --target <path>` writes. Exit codes: 0 ok, 2 hard refusals
   (target is the live store / target == source), 3 invalid input —
   unreadable, corrupt, or conflicting source; a foreign pre-existing
@@ -148,9 +286,12 @@ importer 38/38, module 54/54, combined 92/92.
   write itself goes through the module's own locked transaction
   (`CrewQueue._txn`: flock + tmp/fsync/replace), and whether a
   pre-existing target may be written is decided inside that same
-  transaction, on the store as loaded under the lock (empty → fill;
-  this exact import → no-op; anything else → refusal — loaded
-  contents are never cleared before the decision). The result is
+  transaction, on the store as loaded under the lock (genuinely
+  absent → fill; this exact import → no-op; anything else →
+  refusal, including an existing EMPTY ledger — residual R1:
+  empty is not absent, and existence is read inside the same
+  transaction — loaded contents are never cleared before the
+  decision). The result is
   validated by reopening the store through the module's public read
   APIs (`get_item`, per-item payload-hash check,
   `unresolved_revisions`). Imported items are then operable through
@@ -196,8 +337,14 @@ importer 38/38, module 54/54, combined 92/92.
   importer's own v2 output as input = clean rejection ("already a v2
   store"). Re-applying the same import to its own target = no-op,
   file byte-unchanged (equivalence = same item set, payload hashes,
-  mapped states, preserved v1 items; record timestamps excluded).
-  Any other pre-existing target = refused, never overwritten.
+  mapped states, preserved v1 items, AND the store-level import
+  provenance — importer + source sha256; record timestamps
+  excluded). Any other pre-existing target = refused, never
+  overwritten — a competing import (even an empty one producing
+  the same empty item set) and an existing empty ledger included.
+  Claim-less revision 1s are retired after their successor is
+  verified-accepted by the separate `reconcile_import_continuations`
+  step (residual R2, see the residual-round section).
 - **Corrupt input fails closed:** unreadable JSON, non-object top
   level, `items` not a list, item with a non-string or blank id
   (ids are validated in the loader, before anything is built or
@@ -211,9 +358,9 @@ identical before/after (`b2a0185d…`). The item-level dry-run output
 stays in the goal's `hidden_files` (real item ids never enter this
 repo); only these aggregates are published here.
 
-### `test_crew_queue_import_v1.py` (46,656 B, sha256 `39c09779a0de16c5532c7d7af265bd3b869be86eb005bfd462eb9fde21585daf`)
+### `test_crew_queue_import_v1.py` (70,216 B, sha256 `36a7b1e9830a1cd8b9c398ee41431d950bba8a04aeea66c4a4816cf73cc7f234`)
 
-38 tests, all passing. Synthetic fixture mirrors the real store's
+52 tests, all passing. Synthetic fixture mirrors the real store's
 shape (states: done, picked-up, open, cancelled, missed, blocked via
 dual-field, dual-field verified-accepted, status-only, cancellation-
 requested, unknown state, no state). Classes: TestFullMapping,
@@ -223,7 +370,9 @@ assertion), TestCorruptInputFailsClosed, TestConflictsAndIdempotency,
 TestImportedStoreOperable, TestRollbackDrill (G2, below), plus the
 correction-round classes TestTargetClassifiedUnderLock,
 TestImportedWatcherSemantics, TestClaimlessContinuation,
-TestInvalidIds, TestRollbackGateConditions, TestRollbackPreflight.
+TestInvalidIds, TestRollbackGateConditions, TestRollbackPreflight,
+and the residual-round classes TestEmptyIsNotAbsent,
+TestContinuationReconciliation, TestRollbackManifestCompleteness.
 
 ## G2 — Baselines + rollback
 
@@ -245,14 +394,16 @@ the manifest says so). The Tower copy pins the v1.1 source (shared
 repo commit `268f43336e07be0c87d8994c57d9fa910274fea0`) so rollback
 never depends on git archaeology.
 
-### `ROLLBACK-RUNBOOK-crew-queue-v2.md` (13,478 B, sha256 `2856568f8ad6210184df953b5377928bb3bcec43a9d618e5016581e0d23084b6`)
+### `ROLLBACK-RUNBOOK-crew-queue-v2.md` (17,364 B, sha256 `0bd16592f3d10572b1a1d0f9e6fd599f63ae7dbe8591e4a146b5df69292d3324`)
 
 Exact paths and commands, no placeholders: (1) freeze — stop the
 Tower, verify via /proc scan, announce the freeze in the COMMS LOG so
 the drain's DAEMON_DOWN is expected; (2) reconcile FIRST — beginning
 with a read-only preflight (the v2 ledger exists and is a recognized
-v2 store; the baseline manifest's integrity is verified BEFORE any
-restore write), then surface via the module CLI `unresolved`,
+v2 store; the baseline manifest is verified BEFORE any restore
+write, and — residual R3 — as the COMPLETE three-member restore
+set, cross-pinned against MANIFEST.json, with an executable check
+in step 2.0 whose rules match the drill's), then surface via the module CLI `unresolved`,
 `recover-cancellations`, per-effect `reconcile_effect` against
 destination evidence, `recover-notifications` with a destination
 view built from the operator's destination query — under a
@@ -268,7 +419,7 @@ check); (5) Tower restart + one full clean cycle; (6) the evidence
 set to record, in a timestamped `rollback-evidence-*` directory and
 summarized in the COMMS LOG.
 
-### Rollback drill tests (in `test_crew_queue_import_v1.py` — 10 tests)
+### Rollback drill tests (in `test_crew_queue_import_v1.py` — 17 tests)
 
 `TestRollbackDrill` (3): synthetic v2 store carrying an uncertain
 effect, a pending cancellation over it, and an uncertain EXTERNAL
@@ -293,13 +444,20 @@ at condition 4. `TestRollbackPreflight` (3): a missing v2 ledger
 aborts in preflight and creates nothing; a tampered baseline
 manifest aborts before any reconcile write (the notification stays
 uncertain on disk); an intact manifest lets reconcile proceed.
+`TestRollbackManifestCompleteness` (7, residual R3): her exact
+reproduction (only the v1 member listed) aborts in preflight; each
+single-member omission aborts; an empty manifest aborts; a missing
+MANIFEST.json pin aborts; a pin conflict aborts; an extra listed
+member aborts; a duplicate manifest entry aborts — each abort
+before any reconcile write, with the complete three-member success
+fixture exercised by `TestRollbackPreflight`.
 
 ## Test totals (Medic's run, this machine, Python 3)
 
 - Module suite `test_crew_queue_v2.py` — **54/54 pass, untouched**
   (sha256 `fd805a4a299fa05f045d092670b8447a1393af319480c840370369145408c830`).
-- New suite `test_crew_queue_import_v1.py` — **38/38 pass**.
-- Combined: **92/92 pass** (`python3 -m unittest test_crew_queue_v2 test_crew_queue_import_v1`).
+- New suite `test_crew_queue_import_v1.py` — **52/52 pass**.
+- Combined: **106/106 pass** (`python3 -m unittest test_crew_queue_v2 test_crew_queue_import_v1`).
 
 ## Compliance with the gate constraints
 
