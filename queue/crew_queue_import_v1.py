@@ -51,12 +51,46 @@ report: admit revision 2 through the public API with the preserved
 v1 payload and fresh deadlines, then run the normal lifecycle on
 revision 2. No claim is ever fabricated on revision 1.
 
+Reconciliation / supersession (residual R2): a claim-less revision 1
+left in assigned / reported-complete stays in the watcher's
+unresolved view after revision 2 completes — the continuation
+marker alone is not operational retirement. Retirement is a
+separate, bounded administrative step, run by an operator through
+reconcile_import_continuations() (or --reconcile-continuations):
+ONLY when the item's current successor revision carries the same
+payload and is verified-accepted — i.e. its completion was claimed,
+verified, and accepted with real section-11 evidence on the
+successor — is revision 1 retired, via the module's public
+cancel_request / cancel_confirm, with an import-marked
+import-reconciliation record on revision 1 linking predecessor and
+successor and citing the successor's acceptance artifact. Revision
+1's historical records are never rewritten and it gains no
+completion claim, verification, or acceptance: for an already-done
+import the successor's lifecycle is the verification/reconciliation
+vehicle for the historical completion, not a replay of the old
+work. Until the successor is verified-accepted, revision 1 stays
+unresolved and visible — reported as awaiting-continuation, never
+hidden and never retired early.
+
 Target classification (correction fix 1): whether a pre-existing
 apply target is empty / this exact import / foreign is decided
 UNDER the destination lock, on the store as loaded inside the
 module's transaction — never from a pre-check outside the lock,
 whose result could go stale before the write and whose loaded
 contents the old code then cleared sight unseen.
+
+Empty is not absent (residual R1): the module's loader returns a
+synthesized empty store for a path that does not exist, and that
+dict is indistinguishable from a saved, still-empty v2 ledger — so
+existence is decided as part of the classification, read inside
+the same transaction (the destination lock is held, and the loaded
+store came from that same path under that lock). New
+initialization is allowed ONLY for a genuinely absent destination.
+A pre-existing target that already holds this exact import is a
+byte-preserving no-op; EVERY other pre-existing target refuses —
+including an empty ledger of the wrong spec and a valid empty
+ledger carrying operator provenance, both of which the cleared
+transaction previously destroyed.
 
 State mapping (v1 effective state = "status" when present and non-empty,
 else "state"; the status field is the later overlay in every dual-field
@@ -97,7 +131,13 @@ note. A repeated id with a DIFFERENT payload is a rejected conflict
 Idempotency: feeding the importer's own output (a v2 store) back as
 input is a clean rejection. Applying to a target that already holds the
 identical imported store is a no-op; applying to any other pre-existing
-target is refused rather than overwriting it.
+target is refused rather than overwriting it — a pre-existing EMPTY
+v2 ledger included (residual R1: empty is not absent, and an empty
+ledger's provenance is not the importer's to destroy). "This exact
+import" also binds the store-level import provenance (importer +
+source sha256), so a competing import that merely produces the same
+item set — including two different EMPTY sources — is refused, not
+mistaken for a no-op.
 
 Exit codes: 0 ok (dry-run printed, apply written, or no-op);
 2 refusal (target is the live store, or target == source);
@@ -115,8 +155,8 @@ import time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from crew_queue_v2 import (  # noqa: E402
-    CrewQueue, QUEUE_LANE_CADENCE_S, SPEC_SHA256, StoreCorrupt,
-    _attempt_id, canonical_bytes, payload_sha256,
+    CrewQueue, InvalidTransition, QUEUE_LANE_CADENCE_S, SPEC_SHA256,
+    StoreCorrupt, _attempt_id, canonical_bytes, payload_sha256,
 )
 
 LIVE_STORE_PATH = os.path.expanduser(
@@ -132,9 +172,16 @@ CONTINUATION_DETAIL = (
     "/ verify on it. Continuation path: admit revision 2 through "
     "the public API (CrewQueue.admit) with the preserved v1 payload "
     "and fresh deadlines, then pickup -> start -> complete_claim "
-    "-> verify -> accept on revision 2. Revision 1 remains the "
-    "untouched historical record; no claim is ever fabricated on "
-    "it.")
+    "-> verify -> accept on revision 2. Once revision 2 is "
+    "verified-accepted, an operator retires revision 1 with the "
+    "importer's reconcile_import_continuations step "
+    "(--reconcile-continuations): an import-reconciliation record "
+    "links revision 1 to its successor and cites the successor's "
+    "acceptance, and revision 1 is canceled through the public "
+    "cancel_request / cancel_confirm operations. Until then "
+    "revision 1 remains unresolved and visible. Revision 1's "
+    "historical record is never rewritten and no claim is ever "
+    "fabricated on it.")
 
 
 class ImportFailure(Exception):
@@ -550,7 +597,18 @@ def _same_import(existing, built):
     """True when an existing v2 store already holds THIS import: same
     item set, and for every item the same payload hash, the same
     mapped state, and the same preserved v1 item. (Record timestamps
-    legitimately differ between runs and are not compared.)"""
+    legitimately differ between runs and are not compared.) The
+    store-level import provenance must also match (residual R1):
+    without it, a competing import that produces the same item set —
+    in the limit, ANY other empty source, where the item comparison
+    is vacuous — would be mistaken for this import and silently
+    treated as a no-op."""
+    ex_meta = existing.get("import") or {}
+    built_meta = built.get("import") or {}
+    if ex_meta.get("importer") != built_meta.get("importer") or \
+            ex_meta.get("source_sha256") != \
+            built_meta.get("source_sha256"):
+        return False
     ex_items = existing.get("items", {})
     if set(ex_items) != set(built["items"]):
         return False
@@ -611,6 +669,32 @@ def import_v1(source, target=None, apply=False, now=None):
                     "target %s already exists (foreign content) "
                     "and does not hold this exact import; refusing "
                     "to overwrite it" % target)
+            # Residual R1: kind == "empty" means the loaded store
+            # has no content — but the loader synthesizes exactly
+            # this dict for a path that does not exist, so content
+            # alone cannot distinguish a genuinely absent
+            # destination from a saved, still-empty v2 ledger.
+            # Existence is therefore read HERE, inside the
+            # transaction: the destination lock is held and the
+            # store above was loaded from this same path under it,
+            # so the existence answer and the write are atomic
+            # with respect to every cooperating writer. Empty is
+            # not absent: initialization is allowed ONLY for a
+            # genuinely absent destination; an existing empty
+            # ledger — wrong spec, or valid but carrying operator
+            # provenance — refuses, byte-preserved. (An exact
+            # import can never classify 'empty': a built import
+            # store always carries its "import" block, so the
+            # no-op case is fully handled by the 'v2' branch.)
+            if os.path.exists(queue.path):
+                raise ImportFailure(
+                    "target %s already exists as an empty v2 "
+                    "ledger; empty is not absent — refusing to "
+                    "initialize over an existing store (its "
+                    "provenance would be destroyed). Initialize "
+                    "only a genuinely absent destination, or "
+                    "remove the existing ledger through the "
+                    "operator's own decision first" % target)
             st.clear()
             st.update(built)
     except _NoOpImport:
@@ -639,6 +723,158 @@ def import_v1(source, target=None, apply=False, now=None):
     return 0, format_report(source, source_sha, entries, "apply", target)
 
 
+# ------------------------------------------------- residual R2: retire
+
+def reconcile_import_continuations(queue, by=None, now=None):
+    """Administrative reconciliation / supersession of claim-less
+    imported revisions (residual R2).
+
+    The fix-3 continuation (admit revision 2, run its lifecycle)
+    completes the WORK, but revision 1 — claim-less, in assigned or
+    reported-complete — is not a terminal state, so the watcher's
+    unresolved_revisions() keeps surfacing it next to its completed
+    successor: the marker alone is not operational retirement, and
+    leaving it means a permanent orphan that can still escalate.
+
+    This step retires such a revision 1, and ONLY when retirement
+    is authorized by evidence:
+
+      * revision 1 carries the importer's import_continuation
+        marker (this step touches nothing else — a live revision 1
+        is never eligible);
+      * the item's current revision is a successor (> 1) carrying
+        the SAME payload hash as revision 1 (the continuation of
+        THIS import, not some other work);
+      * the successor is verified-accepted, with a recorded
+        acceptance — its section-11 evidence (claim -> verify ->
+        accept, all on the successor) is what authorizes retiring
+        the predecessor. For an already-done import, the
+        successor's verified lifecycle is the verification /
+        reconciliation of the historical completion, not a replay
+        of it.
+
+    Retirement itself uses only authorized public operations and
+    preserves history:
+
+      * an import-marked "import-reconciliation" record is
+        appended to revision 1 (the module's own record mechanism,
+        as at import time) linking predecessor and successor and
+        citing the successor's acceptance artifact sha256;
+      * revision 1 is then canceled through the module's public
+        cancel_request / cancel_confirm — the cancellation record
+        keeps pre_request_state, so the historical fact (assigned /
+        reported-complete, claim-less) stays readable, and revision
+        1 gains NO completion claim, verification, or acceptance.
+
+    Anything not yet authorized is reported as
+    "awaiting-continuation" and left exactly as it is: still
+    unresolved, still visible, still able to escalate — never
+    hidden, never retired early. The step is idempotent: a retired
+    revision 1 is terminal and is not visited again.
+
+    Returns a list of per-item outcome dicts."""
+    by = by or IMPORTER_ID
+    ts = int(time.time()) if now is None else int(now)
+    outcomes = []
+    candidates = [e for e in queue.unresolved_revisions()
+                  if e["revision"] == IMPORT_REVISION]
+    for entry in candidates:
+        task_id = entry["task_id"]
+        item = queue.get_item(task_id)
+        if item is None:
+            continue
+        rev1 = item["revisions"].get(str(IMPORT_REVISION))
+        if rev1 is None or "import_continuation" not in rev1:
+            continue  # not a claim-less import continuation
+        current = item["current_revision"]
+        succ = item["revisions"].get(str(current)) \
+            if current > IMPORT_REVISION else None
+        if succ is None:
+            outcomes.append({
+                "task_id": task_id, "revision": IMPORT_REVISION,
+                "status": "awaiting-continuation",
+                "detail": "no successor revision admitted yet"})
+            continue
+        acceptance = succ.get("acceptance") or {}
+        if succ["state"] != "verified-accepted" or \
+                not acceptance.get("artifact_sha256"):
+            outcomes.append({
+                "task_id": task_id, "revision": IMPORT_REVISION,
+                "status": "awaiting-continuation",
+                "successor_revision": current,
+                "detail": "successor revision %d is %s, not "
+                          "verified-accepted; revision 1 stays "
+                          "unresolved" % (current, succ["state"])})
+            continue
+        if succ["payload_sha256"] != rev1["payload_sha256"]:
+            outcomes.append({
+                "task_id": task_id, "revision": IMPORT_REVISION,
+                "status": "awaiting-continuation",
+                "successor_revision": current,
+                "detail": "successor payload hash differs from "
+                          "revision 1; not the continuation of "
+                          "this import"})
+            continue
+        # Authorized. Link predecessor -> successor on revision 1
+        # itself (append-only; no historical record is rewritten),
+        # skipping the link record if a prior interrupted run
+        # already wrote it for this successor.
+        with queue._txn() as st:
+            _, r1 = CrewQueue._get_rev(st, task_id, IMPORT_REVISION)
+            linked = any(
+                rec.get("kind") == "import-reconciliation"
+                and rec.get("successor_revision") == current
+                for rec in r1["records"])
+            if not linked:
+                CrewQueue._record(
+                    r1, "import-reconciliation", ts, by=by,
+                    predecessor_revision=IMPORT_REVISION,
+                    successor_revision=current,
+                    successor_state=succ["state"],
+                    successor_acceptance_artifact_sha256=
+                    acceptance["artifact_sha256"],
+                    predecessor_state=rev1["state"],
+                    detail="claim-less imported revision retired "
+                           "by administrative reconciliation: "
+                           "superseded by revision %d, whose "
+                           "recorded verification + acceptance is "
+                           "the reconciliation evidence. Revision 1 "
+                           "keeps its full historical record and "
+                           "gains no completion claim, verification, "
+                           "or acceptance." % current)
+        # Retire through the module's public cancellation
+        # operations — the authorized administrative path. The
+        # cancellation record preserves pre_request_state.
+        if rev1.get("cancellation") is None:
+            queue.cancel_request(task_id, revision=IMPORT_REVISION,
+                                 by=by, now=ts)
+        queue.cancel_confirm(task_id, revision=IMPORT_REVISION,
+                             by=by, now=ts)
+        outcomes.append({
+            "task_id": task_id, "revision": IMPORT_REVISION,
+            "status": "retired",
+            "successor_revision": current,
+            "successor_acceptance_artifact_sha256":
+                acceptance["artifact_sha256"],
+            "detail": "revision 1 canceled (pre-request state %s "
+                      "preserved in its cancellation record) after "
+                      "successor revision %d reached "
+                      "verified-accepted" % (rev1["state"], current)})
+    return outcomes
+
+
+def format_reconcile_report(outcomes):
+    lines = ["import continuation reconciliation:"]
+    if not outcomes:
+        lines.append("  (no claim-less imported revisions "
+                     "unresolved)")
+    for o in outcomes:
+        lines.append("  %s rev %d: %s — %s"
+                     % (o["task_id"], o["revision"], o["status"],
+                        o["detail"]))
+    return "\n".join(lines)
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(
         description="One-shot crew-queue v1 -> v2 importer (gate G1). "
@@ -652,7 +888,39 @@ def main(argv=None):
     parser.add_argument("--apply", action="store_true",
                         help="write the v2 store to --target "
                              "(default is dry-run)")
+    parser.add_argument("--reconcile-continuations",
+                        action="store_true",
+                        help="residual R2: retire claim-less "
+                             "imported revisions whose successor "
+                             "revision is verified-accepted "
+                             "(administrative reconciliation / "
+                             "supersession) on the --target store; "
+                             "no import is run")
+    parser.add_argument("--by", default=None,
+                        help="operator identity recorded for "
+                             "--reconcile-continuations "
+                             "(default: the importer id)")
     args = parser.parse_args(argv)
+    if args.reconcile_continuations:
+        if not args.target:
+            print("IMPORT FAILED: --reconcile-continuations "
+                  "requires an explicit --target", file=sys.stderr)
+            return 3
+        if os.path.realpath(args.target) == os.path.realpath(
+                LIVE_STORE_PATH):
+            print("REFUSED: target %s resolves to the LIVE v1 "
+                  "store path; reconciliation never writes the "
+                  "live v1 store" % args.target, file=sys.stderr)
+            return 2
+        try:
+            outcomes = reconcile_import_continuations(
+                CrewQueue(args.target), by=args.by)
+        except InvalidTransition as exc:
+            print("IMPORT FAILED: reconciliation could not "
+                  "complete: %s" % exc, file=sys.stderr)
+            return 3
+        print(format_reconcile_report(outcomes))
+        return 0
     try:
         code, report = import_v1(args.source, target=args.target,
                                  apply=args.apply)
