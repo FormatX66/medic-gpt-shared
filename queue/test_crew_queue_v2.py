@@ -16,6 +16,21 @@ fail (missing methods raise AttributeError, missing validation lets the
 operation through), which is the failing-then-passing evidence for the
 review.
 
+Round-2 fix pass 2026-10-14 (Rivet re-review
+rivet-crew-rereview-verdict-20261014-2002-v1; round-1 fixes 1 and 4
+accepted as addressed): TestFix2Round2LateCallbacks (cancel-during-
+callback preservation; pending/dispatched-to-resolved cancellation
+recovery), TestFix3Round2FailClosedNoView (repeat notify without a
+view; restart recovery through the ordinary watcher path without a
+view; the local-outbox route as the valid exception),
+TestFix5Round2CrossRevisionFencing (no second execution/effect until
+earlier ownership is safely resolved), and the rewritten
+test_unconfigured_default_is_the_spec_default, which now asserts the
+60-second target-lane cadence behaviorally instead of comparing the
+module constant to itself. Run against the round-1 module
+(af731fb3...), the round-2 tests fail; see
+IMPL-FIX-REPORT-20261014-ROUND2.md.
+
 Run: python3 test_crew_queue_v2.py
 """
 
@@ -37,6 +52,11 @@ try:
     from crew_queue_v2 import StoreCorrupt  # noqa: E402
 except ImportError:  # pre-fix module: no fail-closed store error exists
     StoreCorrupt = CrewQueueError
+
+try:
+    from crew_queue_v2 import OwnershipFenced  # noqa: E402
+except ImportError:  # pre-round-2 module: no fencing error exists
+    OwnershipFenced = CrewQueueError
 
 T0 = 1_800_000_000  # fixed base time for determinism
 
@@ -961,11 +981,354 @@ class TestFix6DeadlinesAndCadence(QueueTestBase):
         self.assertEqual(q2.get_rev("task-cfg")["blocked"]["interval_s"], 7)
 
     def test_unconfigured_default_is_the_spec_default(self):
-        import crew_queue_v2
+        # Round-2 fix 6: the target requirement is the queue lane's
+        # 60-second cadence, asserted BEHAVIORALLY — an unconfigured
+        # queue blocks at a 60 s cadence and the blocker-check fires
+        # when 60 s have elapsed, not before. (The round-1 version of
+        # this test compared the module constant to itself, which
+        # could not catch a wrong default.)
         self.admit_simple()
         self.q.block("task-a", reason="waiting", now=T0 + 1)
-        self.assertEqual(self.rev()["blocked"]["interval_s"],
-                         crew_queue_v2.DEFAULT_BLOCKER_CHECK_INTERVAL_S)
+        blk = self.rev()["blocked"]
+        self.assertEqual(blk["interval_s"], 60)
+        self.assertEqual(blk["next_check_ts"], T0 + 1 + 60)
+
+        def blocker_checks(actions):
+            return [a for a in actions if a["action"] == "blocker-check"]
+
+        self.assertEqual(blocker_checks(
+            self.q.escalate_check(now=T0 + 1 + 59)), [])
+        self.assertEqual(len(blocker_checks(
+            self.q.escalate_check(now=T0 + 1 + 60))), 1)
+        # The cadence repeats at the same 60 s interval.
+        self.assertEqual(blocker_checks(
+            self.q.escalate_check(now=T0 + 1 + 119)), [])
+        self.assertEqual(len(blocker_checks(
+            self.q.escalate_check(now=T0 + 1 + 120))), 1)
+
+
+class TestFix2Round2LateCallbacks(QueueTestBase):
+    """Round-2 fix 2 (re-review 2002): cancellation/recovery
+    visibility is preserved across late admission callbacks, and
+    authoritative reconciliation covers ALL unresolved effect states
+    (pending and dispatched, not only uncertain)."""
+
+    def test_cancel_during_effect_callback_is_preserved(self):
+        q = self.q
+
+        def effect_that_cancels_mid_flight(effect_id):
+            # The cancellation request lands while the admission
+            # effect is in flight: the callback runs outside the
+            # store lock, so this is the ordinary interleaving.
+            q.cancel_request("task-cc", by="bruce", now=T0 + 1)
+            return None  # the effect itself then returns cleanly
+
+        res = self.q.admit_with_effect(
+            "task-cc", 1, {"job": "send"}, route="mq", owner="medic",
+            attempter="medic", effect_fn=effect_that_cancels_mid_flight,
+            effect_id="eff-cc", now=T0,
+            completion_deadline_ts=T0 + 5000)
+        # The clean callback must NOT overwrite cancellation-requested
+        # with admitted (the round-1 bug: the record existed but the
+        # clobbered state hid it from recovery).
+        self.assertEqual(res["status"], "cancellation-requested")
+        rev = self.q.get_rev("task-cc")
+        self.assertEqual(rev["state"], "cancellation-requested")
+        self.assertIsNotNone(rev["cancellation"])
+        self.assertIsNone(rev["cancellation"]["confirmed_ts"])
+        # The effect evidence was still finalized as dispatched, and
+        # the cancellation waits on it.
+        self.assertEqual(rev["effects"][0]["state"], "dispatched")
+        self.assertFalse(self.q.can_dispatch("task-cc"))
+        # Recovery SEES the pending cancellation and reports it.
+        actions = self.q.recover_cancellations(now=T0 + 2)
+        self.assertEqual(len(actions), 1)
+        self.assertEqual(actions[0]["action"],
+                         "cancellation-still-pending")
+        self.assertEqual(actions[0]["open_effects"], ["eff-cc"])
+        # Reconcile the dispatched effect; recovery then confirms the
+        # cancellation under the retained request.
+        self.q.reconcile_effect("task-cc", "eff-cc", found=True,
+                                detail="destination journal has it",
+                                now=T0 + 3)
+        actions = self.q.recover_cancellations(now=T0 + 4)
+        self.assertEqual(len(actions), 1)
+        self.assertEqual(actions[0]["action"], "cancellation-confirmed")
+        rev = self.q.get_rev("task-cc")
+        self.assertEqual(rev["state"], "canceled")
+        self.assertIsNotNone(rev["cancellation"]["confirmed_ts"])
+
+    def test_dispatched_effect_reconciles_for_cancellation(self):
+        self.admit_simple()
+        self.q.start("task-a", now=T0 + 1)
+        self.q.register_effect("task-a", effect_id="eff-dr",
+                               owner="medic",
+                               now=T0 + 2)  # dispatched (in-flight)
+        self.q.cancel_request("task-a", by="bruce", now=T0 + 3)
+        with self.assertRaises(InvalidTransition):
+            self.q.cancel_confirm("task-a", by="bruce", now=T0 + 4)
+        # An absence observation resolves nothing (found=False).
+        self.q.reconcile_effect("task-a", "eff-dr", found=False,
+                                detail="not in journal yet", now=T0 + 5)
+        self.assertEqual(self.rev()["effects"][0]["state"], "dispatched")
+        with self.assertRaises(InvalidTransition):
+            self.q.cancel_confirm("task-a", by="bruce", now=T0 + 6)
+        # Authoritative reconciliation of a DISPATCHED effect (round-1
+        # code rejected every non-uncertain effect here, deadlocking
+        # the cancellation).
+        eff = self.q.reconcile_effect("task-a", "eff-dr", found=True,
+                                      detail="destination ack located",
+                                      now=T0 + 7)
+        self.assertEqual(eff["state"], "resolved")
+        self.q.cancel_confirm("task-a", by="bruce", now=T0 + 8)
+        self.assertEqual(self.rev()["state"], "canceled")
+        # Reconciling an already-resolved effect is rejected.
+        with self.assertRaises(InvalidTransition):
+            self.q.reconcile_effect("task-a", "eff-dr", found=True,
+                                    now=T0 + 9)
+
+    def test_pending_effect_reconciles_for_cancellation(self):
+        def crash(effect_id):
+            raise KeyboardInterrupt("process died mid-effect")
+
+        # The crash leaves the admission effect PENDING (intent
+        # persisted, outcome never recorded).
+        with self.assertRaises(KeyboardInterrupt):
+            self.q.admit_with_effect(
+                "task-pc", 1, {"job": "x"}, route="mq", owner="medic",
+                attempter="medic", effect_fn=crash, effect_id="eff-pc",
+                now=T0, completion_deadline_ts=T0 + 5000)
+        self.assertEqual(
+            self.q.get_rev("task-pc")["effects"][0]["state"], "pending")
+        self.q.cancel_request("task-pc", by="bruce", now=T0 + 1)
+        with self.assertRaises(InvalidTransition):
+            self.q.cancel_confirm("task-pc", by="bruce", now=T0 + 2)
+        actions = self.q.recover_cancellations(now=T0 + 3)
+        self.assertEqual(actions[0]["action"],
+                         "cancellation-still-pending")
+        self.assertEqual(actions[0]["open_effects"], ["eff-pc"])
+        # The PENDING effect is authoritatively reconcilable too.
+        self.q.reconcile_effect("task-pc", "eff-pc", found=True,
+                                detail="server table row present",
+                                now=T0 + 4)
+        actions = self.q.recover_cancellations(now=T0 + 5)
+        self.assertEqual(actions[0]["action"], "cancellation-confirmed")
+        self.assertEqual(self.q.get_rev("task-pc")["state"], "canceled")
+
+
+class TestFix3Round2FailClosedNoView(QueueTestBase):
+    """Round-2 fix 3 (re-review 2002): an unresolved EXTERNAL
+    notification fails closed without the matching destination query —
+    on repeat notify and on restart recovery alike. The local outbox
+    view remains valid only for actual local-outbox delivery."""
+
+    KW = dict(kind="eta-escalation", task_id="t", revision=1,
+              deadline_kind="completion", deadline_ts=T0,
+              material_epoch=0)
+
+    def _store(self):
+        import json
+        with open(self.path, encoding="utf-8") as fh:
+            return json.load(fh)
+
+    def _uncertain_external(self):
+        def crashing_sender(nid, destination, payload):
+            raise ConnectionError("outcome unknown")
+
+        notif = self.q.notify("owner:medic", {"msg": "x"},
+                              sender=crashing_sender, now=T0, **self.KW)
+        self.assertEqual(notif["state"], "uncertain")
+        return notif["notification_id"]
+
+    def test_repeat_notify_without_view_fails_closed(self):
+        nid = self._uncertain_external()
+        calls = []
+
+        def good_sender(nid_, destination, payload):
+            calls.append(nid_)
+            return "ok"
+
+        # No destination_view supplied: the repeat notify must NOT
+        # re-send on hope (round-1 code fell through and re-sent).
+        with self.assertRaises(CrewQueueError):
+            self.q.notify("owner:medic", {"msg": "x"},
+                          sender=good_sender, now=T0 + 10, **self.KW)
+        self.assertEqual(calls, [])
+        # The record is untouched: still unresolved, awaiting its
+        # destination query.
+        self.assertEqual(
+            self._store()["notifications"][nid]["state"], "uncertain")
+        # And WITH the matching view the same repeat notify proceeds
+        # exactly as before (seen -> confirmed, no resend).
+        dest = FakeDestination()
+        dest.deliver(nid, {"msg": "x"})
+        notif = self.q.notify("owner:medic", {"msg": "x"},
+                              sender=good_sender, now=T0 + 20,
+                              destination_view=dest, **self.KW)
+        self.assertEqual(notif["state"], "sent-confirmed")
+        self.assertEqual(calls, [])
+
+    def test_restart_recovery_without_view_fails_closed(self):
+        nid = self._uncertain_external()
+        # The ordinary watcher restart path: a fresh instance runs
+        # recovery with neither a destination view nor an external
+        # sender. Round-1 code substituted the local outbox view and
+        # re-sent into the wrong destination.
+        q2 = CrewQueue(self.path)
+        actions = q2.recover_notifications(now=T0 + 10)
+        self.assertEqual(len(actions), 1)
+        self.assertEqual(actions[0]["notification_id"], nid)
+        self.assertEqual(actions[0]["action"],
+                         "fail-closed-no-destination-view")
+        self.assertFalse(actions[0]["resent"])
+        # Nothing was sent anywhere; the record is unchanged.
+        store = self._store()
+        self.assertEqual(store["notifications"][nid]["state"],
+                         "uncertain")
+        self.assertEqual(store["outbox"], {})
+        # Recovery WITH the matching view proceeds normally.
+        dest = FakeDestination()
+
+        def sender(nid_, destination, payload):
+            return dest.deliver(nid_, payload)
+
+        actions = q2.recover_notifications(sender=sender,
+                                           destination_view=dest,
+                                           now=T0 + 20)
+        self.assertEqual(actions[0]["action"], "sent-on-recovery")
+        self.assertEqual(len(dest.received), 1)
+
+    def test_local_outbox_route_needs_no_external_view(self):
+        # A notification actually delivered via the store's own
+        # outbox is the valid exception: the local view IS its
+        # destination view, so recovery without a supplied view still
+        # works. (Regression guard: this also passes on round-1 code.)
+        hooks = CrashAfterIntent()
+        with self.assertRaises(RuntimeError):
+            self.q.notify("owner:medic", {"msg": "local"}, hooks=hooks,
+                          now=T0, **self.KW)
+        # Intent persisted; the send never ran. Restart + recovery
+        # with no view sends exactly once into the local outbox.
+        q2 = CrewQueue(self.path)
+        actions = q2.recover_notifications(now=T0 + 10)
+        self.assertEqual(len(actions), 1)
+        self.assertEqual(actions[0]["action"], "sent-on-recovery")
+        self.assertTrue(actions[0]["resent"])
+        store = self._store()
+        nid = actions[0]["notification_id"]
+        self.assertIn(nid, store["outbox"])
+        self.assertEqual(store["notifications"][nid]["state"], "sent")
+        self.assertEqual(store["notifications"][nid]["delivery"],
+                         "local-outbox")
+
+
+class TestFix5Round2CrossRevisionFencing(QueueTestBase):
+    """Round-2 fix 5 (re-review 2002): cross-revision ownership
+    fencing — no second execution or effect while an earlier
+    revision's ownership is started or uncertain."""
+
+    def _resolve_rev1_terminally(self, task="task-a"):
+        rev = self.q.get_rev(task, 1)
+        art = {"done": 1}
+        self.q.complete_claim(task, revision=1,
+                              attempt_id=rev["current_attempt_id"],
+                              artifact=art, now=T0 + 30)
+        sha = payload_sha256(art)
+        self.q.verify(task, revision=1, artifact_sha256=sha,
+                      criteria="c", verifier="rivet", passed=True,
+                      now=T0 + 31)
+        self.q.accept(task, revision=1, artifact_sha256=sha,
+                      criteria="c", by="medic", now=T0 + 32)
+
+    def test_started_revision_fences_new_admission_and_effect(self):
+        self.admit_simple()
+        self.q.start("task-a", now=T0 + 1)
+        with self.assertRaises(OwnershipFenced):
+            self.q.admit("task-a", 2, {"v": 2}, route="doc",
+                         owner="medic", now=T0 + 2,
+                         completion_deadline_ts=T0 + 9000)
+        with self.assertRaises(OwnershipFenced):
+            self.q.admit_with_effect(
+                "task-a", 2, {"v": 2}, route="mq", owner="medic",
+                attempter="medic", effect_fn=lambda eid: None,
+                now=T0 + 2, completion_deadline_ts=T0 + 9000)
+        # Revision 2 was never created; revision 1 still owns it.
+        item = self.q.get_item("task-a")
+        self.assertEqual(item["current_revision"], 1)
+        self.assertNotIn("2", item["revisions"])
+        # Safely resolve revision 1 to a terminal state: the fence
+        # lifts, and revision 2 may be admitted and started.
+        self._resolve_rev1_terminally()
+        res2 = self.q.admit("task-a", 2, {"v": 2}, route="doc",
+                            owner="medic", now=T0 + 40,
+                            completion_deadline_ts=T0 + 9000)
+        self.assertEqual(res2["status"], "admitted")
+        self.q.start("task-a", revision=2, now=T0 + 41)
+        self.assertEqual(self.q.get_rev("task-a", 2)["state"], "started")
+
+    def test_uncertain_revision_fences_until_safely_resolved(self):
+        def boom(effect_id):
+            raise TimeoutError("maybe landed")
+
+        self.q.admit_with_effect(
+            "task-f", 1, {"v": 1}, route="mq", owner="medic",
+            attempter="medic", effect_fn=boom, effect_id="eff-f",
+            now=T0, completion_deadline_ts=T0 + 9000)
+        self.assertEqual(self.q.get_rev("task-f")["state"],
+                         "admission-uncertain")
+        with self.assertRaises(OwnershipFenced):
+            self.q.admit("task-f", 2, {"v": 2}, route="doc",
+                         owner="medic", now=T0 + 1,
+                         completion_deadline_ts=T0 + 9000)
+        self.assertNotIn("2", self.q.get_item("task-f")["revisions"])
+        # Resolve the uncertainty, then cancel revision 1 to its
+        # terminal state: ownership is safely resolved, fence lifts.
+        self.q.reconcile_effect("task-f", "eff-f", found=True, now=T0 + 2)
+        self.assertEqual(self.q.get_rev("task-f")["state"], "admitted")
+        self.q.cancel_request("task-f", by="bruce", now=T0 + 3)
+        self.q.cancel_confirm("task-f", by="bruce", now=T0 + 4)
+        self.assertEqual(self.q.get_rev("task-f")["state"], "canceled")
+        res = self.q.admit("task-f", 2, {"v": 2}, route="doc",
+                           owner="medic", now=T0 + 5,
+                           completion_deadline_ts=T0 + 9000)
+        self.assertEqual(res["status"], "admitted")
+
+    def test_start_gate_fences_second_execution(self):
+        # Both revisions admitted while neither owns execution: fine.
+        self.admit_simple()
+        self.q.admit("task-a", 2, {"v": 2}, route="doc", owner="medic",
+                     now=T0 + 1, completion_deadline_ts=T0 + 9000)
+        self.q.start("task-a", revision=1, now=T0 + 2)
+        # A second execution while revision 1 is started: fenced at
+        # the start gate and at can_dispatch.
+        self.assertFalse(self.q.can_dispatch("task-a", revision=2))
+        with self.assertRaises(OwnershipFenced):
+            self.q.start("task-a", revision=2, now=T0 + 3)
+        self.assertEqual(self.q.get_rev("task-a", 2)["state"],
+                         "admitted")
+        # Resolve revision 1 terminally; revision 2 may now start.
+        self._resolve_rev1_terminally()
+        self.assertTrue(self.q.can_dispatch("task-a", revision=2))
+        self.q.start("task-a", revision=2, now=T0 + 40)
+        self.assertEqual(self.q.get_rev("task-a", 2)["state"], "started")
+
+    def test_blocked_from_started_still_fences(self):
+        self.admit_simple()
+        self.q.start("task-a", now=T0 + 1)
+        self.q.block("task-a", reason="dependency down", now=T0 + 2,
+                     blocker_check_interval_s=60)
+        self.assertEqual(self.rev()["state"], "blocked")
+        # Started work that is merely paused still owns the task.
+        with self.assertRaises(OwnershipFenced):
+            self.q.admit("task-a", 2, {"v": 2}, route="doc",
+                         owner="medic", now=T0 + 3,
+                         completion_deadline_ts=T0 + 9000)
+        self.q.unblock("task-a", now=T0 + 4)
+        self.assertEqual(self.rev()["state"], "started")
+        with self.assertRaises(OwnershipFenced):
+            self.q.admit("task-a", 2, {"v": 2}, route="doc",
+                         owner="medic", now=T0 + 5,
+                         completion_deadline_ts=T0 + 9000)
 
 
 if __name__ == "__main__":
