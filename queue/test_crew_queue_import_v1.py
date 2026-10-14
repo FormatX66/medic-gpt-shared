@@ -608,6 +608,118 @@ class DrillAbort(Exception):
     """The rollback drill fails closed: restore must not proceed."""
 
 
+EXPECTED_RESTORE_MEMBERS = (
+    "crew-queue-v1-baseline.json",
+    "clock-tower-state-baseline.json",
+    "clock_tower_agent-v1.1-baseline.py",
+)
+"""The COMPLETE restore set (residual R3): exactly the files step 3
+of the runbook restores — the v1 queue baseline, the Tower state
+baseline, and the pinned Tower source baseline. A manifest that
+verifies beautifully for a SUBSET of these restores a subset, which
+is a partial rollback wearing a passed gate."""
+
+
+def _verify_baseline_manifest(baseline_dir):
+    """Residual R3: verify the baseline manifest as a complete,
+    pinned SET — not as 'whatever entries it happens to contain'.
+
+    The pre-R3 check verified each listed entry's hash and nothing
+    else: a manifest listing only the v1 queue baseline (both Tower
+    members omitted) passed, an EMPTY manifest passed, and the
+    manifest itself was trusted because it was there. Now, before
+    any reconcile or restore write:
+      * MANIFEST.sha256 must exist, parse, and be non-empty;
+      * its member set must equal EXPECTED_RESTORE_MEMBERS exactly —
+        a missing member, an unlisted extra member, or a duplicate
+        (conflicting) entry aborts;
+      * every listed member must exist on disk and hash-match;
+      * MANIFEST.json — the trusted pin, written when the baseline
+        was snapshotted — must exist, pin the same complete set,
+        and agree with MANIFEST.sha256 on every member's hash, so
+        the manifest's own integrity is checked against a second
+        record rather than asserted."""
+    manifest_path = os.path.join(baseline_dir, "MANIFEST.sha256")
+    if not os.path.exists(manifest_path):
+        raise DrillAbort(
+            "gate condition 0 (preflight): baseline manifest %s "
+            "is missing; restore forbidden" % manifest_path)
+    problems = []
+    entries = {}
+    with open(manifest_path, "r", encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if not line:
+                continue
+            parts = line.split(None, 1)
+            if len(parts) != 2:
+                problems.append("malformed manifest line %r" % line)
+                continue
+            want = parts[0]
+            name = parts[1].lstrip("*").strip()
+            if name in entries:
+                problems.append(
+                    "conflicting manifest: duplicate entry for %s"
+                    % name)
+                continue
+            entries[name] = want
+    if not entries:
+        problems.append("manifest is empty; an empty manifest "
+                        "verifies nothing")
+    missing = [m for m in EXPECTED_RESTORE_MEMBERS
+               if m not in entries]
+    if missing:
+        problems.append(
+            "manifest is incomplete: required restore member(s) "
+            "missing: %s" % (missing,))
+    extra = [n for n in entries if n not in EXPECTED_RESTORE_MEMBERS]
+    if extra:
+        problems.append(
+            "manifest lists member(s) outside the restore set: %s"
+            % (extra,))
+    for name, want in entries.items():
+        fpath = os.path.join(baseline_dir, name)
+        if not os.path.exists(fpath):
+            problems.append("restore member %s is missing on disk"
+                            % name)
+        elif _sha256_file(fpath) != want:
+            problems.append("restore member %s fails its manifest "
+                            "hash" % name)
+    pin_path = os.path.join(baseline_dir, "MANIFEST.json")
+    if not os.path.exists(pin_path):
+        problems.append(
+            "MANIFEST.json is missing; the manifest's integrity "
+            "is unpinned and untrusted")
+    else:
+        try:
+            pin = _load_json(pin_path)
+        except (ValueError, OSError) as exc:
+            problems.append("MANIFEST.json is unreadable (%s)"
+                            % type(exc).__name__)
+            pin = None
+        if pin is not None:
+            pin_entries = {}
+            for f in pin.get("files") or []:
+                if isinstance(f, dict) and f.get("copy"):
+                    pin_entries[f["copy"]] = f.get("sha256")
+            if set(pin_entries) != set(EXPECTED_RESTORE_MEMBERS):
+                problems.append(
+                    "MANIFEST.json does not pin the complete "
+                    "restore set (pins %s)"
+                    % (sorted(pin_entries),))
+            else:
+                for name, want in entries.items():
+                    if pin_entries.get(name) != want:
+                        problems.append(
+                            "manifest pin conflict for %s: "
+                            "MANIFEST.sha256 and MANIFEST.json "
+                            "disagree" % name)
+    if problems:
+        raise DrillAbort(
+            "gate condition 0 (preflight): baseline manifest "
+            "failure — %s; restore forbidden" % (problems,))
+
+
 def rollback_preflight(store_path, baseline_dir=None):
     """Gate condition 0 (correction fix 5): READ-ONLY preflight, run
     before any reconcile write. A missing v2 ledger must NEVER be
@@ -616,7 +728,9 @@ def rollback_preflight(store_path, baseline_dir=None):
     recovery trivially 'succeeds'); an unreadable or unrecognized
     ledger likewise fails closed. When a baseline dir is given, its
     MANIFEST.sha256 integrity is verified HERE — before any restore
-    write — never only after one."""
+    write — never only after one; and (residual R3) the manifest is
+    verified as the COMPLETE expected restore set, cross-pinned
+    against MANIFEST.json, not as whatever subset it lists."""
     if not os.path.exists(store_path):
         raise DrillAbort(
             "gate condition 0 (preflight): v2 ledger %s is missing; "
@@ -636,31 +750,7 @@ def rollback_preflight(store_path, baseline_dir=None):
             "ledger (version / items / spec_sha256); failing closed"
             % store_path)
     if baseline_dir is not None:
-        manifest_path = os.path.join(baseline_dir, "MANIFEST.sha256")
-        if not os.path.exists(manifest_path):
-            raise DrillAbort(
-                "gate condition 0 (preflight): baseline manifest %s "
-                "is missing; restore forbidden" % manifest_path)
-        problems = []
-        with open(manifest_path, "r", encoding="utf-8") as fh:
-            for line in fh:
-                line = line.strip()
-                if not line:
-                    continue
-                parts = line.split(None, 1)
-                if len(parts) != 2:
-                    problems.append(line)
-                    continue
-                want = parts[0]
-                name = parts[1].lstrip("*").strip()
-                fpath = os.path.join(baseline_dir, name)
-                if not os.path.exists(fpath) or \
-                        _sha256_file(fpath) != want:
-                    problems.append(name)
-        if problems:
-            raise DrillAbort(
-                "gate condition 0 (preflight): baseline integrity "
-                "failure for %s; restore forbidden" % (problems,))
+        _verify_baseline_manifest(baseline_dir)
     return True
 
 
@@ -998,16 +1088,37 @@ class TestRollbackPreflight(unittest.TestCase):
         return q, notif["notification_id"]
 
     def _baseline_dir(self, tamper=False):
+        """The COMPLETE synthetic baseline (residual R3): all three
+        restore members on disk, a three-line MANIFEST.sha256, and
+        MANIFEST.json pinning the same set. (The pre-R3 fixture
+        listed only the v1 queue baseline — that one-member
+        manifest passing was the defect, not a success case.)"""
         bdir = os.path.join(self.tmp, "baseline")
         os.makedirs(bdir, exist_ok=True)
-        content = '{"version": 1, "items": []}\n'
-        with open(os.path.join(bdir, "crew-queue-v1-baseline.json"),
-                  "w", encoding="utf-8") as fh:
-            fh.write(content)
-        digest = hashlib.sha256(content.encode()).hexdigest()
+        contents = {
+            "crew-queue-v1-baseline.json":
+                '{"version": 1, "items": []}\n',
+            "clock-tower-state-baseline.json":
+                '{"watermarks": {}}\n',
+            "clock_tower_agent-v1.1-baseline.py":
+                "# synthetic pinned tower source\n",
+        }
+        digests = {}
+        for name, content in contents.items():
+            with open(os.path.join(bdir, name), "w",
+                      encoding="utf-8") as fh:
+                fh.write(content)
+            digests[name] = hashlib.sha256(
+                content.encode()).hexdigest()
         with open(os.path.join(bdir, "MANIFEST.sha256"), "w",
                   encoding="utf-8") as fh:
-            fh.write("%s  crew-queue-v1-baseline.json\n" % digest)
+            for name in EXPECTED_RESTORE_MEMBERS:
+                fh.write("%s  %s\n" % (digests[name], name))
+        pin = {"files": [{"copy": name, "sha256": digests[name]}
+                         for name in EXPECTED_RESTORE_MEMBERS]}
+        with open(os.path.join(bdir, "MANIFEST.json"), "w",
+                  encoding="utf-8") as fh:
+            json.dump(pin, fh)
         if tamper:
             with open(os.path.join(bdir,
                                    "crew-queue-v1-baseline.json"),
@@ -1044,6 +1155,393 @@ class TestRollbackPreflight(unittest.TestCase):
         na = evidence["notification_actions"]
         self.assertEqual(len(na), 1)
         self.assertEqual(na[0]["action"], "confirmed-at-destination")
+
+
+# ------------------------------------------------------- residual round
+# Regression tests for Rivet's verdict
+# rivet-g1g2-corrected-verdict-20261014-2332-v1. Fixes 2/4/6 were
+# verified addressed; fixes 1/3/5 were partial, with residuals
+# R1/R2/R3. Each class below names its residual; the R1/R2 classes
+# fail against the corrected importer (50e562ed...) and pass against
+# this one; the R3 tests fail against the pre-residual preflight
+# (which verified whatever a manifest happened to list).
+
+class TestEmptyIsNotAbsent(ImportTestBase):
+    """Residual R1: empty is not absent. The corrected importer
+    classified any content-free loaded store 'empty' and filled it:
+    an existing empty wrong-spec ledger and a valid empty ledger
+    carrying critical provenance both returned 0, changed bytes, and
+    deleted provenance. New initialization is allowed ONLY for a
+    genuinely absent destination; existing exact import stays a
+    byte-preserving no-op; every other existing target refuses,
+    decided under the destination lock."""
+
+    def _write_store(self, doc):
+        with open(self.target, "w", encoding="utf-8") as fh:
+            json.dump(doc, fh, indent=1, sort_keys=True)
+        return _sha256_file(self.target)
+
+    def test_existing_valid_empty_ledger_refused_bytes_preserved(self):
+        q = CrewQueue(self.target)
+        with q._txn():
+            pass  # the module itself saves a valid, empty ledger
+        self.assertTrue(os.path.exists(self.target))
+        before = _sha256_file(self.target)
+        with self.assertRaises(imp.ImportFailure) as cm:
+            imp.import_v1(self.src, target=self.target, apply=True,
+                          now=NOW)
+        self.assertIn("empty is not absent", str(cm.exception))
+        self.assertEqual(_sha256_file(self.target), before)
+
+    def test_existing_empty_wrong_spec_refused(self):
+        before = self._write_store(
+            {"version": 2, "spec_sha256": "0" * 64,
+             "created_ts": T0, "updated_ts": T0, "items": {},
+             "notifications": {}, "outbox": {}, "deliveries": []})
+        with self.assertRaises(imp.ImportFailure):
+            imp.import_v1(self.src, target=self.target, apply=True,
+                          now=NOW)
+        self.assertEqual(_sha256_file(self.target), before)
+
+    def test_existing_empty_with_provenance_refused_and_preserved(self):
+        before = self._write_store(
+            {"version": 2, "spec_sha256": SPEC_SHA256,
+             "created_ts": T0, "updated_ts": T0, "items": {},
+             "notifications": {}, "outbox": {}, "deliveries": [],
+             "critical_provenance": {
+                 "snapshot_of": "synthetic ledger",
+                 "operator": "rivet", "do_not_delete": True}})
+        with self.assertRaises(imp.ImportFailure):
+            imp.import_v1(self.src, target=self.target, apply=True,
+                          now=NOW)
+        self.assertEqual(_sha256_file(self.target), before)
+        self.assertIn("critical_provenance",
+                      _load_json(self.target))
+
+    def test_competing_empty_import_is_refused_not_noop(self):
+        # Two different EMPTY sources produce the same (empty) item
+        # set, so the item-level comparison is vacuous: only the
+        # store-level provenance binding keeps the second import
+        # from being mistaken for a no-op re-apply of the first.
+        empty_a = os.path.join(self.tmp, "empty-a.json")
+        with open(empty_a, "w", encoding="utf-8") as fh:
+            json.dump({"version": 1, "updated_ts": T0, "items": []},
+                      fh)
+        code, _ = imp.import_v1(empty_a, target=self.target,
+                                apply=True, now=NOW)
+        self.assertEqual(code, 0)
+        before = _sha256_file(self.target)
+        empty_b = os.path.join(self.tmp, "empty-b.json")
+        with open(empty_b, "w", encoding="utf-8") as fh:
+            json.dump({"version": 1, "updated_ts": T0 + 1,
+                       "items": []}, fh)
+        with self.assertRaises(imp.ImportFailure):
+            imp.import_v1(empty_b, target=self.target, apply=True,
+                          now=NOW)
+        self.assertEqual(_sha256_file(self.target), before)
+        # Re-applying the SAME source is still a byte-preserving
+        # no-op.
+        code, report = imp.import_v1(empty_a, target=self.target,
+                                     apply=True, now=NOW + 5)
+        self.assertEqual(code, 0)
+        self.assertIn("no-op", report)
+        self.assertEqual(_sha256_file(self.target), before)
+
+
+class TestContinuationReconciliation(ImportTestBase):
+    """Residual R2: the fix-3 continuation marker is not operational
+    retirement — after the rev2 lifecycle, unresolved_revisions
+    still listed rev1 'assigned' (imported open) and
+    'reported-complete' (imported done). Retirement is a defined
+    administrative reconciliation: only a verified-accepted
+    successor carrying the same payload authorizes it; it links
+    predecessor/successor on rev1 and cancels rev1 through the
+    public operations, preserving every historical record and
+    fabricating no completion evidence."""
+
+    def _run_rev2_lifecycle(self, q, tid):
+        rev1 = q.get_rev(tid, revision=1)
+        payload = [r for r in rev1["records"]
+                   if r["kind"] == "import"][0]["v1_item"]
+        res = q.admit(tid, 2, payload, route="import-continuation",
+                      owner="medic", acceptance_authority="medic",
+                      now=NOW + 100,
+                      pickup_deadline_ts=NOW + 1000,
+                      completion_deadline_ts=NOW + 2000)
+        q.pickup(tid, revision=2, by="medic", now=NOW + 110)
+        q.start(tid, revision=2, by="medic", now=NOW + 120)
+        art = {"artifact": "synthetic reconciliation %s" % tid}
+        claim = q.complete_claim(
+            tid, revision=2, attempt_id=res["attempt_id"],
+            artifact=art, by="medic", now=NOW + 130)
+        q.verify(tid, revision=2,
+                 artifact_sha256=claim["artifact_sha256"],
+                 criteria="synthetic", verifier="rivet",
+                 passed=True, now=NOW + 140)
+        q.accept(tid, revision=2,
+                 artifact_sha256=claim["artifact_sha256"],
+                 criteria="synthetic", by="medic", now=NOW + 150)
+        return claim
+
+    def test_rev1_unresolved_until_reconciled_then_retired(self):
+        self.apply()
+        q = CrewQueue(self.target)
+        for tid, pre_state in (("fx-open", "assigned"),
+                               ("fx-done", "reported-complete")):
+            claim = self._run_rev2_lifecycle(q, tid)
+            # The residual, reproduced: rev2 is verified-accepted,
+            # yet rev1 still sits in the unresolved view.
+            unres = {(e["task_id"], e["revision"])
+                     for e in q.unresolved_revisions()}
+            self.assertIn((tid, 1), unres, tid)
+            rev1_before = q.get_rev(tid, revision=1)
+            outcomes = imp.reconcile_import_continuations(
+                q, by="medic", now=NOW + 500)
+            mine = [o for o in outcomes if o["task_id"] == tid]
+            self.assertEqual(len(mine), 1, tid)
+            self.assertEqual(mine[0]["status"], "retired", tid)
+            self.assertEqual(mine[0]["successor_revision"], 2, tid)
+            rev1 = q.get_rev(tid, revision=1)
+            # Retired, terminal, out of the unresolved view; rev2
+            # untouched and still current/accepted.
+            self.assertEqual(rev1["state"], "canceled", tid)
+            self.assertEqual(
+                rev1["cancellation"]["pre_request_state"],
+                pre_state, tid)
+            unres = {(e["task_id"], e["revision"])
+                     for e in q.unresolved_revisions()}
+            self.assertNotIn((tid, 1), unres, tid)
+            self.assertEqual(q.get_rev(tid, revision=2)["state"],
+                             "verified-accepted", tid)
+            # No fabricated section-11 evidence on rev1, ever.
+            self.assertIsNone(rev1["completion_claim"], tid)
+            self.assertIsNone(rev1["verification"], tid)
+            self.assertIsNone(rev1["acceptance"], tid)
+            # History is append-only: every pre-reconciliation
+            # record is an unchanged prefix of the final record
+            # list.
+            self.assertEqual(
+                rev1["records"][:len(rev1_before["records"])],
+                rev1_before["records"], tid)
+            # The linkage record ties rev1 to its successor and
+            # cites the successor's real acceptance artifact.
+            links = [r for r in rev1["records"]
+                     if r["kind"] == "import-reconciliation"]
+            self.assertEqual(len(links), 1, tid)
+            self.assertEqual(links[0]["predecessor_revision"], 1,
+                             tid)
+            self.assertEqual(links[0]["successor_revision"], 2, tid)
+            self.assertEqual(
+                links[0]["successor_acceptance_artifact_sha256"],
+                claim["artifact_sha256"], tid)
+            self.assertEqual(links[0]["predecessor_state"],
+                             pre_state, tid)
+            # No double-escalation: the retired rev1 fires nothing,
+            # and the accepted rev2 is terminal.
+            hits = [a for a in q.escalate_check(now=NOW + 100000)
+                    if a["task_id"] == tid
+                    and a["action"] == "escalated"]
+            self.assertEqual(hits, [], tid)
+
+    def test_no_retirement_before_successor_acceptance(self):
+        self.apply()
+        q = CrewQueue(self.target)
+        rev1 = q.get_rev("fx-open", revision=1)
+        payload = [r for r in rev1["records"]
+                   if r["kind"] == "import"][0]["v1_item"]
+        q.admit("fx-open", 2, payload, route="import-continuation",
+                owner="medic", acceptance_authority="medic",
+                now=NOW + 100, pickup_deadline_ts=NOW + 1000,
+                completion_deadline_ts=NOW + 2000)
+        outcomes = imp.reconcile_import_continuations(
+            q, by="medic", now=NOW + 500)
+        by_id = {o["task_id"]: o for o in outcomes}
+        # Successor merely admitted: not authorized.
+        self.assertEqual(by_id["fx-open"]["status"],
+                         "awaiting-continuation")
+        # No successor at all: not authorized either.
+        self.assertEqual(by_id["fx-done"]["status"],
+                         "awaiting-continuation")
+        for tid in ("fx-open", "fx-done"):
+            rev1 = q.get_rev(tid, revision=1)
+            self.assertIsNone(rev1["cancellation"], tid)
+            self.assertIn(
+                (tid, 1),
+                {(e["task_id"], e["revision"])
+                 for e in q.unresolved_revisions()}, tid)
+        rev1 = q.get_rev("fx-open", revision=1)
+        self.assertEqual(
+            [r for r in rev1["records"]
+             if r["kind"] == "import-reconciliation"], [])
+
+    def test_reconcile_idempotent_and_scoped_to_imports(self):
+        self.apply()
+        q = CrewQueue(self.target)
+        # A live (non-import) item whose rev2 completes: its rev1
+        # is NOT an import continuation and must never be retired
+        # by this step.
+        q.admit("live-item", 1, {"task": "live"}, route="test",
+                owner="medic", acceptance_authority="medic", now=NOW,
+                completion_deadline_ts=NOW + 900)
+        res = q.admit("live-item", 2, {"task": "live v2"},
+                      route="test", owner="medic",
+                      acceptance_authority="medic", now=NOW + 10,
+                      completion_deadline_ts=NOW + 1900)
+        q.pickup("live-item", revision=2, by="medic", now=NOW + 20)
+        q.start("live-item", revision=2, by="medic", now=NOW + 30)
+        claim = q.complete_claim(
+            "live-item", revision=2, attempt_id=res["attempt_id"],
+            artifact={"artifact": "live"}, by="medic", now=NOW + 40)
+        q.verify("live-item", revision=2,
+                 artifact_sha256=claim["artifact_sha256"],
+                 criteria="synthetic", verifier="rivet",
+                 passed=True, now=NOW + 50)
+        q.accept("live-item", revision=2,
+                 artifact_sha256=claim["artifact_sha256"],
+                 criteria="synthetic", by="medic", now=NOW + 60)
+        for tid in ("fx-open", "fx-done"):
+            self._run_rev2_lifecycle(q, tid)
+        imp.reconcile_import_continuations(q, by="medic",
+                                           now=NOW + 500)
+        live1 = q.get_rev("live-item", revision=1)
+        self.assertEqual(live1["state"], "admitted")
+        self.assertIsNone(live1["cancellation"])
+        self.assertIn(
+            ("live-item", 1),
+            {(e["task_id"], e["revision"])
+             for e in q.unresolved_revisions()})
+        # Second run: retired revisions are terminal and untouched
+        # (record counts stable, no duplicate link record).
+        counts = {tid: len(q.get_rev(tid, revision=1)["records"])
+                  for tid in ("fx-open", "fx-done")}
+        outcomes = imp.reconcile_import_continuations(
+            q, by="medic", now=NOW + 600)
+        self.assertEqual(
+            [o for o in outcomes if o["status"] == "retired"], [])
+        for tid, n in counts.items():
+            rev1 = q.get_rev(tid, revision=1)
+            self.assertEqual(len(rev1["records"]), n, tid)
+            self.assertEqual(
+                len([r for r in rev1["records"]
+                     if r["kind"] == "import-reconciliation"]), 1,
+                tid)
+
+
+class TestRollbackManifestCompleteness(unittest.TestCase):
+    """Residual R3: the preflight verified whatever entries a
+    manifest happened to contain — a manifest listing only the v1
+    queue baseline (both Tower members omitted) passed, an empty
+    manifest passed, and the manifest's own integrity was unpinned.
+    The manifest is now verified as the COMPLETE expected restore
+    set, cross-pinned against MANIFEST.json, before any write."""
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp(prefix="cq-manifest-")
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.store = os.path.join(self.tmp, "r3-v2.json")
+        self.q = CrewQueue(self.store)
+        self.q.admit("r3-item", 1, {"task": "synthetic r3"},
+                     route="test", owner="medic", now=T0,
+                     completion_deadline_ts=T0 + 3600)
+
+        def bad_sender(nid, dest, payload):
+            raise RuntimeError("destination down (r3 drill)")
+
+        self.nid = self.q.notify(
+            "board:r3", {"msg": "synthetic"}, sender=bad_sender,
+            kind="manual", task_id="r3-item", revision=1,
+            now=T0 + 1)["notification_id"]
+
+    def _baseline(self, listed=EXPECTED_RESTORE_MEMBERS,
+                  pin_listed=None, with_pin=True, manifest_text=None,
+                  pin_hash_override=None):
+        bdir = os.path.join(self.tmp, "baseline-r3")
+        os.makedirs(bdir, exist_ok=True)
+        contents = {name: "synthetic baseline member %s\n" % name
+                    for name in EXPECTED_RESTORE_MEMBERS}
+        contents["extra-member.txt"] = "synthetic extra member\n"
+        digests = {}
+        for name, content in contents.items():
+            with open(os.path.join(bdir, name), "w",
+                      encoding="utf-8") as fh:
+                fh.write(content)
+            digests[name] = hashlib.sha256(
+                content.encode()).hexdigest()
+        if manifest_text is None:
+            manifest_text = "".join(
+                "%s  %s\n" % (digests[n], n) for n in listed)
+        with open(os.path.join(bdir, "MANIFEST.sha256"), "w",
+                  encoding="utf-8") as fh:
+            fh.write(manifest_text)
+        if with_pin:
+            pin_names = listed if pin_listed is None else pin_listed
+            override = pin_hash_override or {}
+            pin = {"files": [
+                {"copy": n,
+                 "sha256": override.get(n, digests[n])}
+                for n in pin_names]}
+            with open(os.path.join(bdir, "MANIFEST.json"), "w",
+                      encoding="utf-8") as fh:
+                json.dump(pin, fh)
+        return bdir
+
+    def _assert_aborts_in_preflight(self, bdir):
+        with self.assertRaises(DrillAbort) as cm:
+            rollback_reconcile(
+                self.q,
+                destination_view=_DestinationView({self.nid}),
+                baseline_dir=bdir)
+        self.assertIn("preflight", str(cm.exception))
+        # The abort happened before any reconcile write.
+        data = _load_json(self.store)
+        self.assertEqual(data["notifications"][self.nid]["state"],
+                         "uncertain")
+
+    def test_rivet_repro_only_v1_member_listed_aborts(self):
+        # Her exact reproduction: manifest lists only the valid v1
+        # queue baseline, omitting both Tower members. sha256sum -c
+        # returns 0 on it; the old preflight returned True.
+        bdir = self._baseline(
+            listed=("crew-queue-v1-baseline.json",))
+        self._assert_aborts_in_preflight(bdir)
+
+    def test_each_member_omission_aborts(self):
+        for omitted in EXPECTED_RESTORE_MEMBERS:
+            with self.subTest(omitted=omitted):
+                listed = tuple(
+                    n for n in EXPECTED_RESTORE_MEMBERS
+                    if n != omitted)
+                bdir = self._baseline(listed=listed)
+                self._assert_aborts_in_preflight(bdir)
+
+    def test_empty_manifest_aborts(self):
+        bdir = self._baseline(manifest_text="")
+        self._assert_aborts_in_preflight(bdir)
+
+    def test_missing_manifest_pin_aborts(self):
+        bdir = self._baseline(with_pin=False)
+        self._assert_aborts_in_preflight(bdir)
+
+    def test_manifest_pin_conflict_aborts(self):
+        bdir = self._baseline(pin_hash_override={
+            "clock-tower-state-baseline.json": "0" * 64})
+        self._assert_aborts_in_preflight(bdir)
+
+    def test_extra_listed_member_aborts(self):
+        bdir = self._baseline(
+            listed=EXPECTED_RESTORE_MEMBERS + ("extra-member.txt",))
+        self._assert_aborts_in_preflight(bdir)
+
+    def test_duplicate_manifest_entry_aborts(self):
+        lines = []
+        for name in EXPECTED_RESTORE_MEMBERS:
+            digest = hashlib.sha256(
+                ("synthetic baseline member %s\n" % name)
+                .encode()).hexdigest()
+            lines.append("%s  %s\n" % (digest, name))
+        lines.append(lines[0])  # same member listed twice
+        bdir = self._baseline(manifest_text="".join(lines))
+        self._assert_aborts_in_preflight(bdir)
 
 
 if __name__ == "__main__":
