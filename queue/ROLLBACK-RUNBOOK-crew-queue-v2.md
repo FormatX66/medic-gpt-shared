@@ -9,10 +9,14 @@ gate criteria: **reconcile first — no restore may proceed past an
 unreconciled unresolved effect or notification, and missing
 destination evidence fails closed.**
 
-Drill proof: `test_crew_queue_import_v1.py::TestRollbackDrill`
-executes step 2 against synthetic stores and proves unresolved
-effects/notifications are surfaced, reconciled without loss or replay,
-and that missing evidence aborts before any restore write.
+Drill proof: `test_crew_queue_import_v1.py::TestRollbackDrill` plus
+`TestRollbackGateConditions` and `TestRollbackPreflight` execute
+step 2 (including the 2.0 preflight) against synthetic stores and
+prove unresolved effects/notifications are surfaced, reconciled
+without loss or replay, that EACH of the four gate conditions in 2e
+aborts before any restore write when it is the one violated, and
+that a missing ledger or a tampered baseline manifest aborts in
+preflight before anything is reconciled.
 
 ## Fixed paths
 
@@ -80,7 +84,36 @@ store:
 ```
 Q=/home/hatch/workspace/shared/medic-gpt-shared/queue/crew_queue_v2.py
 V2=/home/hatch/workspace/goals/medic-gpt-automated-loop/hidden_files/crew-queue-v2.json
+B=/home/hatch/workspace/goals/medic-gpt-automated-loop/hidden_files/activation-baseline-20261014
 ```
+
+2.0 **Preflight (read-only — before ANY reconcile or restore
+write).** A missing v2 ledger must never be "reconciled" as an
+empty store: opening a missing path through the module yields an
+empty ledger against which every recovery trivially succeeds,
+which would manufacture a passed gate out of a lost store. And the
+baseline manifest's integrity is verified HERE — before any restore
+write — not only after one (step 4 re-verifies after restore):
+
+```
+test -f "$V2" || { echo "PREFLIGHT FAIL: v2 ledger $V2 is missing — STOP"; exit 1; }
+python3 - << 'EOF'
+import json, sys
+sys.path.insert(0, "/home/hatch/workspace/shared/medic-gpt-shared/queue")
+from crew_queue_v2 import SPEC_SHA256
+with open("/home/hatch/workspace/goals/medic-gpt-automated-loop/hidden_files/crew-queue-v2.json") as fh:
+    data = json.load(fh)
+ok = isinstance(data, dict) and data.get("version") == 2 \
+    and isinstance(data.get("items"), dict) \
+    and data.get("spec_sha256") == SPEC_SHA256
+print("ledger recognized:", ok)
+sys.exit(0 if ok else 1)
+EOF
+cd "$B" && sha256sum -c MANIFEST.sha256
+```
+
+Any preflight failure: **STOP.** Nothing is reconciled, nothing is
+restored; escalate per the gate-failure path in 2e.
 
 2a. Surface everything unresolved, and save the output:
 
@@ -157,17 +190,24 @@ for action in q.recover_notifications(destination_view=DestinationView()):
     print(action)
 EOF
 ```
-A notification the destination has NOT seen may be sent exactly once
-by recovery under its persisted notification_id — that is completion
-of the original intent, not a replay. A notification whose
-destination cannot be queried at all stays unresolved: **the gate
-fails**.
+What recovery can do with an unseen EXTERNAL notification depends
+on a sender being supplied, and **this runbook deliberately wires
+no sender**: the commands above call `recover_notifications` with a
+destination view only, so an unseen external notification is
+reported `fail-closed-no-external-sender` and stays unresolved —
+**the gate fails**. (The module CAN send an unseen notification
+exactly once under its persisted notification_id when an operator
+explicitly supplies the destination's sender — `sent-on-recovery`,
+completion of the original intent rather than a replay — but that
+is an operator decision outside this runbook's documented commands,
+never a silent default.) A notification whose destination cannot
+be queried at all likewise stays unresolved: **the gate fails**.
 
 2e. **GATE — all four must hold, else STOP:**
 - `$EVID/unresolved-before.txt` re-run (`python3 $Q --store $V2 unresolved`) shows no `open_effects` and no `cancellation_requested` entries;
 - the last `recover-cancellations` output contains no `cancellation-still-pending`;
 - the last notification recovery output contains no `fail-closed-*` and no `still-uncertain` actions;
-- every effect and notification that was unresolved at 2a appears in the step-2 outputs with a reconciled outcome (resolved / confirmed-at-destination / sent-on-recovery / cancellation-confirmed).
+- every effect and notification that was unresolved at 2a appears in the step-2 outputs with a reconciled outcome (resolved / confirmed-at-destination / sent-on-recovery / cancellation-confirmed), AND a final read of the store shows no notification left in a non-terminal (`intent` / `uncertain`) state — including any minted after 2a by a writer that was not frozen.
 
 If the gate fails: **do not restore anything.** The v2 store stays
 exactly as it is, the Tower stays frozen, and the operator posts a
