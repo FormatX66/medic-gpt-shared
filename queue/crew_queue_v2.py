@@ -63,6 +63,27 @@ rivet-crewqueue-impl-review-20261014-1732-v1, six blocking fixes):
   6. Admission requires at least one deadline (pickup or completion);
      the blocker-check cadence is validated positive and defaults to the
      queue's configured cadence, not an unqualified literal.
+
+Round-2 fix pass 2026-10-14 (Rivet re-review
+rivet-crew-rereview-verdict-20261014-2002-v1; round-1 fixes 1 and 4
+were accepted as addressed and are NOT disturbed here):
+  2. A clean admission-effect callback no longer overwrites a
+     cancellation that was requested while the effect was in flight;
+     recover_cancellations keys off the cancellation record, not only
+     the state string; reconcile_effect authoritatively reconciles ALL
+     unresolved effect states (pending, dispatched, uncertain) — the
+     states cancellation confirmation waits on.
+  3. An unresolved EXTERNAL notification fails closed without the
+     matching destination query, in repeat notify() and in
+     recover_notifications alike; the local outbox view/sender is valid
+     only for notifications actually delivered via the local outbox.
+  5. Cross-revision ownership fencing: while any revision of a task
+     owns unresolved execution (started, admission-uncertain, or
+     blocked-from-started), no other revision may be admitted, take an
+     effect, or start (OwnershipFenced).
+  6. The blocker-check default is the target lane cadence (60 s),
+     replacing the unqualified 300 s literal. This corrects the module
+     default only; it changes no platform observation schedule.
 """
 
 import argparse
@@ -101,6 +122,13 @@ class StaleRevision(CrewQueueError):
 
 class InvalidTransition(CrewQueueError):
     """The requested transition is not legal from the item's current state."""
+
+
+class OwnershipFenced(CrewQueueError):
+    """A second admission, admission-with-effect, or execution start was
+    attempted for a task while another revision's ownership is
+    unresolved (started or admission-uncertain). Cross-revision
+    fencing, round-2 fix 5."""
 
 
 class ReplayForbidden(CrewQueueError):
@@ -178,10 +206,14 @@ def _outbox_sender(store_dict):
 
 # ---------------------------------------------------------------- store
 
-# Section 9 default blocker-check cadence: the lane's normal watch
-# cycle. Used only when neither the CrewQueue instance nor the block()
-# call configures a cadence.
-DEFAULT_BLOCKER_CHECK_INTERVAL_S = 300
+# Section 9 blocker-check cadence: the target lane cadence — blocker
+# checks ride the crew queue's normal watch cycle, 60 seconds.
+# DEFAULT_BLOCKER_CHECK_INTERVAL_S is that cadence, used only when
+# neither the CrewQueue instance nor the block() call configures one.
+# (Round-2 fix 6: the previous unqualified 300 s default did not match
+# the target lane.)
+QUEUE_LANE_CADENCE_S = 60
+DEFAULT_BLOCKER_CHECK_INTERVAL_S = QUEUE_LANE_CADENCE_S
 
 
 class CrewQueue:
@@ -347,6 +379,39 @@ class CrewQueue:
                 "deadline (pickup_deadline_ts or completion_deadline_ts)"
                 % (task_id, revision))
 
+    # Round-2 fix 5 (cross-revision ownership fencing): a revision OWNS
+    # unresolved execution while it is started, admission-uncertain, or
+    # blocked from started (started work that is paused still owns its
+    # execution). While any revision of a task owns execution, no OTHER
+    # revision may be admitted, take an effect, or start: exactly one
+    # executing ownership per task, until that ownership is safely
+    # resolved (a terminal state).
+    @staticmethod
+    def _owning_state(rev):
+        if rev["state"] in ("started", "admission-uncertain"):
+            return rev["state"]
+        if rev["state"] == "blocked" and \
+                rev["blocked_from_state"] == "started":
+            return "blocked-from-started"
+        return None
+
+    def _ownership_fence(self, item, revision):
+        """Why `revision` of this item is fenced by another revision's
+        unresolved ownership, or None when every other revision is
+        safely resolved."""
+        for key in sorted(item["revisions"], key=int):
+            other = item["revisions"][key]
+            if other["revision"] == revision:
+                continue
+            owning = self._owning_state(other)
+            if owning is not None:
+                return ("task %s revision %d is %s; revision %d may "
+                        "not be admitted, take an effect, or start "
+                        "until that ownership is safely resolved"
+                        % (item["task_id"], other["revision"], owning,
+                           revision))
+        return None
+
     def _admit_locked(self, st, task_id, revision, payload, route, owner,
                       requester, authority, ts, pickup_deadline_ts,
                       completion_deadline_ts):
@@ -392,6 +457,9 @@ class CrewQueue:
                     "payload_sha256": sha}
         self._require_deadline(task_id, revision, pickup_deadline_ts,
                                completion_deadline_ts)
+        fence = self._ownership_fence(item, revision)
+        if fence is not None:
+            raise OwnershipFenced(fence)
         rev = self._new_rev(task_id, revision, sha, owner,
                             requester or owner, authority, ts)
         attempt_id = _attempt_id(task_id, revision, 1)
@@ -478,6 +546,9 @@ class CrewQueue:
             self._require_deadline(task_id, int(revision),
                                    pickup_deadline_ts,
                                    completion_deadline_ts)
+            fence = self._ownership_fence(item, int(revision))
+            if fence is not None:
+                raise OwnershipFenced(fence)
             rev = self._new_rev(task_id, int(revision), sha, owner, owner,
                                 None, ts)
             rev["state"] = "admission-uncertain"
@@ -522,14 +593,35 @@ class CrewQueue:
             _, rev = self._get_rev(st, task_id, revision)
             eff = self._find_effect(rev, effect_id)
             eff["state"] = "dispatched"
-            rev["state"] = "admitted"
-            rev["attempts"][-1]["state"] = "admitted"
-            self._record(rev, "admission", ts, route=route, owner=owner,
-                         attempt_id=rev["current_attempt_id"],
-                         effect_id=effect_id,
-                         payload_sha256=rev["payload_sha256"])
             attempt_id = rev["current_attempt_id"]
-        return {"status": "admitted", "task_id": task_id,
+            if rev["cancellation"] is not None:
+                # Round-2 fix 2: a cancellation requested while the
+                # effect was in flight (the callback runs outside the
+                # store lock, so a cancel_request can land in that
+                # window) is AUTHORITATIVE. The clean callback
+                # finalizes the EFFECT evidence (dispatched) only —
+                # it must not overwrite cancellation-requested with
+                # admitted. The round-1 overwrite left the cancellation
+                # recorded but in state "admitted", where
+                # recover_cancellations never looked. The cancellation
+                # now waits on this dispatched effect until it is
+                # reconciled, exactly like any in-flight effect
+                # (section 10).
+                self._record(rev, "admission", ts, route=route,
+                             owner=owner, attempt_id=attempt_id,
+                             effect_id=effect_id,
+                             payload_sha256=rev["payload_sha256"],
+                             cancellation_pending=True)
+                status = "cancellation-requested"
+            else:
+                rev["state"] = "admitted"
+                rev["attempts"][-1]["state"] = "admitted"
+                self._record(rev, "admission", ts, route=route,
+                             owner=owner, attempt_id=attempt_id,
+                             effect_id=effect_id,
+                             payload_sha256=rev["payload_sha256"])
+                status = "admitted"
+        return {"status": status, "task_id": task_id,
                 "revision": int(revision), "effect_id": effect_id,
                 "attempt_id": attempt_id}
 
@@ -564,18 +656,23 @@ class CrewQueue:
 
     def reconcile_effect(self, task_id, effect_id, found, detail=None,
                          revision=None, now=None):
-        """Reconcile an uncertain effect against its own record (server
+        """Reconcile an unresolved effect against its own record (server
         table / journal / destination query). found=True resolves it.
         found=False (receiver absence) is recorded but changes nothing:
-        absence NEVER permits replay and ownership is retained (A7/A15)."""
+        absence NEVER permits replay and ownership is retained (A7/A15).
+        Round-2 fix 2: ALL unresolved effect states are reconcilable
+        (pending, dispatched, uncertain) — cancellation confirmation
+        waits on pending and dispatched effects too, so restricting
+        reconciliation to uncertain effects deadlocked it."""
         ts = _now(now)
         with self._txn() as st:
             _, rev = self._get_rev(st, task_id, revision)
             eff = self._find_effect(rev, effect_id)
-            if eff["state"] != "uncertain":
+            if eff["state"] == "resolved":
                 raise InvalidTransition(
-                    "effect %s is %s, not uncertain" % (effect_id,
-                                                        eff["state"]))
+                    "effect %s is already resolved; reconciliation "
+                    "applies to unresolved effects (pending, dispatched, "
+                    "uncertain)" % effect_id)
             if found:
                 eff["state"] = "resolved"
                 eff["resolved_ts"] = ts
@@ -583,7 +680,8 @@ class CrewQueue:
                              outcome="found", detail=detail,
                              attempt_id=eff["attempt_id"],
                              payload_sha256=rev["payload_sha256"])
-                if rev["state"] == "admission-uncertain" and not any(
+                if rev["state"] == "admission-uncertain" and \
+                        rev["cancellation"] is None and not any(
                         e["state"] == "uncertain" for e in rev["effects"]):
                     rev["state"] = "admitted"
                     rev["attempts"][-1]["state"] = "admitted"
@@ -652,25 +750,31 @@ class CrewQueue:
 
     def can_dispatch(self, task_id, revision=None):
         with self._txn() as st:
-            _, rev = self._get_rev(st, task_id, revision)
+            item, rev = self._get_rev(st, task_id, revision)
             return rev["state"] in ("admitted", "started") and \
-                self._dispatch_blocker(rev) is None
+                self._dispatch_blocker(rev) is None and \
+                self._ownership_fence(item, rev["revision"]) is None
 
     def start(self, task_id, revision=None, by=None, evidence=None, now=None):
         """EXECUTION-START evidence, bound to the attempt. The only record
         class that moves an item to started (section 3). Blocked by a
         cancellation request (section 10), by an approval hold (section
-        8), by a blocker (section 9), and by admission uncertainty
-        (section 4)."""
+        8), by a blocker (section 9), by admission uncertainty
+        (section 4), and by cross-revision ownership fencing (round-2
+        fix 5): no second execution while another revision owns
+        unresolved execution."""
         ts = _now(now)
         with self._txn() as st:
-            _, rev = self._get_rev(st, task_id, revision)
+            item, rev = self._get_rev(st, task_id, revision)
             blocker = self._dispatch_blocker(rev)
             if blocker is not None:
                 raise InvalidTransition(blocker)
             if rev["state"] != "admitted":
                 raise InvalidTransition(
                     "start requires state admitted, not %s" % rev["state"])
+            fence = self._ownership_fence(item, rev["revision"])
+            if fence is not None:
+                raise OwnershipFenced(fence)
             attempt = rev["attempts"][-1]
             attempt["state"] = "started"
             attempt["started_ts"] = ts
@@ -683,6 +787,21 @@ class CrewQueue:
 
     # ---- notifications (section 7)
 
+    @staticmethod
+    def _notif_delivery(st, notif):
+        """Delivery route of a notification record: "local-outbox" when
+        it is delivered through the store's own outbox, "external" when
+        an injected sender carries it to a real destination. Records
+        written before the field existed are inferred from the outbox
+        itself: an id present there was delivered locally (round-2
+        fix 3)."""
+        delivery = notif.get("delivery")
+        if delivery:
+            return delivery
+        if notif["notification_id"] in st.get("outbox", {}):
+            return "local-outbox"
+        return "external"
+
     def _notify_locked(self, st, destination, payload, sender, hooks, ts,
                        kind, task_id, revision, deadline_kind, deadline_ts,
                        material_epoch, destination_view=None):
@@ -692,14 +811,30 @@ class CrewQueue:
         if existing is not None and existing["state"] in (
                 "sent", "sent-confirmed"):
             return copy.deepcopy(existing)
-        if existing is not None and destination_view is not None:
+        if existing is not None:
             # Fix 3 (section 7): a REPEAT notify of an intent/uncertain
             # notification reconciles against the destination BEFORE any
             # re-send — the same query recover_notifications performs.
             # Seen at the destination -> confirmed, never duplicated
             # (A12). Unseen -> fall through and send exactly once under
             # the persisted notification_id (A11).
-            if destination_view.has_seen(nid):
+            # Round-2 fix 3: without a destination_view, an unresolved
+            # EXTERNAL notification FAILS CLOSED — it is never re-sent
+            # on hope. The local outbox view may be substituted only
+            # for a notification actually delivered via the local
+            # outbox; it is not a view of any external destination.
+            view = destination_view
+            if view is None:
+                if self._notif_delivery(st, existing) == "local-outbox":
+                    view = _OutboxView(st)
+                else:
+                    raise CrewQueueError(
+                        "notification %s is unresolved (%s) and "
+                        "targets an external destination; refusing to "
+                        "re-send without a destination_view query of "
+                        "that destination (fail closed, section 7)"
+                        % (nid, existing["state"]))
+            if view.has_seen(nid):
                 existing["state"] = "sent-confirmed"
                 existing["updated_ts"] = ts
                 existing["reconciled"] = "destination-has-seen"
@@ -711,6 +846,8 @@ class CrewQueue:
                         "revision": revision, "deadline_kind": deadline_kind,
                         "deadline_ts": deadline_ts,
                         "material_epoch": material_epoch,
+                        "delivery": "local-outbox" if sender is None
+                        else "external",
                         "payload": payload,
                         "payload_sha256": payload_sha256(payload),
                         "state": "intent", "created_ts": ts,
@@ -725,6 +862,16 @@ class CrewQueue:
             except Exception:
                 self._save_locked(st)  # leave the durable intent on disk
                 raise
+        if sender is None and \
+                self._notif_delivery(st, existing) == "external":
+            # Unresolved external notification, destination queried and
+            # unseen, but this call supplied no sender for that
+            # destination: sending via the local outbox would deliver
+            # to the WRONG destination. Fail closed (round-2 fix 3).
+            raise CrewQueueError(
+                "notification %s targets an external destination; no "
+                "external sender was supplied to re-send it (fail "
+                "closed, section 7)" % nid)
         if sender is None:
             sender = _outbox_sender(st)
         try:
@@ -747,7 +894,11 @@ class CrewQueue:
         """Send a notification under section 7 semantics. If this exact
         notification already exists in intent/uncertain state and a
         destination_view is supplied, the destination is queried by
-        notification_id BEFORE any re-send (fix 3)."""
+        notification_id BEFORE any re-send (fix 3). Round-2 fix 3:
+        without a destination_view, an unresolved EXTERNAL notification
+        fails closed (CrewQueueError) instead of being re-sent; only a
+        local-outbox notification may reconcile against the local
+        outbox view."""
         ts = _now(now)
         with self._txn() as st:
             return self._notify_locked(st, destination, payload, sender,
@@ -761,15 +912,30 @@ class CrewQueue:
         """Crash recovery for notifications in intent/uncertain state.
         The destination is queried by notification_id BEFORE any re-send:
         seen -> sent-confirmed, no duplicate (A12); unseen -> send exactly
-        once under the persisted notification_id (A11)."""
+        once under the persisted notification_id (A11).
+        Round-2 fix 3: the query must be of the notification's OWN
+        destination. With no destination_view supplied, an unresolved
+        EXTERNAL notification fails closed (reported, state untouched,
+        never re-sent): the local outbox view is valid only for
+        notifications actually delivered via the local outbox, and the
+        local outbox sender never substitutes for an external one."""
         ts = _now(now)
         actions = []
         with self._txn() as st:
-            view = destination_view or _OutboxView(st)
-            snd = sender or _outbox_sender(st)
             for nid, notif in sorted(st["notifications"].items()):
                 if notif["state"] not in ("intent", "uncertain"):
                     continue
+                delivery = self._notif_delivery(st, notif)
+                view = destination_view
+                if view is None:
+                    if delivery == "local-outbox":
+                        view = _OutboxView(st)
+                    else:
+                        actions.append(
+                            {"notification_id": nid,
+                             "action": "fail-closed-no-destination-view",
+                             "resent": False})
+                        continue
                 if view.has_seen(nid):
                     notif["state"] = "sent-confirmed"
                     notif["updated_ts"] = ts
@@ -777,6 +943,16 @@ class CrewQueue:
                                     "action": "confirmed-at-destination",
                                     "resent": False})
                     continue
+                if delivery == "external":
+                    if sender is None:
+                        actions.append(
+                            {"notification_id": nid,
+                             "action": "fail-closed-no-external-sender",
+                             "resent": False})
+                        continue
+                    snd = sender
+                else:
+                    snd = sender or _outbox_sender(st)
                 try:
                     receipt = snd(nid, notif["destination"],
                                   notif["payload"])
@@ -1080,11 +1256,14 @@ class CrewQueue:
         """Crash recovery for cancellations (fix 2). A cancellation can
         be left pending by a crash anywhere between the request and the
         confirm (or between the last effect resolving and the confirm).
-        On recovery, every revision still in cancellation-requested is
-        re-examined: if no pending/dispatched/uncertain effects remain,
-        the cancellation is confirmed under the retained request; if
-        effects are still open, the request stays pending and is
-        reported, with reconciliation and ownership untouched."""
+        On recovery, every revision carrying an UNCONFIRMED cancellation
+        record is re-examined — keyed off the cancellation record
+        itself, not only the state string (round-2 fix 2), so a record
+        whose state was disturbed stays visible to recovery. If no
+        pending/dispatched/uncertain effects remain, the cancellation
+        is confirmed under the retained request; if effects are still
+        open, the request stays pending and is reported, with
+        reconciliation and ownership untouched."""
         ts = _now(now)
         actions = []
         with self._txn() as st:
@@ -1092,7 +1271,10 @@ class CrewQueue:
                 item = st["items"][task_id]
                 for rev_key in sorted(item["revisions"], key=int):
                     rev = item["revisions"][rev_key]
-                    if rev["state"] != "cancellation-requested":
+                    if rev["cancellation"] is None or \
+                            rev["cancellation"].get("confirmed_ts") \
+                            is not None or \
+                            rev["state"] in TERMINAL_STATES:
                         continue
                     open_effects = self._open_effects(rev)
                     if open_effects:
