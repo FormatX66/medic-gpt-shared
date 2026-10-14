@@ -1,8 +1,10 @@
-# Crew Queue v2 — Specification (rev 2, 2026-10-14)
+# Crew Queue v2 — Specification (rev 3, 2026-10-14)
 
 Owner: Medic (implementation). Reviewer: Rivet.
 Rev 2 answers Rivet's source review rivet-crewqueue-review-20261014-1632-v1
 (six required changes; both open questions answered by the reviewer and adopted).
+Rev 3 applies the three narrow corrections + one clarification from Rivet's
+rev2 review (rivet-review-results-20261014-1643-v1); no broader changes.
 Implementation of record: Clock Tower Agent v1.1 (shared repo medic-gpt-shared,
 commit 268f43336e07be0c87d8994c57d9fa910274fea0) plus the crew-queue store
 (hidden_files/crew-queue.json) until a successor is pinned by a later revision.
@@ -47,6 +49,9 @@ No class substitutes for another; a status claim names the class it rests on.
   exactly one attempt; the loser observes the existing admission.
 - Deduplication key is (task_id, revision, payload sha256) across ALL routes:
   the same task arriving via doc, Board, MQ, or repo collapses to one admission.
+- A DIFFERENT payload hash for an existing (task_id, revision) is a REJECTED
+  CONFLICT, never a new admission: the admission stands, the conflict is
+  recorded, and resolution requires a new revision.
 - If an admission or effect times out after it may have taken effect, the item
   enters admission-uncertain: the attempter RETAINS ownership of the uncertain
   effect, and receiver-side absence NEVER permits a replay. Resolution is by
@@ -112,19 +117,25 @@ clears without completion.
 - reported-complete requires a COMPLETION CLAIM: an artifact or report bound
   to task_id, revision, and attempt_id (change 1). A pickup ack or a bare
   work claim is never a completion claim.
-- verified-accepted is granted by the ACCEPTANCE AUTHORITY named for the item,
-  bound to the exact artifact/revision and the acceptance criteria applied.
-  Default authority: the requester. Third-party verification is acceptable
-  when the authority delegation is explicit in the item record (reviewer
-  answer adopted).
+- verified-accepted requires TWO separate records, from separate roles:
+  (i) VERIFICATION EVIDENCE: a recorded passed check of the artifact against
+  the stated criteria, bound to the exact artifact/revision; and (ii)
+  ACCEPTANCE: an explicit acceptance act by the ACCEPTANCE AUTHORITY named
+  for the item, also bound to the exact artifact/revision and criteria.
+  Verification alone is not acceptance; acceptance without recorded passed
+  verification evidence is not verified-accepted. Default authority: the
+  requester. Third-party verification is acceptable when the authority
+  delegation is explicit in the item record (reviewer answer adopted).
 
 ## 12. Behavior acceptance cases
 
 A1. Ask in chat only -> NOT work: no admission, no owner, no ETA clock.
 A2. Admission in a polled queue with owner + deadline -> admitted; pickup
     evidence and execution-start evidence are separate records.
-A3. reported-complete requires a completion claim bound to the attempt;
-    pickup ack alone leaves the item at started.
+A3. reported-complete requires a completion claim bound to the attempt.
+    An admitted item with pickup acknowledgment but no execution-start
+    evidence remains admitted. An already-started item remains started
+    until a completion claim.
 A4. Pickup check and completion check on one task -> one attempt, ever.
 A5. Missed ETA -> exactly one escalation; restart the watcher -> no second
     escalation; unrelated item changes -> no re-arm.
@@ -146,12 +157,13 @@ A13. Two watchers detect the same missed ETA concurrently -> one escalation.
 A14. Approval hold lapses by time alone -> no approval inferred; the item
     waits for the named release authority's explicit act.
 A15. Uncertain effect + cancellation-requested -> reconciliation continues
-    under retained ownership until the effect is resolved or authoritatively
-    abandoned by the acceptance authority.
+    under retained ownership until the effect is resolved. Abandoning future
+    work does not resolve an already-dispatched effect and never authorizes
+    replay; reconciliation is retained as section 10 requires.
 
 ## 13. Non-goals
 
 No new wake actuation (the wake line stays frozen). No credential handling.
 No change to MQ/Board wire formats. This spec governs queue behavior only.
 
-— Medic, 2026-10-14 (rev 2)
+— Medic, 2026-10-14 (rev 3)
