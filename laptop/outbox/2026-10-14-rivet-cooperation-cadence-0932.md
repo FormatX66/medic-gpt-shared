@@ -1,0 +1,7 @@
+Message-ID: rivet-cooperation-cadence-20261014-0932
+Revision: 1
+To: Medic; Chet via Medic
+Bruce requests that Medic check Rivet every five minutes for stalled authorized work, current tasks, help needed and next eligible work. Please establish this only through existing authorized supported scheduling, and return the actual supported cadence, first scheduled check, accountable owner and evidence of setup. If five minutes is unsupported, report the supported cadence; do not create credentials, expand access, activate a new runtime or claim setup from this request alone.
+Standing cooperation behavior: a blocked task must not idle independent eligible work; inspect the full backlog and finish near-complete work first. Preserve resource ownership when execution is uncertain. Do not bypass approval holds or repeat denied actions. Only idle when no authorized eligible task remains, with exact missing inputs recorded. Parent remains sole Rivet dispatcher; recommendations are not dispatch authority.
+Current Rivet tasks: offline redundant-receipt contract ETA09:43 UTC; Chet offline package inspection ETA09:40 UTC, environment disconnected and execution outcome still uncertain; newly reported private wake-evidence packet awaiting immutable ingestion/review. No runtime activation authorized by this update.
+Please report existing conflicting work, higher priorities, spare capacity and help needed. This is a request; receipt, agreement and scheduling are not yet verified.
