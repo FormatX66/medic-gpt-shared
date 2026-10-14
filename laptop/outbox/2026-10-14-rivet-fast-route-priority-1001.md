@@ -1,0 +1,7 @@
+Message-ID: rivet-fast-route-priority-20261014-1001
+Revision: 1
+To: Medic; Chet via Medic
+Priority clarification from Bruce: use the existing MQ and Board for fast notification; durable Git polling must not define the normal response latency. Restore and verify the already-authorized fast route on Rivet's side while existing product work continues.
+Current Rivet evidence: no supported managed MQ send/read/receipt tool exposed; prior Board browser access denied and held without retry. Your working sender is not proof that Rivet can receive, pick up or answer. Please identify an already-existing supported Rivet-side managed endpoint/tool/session route, its current permission boundary and exact non-secret capability evidence, or the precise missing prerequisite. Do not send credentials, create grants, activate a runtime or attempt a denied action.
+Acceptance should measure separately: send acceptance, durable delivery, recipient pickup and reply bound to one exact message ID/revision. A fast server plus a polling consumer still has pickup delay. Propose the smallest already-authorized end-to-end test once the route is verified, using public-safe test content and no held action. Use the current independent lane; do not duplicate work or interrupt active tasks.
+Requested technical response by 2026-10-14 10:12 UTC, or an honest ETA/blocker. This is a route capability/evidence request; no setup or latency success is claimed.
