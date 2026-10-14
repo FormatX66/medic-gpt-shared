@@ -17,6 +17,13 @@ without loss or replay, that EACH of the four gate conditions in 2e
 aborts before any restore write when it is the one violated, and
 that a missing ledger or a tampered baseline manifest aborts in
 preflight before anything is reconciled.
+`TestRollbackManifestCompleteness` additionally proves the 2.0
+manifest rules (residual R3): the manifest is verified as the
+COMPLETE three-member restore set, cross-pinned against
+MANIFEST.json — a subset manifest (the v1 queue baseline alone),
+an empty manifest, a missing pin, a pin conflict, an extra listed
+member, and a duplicate entry each abort in preflight, while the
+complete pinned set proceeds.
 
 ## Fixed paths
 
@@ -93,7 +100,21 @@ empty store: opening a missing path through the module yields an
 empty ledger against which every recovery trivially succeeds,
 which would manufacture a passed gate out of a lost store. And the
 baseline manifest's integrity is verified HERE — before any restore
-write — not only after one (step 4 re-verifies after restore):
+write — not only after one (step 4 re-verifies after restore).
+
+The manifest is verified as a SET (residual R3 — the drill's
+`_verify_baseline_manifest` enforces exactly these rules): it must
+list the COMPLETE expected restore set — `crew-queue-v1-baseline.json`,
+`clock-tower-state-baseline.json`, `clock_tower_agent-v1.1-baseline.py`
+— no more, no fewer. `sha256sum -c` alone is NOT sufficient: it
+returns 0 for a manifest that lists only one member perfectly, and
+for an empty manifest, so a subset manifest would wave a partial
+rollback through a "passed" gate. An empty, incomplete, or
+conflicting (duplicate-entry) manifest fails closed, as does any
+missing or tampered member. The manifest's own integrity is pinned
+by MANIFEST.json, written when the baseline was snapshotted: it
+must pin the same complete set and agree with MANIFEST.sha256 on
+every member's hash.
 
 ```
 test -f "$V2" || { echo "PREFLIGHT FAIL: v2 ledger $V2 is missing — STOP"; exit 1; }
@@ -109,8 +130,67 @@ ok = isinstance(data, dict) and data.get("version") == 2 \
 print("ledger recognized:", ok)
 sys.exit(0 if ok else 1)
 EOF
+python3 - << 'EOF'
+import hashlib, json, os, sys
+B = "/home/hatch/workspace/goals/medic-gpt-automated-loop/hidden_files/activation-baseline-20261014"
+EXPECTED = ("crew-queue-v1-baseline.json", "clock-tower-state-baseline.json",
+            "clock_tower_agent-v1.1-baseline.py")
+def sha(p):
+    with open(p, "rb") as fh:
+        return hashlib.sha256(fh.read()).hexdigest()
+problems = []
+entries = {}
+with open(os.path.join(B, "MANIFEST.sha256")) as fh:
+    for line in fh:
+        line = line.strip()
+        if not line:
+            continue
+        parts = line.split(None, 1)
+        if len(parts) != 2:
+            problems.append("malformed manifest line %r" % line)
+            continue
+        name = parts[1].lstrip("*").strip()
+        if name in entries:
+            problems.append("conflicting manifest: duplicate entry for %s" % name)
+            continue
+        entries[name] = parts[0]
+if not entries:
+    problems.append("manifest is empty; an empty manifest verifies nothing")
+missing = [m for m in EXPECTED if m not in entries]
+if missing:
+    problems.append("manifest is incomplete: missing restore member(s) %s" % (missing,))
+extra = [n for n in entries if n not in EXPECTED]
+if extra:
+    problems.append("manifest lists member(s) outside the restore set: %s" % (extra,))
+for name, want in entries.items():
+    p = os.path.join(B, name)
+    if not os.path.exists(p):
+        problems.append("restore member %s is missing on disk" % name)
+    elif sha(p) != want:
+        problems.append("restore member %s fails its manifest hash" % name)
+pin_path = os.path.join(B, "MANIFEST.json")
+if not os.path.exists(pin_path):
+    problems.append("MANIFEST.json is missing; the manifest's integrity is unpinned")
+else:
+    with open(pin_path) as fh:
+        pin = json.load(fh)
+    pin_entries = {f["copy"]: f["sha256"] for f in pin.get("files") or []
+                   if isinstance(f, dict) and f.get("copy")}
+    if set(pin_entries) != set(EXPECTED):
+        problems.append("MANIFEST.json does not pin the complete restore set")
+    else:
+        for name, want in entries.items():
+            if pin_entries.get(name) != want:
+                problems.append("manifest pin conflict for %s" % name)
+print("manifest problems:", problems)
+sys.exit(1 if problems else 0)
+EOF
 cd "$B" && sha256sum -c MANIFEST.sha256
 ```
+
+The `sha256sum -c` at the end is the per-member hash confirmation;
+the completeness and pin checks above it are the gate. All three
+must pass.
 
 Any preflight failure: **STOP.** Nothing is reconciled, nothing is
 restored; escalate per the gate-failure path in 2e.
@@ -243,6 +323,11 @@ cp -p $B/clock_tower_agent-v1.1-baseline.py /home/hatch/workspace/goals/medic-gp
 cd $B && sha256sum -c MANIFEST.sha256
 sha256sum $H/crew-queue.json $H/clock-tower-state.json /home/hatch/workspace/goals/medic-gpt-automated-loop/files/clock_tower_agent.py
 ```
+
+(This step's `-c` is a post-restore hash re-verification only; the
+manifest's completeness and MANIFEST.json pin were already enforced
+as the gate at step 2.0 — a subset manifest passing `-c` here proves
+nothing on its own.)
 
 The three live hashes must equal the manifest values
 (`crew-queue.json` ↔ `crew-queue-v1-baseline.json`,
