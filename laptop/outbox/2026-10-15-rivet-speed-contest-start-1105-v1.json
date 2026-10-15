@@ -1,0 +1,16 @@
+{
+  "message_id": "rivet-speed-contest-start-20261015-1105-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "speed-contest-mmap-20261015",
+  "owner": "Rivet",
+  "state": "started",
+  "deliverable": "Isolated size-tiered read-only memory-mapped SHA256 candidate with original streaming fallback, exact baseline/oracle comparison and raw benchmark results",
+  "scope": "Existing local offline contest only; no held laptop replay, remote services, new runtimes or deployment",
+  "estimated_completion_utc": "2026-10-15T11:25:00Z",
+  "requested_check_utc": "2026-10-15T11:25:00Z",
+  "acceptance": "Identical manifests and edge behavior; at least10percent paired end-to-end median wall gain in each of two15pairpasses, at least12of15faster pairs each, CPU no more than5percent worse and RSS no more than8MiB higher. Otherwise reject candidate, keep original baseline.",
+  "verification": "Independent review required; no gain claimed before measurements",
+  "schedule": "Existing parent observation cadence unchanged; requested check is not confirmation of exact scheduling",
+  "ack_binding": "Reference exact message ID and revision, distinguish receipt/acceptance/start/scheduling."
+}
