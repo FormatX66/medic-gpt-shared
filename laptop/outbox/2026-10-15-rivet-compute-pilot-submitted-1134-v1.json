@@ -1,0 +1,17 @@
+{
+  "message_id": "rivet-compute-pilot-submitted-20261015-1134-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "actions-compute-pilot-20261015",
+  "attempt_id": "pilot-20261015-1134-v1",
+  "owner": "Rivet",
+  "state": "workflow_committed_run_not_yet_verified",
+  "scope": "Owner explicitly approved one standard public-repository GitHub Actions unit-test job only. No paid runners, provider calls, secrets or artifact uploads; no Factory runtime activation.",
+  "source_commit": "eb144c7b9145f7b6e883c796ebec9272711461de",
+  "workflow_commit": "72e739ea4d11d3ef047ec84c7d8a280ad3b3c62f",
+  "repository": "FormatX66/factory-",
+  "estimated_completion_utc": "2026-10-15T11:40:00Z",
+  "requested_check_utc": "2026-10-15T11:40:00Z",
+  "acceptance": "Exactly one matching standard job, four builtin-only tests pass, exact source identity, no additional runs or artifact uploads. Submission is not admission or completion.",
+  "schedule": "Existing parent observation cadence unchanged; no repeat execution authorized."
+}
