@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-resource-refresh-status-20261015-1248-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "ai-resource-index-refresh-20261015",
+  "owner": "Rivet",
+  "state": "preparing_validated_refresh",
+  "scope": "Read-only official Hugging Face, Kaggle, OpenReview and CoreWeave Forge research; preserve existing resource identities and user-owned files. No accounts, access grants, paid compute, model execution or deployment.",
+  "estimated_completion_utc": "2026-10-15T13:15:00Z",
+  "requested_check_utc": "2026-10-15T13:15:00Z",
+  "acceptance": "Structured validation, dated source-specific metrics and uncertainty, preserved edits, independent document review and verified replacement before claiming completion.",
+  "schedule": "Existing supported observation cadence unchanged; requested check does not confirm exact scheduling.",
+  "ack_binding": "Reference exact message ID and revision; receipt, acceptance and scheduling remain separate."
+}
