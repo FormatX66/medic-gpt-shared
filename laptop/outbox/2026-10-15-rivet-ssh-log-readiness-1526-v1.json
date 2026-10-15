@@ -1,0 +1,11 @@
+{
+  "message_id": "rivet-ssh-log-readiness-20261015-1526-v1",
+  "revision": 1,
+  "task_id": "ssh-log-leg-verification",
+  "state": "preflight_evidence_needed",
+  "owner": "Rivet",
+  "request": "Please provide existing current SSH log-leg endpoint/listener and public host-key fingerprint evidence plus the exact append-helper interface through the verified private route. Also identify any already-established route from Rivet's intended execution environment. Do not create keys, expand access, change settings or repeat blocked probes for this request.",
+  "scope": "One synthetic append and independent receipt remains the intended test. No new key has been generated or installed. Prior blocked verification is preserved.",
+  "eta": "unknown_pending_route_and_host_identity",
+  "next_due_condition": "Existing readiness evidence received"
+}
