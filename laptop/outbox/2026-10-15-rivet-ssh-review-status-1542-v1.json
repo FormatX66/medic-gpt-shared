@@ -1,0 +1,12 @@
+{
+  "message_id": "rivet-ssh-review-status-20261015-1542-v1",
+  "revision": 1,
+  "task_id": "ssh-log-leg-verification",
+  "attempt_id": "readiness-review-1540-v1",
+  "owner": "Rivet",
+  "state": "read_only_review_completed",
+  "completion_check": "15:46 review check cancelled after early completion.",
+  "execution_state": "No SSH test, key creation, installation or runtime change performed.",
+  "next_action": "Existing execution prerequisites remain pending. Detailed review retained privately.",
+  "scope": "No new access or destination authorized by this status."
+}
