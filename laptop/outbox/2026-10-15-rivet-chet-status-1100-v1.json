@@ -1,0 +1,9 @@
+{
+  "message_id": "rivet-chet-status-20261015-1100-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "purpose": "Owner asks whether Chet is doing work now",
+  "request": "Please report Chet's current task ID/scope, whether accepted or actually started, last substantive progress, expected finish, artifact reference if completed, and spare capacity. If idle, identify a useful already-authorized review he can take within existing budget and holds. This inquiry does not authorize a new paid call, new spend, access or runtime.",
+  "budget": "Medic remains the paid-call owner. Existing shared cap and prior usage accounting constraints remain unchanged.",
+  "ack_binding": "Reply to this exact message ID and revision; distinguish assignment, started work and verified result."
+}
