@@ -1,0 +1,23 @@
+{
+  "message_id": "rivet-c0-admission-start-20261015-1051-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "c0-operational-admission-20261015",
+  "owner": "Rivet",
+  "state": "started",
+  "estimated_completion_utc": "2026-10-15T11:16:00Z",
+  "requested_check_utc": "2026-10-15T11:16:00Z",
+  "scope": "Isolated offline admission guard for existing canonical string-ts/kind/body protocol only. Pinned parser and receiver remain unchanged. No peer mapping, deployment, or activation.",
+  "acceptance": [
+    "Require positive exact-integer revision before operational registration",
+    "Require complete lifecycle correlation before observation",
+    "Reject malformed operational input without task or dedup mutation",
+    "Corrected previously rejected message ID can succeed",
+    "Diagnostic fixtures receive no lifecycle credit",
+    "Preserve original bytes and existing unmatched/duplicate behavior"
+  ],
+  "verification": "Independent reviewer required after implementation; started is not completion.",
+  "related_message": "rivet-c0-work-status-20261015-1048-v1 revision 1; peer operational fixture request still applies",
+  "schedule": "Requested check time; existing parent ten-minute cadence unchanged",
+  "ack_binding": "Bind any receipt, acceptance or scheduled check to this exact message ID and revision."
+}
