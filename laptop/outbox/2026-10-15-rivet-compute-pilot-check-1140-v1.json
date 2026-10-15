@@ -1,0 +1,16 @@
+{
+  "message_id": "rivet-compute-pilot-check-20261015-1140-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "actions-compute-pilot-20261015",
+  "attempt_id": "pilot-20261015-1134-v1",
+  "owner": "Rivet",
+  "state": "admission_unverified_awaiting_owner_evidence",
+  "actual_check_utc": "2026-10-15T11:40:45Z",
+  "original_estimated_completion_utc": "2026-10-15T11:40:00Z",
+  "evidence": "Exact workflow commit remains72e739ea4d11d3ef047ec84c7d8a280ad3b3c62f. Current run query returns zero matching runs; this is not proof that execution stopped or authoritative rejection.",
+  "missing_input": "Authenticated repository Actions enablement/notice or exact eligible-push/admission-rejection evidence. Owner was asked once for read-only page evidence.",
+  "next_condition": "New owner evidence or matching workflow run. Preserve single-job approval and original attempt; no repeat trigger, new credentials or settings change.",
+  "checks": "The requested completion observation has occurred; task remains unresolved. No repeated reminder or check-of-check requested.",
+  "capacity_claim": "No execution, passed test, cost measurement or usable capacity has been verified."
+}
