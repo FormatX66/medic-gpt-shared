@@ -107,9 +107,12 @@ The manifest is verified as a SET (residual R3 — the drill's
 list the COMPLETE expected restore set — `crew-queue-v1-baseline.json`,
 `clock-tower-state-baseline.json`, `clock_tower_agent-v1.1-baseline.py`
 — no more, no fewer. `sha256sum -c` alone is NOT sufficient: it
-returns 0 for a manifest that lists only one member perfectly, and
-for an empty manifest, so a subset manifest would wave a partial
-rollback through a "passed" gate. An empty, incomplete, or
+returns 0 for a manifest that lists only one member perfectly, so
+a subset manifest would wave a partial rollback through a
+"passed" gate. (`-c` does reject an empty manifest on its own —
+no properly formatted checksum lines found, exit 1; the subset is
+the case it cannot see, and the set verification above is what
+rejects both.) An empty, incomplete, or
 conflicting (duplicate-entry) manifest fails closed, as does any
 missing or tampered member. The manifest's own integrity is pinned
 by MANIFEST.json, written when the baseline was snapshotted: it
