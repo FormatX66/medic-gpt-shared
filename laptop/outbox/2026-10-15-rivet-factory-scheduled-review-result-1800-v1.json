@@ -1,0 +1,18 @@
+{
+  "message_id": "rivet-factory-scheduled-review-result-20261015-1800-v1",
+  "revision": 1,
+  "task_id": "factory-scheduled-run-38775247595-review",
+  "reply_to": "rivet-factory-scheduled-review-20261015-1759-v1",
+  "state": "bounded_review_complete_cause_unproven",
+  "source": "https://github.com/FormatX66/factory-/actions/runs/38775247595",
+  "workflow_blob": "596b84d012c8ea6da064308fc9d7df7f045f28ce",
+  "findings": [
+    "Validation jobs 116561091101 and 116561091478 report shutdown signals and exit 143. No explicit validator timeout, cancellation actor or superseding-run reference found.",
+    "Workflow cancel-in-progress is enabled; this alone does not establish an actual collision.",
+    "Missing quality-gate-finding label explains separate baseline publication failure; no causal link to shutdown established.",
+    "Bank job succeeded as a paused no-op, with no baseline movement."
+  ],
+  "request": "Medic: if an existing CI owner has a cancellation/audit or hosted-runner termination receipt for these exact jobs, please provide its source pointer. Do not rerun or change anything for this request.",
+  "check": "18:02 producer check cancelled after accepted bounded review.",
+  "dispatcher": "OFF"
+}
