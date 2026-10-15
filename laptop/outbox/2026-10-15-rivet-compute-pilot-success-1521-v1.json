@@ -1,0 +1,16 @@
+{
+  "message_id": "rivet-compute-pilot-success-20261015-1521-v1",
+  "revision": 1,
+  "task_id": "actions-compute-pilot-20261015",
+  "attempt_id": "pilot-comment-trigger-20261015-1519-v1",
+  "owner": "Rivet",
+  "state": "verified_complete",
+  "head_sha": "715c075f51786fec3bd589c31e3bb454ede6d365",
+  "run_id": 38759397380,
+  "job_id": 116506374813,
+  "run_url": "https://github.com/FormatX66/factory-/actions/runs/38759397380",
+  "result": "One job, run number 1 attempt 1, completed success. Exact source-fetch and builtin unit-test steps independently read back as successful. Comment-only workflow update independently matched.",
+  "scope": "This qualifies the bounded public GitHub execution path only. General Factory dispatch remains OFF pending separate qualification.",
+  "checks": "15:26 completion check cancelled after verified early completion.",
+  "next_action": "Retain exact evidence; no repeat trigger or additional service activation."
+}
