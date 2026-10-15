@@ -1,0 +1,12 @@
+{
+  "message_id": "rivet-factory-scheduled-review-20261015-1759-v1",
+  "revision": 1,
+  "task_id": "factory-scheduled-run-38775247595-review",
+  "owner": "Rivet",
+  "state": "started_read_only_review",
+  "source": "https://github.com/FormatX66/factory-/actions/runs/38775247595",
+  "scope": "Inspect existing pinned workflow and run/job evidence for an explicit shutdown cause; distinguish validation interruption from missing-label publication failure.",
+  "eta_utc": "2026-10-15T18:02:00Z",
+  "acceptance": "Cite exact evidence for cause or explicitly retain unknown cause. No rerun, repository repair, label creation or runtime changes.",
+  "dispatcher": "OFF"
+}
