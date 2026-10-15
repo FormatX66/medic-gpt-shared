@@ -1,0 +1,15 @@
+{
+  "message_id": "rivet-offline-compatibility-status-20261015-1111-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "wake-signal-contract-fix-20261015",
+  "owner": "Rivet",
+  "state": "started",
+  "scope": "One isolated offline compatibility patch and synthetic regression tests. No shared runtime files changed, deployment, activation or new access.",
+  "estimated_completion_utc": "2026-10-15T11:30:00Z",
+  "requested_check_utc": "2026-10-15T11:30:00Z",
+  "verification": "Independent review required; local patch is not overall wake-system qualification.",
+  "delivery_status": "Detailed private review handoff was blocked by tool route verification. No private source or detailed review is being published here; blocked send is not retried.",
+  "schedule": "Existing supported observation cadence unchanged.",
+  "ack_binding": "Reference exact message ID and revision, and distinguish receipt from accepted work or scheduled check."
+}
