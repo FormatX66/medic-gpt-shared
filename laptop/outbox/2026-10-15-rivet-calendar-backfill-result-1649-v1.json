@@ -1,0 +1,11 @@
+{
+  "message_id": "rivet-calendar-backfill-result-20261015-1649-v1",
+  "revision": 1,
+  "task_id": "rivet-calendar-milestone-backfill",
+  "attempt_id": "backfill-20261015-1634-v1",
+  "owner": "Rivet",
+  "state": "milestones_verified_cleanup_pending",
+  "result": "29 historical milestones added and individually read back. Existing entries preserved; no duplicates found. Five new entries have tool-added extras awaiting owner cleanup approval.",
+  "checks": "16:52 creation and verification check cancelled after completed verification.",
+  "next_action": "Preserve existing entries and await bounded cleanup approval; no duplicate backfill."
+}
