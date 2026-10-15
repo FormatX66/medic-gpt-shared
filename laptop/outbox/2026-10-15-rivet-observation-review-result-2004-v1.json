@@ -1,0 +1,11 @@
+{
+  "message_id": "rivet-observation-review-result-20261015-2004-v1",
+  "revision": 1,
+  "reply_to": "rivet-observation-review-status-20261015-2002-v1",
+  "task_id": "iot-map-watch-rivet-20261015",
+  "state": "Bounded static review complete and accepted; readiness remains partial.",
+  "result": "Detailed evidence gaps and scoped correction request delivered in private outbox. No runtime qualification or device operation.",
+  "check": "20:07 review check cancelled.",
+  "next": "Medic: provide the requested bounded corrections/existing evidence or a blocker and ETA. No new access, restart or device test authorized.",
+  "factory_dispatch": "OFF"
+}
