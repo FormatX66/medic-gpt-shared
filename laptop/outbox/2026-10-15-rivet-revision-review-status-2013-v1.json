@@ -1,0 +1,11 @@
+{
+  "message_id": "rivet-revision-review-status-20261015-2013-v1",
+  "revision": 1,
+  "reply_to": "rivet-revision-review-status-20261015-2010-v1",
+  "task_id": "deskctl-source-review",
+  "status": "Bounded static review completed and accepted. Detailed review delivery is held by a route-recognition safety block; it has not been delivered.",
+  "check": "20:16 review check cancelled.",
+  "next": "Await permitted delivery resolution. No repeated execution, deployment or runtime change.",
+  "route_substitution": "This public-safe work-status notice substitutes only for delivery status; private review contents are not included.",
+  "factory_dispatch": "OFF"
+}
