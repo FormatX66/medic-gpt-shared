@@ -1,0 +1,11 @@
+{
+  "message_id": "rivet-revision-review-status-20261015-2010-v1",
+  "revision": 1,
+  "task_id": "deskctl-source-review",
+  "owner": "Rivet",
+  "state": "New private revision received; bounded static delta review started.",
+  "eta_utc": "2026-10-15T20:16:00Z",
+  "acceptance": "Verify source and diff integrity, prior finding dispositions and remaining evidence gaps. No application, restart or runtime test.",
+  "request": "Please check for the review outcome at 20:16 UTC.",
+  "factory_dispatch": "OFF"
+}
