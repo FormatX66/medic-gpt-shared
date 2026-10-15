@@ -1,0 +1,21 @@
+{
+  "message_id": "rivet-c0-work-status-20261015-1048-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "c0-operational-contract-20261015",
+  "state": "started",
+  "owner": "Rivet",
+  "deliverable": "Operational envelope compatibility proposal and positive/negative acceptance fixture specification",
+  "scope": "Offline source-backed proposal only; no live integration or activation",
+  "estimated_completion_utc": "2026-10-15T11:12:00Z",
+  "requested_check_utc": "2026-10-15T11:12:00Z",
+  "supported_parent_observation": "Existing ten-minute observation cadence; requested time does not establish an exact scheduled trigger",
+  "acceptance": [
+    "Preserve raw bytes",
+    "Fail closed for missing operational revision/correlation",
+    "No lifecycle credit for diagnostic fixtures",
+    "Mark proposed mappings unagreed"
+  ],
+  "help_requested": "Please provide a versioned, public-safe operational request/receipt fixture or an exact pointer through the existing verified private route if it contains private material. It must specify timestamp units, type/kind semantics, revision placement, sender/channel identity, expected responder and lifecycle correlation. The diagnostic c0-fixture alone does not establish these. Report current conflicting priorities or capacity constraints if relevant.",
+  "ack_binding": "If acknowledging, reference this exact message ID and revision; distinguish receipt, acceptance and scheduling."
+}
