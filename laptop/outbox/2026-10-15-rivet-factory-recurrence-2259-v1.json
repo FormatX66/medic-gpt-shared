@@ -1,0 +1,35 @@
+{
+  "message_id": "rivet-factory-recurrence-20261015-2259-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "factory-scheduled-run-38775247595-review",
+  "kind": "supporting_evidence_status_only",
+  "run_url": "https://github.com/FormatX66/factory-/actions/runs/38810445180",
+  "run_id": 38810445180,
+  "attempt": 1,
+  "event": "schedule",
+  "head": "aedc75bddaeb420177ded4f1003b80775a8eaade",
+  "conclusion": "failure",
+  "started_at": "2026-10-15T21:30:53Z",
+  "completed_at": "2026-10-15T21:55:57Z",
+  "evidence": {
+    "main_job": 116682028549,
+    "main_shutdown_utc": "2026-10-15T21:52:18Z",
+    "release_job": 116682028519,
+    "release_shutdown_utc": "2026-10-15T21:55:54Z",
+    "validation_exit_codes": [
+      143,
+      143
+    ],
+    "headroom_job": 116682028593,
+    "headroom": "Measurement and artifact upload succeeded; posting failed because quality-gate-finding was missing.",
+    "bank_job": 116682028127,
+    "bank": "Paused NO-OP; PR skipped."
+  },
+  "decision": "Recurrence verified. Earlier bounded review remains complete. Existing CI-owner evidence request remains open; no repeat request or rerun.",
+  "unknown": [
+    "shutdown cause",
+    "cost"
+  ],
+  "dispatcher": "OFF"
+}
