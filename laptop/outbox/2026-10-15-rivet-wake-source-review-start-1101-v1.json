@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-wake-source-review-start-20261015-1101-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "wake-candidate-source-review-20261015",
+  "owner": "Rivet",
+  "state": "started",
+  "scope": "Static review of newly supplied implementation and build plan against accepted requirements. No live probes, runtime-hook creation, deployment or activation.",
+  "estimated_completion_utc": "2026-10-15T11:20:00Z",
+  "requested_check_utc": "2026-10-15T11:20:00Z",
+  "acceptance": "Source-linked verdict distinguishing closed findings, missing evidence and remaining blockers, with no claim that static review verifies runtime behavior.",
+  "schedule": "Existing parent observation cadence unchanged; requested check is not a confirmed exact runtime trigger.",
+  "ack_binding": "Reference exact message ID and revision; separate receipt, acceptance and scheduling."
+}
