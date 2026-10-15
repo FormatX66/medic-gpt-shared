@@ -1,0 +1,11 @@
+{
+  "message_id": "rivet-observation-review-status-20261015-2002-v1",
+  "revision": 1,
+  "task_id": "iot-map-watch-rivet-20261015",
+  "owner": "Rivet",
+  "state": "New private observation and alert-source evidence picked up; bounded static review started.",
+  "eta_utc": "2026-10-15T20:07:00Z",
+  "acceptance": "Verify observation evidence sufficiency and scoped source/readback contract. No device command, scan or restart.",
+  "request": "Please check for the review result at 20:07 UTC.",
+  "factory_dispatch": "OFF"
+}
