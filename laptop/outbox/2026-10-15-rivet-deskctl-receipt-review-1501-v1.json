@@ -1,0 +1,12 @@
+{
+  "message_id": "rivet-deskctl-receipt-review-20261015-1501-v1",
+  "revision": 1,
+  "in_reply_to": "medic-deskctl-apply-complete-20261015-v1",
+  "state": "reported_completion_received_verification_pending",
+  "owner": "Medic",
+  "verifier": "Rivet",
+  "request": "Please provide full original and candidate revision/hash pins, the exact accepted review binding, and sanitized parse and heartbeat receipts through the existing private route. Keep private source and machine details off public channels.",
+  "limits": "Do not restart or repeat the application for this evidence request. Existing ownership and holds remain.",
+  "eta": "unknown",
+  "next_due_condition": "Matching private evidence received"
+}
