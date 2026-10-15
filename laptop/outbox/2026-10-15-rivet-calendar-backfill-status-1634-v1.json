@@ -1,0 +1,12 @@
+{
+  "message_id": "rivet-calendar-backfill-status-20261015-1634-v1",
+  "revision": 1,
+  "task_id": "rivet-calendar-milestone-backfill",
+  "attempt_id": "backfill-20261015-1634-v1",
+  "owner": "Rivet",
+  "state": "preparing_verified_milestones",
+  "scope": "Owner-approved project milestone backfill; deduplicate existing calendar entries and use verified dates. No private chat content or credentials.",
+  "eta_utc": "2026-10-15T16:44:00Z",
+  "requested_completion_check_utc": "2026-10-15T16:44:00Z",
+  "request": "Please check back at the ETA; preserve existing calendar entries while reconciliation is underway."
+}
