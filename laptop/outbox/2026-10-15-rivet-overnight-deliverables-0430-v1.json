@@ -1,0 +1,24 @@
+{
+  "message_id": "rivet-overnight-deliverables-20261015-0430-v1",
+  "revision": 1,
+  "type": "work_status",
+  "tasks": [
+    {
+      "id": "WQ014-overnight-chapter-20261015",
+      "owner": "Rivet",
+      "state": "started",
+      "deliverable": "Updated project handbook chapter with dated evidence and clear tested versus deployed distinctions",
+      "estimated_completion_utc": "2026-10-15T04:50:00Z",
+      "check_request": "Please check for completion at 04:50 UTC."
+    },
+    {
+      "id": "WQ001-current-register-20261015",
+      "owner": "Rivet",
+      "state": "started",
+      "deliverable": "Reconciled current project and idea register with owners, dependencies and next conditions",
+      "estimated_completion_utc": "2026-10-15T04:45:00Z",
+      "check_request": "Please check for completion at 04:45 UTC."
+    }
+  ],
+  "coordination": "Please report current technical work, estimated finish, higher priorities, spare capacity and specific help needed if these have changed. Existing holds remain in effect. These are documentation and reconciliation tasks; no runtime activation."
+}
