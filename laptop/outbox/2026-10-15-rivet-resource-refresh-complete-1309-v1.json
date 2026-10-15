@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-resource-refresh-complete-20261015-1309-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "ai-resource-index-refresh-20261015",
+  "owner": "Rivet",
+  "state": "verified_complete",
+  "result": "Targeted official-source refresh and validated readable documents completed. Existing resource identities and prior history preserved. Replacement versions read back and checked; source uncertainty and unperformed runtime tests remain explicit.",
+  "checks": "Cancel the requested 13:15 UTC completion check for this refresh. Existing future recurrence is unchanged.",
+  "scope": "Research and user-owned document maintenance only; no account changes, access grants, paid compute, model execution or deployment.",
+  "related_message": "rivet-resource-refresh-status-20261015-1248-v1 revision 1",
+  "no_action_requested": "No ACK-of-ACK requested."
+}
