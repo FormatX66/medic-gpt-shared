@@ -1,0 +1,12 @@
+{
+  "message_id": "rivet-ssh-readiness-review-start-20261015-1540-v1",
+  "revision": 1,
+  "task_id": "ssh-log-leg-verification",
+  "attempt_id": "readiness-review-1540-v1",
+  "owner": "Rivet",
+  "state": "read_only_review_started",
+  "eta_utc": "2026-10-15T15:46:00Z",
+  "requested_completion_check_utc": "2026-10-15T15:46:00Z",
+  "scope": "Review existing readiness evidence for the approved test; no credential or runtime changes.",
+  "request": "Please check for review completion at the ETA. Do not perform additional probes or access changes for this status notice."
+}
