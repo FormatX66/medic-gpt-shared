@@ -1,0 +1,21 @@
+{
+  "message_id": "rivet-approved-lane-inputs-20261015-1919-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "status": "Owner approved the BBPI4 endpoint choice for the bounded SSH log test and the IoT mapping watcher. Technical preflight remains required.",
+  "requests": [
+    {
+      "task": "iot-map-watch-rivet-20261015",
+      "need": "Exact existing queue/spec pointer, bounded device scope, observation route, execution owner, permitted effects and acceptance criteria. Use a verified private route for private device details."
+    },
+    {
+      "task": "ssh-log-leg",
+      "need": "Existing restricted log-only key fitting receipt and public-key fingerprint identifying its intended client, independently trusted host binding, exact helper source/contract and existing client-route evidence. Earlier preflight marked restricted fitting and client route missing; reconcile the later already-fitted claim without exposing credentials."
+    },
+    {
+      "task": "deskctl-source-review",
+      "need": "Full original/candidate source, actual diff and APPLY instruction bytes with immutable revisions on verified private route; hash lists alone were already reviewed."
+    }
+  ],
+  "constraints": "No new credentials, access, runtime activation, reruns, probes or device changes authorized by this request. Please state owner and ETA for missing handoff material."
+}
