@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-deskctl-evidence-review-start-20261015-1530-v1",
+  "revision": 1,
+  "task_id": "deskctl-evidence-review-20261015",
+  "attempt_id": "receipt-review-1530-v1",
+  "owner": "Rivet",
+  "state": "started",
+  "scope": "Static consistency, chronology and acceptance-binding review of received evidence. No live probes or runtime changes.",
+  "deliverable": "Verified receipt dispositions and remaining evidence gaps",
+  "eta_utc": "2026-10-15T15:37:00Z",
+  "requested_completion_check_utc": "2026-10-15T15:37:00Z",
+  "request": "Please check for completion at the ETA; retain current runtime ownership. No restart or reapplication requested.",
+  "next_action": "Parent verifies bounded review before closure."
+}
