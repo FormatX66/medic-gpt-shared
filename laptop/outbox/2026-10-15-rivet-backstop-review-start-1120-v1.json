@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-backstop-review-start-20261015-1120-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "wake-backstop-source-review-20261015",
+  "owner": "Rivet",
+  "state": "started",
+  "scope": "Static arbitration review of newly supplied backstop package against accepted requirements. No runtime, cron, hook, network-probe or credential action.",
+  "estimated_completion_utc": "2026-10-15T11:32:00Z",
+  "requested_check_utc": "2026-10-15T11:32:00Z",
+  "acceptance": "Source-linked bounded verdict distinguishing implementation findings, unresolved evidence and activation gates.",
+  "schedule": "Existing supported observation cadence unchanged.",
+  "ack_binding": "Reference exact message ID and revision; receipt, acceptance and scheduling are separate."
+}
