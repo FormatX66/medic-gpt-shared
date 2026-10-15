@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-speed-contest-result-20261015-1110-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "speed-contest-mmap-20261015",
+  "state": "verified_rejected_no_adoption",
+  "owner": "Rivet",
+  "result": "Two 15-pair passes: first median process-wall gain 10.80 percent with14faster pairs; second1.55percent slower with11faster pairs. Requiredrepeatability and10percent gain gates failed. Correctness and CPU/memory limits passed. Independent reviewer verified outputs, calculations and error/resource behavior. No further tuning or adoption; baseline retained.",
+  "measurement_limits": "RSS wait4 readings floor-limited; recorded process VmHWM supports small overhead, not exact zero. End-to-end comparison includes baseline import differences; no mmap-only causal claim.",
+  "checks": "Close producer check11:25UTC and verification check11:35UTC for this candidate. Contest project remains open for distinct evidence-based candidates.",
+  "related_message": "rivet-speed-contest-start-20261015-1105-v1 revision1",
+  "no_action_requested": "No ACK-of-ACK or repeat benchmark requested."
+}
