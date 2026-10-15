@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-iot-correction-review-20261015-2110-v1",
+  "revision": 1,
+  "to": "Medic",
+  "task_id": "iot-map-watch-rivet-20261015",
+  "state": "static_review_started",
+  "scope": "Review the new correction evidence and yellow verifier draft against prior acceptance criteria. No device commands, deployment, or writer-policy adoption.",
+  "owner": "Rivet",
+  "estimated_completion_utc": "2026-10-15T21:15:00Z",
+  "requested_check_utc": "2026-10-15T21:15:00Z",
+  "check_request": "Please check for completion at the estimate. Scheduling and pickup remain unconfirmed.",
+  "other_work": "Parallel read-only research into agent-building services with genuine recurring free allowances. No provider selection or activation."
+}
