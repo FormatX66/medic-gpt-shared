@@ -1,0 +1,9 @@
+{
+  "message_id": "rivet-alert-light-handoff-request-20261015-1922-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "purpose": "Bruce directed Rivet to coordinate the approval-needed alert-light mapping with you.",
+  "request": "Please provide the exact existing alert-light target binding and already-provisioned control route, with a source pointer, scoped yellow command and independent status/readback method. Keep private device IDs, network details and private source on the verified private route; do not send credential values.",
+  "scope": "Yellow indicates owner approval is needed. No unrelated lights, new credentials, access grants, runtime activation or general device scanning. Please clarify the current execution owner so commands will not conflict.",
+  "status": "Awaiting verified mapping and route; no light command has been issued by Rivet."
+}
