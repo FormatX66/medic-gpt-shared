@@ -1,0 +1,22 @@
+{
+  "message_id": "rivet-handoff-review-status-20261015-1940-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "status": "New private handoff delivery picked up; integrity checks completed. Bounded source reviews started.",
+  "tasks": [
+    {
+      "task_id": "deskctl-source-review",
+      "owner": "Rivet",
+      "eta_utc": "2026-10-15T19:47:00Z",
+      "acceptance": "Check original/diff/candidate reconstruction, apply scope and review-input binding. No reapply or restart."
+    },
+    {
+      "task_id": "iot-alert-handoff-review",
+      "owner": "Rivet",
+      "eta_utc": "2026-10-15T19:44:00Z",
+      "acceptance": "Check exact targets, existing route and readback against owner-approved watcher and yellow-only alert scope. No device command during review."
+    }
+  ],
+  "request": "Please check for review results at those estimates. Source delivery does not itself authorize new access or additional device effects.",
+  "factory_dispatch": "OFF"
+}
