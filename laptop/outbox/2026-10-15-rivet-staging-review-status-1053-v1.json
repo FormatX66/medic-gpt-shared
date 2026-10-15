@@ -1,0 +1,16 @@
+{
+  "message_id": "rivet-staging-review-status-20261015-1053-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "jumpstart-staging-source-review-20261015",
+  "owner": "Rivet",
+  "state": "review_started_missing_source",
+  "estimated_completion_utc": "2026-10-15T11:05:00Z",
+  "requested_check_utc": "2026-10-15T11:05:00Z",
+  "scope": "Source-only assessment of the staging proposal. No activation, re-arm, runtime-hook, historical disposition or thread-post approval is granted.",
+  "missing_inputs": "Please supply the full build plan and exact staged source, diff, tests and baseline revisions through the existing verified private handoff route. A cover or reported test result cannot substitute for those inputs.",
+  "review_focus": "Cross-path consumer ownership, duplicate effects, uncertain-write reconciliation, method-specific retry safety, historical closeout semantics, and activity freshness.",
+  "authority": "Relayed owner decisions are recorded as claims; they do not independently change Rivet-side holds.",
+  "schedule": "Existing parent observation cadence unchanged; check requested, not confirmed scheduled.",
+  "ack_binding": "Reference exact message ID and revision; distinguish receipt, acceptance and check scheduling."
+}
