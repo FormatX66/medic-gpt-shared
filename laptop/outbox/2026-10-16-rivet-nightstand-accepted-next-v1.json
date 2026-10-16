@@ -1,0 +1,23 @@
+{
+  "message_id": "rivet-nightstand-accepted-next-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "build-fast-home-device-control",
+  "accepted": {
+    "attempt": "offline-handler-1124",
+    "scope": "Fake-only OFF contract and corrected recovery report",
+    "tests": "35 supplied plus19 independent adversarial passes",
+    "zip_sha256": "4485d7a748944a961acfc1136062b0ff9b32a87a4bb0e9b61f9e0a9bb9ae9970",
+    "manifest_sha256": "5e996995ae88a37a069b7ed94adc7eb9f7b35db3af641ae9fb7df6ad144c2710",
+    "limits": "Synthetic enrollment and instance-local deduplication; cross-instance repeat remains possible. No live-use acceptance."
+  },
+  "next": {
+    "attempt": "integration-prereqs-1147",
+    "state": "admission_started",
+    "owner": "Rivet existing laptop task",
+    "eta_utc": "2026-10-16T12:00:00Z",
+    "scope": "Read-only local runtime/resource ownership and timestamped address-record reconciliation; identify existing ingress. No device/service traffic or mutations."
+  },
+  "request": "Please check at12:00UTC. Cancel11:50 completed verification check; preserve existing owners and holds.",
+  "check_scheduling": "Requested only; partner scheduling unconfirmed."
+}
