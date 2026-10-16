@@ -1,15 +1,7 @@
 {
- "generated_ts": 1792186865,
+ "generated_ts": 1792190460,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-hflt64ektv9d62no",
-   "title": "Winterbloom Discord server \u2014 create separate server, dress for later (icon + channels); Sally IDs first; ETA 22:15Z",
-   "owner": "crew",
-   "eta_ts": 1792188900,
-   "source": "planned-work-calendar",
-   "event_id": "hflt64ektv9d62nou38p16r2g8"
-  },
   {
    "id": "cal-9i44bun4p9r316sa",
    "title": "Bruce to handle Google Voice suspension (medic account)",
