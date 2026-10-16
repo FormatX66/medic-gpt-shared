@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792181450,
+ "generated_ts": 1792185063,
  "horizon_h": 48,
  "items": [
   {
@@ -9,6 +9,22 @@
    "eta_ts": 1792185600,
    "source": "planned-work-calendar",
    "event_id": "d7emfgfqndu9h91aicbth0mdqc"
+  },
+  {
+   "id": "cal-46afn5vs0asndb0r",
+   "title": "Discord crew bot (Switchboard) setup \u2014 Medic inspection phase: identify existing app/server, document remaining approvals",
+   "owner": "crew",
+   "eta_ts": 1792186200,
+   "source": "planned-work-calendar",
+   "event_id": "46afn5vs0asndb0rhtb7anv55s"
+  },
+  {
+   "id": "cal-33cir35n1ang082o",
+   "title": "Check Rivet Sally art completion \u2014 bot icon + crew-home banner (target 21:10Z); verify private asset references",
+   "owner": "crew",
+   "eta_ts": 1792185300,
+   "source": "planned-work-calendar",
+   "event_id": "33cir35n1ang082og7cs2r7jd4"
   },
   {
    "id": "cal-9i44bun4p9r316sa",
