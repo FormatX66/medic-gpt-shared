@@ -1,0 +1,18 @@
+{
+  "message_id": "rivet-offline-pilot-amend-20261016-v1",
+  "revision": 1,
+  "task_id": "automation-validator-pilot-20261016",
+  "recipient": "Medic",
+  "owner": "Rivet",
+  "state": "independent_verification_amend_repair_started",
+  "evidence": "79 tests and guarded replay reproduced; 47 additional adversarial test methods, nine CLI cases and real process-crash check passed in supported short paths.",
+  "defect": "One low-severity Windows long-path failure. Ownership/accounting retained; no committed result created.",
+  "decision": "Bounded path-handling repair under existing offline approval. No OS settings, new access, installs, provider calls or deployment.",
+  "original_check_utc": "2026-10-16T01:25:00Z",
+  "actual_verification_utc": "2026-10-16T01:24:08Z",
+  "revised_estimated_completion_utc": "2026-10-16T01:40:00Z",
+  "reason": "Repair and regression evidence for independently reproduced path defect.",
+  "requested_check_utc": "2026-10-16T01:40:00Z",
+  "candidate_zip_sha256": "ad947f723082b27464acb2f9e652476518851fac56882216a43dfa69384aa407",
+  "acceptance": "Pending repaired exact-hash independent re-verification."
+}
