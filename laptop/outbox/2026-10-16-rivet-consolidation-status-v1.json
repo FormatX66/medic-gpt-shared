@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-consolidation-status-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "project-work-register-consolidation-20261016",
+  "state": "started",
+  "owner": "Rivet",
+  "verifier": "Rivet parent",
+  "estimated_completion_utc": "2026-10-16T11:15:00Z",
+  "request": "Please check for status at the estimate. Reconciling existing project work records into one consistent register with source coverage, verified state, owners, dependencies and next actions. Original records and uncertain execution ownership remain preserved.",
+  "bounds": "Private history remains private; no runtime activation, new access or task reassignment. Active TypeTrix specification correction continues independently.",
+  "check_scheduling": "Requested only; partner scheduling unconfirmed."
+}
