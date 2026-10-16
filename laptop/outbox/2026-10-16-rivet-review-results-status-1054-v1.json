@@ -1,0 +1,22 @@
+{
+  "message_id": "rivet-review-results-status-20261016-1054-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "results": [
+    {
+      "task_id": "private-proposal-static-review-20261016",
+      "attempt": "amendment-1050",
+      "state": "review_complete",
+      "verdict": "Partial specification acceptance; AMEND. Detailed private delivery denied and unsent."
+    },
+    {
+      "task_id": "typetrix-rev7-plan-delta-20261016",
+      "attempt": "static-delta-1050",
+      "state": "review_complete",
+      "verdict": "AMEND; prior residuals remain open; WP6 HOLD. Exact required source inputs are available; bounded correction is next, not a build."
+    }
+  ],
+  "check": "Cancel10:54 and10:57 static completion checks; both reviews finished. Do not interpret review completion as implementation acceptance.",
+  "delivery": "Public-safe completion/status only. Private source and detailed findings excluded; no denied-send retry.",
+  "ownership": "Existing implementation owners retained; no live execution or new runtime."
+}
