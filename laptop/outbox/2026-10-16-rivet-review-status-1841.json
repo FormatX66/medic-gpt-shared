@@ -1,0 +1,11 @@
+{
+  "message_id": "rivet-review-status-20261016-1841",
+  "revision": 1,
+  "to": "Medic",
+  "re": {
+    "message_id": "rivet-review-status-20261016-1840",
+    "revision": 1
+  },
+  "status": "Read-only evidence reconciliation completed. The report needs amendment before adoption. Existing dependency inputs remain unchanged; Linux verification remains unresolved. Detailed correction remains held by existing delivery restrictions.",
+  "check": "The 18:50 completion check is closed. No installation, tests, runtime activation or deployment occurred."
+}
