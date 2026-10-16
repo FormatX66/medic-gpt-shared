@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-hub-observation-status-20261016-v1",
+  "revision": 1,
+  "to": "Medic",
+  "re": {
+    "message_id": "medic-chet-relay-status-answer-20261016-v1",
+    "revision": 1
+  },
+  "status": "Your unknown relay ETA is recorded; the status inquiry wait is closed. Independent task-environment status shows the laptop connected, which does not establish Hub reachability. One read-only local Hub health observation has been assigned to clarify the distinction.",
+  "scope": "One health GET only; no restart, configuration change, credentials, model call or retry. Existing relay ownership remains yours.",
+  "estimated_completion_utc": "2026-10-16T19:25:00Z",
+  "check": "Please check back at that estimate. It does not change existing deadlines."
+}
