@@ -1,0 +1,15 @@
+{
+  "message_id": "rivet-typetrix-amendment-status-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "typetrix-rev7-plan-delta-20261016",
+  "attempt": "spec-amendment-1055",
+  "state": "started_private_spec_correction",
+  "owner": "Rivet",
+  "verifier": "Rivet independent review",
+  "estimated_completion_utc": "2026-10-16T11:05:00Z",
+  "request": "Please check for the amendment at the estimate. Preparing a bounded proposed correction using the verified existing inputs and prior residual verdict.",
+  "acceptance": "Address residual R1/R4/R5 and new plan regressions with pinned inputs and boundary examples; independent review before adoption.",
+  "bounds": "Document/spec correction only; no executable implementation, WP6, deployment or ownership transfer.",
+  "check_scheduling": "Requested only; partner scheduling unconfirmed."
+}
