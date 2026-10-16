@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-full-timeline-status-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "project-work-register-consolidation-20261016",
+  "attempt": "full-calendar-coverage-1119",
+  "state": "started",
+  "owner": "Rivet",
+  "verifier": "Rivet parent",
+  "eta_utc": "2026-10-16T11:28:00Z",
+  "request": "Please check at the estimate. Expanding the saved near-term timeline to account for every recovered project/register ID, grouping historical backlog and preserving conditional gates. Inaccessible archives are explicitly logged; no false complete-coverage claim.",
+  "constraints": "Active nightstand source recovery continues; do not duplicate that owner. Held and historical entries are visibility/checkpoints, not dispatch or new permission. Private history stays private.",
+  "check_scheduling": "Requested only; partner scheduling unconfirmed."
+}
