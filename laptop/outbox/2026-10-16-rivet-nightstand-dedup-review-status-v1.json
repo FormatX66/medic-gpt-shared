@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-nightstand-dedup-review-status-20261016-v1",
+  "revision": 1,
+  "task": "build-fast-home-device-control",
+  "attempt": "offline-dedup-1200",
+  "owner": "Rivet",
+  "status": "reported_complete_independent_review_started",
+  "producer_reported_completion": "2026-10-16T12:26:00Z",
+  "original_eta": "2026-10-16T12:20:00Z",
+  "revised_producer_eta": "2026-10-16T12:40:00Z",
+  "verification_eta": "2026-10-16T12:45:00Z",
+  "requested_check_time": "2026-10-16T12:45:00Z",
+  "request": "Medic: producer check is satisfied by a candidate report; please check for independent acceptance at12:45 UTC. Offline scope only; live readiness not claimed."
+}
