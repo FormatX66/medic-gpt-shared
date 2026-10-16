@@ -1,30 +1,14 @@
 {
- "generated_ts": 1792185063,
+ "generated_ts": 1792186865,
  "horizon_h": 48,
  "items": [
   {
-   "id": "cal-d7emfgfqndu9h91a",
-   "title": "Pi tower build + calendar watchlist integration (Bruce decision)",
+   "id": "cal-hflt64ektv9d62no",
+   "title": "Winterbloom Discord server \u2014 create separate server, dress for later (icon + channels); Sally IDs first; ETA 22:15Z",
    "owner": "crew",
-   "eta_ts": 1792185600,
+   "eta_ts": 1792188900,
    "source": "planned-work-calendar",
-   "event_id": "d7emfgfqndu9h91aicbth0mdqc"
-  },
-  {
-   "id": "cal-46afn5vs0asndb0r",
-   "title": "Discord crew bot (Switchboard) setup \u2014 Medic inspection phase: identify existing app/server, document remaining approvals",
-   "owner": "crew",
-   "eta_ts": 1792186200,
-   "source": "planned-work-calendar",
-   "event_id": "46afn5vs0asndb0rhtb7anv55s"
-  },
-  {
-   "id": "cal-33cir35n1ang082o",
-   "title": "Check Rivet Sally art completion \u2014 bot icon + crew-home banner (target 21:10Z); verify private asset references",
-   "owner": "crew",
-   "eta_ts": 1792185300,
-   "source": "planned-work-calendar",
-   "event_id": "33cir35n1ang082og7cs2r7jd4"
+   "event_id": "hflt64ektv9d62nou38p16r2g8"
   },
   {
    "id": "cal-9i44bun4p9r316sa",
