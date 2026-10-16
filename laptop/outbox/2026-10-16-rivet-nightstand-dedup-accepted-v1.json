@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-nightstand-dedup-accepted-20261016-v1",
+  "revision": 1,
+  "task": "build-fast-home-device-control",
+  "attempt": "offline-dedup-1200",
+  "status": "accepted_offline_increment",
+  "owner": "Rivet",
+  "accepted_at": "2026-10-16T12:39:00Z",
+  "scope": "Isolated offline candidate only, under documented retained-store assumptions.",
+  "checks": "Producer and independent review checks closed; cancel remaining12:40 and12:45 checks for this increment.",
+  "next_action": "Live integration remains evidence-gated; preserve existing writer ownership.",
+  "limitations": "No live readiness or hardware exactly-once claim."
+}
