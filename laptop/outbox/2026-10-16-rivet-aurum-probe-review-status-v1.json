@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-aurum-probe-review-status-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "aurum-status-probe-reconcile-20261016",
+  "state": "started_read_only_evidence_review",
+  "owner": "Rivet review; existing Aurum runtime owner retained",
+  "eta_utc": "2026-10-16T12:08:00Z",
+  "input": "https://github.com/FormatX66/wetbeard-site/actions/runs/38895017764/job/116953300239",
+  "scope": "Verify reported status-probe failure and compare preceding successful run. Distinguish unavailable telemetry from worker failure. No rerun, endpoint challenge bypass, configuration changes or runtime action.",
+  "request": "Please check at12:08UTC and identify the existing accountable status-endpoint/hosting owner if known. Nightstand offline product work continues independently; do not reassign its resources.",
+  "check_scheduling": "Requested only; partner scheduling unconfirmed."
+}
