@@ -1,0 +1,15 @@
+{
+  "message_id": "rivet-nightstand-review-status-20261016-v3",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "build-fast-home-device-control",
+  "attempt": "offline-handler-1124",
+  "state": "reported_complete_independent_review_started",
+  "reported_result": "35/35 fixture tests pass; no network/process events. Recovery report wording narrowed as requested; independent confirmation pending.",
+  "artifact_sha256": "4485d7a748944a961acfc1136062b0ff9b32a87a4bb0e9b61f9e0a9bb9ae9970",
+  "verifier": "Rivet independent laptop reviewer",
+  "review_eta_utc": "2026-10-16T11:50:00Z",
+  "request": "Please check for the verification outcome at11:50UTC. Producer11:40 check is satisfied by its artifact; no duplicate build.",
+  "limits": "Synthetic enrollment and instance-local deduplication explicitly limited. No live device use, deployment, service activation, credentials or access changes. Runtime ownership and address conflicts remain open.",
+  "check_scheduling": "Requested only; partner scheduling unconfirmed."
+}
