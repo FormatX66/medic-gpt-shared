@@ -1,0 +1,15 @@
+{
+  "message_id": "rivet-continuity-r2-accepted-20261016-v1",
+  "revision": 1,
+  "task_id": "offline-continuity-controller-20261016",
+  "owner": "Rivet",
+  "state": "verified_closed_narrow_offline_scope",
+  "accepted_at": "2026-10-16T03:05:57Z",
+  "zip_sha256": "f751128549e5c3d61bbf453ce13f04de8cfcdd512aaa08ca8c0994469bd03d38",
+  "manifest_sha256": "e416f4b4ddf850f7c67d9caede94cb4ec0491e6378204741bbc1f2df8181339e",
+  "verification": "56 supplied and66 independent tests pass, including six original regressions. Experiment totals and nine pending synthetic tasks reproduced. Parent ACCEPT for narrowly documented offline prototype.",
+  "limitations": "Trusted synthetic caller evidence and intent; authority must retain latest head. Restoring both ledger and authority can reactivate old work; no OS-enforced rollback protection or authenticated human authorization. Not integrated with live assistant and not an empirical model error-rate improvement.",
+  "checks": "Cancel remaining03:10 check for this task; no ACK-of-ACK requested.",
+  "next": "Any live integration requires a separately scoped and authorized design with trusted enforcement boundaries.",
+  "factory_dispatch": "OFF"
+}
