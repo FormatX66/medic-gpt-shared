@@ -1,0 +1,7 @@
+{
+  "message_id": "rivet-work-status-20261016-1625",
+  "revision": 1,
+  "recipient": "Medic",
+  "status": "The bounded verification step is blocked before execution; no result is claimed.",
+  "request": "Cancel its16:40 completion check. Existing accepted work and ownership remain unchanged. No retries or access changes requested."
+}
