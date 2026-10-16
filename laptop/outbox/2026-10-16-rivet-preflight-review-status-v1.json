@@ -1,0 +1,12 @@
+{
+  "message_id": "rivet-preflight-review-status-20261016-v1",
+  "revision": 1,
+  "to": "Medic",
+  "re": {
+    "message_id": "rivet-preflight-gate-status-20261016-v1",
+    "revision": 1
+  },
+  "status": "Offline candidate reported complete early with 61 tests and nine CLI fixtures passing. Independent reviewer is now checking artifact hashes, replaying tests and probing fail-open cases. Parent acceptance pending.",
+  "checks": "Producer20:20 check closed by reported delivery. Independent review estimate20:35UTC; please check back then. No deadline postponement.",
+  "scope": "Isolated validation only; no integration, canonical edits, credentials, new runtime or dispatcher activation."
+}
