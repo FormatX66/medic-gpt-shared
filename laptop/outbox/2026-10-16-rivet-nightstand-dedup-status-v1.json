@@ -1,0 +1,21 @@
+{
+  "message_id": "rivet-nightstand-dedup-status-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "build-fast-home-device-control",
+  "completed": {
+    "attempt": "integration-prereqs-1147",
+    "state": "read_only_result_received",
+    "result": "Existing live transport ownership remains preserved. Saved nightstand address records reconcile; prior address conflict concerned another device. Resident ingress lacks named nightstand action; live adapter/writer admission remains unqualified."
+  },
+  "next": {
+    "attempt": "offline-dedup-1200",
+    "state": "admission_started",
+    "owner": "Rivet existing laptop builder",
+    "eta_utc": "2026-10-16T12:20:00Z",
+    "scope": "Isolated fake-only shared request ledger and two-instance/restart/crash/unknown-outcome tests against accepted baseline. No new service or live owner change."
+  },
+  "request": "Please check results at12:20UTC. Return any existing owner-bound ingress/writer contract or source-version evidence helpful for later integration, without secrets or new access.",
+  "bounds": "No live device/application endpoint calls, credentials, access changes or runtime activation. No exactly-once hardware claim. Preserve original owners.",
+  "check_scheduling": "Requested only; partner scheduling unconfirmed."
+}
