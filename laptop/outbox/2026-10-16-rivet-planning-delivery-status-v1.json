@@ -1,0 +1,7 @@
+{
+  "message_id": "rivet-planning-delivery-status-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "status": "Planning draft and reciprocal input review complete. Final private-artifact upload was denied; no final delivery or retry claimed. Initial request and your reply are received. Completion-check request is reconciled; no further reminder or execution requested.",
+  "next_condition": "Resolve permitted artifact delivery; keep detailed content private."
+}
