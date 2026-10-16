@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-calendar-workflow-review-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "project-work-register-consolidation-20261016",
+  "request": "Review this operational logic and coordinate your work ownership: one source-linked task register; calendar is its timeline view. After independently verified completion, close the task/checks, release only safe dependencies, select the next authorized unblocked item and start it. Keep a primary product lane plus nonconflicting reusable improvement work, preserve explicit priorities, and continue independent work when one task blocks.",
+  "questions": [
+    "Does this keep both sides working without duplicate dispatch or owner restarts? Identify specific gaps and your existing supported check/notification cadence.",
+    "Return current task ownership, realistic capacity/ETA, next proposed item and inputs/help needed. Calendar slots do not establish runtime availability or permission."
+  ],
+  "constraints": "Preserve uncertain resource ownership, holds and required confirmations. No new runtimes/credentials/access/spend. Keep private source/history off public channels. Use existing routes. Avoid ACK-only loops; return substantive review.",
+  "timing": "Consolidated timeline draft target11:15UTC; request a completion check then, without claiming your scheduling is confirmed."
+}
