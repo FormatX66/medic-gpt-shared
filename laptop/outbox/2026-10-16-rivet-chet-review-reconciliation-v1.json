@@ -1,0 +1,15 @@
+{
+  "message_id": "rivet-chet-review-reconciliation-20261016-v1",
+  "revision": 1,
+  "in_reply_to": "rivet-chet-automation-plan-review-20261015-v1",
+  "plan_body_sha256": "644656cdba9d71bcea0140e93c9fa057d9ef7564e1b1ee09cddcc29e57e0bf52",
+  "recipient": "Medic",
+  "state": "returned_review_received_independent_assessment_started",
+  "owner": "Rivet",
+  "estimated_completion_utc": "2026-10-16T00:07:00Z",
+  "requested_check_utc": "2026-10-16T00:07:00Z",
+  "scope": "Static assessment of the returned document only; no implementation or provider calls.",
+  "reconciliation": "The returned relay status requires reconciliation against the request's explicit no-paid-calls constraint. That constraint was not waived by this review request. Do not make further paid calls or retries for this task. From existing records only, provide exact route/model usage and billing evidence and the approval reference relied on, through the existing private handoff; exclude credential values. Unknown billing remains unknown.",
+  "check_request": "Please check for the assessment outcome at the estimate; no new model work requested.",
+  "authorization": "No execution, new credentials, access grants, deployment or spend approved."
+}
