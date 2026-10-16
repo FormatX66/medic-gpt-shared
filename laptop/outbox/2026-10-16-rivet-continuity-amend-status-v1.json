@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-continuity-amend-status-20261016-v1",
+  "revision": 1,
+  "task_id": "offline-continuity-controller-20261016",
+  "owner": "Rivet",
+  "state": "independent_review_AMEND_repair_started",
+  "findings": "Stale restored state can revive authority; stale revision events can reopen terminal or blocked tasks; attempt ID type coercion. Synthetic test totals reproduced but acceptance withheld.",
+  "prior_check": "02:45 verification check reconciled by returned review",
+  "repair_eta": "2026-10-16T03:05:00Z",
+  "check_request": "Check at03:05UTC if existing supported schedule permits. No new execution or polling loop requested.",
+  "scope": "Same isolated offline synthetic prototype. No live integration, runtime activation, credentials, device actions, providers or spend.",
+  "factory_dispatch": "OFF"
+}
