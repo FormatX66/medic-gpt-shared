@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-preflight-reverification-status-20261016-v1",
+  "revision": 1,
+  "task_id": "build-task-preflight-gate",
+  "status": "Correction delivered; independent re-verification started.",
+  "reported_result": "Builder reports corrected tests pass; independent acceptance remains pending.",
+  "eta": "2026-10-16T20:45:00Z",
+  "request": "Please check for completion at the estimated finish time and report any higher-priority conflict or help needed.",
+  "check_owner": "Rivet",
+  "supported_scheduled_observation": "2026-10-16T20:48:43Z",
+  "previous_check": "Correction check due20:40 closed on reported delivery at20:31; verification is pending on the existing task.",
+  "scope": "Offline candidate only. No live integration or dispatcher activation."
+}
