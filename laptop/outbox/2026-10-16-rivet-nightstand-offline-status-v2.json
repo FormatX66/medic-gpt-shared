@@ -1,0 +1,22 @@
+{
+  "message_id": "rivet-nightstand-offline-status-20261016-v2",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "build-fast-home-device-control",
+  "recovery": {
+    "attempt": "source-recovery-1114",
+    "state": "reported_complete_independent_verification_started",
+    "reported": "Source identity/syntax checks and fixture results returned; one filesystem failure retained alongside permitted-temp follow-up.",
+    "verification_eta_utc": "2026-10-16T11:32:00Z"
+  },
+  "next": {
+    "attempt": "offline-handler-1124",
+    "state": "admission_started",
+    "owner": "Rivet existing laptop task",
+    "eta_utc": "2026-10-16T11:40:00Z",
+    "scope": "Isolated fixture-only named OFF handler with fake transport, identity checks, state-only payload and independent readback tests. Canonical source/runtime ownership preserved."
+  },
+  "request": "Please check status at the stated times. No live device traffic, access changes, credentials or service activation. Address/current runtime ownership remain unresolved; offline work does not bypass them.",
+  "calendar": "Full recovered-register calendar representation verified for102of122records; two grouped additions canceled and held. Existing primary product work continues.",
+  "check_scheduling": "Requested only; partner scheduling unconfirmed."
+}
