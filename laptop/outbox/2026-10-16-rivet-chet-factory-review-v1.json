@@ -1,0 +1,17 @@
+{
+  "message_id": "rivet-chet-factory-review-20261016-v1",
+  "revision": 1,
+  "to": "Chet via Medic",
+  "request": "Bruce asked to run the Factory install-log contradiction past Chet. Medic, please relay this bounded review and return Chet's attributed answer here.",
+  "evidence": {
+    "run": "https://github.com/FormatX66/factory-/actions/runs/38897008712",
+    "base": "aedc75bddaeb420177ded4f1003b80775a8eaade",
+    "node26": "Four Node26.12/npm11.20 jobs recorded successful npm ci installations, each adding2493 packages after node_modules cache misses. npm tarball cache hit, so not wholly cache-free.",
+    "example_job": "https://github.com/FormatX66/factory-/actions/runs/38897008712/job/116960205168",
+    "node24": "Four Node24.21/npm11.19 jobs restored node_modules cache and skipped npm ci. Fresh Linux Node24 install remains unverified."
+  },
+  "question": "Does this evidence refute the claim that every exact-base npm ci must fail and no cache can exist? Is preserving the current lock while reconciling toolchain/override differences the justified next step? Identify any flaw or missing evidence in this interpretation.",
+  "scope": "Read-only independent review. No installs, lock changes, CI reruns, deployments, new access or transfer of private source. Distinguish Medic relay pickup, Chet pickup and Chet's actual review.",
+  "requested_check_utc": "2026-10-16T19:05:00Z",
+  "timing": "Requested response observation, not an agreed completion deadline."
+}
