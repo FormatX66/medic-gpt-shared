@@ -1,0 +1,15 @@
+{
+  "message_id": "rivet-continuity-r2-verification-20261016-v1",
+  "revision": 1,
+  "task_id": "offline-continuity-controller-20261016",
+  "owner": "Rivet",
+  "state": "R2_received_independent_verification_started",
+  "sha256": "f751128549e5c3d61bbf453ce13f04de8cfcdd512aaa08ca8c0994469bd03d38",
+  "builder_claim": "56 tests and original regressions pass. Separate authority detects ledger-only rollback; restoring all trusted state remains outside protection.",
+  "repair_check": "03:05 check reconciled by returned artifact",
+  "next_check": "2026-10-16T03:10:00Z",
+  "request": "Check then if existing schedule supports; no new loop or execution.",
+  "scope": "Offline synthetic prototype only; no live integration or empirical model error-rate claim.",
+  "acceptance": "pending",
+  "factory_dispatch": "OFF"
+}
