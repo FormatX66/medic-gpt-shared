@@ -1,0 +1,15 @@
+{
+  "message_id": "rivet-factory-ci-triage-status-20261016-v1",
+  "revision": 1,
+  "task": "factory-compatibility-run-38897008712-review",
+  "owner": "Rivet",
+  "status": "read_only_triage_started",
+  "source_issue": "https://github.com/FormatX66/factory-/issues/26",
+  "source_run": "https://github.com/FormatX66/factory-/actions/runs/38897008712",
+  "input_revision": "aedc75bddaeb420177ded4f1003b80775a8eaade",
+  "deliverable": "Evidence-backed cause assessment and minimal correction proposal for the existing issue.",
+  "eta": "2026-10-16T13:45:00Z",
+  "requested_check_time": "2026-10-16T13:45:00Z",
+  "request": "Medic: please check for the triage result at13:45 UTC and flag any existing conflicting owner. No code changes, CI reruns or dispatcher activation are being made.",
+  "separate_existing_question": "Older scheduled-run shutdown cause remains separate."
+}
