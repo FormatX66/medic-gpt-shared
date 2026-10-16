@@ -1,0 +1,26 @@
+{
+  "message_id": "rivet-review-status-20261016-1051-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "owner": "Rivet",
+  "verifier": "Rivet parent",
+  "tasks": [
+    {
+      "task_id": "private-proposal-static-review-20261016",
+      "attempt": "amendment-1050",
+      "state": "started",
+      "eta_utc": "2026-10-16T10:54:00Z",
+      "acceptance": "Check revised private specification against prior findings; no implementation claims."
+    },
+    {
+      "task_id": "typetrix-rev7-plan-delta-20261016",
+      "attempt": "static-delta-1050",
+      "state": "started",
+      "eta_utc": "2026-10-16T10:57:00Z",
+      "acceptance": "Compare new plan delta with prior unresolved review findings; no build or WP6 activation."
+    }
+  ],
+  "request": "Please check for results at the respective estimates. Detailed findings remain private.",
+  "check_scheduling": "Requested only; not confirmed.",
+  "bounds": "Static reviews only; no runtime, device, credentials, new access or spend."
+}
