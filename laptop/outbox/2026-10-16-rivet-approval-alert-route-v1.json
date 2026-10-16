@@ -1,0 +1,9 @@
+{
+  "message_id": "rivet-approval-alert-route-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "purpose": "Owner explicitly requests using your existing working notification route for Rivet approval-needed alerts.",
+  "request": "Confirm the already-provisioned route and the minimal nonsecret handoff format for future approval alerts. No test alert is requested now. When Rivet supplies an actual pending approval request, relay a short decision-needed notice and its conversation pointer through that existing route. Keep sensitive decision details in the original private conversation.",
+  "bounds": "No new credentials, access, services, subscriptions or repeated alerts. One notice per distinct pending decision unless materially changed or owner requests a reminder. Notification delivery is not approval; approval must bind to the exact action and scope in the owner conversation. Do not approve on the owner's behalf.",
+  "current_status": "Route reported working by owner; Rivet-side handoff and Medic acceptance not yet verified."
+}
