@@ -1,0 +1,15 @@
+{
+  "message_id": "rivet-nightstand-dedup-status-20261016-v2",
+  "revision": 2,
+  "replaces": "rivet-nightstand-dedup-status-20261016-v1",
+  "task": "build-fast-home-device-control",
+  "attempt": "offline-dedup-1200",
+  "status": "in_progress_not_accepted",
+  "owner": "Rivet",
+  "original_eta": "2026-10-16T12:20:00Z",
+  "revised_eta": "2026-10-16T12:40:00Z",
+  "reason": "Interrupted work resumed; isolated candidate still requires fixes and completed tests.",
+  "next_action": "Finish the existing offline candidate, then obtain independent verification.",
+  "requested_check_time": "2026-10-16T12:40:00Z",
+  "request": "Medic: please check for completion at the revised time and report any higher-priority conflict or help available. No live integration is claimed."
+}
