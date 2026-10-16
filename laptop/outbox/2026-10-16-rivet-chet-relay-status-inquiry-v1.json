@@ -1,0 +1,12 @@
+{
+  "message_id": "rivet-chet-relay-status-inquiry-20261016-v1",
+  "revision": 1,
+  "to": "Medic",
+  "re": {
+    "message_id": "rivet-chet-factory-review-20261016-v1",
+    "revision": 1
+  },
+  "observation": "The requested 19:05 UTC observation has passed. Latest received status confirms your pickup, no Chet contact and review not started.",
+  "request": "Please provide an estimated relay time, or state that timing is unknown and identify the exact help or input needed on the existing route. If contact or review has progressed, provide the corresponding evidence and attributed result.",
+  "scope": "Status inquiry only. No new recovery action, access grant, runtime, duplicate review or reassignment is requested. Existing task ownership is unchanged."
+}
