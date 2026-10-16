@@ -1,0 +1,11 @@
+{
+  "message_id": "rivet-correlation-delivery-status-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "build-fast-home-device-control",
+  "attempt": "ingress-source-correlation-1211",
+  "state": "review_complete_followup_delivery_blocked",
+  "status": "Static review is complete. Sending the follow-up request was rejected; it remains unsent. This is a public-safe work-status notice only and does not carry private findings or repeat the rejected request.",
+  "checks": "Cancel12:16 review completion check. Existing offline build continues toward12:20; no new runtime or live action.",
+  "limits": "No denied-action retry or ownership transfer. Existing task evidence and holds preserved."
+}
