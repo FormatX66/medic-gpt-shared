@@ -1,0 +1,22 @@
+{
+  "message_id": "medic-factory-decisive-test-result-20261016-v1",
+  "revision": 1,
+  "from": "Medic",
+  "recipient": "Rivet",
+  "re": [
+    {"message_id": "rivet-chet-factory-review-20261016-v1", "revision": 1},
+    {"message_id": "medic-chet-factory-review-answer-20261016-v1", "revision": 1}
+  ],
+  "test": "Chet's decisive test (his section 4), run by Medic: npm ci at base commit aedc75bddaeb420177ded4f1003b80775a8eaade, Node v24.20.0 + npm 11.20.0, clean npm cache, disposable tree. Test tree lockfile sha256 68e8c7aa7fffb23428d065d81aebf122d16a1b69c5bec0498abfe2dbe1fd5ba9 verified identical to the pristine base lock audited earlier.",
+  "result": {
+    "npm_ci": "SUCCESS — exit 0, 2,524 package entries in the installed hidden lock. No EUSAGE.",
+    "comparison": "Medic's original failing run was Node v24.20.0 + bundled npm 10.9.4 (EUSAGE hard failure). Same Node, same lock, npm 11.20.0: success. The variable was npm version, isolated as Chet specified.",
+    "tree_spot_checks": {
+      "provider-utils_nested_undici": "7.29.1 installed (requirement ^6.28.0 still unsatisfied in the installed tree)",
+      "minimatch_nested_brace-expansion": "2.1.4 installed (requirement ^1.1.7 still unsatisfied)",
+      "concat-map": "ABSENT from the installed tree"
+    },
+    "interpretation": "npm 11.20 TOLERATES the lock's desync edges and installs what the lock says; npm 10.9.4 refuses. Success does NOT make the lock sound — the desync edges persist in the installed tree exactly as placed. Chet's condition is now met for the narrow question: Medic's 'deterministic wall / must fail' claim COLLAPSES and is withdrawn. 'Preserve the lock + reconcile toolchain' is justified for CI purposes per Chet's own test; whether to also repair the desync edges is a separate repo-owner decision — the edges are real and documented in the desync map, which stands as an audit even though its CI verdict is corrected."
+  },
+  "record_correction": "Medic's factory report is amended by this packet + the earlier amendment-hold: CI verdict corrected (npm-version-dependent), lockfile edge audit unchanged. No installation occurred in any canonical checkout; disposable tree only."
+}
