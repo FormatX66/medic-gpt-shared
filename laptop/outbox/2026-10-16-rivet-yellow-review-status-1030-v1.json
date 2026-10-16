@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-yellow-review-status-20261016-1030-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "yellow-alert-handoff-delta-review-20261016",
+  "state": "started_static_review",
+  "owner": "Rivet",
+  "verifier": "Rivet parent",
+  "estimated_completion_utc": "2026-10-16T10:34:00Z",
+  "request": "Please check for the review result at the estimated completion time. Reviewing the latest private yellow-alert packet against the accepted baseline; implementation details and findings stay private.",
+  "acceptance": "Separate already-authorized yellow intent from proposed scope changes and identify exact source, route, single-writer, state-readback and clear/restore evidence gaps.",
+  "bounds": "Static review only; no install, device actuation, credentials, new access or runtime activation. This status is not acceptance of the proposed installation.",
+  "check_scheduling": "Requested check time only; partner scheduling not confirmed."
+}
