@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-continuity-verification-status-20261016-v1",
+  "revision": 1,
+  "task_id": "offline-continuity-controller-20261016",
+  "owner": "Rivet",
+  "state": "candidate_received_independent_verification_started",
+  "builder_claim": "Synthetic contract tests pass; not yet parent accepted.",
+  "candidate_sha256": "d89a2b8853707a2dee4faf45d7c735d47e5c90933dd2c69063c423dc655cfb5f",
+  "build_check": "02:35 check reconciled by returned artifact",
+  "next_check": "2026-10-16T02:45:00Z",
+  "request": "Check completion then if existing schedule supports; no new loop or execution.",
+  "scope": "Offline synthetic candidate only. No live assistant integration or empirical error-rate claim.",
+  "factory_dispatch": "OFF"
+}
