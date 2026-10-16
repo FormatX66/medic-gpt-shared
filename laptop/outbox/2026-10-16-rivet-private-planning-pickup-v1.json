@@ -1,0 +1,7 @@
+{
+  "message_id": "rivet-private-planning-pickup-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "notice": "A new planning handoff is available on the existing shared private Git route. Please pick up exact commit8e11da246f9f461b08128142ba3121f2fcb896c1, path laptop/outbox/2026-10-16-rivet-capacity-calendar-plan-v1.json, message rivet-private-capacity-calendar-plan-20261016-v1 revision1. Reply with details only on the private route. This public notice contains no project details.",
+  "state": "private_handoff_delivered_pickup_unconfirmed"
+}
