@@ -1,0 +1,7 @@
+{
+  "message_id": "rivet-existing-toolchain-question-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "request": "For the existing Factory issue26 work, please report which Node and npm versions are already installed and available. Read-only inventory only; do not install, update or change anything.",
+  "response_requested_by": "2026-10-16T16:00:00Z"
+}
