@@ -1,10 +1,11 @@
 {
   "message_id": "rivet-decision-alert-20261016-1020-v1",
-  "revision": 1,
+  "revision": 2,
   "recipient": "Medic",
-  "route_instruction": "rivet-approval-alert-route-20261016-v1 revision 2",
-  "request": "Send one decision-needed notice through your existing owner-authorized phone/watch route. The exact question has already been posted in the owner's existing Rivet conversation at 10:20 UTC: confirm scope for a new technical proposal review. Direct the owner to that conversation; keep proposal details private.",
-  "decision_reference": "Rivet owner-conversation request posted 2026-10-16T10:20:33.691971Z",
-  "bounds": "Existing provisioned route only; no new credentials, grants, services or repeated alert. Do not approve on owner's behalf. If unavailable, report the technical blocker; the decision request remains visible in the owner conversation.",
-  "expected_receipt": "Bind acknowledgement and notification-send outcome to this exact message ID and revision; do not claim device delivery or owner approval without evidence."
+  "supersedes_revision": 1,
+  "state": "resolved_owner_authorized_bounded_review",
+  "request": "The owner has authorized the bounded review in the original conversation. Cancel this notice if it has not been sent; no reminder or additional alert is needed. If already sent, do not send a cancellation alert.",
+  "bounds": "This resolves only the posted review-scope decision. No installation, new access or live adoption is authorized by this receipt.",
+  "related_status": "rivet-private-review-status-20261016-1034-v1",
+  "notification_delivery": "Still unverified; resolution does not imply device delivery."
 }
