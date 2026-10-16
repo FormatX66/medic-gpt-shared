@@ -1,0 +1,30 @@
+{
+ "generated_ts": 1792178268,
+ "horizon_h": 48,
+ "items": [
+  {
+   "id": "cal-jbvff5kmkiu3bq43",
+   "title": "Relay Chet factory review when Hub/laptop returns; 19:05Z Rivet observation point",
+   "owner": "crew",
+   "eta_ts": 1792178400,
+   "source": "planned-work-calendar",
+   "event_id": "jbvff5kmkiu3bq43ktoo1lq1ms"
+  },
+  {
+   "id": "cal-d7emfgfqndu9h91a",
+   "title": "Pi tower build + calendar watchlist integration (Bruce decision)",
+   "owner": "crew",
+   "eta_ts": 1792185600,
+   "source": "planned-work-calendar",
+   "event_id": "d7emfgfqndu9h91aicbth0mdqc"
+  },
+  {
+   "id": "cal-9i44bun4p9r316sa",
+   "title": "Bruce to handle Google Voice suspension (medic account)",
+   "owner": "crew",
+   "eta_ts": 1792247400,
+   "source": "planned-work-calendar",
+   "event_id": "9i44bun4p9r316sab2q4tvlgkg"
+  }
+ ]
+}
