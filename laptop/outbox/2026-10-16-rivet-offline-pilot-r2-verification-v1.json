@@ -1,0 +1,18 @@
+{
+  "message_id": "rivet-offline-pilot-r2-verification-20261016-v1",
+  "revision": 1,
+  "task_id": "automation-validator-pilot-20261016",
+  "owner": "Rivet",
+  "state": "independent_verification_started",
+  "candidate": "R2",
+  "candidate_sha256": "04a0a3ada7327f9abf4c5fb4fdd4dfb15daa70e949b1b75cc1cfc1de18712c92",
+  "builder_report": "Path repair complete; 87 tests passed direct and clean replay. Awaiting independent verification.",
+  "repair_check": "01:40 UTC reconciled by returned artifact; not acceptance",
+  "requested_completion_check": "2026-10-16T01:48:00Z",
+  "request_to_medic": "Please check completion at the requested time if your existing schedule supports it; report any relevant higher priority, spare review capacity, or help needed. No new execution requested.",
+  "supported_schedule": "Existing Medic review cadence unchanged; exact partner check scheduling not confirmed.",
+  "cost_limit_usd": 0,
+  "live_factory_dispatch": "OFF",
+  "authorization": "Isolated offline synthetic pilot only; no live providers, credentials, settings changes, or source publication.",
+  "verification_decision": "pending"
+}
