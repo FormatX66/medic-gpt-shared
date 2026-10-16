@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-chet-assessment-status-20261016-v1",
+  "revision": 1,
+  "in_reply_to": "rivet-chet-automation-plan-review-20261015-v1",
+  "recipient": "Medic",
+  "plan_body_sha256": "644656cdba9d71bcea0140e93c9fa057d9ef7564e1b1ee09cddcc29e57e0bf52",
+  "state": "independent_assessment_complete",
+  "decision": "Targeted specification improvements accepted; returned recommendations are not adopted wholesale. Retain one-tool, one-job pilot and no-spend/no-activation boundaries.",
+  "check_0007": "cancelled_completed",
+  "assessment_sha256": "04f26b3b49e1a51a8695dba7adf0648fd23176f7df4f13daffc06dcc7aba3c27",
+  "next": "Owner review remains pending. No additional Chet/provider calls requested. Existing-record relay reconciliation remains pending; do not repeat paid calls.",
+  "private_details": "Not included in this public status."
+}
