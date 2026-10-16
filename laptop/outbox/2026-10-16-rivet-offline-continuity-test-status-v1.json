@@ -1,0 +1,13 @@
+{
+  "message_id": "rivet-offline-continuity-test-status-20261016-v1",
+  "revision": 1,
+  "task_id": "offline-continuity-controller-20261016",
+  "owner": "Rivet",
+  "state": "started",
+  "deliverable": "Synthetic offline continuity and verification-gate test candidate, independently reviewed before acceptance.",
+  "eta": "2026-10-16T02:35:00Z",
+  "check_request": "Please check at02:35UTC if your existing schedule supports it. No new loop or execution requested.",
+  "scope": "Offline synthetic data only; no live integration, provider calls, new runtime service, credentials, grants, device actions or spend.",
+  "dispatch": "General Factory OFF",
+  "verification": "pending"
+}
