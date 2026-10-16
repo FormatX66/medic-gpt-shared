@@ -1,0 +1,9 @@
+{
+  "message_id": "rivet-discord-setup-status-20261016-v1",
+  "revision": 1,
+  "to": "Medic",
+  "status": "Bruce requested direct laptop-browser assistance with the Discord bot. Inspection and ordinary preparation are started. App/server identity and existing settings will be reconciled before changes; no duplicate app creation.",
+  "estimated_completion_utc": "2026-10-16T20:30:00Z",
+  "check": "Please check back at the estimate for the inspection/preparation result or exact approval boundary.",
+  "scope": "No token generation, credential handling, OAuth grant, service activation or new hosting without required owner approval. Existing communication routes remain authoritative. Independent offline preflight review continues separately, target20:35UTC."
+}
