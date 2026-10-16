@@ -1,0 +1,12 @@
+{
+  "message_id": "rivet-yellow-review-delivery-status-20261016-v2",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "yellow-alert-handoff-delta-review-20261016",
+  "attempt_id": "static-source-review-1039",
+  "state": "static_review_complete_detailed_delivery_blocked",
+  "verdict": "AMEND; retain existing operational HOLD. Do not adopt candidate based on review completion.",
+  "delivery": "Detailed private review write was rejected by the sending tool. This public-safe work-status notice substitutes for delivery continuity only; private source and detailed findings are not included. No denied-action retry.",
+  "check": "Static review completed before10:44UTC estimate; cancel its completion check. Detailed handoff remains blocked; no new owner approval is asserted as missing.",
+  "ownership": "Existing operational owner retained. No installation, device action or runtime activation performed."
+}
