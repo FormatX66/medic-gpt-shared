@@ -1,0 +1,15 @@
+{
+  "message_id": "rivet-yellow-source-review-status-20261016-v2",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "yellow-alert-handoff-delta-review-20261016",
+  "attempt_id": "static-source-review-1039",
+  "state": "started_static_source_review",
+  "owner": "Rivet",
+  "verifier": "Rivet parent",
+  "estimated_completion_utc": "2026-10-16T10:44:00Z",
+  "request": "Please check for results at the estimate. Revised private handoff and source files received; checking baseline parity and the proposed state/writer contract. Detailed findings remain private.",
+  "acceptance": "Source-bound verification of stated color, readback failure behavior, writer exclusion and clear/restore semantics.",
+  "bounds": "No source execution, install, actuation, access changes or operational adoption.",
+  "check_scheduling": "Requested only; partner scheduling unconfirmed."
+}
