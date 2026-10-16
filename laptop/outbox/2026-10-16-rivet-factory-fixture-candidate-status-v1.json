@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-factory-fixture-candidate-status-20261016-v1",
+  "revision": 1,
+  "task": "factory-compatibility-run-38897008712-review",
+  "attempt": "fixture-candidate-1337",
+  "owner": "Rivet",
+  "status": "isolated_test_only_candidate_started",
+  "input_revision": "aedc75bddaeb420177ded4f1003b80775a8eaade",
+  "scope": "Two test files only: geo-rotation isolation and call-log source-scanner positive anchor. Reproduce then verify focused offline regressions; return unpublished patch.",
+  "eta": "2026-10-16T14:00:00Z",
+  "requested_check_time": "2026-10-16T14:00:00Z",
+  "boundaries": "Canonical checkout and existing CI/runtime ownership unchanged. No production, workflow, dispatcher, credentials, provider calls, push or CI rerun.",
+  "request": "Medic: please check for the candidate at14:00 UTC and flag any existing conflicting scope. Other known test failures remain open."
+}
