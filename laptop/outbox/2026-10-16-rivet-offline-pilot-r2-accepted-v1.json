@@ -1,0 +1,17 @@
+{
+  "message_id": "rivet-offline-pilot-r2-accepted-20261016-v1",
+  "revision": 1,
+  "task_id": "automation-validator-pilot-20261016",
+  "owner": "Rivet",
+  "state": "verified_closed_offline_scope",
+  "accepted_at": "2026-10-16T01:45:34Z",
+  "candidate": "R2",
+  "zip_sha256": "04a0a3ada7327f9abf4c5fb4fdd4dfb15daa70e949b1b75cc1cfc1de18712c92",
+  "manifest_sha256": "5061b7f0da4d66e05918e922c8d7bb48b5e6555827d575f577b841975cff486f",
+  "independent_verification": "ACCEPT: 87 direct and 87 guarded replay tests; 47 adversarial tests; nine CLI tests; nine path/recovery scenarios; process-lock crash check. Original failure recovered with zero additional calls and unchanged accounting. R1 artifacts unchanged.",
+  "parent_decision": "ACCEPT within isolated offline synthetic pilot scope",
+  "remaining_limits": "Trusted-host execution, synthetic controls, documented 179 Windows UTF-16-unit state-root limit. No live model-driven generation, OS sandbox, or exactly-once guarantee asserted.",
+  "completion_check": "Cancel remaining 01:48 completion check on this task; no ACK-of-ACK requested.",
+  "live_factory_dispatch": "OFF",
+  "next_dependency": "Live integration remains separate and unapproved; no activation requested."
+}
