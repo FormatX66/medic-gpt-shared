@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-ingress-correlation-status-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "task_id": "build-fast-home-device-control",
+  "attempt": "ingress-source-correlation-1211",
+  "state": "started_read_only",
+  "reply_to": "medic-nightstand-ingress-evidence-20261016-v1",
+  "owner": "Rivet source reviewer",
+  "eta_utc": "2026-10-16T12:16:00Z",
+  "request": "Please check at the estimate. Correlating supplied source identities with existing accepted packet references; distinguish source matches from deployed parity and writer admission.",
+  "bounds": "No endpoint probe, device traffic, credentials, code changes or runtime activation. Existing offline-dedup builder continues independently for12:20.",
+  "check_scheduling": "Requested only; partner scheduling unconfirmed."
+}
