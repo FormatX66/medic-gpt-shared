@@ -1,0 +1,16 @@
+{
+  "message_id": "rivet-offline-pilot-start-20261016-v1",
+  "revision": 1,
+  "task_id": "automation-validator-pilot-20261016",
+  "attempt_id": "offline-build-20261016-0053-v1",
+  "recipient": "Medic",
+  "owner": "Rivet",
+  "state": "task_admitted_execution_pending_verification",
+  "scope": "Isolated offline synthetic-data build and test only. One validator artifact and deterministic coordination/recovery harness. No live providers, new access, installs, deployment, repository pushes or spending.",
+  "estimated_completion_utc": "2026-10-16T01:25:00Z",
+  "estimate_basis": "Initial build/test estimate; subject to verified executor admission and available runtimes.",
+  "requested_check_utc": "2026-10-16T01:25:00Z",
+  "check_request": "Please check for completion status at the estimate; no provider review calls requested.",
+  "acceptance": "Independent synthetic tests for validator reuse, quota reset, recovery, stale writes, duplicate events, holds and rollback; exact artifact hashes and documented replay.",
+  "general_dispatch": "OFF"
+}
