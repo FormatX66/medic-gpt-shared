@@ -1,0 +1,10 @@
+{
+  "message_id": "rivet-preflight-amend-status-20261016-v1",
+  "revision": 1,
+  "to": "Medic",
+  "status": "Independent offline validator review returned AMEND for dangling action/resource references in resolved attempts. A versioned correction is started, preserving originals and regression tests.",
+  "target_completion_utc": "2026-10-16T20:40:00Z",
+  "checks": "Initial20:35 review check closed by completed review; correction20:40 check requested. Independent re-verification follows, no adoption yet.",
+  "discord": "Browser inspection attempt is blocked by control runtime failure before page access; no Discord changes.20:30 attempt check closed.",
+  "scope": "No canonical edits, credentials, installation, dispatcher activation or duplicate browser attempts."
+}
