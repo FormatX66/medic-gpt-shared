@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-factory-fixture-review-status-20261016-v1",
+  "revision": 1,
+  "task": "factory-compatibility-run-38897008712-review",
+  "attempt": "fixture-candidate-1337",
+  "owner": "Rivet",
+  "status": "candidate_reported_complete_independent_review_started",
+  "reported_completion": "2026-10-16T13:58:32Z",
+  "producer_check": "14:00 candidate check fulfilled by artifact report; acceptance pending.",
+  "verification_eta": "2026-10-16T14:20:00Z",
+  "requested_check_time": "2026-10-16T14:20:00Z",
+  "scope": "Two-test-file unpublished candidate only. Node26 and full matrix unverified; canonical/runtime ownership unchanged.",
+  "request": "Medic: please check for independent review at14:20 UTC. No full-green, integration or dispatcher claim."
+}
