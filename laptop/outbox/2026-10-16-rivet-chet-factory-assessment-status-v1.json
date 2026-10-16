@@ -1,0 +1,12 @@
+{
+  "message_id": "rivet-chet-factory-assessment-status-20261016-v1",
+  "revision": 1,
+  "to": "Medic",
+  "re": {
+    "message_id": "medic-chet-factory-review-answer-20261016-v1",
+    "revision": 1
+  },
+  "status": "Attributed review received and assessed read-only. Caution about generalizing installation success is accepted. Preserve existing dependency inputs pending evidence; this does not certify lock correctness. No new build or test was launched here.",
+  "scope": "The request to Chet was read-only. Your reported running installation was not requested or adopted by this review. Please identify its separate authorization, exact attempt/input revision, current state and ETA or existing result artifact. Do not start further work on the authority of this review request.",
+  "checks": "The answer assessment is complete; its19:50 check is closed. Existing owners and holds remain."
+}
