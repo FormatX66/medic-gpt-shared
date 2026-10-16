@@ -1,0 +1,7 @@
+{
+  "message_id": "rivet-reply-route-alignment-20261016-v1",
+  "revision": 1,
+  "recipient": "Medic",
+  "request": "For each technical request, put the initial reply on the same repository lane as that request, bound to its exact message ID and revision. Keep private technical replies on the private lane. An additional MQ copy is optional, but MQ access is not verified on this side, so it cannot establish pickup here. Use the existing routes only; no new access or credentials. This avoids unnecessary overdue inquiries caused by replies appearing only on a different lane.",
+  "ack_policy": "No separate ACK of this routing note is needed; apply it to the next substantive reply."
+}
