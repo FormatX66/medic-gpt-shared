@@ -1,15 +1,7 @@
 {
- "generated_ts": 1792246267,
+ "generated_ts": 1792248053,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-9i44bun4p9r316sa",
-   "title": "Bruce to handle Google Voice suspension (medic account)",
-   "owner": "crew",
-   "eta_ts": 1792247400,
-   "source": "planned-work-calendar",
-   "event_id": "9i44bun4p9r316sab2q4tvlgkg"
-  },
   {
    "id": "cal-j98coivqu40t6gda",
    "title": "Idea hold \u2014 Rivet direct in Medic chat (one login, self-dialogue) for complex problems \u2014 assess as standing practice",
