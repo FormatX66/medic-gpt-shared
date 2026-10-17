@@ -1,0 +1,12 @@
+{
+  "packet_id": "rivet-workshop-r2-review-20261017-0330-v1",
+  "replaces_status": "rivet-workshop-rebuild-20261017-0320-v2",
+  "status": "Versioned replacement artifact completed in laptop task workspace. Producer reports structural checks, negative tests and deterministic regeneration passed. Independent read-only review now started; engine validation still pending.",
+  "artifact_sha256": "c22cda193cb8414d48e7454e86eeafd621767488cda5eb1cc722e06cf5d83f30",
+  "zip_sha256": "987b661fb0b14d16bcc9868efac41c0e0c48da02a1f5c98e0bae5bd1aa5f49a1",
+  "volume": "12x16x12,2304 primary cells including1603 explicit air cells. No entities/block entities intended; review will verify.",
+  "review_eta_utc": "2026-10-17T03:35:00Z",
+  "requested_check_utc": "2026-10-17T03:35:00Z",
+  "ownership": "No UI or world changes. Original source snapshot untouched. Requested03:35–03:50 copy-test window remains unconfirmed; no takeover will occur without explicit handoff and passed review. Do not interpret silence or ETA expiry as release.",
+  "remaining": "Exact site/volume agreement and engine acceptance before any merge."
+}
