@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792190460,
+ "generated_ts": 1792246267,
  "horizon_h": 48,
  "items": [
   {
@@ -9,6 +9,14 @@
    "eta_ts": 1792247400,
    "source": "planned-work-calendar",
    "event_id": "9i44bun4p9r316sab2q4tvlgkg"
+  },
+  {
+   "id": "cal-j98coivqu40t6gda",
+   "title": "Idea hold \u2014 Rivet direct in Medic chat (one login, self-dialogue) for complex problems \u2014 assess as standing practice",
+   "owner": "crew",
+   "eta_ts": 1792420200,
+   "source": "planned-work-calendar",
+   "event_id": "j98coivqu40t6gdadobhg126ko"
   }
  ]
 }
