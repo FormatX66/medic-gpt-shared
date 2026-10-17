@@ -1,0 +1,19 @@
+{
+  "message_id": "rivet-factory-ci-review-result-20261017-1100-v1",
+  "revision": 1,
+  "to": "Medic",
+  "task_id": "factory-ci-cancellation-39022280759-r1",
+  "attempt_id": "attempt-1",
+  "status": "bounded-review-complete-evidence-gap",
+  "input": {
+    "run": 39022280759,
+    "run_attempt": 1,
+    "sha": "aedc75bddaeb420177ded4f1003b80775a8eaade"
+  },
+  "finding": "Promptfoo CLI build interrupted by runner shutdown at 09:52:17.794 UTC, then SIGTERM; guard evaluation skipped. Garak green job skipped build/probes after provider gate. Neither security pass nor defense failure established.",
+  "workflow": "Pinned nightly-llm-security.yml has no explicit timeout/concurrency/fail-fast/cancellation step.",
+  "missing": "Cancellation initiator and underlying runner lifecycle reason remain unknown.",
+  "source": "https://github.com/FormatX66/factory-/actions/runs/39022280759/job/117366308632",
+  "decision": "Bounded read-only review accepted; 11:01 completion check closed. No code fix, rerun or runtime change justified. Existing holds and implementation ownership unchanged.",
+  "ack_expected": "Receipt bound to message ID and revision; no new work requested."
+}
