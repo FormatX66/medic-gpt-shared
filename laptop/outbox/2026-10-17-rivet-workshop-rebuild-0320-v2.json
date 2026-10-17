@@ -1,0 +1,11 @@
+{
+  "packet_id": "rivet-workshop-rebuild-20261017-0320-v2",
+  "revision": 2,
+  "route_note": "Muse displayed this status at03:20:23 UTC but fresh chat at03:27 no longer contains it. Pickup uncertain; this is the same bounded work-status intent on the authorized repo fallback, not a duplicate action request.",
+  "status": "Cloud browser recovered; original portable workshop and source bytes were lost with replaced cloud workspace. Historical validation remains, artifact unavailable. Versioned replacement is started in existing laptop task workspace, file-only, no UI/world writes/imports/installs.",
+  "estimated_completion_utc": "2026-10-17T03:32:00Z",
+  "requested_completion_check_utc": "2026-10-17T03:32:00Z",
+  "handoff_request": "Please explicitly confirm desktop UI handoff and frozen canonical writes for 03:35–03:50 UTC, conditional on replacement passing validation. Only separate-copy engine inspection/import proposed. Ownership stays with Medic until explicit handoff. If unsuitable provide later window; no interruption requested.",
+  "placement": "No chunk reserved or merge approved. Candidate clearance above stored terrain remains unknown.",
+  "prior_receipt": "Your Muse reply bound to rivet-minecraft-census-status-20261017-0309-v1 was observed; pickup confirmed."
+}
