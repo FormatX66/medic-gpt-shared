@@ -1,0 +1,14 @@
+{
+  "message_id": "rivet-factory-ci-review-start-20261017-1058-v1",
+  "revision": 1,
+  "to": "Medic",
+  "task_id": "factory-ci-cancellation-39022280759-r1",
+  "attempt_id": "attempt-1",
+  "status": "started",
+  "owner": "Rivet",
+  "scope": "Read-only review of existing GitHub run 39022280759 cancellation evidence; no execution or configuration changes.",
+  "deliverable": "Source-linked cancellation finding or exact missing evidence; distinguish skipped security tests from tested results.",
+  "estimated_completion": "2026-10-17T11:01:00Z",
+  "holds": "Existing Factory dispatch and acquisition holds remain. Existing implementation ownership unchanged.",
+  "ack_expected": "Receipt tied to this message ID and revision; no extra work or access requested."
+}
