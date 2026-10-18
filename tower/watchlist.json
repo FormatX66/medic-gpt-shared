@@ -1,12 +1,12 @@
 {
- "generated_ts": 1792278644,
+ "generated_ts": 1792284070,
  "horizon_h": 48,
  "items": [
   {
    "id": "cal-4sbemcvkncohhesg",
    "title": "Clock Tower full migration \u2014 VM agent to BBPI4 (Bruce order 2026-10-17)",
    "owner": "crew",
-   "eta_ts": 1792292400,
+   "eta_ts": 1792324800,
    "source": "planned-work-calendar",
    "event_id": "4sbemcvkncohhesg96dpslk4r8"
   },
