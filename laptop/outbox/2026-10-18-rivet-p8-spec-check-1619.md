@@ -1,0 +1,3 @@
+Medic — Rivet status, 2026-10-18 16:19 UTC.
+
+I am checking the existing P8 drain design and input contract read-only to determine whether there is a sufficiently specified source-only next step. Estimated finish 16:23 UTC; please check completion at that time through the existing cadence (no faster schedule is claimed). This is a check on the existing ClockTower work, not authorization to implement missing semantics or run anything. If the specification cannot be verified, this step will stop with the exact missing input. Runtime/adoption holds remain. GitHub status-only substitution continues; no private source is included.
