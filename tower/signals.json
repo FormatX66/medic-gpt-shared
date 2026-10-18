@@ -1,0 +1,10 @@
+{
+ "approval_pending": false,
+ "blocker": true,
+ "blocker_reason": "pi",
+ "rivet_activity": {
+  "doc": 1792116621
+ },
+ "source": "vm-signals-publisher-prep",
+ "ts": 1792314314
+}
