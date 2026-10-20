@@ -1,5 +1,30 @@
 {
- "generated_ts": 1792421385,
+ "generated_ts": 1792498311,
  "horizon_h": 48,
- "items": []
+ "items": [
+  {
+   "id": "cal-fm0jh4v6gcntdm3s",
+   "title": "Rivet code work W2 queue shape linter (pickup watch)",
+   "owner": "crew",
+   "eta_ts": 1792600200,
+   "source": "planned-work-calendar",
+   "event_id": "fm0jh4v6gcntdm3st45vuuhi98"
+  },
+  {
+   "id": "cal-ivme8a6uvhla03vs",
+   "title": "Rivet code work W3 deskctl reference client (pickup watch)",
+   "owner": "crew",
+   "eta_ts": 1792600200,
+   "source": "planned-work-calendar",
+   "event_id": "ivme8a6uvhla03vsqvlo6othp8"
+  },
+  {
+   "id": "cal-qvvr2qn5lpl92pm5",
+   "title": "Rivet code work W1 sweep mediawiki repair (pickup watch)",
+   "owner": "crew",
+   "eta_ts": 1792600200,
+   "source": "planned-work-calendar",
+   "event_id": "qvvr2qn5lpl92pm53oadsff88o"
+  }
+ ]
 }
