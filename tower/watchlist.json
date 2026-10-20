@@ -1,15 +1,7 @@
 {
- "generated_ts": 1792501883,
+ "generated_ts": 1792505480,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-1740g29b0r53qf2q",
-   "title": "Rivet \u2014 Home controller-to-N1 envelope adapter slice (offline candidate return)",
-   "owner": "crew",
-   "eta_ts": 1792504500,
-   "source": "planned-work-calendar",
-   "event_id": "1740g29b0r53qf2qm8i234sai4"
-  },
   {
    "id": "cal-fm0jh4v6gcntdm3s",
    "title": "Rivet code work W2 queue shape linter (pickup watch)",
