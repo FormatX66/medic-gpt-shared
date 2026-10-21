@@ -1,15 +1,7 @@
 {
- "generated_ts": 1792611676,
+ "generated_ts": 1792613476,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-731fsup1ae7s18qk",
-   "title": "P4 harness v5 focused revision \u2014 Rivet v4 REVISE residuals (C5-a/b + boundary, R1, R3, C1 enumeration) \u2014 delivery ETA 15:45 EDT",
-   "owner": "crew",
-   "eta_ts": 1792611900,
-   "source": "planned-work-calendar",
-   "event_id": "731fsup1ae7s18qkr0plkf3hq0"
-  },
   {
    "id": "cal-603grjmoskg6ki4h",
    "title": "MQ (+Board) endpoint migration to mq.arkmatx.com",
@@ -17,14 +9,6 @@
    "eta_ts": 1792789200,
    "source": "planned-work-calendar",
    "event_id": "603grjmoskg6ki4hjc7i23h5gc"
-  },
-  {
-   "id": "cal-fp7ie0ejvi169697",
-   "title": "P4 harness v4 focused revision \u2014 delivery to Rivet by 15:30 EDT",
-   "owner": "crew",
-   "eta_ts": 1792611900,
-   "source": "planned-work-calendar",
-   "event_id": "fp7ie0ejvi169697rprsfklqg0"
   }
  ]
 }
