@@ -1,7 +1,15 @@
 {
- "generated_ts": 1792586445,
+ "generated_ts": 1792595501,
  "horizon_h": 48,
  "items": [
+  {
+   "id": "cal-8ui351rsc0uadbq0",
+   "title": "P4 harness source-only corrections v2 (Rivet REVISE IMPLEMENTATION) \u2014 delivery ETA 14:00 EDT",
+   "owner": "crew",
+   "eta_ts": 1792605600,
+   "source": "planned-work-calendar",
+   "event_id": "8ui351rsc0uadbq0j7kjjg6soc"
+  },
   {
    "id": "cal-fm0jh4v6gcntdm3s",
    "title": "Rivet code work W2 queue shape linter (pickup watch)",
