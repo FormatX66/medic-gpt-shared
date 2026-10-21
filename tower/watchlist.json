@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792595501,
+ "generated_ts": 1792597263,
  "horizon_h": 48,
  "items": [
   {
@@ -9,6 +9,14 @@
    "eta_ts": 1792605600,
    "source": "planned-work-calendar",
    "event_id": "8ui351rsc0uadbq0j7kjjg6soc"
+  },
+  {
+   "id": "cal-4nn8n8aq8p277ldo",
+   "title": "P4 harness v3 residual corrections (Rivet v2 REVISE) \u2014 delivery ETA 14:00 EDT",
+   "owner": "crew",
+   "eta_ts": 1792605600,
+   "source": "planned-work-calendar",
+   "event_id": "4nn8n8aq8p277ldokq6vb1csok"
   },
   {
    "id": "cal-fm0jh4v6gcntdm3s",
