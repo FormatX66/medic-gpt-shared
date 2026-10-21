@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792600848,
+ "generated_ts": 1792602670,
  "horizon_h": 48,
  "items": [
   {
@@ -17,6 +17,14 @@
    "eta_ts": 1792605600,
    "source": "planned-work-calendar",
    "event_id": "4nn8n8aq8p277ldokq6vb1csok"
+  },
+  {
+   "id": "cal-fp7ie0ejvi169697",
+   "title": "P4 harness v4 focused revision \u2014 delivery to Rivet by 15:30 EDT",
+   "owner": "crew",
+   "eta_ts": 1792611900,
+   "source": "planned-work-calendar",
+   "event_id": "fp7ie0ejvi169697rprsfklqg0"
   }
  ]
 }
