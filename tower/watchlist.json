@@ -1,15 +1,7 @@
 {
- "generated_ts": 1792584676,
+ "generated_ts": 1792586445,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-ldc80lg426g0igfv",
-   "title": "Clock Tower P4 first-stage harness build (Medic)",
-   "owner": "crew",
-   "eta_ts": 1792594680,
-   "source": "planned-work-calendar",
-   "event_id": "ldc80lg426g0igfvchmv4tvnc4"
-  },
   {
    "id": "cal-fm0jh4v6gcntdm3s",
    "title": "Rivet code work W2 queue shape linter (pickup watch)",
