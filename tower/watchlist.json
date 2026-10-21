@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792606252,
+ "generated_ts": 1792611676,
  "horizon_h": 48,
  "items": [
   {
@@ -9,6 +9,14 @@
    "eta_ts": 1792611900,
    "source": "planned-work-calendar",
    "event_id": "731fsup1ae7s18qkr0plkf3hq0"
+  },
+  {
+   "id": "cal-603grjmoskg6ki4h",
+   "title": "MQ (+Board) endpoint migration to mq.arkmatx.com",
+   "owner": "crew",
+   "eta_ts": 1792789200,
+   "source": "planned-work-calendar",
+   "event_id": "603grjmoskg6ki4hjc7i23h5gc"
   },
   {
    "id": "cal-fp7ie0ejvi169697",
