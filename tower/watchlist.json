@@ -1,22 +1,14 @@
 {
- "generated_ts": 1792602670,
+ "generated_ts": 1792606252,
  "horizon_h": 48,
  "items": [
   {
-   "id": "cal-8ui351rsc0uadbq0",
-   "title": "P4 harness source-only corrections v2 (Rivet REVISE IMPLEMENTATION) \u2014 delivery ETA 14:00 EDT",
+   "id": "cal-731fsup1ae7s18qk",
+   "title": "P4 harness v5 focused revision \u2014 Rivet v4 REVISE residuals (C5-a/b + boundary, R1, R3, C1 enumeration) \u2014 delivery ETA 15:45 EDT",
    "owner": "crew",
-   "eta_ts": 1792605600,
+   "eta_ts": 1792611900,
    "source": "planned-work-calendar",
-   "event_id": "8ui351rsc0uadbq0j7kjjg6soc"
-  },
-  {
-   "id": "cal-4nn8n8aq8p277ldo",
-   "title": "P4 harness v3 residual corrections (Rivet v2 REVISE) \u2014 delivery ETA 14:00 EDT",
-   "owner": "crew",
-   "eta_ts": 1792605600,
-   "source": "planned-work-calendar",
-   "event_id": "4nn8n8aq8p277ldokq6vb1csok"
+   "event_id": "731fsup1ae7s18qkr0plkf3hq0"
   },
   {
    "id": "cal-fp7ie0ejvi169697",
