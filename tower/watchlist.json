@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792674655,
+ "generated_ts": 1792698074,
  "horizon_h": 48,
  "items": [
   {
@@ -9,6 +9,14 @@
    "eta_ts": 1792789200,
    "source": "planned-work-calendar",
    "event_id": "603grjmoskg6ki4hjc7i23h5gc"
+  },
+  {
+   "id": "cal-2a2csae8uancq1tm",
+   "title": "Tower cutover to Pi \u2014 awaiting Rivet accept",
+   "owner": "crew",
+   "eta_ts": 1792783800,
+   "source": "planned-work-calendar",
+   "event_id": "2a2csae8uancq1tmtocpnrs5hk"
   },
   {
    "id": "cal-gsm8bm7cbs8r0e6b",
