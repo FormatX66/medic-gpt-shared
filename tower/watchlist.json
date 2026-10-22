@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792698074,
+ "generated_ts": 1792708892,
  "horizon_h": 48,
  "items": [
   {
@@ -17,14 +17,6 @@
    "eta_ts": 1792783800,
    "source": "planned-work-calendar",
    "event_id": "2a2csae8uancq1tmtocpnrs5hk"
-  },
-  {
-   "id": "cal-gsm8bm7cbs8r0e6b",
-   "title": "@hashxburn password reset \u2014 Bruce sets it from the email link",
-   "owner": "crew",
-   "eta_ts": 1792708200,
-   "source": "planned-work-calendar",
-   "event_id": "gsm8bm7cbs8r0e6bvf5dams9as"
   },
   {
    "id": "cal-43vt75vvlmdiprjj",
