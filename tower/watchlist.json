@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792613476,
+ "generated_ts": 1792674655,
  "horizon_h": 48,
  "items": [
   {
@@ -9,6 +9,22 @@
    "eta_ts": 1792789200,
    "source": "planned-work-calendar",
    "event_id": "603grjmoskg6ki4hjc7i23h5gc"
+  },
+  {
+   "id": "cal-gsm8bm7cbs8r0e6b",
+   "title": "@hashxburn password reset \u2014 Bruce sets it from the email link",
+   "owner": "crew",
+   "eta_ts": 1792708200,
+   "source": "planned-work-calendar",
+   "event_id": "gsm8bm7cbs8r0e6bvf5dams9as"
+  },
+  {
+   "id": "cal-43vt75vvlmdiprjj",
+   "title": "Muse.ai accounts for Rivet + Medic \u2014 laptop signup batch",
+   "owner": "crew",
+   "eta_ts": 1792710000,
+   "source": "planned-work-calendar",
+   "event_id": "43vt75vvlmdiprjjb344oifoco"
   }
  ]
 }
