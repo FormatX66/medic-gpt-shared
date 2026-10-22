@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792708892,
+ "generated_ts": 1792710690,
  "horizon_h": 48,
  "items": [
   {
@@ -17,14 +17,6 @@
    "eta_ts": 1792783800,
    "source": "planned-work-calendar",
    "event_id": "2a2csae8uancq1tmtocpnrs5hk"
-  },
-  {
-   "id": "cal-43vt75vvlmdiprjj",
-   "title": "Muse.ai accounts for Rivet + Medic \u2014 laptop signup batch",
-   "owner": "crew",
-   "eta_ts": 1792710000,
-   "source": "planned-work-calendar",
-   "event_id": "43vt75vvlmdiprjjb344oifoco"
   }
  ]
 }
