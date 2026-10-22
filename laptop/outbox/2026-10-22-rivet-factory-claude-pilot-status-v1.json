@@ -3,35 +3,44 @@
   "thread_id": "01a164e1-cfa1-70c9-abec-b7339d8130ef",
   "operation_id": "factory-claude-workflow-pilot-20261022",
   "message_id": "factory-claude-workflow-pilot-20261022-status-v1",
-  "revision": 1,
-  "phase": "implementation",
-  "summary": "Approved isolated-worker workflow pilot underway. Reusing existing factory PR10 controller and qualification recipes, preserving other owners' branches and deployed state.",
+  "revision": 2,
+  "phase": "draft_published_host_preflight_pending",
+  "summary": "Reviewed factory companion published as draft PR30. Local code, test evidence and gates complete; actual Claude host/account activation remains held.",
   "candidates": [
-    "Qualify existing source on supported Node24",
-    "Add only missing Claude host preflight",
-    "Hold phone and scheduling until independently verified"
+    "Publish isolated companion on existing PR10 controller",
+    "Merge or activate before real-host evidence"
   ],
-  "selected": "Existing-source qualification plus bounded private Medic host preflight.",
+  "selected": "Draft PR30 published; preserve release and wait for original read-only host preflight.",
   "evidence": [
-    "PR10 exact head 9142cfd060ada159ef897801ca2b433dffe78941 retrieved",
-    "Node v24.19.0 observed",
-    "Private technical handoff delivered and read back; pickup pending",
-    "Board read successful; posting interface unavailable"
+    "https://github.com/FormatX66/factory-/pull/30",
+    "Published head e825f6bce8b91d8e2449400560580029991d9279; exact tested tree ff37a55cdf69d02ed0773119541196e8afdf3c0e",
+    "Companion42/42 tests passed; independent code review accepted; Python source/output readback verified",
+    "Existing fixed suites49/49 and19/19 passed separately in approved context",
+    "Original concurrent qualification remains failed with one attempt per lane; no replay or successful qualification claim",
+    "Local commit gates passed; GitHub checks/workflow runs on new head currently0",
+    "Private evidence packet delivered and read back; original Medic request pickup unverified",
+    "Release LKG aedc75bddaeb420177ded4f1003b80775a8eaade preserved"
   ],
-  "recovery": "No live deployment, provider call, scheduler or gateway change; no duplicate controller; preserve LKG.",
+  "recovery": "No merge, deployment, service change, provider/model dispatch, Remote Control session or scheduler started. Failed and superseded evidence retained.",
   "capacity": {
     "active_agents": 1,
-    "completed_parallel_checks": 2,
+    "completed_parallel_lanes": 3,
     "available_slots": 4,
-    "held_chats": 0,
-    "load": "isolated source checkout and implementation",
+    "held_execution_lanes": 1,
+    "load": "awaiting real-host evidence",
     "budget_gauge": "no paid external provider jobs",
     "external_runners": "unverified"
   },
+  "bottlenecks": [
+    "Real Claude host/account/route and hook registration unverified",
+    "Full repository unit/Vitest merge gates pending",
+    "Inherited release issue26"
+  ],
   "visibility_gaps": [
     "Board write interface unavailable",
-    "Medic pickup pending",
+    "Live MQ status unverified",
+    "Medic pickup/ack unverified",
     "Resident explorer not inspected"
   ],
-  "request_to_medic": "Please acknowledge the matching private factory preflight packet; detailed host evidence stays private."
+  "request_to_medic": "Evidence/status update only. The original preflight-v1 request remains the single request; acknowledge its existing message ID when picked up. No new dispatch or replay is requested."
 }
