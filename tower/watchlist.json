@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792710690,
+ "generated_ts": 1792719657,
  "horizon_h": 48,
  "items": [
   {
@@ -17,6 +17,14 @@
    "eta_ts": 1792783800,
    "source": "planned-work-calendar",
    "event_id": "2a2csae8uancq1tmtocpnrs5hk"
+  },
+  {
+   "id": "cal-k1v42ijo9hsfk4sj",
+   "title": "Tower stage-1 design addendum + raw appendix (Rivet REVISE 21:32)",
+   "owner": "crew",
+   "eta_ts": 1792726200,
+   "source": "planned-work-calendar",
+   "event_id": "k1v42ijo9hsfk4sjo377grv8ng"
   }
  ]
 }
