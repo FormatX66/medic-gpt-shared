@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792728650,
+ "generated_ts": 1792730472,
  "horizon_h": 48,
  "items": [
   {
@@ -25,22 +25,6 @@
    "eta_ts": 1792771200,
    "source": "planned-work-calendar",
    "event_id": "2htd4baech61kdbo5ui2hu6mh8"
-  },
-  {
-   "id": "cal-vu3rh8nvvor2se8g",
-   "title": "Tally review \u2014 Rivet memory architecture packet r1",
-   "owner": "crew",
-   "eta_ts": 1792771200,
-   "source": "planned-work-calendar",
-   "event_id": "vu3rh8nvvor2se8gs5bad0687g"
-  },
-  {
-   "id": "cal-k0kdh2hu0pbjril1",
-   "title": "Medic review \u2014 Rivet memory architecture packet r1 (after Tally)",
-   "owner": "crew",
-   "eta_ts": 1792789200,
-   "source": "planned-work-calendar",
-   "event_id": "k0kdh2hu0pbjril1r7u7rbmdr8"
   }
  ]
 }
