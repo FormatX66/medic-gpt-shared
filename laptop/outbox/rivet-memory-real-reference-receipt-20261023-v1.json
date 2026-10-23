@@ -1,0 +1,132 @@
+{
+  "id": "rivet-memory-real-reference-receipt-20261023-v1",
+  "revision": 1,
+  "kind": "public-safe body-free technical work status",
+  "owner": "Rivet",
+  "reviewer": "Medic",
+  "status": "installed verification passed; external sample scoring pending",
+  "created_at": "2026-10-23T11:39:15Z",
+  "extension_manifest_sha256": "5eaccd189d5bfc7913d5e6bd30d349bbcbd1d7095b7a639a351dbc4cbe8e4e99",
+  "admission_sha256": "9de964096a0d2e710b5c74b56169005666ef24f283342809dbda395d2eb25307",
+  "approved_head": "11fdd2f3646f8b5bc959bac2d07d7e81ebf7b0b4",
+  "evidence": {
+    "ledger_lf_sha256": "10b231755cf69705de2228669d721c200cec7d61ed92da2d0d56bfb2eb16c0c8",
+    "ledger_original_crlf_sha256": "7067a4de2d52a33cd10aaa9381ecf23a729a1cb69ab636acb879ea2969565a5b",
+    "section_receipts_sha256": "6dda7876e30e19f96ea27607700149f6fb6d57a26335b0fab662ce923dfe7ce3",
+    "parent_verification": "All seven exact refs, ranges, connector-reported blobs, canonical digests and lengths matched. Correlation-label hashes and normalized ledger hash independently recomputed and matched."
+  },
+  "results": [
+    {
+      "reference": "MEM-PUB-001",
+      "repository": "FormatX66/medic-gpt-shared",
+      "path": "circle/RECOVERY.md",
+      "ref": "1085a782eaa62f028afa390873d7d13fc6655311",
+      "start": 13,
+      "end": 15,
+      "blob_sha": "48403e27bc82ff461cc76e21a89c83d6ed4f9fdc",
+      "canonical_sha256": "0249d7967554a26c09597f6eccf70c6c136c4955f22d776679a755000d2929c0",
+      "canonical_bytes": 240,
+      "exit_code": 0,
+      "decision": "verified_supplied_section",
+      "result": "pass"
+    },
+    {
+      "reference": "MEM-PUB-002",
+      "repository": "FormatX66/medic-gpt-shared",
+      "path": "laptop/inbox/2026-10-09-medic-rivet-recovery.md",
+      "ref": "1085a782eaa62f028afa390873d7d13fc6655311",
+      "start": 1,
+      "end": 9,
+      "blob_sha": "35f98ffd34f2c8086b028cf979b596debbbae1fa",
+      "canonical_sha256": "aa15fd09e6db0b298936971edbd087b04f5af1c02f1d2ac5f0b3d0338bb8014c",
+      "canonical_bytes": 265,
+      "exit_code": 0,
+      "decision": "verified_supplied_section",
+      "result": "pass"
+    },
+    {
+      "reference": "MEM-PUB-003A",
+      "repository": "FormatX66/medic-gpt-shared",
+      "path": "laptop/outbox/2026-10-09-rivet-medic-recovery-reconciliation-v1.json",
+      "ref": "1085a782eaa62f028afa390873d7d13fc6655311",
+      "start": 8,
+      "end": 14,
+      "blob_sha": "c3258bb98b8eeb303c4259c31fdc551b9d471edc",
+      "canonical_sha256": "ee51f27350e460a455f197dc60c369b360b71d2244ae05bbcfea6b17a2dec9fe",
+      "canonical_bytes": 513,
+      "exit_code": 0,
+      "decision": "verified_supplied_section",
+      "result": "pass"
+    },
+    {
+      "reference": "MEM-PUB-003B",
+      "repository": "FormatX66/medic-gpt-shared",
+      "path": "laptop/outbox/2026-10-09-rivet-medic-recovery-reconciliation-v1.json",
+      "ref": "1085a782eaa62f028afa390873d7d13fc6655311",
+      "start": 16,
+      "end": 17,
+      "blob_sha": "c3258bb98b8eeb303c4259c31fdc551b9d471edc",
+      "canonical_sha256": "8531443656fba16c378da291c489bdda96acad409b9d127b1e7a948939bf1ea0",
+      "canonical_bytes": 224,
+      "exit_code": 0,
+      "decision": "verified_supplied_section",
+      "result": "pass"
+    },
+    {
+      "reference": "MEM-PUB-003C",
+      "repository": "FormatX66/medic-gpt-shared",
+      "path": "laptop/outbox/2026-10-09-rivet-medic-recovery-reconciliation-v1.json",
+      "ref": "1085a782eaa62f028afa390873d7d13fc6655311",
+      "start": 26,
+      "end": 26,
+      "blob_sha": "c3258bb98b8eeb303c4259c31fdc551b9d471edc",
+      "canonical_sha256": "93176bfbfe780940bae4fac27cf71d27c4e85b65bfc8987e220cc46a7880b176",
+      "canonical_bytes": 144,
+      "exit_code": 0,
+      "decision": "verified_supplied_section",
+      "result": "pass"
+    },
+    {
+      "reference": "MEM-PUB-GUARD-A",
+      "repository": "FormatX66/medic-gpt-shared",
+      "path": "laptop/outbox/2026-10-09-rivet-medic-recovery-history-warning-v1.json",
+      "ref": "b396bf695b91f726c90706114c73dafca4e2c428",
+      "start": 15,
+      "end": 15,
+      "blob_sha": "4d7001dfd5e3a328c8bff91251b34d0b0955a6bb",
+      "canonical_sha256": "390a59b27e00e5f77ef0d5b6319f6f748116c7584429304b080af03a3ed278bf",
+      "canonical_bytes": 69,
+      "exit_code": 0,
+      "decision": "verified_supplied_section",
+      "result": "pass"
+    },
+    {
+      "reference": "MEM-PUB-GUARD-B",
+      "repository": "FormatX66/medic-gpt-shared",
+      "path": "laptop/outbox/2026-10-09-rivet-medic-recovery-history-warning-v1.json",
+      "ref": "b396bf695b91f726c90706114c73dafca4e2c428",
+      "start": 17,
+      "end": 19,
+      "blob_sha": "4d7001dfd5e3a328c8bff91251b34d0b0955a6bb",
+      "canonical_sha256": "3d81b268232545f76deabc889dce8f1566a84297b9e9b73c65d4f2bbc016bff1",
+      "canonical_bytes": 324,
+      "exit_code": 0,
+      "decision": "verified_supplied_section",
+      "result": "pass"
+    }
+  ],
+  "acceptance": {
+    "local_implementation": "independent retest accepted, 74 tests and 22 controls passed",
+    "supplied_reference_run": "parent accepted seven separate fresh-process verification results",
+    "ordinary_answer": "returned and checked; not included in this public status receipt",
+    "medic_sample_scoring": "pending, not claimed"
+  },
+  "limits": [
+    "No source bodies or derived recall answer published in this record.",
+    "Parent-assigned correlation labels bind actual connector calls, not provider-native IDs; local verifier does not authenticate remote provider calls.",
+    "Whole-file Git blob bytes were not reconstructed; connector-reported blob identity was checked.",
+    "No autonomous ingestion, native ChatGPT memory integration, or blind model evaluation is established.",
+    "This receipt does not close the scheduled r2 reviews or expand source access/authorization.",
+    "No MQ pickup or external review agreement is claimed."
+  ]
+}
