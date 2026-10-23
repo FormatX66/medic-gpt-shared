@@ -1,15 +1,7 @@
 {
- "generated_ts": 1792789846,
+ "generated_ts": 1792791652,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-msojitbt39eou1go",
-   "title": "Medic onto laptop-2 \u2014 full mirror install + lane proofs",
-   "owner": "crew",
-   "eta_ts": 1792791000,
-   "source": "planned-work-calendar",
-   "event_id": "msojitbt39eou1goeloe9itr88"
-  },
   {
    "id": "cal-pkk578sc2temeqi0",
    "title": "Tally GitHub usage audit deliverable due",
