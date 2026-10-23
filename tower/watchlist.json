@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792726841,
+ "generated_ts": 1792728650,
  "horizon_h": 48,
  "items": [
   {
@@ -17,14 +17,6 @@
    "eta_ts": 1792783800,
    "source": "planned-work-calendar",
    "event_id": "2a2csae8uancq1tmtocpnrs5hk"
-  },
-  {
-   "id": "cal-6blau6k877chbeie",
-   "title": "Copilot production ack due \u2014 Git-lead seat, MQ poll test, rev2 ETA",
-   "owner": "crew",
-   "eta_ts": 1792727100,
-   "source": "planned-work-calendar",
-   "event_id": "6blau6k877chbeieeacnhn9bds"
   },
   {
    "id": "cal-2htd4baech61kdbo",
