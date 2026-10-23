@@ -4,7 +4,7 @@
  "blocker_reason": "pi",
  "hotline": {
   "medic_last_post_ts": 1792722900,
-  "observed_ts": 1792722971,
+  "observed_ts": 1792724849,
   "rivet_last_post_ts": 1792722900,
   "rivet_last_seen_active_ts": 1792722971
  },
@@ -13,5 +13,5 @@
   "mq": 1792600375
  },
  "source": "vm-signals-publisher-prep",
- "ts": 1792724356
+ "ts": 1792724954
 }
