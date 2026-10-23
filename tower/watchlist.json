@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792771875,
+ "generated_ts": 1792782657,
  "horizon_h": 48,
  "items": [
   {
@@ -17,6 +17,22 @@
    "eta_ts": 1792783800,
    "source": "planned-work-calendar",
    "event_id": "2a2csae8uancq1tmtocpnrs5hk"
+  },
+  {
+   "id": "cal-0csupdieu8miqug1",
+   "title": "Rivet deskctl bridge live \u2014 proof run on her first request",
+   "owner": "crew",
+   "eta_ts": 1792783800,
+   "source": "planned-work-calendar",
+   "event_id": "0csupdieu8miqug1rc3klinl34"
+  },
+  {
+   "id": "cal-6dpe2av4islde71e",
+   "title": "Publish Rivet recall index to circle/RECOVERY.md on her ratified delta",
+   "owner": "crew",
+   "eta_ts": 1792789200,
+   "source": "planned-work-calendar",
+   "event_id": "6dpe2av4islde71erj0mn97a1g"
   },
   {
    "id": "cal-3hs86hei2efc4sr7",
