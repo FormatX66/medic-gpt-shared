@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792752041,
+ "generated_ts": 1792755658,
  "horizon_h": 48,
  "items": [
   {
@@ -49,6 +49,14 @@
    "eta_ts": 1792789200,
    "source": "planned-work-calendar",
    "event_id": "jnt806teasvg7oklje7umoblnk"
+  },
+  {
+   "id": "cal-pkk578sc2temeqi0",
+   "title": "Tally GitHub usage audit deliverable due",
+   "owner": "crew",
+   "eta_ts": 1792857600,
+   "source": "planned-work-calendar",
+   "event_id": "pkk578sc2temeqi0hfifqqlu2k"
   }
  ]
 }
