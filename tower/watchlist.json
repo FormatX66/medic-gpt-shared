@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792725048,
+ "generated_ts": 1792726841,
  "horizon_h": 48,
  "items": [
   {
@@ -19,14 +19,6 @@
    "event_id": "2a2csae8uancq1tmtocpnrs5hk"
   },
   {
-   "id": "cal-k1v42ijo9hsfk4sj",
-   "title": "Tower stage-1 design addendum + raw appendix (Rivet REVISE 21:32)",
-   "owner": "crew",
-   "eta_ts": 1792726200,
-   "source": "planned-work-calendar",
-   "event_id": "k1v42ijo9hsfk4sjo377grv8ng"
-  },
-  {
    "id": "cal-6blau6k877chbeie",
    "title": "Copilot production ack due \u2014 Git-lead seat, MQ poll test, rev2 ETA",
    "owner": "crew",
@@ -41,6 +33,22 @@
    "eta_ts": 1792771200,
    "source": "planned-work-calendar",
    "event_id": "2htd4baech61kdbo5ui2hu6mh8"
+  },
+  {
+   "id": "cal-vu3rh8nvvor2se8g",
+   "title": "Tally review \u2014 Rivet memory architecture packet r1",
+   "owner": "crew",
+   "eta_ts": 1792771200,
+   "source": "planned-work-calendar",
+   "event_id": "vu3rh8nvvor2se8gs5bad0687g"
+  },
+  {
+   "id": "cal-k0kdh2hu0pbjril1",
+   "title": "Medic review \u2014 Rivet memory architecture packet r1 (after Tally)",
+   "owner": "crew",
+   "eta_ts": 1792789200,
+   "source": "planned-work-calendar",
+   "event_id": "k0kdh2hu0pbjril1r7u7rbmdr8"
   }
  ]
 }
