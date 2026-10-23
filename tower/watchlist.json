@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792755658,
+ "generated_ts": 1792771875,
  "horizon_h": 48,
  "items": [
   {
@@ -17,22 +17,6 @@
    "eta_ts": 1792783800,
    "source": "planned-work-calendar",
    "event_id": "2a2csae8uancq1tmtocpnrs5hk"
-  },
-  {
-   "id": "cal-2htd4baech61kdbo",
-   "title": "Copilot repo-map proposal rev2 due \u2014 Rivet verifies on receipt",
-   "owner": "crew",
-   "eta_ts": 1792771200,
-   "source": "planned-work-calendar",
-   "event_id": "2htd4baech61kdbo5ui2hu6mh8"
-  },
-  {
-   "id": "cal-dpbefab1qmfuggbq",
-   "title": "Tally FIRST review of Rivet memory r2 disposition (rivet-memory-public-disposition-20261023-r2)",
-   "owner": "crew",
-   "eta_ts": 1792771200,
-   "source": "planned-work-calendar",
-   "event_id": "dpbefab1qmfuggbq3r7nddlpa8"
   },
   {
    "id": "cal-3hs86hei2efc4sr7",
