@@ -1,39 +1,7 @@
 {
- "generated_ts": 1792784458,
+ "generated_ts": 1792789846,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-603grjmoskg6ki4h",
-   "title": "MQ (+Board) endpoint migration to mq.arkmatx.com",
-   "owner": "crew",
-   "eta_ts": 1792789200,
-   "source": "planned-work-calendar",
-   "event_id": "603grjmoskg6ki4hjc7i23h5gc"
-  },
-  {
-   "id": "cal-6dpe2av4islde71e",
-   "title": "Publish Rivet recall index to circle/RECOVERY.md on her ratified delta",
-   "owner": "crew",
-   "eta_ts": 1792789200,
-   "source": "planned-work-calendar",
-   "event_id": "6dpe2av4islde71erj0mn97a1g"
-  },
-  {
-   "id": "cal-3hs86hei2efc4sr7",
-   "title": "Medic SECOND review of Rivet memory r2 + Tally findings",
-   "owner": "crew",
-   "eta_ts": 1792789200,
-   "source": "planned-work-calendar",
-   "event_id": "3hs86hei2efc4sr7dkodlisqlg"
-  },
-  {
-   "id": "cal-jnt806teasvg7okl",
-   "title": "Tally repo-map rev2 targeted revision per Rivet COUNTER",
-   "owner": "crew",
-   "eta_ts": 1792789200,
-   "source": "planned-work-calendar",
-   "event_id": "jnt806teasvg7oklje7umoblnk"
-  },
   {
    "id": "cal-msojitbt39eou1go",
    "title": "Medic onto laptop-2 \u2014 full mirror install + lane proofs",
