@@ -1,5 +1,5 @@
 {
- "generated_ts": 1792719657,
+ "generated_ts": 1792725048,
  "horizon_h": 48,
  "items": [
   {
@@ -25,6 +25,22 @@
    "eta_ts": 1792726200,
    "source": "planned-work-calendar",
    "event_id": "k1v42ijo9hsfk4sjo377grv8ng"
+  },
+  {
+   "id": "cal-6blau6k877chbeie",
+   "title": "Copilot production ack due \u2014 Git-lead seat, MQ poll test, rev2 ETA",
+   "owner": "crew",
+   "eta_ts": 1792727100,
+   "source": "planned-work-calendar",
+   "event_id": "6blau6k877chbeieeacnhn9bds"
+  },
+  {
+   "id": "cal-2htd4baech61kdbo",
+   "title": "Copilot repo-map proposal rev2 due \u2014 Rivet verifies on receipt",
+   "owner": "crew",
+   "eta_ts": 1792771200,
+   "source": "planned-work-calendar",
+   "event_id": "2htd4baech61kdbo5ui2hu6mh8"
   }
  ]
 }
