@@ -3,15 +3,15 @@
  "blocker": true,
  "blocker_reason": "pi",
  "hotline": {
-  "medic_last_post_ts": 1793003460,
-  "observed_ts": 1793005228,
-  "rivet_last_post_ts": 1793001660,
-  "rivet_last_seen_active_ts": 1793003736
+  "medic_last_post_ts": 1793007120,
+  "observed_ts": 1793007710,
+  "rivet_last_post_ts": 1793007120,
+  "rivet_last_seen_active_ts": 1793007710
  },
  "rivet_activity": {
   "doc": 1792597843,
   "mq": 1792600375
  },
  "source": "vm-signals-publisher-prep",
- "ts": 1793007548
+ "ts": 1793008148
 }
