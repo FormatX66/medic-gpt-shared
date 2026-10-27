@@ -1,5 +1,38 @@
 {
- "generated_ts": 1792858282,
+ "generated_ts": 1793121046,
  "horizon_h": 48,
- "items": []
+ "items": [
+  {
+   "id": "cal-52h3lvqlg7e4966g",
+   "title": "Rivet \u2014 SSH/mail access and inbox blocker review",
+   "owner": "crew",
+   "eta_ts": 1793123400,
+   "source": "planned-work-calendar",
+   "event_id": "52h3lvqlg7e4966gq5kf2ugmf8"
+  },
+  {
+   "id": "cal-b3oma6aurv8mon1e",
+   "title": "Rivet / Medic \u2014 reliability crew evidence review",
+   "owner": "crew",
+   "eta_ts": 1793125200,
+   "source": "planned-work-calendar",
+   "event_id": "b3oma6aurv8mon1emcpa7mcemc"
+  },
+  {
+   "id": "cal-9sb8gnraa268s44v",
+   "title": "Rivet \u2014 GameGPT V2 native QA evidence checkpoint",
+   "owner": "crew",
+   "eta_ts": 1793134800,
+   "source": "planned-work-calendar",
+   "event_id": "9sb8gnraa268s44vido41b2o9c"
+  },
+  {
+   "id": "cal-tfvnp9035j4jb981",
+   "title": "Medic / Rivet \u2014 washer and Instagram delivery review",
+   "owner": "crew",
+   "eta_ts": 1793197500,
+   "source": "planned-work-calendar",
+   "event_id": "tfvnp9035j4jb9815hgutnk5rc"
+  }
+ ]
 }
