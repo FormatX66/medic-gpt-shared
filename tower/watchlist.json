@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793135450,
+ "generated_ts": 1793140855,
  "horizon_h": 48,
  "items": [
   {
@@ -9,6 +9,14 @@
    "eta_ts": 1793197500,
    "source": "planned-work-calendar",
    "event_id": "tfvnp9035j4jb9815hgutnk5rc"
+  },
+  {
+   "id": "cal-edrgudbgep2a9ovm",
+   "title": "Rivet \u2014 TypeTrix and Apple credential catalog gates",
+   "owner": "crew",
+   "eta_ts": 1793314500,
+   "source": "planned-work-calendar",
+   "event_id": "edrgudbgep2a9ovm9heos33qto"
   }
  ]
 }
