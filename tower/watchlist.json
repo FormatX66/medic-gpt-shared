@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793124668,
+ "generated_ts": 1793126440,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-b3oma6aurv8mon1e",
-   "title": "Rivet / Medic \u2014 reliability crew evidence review",
-   "owner": "crew",
-   "eta_ts": 1793125200,
-   "source": "planned-work-calendar",
-   "event_id": "b3oma6aurv8mon1emcpa7mcemc"
-  },
   {
    "id": "cal-9sb8gnraa268s44v",
    "title": "Rivet \u2014 GameGPT V2 native QA evidence checkpoint",
