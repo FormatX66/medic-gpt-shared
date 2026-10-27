@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793121046,
+ "generated_ts": 1793124668,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-52h3lvqlg7e4966g",
-   "title": "Rivet \u2014 SSH/mail access and inbox blocker review",
-   "owner": "crew",
-   "eta_ts": 1793123400,
-   "source": "planned-work-calendar",
-   "event_id": "52h3lvqlg7e4966gq5kf2ugmf8"
-  },
   {
    "id": "cal-b3oma6aurv8mon1e",
    "title": "Rivet / Medic \u2014 reliability crew evidence review",
