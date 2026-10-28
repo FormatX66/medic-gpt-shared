@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793216462,
+ "generated_ts": 1793218257,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-6dpe2av4islde71e",
-   "title": "Rivet \u2014 user-owned recall prototype integration checkpoint",
-   "owner": "crew",
-   "eta_ts": 1793217600,
-   "source": "planned-work-calendar",
-   "event_id": "6dpe2av4islde71erj0mn97a1g"
-  },
   {
    "id": "cal-82edlpe88t65f00t",
    "title": "Rivet \u2014 crew delivery receipt-workflow integration",
