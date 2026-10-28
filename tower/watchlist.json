@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793221859,
+ "generated_ts": 1793229064,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-4v193e34j17jric3",
-   "title": "Content \u2014 Medic post (Chet-is-back) + crew relay check (Wed eve slot)",
-   "owner": "crew",
-   "eta_ts": 1793227500,
-   "source": "planned-work-calendar",
-   "event_id": "4v193e34j17jric38gmq9ic6lo"
-  },
   {
    "id": "cal-8k503ia4ls1cnds2",
    "title": "ACCEPTANCE: Rivet \u2014 stock monitor scheduled-run reconciliation and Medic pickup",
