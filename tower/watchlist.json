@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793211069,
+ "generated_ts": 1793212864,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-vuksjegd76ofdegl",
-   "title": "Rivet \u2014 GameGPT paused health and owned resume-path checkpoint",
-   "owner": "crew",
-   "eta_ts": 1793212200,
-   "source": "planned-work-calendar",
-   "event_id": "vuksjegd76ofdeglv6v7ql1f6c"
-  },
   {
    "id": "cal-ssuc4m03d2nrhieu",
    "title": "Rivet \u2014 stock monitor recovery and persistent-state integration",
