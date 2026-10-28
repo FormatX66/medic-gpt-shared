@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793140855,
+ "generated_ts": 1793148056,
  "horizon_h": 48,
  "items": [
   {
@@ -11,12 +11,44 @@
    "event_id": "tfvnp9035j4jb9815hgutnk5rc"
   },
   {
+   "id": "cal-u4gvvtdbguuh304d",
+   "title": "Content \u2014 @wetbeard.rva Skele-Ride post (Wed noon slot)",
+   "owner": "crew",
+   "eta_ts": 1793204100,
+   "source": "planned-work-calendar",
+   "event_id": "u4gvvtdbguuh304dkrs80reai8"
+  },
+  {
+   "id": "cal-r1g3qdlc8m5foqt1",
+   "title": "Content \u2014 @dogzig13 candy bowl + Medic Chet-is-back post + Chet pack (Wed eve slot)",
+   "owner": "crew",
+   "eta_ts": 1793227500,
+   "source": "planned-work-calendar",
+   "event_id": "r1g3qdlc8m5foqt1nfhctk4kno"
+  },
+  {
+   "id": "cal-4llbbfc3v1bt5qqo",
+   "title": "Content \u2014 @rustylosp moon transmission (Thu 9 AM slot)",
+   "owner": "crew",
+   "eta_ts": 1793279700,
+   "source": "planned-work-calendar",
+   "event_id": "4llbbfc3v1bt5qqo3lnoun5v4k"
+  },
+  {
    "id": "cal-edrgudbgep2a9ovm",
    "title": "Rivet \u2014 TypeTrix and Apple credential catalog gates",
    "owner": "crew",
    "eta_ts": 1793314500,
    "source": "planned-work-calendar",
    "event_id": "edrgudbgep2a9ovm9heos33qto"
+  },
+  {
+   "id": "cal-v1hgvsngfuuagl4a",
+   "title": "Content \u2014 @wetbeard.rva sea roll call REEL (Thu eve slot)",
+   "owner": "crew",
+   "eta_ts": 1793313900,
+   "source": "planned-work-calendar",
+   "event_id": "v1hgvsngfuuagl4a1en8o8na8g"
   }
  ]
 }
