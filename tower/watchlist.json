@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793212864,
+ "generated_ts": 1793216462,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-ssuc4m03d2nrhieu",
-   "title": "Rivet \u2014 stock monitor recovery and persistent-state integration",
-   "owner": "crew",
-   "eta_ts": 1793214900,
-   "source": "planned-work-calendar",
-   "event_id": "ssuc4m03d2nrhieusdctm085ks"
-  },
   {
    "id": "cal-6dpe2av4islde71e",
    "title": "Rivet \u2014 user-owned recall prototype integration checkpoint",
