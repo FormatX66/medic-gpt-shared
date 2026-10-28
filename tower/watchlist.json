@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793205662,
+ "generated_ts": 1793209261,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-8r70fea2itr2ja27",
-   "title": "Rivet \u2014 TypeTrix Lane 1 upgrades and diagnostic install checkpoint",
-   "owner": "crew",
-   "eta_ts": 1793208600,
-   "source": "planned-work-calendar",
-   "event_id": "8r70fea2itr2ja27r7as6veh9g"
-  },
   {
    "id": "cal-vuksjegd76ofdegl",
    "title": "Rivet \u2014 GameGPT paused health and owned resume-path checkpoint",
