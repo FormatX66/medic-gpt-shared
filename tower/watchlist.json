@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793218257,
+ "generated_ts": 1793221859,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-82edlpe88t65f00t",
-   "title": "Rivet \u2014 crew delivery receipt-workflow integration",
-   "owner": "crew",
-   "eta_ts": 1793220300,
-   "source": "planned-work-calendar",
-   "event_id": "82edlpe88t65f00tbul13btpg4"
-  },
   {
    "id": "cal-4v193e34j17jric3",
    "title": "Content \u2014 Medic post (Chet-is-back) + crew relay check (Wed eve slot)",
