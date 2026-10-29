@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793284848,
+ "generated_ts": 1793288468,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-kd34ur4jph6u59qr",
-   "title": "ACCEPTANCE: Rivet \u2014 fresh-session user-owned recall and provenance checks",
-   "owner": "crew",
-   "eta_ts": 1793287800,
-   "source": "planned-work-calendar",
-   "event_id": "kd34ur4jph6u59qrmb5th1ltcg"
-  },
   {
    "id": "cal-b3oma6aurv8mon1e",
    "title": "ACCEPTANCE: Rivet / Medic \u2014 actual crew acknowledgment, start and result inspection",
