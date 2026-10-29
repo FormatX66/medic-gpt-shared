@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793229064,
+ "generated_ts": 1793284848,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-8k503ia4ls1cnds2",
-   "title": "ACCEPTANCE: Rivet \u2014 stock monitor scheduled-run reconciliation and Medic pickup",
-   "owner": "crew",
-   "eta_ts": 1793284200,
-   "source": "planned-work-calendar",
-   "event_id": "8k503ia4ls1cnds2aqq7t8koro"
-  },
   {
    "id": "cal-kd34ur4jph6u59qr",
    "title": "ACCEPTANCE: Rivet \u2014 fresh-session user-owned recall and provenance checks",
