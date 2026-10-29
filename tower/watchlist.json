@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793292085,
+ "generated_ts": 1793315485,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-edrgudbgep2a9ovm",
-   "title": "ACCEPTANCE: Rivet \u2014 TypeTrix end-to-end tests; Apple catalog gate retained",
-   "owner": "crew",
-   "eta_ts": 1793314500,
-   "source": "planned-work-calendar",
-   "event_id": "edrgudbgep2a9ovm9heos33qto"
-  },
   {
    "id": "cal-9sb8gnraa268s44v",
    "title": "ACCEPTANCE: Rivet \u2014 GameGPT fresh player data, gear, Haste 50 and reach",
