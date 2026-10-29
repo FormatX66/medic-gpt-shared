@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793288468,
+ "generated_ts": 1793292085,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-b3oma6aurv8mon1e",
-   "title": "ACCEPTANCE: Rivet / Medic \u2014 actual crew acknowledgment, start and result inspection",
-   "owner": "crew",
-   "eta_ts": 1793291400,
-   "source": "planned-work-calendar",
-   "event_id": "b3oma6aurv8mon1emcpa7mcemc"
-  },
   {
    "id": "cal-edrgudbgep2a9ovm",
    "title": "ACCEPTANCE: Rivet \u2014 TypeTrix end-to-end tests; Apple catalog gate retained",
