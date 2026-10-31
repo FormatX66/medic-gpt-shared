@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793459452,
+ "generated_ts": 1793464862,
  "horizon_h": 48,
  "items": [
   {
@@ -17,14 +17,6 @@
    "eta_ts": 1793505600,
    "source": "planned-work-calendar",
    "event_id": "h1u5a49j6sf1mmikrhuaubds2s"
-  },
-  {
-   "id": "cal-7elkfbjvh2d7k70h",
-   "title": "Halloween circle \u2014 Chet Pumpkin Head post",
-   "owner": "crew",
-   "eta_ts": 1793464200,
-   "source": "planned-work-calendar",
-   "event_id": "7elkfbjvh2d7k70hpdgvtss8lg"
   },
   {
    "id": "cal-clisdu28q5msbh1d",
