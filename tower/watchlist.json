@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793457653,
+ "generated_ts": 1793459452,
  "horizon_h": 48,
  "items": [
   {
@@ -17,14 +17,6 @@
    "eta_ts": 1793505600,
    "source": "planned-work-calendar",
    "event_id": "h1u5a49j6sf1mmikrhuaubds2s"
-  },
-  {
-   "id": "cal-34ooiuuvgpe476vt",
-   "title": "Social Fri jobs re-enable (bookkeeping)",
-   "owner": "crew",
-   "eta_ts": 1793458800,
-   "source": "planned-work-calendar",
-   "event_id": "34ooiuuvgpe476vt250v9v2dfo"
   },
   {
    "id": "cal-7elkfbjvh2d7k70h",
