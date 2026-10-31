@@ -1,7 +1,55 @@
 {
- "generated_ts": 1793409061,
+ "generated_ts": 1793454047,
  "horizon_h": 48,
  "items": [
+  {
+   "id": "cal-g10m0uht2g55un66",
+   "title": "Halloween closed loop \u2014 Medic\u2194Rivet hourly post confirmations via Hotline; a missed turn escalates in-thread within the hour",
+   "owner": "crew",
+   "eta_ts": 1793506500,
+   "source": "planned-work-calendar",
+   "event_id": "g10m0uht2g55un66bfcf69eoio"
+  },
+  {
+   "id": "cal-8juoks027d2ef5i9",
+   "title": "Halloween circle \u2014 Medic Pumpkin Head post (PUMPKIN-HEAD-01)",
+   "owner": "crew",
+   "eta_ts": 1793457000,
+   "source": "planned-work-calendar",
+   "event_id": "8juoks027d2ef5i938bbd21lb8"
+  },
+  {
+   "id": "cal-34ooiuuvgpe476vt",
+   "title": "Social Fri jobs re-enable (bookkeeping)",
+   "owner": "crew",
+   "eta_ts": 1793458800,
+   "source": "planned-work-calendar",
+   "event_id": "34ooiuuvgpe476vt250v9v2dfo"
+  },
+  {
+   "id": "cal-7elkfbjvh2d7k70h",
+   "title": "Halloween circle \u2014 Chet Pumpkin Head post",
+   "owner": "crew",
+   "eta_ts": 1793464200,
+   "source": "planned-work-calendar",
+   "event_id": "7elkfbjvh2d7k70hpdgvtss8lg"
+  },
+  {
+   "id": "cal-clisdu28q5msbh1d",
+   "title": "Halloween special \u2014 Medic Doug post",
+   "owner": "crew",
+   "eta_ts": 1793487600,
+   "source": "planned-work-calendar",
+   "event_id": "clisdu28q5msbh1dgseodq9jl0"
+  },
+  {
+   "id": "cal-2tgbutsl3vlgjm65",
+   "title": "Halloween special \u2014 crew-02 group post",
+   "owner": "crew",
+   "eta_ts": 1793492100,
+   "source": "planned-work-calendar",
+   "event_id": "2tgbutsl3vlgjm656vlbo5ml94"
+  },
   {
    "id": "cal-tjf4g4nbcrvm5jo7",
    "title": "Content \u2014 Medic ledger post + crew relay check (Sun eve slot)",
