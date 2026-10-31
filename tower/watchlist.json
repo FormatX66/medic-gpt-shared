@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793454047,
+ "generated_ts": 1793455849,
  "horizon_h": 48,
  "items": [
   {
@@ -17,6 +17,14 @@
    "eta_ts": 1793457000,
    "source": "planned-work-calendar",
    "event_id": "8juoks027d2ef5i938bbd21lb8"
+  },
+  {
+   "id": "cal-h1u5a49j6sf1mmik",
+   "title": "Halloween reposts \u2014 every 30 min, rotating crew accounts (Medic/Rivet/Chet)",
+   "owner": "crew",
+   "eta_ts": 1793505600,
+   "source": "planned-work-calendar",
+   "event_id": "h1u5a49j6sf1mmikrhuaubds2s"
   },
   {
    "id": "cal-34ooiuuvgpe476vt",
