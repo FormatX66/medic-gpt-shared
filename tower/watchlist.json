@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793455849,
+ "generated_ts": 1793457653,
  "horizon_h": 48,
  "items": [
   {
@@ -9,14 +9,6 @@
    "eta_ts": 1793506500,
    "source": "planned-work-calendar",
    "event_id": "g10m0uht2g55un66bfcf69eoio"
-  },
-  {
-   "id": "cal-8juoks027d2ef5i9",
-   "title": "Halloween circle \u2014 Medic Pumpkin Head post (PUMPKIN-HEAD-01)",
-   "owner": "crew",
-   "eta_ts": 1793457000,
-   "source": "planned-work-calendar",
-   "event_id": "8juoks027d2ef5i938bbd21lb8"
   },
   {
    "id": "cal-h1u5a49j6sf1mmik",
