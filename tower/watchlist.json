@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793464862,
+ "generated_ts": 1793488275,
  "horizon_h": 48,
  "items": [
   {
@@ -17,14 +17,6 @@
    "eta_ts": 1793505600,
    "source": "planned-work-calendar",
    "event_id": "h1u5a49j6sf1mmikrhuaubds2s"
-  },
-  {
-   "id": "cal-clisdu28q5msbh1d",
-   "title": "Halloween special \u2014 Medic Doug post",
-   "owner": "crew",
-   "eta_ts": 1793487600,
-   "source": "planned-work-calendar",
-   "event_id": "clisdu28q5msbh1dgseodq9jl0"
   },
   {
    "id": "cal-2tgbutsl3vlgjm65",
