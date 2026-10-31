@@ -4,14 +4,14 @@
  "blocker_reason": "pi",
  "hotline": {
   "medic_last_post_ts": 1793473440,
-  "observed_ts": 1793473975,
-  "rivet_last_post_ts": 1793473440,
-  "rivet_last_seen_active_ts": 1793473440
+  "observed_ts": 1793476083,
+  "rivet_last_post_ts": 1793474580,
+  "rivet_last_seen_active_ts": 1793474580
  },
  "rivet_activity": {
   "doc": 1792597843,
   "mq": 1792600375
  },
  "source": "vm-signals-publisher-prep",
- "ts": 1793475555
+ "ts": 1793476162
 }
