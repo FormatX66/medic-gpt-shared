@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793488275,
+ "generated_ts": 1793493661,
  "horizon_h": 48,
  "items": [
   {
@@ -17,14 +17,6 @@
    "eta_ts": 1793505600,
    "source": "planned-work-calendar",
    "event_id": "h1u5a49j6sf1mmikrhuaubds2s"
-  },
-  {
-   "id": "cal-2tgbutsl3vlgjm65",
-   "title": "Halloween special \u2014 crew-02 group post",
-   "owner": "crew",
-   "eta_ts": 1793492100,
-   "source": "planned-work-calendar",
-   "event_id": "2tgbutsl3vlgjm656vlbo5ml94"
   },
   {
    "id": "cal-tjf4g4nbcrvm5jo7",
