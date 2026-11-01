@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793506262,
+ "generated_ts": 1793508061,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-g10m0uht2g55un66",
-   "title": "Halloween closed loop \u2014 Medic\u2194Rivet hourly post confirmations via Hotline; a missed turn escalates in-thread within the hour",
-   "owner": "crew",
-   "eta_ts": 1793506500,
-   "source": "planned-work-calendar",
-   "event_id": "g10m0uht2g55un66bfcf69eoio"
-  },
   {
    "id": "cal-tjf4g4nbcrvm5jo7",
    "title": "Content \u2014 Medic ledger post + crew relay check (Sun eve slot)",
