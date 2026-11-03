@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793743875,
+ "generated_ts": 1793745671,
  "horizon_h": 48,
  "items": [
   {
@@ -19,12 +19,44 @@
    "event_id": "leghogn8f72unp946t3an7ec0g"
   },
   {
+   "id": "cal-bcvd6iakvgodj3sv",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1793802600,
+   "source": "planned-work-calendar",
+   "event_id": "bcvd6iakvgodj3svvuflece30k_20261104T140000Z"
+  },
+  {
    "id": "cal-968iokgb56p94hrq",
-   "title": "Send sample and coupon inquiries",
+   "title": "Sample inquiries - 30 ready / 100 goal",
    "owner": "crew",
    "eta_ts": 1793806200,
    "source": "planned-work-calendar",
    "event_id": "968iokgb56p94hrqpmtijum80c_20261104T143000Z"
+  },
+  {
+   "id": "cal-r75sj6jdh5843ofu",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1793817000,
+   "source": "planned-work-calendar",
+   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261104T180000Z"
+  },
+  {
+   "id": "cal-ht37mik1jt0ohnn5",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1793831400,
+   "source": "planned-work-calendar",
+   "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261104T220000Z"
+  },
+  {
+   "id": "cal-bcvd6iakvgodj3sv",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1793889000,
+   "source": "planned-work-calendar",
+   "event_id": "bcvd6iakvgodj3svvuflece30k_20261105T140000Z"
   },
   {
    "id": "cal-tckv89t9ssvpg0gj",
@@ -36,11 +68,27 @@
   },
   {
    "id": "cal-968iokgb56p94hrq",
-   "title": "Send sample and coupon inquiries",
+   "title": "Sample inquiries - 30 ready / 100 goal",
    "owner": "crew",
    "eta_ts": 1793892600,
    "source": "planned-work-calendar",
    "event_id": "968iokgb56p94hrqpmtijum80c_20261105T143000Z"
+  },
+  {
+   "id": "cal-r75sj6jdh5843ofu",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1793903400,
+   "source": "planned-work-calendar",
+   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261105T180000Z"
+  },
+  {
+   "id": "cal-ht37mik1jt0ohnn5",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1793917800,
+   "source": "planned-work-calendar",
+   "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261105T220000Z"
   }
  ]
 }
