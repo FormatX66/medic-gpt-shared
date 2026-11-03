@@ -1,5 +1,14 @@
 {
- "generated_ts": 1793583651,
+ "generated_ts": 1793734877,
  "horizon_h": 48,
- "items": []
+ "items": [
+  {
+   "id": "cal-tckv89t9ssvpg0gj",
+   "title": "Co-op charter announcement \u2014 @medic.connetic.x flagship post",
+   "owner": "crew",
+   "eta_ts": 1793889000,
+   "source": "planned-work-calendar",
+   "event_id": "tckv89t9ssvpg0gj1sfg3sb5pc"
+  }
+ ]
 }
