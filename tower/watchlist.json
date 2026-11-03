@@ -1,7 +1,15 @@
 {
- "generated_ts": 1793736678,
+ "generated_ts": 1793743875,
  "horizon_h": 48,
  "items": [
+  {
+   "id": "cal-so7jp5d3tlo0aq3g",
+   "title": "Sample outreach restart \u2014 tea and granola",
+   "owner": "crew",
+   "eta_ts": 1793746800,
+   "source": "planned-work-calendar",
+   "event_id": "so7jp5d3tlo0aq3gbgjfsk54b8"
+  },
   {
    "id": "cal-leghogn8f72unp94",
    "title": "Co-op charter announcement \u2014 @medic.connetic.x, Tue evening peak",
@@ -11,12 +19,28 @@
    "event_id": "leghogn8f72unp946t3an7ec0g"
   },
   {
+   "id": "cal-968iokgb56p94hrq",
+   "title": "Send sample and coupon inquiries",
+   "owner": "crew",
+   "eta_ts": 1793806200,
+   "source": "planned-work-calendar",
+   "event_id": "968iokgb56p94hrqpmtijum80c_20261104T143000Z"
+  },
+  {
    "id": "cal-tckv89t9ssvpg0gj",
    "title": "Co-op charter FOLLOW-UP \u2014 @medic.connetic.x strongest slot + crew round",
    "owner": "crew",
    "eta_ts": 1793889000,
    "source": "planned-work-calendar",
    "event_id": "tckv89t9ssvpg0gj1sfg3sb5pc"
+  },
+  {
+   "id": "cal-968iokgb56p94hrq",
+   "title": "Send sample and coupon inquiries",
+   "owner": "crew",
+   "eta_ts": 1793892600,
+   "source": "planned-work-calendar",
+   "event_id": "968iokgb56p94hrqpmtijum80c_20261105T143000Z"
   }
  ]
 }
