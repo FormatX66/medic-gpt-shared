@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793745671,
+ "generated_ts": 1793747466,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-so7jp5d3tlo0aq3g",
-   "title": "Sample outreach restart \u2014 tea and granola",
-   "owner": "crew",
-   "eta_ts": 1793746800,
-   "source": "planned-work-calendar",
-   "event_id": "so7jp5d3tlo0aq3gbgjfsk54b8"
-  },
   {
    "id": "cal-leghogn8f72unp94",
    "title": "Co-op charter announcement \u2014 @medic.connetic.x, Tue evening peak",
@@ -28,7 +20,7 @@
   },
   {
    "id": "cal-968iokgb56p94hrq",
-   "title": "Sample inquiries - 30 ready / 100 goal",
+   "title": "Sample inquiries - 100 ready / 100 goal",
    "owner": "crew",
    "eta_ts": 1793806200,
    "source": "planned-work-calendar",
@@ -68,7 +60,7 @@
   },
   {
    "id": "cal-968iokgb56p94hrq",
-   "title": "Sample inquiries - 30 ready / 100 goal",
+   "title": "Sample inquiries - 100 ready / 100 goal",
    "owner": "crew",
    "eta_ts": 1793892600,
    "source": "planned-work-calendar",
