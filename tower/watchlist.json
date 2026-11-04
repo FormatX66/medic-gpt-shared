@@ -1,23 +1,7 @@
 {
- "generated_ts": 1793801454,
+ "generated_ts": 1793803266,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-8e6kn489ddr1qdli",
-   "title": "TypeTrix LIVE TEST \u2014 Bruce + Medic (contingent on native typing proof)",
-   "owner": "crew",
-   "eta_ts": 1793802600,
-   "source": "planned-work-calendar",
-   "event_id": "8e6kn489ddr1qdli5g464edjmk"
-  },
-  {
-   "id": "cal-bcvd6iakvgodj3sv",
-   "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
-   "eta_ts": 1793802600,
-   "source": "planned-work-calendar",
-   "event_id": "bcvd6iakvgodj3svvuflece30k_20261104T140000Z"
-  },
   {
    "id": "cal-968iokgb56p94hrq",
    "title": "Sample inquiries - 100 ready / 100 goal",
@@ -89,6 +73,14 @@
    "eta_ts": 1793975400,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261106T140000Z"
+  },
+  {
+   "id": "cal-968iokgb56p94hrq",
+   "title": "Sample inquiries - 100 ready / 100 goal",
+   "owner": "crew",
+   "eta_ts": 1793979000,
+   "source": "planned-work-calendar",
+   "event_id": "968iokgb56p94hrqpmtijum80c_20261106T143000Z"
   }
  ]
 }
