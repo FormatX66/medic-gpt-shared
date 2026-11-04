@@ -1,7 +1,15 @@
 {
- "generated_ts": 1793751062,
+ "generated_ts": 1793756488,
  "horizon_h": 48,
  "items": [
+  {
+   "id": "cal-8e6kn489ddr1qdli",
+   "title": "TypeTrix LIVE TEST \u2014 Bruce + Medic (contingent on native typing proof)",
+   "owner": "crew",
+   "eta_ts": 1793802600,
+   "source": "planned-work-calendar",
+   "event_id": "8e6kn489ddr1qdli5g464edjmk"
+  },
   {
    "id": "cal-bcvd6iakvgodj3sv",
    "title": "Process sample emails \u2014 morning",
