@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793880662,
+ "generated_ts": 1793888012,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bcvd6iakvgodj3sv",
-   "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
-   "eta_ts": 1793889000,
-   "source": "planned-work-calendar",
-   "event_id": "bcvd6iakvgodj3svvuflece30k_20261105T140000Z"
-  },
   {
    "id": "cal-tckv89t9ssvpg0gj",
    "title": "Co-op charter FOLLOW-UP \u2014 @medic.connetic.x strongest slot + crew round",
@@ -73,6 +65,14 @@
    "eta_ts": 1794004200,
    "source": "planned-work-calendar",
    "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261106T220000Z"
+  },
+  {
+   "id": "cal-bcvd6iakvgodj3sv",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1794061800,
+   "source": "planned-work-calendar",
+   "event_id": "bcvd6iakvgodj3svvuflece30k_20261107T140000Z"
   }
  ]
 }
