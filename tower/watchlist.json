@@ -1,23 +1,7 @@
 {
- "generated_ts": 1793983313,
+ "generated_ts": 1793985092,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-420k9skdm0u14lbt",
-   "title": "Advance CCC estimate comparison site",
-   "owner": "crew",
-   "eta_ts": 1793984400,
-   "source": "planned-work-calendar",
-   "event_id": "420k9skdm0u14lbtdrd9fvem58"
-  },
-  {
-   "id": "cal-qqcmoi192931oa87",
-   "title": "Advance provider-neutral web relay in parallel",
-   "owner": "crew",
-   "eta_ts": 1793984400,
-   "source": "planned-work-calendar",
-   "event_id": "qqcmoi192931oa877uapsn2kag"
-  },
   {
    "id": "cal-en7c2p3brbu23tdf",
    "title": "Prepare extra 100 automotive and workshop inquiries",
@@ -25,14 +9,6 @@
    "eta_ts": 1793986200,
    "source": "planned-work-calendar",
    "event_id": "en7c2p3brbu23tdf5nr37cmhek"
-  },
-  {
-   "id": "cal-b3oma6aurv8mon1e",
-   "title": "Prove actual MQ-triggered work for Rivet and Medic",
-   "owner": "crew",
-   "eta_ts": 1793984400,
-   "source": "planned-work-calendar",
-   "event_id": "b3oma6aurv8mon1emcpa7mcemc"
   },
   {
    "id": "cal-jb01mdvuoppu27hc",
