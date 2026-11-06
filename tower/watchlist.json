@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793988670,
+ "generated_ts": 1793992257,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bb21nb8v6ta6r3n3",
-   "title": "Advance Future Branch contract and offline tests",
-   "owner": "crew",
-   "eta_ts": 1793991600,
-   "source": "planned-work-calendar",
-   "event_id": "bb21nb8v6ta6r3n337j3ei4chs"
-  },
   {
    "id": "cal-7hqo5o7brhbmk0hd",
    "title": "Audit Minecraft keep traversal and night lighting",
