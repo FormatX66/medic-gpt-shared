@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793995879,
+ "generated_ts": 1793999458,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-44760k757v65d31q",
-   "title": "Verify Minecraft map marker transfer and sorter",
-   "owner": "crew",
-   "eta_ts": 1793997900,
-   "source": "planned-work-calendar",
-   "event_id": "44760k757v65d31qbpmumohos8"
-  },
   {
    "id": "cal-jm8810j9h5so3jo0",
    "title": "Continue local Qwen experiments",
