@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793979682,
+ "generated_ts": 1793981477,
  "horizon_h": 48,
  "items": [
   {
@@ -11,36 +11,12 @@
    "event_id": "420k9skdm0u14lbtdrd9fvem58"
   },
   {
-   "id": "cal-8e6kn489ddr1qdli",
-   "title": "Improve TypeTrix accuracy and verify native/Pi typing",
-   "owner": "crew",
-   "eta_ts": 1793980800,
-   "source": "planned-work-calendar",
-   "event_id": "8e6kn489ddr1qdli5g464edjmk"
-  },
-  {
-   "id": "cal-af1tc6k7u6f6ioo4",
-   "title": "Review Factory cleanup PR and next fix",
-   "owner": "crew",
-   "eta_ts": 1793980800,
-   "source": "planned-work-calendar",
-   "event_id": "af1tc6k7u6f6ioo4c1m98reuhk"
-  },
-  {
    "id": "cal-p8rbncsce9pgfiol",
    "title": "Finish Tally email connector handoff",
    "owner": "crew",
    "eta_ts": 1793982600,
    "source": "planned-work-calendar",
    "event_id": "p8rbncsce9pgfioliplnkfup9g"
-  },
-  {
-   "id": "cal-q3qmdo2fvsfqbrne",
-   "title": "Verify Tower authentication and deployed Pi state",
-   "owner": "crew",
-   "eta_ts": 1793979900,
-   "source": "planned-work-calendar",
-   "event_id": "q3qmdo2fvsfqbrne2ae2d1krpc"
   },
   {
    "id": "cal-qqcmoi192931oa87",
