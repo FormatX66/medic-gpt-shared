@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793976075,
+ "generated_ts": 1793977899,
  "horizon_h": 48,
  "items": [
   {
@@ -11,12 +11,156 @@
    "event_id": "968iokgb56p94hrqpmtijum80c_20261106T143000Z"
   },
   {
+   "id": "cal-420k9skdm0u14lbt",
+   "title": "Advance CCC estimate comparison site",
+   "owner": "crew",
+   "eta_ts": 1793984400,
+   "source": "planned-work-calendar",
+   "event_id": "420k9skdm0u14lbtdrd9fvem58"
+  },
+  {
+   "id": "cal-8e6kn489ddr1qdli",
+   "title": "Improve TypeTrix accuracy and verify native/Pi typing",
+   "owner": "crew",
+   "eta_ts": 1793980800,
+   "source": "planned-work-calendar",
+   "event_id": "8e6kn489ddr1qdli5g464edjmk"
+  },
+  {
+   "id": "cal-af1tc6k7u6f6ioo4",
+   "title": "Review Factory cleanup PR and next fix",
+   "owner": "crew",
+   "eta_ts": 1793980800,
+   "source": "planned-work-calendar",
+   "event_id": "af1tc6k7u6f6ioo4c1m98reuhk"
+  },
+  {
+   "id": "cal-p8rbncsce9pgfiol",
+   "title": "Finish Tally email connector handoff",
+   "owner": "crew",
+   "eta_ts": 1793982600,
+   "source": "planned-work-calendar",
+   "event_id": "p8rbncsce9pgfioliplnkfup9g"
+  },
+  {
+   "id": "cal-q3qmdo2fvsfqbrne",
+   "title": "Verify Tower authentication and deployed Pi state",
+   "owner": "crew",
+   "eta_ts": 1793979900,
+   "source": "planned-work-calendar",
+   "event_id": "q3qmdo2fvsfqbrne2ae2d1krpc"
+  },
+  {
+   "id": "cal-qqcmoi192931oa87",
+   "title": "Advance provider-neutral web relay in parallel",
+   "owner": "crew",
+   "eta_ts": 1793984400,
+   "source": "planned-work-calendar",
+   "event_id": "qqcmoi192931oa877uapsn2kag"
+  },
+  {
+   "id": "cal-en7c2p3brbu23tdf",
+   "title": "Prepare extra 100 automotive and workshop inquiries",
+   "owner": "crew",
+   "eta_ts": 1793986200,
+   "source": "planned-work-calendar",
+   "event_id": "en7c2p3brbu23tdf5nr37cmhek"
+  },
+  {
+   "id": "cal-b3oma6aurv8mon1e",
+   "title": "Prove actual MQ-triggered work for Rivet and Medic",
+   "owner": "crew",
+   "eta_ts": 1793984400,
+   "source": "planned-work-calendar",
+   "event_id": "b3oma6aurv8mon1emcpa7mcemc"
+  },
+  {
+   "id": "cal-jb01mdvuoppu27hc",
+   "title": "Build email preparation and readiness workflow",
+   "owner": "crew",
+   "eta_ts": 1793985300,
+   "source": "planned-work-calendar",
+   "event_id": "jb01mdvuoppu27hcqvfqiffbmk"
+  },
+  {
+   "id": "cal-ls4ffr51fdajcr2s",
+   "title": "BLOCKED - Review Apple refund access",
+   "owner": "crew",
+   "eta_ts": 1793985300,
+   "source": "planned-work-calendar",
+   "event_id": "ls4ffr51fdajcr2sdepbfm6qsc"
+  },
+  {
+   "id": "cal-t2phsq5fi2qtkbof",
+   "title": "Review Flashbay kit and keep reply unsent",
+   "owner": "crew",
+   "eta_ts": 1793985300,
+   "source": "planned-work-calendar",
+   "event_id": "t2phsq5fi2qtkbof4g4sr608q8"
+  },
+  {
+   "id": "cal-4lb4dguchd5ii15l",
+   "title": "BLOCKED - Resume Capital One filter after Gmail login",
+   "owner": "crew",
+   "eta_ts": 1793986200,
+   "source": "planned-work-calendar",
+   "event_id": "4lb4dguchd5ii15l8gaji5j0cg"
+  },
+  {
+   "id": "cal-bb21nb8v6ta6r3n3",
+   "title": "Advance Future Branch contract and offline tests",
+   "owner": "crew",
+   "eta_ts": 1793991600,
+   "source": "planned-work-calendar",
+   "event_id": "bb21nb8v6ta6r3n337j3ei4chs"
+  },
+  {
    "id": "cal-r75sj6jdh5843ofu",
    "title": "Process sample emails \u2014 midday",
    "owner": "crew",
    "eta_ts": 1793989800,
    "source": "planned-work-calendar",
    "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261106T180000Z"
+  },
+  {
+   "id": "cal-7hqo5o7brhbmk0hd",
+   "title": "Audit Minecraft keep traversal and night lighting",
+   "owner": "crew",
+   "eta_ts": 1793995200,
+   "source": "planned-work-calendar",
+   "event_id": "7hqo5o7brhbmk0hdo2gc4qdu30"
+  },
+  {
+   "id": "cal-klcbh81bitmgibbf",
+   "title": "Qualify Tally and Chet MQ admission after baseline proof",
+   "owner": "crew",
+   "eta_ts": 1793993400,
+   "source": "planned-work-calendar",
+   "event_id": "klcbh81bitmgibbfvtrt0fli1c"
+  },
+  {
+   "id": "cal-44760k757v65d31q",
+   "title": "Verify Minecraft map marker transfer and sorter",
+   "owner": "crew",
+   "eta_ts": 1793997900,
+   "source": "planned-work-calendar",
+   "event_id": "44760k757v65d31qbpmumohos8"
+  },
+  {
+   "id": "cal-jm8810j9h5so3jo0",
+   "title": "Continue local Qwen experiments",
+   "owner": "crew",
+   "eta_ts": 1794000600,
+   "source": "planned-work-calendar",
+   "event_id": "jm8810j9h5so3jo0qagbk27jf8"
+  },
+  {
+   "id": "cal-0o7giqstgjutb2s0",
+   "title": "BLOCKED - Confirm world for pending villager spawn",
+   "owner": "crew",
+   "eta_ts": 1793999700,
+   "source": "planned-work-calendar",
+   "event_id": "0o7giqstgjutb2s0qr724mlddg"
   },
   {
    "id": "cal-ht37mik1jt0ohnn5",
