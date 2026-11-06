@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793994061,
+ "generated_ts": 1793995879,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-7hqo5o7brhbmk0hd",
-   "title": "Audit Minecraft keep traversal and night lighting",
-   "owner": "crew",
-   "eta_ts": 1793995200,
-   "source": "planned-work-calendar",
-   "event_id": "7hqo5o7brhbmk0hdo2gc4qdu30"
-  },
   {
    "id": "cal-44760k757v65d31q",
    "title": "Verify Minecraft map marker transfer and sorter",
