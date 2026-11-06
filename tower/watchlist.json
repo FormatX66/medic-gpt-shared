@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793986898,
+ "generated_ts": 1793988670,
  "horizon_h": 48,
  "items": [
   {
@@ -9,14 +9,6 @@
    "eta_ts": 1793991600,
    "source": "planned-work-calendar",
    "event_id": "bb21nb8v6ta6r3n337j3ei4chs"
-  },
-  {
-   "id": "cal-r75sj6jdh5843ofu",
-   "title": "Process sample emails \u2014 midday",
-   "owner": "crew",
-   "eta_ts": 1793989800,
-   "source": "planned-work-calendar",
-   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261106T180000Z"
   },
   {
    "id": "cal-7hqo5o7brhbmk0hd",
@@ -113,6 +105,14 @@
    "eta_ts": 1794151800,
    "source": "planned-work-calendar",
    "event_id": "968iokgb56p94hrqpmtijum80c_20261108T143000Z"
+  },
+  {
+   "id": "cal-r75sj6jdh5843ofu",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1794162600,
+   "source": "planned-work-calendar",
+   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261108T180000Z"
   }
  ]
 }
