@@ -1,23 +1,7 @@
 {
- "generated_ts": 1793999458,
+ "generated_ts": 1794001270,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-jm8810j9h5so3jo0",
-   "title": "Continue local Qwen experiments",
-   "owner": "crew",
-   "eta_ts": 1794000600,
-   "source": "planned-work-calendar",
-   "event_id": "jm8810j9h5so3jo0qagbk27jf8"
-  },
-  {
-   "id": "cal-0o7giqstgjutb2s0",
-   "title": "BLOCKED - Confirm world for pending villager spawn",
-   "owner": "crew",
-   "eta_ts": 1793999700,
-   "source": "planned-work-calendar",
-   "event_id": "0o7giqstgjutb2s0qr724mlddg"
-  },
   {
    "id": "cal-ht37mik1jt0ohnn5",
    "title": "Process sample emails \u2014 evening",
