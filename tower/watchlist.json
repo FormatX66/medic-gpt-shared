@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793992257,
+ "generated_ts": 1793994061,
  "horizon_h": 48,
  "items": [
   {
@@ -9,14 +9,6 @@
    "eta_ts": 1793995200,
    "source": "planned-work-calendar",
    "event_id": "7hqo5o7brhbmk0hdo2gc4qdu30"
-  },
-  {
-   "id": "cal-klcbh81bitmgibbf",
-   "title": "Qualify Tally and Chet MQ admission after baseline proof",
-   "owner": "crew",
-   "eta_ts": 1793993400,
-   "source": "planned-work-calendar",
-   "event_id": "klcbh81bitmgibbfvtrt0fli1c"
   },
   {
    "id": "cal-44760k757v65d31q",
