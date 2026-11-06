@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793974282,
+ "generated_ts": 1793976075,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bcvd6iakvgodj3sv",
-   "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
-   "eta_ts": 1793975400,
-   "source": "planned-work-calendar",
-   "event_id": "bcvd6iakvgodj3svvuflece30k_20261106T140000Z"
-  },
   {
    "id": "cal-968iokgb56p94hrq",
    "title": "Sample inquiries - 100 ready / 100 goal",
@@ -73,6 +65,14 @@
    "eta_ts": 1794148200,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261108T140000Z"
+  },
+  {
+   "id": "cal-968iokgb56p94hrq",
+   "title": "Sample inquiries - 86 qualified / 100 goal",
+   "owner": "crew",
+   "eta_ts": 1794151800,
+   "source": "planned-work-calendar",
+   "event_id": "968iokgb56p94hrqpmtijum80c_20261108T143000Z"
   }
  ]
 }
