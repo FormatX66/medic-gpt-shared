@@ -1,5 +1,5 @@
 {
- "generated_ts": 1793981477,
+ "generated_ts": 1793983313,
  "horizon_h": 48,
  "items": [
   {
@@ -9,14 +9,6 @@
    "eta_ts": 1793984400,
    "source": "planned-work-calendar",
    "event_id": "420k9skdm0u14lbtdrd9fvem58"
-  },
-  {
-   "id": "cal-p8rbncsce9pgfiol",
-   "title": "Finish Tally email connector handoff",
-   "owner": "crew",
-   "eta_ts": 1793982600,
-   "source": "planned-work-calendar",
-   "event_id": "p8rbncsce9pgfioliplnkfup9g"
   },
   {
    "id": "cal-qqcmoi192931oa87",
