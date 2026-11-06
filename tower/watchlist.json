@@ -1,15 +1,7 @@
 {
- "generated_ts": 1793977899,
+ "generated_ts": 1793979682,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-968iokgb56p94hrq",
-   "title": "Sample inquiries - 100 ready / 100 goal",
-   "owner": "crew",
-   "eta_ts": 1793979000,
-   "source": "planned-work-calendar",
-   "event_id": "968iokgb56p94hrqpmtijum80c_20261106T143000Z"
-  },
   {
    "id": "cal-420k9skdm0u14lbt",
    "title": "Advance CCC estimate comparison site",
