@@ -1,47 +1,7 @@
 {
- "generated_ts": 1793985092,
+ "generated_ts": 1793986898,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-en7c2p3brbu23tdf",
-   "title": "Prepare extra 100 automotive and workshop inquiries",
-   "owner": "crew",
-   "eta_ts": 1793986200,
-   "source": "planned-work-calendar",
-   "event_id": "en7c2p3brbu23tdf5nr37cmhek"
-  },
-  {
-   "id": "cal-jb01mdvuoppu27hc",
-   "title": "Build email preparation and readiness workflow",
-   "owner": "crew",
-   "eta_ts": 1793985300,
-   "source": "planned-work-calendar",
-   "event_id": "jb01mdvuoppu27hcqvfqiffbmk"
-  },
-  {
-   "id": "cal-ls4ffr51fdajcr2s",
-   "title": "BLOCKED - Review Apple refund access",
-   "owner": "crew",
-   "eta_ts": 1793985300,
-   "source": "planned-work-calendar",
-   "event_id": "ls4ffr51fdajcr2sdepbfm6qsc"
-  },
-  {
-   "id": "cal-t2phsq5fi2qtkbof",
-   "title": "Review Flashbay kit and keep reply unsent",
-   "owner": "crew",
-   "eta_ts": 1793985300,
-   "source": "planned-work-calendar",
-   "event_id": "t2phsq5fi2qtkbof4g4sr608q8"
-  },
-  {
-   "id": "cal-4lb4dguchd5ii15l",
-   "title": "BLOCKED - Resume Capital One filter after Gmail login",
-   "owner": "crew",
-   "eta_ts": 1793986200,
-   "source": "planned-work-calendar",
-   "event_id": "4lb4dguchd5ii15l8gaji5j0cg"
-  },
   {
    "id": "cal-bb21nb8v6ta6r3n3",
    "title": "Advance Future Branch contract and offline tests",
