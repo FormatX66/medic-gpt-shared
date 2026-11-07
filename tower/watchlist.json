@@ -1,5 +1,5 @@
 {
- "generated_ts": 1794060666,
+ "generated_ts": 1794062447,
  "horizon_h": 48,
  "items": [
   {
@@ -65,6 +65,14 @@
    "eta_ts": 1794234600,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261109T140000Z"
+  },
+  {
+   "id": "cal-968iokgb56p94hrq",
+   "title": "Sample inquiries - 94 qualified / 100 goal",
+   "owner": "crew",
+   "eta_ts": 1794238200,
+   "source": "planned-work-calendar",
+   "event_id": "968iokgb56p94hrqpmtijum80c_20261109T143000Z"
   }
  ]
 }
