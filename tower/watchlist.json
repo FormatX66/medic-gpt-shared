@@ -1,15 +1,7 @@
 {
- "generated_ts": 1794062447,
+ "generated_ts": 1794066047,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-968iokgb56p94hrq",
-   "title": "Sample inquiries - 100 ready / 100 goal",
-   "owner": "crew",
-   "eta_ts": 1794065400,
-   "source": "planned-work-calendar",
-   "event_id": "968iokgb56p94hrqpmtijum80c_20261107T143000Z"
-  },
   {
    "id": "cal-r75sj6jdh5843ofu",
    "title": "Process sample emails \u2014 midday",
