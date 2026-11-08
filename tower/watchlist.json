@@ -1,5 +1,5 @@
 {
- "generated_ts": 1794148859,
+ "generated_ts": 1794156055,
  "horizon_h": 48,
  "items": [
   {
@@ -25,14 +25,6 @@
    "eta_ts": 1794234600,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261109T140000Z"
-  },
-  {
-   "id": "cal-968iokgb56p94hrq",
-   "title": "94 reserved; 6 gaps; catalog check pending",
-   "owner": "crew",
-   "eta_ts": 1794238200,
-   "source": "planned-work-calendar",
-   "event_id": "968iokgb56p94hrqpmtijum80c_20261109T143000Z"
   },
   {
    "id": "cal-r75sj6jdh5843ofu",
