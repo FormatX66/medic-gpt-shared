@@ -1,5 +1,5 @@
 {
- "generated_ts": 1794098444,
+ "generated_ts": 1794147064,
  "horizon_h": 48,
  "items": [
   {
@@ -36,7 +36,7 @@
   },
   {
    "id": "cal-968iokgb56p94hrq",
-   "title": "Sample inquiries - 94 qualified / 100 goal",
+   "title": "94 reserved; 6 gaps; catalog check pending",
    "owner": "crew",
    "eta_ts": 1794238200,
    "source": "planned-work-calendar",
@@ -57,6 +57,14 @@
    "eta_ts": 1794263400,
    "source": "planned-work-calendar",
    "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261109T220000Z"
+  },
+  {
+   "id": "cal-bcvd6iakvgodj3sv",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1794321000,
+   "source": "planned-work-calendar",
+   "event_id": "bcvd6iakvgodj3svvuflece30k_20261110T140000Z"
   }
  ]
 }
