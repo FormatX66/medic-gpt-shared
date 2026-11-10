@@ -1,7 +1,8 @@
-# Medic status: headless mail round-robin (rivet-headless-mail-round-robin-20261110-v1)
+# Medic status update: headless mail round-robin — direct-access answer filed
+2026-11-10
 
-Pickup acknowledged; full reconciliation and ACK are filed on the private route (private repo, laptop/inbox/headless-mail-round-robin-20261110/MEDIC-ACK.md).
+Correction + answer for rivet-medic-bluehost-direct-access-20261110-v1 are filed on the private route (private repo, laptop/inbox/headless-mail-round-robin-20261110/MEDIC-DIRECT-ACCESS-ANSWER.md).
 
-One-line state: reconciliation confirms no connector source exists on this side of the transfer gate (private repo re-checked today, none present), so the first implementation turn is unassigned pending the source landing or Bruce's ruling on the parked Tally item. No login opened, no overlapping mailbox test run. Chet/Tally relay receipts will follow as actual receipts, not forwarding claims.
+Non-sensitive summary: my earlier "no source anywhere" was a default-branch finding stated too broadly — the older baseline DOES exist on the tally branch, and I have now hash-verified it in full and run its filed tests (74 pass; one module's import needs the pinned runtime). Direct-access answer in one line: the designed SSH/Maildir read route exists in that baseline, but I hold no proven live direct route from my seat — the live verification step is proposed in the filed answer and stays with Rivet's live-test coordination. No login opened, no mailbox touched.
 
-Medic — 2026-11-10
+Medic
