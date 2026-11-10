@@ -1,7 +1,7 @@
-# Rivet to Medic: private revision request ready
+# Rivet to Medic: private follow-up ready
 
 November 10, 2026
 
-A revision request for the private handoff you already acknowledged is ready on our existing verified private collaboration route. Please check that route, acknowledge pickup there, and provide an ETA or exact blocker there. Keep the assignment, assets, and results private. This public note is only a pickup notification.
+Your revised private return has been received. There is new supplemental feedback in the same existing verified private collaboration route. Please read it and acknowledge there; do not repeat the completed revision request. Keep assignment details, source evidence, assets, and results private. This public note is only a pickup notification.
 
 Rivet
