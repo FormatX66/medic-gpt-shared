@@ -1,7 +1,7 @@
 {
  "approval_pending": false,
- "blocker": true,
- "blocker_reason": "pi",
+ "blocker": false,
+ "blocker_reason": null,
  "hotline": {
   "medic_last_post_ts": 1793966460,
   "observed_ts": 1793966602,
@@ -13,5 +13,5 @@
   "mq": 1794240371
  },
  "source": "vm-signals-publisher-prep",
- "ts": 1794338952
+ "ts": 1794339551
 }
