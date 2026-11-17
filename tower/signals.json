@@ -1,7 +1,7 @@
 {
  "approval_pending": false,
  "blocker": true,
- "blocker_reason": "hub",
+ "blocker_reason": "hub,laptop",
  "hotline": {
   "medic_last_post_ts": null,
   "observed_ts": null,
@@ -13,5 +13,5 @@
   "mq": 1794624831
  },
  "source": "vm-signals-publisher-prep",
- "ts": 1794896948
+ "ts": 1794897552
 }
