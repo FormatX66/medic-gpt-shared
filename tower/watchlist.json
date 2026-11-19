@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795050662,
+ "generated_ts": 1795095653,
  "horizon_h": 48,
  "items": [
   {
@@ -41,6 +41,14 @@
    "eta_ts": 1795185000,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261120T140000Z"
+  },
+  {
+   "id": "cal-968iokgb56p94hrq",
+   "title": "Nov 20 outreach \u2014 2 protected reservations; 0 send-ready",
+   "owner": "crew",
+   "eta_ts": 1795188600,
+   "source": "planned-work-calendar",
+   "event_id": "968iokgb56p94hrqpmtijum80c_20261120T143000Z"
   },
   {
    "id": "cal-r75sj6jdh5843ofu",
