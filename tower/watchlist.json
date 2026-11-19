@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795102854,
+ "generated_ts": 1795111852,
  "horizon_h": 48,
  "items": [
   {
@@ -57,6 +57,14 @@
    "eta_ts": 1795271400,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261121T140000Z"
+  },
+  {
+   "id": "cal-r75sj6jdh5843ofu",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795285800,
+   "source": "planned-work-calendar",
+   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261121T180000Z"
   }
  ]
 }
