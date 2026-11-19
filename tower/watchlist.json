@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795099259,
+ "generated_ts": 1795102854,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-968iokgb56p94hrq",
-   "title": "Nov 19 outreach \u2014 2 protected reservations; 0 send-ready",
-   "owner": "crew",
-   "eta_ts": 1795102200,
-   "source": "planned-work-calendar",
-   "event_id": "968iokgb56p94hrqpmtijum80c_20261119T143000Z"
-  },
   {
    "id": "cal-r75sj6jdh5843ofu",
    "title": "Process sample emails \u2014 midday",
