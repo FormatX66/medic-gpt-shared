@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795270247,
+ "generated_ts": 1795272060,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bcvd6iakvgodj3sv",
-   "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
-   "eta_ts": 1795271400,
-   "source": "planned-work-calendar",
-   "event_id": "bcvd6iakvgodj3svvuflece30k_20261121T140000Z"
-  },
   {
    "id": "cal-r75sj6jdh5843ofu",
    "title": "Process sample emails \u2014 midday",
