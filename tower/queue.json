@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795391429,
+ "generated_ts": 1795391556,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -619,6 +619,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-1dc04e0d3ba096e8",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 1: Extract and deliver exact question checklist",
+   "owner": "medic",
+   "eta_ts": 1795467600,
+   "escalate_ts": 1795467600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-4c55a81c6486c315",
    "title": "Crew Discord setup \u2014 step 1: Diagnose the Discord bridge watch connection error from the Nov 19 failure (verification step \u2014 cause not yet known)",
    "owner": "medic",
@@ -646,6 +657,28 @@
    "owner": "medic",
    "eta_ts": 1795467600,
    "escalate_ts": 1795467600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f96552ad4be40b29",
+   "title": "GPT ads satire video \u2014 step 1: Deliver 3-line review prompt and playback link",
+   "owner": "medic",
+   "eta_ts": 1795467600,
+   "escalate_ts": 1795467600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-2135edc925362c91",
+   "title": "Unclaimed property search and claims \u2014 step 1: Present claim packet and filing requirements to Bruce",
+   "owner": "medic",
+   "eta_ts": 1795471200,
+   "escalate_ts": 1795471200,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -692,6 +725,17 @@
    "escalate_ts": 1795474800,
    "state": "held",
    "t_claimed": 1795391319,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-4d3b1aba9e7eff69",
+   "title": "Medic-Rivet earning challenge \u2014 step 1: Deliver finalized race terms and account checklist to Bruce",
+   "owner": "medic",
+   "eta_ts": 1795474800,
+   "escalate_ts": 1795474800,
+   "state": "queued",
+   "t_claimed": null,
    "t_effect": null,
    "source": "planned-work-calendar"
   },
@@ -839,6 +883,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-61e83930d07d33a4",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 2: Answer cable spec and content checklist",
+   "owner": "bruce",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-64ec70e0f0313085",
    "title": "WiZ bulb price-drop claim \u2014 step 2: File the $6.72 price-drop claim",
    "owner": "medic",
@@ -894,6 +949,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-e8d94d8ab5bde09a",
+   "title": "Medic-Rivet earning challenge \u2014 step 2: Ratify race terms",
+   "owner": "bruce",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-f649d095175ca2ff",
    "title": "Grok MQ handoff delivery \u2014 step 2: Deliver the staged handoff over Grok's provisioned MQ lane",
    "owner": "medic",
@@ -932,6 +998,17 @@
    "owner": "crew",
    "eta_ts": 1795545000,
    "escalate_ts": 1795545000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-0a40fbfb3f961db6",
+   "title": "Unclaimed property search and claims \u2014 step 2: Give filing go-ahead and verify identity docs",
+   "owner": "bruce",
+   "eta_ts": 1795546800,
+   "escalate_ts": 1795546800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -1026,9 +1103,42 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-dfd9b099c1f8bdcb",
+   "title": "Medic-Rivet earning challenge \u2014 step 3: Create Lemon Squeezy account",
+   "owner": "bruce",
+   "eta_ts": 1795554000,
+   "escalate_ts": 1795554000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-eda59096255bd1c2",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 3: Rebuild press kit markdown and asset manifest",
+   "owner": "copilot",
+   "eta_ts": 1795554000,
+   "escalate_ts": 1795554000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-3b6e9aa03cb286fd",
    "title": "Rivet's Bluehost mail survey \u2014 resume on a verified Hex runner receipt (Hex is back; webmail is not a route)",
    "owner": "rivet",
+   "eta_ts": 1795557600,
+   "escalate_ts": 1795557600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-9a56ca5f37c8ae69",
+   "title": "Unclaimed property search and claims \u2014 step 3: Stage NY state filing forms and instructions",
+   "owner": "medic",
    "eta_ts": 1795557600,
    "escalate_ts": 1795557600,
    "state": "queued",
@@ -1048,9 +1158,31 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-52ab5f5436e712f4",
+   "title": "GPT ads satire video \u2014 step 2: Render verdict on V8",
+   "owner": "bruce",
+   "eta_ts": 1795561200,
+   "escalate_ts": 1795561200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-5cd1b543c7a63272",
    "title": "Google Voice number for Medic and Rivet \u2014 step 1: Confirm Voice stays your lane and that Medic's texts continue to route through you",
    "owner": "rivet",
+   "eta_ts": 1795561200,
+   "escalate_ts": 1795561200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-97548e472325a555",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 4: Verify outreach compliance",
+   "owner": "gemini",
    "eta_ts": 1795561200,
    "escalate_ts": 1795561200,
    "state": "queued",
@@ -1084,6 +1216,17 @@
    "id": "cal-c71d68ce09721a7b",
    "title": "Desktop-control and screen-comms lane \u2014 step 1: Deliver the detailed Keepawake rev2 write-up Medic is waiting on",
    "owner": "rivet",
+   "eta_ts": 1795561200,
+   "escalate_ts": 1795561200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-c77a06a8e0c207b3",
+   "title": "Medic-Rivet earning challenge \u2014 step 4: Provision API keys and store setup",
+   "owner": "bruce",
    "eta_ts": 1795561200,
    "escalate_ts": 1795561200,
    "state": "queued",
