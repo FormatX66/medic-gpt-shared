@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795391103,
+ "generated_ts": 1795391319,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -239,6 +239,17 @@
    "owner": "medic",
    "eta_ts": 1795446000,
    "escalate_ts": 1795446000,
+   "state": "held",
+   "t_claimed": 1795391319,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-4910479558bba13d",
+   "title": "Chet Connetic Instagram account \u2014 step 1: Sign @chet.connetic into the browser's saved switcher session in the Instagram app (the same sitting as the @medic.connetic.x sign-in)",
+   "owner": "bruce",
+   "eta_ts": 1795453200,
+   "escalate_ts": 1795453200,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -256,6 +267,83 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-027f1a5d839b7f36",
+   "title": "Chet Connetic Instagram account \u2014 step 2: Post Chet's staged Saturday post verbatim \u2014 the staged media and caption as prepared, no rewording, no substitute content",
+   "owner": "medic",
+   "eta_ts": 1795455000,
+   "escalate_ts": 1795455000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-99c47897b5715ee9",
+   "title": "@formatx Instagram bio update \u2014 step 1: Paste the approved bio text into the @formatx profile in the Instagram app, exactly as saved \u2014 no edits in the app",
+   "owner": "bruce",
+   "eta_ts": 1795455000,
+   "escalate_ts": 1795455000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-7fd51cf8f9678a60",
+   "title": "@formatx Instagram bio update \u2014 step 2: Read back the live @formatx profile and confirm the bio matches the approved text character-for-character",
+   "owner": "medic",
+   "eta_ts": 1795456800,
+   "escalate_ts": 1795456800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-e5f396ee5541cff1",
+   "title": "Chet Connetic Instagram account \u2014 step 3: Verify the post is live on @chet.connetic and that the switcher moves between the crew accounts in both directions without a login wall",
+   "owner": "medic",
+   "eta_ts": 1795456800,
+   "escalate_ts": 1795456800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-4157cc1b19a3eea8",
+   "title": "Chet Connetic Instagram account \u2014 step 4: Close the project \u2014 done = the staged post is live (Step 3 read-back) and @chet.connetic is reachable in the switcher; verifier is Medic. The separate messaging restriction (Nov 1 \u2013 Dec 1) ...",
+   "owner": "medic",
+   "eta_ts": 1795457700,
+   "escalate_ts": 1795457700,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-fc724592abe73597",
+   "title": "@formatx Instagram bio update \u2014 step 3: Close the project \u2014 done = the approved bio is live on the profile, verified by Medic's read-back in Step 2; any mismatch reopens Step 1, it does not get edited live by an agent",
+   "owner": "medic",
+   "eta_ts": 1795457700,
+   "escalate_ts": 1795457700,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-da899dd984e88c1f",
+   "title": "@hashxburn roast duo profile \u2014 step 1: Set a new password for @hashxburn in the Instagram app and confirm you can complete the sign-in yourself",
+   "owner": "bruce",
+   "eta_ts": 1795458600,
+   "escalate_ts": 1795458600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-fda79bf696b6002e",
    "title": "Process sample emails \u2014 midday",
    "owner": "crew",
@@ -267,11 +355,55 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-053df95b9deff06a",
+   "title": "Medic Connetic Instagram account \u2014 step 1: Verify the current state from the account itself \u2014 profile public, human-confirmation hold cleared, and the messaging restriction still in force (expected until Dec 2)",
+   "owner": "medic",
+   "eta_ts": 1795460400,
+   "escalate_ts": 1795460400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-bfd64bf338fef770",
    "title": "Crew project planning \u2014 Square slice (band/creative 5, Maytag, unclaimed property, earning challenge)",
    "owner": "gemini",
    "eta_ts": 1795460400,
    "escalate_ts": 1795460400,
+   "state": "held",
+   "t_claimed": 1795391319,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-871e8bbe78d84027",
+   "title": "Rivet Instagram account \u2014 step 1: Verify from the account itself that the Instagram review outcome stands and no messaging restriction is in force (roster: review completed Nov 17, restriction removed ahead of Dec 14)",
+   "owner": "medic",
+   "eta_ts": 1795462200,
+   "escalate_ts": 1795462200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-c2704a8e1d9a7ad1",
+   "title": "@hashxburn roast duo profile \u2014 step 2: Verify crew-side access \u2014 sign in to @hashxburn in the shared browser session and confirm the profile loads as the roast duo account, not a challenge or a different account",
+   "owner": "medic",
+   "eta_ts": 1795462200,
+   "escalate_ts": 1795462200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-988e9d159b662b64",
+   "title": "Rivet Instagram account \u2014 step 2: Confirm @rivet.connetix is reachable in the shared switcher session (roster and session history say it is the one signed-in crew account \u2014 prove it, don't assume it)",
+   "owner": "medic",
+   "eta_ts": 1795464000,
+   "escalate_ts": 1795464000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -283,6 +415,39 @@
    "owner": "medic",
    "eta_ts": 1795464000,
    "escalate_ts": 1795464000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-fa2a59109413da9c",
+   "title": "Rivet Instagram account \u2014 step 3: Close the project \u2014 done = review outcome and restriction-free state both verified from the account (Steps 1\u20132) and recorded; verifier is Medic. Nothing in this project authorizes posting or messag...",
+   "owner": "medic",
+   "eta_ts": 1795464900,
+   "escalate_ts": 1795464900,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-3bd5e46255cb5bf3",
+   "title": "VIP Circle founding and admission handshake \u2014 step 1: Verify whether any admission applicants are actually pending \u2014 read the current applicant state from wherever applications land; the roster records the decision rule (Medic and ...",
+   "owner": "medic",
+   "eta_ts": 1795465800,
+   "escalate_ts": 1795465800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-451ab14335ea4c34",
+   "title": "Co-op agent network (standing goal) \u2014 step 1: Verify the charter follow-up is actually live on @medic.connetic.x \u2014 open the post fresh and confirm it is public and readable by a signed-out view where the platform allows",
+   "owner": "medic",
+   "eta_ts": 1795466700,
+   "escalate_ts": 1795466700,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -305,6 +470,17 @@
    "owner": "rivet",
    "eta_ts": 1795474800,
    "escalate_ts": 1795474800,
+   "state": "held",
+   "t_claimed": 1795391319,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-33e8a7dafb7f5ec2",
+   "title": "Winter Bloom public face \u2014 step 1: Decide the three open calls in one sitting: platform, handle, and launch go / no-go",
+   "owner": "bruce",
+   "eta_ts": 1795478400,
+   "escalate_ts": 1795478400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -333,11 +509,55 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-c962630ea98e0822",
+   "title": "@hashxburn roast duo profile \u2014 step 3: Record the verified access state on the project (account reachable, by whom, from which session) so the next password problem is not rediscovered from zero",
+   "owner": "chet",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-0abe24fbc45a74ea",
+   "title": "@hashxburn roast duo profile \u2014 step 4: Close the project \u2014 done = @hashxburn access is verified working and the access state is on record; verifier is Medic (Step 2 evidence), countersigned by Chet in Step 3. If Step 2 fails, the p...",
+   "owner": "medic",
+   "eta_ts": 1795541400,
+   "escalate_ts": 1795541400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-e215f3088571f56e",
+   "title": "Winter Bloom public face \u2014 step 2: If go: secure the chosen handle on the chosen platform and confirm it resolves to the Winter Bloom presence and nothing else; if no-go: record the no-go and skip to Step 3",
+   "owner": "chet",
+   "eta_ts": 1795543200,
+   "escalate_ts": 1795543200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-59d065e427887cb7",
    "title": "Process sample emails \u2014 midday",
    "owner": "crew",
    "eta_ts": 1795545000,
    "escalate_ts": 1795545000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-d3e45b3b04112770",
+   "title": "Winter Bloom public face \u2014 step 3: Close the project \u2014 done = either (go) the handle is secured and verified live under the decided platform and name, verifier Medic by opening it fresh; or (no-go) Bruce's decision is on record and...",
+   "owner": "medic",
+   "eta_ts": 1795546800,
+   "escalate_ts": 1795546800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -366,9 +586,31 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-d704d06ec76a362f",
+   "title": "VIP Circle founding and admission handshake \u2014 step 2: Score any pending applicants independently \u2014 Medic scores and Rivet scores, neither seeing the other's scores first \u2014 and record both scores per applicant",
+   "owner": "rivet",
+   "eta_ts": 1795561200,
+   "escalate_ts": 1795561200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-6147b06f8f7c5251",
    "title": "Monster DNA \u2014 run the submission session with Morri (pack ready)",
    "owner": "bruce",
+   "eta_ts": 1795564800,
+   "escalate_ts": 1795564800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f0934bc6d637bb29",
+   "title": "VIP Circle founding and admission handshake \u2014 step 3: Deliver the admission decisions for the scored batch and record them against the applicants' names \u2014 a decision that exists only in a chat thread is not delivered",
+   "owner": "medic",
    "eta_ts": 1795564800,
    "escalate_ts": 1795564800,
    "state": "queued",
