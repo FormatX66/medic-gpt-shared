@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795382809,
+ "generated_ts": 1795383654,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -305,6 +305,17 @@
    "owner": "crew",
    "eta_ts": 1795545000,
    "escalate_ts": 1795545000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-3b6e9aa03cb286fd",
+   "title": "Rivet's Bluehost mail survey \u2014 resume on a verified Hex runner receipt (Hex is back; webmail is not a route)",
+   "owner": "rivet",
+   "eta_ts": 1795557600,
+   "escalate_ts": 1795557600,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
