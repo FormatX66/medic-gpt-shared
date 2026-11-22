@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795374758,
+ "generated_ts": 1795382809,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -234,6 +234,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-56f7f7fe9c9bf373",
+   "title": "Post Chet's staged Saturday post (content ready, verbatim)",
+   "owner": "medic",
+   "eta_ts": 1795453200,
+   "escalate_ts": 1795453200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-fda79bf696b6002e",
    "title": "Process sample emails \u2014 midday",
    "owner": "crew",
@@ -245,11 +256,33 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-a9f4f152cbfeb147",
+   "title": "Quest Board sync \u2014 settle Morri's three closed credits (60 HYPE expected to reverse) + fresh pull for both kids",
+   "owner": "medic",
+   "eta_ts": 1795464000,
+   "escalate_ts": 1795464000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-fff0703ce18a2eaa",
    "title": "Process sample emails \u2014 evening",
    "owner": "crew",
    "eta_ts": 1795473000,
    "escalate_ts": 1795473000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-8941bfbe22d38c2c",
+   "title": "EarthQuaker reply \u2014 send the pedals email from arkmatx",
+   "owner": "bruce",
+   "eta_ts": 1795482000,
+   "escalate_ts": 1795482000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
