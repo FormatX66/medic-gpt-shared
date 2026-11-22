@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795387249,
+ "generated_ts": 1795390844,
  "horizon_h": 48,
  "items": [
   {
@@ -81,6 +81,14 @@
    "eta_ts": 1795559400,
    "source": "planned-work-calendar",
    "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261124T220000Z"
+  },
+  {
+   "id": "cal-5ta8ddit5hno0ej9",
+   "title": "Monster DNA \u2014 run the submission session with Morri (pack ready)",
+   "owner": "crew",
+   "eta_ts": 1795564800,
+   "source": "planned-work-calendar",
+   "event_id": "5ta8ddit5hno0ej92cd529m9u4"
   }
  ]
 }
