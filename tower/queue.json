@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795391685,
+ "generated_ts": 1795391807,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -674,8 +674,41 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-42aa07c9dd8e90d5",
+   "title": "Maytag washer Marketplace sale \u2014 step 1: Check listing status and buyer inbox",
+   "owner": "medic",
+   "eta_ts": 1795467600,
+   "escalate_ts": 1795467600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-4c55a81c6486c315",
    "title": "Crew Discord setup \u2014 step 1: Diagnose the Discord bridge watch connection error from the Nov 19 failure (verification step \u2014 cause not yet known)",
+   "owner": "medic",
+   "eta_ts": 1795467600,
+   "escalate_ts": 1795467600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-70ade5eec3f85c52",
+   "title": "League of Space Pirates EarthQuaker submission \u2014 step 1: Extract and deliver question checklist to Bruce",
+   "owner": "medic",
+   "eta_ts": 1795467600,
+   "escalate_ts": 1795467600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-7c33a88ad1031d57",
+   "title": "How We Broke Claude: The Movie \u2014 step 1: Packet review cut and trailer assets to Rivet",
    "owner": "medic",
    "eta_ts": 1795467600,
    "escalate_ts": 1795467600,
@@ -712,6 +745,17 @@
    "owner": "medic",
    "eta_ts": 1795467600,
    "escalate_ts": 1795467600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-01d6872442119851",
+   "title": "BoxBrain backend crew \u2014 step 1: Execute Ledger portrait re-render",
+   "owner": "rivet",
+   "eta_ts": 1795471200,
+   "escalate_ts": 1795471200,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -872,6 +916,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-0c84eb62be7c5983",
+   "title": "How We Broke Claude: The Movie \u2014 step 2: Run verification pass and emit verdict",
+   "owner": "rivet",
+   "eta_ts": 1795532400,
+   "escalate_ts": 1795532400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-1e0e37523a1b258e",
    "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 2: Verify the relay's auth tokens are now populated (presence only, values never read out)",
    "owner": "medic",
@@ -886,6 +941,28 @@
    "id": "cal-1f49c4163dac350f",
    "title": "Agent Relay onboarding \u2014 step 2: Verify Medic can access the new workspace",
    "owner": "medic",
+   "eta_ts": 1795532400,
+   "escalate_ts": 1795532400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-3c7d6bf76c385f04",
+   "title": "BoxBrain backend crew \u2014 step 2: Verify asset and commit to repo",
+   "owner": "copilot",
+   "eta_ts": 1795532400,
+   "escalate_ts": 1795532400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-42cc73a468fe688a",
+   "title": "Maytag washer Marketplace sale \u2014 step 2: Evaluate listing refresh or price adjustment options",
+   "owner": "gemini",
    "eta_ts": 1795532400,
    "escalate_ts": 1795532400,
    "state": "queued",
@@ -963,6 +1040,17 @@
    "id": "cal-b2adb22274cffc83",
    "title": "Crew Discord setup \u2014 step 2: Fix the diagnosed connection fault and restart the bridge watch",
    "owner": "medic",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-b9f3d7158a737dde",
+   "title": "League of Space Pirates EarthQuaker submission \u2014 step 2: Provide band links and pedal models",
+   "owner": "bruce",
    "eta_ts": 1795539600,
    "escalate_ts": 1795539600,
    "state": "queued",
@@ -1059,8 +1147,30 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-0a023eadaac0233f",
+   "title": "BoxBrain backend crew \u2014 step 3: Draft deployment gate checklist for Windows supervisor",
+   "owner": "gemini",
+   "eta_ts": 1795546800,
+   "escalate_ts": 1795546800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-0a40fbfb3f961db6",
    "title": "Unclaimed property search and claims \u2014 step 2: Give filing go-ahead and verify identity docs",
+   "owner": "bruce",
+   "eta_ts": 1795546800,
+   "escalate_ts": 1795546800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-2a3517af9d7a8007",
+   "title": "Maytag washer Marketplace sale \u2014 step 3: Review and approve listing action",
    "owner": "bruce",
    "eta_ts": 1795546800,
    "escalate_ts": 1795546800,
@@ -1103,11 +1213,33 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-c941221f48f2e640",
+   "title": "How We Broke Claude: The Movie \u2014 step 3: Commit lock pass to project ledger",
+   "owner": "medic",
+   "eta_ts": 1795546800,
+   "escalate_ts": 1795546800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-d3e45b3b04112770",
    "title": "Winter Bloom public face \u2014 step 3: Close the project \u2014 done = either (go) the handle is secured and verified live under the decided platform and name, verifier Medic by opening it fresh; or (no-go) Bruce's decision is on record and...",
    "owner": "medic",
    "eta_ts": 1795546800,
    "escalate_ts": 1795546800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f60863f3252eac50",
+   "title": "How We Broke Claude: The Movie \u2014 step 4: Master lock confirmed",
+   "owner": "gemini",
+   "eta_ts": 1795548600,
+   "escalate_ts": 1795548600,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -1139,6 +1271,17 @@
    "id": "cal-77b77c6adc0fc252",
    "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 4: Closing \u2014 the relay test reaches Bluehost and returns; verified by Medic",
    "owner": "medic",
+   "eta_ts": 1795554000,
+   "escalate_ts": 1795554000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-8b998ef69064b8f6",
+   "title": "League of Space Pirates EarthQuaker submission \u2014 step 3: Draft outbound submission",
+   "owner": "gemini",
    "eta_ts": 1795554000,
    "escalate_ts": 1795554000,
    "state": "queued",
@@ -1213,6 +1356,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-2974cc4037cc9600",
+   "title": "BoxBrain backend crew \u2014 step 4: Review and approve supervisor deployment",
+   "owner": "bruce",
+   "eta_ts": 1795561200,
+   "escalate_ts": 1795561200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-52ab5f5436e712f4",
    "title": "GPT ads satire video \u2014 step 2: Render verdict on V8",
    "owner": "bruce",
@@ -1268,6 +1422,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-c51ec67ba208c78c",
+   "title": "Maytag washer Marketplace sale \u2014 step 4: Execute approved action on Marketplace",
+   "owner": "bruce",
+   "eta_ts": 1795561200,
+   "escalate_ts": 1795561200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-c71d68ce09721a7b",
    "title": "Desktop-control and screen-comms lane \u2014 step 1: Deliver the detailed Keepawake rev2 write-up Medic is waiting on",
    "owner": "rivet",
@@ -1295,6 +1460,17 @@
    "owner": "rivet",
    "eta_ts": 1795561200,
    "escalate_ts": 1795561200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-d786d861d3164bea",
+   "title": "Maytag washer Marketplace sale \u2014 step 5: Listing update verified",
+   "owner": "medic",
+   "eta_ts": 1795563000,
+   "escalate_ts": 1795563000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
