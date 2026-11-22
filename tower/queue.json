@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795391319,
+ "generated_ts": 1795391429,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -223,11 +223,44 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-8bf61096afb67d47",
+   "title": "Communication Routes space \u2014 step 1: Run the scheduled refresh of the 13-lane Communication Routes space",
+   "owner": "medic",
+   "eta_ts": 1795439820,
+   "escalate_ts": 1795439820,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-a810646ce8d32dc4",
    "title": "Process sample emails \u2014 morning",
    "owner": "crew",
    "eta_ts": 1795444200,
    "escalate_ts": 1795444200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-15b876cca89be707",
+   "title": "Tally Bluehost connector \u2014 step 1: Verify Hex is up and the Bluehost connector path is ready to run",
+   "owner": "medic",
+   "eta_ts": 1795446000,
+   "escalate_ts": 1795446000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-371b720632d56b22",
+   "title": "Kids' schoolwork catalog \u2014 step 1: Check Bruce's Gmail for the L.C. Bird counseling reply carrying the ParentVUE activation code (verification step)",
+   "owner": "medic",
+   "eta_ts": 1795446000,
+   "escalate_ts": 1795446000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -241,6 +274,17 @@
    "escalate_ts": 1795446000,
    "state": "held",
    "t_claimed": 1795391319,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-3489a94a3a3bd287",
+   "title": "Copilot (Tally) Git lead production team \u2014 step 1: Re-issue the repo-map revision request to Tally with its scope restated (revision overdue since Oct 23, no delivery recorded)",
+   "owner": "medic",
+   "eta_ts": 1795453200,
+   "escalate_ts": 1795453200,
+   "state": "queued",
+   "t_claimed": null,
    "t_effect": null,
    "source": "planned-work-calendar"
   },
@@ -267,8 +311,85 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-5d8fb1b10b339aab",
+   "title": "WiZ bulb price-drop claim \u2014 step 1: Confirm whether the Quicksilver network logo is the one tied to your bulb purchase",
+   "owner": "bruce",
+   "eta_ts": 1795453200,
+   "escalate_ts": 1795453200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-697276bf48d2fa77",
+   "title": "Persona accounts co-pilot \u2014 step 1: Sign @chet.connetic back into the shared browser session's Instagram switcher",
+   "owner": "bruce",
+   "eta_ts": 1795453200,
+   "escalate_ts": 1795453200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-799d951651df2824",
+   "title": "Communication Routes space \u2014 step 2: Verify every listed lane against its live source and correct any stale entry",
+   "owner": "medic",
+   "eta_ts": 1795453200,
+   "escalate_ts": 1795453200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-bd47bf407dd6ffa4",
+   "title": "Agent Relay onboarding \u2014 step 1: Create the Agent Relay cloud account and workspace at agentrelay.com",
+   "owner": "bruce",
+   "eta_ts": 1795453200,
+   "escalate_ts": 1795453200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f4b8a681dd589395",
+   "title": "Grok MQ handoff delivery \u2014 step 1: Check whether Grok has returned from max usage (verification step)",
+   "owner": "medic",
+   "eta_ts": 1795453200,
+   "escalate_ts": 1795453200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-ff314ee3ae12067c",
+   "title": "Second Muse agent \u2014 step 1: Confirm whether the new agent is tied to arkmatx@gmail.com (yes or no)",
+   "owner": "bruce",
+   "eta_ts": 1795453200,
+   "escalate_ts": 1795453200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-027f1a5d839b7f36",
    "title": "Chet Connetic Instagram account \u2014 step 2: Post Chet's staged Saturday post verbatim \u2014 the staged media and caption as prepared, no rewording, no substitute content",
+   "owner": "medic",
+   "eta_ts": 1795455000,
+   "escalate_ts": 1795455000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-6ee63d63d69eb7c5",
+   "title": "Persona accounts co-pilot \u2014 step 2: Post Chet's staged Saturday post verbatim and verify it live",
    "owner": "medic",
    "eta_ts": 1795455000,
    "escalate_ts": 1795455000,
@@ -366,6 +487,28 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-183e68c500896fe9",
+   "title": "Siri breakout \u2014 step 1: Verify the typed web app lane is still live (breakout itself stays rested at Bruce's request)",
+   "owner": "medic",
+   "eta_ts": 1795460400,
+   "escalate_ts": 1795460400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-a5a2294adf39e1e4",
+   "title": "Communication Routes space \u2014 step 3: Closing \u2014 the refreshed space is published with all 13 lanes checked current; verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795460400,
+   "escalate_ts": 1795460400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-bfd64bf338fef770",
    "title": "Crew project planning \u2014 Square slice (band/creative 5, Maytag, unclaimed property, earning challenge)",
    "owner": "gemini",
@@ -373,6 +516,17 @@
    "escalate_ts": 1795460400,
    "state": "held",
    "t_claimed": 1795391319,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-d914c7bff8dedc4f",
+   "title": "Medic Bridge rollout \u2014 step 1: Inspect the laptop's current bridge state and FORWARD_URL configuration (verification step \u2014 last healthy report was Sep 19)",
+   "owner": "medic",
+   "eta_ts": 1795460400,
+   "escalate_ts": 1795460400,
+   "state": "queued",
+   "t_claimed": null,
    "t_effect": null,
    "source": "planned-work-calendar"
   },
@@ -393,6 +547,17 @@
    "owner": "medic",
    "eta_ts": 1795462200,
    "escalate_ts": 1795462200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-45a7b5459b0da387",
+   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 1: Run the Quest Board sync for both kids",
+   "owner": "medic",
+   "eta_ts": 1795464000,
+   "escalate_ts": 1795464000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -454,11 +619,66 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-4c55a81c6486c315",
+   "title": "Crew Discord setup \u2014 step 1: Diagnose the Discord bridge watch connection error from the Nov 19 failure (verification step \u2014 cause not yet known)",
+   "owner": "medic",
+   "eta_ts": 1795467600,
+   "escalate_ts": 1795467600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-a22ad7356787558e",
+   "title": "Siri breakout \u2014 step 2: Closing \u2014 lane verified live and the breakout recorded as rested until Bruce lifts the rest; done when the verification is on record, verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795467600,
+   "escalate_ts": 1795467600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-da1d205e3842a5f6",
+   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 2: Settle or reverse Morri's three closed credits per the Canvas record in that sync",
+   "owner": "medic",
+   "eta_ts": 1795467600,
+   "escalate_ts": 1795467600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-fff0703ce18a2eaa",
    "title": "Process sample emails \u2014 evening",
    "owner": "crew",
    "eta_ts": 1795473000,
    "escalate_ts": 1795473000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-1a8a47fc5936f76f",
+   "title": "Persona accounts co-pilot \u2014 step 3: Run the comment watch over @wetbeard.rva, @dogzig13, and @rustylosp and draft persona-voice replies for Bruce's tap",
+   "owner": "medic",
+   "eta_ts": 1795474800,
+   "escalate_ts": 1795474800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-2102396d54449157",
+   "title": "Samples inbox processing and audit \u2014 step 1: Clear the current samples inbox backlog and bring the audit current",
+   "owner": "medic",
+   "eta_ts": 1795474800,
+   "escalate_ts": 1795474800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -487,11 +707,55 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-41b8be103c3c3f1e",
+   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 1: Complete the pending iPhone token step on your iPhone so the relay's empty auth tokens get filled",
+   "owner": "bruce",
+   "eta_ts": 1795482000,
+   "escalate_ts": 1795482000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-49ea637b5b799208",
+   "title": "Persona accounts co-pilot \u2014 step 4: Closing \u2014 the staged post is live and verified, and the comment sweep is current with drafts awaiting Bruce's taps; verified by Medic (standing goal continues on its 12-hour rhythm)",
+   "owner": "medic",
+   "eta_ts": 1795482000,
+   "escalate_ts": 1795482000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-8941bfbe22d38c2c",
    "title": "EarthQuaker reply \u2014 send the pedals email from arkmatx",
    "owner": "bruce",
    "eta_ts": 1795482000,
    "escalate_ts": 1795482000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-ff56b10d346e8d3b",
+   "title": "Govee arm light control \u2014 step 1: Open the Govee app and turn on LAN Control for the H6008",
+   "owner": "bruce",
+   "eta_ts": 1795482000,
+   "escalate_ts": 1795482000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-c42574dbff716838",
+   "title": "Govee arm light control \u2014 step 2: Retest LAN discovery for the H6008",
+   "owner": "medic",
+   "eta_ts": 1795485600,
+   "escalate_ts": 1795485600,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -509,9 +773,130 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-1e0e37523a1b258e",
+   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 2: Verify the relay's auth tokens are now populated (presence only, values never read out)",
+   "owner": "medic",
+   "eta_ts": 1795532400,
+   "escalate_ts": 1795532400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-1f49c4163dac350f",
+   "title": "Agent Relay onboarding \u2014 step 2: Verify Medic can access the new workspace",
+   "owner": "medic",
+   "eta_ts": 1795532400,
+   "escalate_ts": 1795532400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-c5b0d13f0f66d851",
+   "title": "Second Muse agent \u2014 step 2: Verify the agent's account linkage matches your confirmation",
+   "owner": "medic",
+   "eta_ts": 1795532400,
+   "escalate_ts": 1795532400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-e7dd3593705aed62",
+   "title": "Govee arm light control \u2014 step 3: Send one control command over LAN and confirm the light responds",
+   "owner": "medic",
+   "eta_ts": 1795532400,
+   "escalate_ts": 1795532400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-13f7307ecd583cae",
+   "title": "Govee arm light control \u2014 step 4: Closing \u2014 the arm light answers over LAN control; verified by Medic from the device response",
+   "owner": "medic",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-2d75c84ccc1a1bc6",
+   "title": "Medic Bridge rollout \u2014 step 2: Flip the FORWARD_URL switch on the laptop to the rollout target",
+   "owner": "medic",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-64ec70e0f0313085",
+   "title": "WiZ bulb price-drop claim \u2014 step 2: File the $6.72 price-drop claim",
+   "owner": "medic",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-b2adb22274cffc83",
+   "title": "Crew Discord setup \u2014 step 2: Fix the diagnosed connection fault and restart the bridge watch",
+   "owner": "medic",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-c962630ea98e0822",
    "title": "@hashxburn roast duo profile \u2014 step 3: Record the verified access state on the project (account reachable, by whom, from which session) so the next password problem is not rediscovered from zero",
    "owner": "chet",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-ddd084296a3ffb14",
+   "title": "Second Muse agent \u2014 step 3: Closing \u2014 the linkage is verified and recorded either way; verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-e08d8b6b88c98020",
+   "title": "Samples inbox processing and audit \u2014 step 2: Resume sample outreach under the standing samples rules (samples and coupons only, no survey-only studies, any cost raised = drop)",
+   "owner": "medic",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f649d095175ca2ff",
+   "title": "Grok MQ handoff delivery \u2014 step 2: Deliver the staged handoff over Grok's provisioned MQ lane",
+   "owner": "medic",
    "eta_ts": 1795539600,
    "escalate_ts": 1795539600,
    "state": "queued",
@@ -553,11 +938,88 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-38e0f9be0cea9e45",
+   "title": "IoT device map and quick-trigger controller \u2014 step 1: Re-run the full IoT sweep against all 36 mapped lights",
+   "owner": "medic",
+   "eta_ts": 1795546800,
+   "escalate_ts": 1795546800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-79b129c433ddb9e0",
+   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 3: Run one Siri relay test through to Bluehost",
+   "owner": "medic",
+   "eta_ts": 1795546800,
+   "escalate_ts": 1795546800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-c79091eaf8154156",
+   "title": "WiZ bulb price-drop claim \u2014 step 3: Closing \u2014 the claim is filed with its reference recorded, or closed as not Bruce's to file per his Step 1 answer; verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795546800,
+   "escalate_ts": 1795546800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-d3e45b3b04112770",
    "title": "Winter Bloom public face \u2014 step 3: Close the project \u2014 done = either (go) the handle is secured and verified live under the decided platform and name, verifier Medic by opening it fresh; or (no-go) Bruce's decision is on record and...",
    "owner": "medic",
    "eta_ts": 1795546800,
    "escalate_ts": 1795546800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-11a1617e12ac90e4",
+   "title": "Samples inbox processing and audit \u2014 step 3: Closing \u2014 inbox at zero backlog, outreach resumed, and the audit log current; verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795554000,
+   "escalate_ts": 1795554000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-1c54319f7a88749e",
+   "title": "Medic Bridge rollout \u2014 step 3: Trigger a bridge health report and confirm it arrives fresh",
+   "owner": "medic",
+   "eta_ts": 1795554000,
+   "escalate_ts": 1795554000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-77b77c6adc0fc252",
+   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 4: Closing \u2014 the relay test reaches Bluehost and returns; verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795554000,
+   "escalate_ts": 1795554000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-92dcd607c1dc093f",
+   "title": "Crew Discord setup \u2014 step 3: Push one test escalation through the bridge and confirm it is processed",
+   "owner": "medic",
+   "eta_ts": 1795554000,
+   "escalate_ts": 1795554000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
@@ -580,6 +1042,50 @@
    "owner": "crew",
    "eta_ts": 1795559400,
    "escalate_ts": 1795559400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-5cd1b543c7a63272",
+   "title": "Google Voice number for Medic and Rivet \u2014 step 1: Confirm Voice stays your lane and that Medic's texts continue to route through you",
+   "owner": "rivet",
+   "eta_ts": 1795561200,
+   "escalate_ts": 1795561200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-a7ffa3decd0fc5b0",
+   "title": "Crew Discord setup \u2014 step 4: Closing \u2014 bridge watch runs clean and the test escalation is processed end-to-end; verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795561200,
+   "escalate_ts": 1795561200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-aa0ffe716216d979",
+   "title": "BoxBrain Shared Codex environment \u2014 step 1: Identify which Codex environment your workspace runs under and report it to Medic",
+   "owner": "rivet",
+   "eta_ts": 1795561200,
+   "escalate_ts": 1795561200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-c71d68ce09721a7b",
+   "title": "Desktop-control and screen-comms lane \u2014 step 1: Deliver the detailed Keepawake rev2 write-up Medic is waiting on",
+   "owner": "rivet",
+   "eta_ts": 1795561200,
+   "escalate_ts": 1795561200,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
