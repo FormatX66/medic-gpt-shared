@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795391556,
+ "generated_ts": 1795391685,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -234,6 +234,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-ea285c9a4d4b1f33",
+   "title": "GameGPT test harness \u2014 step 1: Read current harness/catalog and official release version; record compatibility delta",
+   "owner": "rivet",
+   "eta_ts": 1795442400,
+   "escalate_ts": 1795442400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-a810646ce8d32dc4",
    "title": "Process sample emails \u2014 morning",
    "owner": "crew",
@@ -274,6 +285,17 @@
    "escalate_ts": 1795446000,
    "state": "held",
    "t_claimed": 1795391319,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-65c5ac1425aea070",
+   "title": "GameGPT test harness \u2014 step 2: Run existing offline regression suite against current supported profiles",
+   "owner": "rivet",
+   "eta_ts": 1795449600,
+   "escalate_ts": 1795449600,
+   "state": "queued",
+   "t_claimed": null,
    "t_effect": null,
    "source": "planned-work-calendar"
   },
@@ -413,6 +435,17 @@
    "id": "cal-7fd51cf8f9678a60",
    "title": "@formatx Instagram bio update \u2014 step 2: Read back the live @formatx profile and confirm the bio matches the approved text character-for-character",
    "owner": "medic",
+   "eta_ts": 1795456800,
+   "escalate_ts": 1795456800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-877e8e7336664b73",
+   "title": "GameGPT test harness \u2014 step 3: Repair isolated failures and rerun affected regressions or label unsupported version HOLD",
+   "owner": "rivet",
    "eta_ts": 1795456800,
    "escalate_ts": 1795456800,
    "state": "queued",
@@ -586,6 +619,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-d99c56bba45c3278",
+   "title": "GameGPT test harness \u2014 step 4: Reproduce changed-profile checks and inspect before/after catalog evidence",
+   "owner": "medic",
+   "eta_ts": 1795464000,
+   "escalate_ts": 1795464000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-fa2a59109413da9c",
    "title": "Rivet Instagram account \u2014 step 3: Close the project \u2014 done = review outcome and restriction-free state both verified from the account (Steps 1\u20132) and recorded; verifier is Medic. Nothing in this project authorizes posting or messag...",
    "owner": "medic",
@@ -677,6 +721,17 @@
    "id": "cal-2135edc925362c91",
    "title": "Unclaimed property search and claims \u2014 step 1: Present claim packet and filing requirements to Bruce",
    "owner": "medic",
+   "eta_ts": 1795471200,
+   "escalate_ts": 1795471200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-67d805ae3f4a9ad1",
+   "title": "GameGPT test harness \u2014 step 5: Close Nov 23 harness sweep with versioned catalog and pass/hold report; verifier Medic",
+   "owner": "rivet",
    "eta_ts": 1795471200,
    "escalate_ts": 1795471200,
    "state": "queued",
