@@ -1,0 +1,281 @@
+{
+ "generated_ts": 1795374758,
+ "source": "crew-queue-projection",
+ "items": [
+  {
+   "id": "cal-ad5fe5fdf40d1e94",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1794839400,
+   "escalate_ts": 1794839400,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-1b7bb1687fb93645",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1794853800,
+   "escalate_ts": 1794853800,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-67a1ae70142a6682",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1794868200,
+   "escalate_ts": 1794868200,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-0b4f62b5eca0cca0",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1794925800,
+   "escalate_ts": 1794925800,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-03bd86b3b1bbe83c",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1795012200,
+   "escalate_ts": 1795012200,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-58b0a9fdf02e6627",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795026600,
+   "escalate_ts": 1795026600,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-5c34b860d94057ce",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795041000,
+   "escalate_ts": 1795041000,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f546d3962839a6ab",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1795098600,
+   "escalate_ts": 1795098600,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-feaf2b6f026d7c55",
+   "title": "Nov 19 outreach \u2014 7 sent verified",
+   "owner": "crew",
+   "eta_ts": 1795102200,
+   "escalate_ts": 1795102200,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-cca4ae12067790bf",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795113000,
+   "escalate_ts": 1795113000,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-6787a1e607dfff79",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795127400,
+   "escalate_ts": 1795127400,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-5399b7f4a72b0afd",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1795185000,
+   "escalate_ts": 1795185000,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-efd0375264bc69fc",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795199400,
+   "escalate_ts": 1795199400,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-8b5ea553643bfe07",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795213800,
+   "escalate_ts": 1795213800,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-2a4e13c91a43760e",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1795271400,
+   "escalate_ts": 1795271400,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-412d962d0114d1b6",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795285800,
+   "escalate_ts": 1795285800,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-92ee0ae1e7eaf37c",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795300200,
+   "escalate_ts": 1795300200,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-8e11370b5313fc97",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1795357800,
+   "escalate_ts": 1795357800,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f9517959449f5f1a",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795372200,
+   "escalate_ts": 1795372200,
+   "state": "held",
+   "t_claimed": 1795374320,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-8e7c3017f2edde00",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795386600,
+   "escalate_ts": 1795386600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-a810646ce8d32dc4",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1795444200,
+   "escalate_ts": 1795444200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-fda79bf696b6002e",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795458600,
+   "escalate_ts": 1795458600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-fff0703ce18a2eaa",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795473000,
+   "escalate_ts": 1795473000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-a34af9b9cc877308",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1795530600,
+   "escalate_ts": 1795530600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-59d065e427887cb7",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795545000,
+   "escalate_ts": 1795545000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  }
+ ]
+}
