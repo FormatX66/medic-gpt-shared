@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795383654,
+ "generated_ts": 1795385458,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -316,6 +316,17 @@
    "owner": "rivet",
    "eta_ts": 1795557600,
    "escalate_ts": 1795557600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-d4dcd5bb767c4626",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795559400,
+   "escalate_ts": 1795559400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
