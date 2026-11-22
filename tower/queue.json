@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795390515,
+ "generated_ts": 1795391103,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -234,6 +234,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-a63e55b677cdfc7e",
+   "title": "Crew project planning \u2014 Medic slice (comms 18, kids/home 7, 255, samples, persona co-pilot)",
+   "owner": "medic",
+   "eta_ts": 1795446000,
+   "escalate_ts": 1795446000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-56f7f7fe9c9bf373",
    "title": "Post Chet's staged Saturday post (content ready, verbatim)",
    "owner": "medic",
@@ -256,6 +267,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-bfd64bf338fef770",
+   "title": "Crew project planning \u2014 Square slice (band/creative 5, Maytag, unclaimed property, earning challenge)",
+   "owner": "gemini",
+   "eta_ts": 1795460400,
+   "escalate_ts": 1795460400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-a9f4f152cbfeb147",
    "title": "Quest Board sync \u2014 settle Morri's three closed credits (60 HYPE expected to reverse) + fresh pull for both kids",
    "owner": "medic",
@@ -272,6 +294,17 @@
    "owner": "crew",
    "eta_ts": 1795473000,
    "escalate_ts": 1795473000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-43f827d45adb79e2",
+   "title": "Crew project planning \u2014 Rivet slice (GameGPT/games 8, codelation/research 5)",
+   "owner": "rivet",
+   "eta_ts": 1795474800,
+   "escalate_ts": 1795474800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
