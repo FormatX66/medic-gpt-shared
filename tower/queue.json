@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795468253,
+ "generated_ts": 1795470059,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2054,6 +2054,50 @@
    "owner": "medic",
    "eta_ts": 1795642200,
    "escalate_ts": 1795642200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-831e1c04c7fbd635",
+   "title": "PRIORITY \u2014 Clock Tower canary \u2014 joint staging once Rivet's launcher proof + store pinning land (package v0.1 only; event row still unset)",
+   "owner": "rivet",
+   "eta_ts": 1795644000,
+   "escalate_ts": 1795644000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-905c39c7d70b447f",
+   "title": "Clock Tower migration to the Pi \u2014 step 1: Deliver the supported launcher proof for the guarded wake",
+   "owner": "rivet",
+   "eta_ts": 1795644000,
+   "escalate_ts": 1795644000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-b26b62f97a186797",
+   "title": "VIP Circle founding and admission handshake \u2014 step 4: Close the project \u2014 done = the founding handshake is proven working on a real batch: joint scores on record and decisions delivered (Step 3), or a verified zero-applicant state ...",
+   "owner": "chet",
+   "eta_ts": 1795644000,
+   "escalate_ts": 1795644000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-bed60d7b2af25b68",
+   "title": "Tally unattended wake doorbell \u2014 step 1: Rule on the dispatch store for future production wake work",
+   "owner": "rivet",
+   "eta_ts": 1795644000,
+   "escalate_ts": 1795644000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
