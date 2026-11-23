@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795459269,
+ "generated_ts": 1795462881,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1966,6 +1966,28 @@
    "owner": "chet",
    "eta_ts": 1795633200,
    "escalate_ts": 1795633200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-2133cb981c7c53fd",
+   "title": "Crewbox \u2014 step 4: Wake-bot home acceptance \u2014 reboot crewbox and prove bot self-recovers; one test doorbell starts exactly one Rivet turn (Rivet's conditions)",
+   "owner": "medic",
+   "eta_ts": 1795636800,
+   "escalate_ts": 1795636800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-cddb0999f4ed4bfd",
+   "title": "Streamlined Instagram account creation \u2014 step 2: Complete Tally's profile \u2014 the roster names it as next \u2014 using the same creation flow as the existing crew profiles, stopping at any step that requires Bruce (sign-in, password, iden...",
+   "owner": "chet",
+   "eta_ts": 1795636800,
+   "escalate_ts": 1795636800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
