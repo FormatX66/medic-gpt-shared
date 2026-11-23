@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795398043,
+ "generated_ts": 1795441246,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-ecc30hnqdjrv8vv8",
-   "title": "Communication Routes space \u2014 step 1: Run the scheduled refresh of the 13-lane Communication Routes space",
-   "owner": "crew",
-   "eta_ts": 1795439820,
-   "source": "planned-work-calendar",
-   "event_id": "ecc30hnqdjrv8vv87dso41rcg8"
-  },
   {
    "id": "cal-4hvbnlb0gn4pefmp",
    "title": "GameGPT test harness \u2014 step 1: Read current harness/catalog and official release version; record compatibility delta",
