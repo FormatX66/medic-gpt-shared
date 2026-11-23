@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795443054,
+ "generated_ts": 1795444853,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bcvd6iakvgodj3sv",
-   "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
-   "eta_ts": 1795444200,
-   "source": "planned-work-calendar",
-   "event_id": "bcvd6iakvgodj3svvuflece30k_20261123T140000Z"
-  },
   {
    "id": "cal-f2ksooubf1tlor04",
    "title": "Kids' schoolwork catalog \u2014 step 1: Check Bruce's Gmail for the L.C. Bird counseling reply carrying the ParentVUE activation code (verification step)",
@@ -953,6 +945,54 @@
    "eta_ts": 1795617000,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261125T140000Z"
+  },
+  {
+   "id": "cal-57mbk159kvtsss33",
+   "title": "League of Space Pirates EarthQuaker submission \u2014 step 4: Step-exact send approval",
+   "owner": "crew",
+   "eta_ts": 1795618800,
+   "source": "planned-work-calendar",
+   "event_id": "57mbk159kvtsss33a8np16ov08"
+  },
+  {
+   "id": "cal-cntsdn9kfiol5l2a",
+   "title": "Muse.ai accounts for Rivet and Medic \u2014 step 2: Verify both new accounts exist and can be signed into",
+   "owner": "crew",
+   "eta_ts": 1795618800,
+   "source": "planned-work-calendar",
+   "event_id": "cntsdn9kfiol5l2atai30b5f5c"
+  },
+  {
+   "id": "cal-ouel26srtffnjf6r",
+   "title": "GPT ads satire video \u2014 step 3: Route project based on verdict",
+   "owner": "crew",
+   "eta_ts": 1795618800,
+   "source": "planned-work-calendar",
+   "event_id": "ouel26srtffnjf6rsovfiobr4s"
+  },
+  {
+   "id": "cal-prfbdutk2pil1o8k",
+   "title": "Medic Bridge rollout \u2014 step 4: Closing \u2014 a fresh healthy bridge report is on record after the switch; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795618800,
+   "source": "planned-work-calendar",
+   "event_id": "prfbdutk2pil1o8k7mjc6hdgjk"
+  },
+  {
+   "id": "cal-qkgad050fujjr86i",
+   "title": "BoxBrain backend crew \u2014 step 5: Deploy Windows supervisor on Hex",
+   "owner": "crew",
+   "eta_ts": 1795618800,
+   "source": "planned-work-calendar",
+   "event_id": "qkgad050fujjr86ibrg5oeujg4"
+  },
+  {
+   "id": "cal-vvsice739unu8o2m",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 5: Step-exact send approval",
+   "owner": "crew",
+   "eta_ts": 1795618800,
+   "source": "planned-work-calendar",
+   "event_id": "vvsice739unu8o2m4hqcptgr58"
   }
  ]
 }
