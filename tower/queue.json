@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795394465,
+ "generated_ts": 1795394891,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -289,6 +289,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-c153f44d7c7d9509",
+   "title": "Crewbox (Oracle free VM) \u2014 step 1: Bruce creates Oracle account + crewbox instance (Ashburn, A1.Flex 2 OCPU/12GB, Ubuntu 24.04 ARM, Medic SSH key), sends Medic the public IP",
+   "owner": "bruce",
+   "eta_ts": 1795446000,
+   "escalate_ts": 1795446000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-65c5ac1425aea070",
    "title": "GameGPT test harness \u2014 step 2: Run existing offline regression suite against current supported profiles",
    "owner": "rivet",
@@ -522,6 +533,17 @@
   {
    "id": "cal-183e68c500896fe9",
    "title": "Siri breakout \u2014 step 1: Verify the typed web app lane is still live (breakout itself stays rested at Bruce's request)",
+   "owner": "medic",
+   "eta_ts": 1795460400,
+   "escalate_ts": 1795460400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-78071e546468e155",
+   "title": "Crewbox \u2014 step 2: Medic provisions (bootstrap.sh), tailscale join, repo clones, Square seat migration + verified heartbeat",
    "owner": "medic",
    "eta_ts": 1795460400,
    "escalate_ts": 1795460400,
@@ -1028,6 +1050,17 @@
   {
    "id": "cal-64ec70e0f0313085",
    "title": "WiZ bulb price-drop claim \u2014 step 2: File the $6.72 price-drop claim",
+   "owner": "medic",
+   "eta_ts": 1795539600,
+   "escalate_ts": 1795539600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-ac256a4597af283d",
+   "title": "Crewbox \u2014 step 3: Medic installs wake bot up to the ChatGPT sign-in step (persistent browser + DevTools MCP), Bruce signs in once",
    "owner": "medic",
    "eta_ts": 1795539600,
    "escalate_ts": 1795539600,
