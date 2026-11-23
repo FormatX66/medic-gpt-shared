@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795461054,
+ "generated_ts": 1795462873,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bnv3jfumoso676mv",
-   "title": "@hashxburn roast duo profile \u2014 step 2: Verify crew-side access \u2014 sign in to @hashxburn in the shared browser session and confirm the profile loads as the roast duo account, not a challenge or a different account",
-   "owner": "crew",
-   "eta_ts": 1795462200,
-   "source": "planned-work-calendar",
-   "event_id": "bnv3jfumoso676mv7n3jklqca4"
-  },
-  {
-   "id": "cal-c5vk4bi0qh7a5sr1",
-   "title": "Rivet Instagram account \u2014 step 1: Verify from the account itself that the Instagram review outcome stands and no messaging restriction is in force (roster: review completed Nov 17, restriction removed ahead of Dec 14)",
-   "owner": "crew",
-   "eta_ts": 1795462200,
-   "source": "planned-work-calendar",
-   "event_id": "c5vk4bi0qh7a5sr19kddd1qc1k"
-  },
   {
    "id": "cal-7hf7h2uh4j0b47pu",
    "title": "Quest Board sync \u2014 settle Morri's three closed credits (60 HYPE expected to reverse) + fresh pull for both kids",
@@ -1001,6 +985,22 @@
    "eta_ts": 1795633200,
    "source": "planned-work-calendar",
    "event_id": "udf00vu6mpbcaef598bipe2v9g"
+  },
+  {
+   "id": "cal-3gjllc079hvj3v11",
+   "title": "Streamlined Instagram account creation \u2014 step 2: Complete Tally's profile \u2014 the roster names it as next \u2014 using the same creation flow as the existing crew profiles, stopping at any step that requires Bruce (sign-in, password, iden...",
+   "owner": "crew",
+   "eta_ts": 1795636800,
+   "source": "planned-work-calendar",
+   "event_id": "3gjllc079hvj3v11l10tf5cri4"
+  },
+  {
+   "id": "cal-cag7468adaoncdpf",
+   "title": "Crewbox \u2014 step 4: Wake-bot home acceptance \u2014 reboot crewbox and prove bot self-recovers; one test doorbell starts exactly one Rivet turn (Rivet's conditions)",
+   "owner": "crew",
+   "eta_ts": 1795636800,
+   "source": "planned-work-calendar",
+   "event_id": "cag7468adaoncdpf8db13ebm40"
   }
  ]
 }
