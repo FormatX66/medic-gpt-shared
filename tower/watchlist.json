@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795392649,
+ "generated_ts": 1795394457,
  "horizon_h": 48,
  "items": [
   {
@@ -905,6 +905,22 @@
    "eta_ts": 1795564800,
    "source": "planned-work-calendar",
    "event_id": "5ta8ddit5hno0ej92cd529m9u4"
+  },
+  {
+   "id": "cal-1o98kq982q2ga0sn",
+   "title": "Tally reviewed positions (DevTools packet + pickup-gap review)",
+   "owner": "crew",
+   "eta_ts": 1795568400,
+   "source": "planned-work-calendar",
+   "event_id": "1o98kq982q2ga0sngijr4tt7a0"
+  },
+  {
+   "id": "cal-30ip3318u3ro61ir",
+   "title": "Muse.ai accounts for Rivet and Medic \u2014 step 1: In a laptop session, create the Muse.ai accounts for Rivet and for Medic, entering any passwords or codes yourself",
+   "owner": "crew",
+   "eta_ts": 1795568400,
+   "source": "planned-work-calendar",
+   "event_id": "30ip3318u3ro61irsq0ameu5gg"
   }
  ]
 }
