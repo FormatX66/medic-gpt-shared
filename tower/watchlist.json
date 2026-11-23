@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795468244,
+ "generated_ts": 1795470052,
  "horizon_h": 48,
  "items": [
   {
@@ -929,6 +929,38 @@
    "eta_ts": 1795642200,
    "source": "planned-work-calendar",
    "event_id": "ok2vk373n3tfjnh0are7t882c4"
+  },
+  {
+   "id": "cal-r5q15bt1h2pvi34q",
+   "title": "VIP Circle founding and admission handshake \u2014 step 4: Close the project \u2014 done = the founding handshake is proven working on a real batch: joint scores on record and decisions delivered (Step 3), or a verified zero-applicant state ...",
+   "owner": "crew",
+   "eta_ts": 1795644000,
+   "source": "planned-work-calendar",
+   "event_id": "r5q15bt1h2pvi34qed8b9d87kc"
+  },
+  {
+   "id": "cal-s591mcmri60rcfmg",
+   "title": "Tally unattended wake doorbell \u2014 step 1: Rule on the dispatch store for future production wake work",
+   "owner": "crew",
+   "eta_ts": 1795644000,
+   "source": "planned-work-calendar",
+   "event_id": "s591mcmri60rcfmguj4m4lqtqg"
+  },
+  {
+   "id": "cal-sdgrgt8j25sp5mkc",
+   "title": "Clock Tower migration to the Pi \u2014 step 1: Deliver the supported launcher proof for the guarded wake",
+   "owner": "crew",
+   "eta_ts": 1795644000,
+   "source": "planned-work-calendar",
+   "event_id": "sdgrgt8j25sp5mkc7mfq5su9p0"
+  },
+  {
+   "id": "cal-u75bdnhp7vqflf91",
+   "title": "PRIORITY \u2014 Clock Tower canary \u2014 joint staging once Rivet's launcher proof + store pinning land (package v0.1 only; event row still unset)",
+   "owner": "crew",
+   "eta_ts": 1795644000,
+   "source": "planned-work-calendar",
+   "event_id": "u75bdnhp7vqflf91o6i115dsoc"
   }
  ]
 }
