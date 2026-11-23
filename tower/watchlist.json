@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795396267,
+ "generated_ts": 1795398043,
  "horizon_h": 48,
  "items": [
   {
@@ -945,6 +945,22 @@
    "eta_ts": 1795568400,
    "source": "planned-work-calendar",
    "event_id": "30ip3318u3ro61irsq0ameu5gg"
+  },
+  {
+   "id": "cal-k649eoni416qgvco",
+   "title": "Copilot (Tally) Git lead production team \u2014 step 2: Deliver the revised repo-map",
+   "owner": "crew",
+   "eta_ts": 1795572000,
+   "source": "planned-work-calendar",
+   "event_id": "k649eoni416qgvcoj0luac376k"
+  },
+  {
+   "id": "cal-piajuctnhasjgfcf",
+   "title": "Tally Bluehost connector \u2014 step 2: Run the fresh Bluehost inbox cleanup through the connector",
+   "owner": "crew",
+   "eta_ts": 1795572000,
+   "source": "planned-work-calendar",
+   "event_id": "piajuctnhasjgfcffa3lvoh08o"
   }
  ]
 }
