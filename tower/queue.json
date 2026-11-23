@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795396275,
+ "generated_ts": 1795398049,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1548,6 +1548,28 @@
    "owner": "bruce",
    "eta_ts": 1795568400,
    "escalate_ts": 1795568400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-6d67bc332c179b14",
+   "title": "Copilot (Tally) Git lead production team \u2014 step 2: Deliver the revised repo-map",
+   "owner": "copilot",
+   "eta_ts": 1795572000,
+   "escalate_ts": 1795572000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-da3f660ca8a93f13",
+   "title": "Tally Bluehost connector \u2014 step 2: Run the fresh Bluehost inbox cleanup through the connector",
+   "owner": "copilot",
+   "eta_ts": 1795572000,
+   "escalate_ts": 1795572000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
