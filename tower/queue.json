@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795473652,
+ "generated_ts": 1795475468,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2164,6 +2164,17 @@
    "owner": "bruce",
    "eta_ts": 1795647600,
    "escalate_ts": 1795647600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-b6f28a3dc02adeba",
+   "title": "Crew socials launch \u2014 step 3: Close the project \u2014 done = the Halloween launch is verified complete (Step 1) AND Bruce's Step 2 decision is on record: either a successor cycle exists as its own new project, or the launch stands clos...",
+   "owner": "medic",
+   "eta_ts": 1795649400,
+   "escalate_ts": 1795649400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
