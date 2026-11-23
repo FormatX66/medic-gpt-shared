@@ -1,79 +1,7 @@
 {
- "generated_ts": 1795452044,
+ "generated_ts": 1795453849,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-01abo7oegdd6l5bn",
-   "title": "Persona accounts co-pilot \u2014 step 1: Sign @chet.connetic back into the shared browser session's Instagram switcher",
-   "owner": "crew",
-   "eta_ts": 1795453200,
-   "source": "planned-work-calendar",
-   "event_id": "01abo7oegdd6l5bnp0kp1mh00g"
-  },
-  {
-   "id": "cal-34vk9gqqki7vpop6",
-   "title": "Copilot (Tally) Git lead production team \u2014 step 1: Re-issue the repo-map revision request to Tally with its scope restated (revision overdue since Oct 23, no delivery recorded)",
-   "owner": "crew",
-   "eta_ts": 1795453200,
-   "source": "planned-work-calendar",
-   "event_id": "34vk9gqqki7vpop675ma33pdes"
-  },
-  {
-   "id": "cal-c23fapnp95v2u3rk",
-   "title": "Grok MQ handoff delivery \u2014 step 1: Check whether Grok has returned from max usage (verification step)",
-   "owner": "crew",
-   "eta_ts": 1795453200,
-   "source": "planned-work-calendar",
-   "event_id": "c23fapnp95v2u3rk93s3uhodh4"
-  },
-  {
-   "id": "cal-d60pkeuo64hlsti7",
-   "title": "Chet Connetic Instagram account \u2014 step 1: Sign @chet.connetic into the browser's saved switcher session in the Instagram app (the same sitting as the @medic.connetic.x sign-in)",
-   "owner": "crew",
-   "eta_ts": 1795453200,
-   "source": "planned-work-calendar",
-   "event_id": "d60pkeuo64hlsti7lfo9inmmq4"
-  },
-  {
-   "id": "cal-etrmlnojp9v0brkr",
-   "title": "WiZ bulb price-drop claim \u2014 step 1: Confirm whether the Quicksilver network logo is the one tied to your bulb purchase",
-   "owner": "crew",
-   "eta_ts": 1795453200,
-   "source": "planned-work-calendar",
-   "event_id": "etrmlnojp9v0brkrn3kmd2idf0"
-  },
-  {
-   "id": "cal-higkdd1a0u3nqc1n",
-   "title": "Second Muse agent \u2014 step 1: Confirm whether the new agent is tied to arkmatx@gmail.com (yes or no)",
-   "owner": "crew",
-   "eta_ts": 1795453200,
-   "source": "planned-work-calendar",
-   "event_id": "higkdd1a0u3nqc1nn1t38fru98"
-  },
-  {
-   "id": "cal-pqmpvfmiij4rc5sq",
-   "title": "Communication Routes space \u2014 step 2: Verify every listed lane against its live source and correct any stale entry",
-   "owner": "crew",
-   "eta_ts": 1795453200,
-   "source": "planned-work-calendar",
-   "event_id": "pqmpvfmiij4rc5sqc7giklp45s"
-  },
-  {
-   "id": "cal-q0cjpl1dau6mholr",
-   "title": "Agent Relay onboarding \u2014 step 1: Create the Agent Relay cloud account and workspace at agentrelay.com",
-   "owner": "crew",
-   "eta_ts": 1795453200,
-   "source": "planned-work-calendar",
-   "event_id": "q0cjpl1dau6mholrj5i3rruk78"
-  },
-  {
-   "id": "cal-skjo3rb84jk023n1",
-   "title": "Post Chet's staged Saturday post (content ready, verbatim)",
-   "owner": "crew",
-   "eta_ts": 1795453200,
-   "source": "planned-work-calendar",
-   "event_id": "skjo3rb84jk023n14ses5813ko"
-  },
   {
    "id": "cal-2oo9labgd80otu4q",
    "title": "Persona accounts co-pilot \u2014 step 2: Post Chet's staged Saturday post verbatim and verify it live",
@@ -1089,6 +1017,38 @@
    "eta_ts": 1795626000,
    "source": "planned-work-calendar",
    "event_id": "vc2qfj221luogvd0r44ovdjgic"
+  },
+  {
+   "id": "cal-8v9p0jdkrr6va693",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 7: Transmission verified",
+   "owner": "crew",
+   "eta_ts": 1795627800,
+   "source": "planned-work-calendar",
+   "event_id": "8v9p0jdkrr6va6938jg8v8u768"
+  },
+  {
+   "id": "cal-dmakr5pairl2ipkj",
+   "title": "League of Space Pirates EarthQuaker submission \u2014 step 6: Delivery verification",
+   "owner": "crew",
+   "eta_ts": 1795627800,
+   "source": "planned-work-calendar",
+   "event_id": "dmakr5pairl2ipkj66mc2frmjo"
+  },
+  {
+   "id": "cal-drk29vib6bsd4cvp",
+   "title": "Unclaimed property search and claims \u2014 step 5: Claim confirmation filed",
+   "owner": "crew",
+   "eta_ts": 1795627800,
+   "source": "planned-work-calendar",
+   "event_id": "drk29vib6bsd4cvpu8gqfjc58o"
+  },
+  {
+   "id": "cal-matrsk6q5tsupeac",
+   "title": "Medic-Rivet earning challenge \u2014 step 6: Challenge kickoff verified",
+   "owner": "crew",
+   "eta_ts": 1795627800,
+   "source": "planned-work-calendar",
+   "event_id": "matrsk6q5tsupeacagg2pj879c"
   }
  ]
 }
