@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795471846,
+ "generated_ts": 1795473647,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-ht37mik1jt0ohnn5",
-   "title": "Process sample emails \u2014 evening",
-   "owner": "crew",
-   "eta_ts": 1795473000,
-   "source": "planned-work-calendar",
-   "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261123T220000Z"
-  },
   {
    "id": "cal-5nf6rk3vrk71kcql",
    "title": "Medic-Rivet earning challenge \u2014 step 1: Deliver finalized race terms and account checklist to Bruce",
@@ -81,6 +73,14 @@
    "eta_ts": 1795485600,
    "source": "planned-work-calendar",
    "event_id": "sf06lh5fvd6658u8d4out9rrt8"
+  },
+  {
+   "id": "cal-bp2sbbsj0elgghf4",
+   "title": "Vet Samples prospects",
+   "owner": "crew",
+   "eta_ts": 1795528200,
+   "source": "planned-work-calendar",
+   "event_id": "bp2sbbsj0elgghf4q384807m8k_20261124T133000Z"
   },
   {
    "id": "cal-bcvd6iakvgodj3sv",
@@ -555,6 +555,14 @@
    "event_id": "piajuctnhasjgfcffa3lvoh08o"
   },
   {
+   "id": "cal-bp2sbbsj0elgghf4",
+   "title": "Vet Samples prospects",
+   "owner": "crew",
+   "eta_ts": 1795614600,
+   "source": "planned-work-calendar",
+   "event_id": "bp2sbbsj0elgghf4q384807m8k_20261125T133000Z"
+  },
+  {
    "id": "cal-bcvd6iakvgodj3sv",
    "title": "Process sample emails \u2014 morning",
    "owner": "crew",
@@ -953,6 +961,22 @@
    "eta_ts": 1795645800,
    "source": "planned-work-calendar",
    "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261125T220000Z"
+  },
+  {
+   "id": "cal-il8qtmjdbumpaisv",
+   "title": "Rivet reset and recovery \u2014 step 1: Make and record your new-home scaffold decisions",
+   "owner": "crew",
+   "eta_ts": 1795647600,
+   "source": "planned-work-calendar",
+   "event_id": "il8qtmjdbumpaisvss3u9rmapk"
+  },
+  {
+   "id": "cal-ufq3lrujvfjggqa2",
+   "title": "Crew socials launch \u2014 step 2: Decide whether a next crew socials cycle exists \u2014 a named cycle with dates, or an explicit \"launch closed, no successor\"",
+   "owner": "crew",
+   "eta_ts": 1795647600,
+   "source": "planned-work-calendar",
+   "event_id": "ufq3lrujvfjggqa2h8e7uusvt8"
   }
  ]
 }
