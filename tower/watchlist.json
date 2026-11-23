@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795446652,
+ "generated_ts": 1795450251,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-71ore0sp9vrb76v9",
-   "title": "GameGPT test harness \u2014 step 2: Run existing offline regression suite against current supported profiles",
-   "owner": "crew",
-   "eta_ts": 1795449600,
-   "source": "planned-work-calendar",
-   "event_id": "71ore0sp9vrb76v9v0gc4v4s9s"
-  },
   {
    "id": "cal-01abo7oegdd6l5bn",
    "title": "Persona accounts co-pilot \u2014 step 1: Sign @chet.connetic back into the shared browser session's Instagram switcher",
