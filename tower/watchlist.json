@@ -1,31 +1,7 @@
 {
- "generated_ts": 1795473647,
+ "generated_ts": 1795475460,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-5nf6rk3vrk71kcql",
-   "title": "Medic-Rivet earning challenge \u2014 step 1: Deliver finalized race terms and account checklist to Bruce",
-   "owner": "crew",
-   "eta_ts": 1795474800,
-   "source": "planned-work-calendar",
-   "event_id": "5nf6rk3vrk71kcqlbi4f900oos"
-  },
-  {
-   "id": "cal-iq8ab89loebivake",
-   "title": "Persona accounts co-pilot \u2014 step 3: Run the comment watch over @wetbeard.rva, @dogzig13, and @rustylosp and draft persona-voice replies for Bruce's tap",
-   "owner": "crew",
-   "eta_ts": 1795474800,
-   "source": "planned-work-calendar",
-   "event_id": "iq8ab89loebivakelp84et72m8"
-  },
-  {
-   "id": "cal-n18jr5uudmdn119n",
-   "title": "Samples inbox processing and audit \u2014 step 1: Clear the current samples inbox backlog and bring the audit current",
-   "owner": "crew",
-   "eta_ts": 1795474800,
-   "source": "planned-work-calendar",
-   "event_id": "n18jr5uudmdn119nbqokikf6ds"
-  },
   {
    "id": "cal-adaie0a5hpoogll0",
    "title": "Winter Bloom public face \u2014 step 1: Decide the three open calls in one sitting: platform, handle, and launch go / no-go",
@@ -977,6 +953,14 @@
    "eta_ts": 1795647600,
    "source": "planned-work-calendar",
    "event_id": "ufq3lrujvfjggqa2h8e7uusvt8"
+  },
+  {
+   "id": "cal-s8ilo0rf9oepgarj",
+   "title": "Crew socials launch \u2014 step 3: Close the project \u2014 done = the Halloween launch is verified complete (Step 1) AND Bruce's Step 2 decision is on record: either a successor cycle exists as its own new project, or the launch stands clos...",
+   "owner": "crew",
+   "eta_ts": 1795649400,
+   "source": "planned-work-calendar",
+   "event_id": "s8ilo0rf9oepgarjiit9ae32ug"
   }
  ]
 }
