@@ -1,7 +1,23 @@
 {
- "generated_ts": 1795390844,
+ "generated_ts": 1795392649,
  "horizon_h": 48,
  "items": [
+  {
+   "id": "cal-ecc30hnqdjrv8vv8",
+   "title": "Communication Routes space \u2014 step 1: Run the scheduled refresh of the 13-lane Communication Routes space",
+   "owner": "crew",
+   "eta_ts": 1795439820,
+   "source": "planned-work-calendar",
+   "event_id": "ecc30hnqdjrv8vv87dso41rcg8"
+  },
+  {
+   "id": "cal-4hvbnlb0gn4pefmp",
+   "title": "GameGPT test harness \u2014 step 1: Read current harness/catalog and official release version; record compatibility delta",
+   "owner": "crew",
+   "eta_ts": 1795442400,
+   "source": "planned-work-calendar",
+   "event_id": "4hvbnlb0gn4pefmppgkgtig74s"
+  },
   {
    "id": "cal-bcvd6iakvgodj3sv",
    "title": "Process sample emails \u2014 morning",
@@ -9,6 +25,94 @@
    "eta_ts": 1795444200,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261123T140000Z"
+  },
+  {
+   "id": "cal-f2ksooubf1tlor04",
+   "title": "Kids' schoolwork catalog \u2014 step 1: Check Bruce's Gmail for the L.C. Bird counseling reply carrying the ParentVUE activation code (verification step)",
+   "owner": "crew",
+   "eta_ts": 1795446000,
+   "source": "planned-work-calendar",
+   "event_id": "f2ksooubf1tlor04ftvjkqe5ho"
+  },
+  {
+   "id": "cal-rrnnj96pqha1s8do",
+   "title": "Tally Bluehost connector \u2014 step 1: Verify Hex is up and the Bluehost connector path is ready to run",
+   "owner": "crew",
+   "eta_ts": 1795446000,
+   "source": "planned-work-calendar",
+   "event_id": "rrnnj96pqha1s8domrjr8k4108"
+  },
+  {
+   "id": "cal-71ore0sp9vrb76v9",
+   "title": "GameGPT test harness \u2014 step 2: Run existing offline regression suite against current supported profiles",
+   "owner": "crew",
+   "eta_ts": 1795449600,
+   "source": "planned-work-calendar",
+   "event_id": "71ore0sp9vrb76v9v0gc4v4s9s"
+  },
+  {
+   "id": "cal-01abo7oegdd6l5bn",
+   "title": "Persona accounts co-pilot \u2014 step 1: Sign @chet.connetic back into the shared browser session's Instagram switcher",
+   "owner": "crew",
+   "eta_ts": 1795453200,
+   "source": "planned-work-calendar",
+   "event_id": "01abo7oegdd6l5bnp0kp1mh00g"
+  },
+  {
+   "id": "cal-34vk9gqqki7vpop6",
+   "title": "Copilot (Tally) Git lead production team \u2014 step 1: Re-issue the repo-map revision request to Tally with its scope restated (revision overdue since Oct 23, no delivery recorded)",
+   "owner": "crew",
+   "eta_ts": 1795453200,
+   "source": "planned-work-calendar",
+   "event_id": "34vk9gqqki7vpop675ma33pdes"
+  },
+  {
+   "id": "cal-c23fapnp95v2u3rk",
+   "title": "Grok MQ handoff delivery \u2014 step 1: Check whether Grok has returned from max usage (verification step)",
+   "owner": "crew",
+   "eta_ts": 1795453200,
+   "source": "planned-work-calendar",
+   "event_id": "c23fapnp95v2u3rk93s3uhodh4"
+  },
+  {
+   "id": "cal-d60pkeuo64hlsti7",
+   "title": "Chet Connetic Instagram account \u2014 step 1: Sign @chet.connetic into the browser's saved switcher session in the Instagram app (the same sitting as the @medic.connetic.x sign-in)",
+   "owner": "crew",
+   "eta_ts": 1795453200,
+   "source": "planned-work-calendar",
+   "event_id": "d60pkeuo64hlsti7lfo9inmmq4"
+  },
+  {
+   "id": "cal-etrmlnojp9v0brkr",
+   "title": "WiZ bulb price-drop claim \u2014 step 1: Confirm whether the Quicksilver network logo is the one tied to your bulb purchase",
+   "owner": "crew",
+   "eta_ts": 1795453200,
+   "source": "planned-work-calendar",
+   "event_id": "etrmlnojp9v0brkrn3kmd2idf0"
+  },
+  {
+   "id": "cal-higkdd1a0u3nqc1n",
+   "title": "Second Muse agent \u2014 step 1: Confirm whether the new agent is tied to arkmatx@gmail.com (yes or no)",
+   "owner": "crew",
+   "eta_ts": 1795453200,
+   "source": "planned-work-calendar",
+   "event_id": "higkdd1a0u3nqc1nn1t38fru98"
+  },
+  {
+   "id": "cal-pqmpvfmiij4rc5sq",
+   "title": "Communication Routes space \u2014 step 2: Verify every listed lane against its live source and correct any stale entry",
+   "owner": "crew",
+   "eta_ts": 1795453200,
+   "source": "planned-work-calendar",
+   "event_id": "pqmpvfmiij4rc5sqc7giklp45s"
+  },
+  {
+   "id": "cal-q0cjpl1dau6mholr",
+   "title": "Agent Relay onboarding \u2014 step 1: Create the Agent Relay cloud account and workspace at agentrelay.com",
+   "owner": "crew",
+   "eta_ts": 1795453200,
+   "source": "planned-work-calendar",
+   "event_id": "q0cjpl1dau6mholrj5i3rruk78"
   },
   {
    "id": "cal-skjo3rb84jk023n1",
@@ -19,12 +123,132 @@
    "event_id": "skjo3rb84jk023n14ses5813ko"
   },
   {
+   "id": "cal-2oo9labgd80otu4q",
+   "title": "Persona accounts co-pilot \u2014 step 2: Post Chet's staged Saturday post verbatim and verify it live",
+   "owner": "crew",
+   "eta_ts": 1795455000,
+   "source": "planned-work-calendar",
+   "event_id": "2oo9labgd80otu4q6rsaki0ros"
+  },
+  {
+   "id": "cal-c5gt3s3up1qmsme7",
+   "title": "Chet Connetic Instagram account \u2014 step 2: Post Chet's staged Saturday post verbatim \u2014 the staged media and caption as prepared, no rewording, no substitute content",
+   "owner": "crew",
+   "eta_ts": 1795455000,
+   "source": "planned-work-calendar",
+   "event_id": "c5gt3s3up1qmsme7hi74n6qdg0"
+  },
+  {
+   "id": "cal-cj8ebhcqk9a6dkmp",
+   "title": "@formatx Instagram bio update \u2014 step 1: Paste the approved bio text into the @formatx profile in the Instagram app, exactly as saved \u2014 no edits in the app",
+   "owner": "crew",
+   "eta_ts": 1795455000,
+   "source": "planned-work-calendar",
+   "event_id": "cj8ebhcqk9a6dkmp7ertnin03c"
+  },
+  {
+   "id": "cal-1pgmud5clcbg3oqi",
+   "title": "Chet Connetic Instagram account \u2014 step 3: Verify the post is live on @chet.connetic and that the switcher moves between the crew accounts in both directions without a login wall",
+   "owner": "crew",
+   "eta_ts": 1795456800,
+   "source": "planned-work-calendar",
+   "event_id": "1pgmud5clcbg3oqij8o97ef7go"
+  },
+  {
+   "id": "cal-ahcgdicj57j9v95s",
+   "title": "GameGPT test harness \u2014 step 3: Repair isolated failures and rerun affected regressions or label unsupported version HOLD",
+   "owner": "crew",
+   "eta_ts": 1795456800,
+   "source": "planned-work-calendar",
+   "event_id": "ahcgdicj57j9v95s6rr9m7035k"
+  },
+  {
+   "id": "cal-gkunfpb4us2u64le",
+   "title": "@formatx Instagram bio update \u2014 step 2: Read back the live @formatx profile and confirm the bio matches the approved text character-for-character",
+   "owner": "crew",
+   "eta_ts": 1795456800,
+   "source": "planned-work-calendar",
+   "event_id": "gkunfpb4us2u64leedbtqbqqas"
+  },
+  {
+   "id": "cal-0q8m1ttr2u97jrjq",
+   "title": "@formatx Instagram bio update \u2014 step 3: Close the project \u2014 done = the approved bio is live on the profile, verified by Medic's read-back in Step 2; any mismatch reopens Step 1, it does not get edited live by an agent",
+   "owner": "crew",
+   "eta_ts": 1795457700,
+   "source": "planned-work-calendar",
+   "event_id": "0q8m1ttr2u97jrjqo71d96m7tg"
+  },
+  {
+   "id": "cal-7s4fe4oe1j2rli77",
+   "title": "Chet Connetic Instagram account \u2014 step 4: Close the project \u2014 done = the staged post is live (Step 3 read-back) and @chet.connetic is reachable in the switcher; verifier is Medic. The separate messaging restriction (Nov 1 \u2013 Dec 1) ...",
+   "owner": "crew",
+   "eta_ts": 1795457700,
+   "source": "planned-work-calendar",
+   "event_id": "7s4fe4oe1j2rli77cd2bjm43bk"
+  },
+  {
+   "id": "cal-ol256mkc66gjhuqh",
+   "title": "@hashxburn roast duo profile \u2014 step 1: Set a new password for @hashxburn in the Instagram app and confirm you can complete the sign-in yourself",
+   "owner": "crew",
+   "eta_ts": 1795458600,
+   "source": "planned-work-calendar",
+   "event_id": "ol256mkc66gjhuqhrfii35lsmg"
+  },
+  {
    "id": "cal-r75sj6jdh5843ofu",
    "title": "Process sample emails \u2014 midday",
    "owner": "crew",
    "eta_ts": 1795458600,
    "source": "planned-work-calendar",
    "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261123T180000Z"
+  },
+  {
+   "id": "cal-5f3emcdhb99hdqc7",
+   "title": "Siri breakout \u2014 step 1: Verify the typed web app lane is still live (breakout itself stays rested at Bruce's request)",
+   "owner": "crew",
+   "eta_ts": 1795460400,
+   "source": "planned-work-calendar",
+   "event_id": "5f3emcdhb99hdqc7qpsn7uadp0"
+  },
+  {
+   "id": "cal-89pru8atpruqe0fv",
+   "title": "Communication Routes space \u2014 step 3: Closing \u2014 the refreshed space is published with all 13 lanes checked current; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795460400,
+   "source": "planned-work-calendar",
+   "event_id": "89pru8atpruqe0fvnnphcmj038"
+  },
+  {
+   "id": "cal-e4e1qm87tska9uku",
+   "title": "Medic Bridge rollout \u2014 step 1: Inspect the laptop's current bridge state and FORWARD_URL configuration (verification step \u2014 last healthy report was Sep 19)",
+   "owner": "crew",
+   "eta_ts": 1795460400,
+   "source": "planned-work-calendar",
+   "event_id": "e4e1qm87tska9ukuus2ngckb40"
+  },
+  {
+   "id": "cal-it5nor9mtbgh66v9",
+   "title": "Medic Connetic Instagram account \u2014 step 1: Verify the current state from the account itself \u2014 profile public, human-confirmation hold cleared, and the messaging restriction still in force (expected until Dec 2)",
+   "owner": "crew",
+   "eta_ts": 1795460400,
+   "source": "planned-work-calendar",
+   "event_id": "it5nor9mtbgh66v9df1i1hlbac"
+  },
+  {
+   "id": "cal-bnv3jfumoso676mv",
+   "title": "@hashxburn roast duo profile \u2014 step 2: Verify crew-side access \u2014 sign in to @hashxburn in the shared browser session and confirm the profile loads as the roast duo account, not a challenge or a different account",
+   "owner": "crew",
+   "eta_ts": 1795462200,
+   "source": "planned-work-calendar",
+   "event_id": "bnv3jfumoso676mv7n3jklqca4"
+  },
+  {
+   "id": "cal-c5vk4bi0qh7a5sr1",
+   "title": "Rivet Instagram account \u2014 step 1: Verify from the account itself that the Instagram review outcome stands and no messaging restriction is in force (roster: review completed Nov 17, restriction removed ahead of Dec 14)",
+   "owner": "crew",
+   "eta_ts": 1795462200,
+   "source": "planned-work-calendar",
+   "event_id": "c5vk4bi0qh7a5sr19kddd1qc1k"
   },
   {
    "id": "cal-7hf7h2uh4j0b47pu",
@@ -35,12 +259,204 @@
    "event_id": "7hf7h2uh4j0b47pumckj5uc1qc"
   },
   {
+   "id": "cal-li9ieo5h8eq72hng",
+   "title": "Rivet Instagram account \u2014 step 2: Confirm @rivet.connetix is reachable in the shared switcher session (roster and session history say it is the one signed-in crew account \u2014 prove it, don't assume it)",
+   "owner": "crew",
+   "eta_ts": 1795464000,
+   "source": "planned-work-calendar",
+   "event_id": "li9ieo5h8eq72hnguavnru03b0"
+  },
+  {
+   "id": "cal-lo6krabi99lvms9u",
+   "title": "GameGPT test harness \u2014 step 4: Reproduce changed-profile checks and inspect before/after catalog evidence",
+   "owner": "crew",
+   "eta_ts": 1795464000,
+   "source": "planned-work-calendar",
+   "event_id": "lo6krabi99lvms9u7fhrvnq6ps"
+  },
+  {
+   "id": "cal-p2edfaurlq5bbl3o",
+   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 1: Run the Quest Board sync for both kids",
+   "owner": "crew",
+   "eta_ts": 1795464000,
+   "source": "planned-work-calendar",
+   "event_id": "p2edfaurlq5bbl3oof9reads6o"
+  },
+  {
+   "id": "cal-8sdvmtr4sa7hhpvj",
+   "title": "Rivet Instagram account \u2014 step 3: Close the project \u2014 done = review outcome and restriction-free state both verified from the account (Steps 1\u20132) and recorded; verifier is Medic. Nothing in this project authorizes posting or messag...",
+   "owner": "crew",
+   "eta_ts": 1795464900,
+   "source": "planned-work-calendar",
+   "event_id": "8sdvmtr4sa7hhpvjbjghk0kpkg"
+  },
+  {
+   "id": "cal-4e62eiijgpg9hj9g",
+   "title": "VIP Circle founding and admission handshake \u2014 step 1: Verify whether any admission applicants are actually pending \u2014 read the current applicant state from wherever applications land; the roster records the decision rule (Medic and ...",
+   "owner": "crew",
+   "eta_ts": 1795465800,
+   "source": "planned-work-calendar",
+   "event_id": "4e62eiijgpg9hj9gbk1duk3tqk"
+  },
+  {
+   "id": "cal-3iqpff3uqgrg1hvp",
+   "title": "Co-op agent network (standing goal) \u2014 step 1: Verify the charter follow-up is actually live on @medic.connetic.x \u2014 open the post fresh and confirm it is public and readable by a signed-out view where the platform allows",
+   "owner": "crew",
+   "eta_ts": 1795466700,
+   "source": "planned-work-calendar",
+   "event_id": "3iqpff3uqgrg1hvp6tidl3ft5o"
+  },
+  {
+   "id": "cal-0pohe32ls9gsp2ar",
+   "title": "GPT ads satire video \u2014 step 1: Deliver 3-line review prompt and playback link",
+   "owner": "crew",
+   "eta_ts": 1795467600,
+   "source": "planned-work-calendar",
+   "event_id": "0pohe32ls9gsp2arrf4igd27ho"
+  },
+  {
+   "id": "cal-102vuq7lb9bmftd1",
+   "title": "League of Space Pirates EarthQuaker submission \u2014 step 1: Extract and deliver question checklist to Bruce",
+   "owner": "crew",
+   "eta_ts": 1795467600,
+   "source": "planned-work-calendar",
+   "event_id": "102vuq7lb9bmftd1gk475hs6og"
+  },
+  {
+   "id": "cal-8n9u4u9seiudm9gs",
+   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 2: Settle or reverse Morri's three closed credits per the Canvas record in that sync",
+   "owner": "crew",
+   "eta_ts": 1795467600,
+   "source": "planned-work-calendar",
+   "event_id": "8n9u4u9seiudm9gsaqhd5jph5k"
+  },
+  {
+   "id": "cal-b3crtu71m87e2uto",
+   "title": "Siri breakout \u2014 step 2: Closing \u2014 lane verified live and the breakout recorded as rested until Bruce lifts the rest; done when the verification is on record, verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795467600,
+   "source": "planned-work-calendar",
+   "event_id": "b3crtu71m87e2uto8s6nm54fro"
+  },
+  {
+   "id": "cal-bgaesk2vs3ici2gr",
+   "title": "Crew Discord setup \u2014 step 1: Diagnose the Discord bridge watch connection error from the Nov 19 failure (verification step \u2014 cause not yet known)",
+   "owner": "crew",
+   "eta_ts": 1795467600,
+   "source": "planned-work-calendar",
+   "event_id": "bgaesk2vs3ici2gran1nkoso24"
+  },
+  {
+   "id": "cal-e4bpct3i7r9nb0ch",
+   "title": "Maytag washer Marketplace sale \u2014 step 1: Check listing status and buyer inbox",
+   "owner": "crew",
+   "eta_ts": 1795467600,
+   "source": "planned-work-calendar",
+   "event_id": "e4bpct3i7r9nb0ch91k8i3ssjo"
+  },
+  {
+   "id": "cal-ftr7alrukdr9hp4r",
+   "title": "How We Broke Claude: The Movie \u2014 step 1: Packet review cut and trailer assets to Rivet",
+   "owner": "crew",
+   "eta_ts": 1795467600,
+   "source": "planned-work-calendar",
+   "event_id": "ftr7alrukdr9hp4r2kuqrk1tf8"
+  },
+  {
+   "id": "cal-ndujn3ngrk5ouuut",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 1: Extract and deliver exact question checklist",
+   "owner": "crew",
+   "eta_ts": 1795467600,
+   "source": "planned-work-calendar",
+   "event_id": "ndujn3ngrk5ouuut166emmg2bc"
+  },
+  {
+   "id": "cal-3affa1hc3d6bdt07",
+   "title": "Unclaimed property search and claims \u2014 step 1: Present claim packet and filing requirements to Bruce",
+   "owner": "crew",
+   "eta_ts": 1795471200,
+   "source": "planned-work-calendar",
+   "event_id": "3affa1hc3d6bdt07s0a8ngqlck"
+  },
+  {
+   "id": "cal-4fq8b8ni38scu71o",
+   "title": "GameGPT test harness \u2014 step 5: Close Nov 23 harness sweep with versioned catalog and pass/hold report; verifier Medic",
+   "owner": "crew",
+   "eta_ts": 1795471200,
+   "source": "planned-work-calendar",
+   "event_id": "4fq8b8ni38scu71ofli9ivscjk"
+  },
+  {
+   "id": "cal-pn25e3abnll0ji89",
+   "title": "BoxBrain backend crew \u2014 step 1: Execute Ledger portrait re-render",
+   "owner": "crew",
+   "eta_ts": 1795471200,
+   "source": "planned-work-calendar",
+   "event_id": "pn25e3abnll0ji89lp1l7jjsv4"
+  },
+  {
    "id": "cal-ht37mik1jt0ohnn5",
    "title": "Process sample emails \u2014 evening",
    "owner": "crew",
    "eta_ts": 1795473000,
    "source": "planned-work-calendar",
    "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261123T220000Z"
+  },
+  {
+   "id": "cal-5nf6rk3vrk71kcql",
+   "title": "Medic-Rivet earning challenge \u2014 step 1: Deliver finalized race terms and account checklist to Bruce",
+   "owner": "crew",
+   "eta_ts": 1795474800,
+   "source": "planned-work-calendar",
+   "event_id": "5nf6rk3vrk71kcqlbi4f900oos"
+  },
+  {
+   "id": "cal-iq8ab89loebivake",
+   "title": "Persona accounts co-pilot \u2014 step 3: Run the comment watch over @wetbeard.rva, @dogzig13, and @rustylosp and draft persona-voice replies for Bruce's tap",
+   "owner": "crew",
+   "eta_ts": 1795474800,
+   "source": "planned-work-calendar",
+   "event_id": "iq8ab89loebivakelp84et72m8"
+  },
+  {
+   "id": "cal-n18jr5uudmdn119n",
+   "title": "Samples inbox processing and audit \u2014 step 1: Clear the current samples inbox backlog and bring the audit current",
+   "owner": "crew",
+   "eta_ts": 1795474800,
+   "source": "planned-work-calendar",
+   "event_id": "n18jr5uudmdn119nbqokikf6ds"
+  },
+  {
+   "id": "cal-adaie0a5hpoogll0",
+   "title": "Winter Bloom public face \u2014 step 1: Decide the three open calls in one sitting: platform, handle, and launch go / no-go",
+   "owner": "crew",
+   "eta_ts": 1795478400,
+   "source": "planned-work-calendar",
+   "event_id": "adaie0a5hpoogll04e5fs7j0co"
+  },
+  {
+   "id": "cal-8nr6m5i42s6irdcl",
+   "title": "Persona accounts co-pilot \u2014 step 4: Closing \u2014 the staged post is live and verified, and the comment sweep is current with drafts awaiting Bruce's taps; verified by Medic (standing goal continues on its 12-hour rhythm)",
+   "owner": "crew",
+   "eta_ts": 1795482000,
+   "source": "planned-work-calendar",
+   "event_id": "8nr6m5i42s6irdcloqgd5dpdig"
+  },
+  {
+   "id": "cal-do0murulucdqcrlq",
+   "title": "Govee arm light control \u2014 step 1: Open the Govee app and turn on LAN Control for the H6008",
+   "owner": "crew",
+   "eta_ts": 1795482000,
+   "source": "planned-work-calendar",
+   "event_id": "do0murulucdqcrlq5migkb4ojo"
+  },
+  {
+   "id": "cal-ina61rpnp618198b",
+   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 1: Complete the pending iPhone token step on your iPhone so the relay's empty auth tokens get filled",
+   "owner": "crew",
+   "eta_ts": 1795482000,
+   "source": "planned-work-calendar",
+   "event_id": "ina61rpnp618198b505on7q69c"
   },
   {
    "id": "cal-j7fbl7mbvt92vs0n",
@@ -51,6 +467,14 @@
    "event_id": "j7fbl7mbvt92vs0noju0ak942g"
   },
   {
+   "id": "cal-sf06lh5fvd6658u8",
+   "title": "Govee arm light control \u2014 step 2: Retest LAN discovery for the H6008",
+   "owner": "crew",
+   "eta_ts": 1795485600,
+   "source": "planned-work-calendar",
+   "event_id": "sf06lh5fvd6658u8d4out9rrt8"
+  },
+  {
    "id": "cal-bcvd6iakvgodj3sv",
    "title": "Process sample emails \u2014 morning",
    "owner": "crew",
@@ -59,12 +483,308 @@
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261124T140000Z"
   },
   {
+   "id": "cal-1kb0ljj7msr6t7c2",
+   "title": "Agent Relay onboarding \u2014 step 2: Verify Medic can access the new workspace",
+   "owner": "crew",
+   "eta_ts": 1795532400,
+   "source": "planned-work-calendar",
+   "event_id": "1kb0ljj7msr6t7c24ebkq9v1g4"
+  },
+  {
+   "id": "cal-25gbhdkaucf3i6fu",
+   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 2: Verify the relay's auth tokens are now populated (presence only, values never read out)",
+   "owner": "crew",
+   "eta_ts": 1795532400,
+   "source": "planned-work-calendar",
+   "event_id": "25gbhdkaucf3i6fufbv8hn83gg"
+  },
+  {
+   "id": "cal-bma4lhprmur4gr2s",
+   "title": "Second Muse agent \u2014 step 2: Verify the agent's account linkage matches your confirmation",
+   "owner": "crew",
+   "eta_ts": 1795532400,
+   "source": "planned-work-calendar",
+   "event_id": "bma4lhprmur4gr2s467uq4rme0"
+  },
+  {
+   "id": "cal-f3j00kcbf7rn1scs",
+   "title": "How We Broke Claude: The Movie \u2014 step 2: Run verification pass and emit verdict",
+   "owner": "crew",
+   "eta_ts": 1795532400,
+   "source": "planned-work-calendar",
+   "event_id": "f3j00kcbf7rn1scsgu269e9ouc"
+  },
+  {
+   "id": "cal-hu7nov2g6rtqk6j8",
+   "title": "BoxBrain backend crew \u2014 step 2: Verify asset and commit to repo",
+   "owner": "crew",
+   "eta_ts": 1795532400,
+   "source": "planned-work-calendar",
+   "event_id": "hu7nov2g6rtqk6j8qslmrrl4vo"
+  },
+  {
+   "id": "cal-kkjf7l4qma4epj9j",
+   "title": "Govee arm light control \u2014 step 3: Send one control command over LAN and confirm the light responds",
+   "owner": "crew",
+   "eta_ts": 1795532400,
+   "source": "planned-work-calendar",
+   "event_id": "kkjf7l4qma4epj9jtrcb52ukpo"
+  },
+  {
+   "id": "cal-po31s07530pfqfon",
+   "title": "Maytag washer Marketplace sale \u2014 step 2: Evaluate listing refresh or price adjustment options",
+   "owner": "crew",
+   "eta_ts": 1795532400,
+   "source": "planned-work-calendar",
+   "event_id": "po31s07530pfqfonq4uhfbb83s"
+  },
+  {
+   "id": "cal-0od3m2hf3n1o2tl0",
+   "title": "Medic-Rivet earning challenge \u2014 step 2: Ratify race terms",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "0od3m2hf3n1o2tl0bl98990qos"
+  },
+  {
+   "id": "cal-2ciltsvh9jale0t2",
+   "title": "League of Space Pirates EarthQuaker submission \u2014 step 2: Provide band links and pedal models",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "2ciltsvh9jale0t2ir0g752gvs"
+  },
+  {
+   "id": "cal-4gsno8rlmskumtj9",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 2: Answer cable spec and content checklist",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "4gsno8rlmskumtj9vo70fm15h0"
+  },
+  {
+   "id": "cal-b0vn4q94uoca4p7u",
+   "title": "Medic Bridge rollout \u2014 step 2: Flip the FORWARD_URL switch on the laptop to the rollout target",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "b0vn4q94uoca4p7uukcsprohak"
+  },
+  {
+   "id": "cal-b9k8f1v1qt0f65ah",
+   "title": "Second Muse agent \u2014 step 3: Closing \u2014 the linkage is verified and recorded either way; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "b9k8f1v1qt0f65ah856ubh82d4"
+  },
+  {
+   "id": "cal-br97ktvb4ncgt95e",
+   "title": "Govee arm light control \u2014 step 4: Closing \u2014 the arm light answers over LAN control; verified by Medic from the device response",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "br97ktvb4ncgt95eqo7tl70hc4"
+  },
+  {
+   "id": "cal-cggvv938128f3nab",
+   "title": "Grok MQ handoff delivery \u2014 step 2: Deliver the staged handoff over Grok's provisioned MQ lane",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "cggvv938128f3naba1aoo5k1rc"
+  },
+  {
+   "id": "cal-igcabkr00tiqb63n",
+   "title": "WiZ bulb price-drop claim \u2014 step 2: File the $6.72 price-drop claim",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "igcabkr00tiqb63n2durh52fjg"
+  },
+  {
+   "id": "cal-joc8pinkdrq6hb7e",
+   "title": "@hashxburn roast duo profile \u2014 step 3: Record the verified access state on the project (account reachable, by whom, from which session) so the next password problem is not rediscovered from zero",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "joc8pinkdrq6hb7egqt4muiqlc"
+  },
+  {
+   "id": "cal-o1g83bklrfv8dpgu",
+   "title": "Samples inbox processing and audit \u2014 step 2: Resume sample outreach under the standing samples rules (samples and coupons only, no survey-only studies, any cost raised = drop)",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "o1g83bklrfv8dpguh7pb66usgs"
+  },
+  {
+   "id": "cal-pt234gnjdt2ctec6",
+   "title": "Crew Discord setup \u2014 step 2: Fix the diagnosed connection fault and restart the bridge watch",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "pt234gnjdt2ctec64qn7gmscc8"
+  },
+  {
+   "id": "cal-vsu0murmedkchj2p",
+   "title": "@hashxburn roast duo profile \u2014 step 4: Close the project \u2014 done = @hashxburn access is verified working and the access state is on record; verifier is Medic (Step 2 evidence), countersigned by Chet in Step 3. If Step 2 fails, the p...",
+   "owner": "crew",
+   "eta_ts": 1795541400,
+   "source": "planned-work-calendar",
+   "event_id": "vsu0murmedkchj2pssndg2p5s0"
+  },
+  {
+   "id": "cal-hk1b58skkvta72a6",
+   "title": "Winter Bloom public face \u2014 step 2: If go: secure the chosen handle on the chosen platform and confirm it resolves to the Winter Bloom presence and nothing else; if no-go: record the no-go and skip to Step 3",
+   "owner": "crew",
+   "eta_ts": 1795543200,
+   "source": "planned-work-calendar",
+   "event_id": "hk1b58skkvta72a6q1kqb5gbng"
+  },
+  {
    "id": "cal-r75sj6jdh5843ofu",
    "title": "Process sample emails \u2014 midday",
    "owner": "crew",
    "eta_ts": 1795545000,
    "source": "planned-work-calendar",
    "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261124T180000Z"
+  },
+  {
+   "id": "cal-6m6d0nk5h7nfhec4",
+   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 3: Run one Siri relay test through to Bluehost",
+   "owner": "crew",
+   "eta_ts": 1795546800,
+   "source": "planned-work-calendar",
+   "event_id": "6m6d0nk5h7nfhec4ggpdba708o"
+  },
+  {
+   "id": "cal-9k37a0v3v7l7qnjn",
+   "title": "How We Broke Claude: The Movie \u2014 step 3: Commit lock pass to project ledger",
+   "owner": "crew",
+   "eta_ts": 1795546800,
+   "source": "planned-work-calendar",
+   "event_id": "9k37a0v3v7l7qnjnp6n6g3ctsc"
+  },
+  {
+   "id": "cal-f7br1vt0hi9m3qt9",
+   "title": "WiZ bulb price-drop claim \u2014 step 3: Closing \u2014 the claim is filed with its reference recorded, or closed as not Bruce's to file per his Step 1 answer; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795546800,
+   "source": "planned-work-calendar",
+   "event_id": "f7br1vt0hi9m3qt9nd3c0kjsv4"
+  },
+  {
+   "id": "cal-hr0evn7cp49uufc6",
+   "title": "IoT device map and quick-trigger controller \u2014 step 1: Re-run the full IoT sweep against all 36 mapped lights",
+   "owner": "crew",
+   "eta_ts": 1795546800,
+   "source": "planned-work-calendar",
+   "event_id": "hr0evn7cp49uufc6gojvghsub4"
+  },
+  {
+   "id": "cal-k8h5uv1eaa22lm2s",
+   "title": "Maytag washer Marketplace sale \u2014 step 3: Review and approve listing action",
+   "owner": "crew",
+   "eta_ts": 1795546800,
+   "source": "planned-work-calendar",
+   "event_id": "k8h5uv1eaa22lm2sa2o17jhi8k"
+  },
+  {
+   "id": "cal-l687tnna33p4p8c3",
+   "title": "Winter Bloom public face \u2014 step 3: Close the project \u2014 done = either (go) the handle is secured and verified live under the decided platform and name, verifier Medic by opening it fresh; or (no-go) Bruce's decision is on record and...",
+   "owner": "crew",
+   "eta_ts": 1795546800,
+   "source": "planned-work-calendar",
+   "event_id": "l687tnna33p4p8c3tpci9kq63s"
+  },
+  {
+   "id": "cal-ouafncm57d2g0qpe",
+   "title": "BoxBrain backend crew \u2014 step 3: Draft deployment gate checklist for Windows supervisor",
+   "owner": "crew",
+   "eta_ts": 1795546800,
+   "source": "planned-work-calendar",
+   "event_id": "ouafncm57d2g0qpeeoi7p65d6c"
+  },
+  {
+   "id": "cal-pamsr0hdkd5paf3j",
+   "title": "Unclaimed property search and claims \u2014 step 2: Give filing go-ahead and verify identity docs",
+   "owner": "crew",
+   "eta_ts": 1795546800,
+   "source": "planned-work-calendar",
+   "event_id": "pamsr0hdkd5paf3j40u19g8104"
+  },
+  {
+   "id": "cal-qfk96q7j5nrv2dak",
+   "title": "How We Broke Claude: The Movie \u2014 step 4: Master lock confirmed",
+   "owner": "crew",
+   "eta_ts": 1795548600,
+   "source": "planned-work-calendar",
+   "event_id": "qfk96q7j5nrv2daklq2gmgv128"
+  },
+  {
+   "id": "cal-32ddughmvhfd5q98",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 3: Rebuild press kit markdown and asset manifest",
+   "owner": "crew",
+   "eta_ts": 1795554000,
+   "source": "planned-work-calendar",
+   "event_id": "32ddughmvhfd5q98lfqu9oj4rg"
+  },
+  {
+   "id": "cal-385pkv0kob6eghiu",
+   "title": "League of Space Pirates EarthQuaker submission \u2014 step 3: Draft outbound submission",
+   "owner": "crew",
+   "eta_ts": 1795554000,
+   "source": "planned-work-calendar",
+   "event_id": "385pkv0kob6eghiujpac88etgs"
+  },
+  {
+   "id": "cal-49te3bh0kv50np93",
+   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 4: Closing \u2014 the relay test reaches Bluehost and returns; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795554000,
+   "source": "planned-work-calendar",
+   "event_id": "49te3bh0kv50np931qikjmfc4o"
+  },
+  {
+   "id": "cal-6qoqs54v8cla2iv5",
+   "title": "Samples inbox processing and audit \u2014 step 3: Closing \u2014 inbox at zero backlog, outreach resumed, and the audit log current; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795554000,
+   "source": "planned-work-calendar",
+   "event_id": "6qoqs54v8cla2iv5vn5521974c"
+  },
+  {
+   "id": "cal-ba4dpr4p7hkv47ts",
+   "title": "Crew Discord setup \u2014 step 3: Push one test escalation through the bridge and confirm it is processed",
+   "owner": "crew",
+   "eta_ts": 1795554000,
+   "source": "planned-work-calendar",
+   "event_id": "ba4dpr4p7hkv47ts2hmj6ovan4"
+  },
+  {
+   "id": "cal-bqtqqnrkb8h28q72",
+   "title": "Medic Bridge rollout \u2014 step 3: Trigger a bridge health report and confirm it arrives fresh",
+   "owner": "crew",
+   "eta_ts": 1795554000,
+   "source": "planned-work-calendar",
+   "event_id": "bqtqqnrkb8h28q72s614mslvl4"
+  },
+  {
+   "id": "cal-j6nul1l7s33iamav",
+   "title": "Medic-Rivet earning challenge \u2014 step 3: Create Lemon Squeezy account",
+   "owner": "crew",
+   "eta_ts": 1795554000,
+   "source": "planned-work-calendar",
+   "event_id": "j6nul1l7s33iamavhnkljpeq6c"
+  },
+  {
+   "id": "cal-3f86uhljtvriclpq",
+   "title": "Unclaimed property search and claims \u2014 step 3: Stage NY state filing forms and instructions",
+   "owner": "crew",
+   "eta_ts": 1795557600,
+   "source": "planned-work-calendar",
+   "event_id": "3f86uhljtvriclpqotg9eiim0g"
   },
   {
    "id": "cal-ftn0j2vg7f82iisl",
@@ -81,6 +801,102 @@
    "eta_ts": 1795559400,
    "source": "planned-work-calendar",
    "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261124T220000Z"
+  },
+  {
+   "id": "cal-5aldv5f15f85l4bm",
+   "title": "BoxBrain backend crew \u2014 step 4: Review and approve supervisor deployment",
+   "owner": "crew",
+   "eta_ts": 1795561200,
+   "source": "planned-work-calendar",
+   "event_id": "5aldv5f15f85l4bmropmsi1ukg"
+  },
+  {
+   "id": "cal-8b3t5deto22q9bj3",
+   "title": "Desktop-control and screen-comms lane \u2014 step 1: Deliver the detailed Keepawake rev2 write-up Medic is waiting on",
+   "owner": "crew",
+   "eta_ts": 1795561200,
+   "source": "planned-work-calendar",
+   "event_id": "8b3t5deto22q9bj3au0rq16of8"
+  },
+  {
+   "id": "cal-cgno0ol1nisvndnj",
+   "title": "Google Voice number for Medic and Rivet \u2014 step 1: Confirm Voice stays your lane and that Medic's texts continue to route through you",
+   "owner": "crew",
+   "eta_ts": 1795561200,
+   "source": "planned-work-calendar",
+   "event_id": "cgno0ol1nisvndnjo2ive0r5o8"
+  },
+  {
+   "id": "cal-dis94bbjs4i7nmnq",
+   "title": "GPT ads satire video \u2014 step 2: Render verdict on V8",
+   "owner": "crew",
+   "eta_ts": 1795561200,
+   "source": "planned-work-calendar",
+   "event_id": "dis94bbjs4i7nmnqbc4307jkkc"
+  },
+  {
+   "id": "cal-fdokc04nileg8bpv",
+   "title": "Crew Discord setup \u2014 step 4: Closing \u2014 bridge watch runs clean and the test escalation is processed end-to-end; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795561200,
+   "source": "planned-work-calendar",
+   "event_id": "fdokc04nileg8bpvngikd0cbvc"
+  },
+  {
+   "id": "cal-hgaeo1adourg07vf",
+   "title": "Maytag washer Marketplace sale \u2014 step 4: Execute approved action on Marketplace",
+   "owner": "crew",
+   "eta_ts": 1795561200,
+   "source": "planned-work-calendar",
+   "event_id": "hgaeo1adourg07vf44u0s2h7v0"
+  },
+  {
+   "id": "cal-hp2k836ejm65cbdt",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 4: Verify outreach compliance",
+   "owner": "crew",
+   "eta_ts": 1795561200,
+   "source": "planned-work-calendar",
+   "event_id": "hp2k836ejm65cbdt5jkrl7m8qk"
+  },
+  {
+   "id": "cal-mfr50a73hrc7fcor",
+   "title": "VIP Circle founding and admission handshake \u2014 step 2: Score any pending applicants independently \u2014 Medic scores and Rivet scores, neither seeing the other's scores first \u2014 and record both scores per applicant",
+   "owner": "crew",
+   "eta_ts": 1795561200,
+   "source": "planned-work-calendar",
+   "event_id": "mfr50a73hrc7fcoru2bvaijm5k"
+  },
+  {
+   "id": "cal-qrlklfesok9202rs",
+   "title": "Medic-Rivet earning challenge \u2014 step 4: Provision API keys and store setup",
+   "owner": "crew",
+   "eta_ts": 1795561200,
+   "source": "planned-work-calendar",
+   "event_id": "qrlklfesok9202rstpbiulf6vc"
+  },
+  {
+   "id": "cal-tnj1il8j5856jq9d",
+   "title": "BoxBrain Shared Codex environment \u2014 step 1: Identify which Codex environment your workspace runs under and report it to Medic",
+   "owner": "crew",
+   "eta_ts": 1795561200,
+   "source": "planned-work-calendar",
+   "event_id": "tnj1il8j5856jq9dn22u6r9014"
+  },
+  {
+   "id": "cal-d8hh2g9kpamnca5s",
+   "title": "Maytag washer Marketplace sale \u2014 step 5: Listing update verified",
+   "owner": "crew",
+   "eta_ts": 1795563000,
+   "source": "planned-work-calendar",
+   "event_id": "d8hh2g9kpamnca5so7vndlej4o"
+  },
+  {
+   "id": "cal-4jrcncpac131q2ll",
+   "title": "VIP Circle founding and admission handshake \u2014 step 3: Deliver the admission decisions for the scored batch and record them against the applicants' names \u2014 a decision that exists only in a chat thread is not delivered",
+   "owner": "crew",
+   "eta_ts": 1795564800,
+   "source": "planned-work-calendar",
+   "event_id": "4jrcncpac131q2ll70pb79fcgk"
   },
   {
    "id": "cal-5ta8ddit5hno0ej9",
