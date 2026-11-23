@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795455657,
+ "generated_ts": 1795457471,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1878,6 +1878,28 @@
    "owner": "chet",
    "eta_ts": 1795629600,
    "escalate_ts": 1795629600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-294100c56e9d35a1",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795631400,
+   "escalate_ts": 1795631400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-2bbde87d4b4bf752",
+   "title": "Streamlined Instagram account creation \u2014 step 1: Verify the actual completion state of every current crew profile (Medic, Chet, Rivet, Tally) from the accounts themselves \u2014 which exist, which are complete, which are partial \u2014 becau...",
+   "owner": "chet",
+   "eta_ts": 1795631400,
+   "escalate_ts": 1795631400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
