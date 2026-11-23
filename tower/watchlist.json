@@ -1,47 +1,7 @@
 {
- "generated_ts": 1795459263,
+ "generated_ts": 1795461054,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-5f3emcdhb99hdqc7",
-   "title": "Siri breakout \u2014 step 1: Verify the typed web app lane is still live (breakout itself stays rested at Bruce's request)",
-   "owner": "crew",
-   "eta_ts": 1795460400,
-   "source": "planned-work-calendar",
-   "event_id": "5f3emcdhb99hdqc7qpsn7uadp0"
-  },
-  {
-   "id": "cal-89pru8atpruqe0fv",
-   "title": "Communication Routes space \u2014 step 3: Closing \u2014 the refreshed space is published with all 13 lanes checked current; verified by Medic",
-   "owner": "crew",
-   "eta_ts": 1795460400,
-   "source": "planned-work-calendar",
-   "event_id": "89pru8atpruqe0fvnnphcmj038"
-  },
-  {
-   "id": "cal-e4e1qm87tska9uku",
-   "title": "Medic Bridge rollout \u2014 step 1: Inspect the laptop's current bridge state and FORWARD_URL configuration (verification step \u2014 last healthy report was Sep 19)",
-   "owner": "crew",
-   "eta_ts": 1795460400,
-   "source": "planned-work-calendar",
-   "event_id": "e4e1qm87tska9ukuus2ngckb40"
-  },
-  {
-   "id": "cal-it5nor9mtbgh66v9",
-   "title": "Medic Connetic Instagram account \u2014 step 1: Verify the current state from the account itself \u2014 profile public, human-confirmation hold cleared, and the messaging restriction still in force (expected until Dec 2)",
-   "owner": "crew",
-   "eta_ts": 1795460400,
-   "source": "planned-work-calendar",
-   "event_id": "it5nor9mtbgh66v9df1i1hlbac"
-  },
-  {
-   "id": "cal-t7f18c9mlroco43e",
-   "title": "Crewbox \u2014 step 2: Medic provisions (bootstrap.sh), tailscale join, repo clones, Square seat migration + verified heartbeat",
-   "owner": "crew",
-   "eta_ts": 1795460400,
-   "source": "planned-work-calendar",
-   "event_id": "t7f18c9mlroco43e31msea0340"
-  },
   {
    "id": "cal-bnv3jfumoso676mv",
    "title": "@hashxburn roast duo profile \u2014 step 2: Verify crew-side access \u2014 sign in to @hashxburn in the shared browser session and confirm the profile loads as the roast duo account, not a challenge or a different account",
