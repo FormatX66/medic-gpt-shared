@@ -1,31 +1,7 @@
 {
- "generated_ts": 1795444853,
+ "generated_ts": 1795446652,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-f2ksooubf1tlor04",
-   "title": "Kids' schoolwork catalog \u2014 step 1: Check Bruce's Gmail for the L.C. Bird counseling reply carrying the ParentVUE activation code (verification step)",
-   "owner": "crew",
-   "eta_ts": 1795446000,
-   "source": "planned-work-calendar",
-   "event_id": "f2ksooubf1tlor04ftvjkqe5ho"
-  },
-  {
-   "id": "cal-i0lcuficf0q6o3oe",
-   "title": "Crewbox (Oracle free VM) \u2014 step 1: Medic drives Oracle signup + instance create in Chrome; Bruce handles password creation, card verification, and any codes",
-   "owner": "crew",
-   "eta_ts": 1795446000,
-   "source": "planned-work-calendar",
-   "event_id": "i0lcuficf0q6o3oesc2kf7vgq4"
-  },
-  {
-   "id": "cal-rrnnj96pqha1s8do",
-   "title": "Tally Bluehost connector \u2014 step 1: Verify Hex is up and the Bluehost connector path is ready to run",
-   "owner": "crew",
-   "eta_ts": 1795446000,
-   "source": "planned-work-calendar",
-   "event_id": "rrnnj96pqha1s8domrjr8k4108"
-  },
   {
    "id": "cal-71ore0sp9vrb76v9",
    "title": "GameGPT test harness \u2014 step 2: Run existing offline regression suite against current supported profiles",
@@ -993,6 +969,22 @@
    "eta_ts": 1795618800,
    "source": "planned-work-calendar",
    "event_id": "vvsice739unu8o2m4hqcptgr58"
+  },
+  {
+   "id": "cal-f0fe766l6c1ha3vl",
+   "title": "BoxBrain backend crew \u2014 step 6: Deployment and asset delivery verified",
+   "owner": "crew",
+   "eta_ts": 1795620600,
+   "source": "planned-work-calendar",
+   "event_id": "f0fe766l6c1ha3vlfhnhjbsu4g"
+  },
+  {
+   "id": "cal-lg8el9o2h8rnvvvf",
+   "title": "GPT ads satire video \u2014 step 4: Project state locked",
+   "owner": "crew",
+   "eta_ts": 1795620600,
+   "source": "planned-work-calendar",
+   "event_id": "lg8el9o2h8rnvvvflrjsu8e77o"
   }
  ]
 }
