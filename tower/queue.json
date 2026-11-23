@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795446659,
+ "generated_ts": 1795452049,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1669,6 +1669,160 @@
    "owner": "medic",
    "eta_ts": 1795620600,
    "escalate_ts": 1795620600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-1a5173798cba492f",
+   "title": "Desktop-control and screen-comms lane \u2014 step 2: Apply Keepawake rev2 on the laptop per the write-up",
+   "owner": "medic",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-36a127e9c5a991ae",
+   "title": "Medic\u2013GPT automated loop \u2014 step 1: Collect the remaining crew positions for the pickup-gap loop (Tally's reviewed positions; Chet/Grok/Loom recorded as silence if still unanswered)",
+   "owner": "medic",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-4f658b10eecabaaa",
+   "title": "League of Space Pirates EarthQuaker submission \u2014 step 5: Send submission to EarthQuaker",
+   "owner": "bruce",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-549127e31c8cffc0",
+   "title": "Medic-Rivet earning challenge \u2014 step 5: Configure storefront and tracking endpoints",
+   "owner": "rivet",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-608ac66205d75b0d",
+   "title": "Unclaimed property search and claims \u2014 step 4: Execute claim submission on NY state portal",
+   "owner": "bruce",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-669f55338bc269c2",
+   "title": "Kids' schoolwork catalog \u2014 step 2: If no reply has arrived, draft the follow-up to L.C. Bird counseling for Bruce's go-ahead to send",
+   "owner": "medic",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-67e788ce6b824b7f",
+   "title": "Agent Relay onboarding \u2014 step 3: Configure the workspace for crew use and run one end-to-end relay test",
+   "owner": "medic",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-933788246289f5af",
+   "title": "Google Voice number for Medic and Rivet \u2014 step 2: Closing \u2014 one test text routed Medic \u2192 Rivet's Voice lane \u2192 Bruce lands and is read back; done when the routing is proven and recorded, with no Medic direct access pursued; verified...",
+   "owner": "medic",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-a5402b43e8bf38df",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 6: Transmit press kit to Jon Croft",
+   "owner": "bruce",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-a7746ab3eac0be76",
+   "title": "Grok MQ handoff delivery \u2014 step 3: Closing \u2014 Grok's acknowledgement of the handoff is received on MQ and recorded; verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-cf1f095e375519fc",
+   "title": "BoxBrain Shared Codex environment \u2014 step 2: Verify the named environment is the shared one and that both sides can reach it",
+   "owner": "medic",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-d89472bea3412937",
+   "title": "Copilot (Tally) Git lead production team \u2014 step 3: Verify the delivered revision against the actual repo state",
+   "owner": "medic",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f36f7f7caaf18ff4",
+   "title": "Muse.ai accounts for Rivet and Medic \u2014 step 3: Closing \u2014 both accounts confirmed live and recorded; verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f7a8eeb917a01bfa",
+   "title": "Tally Bluehost connector \u2014 step 3: Verify the cleanup results and counts independently",
+   "owner": "medic",
+   "eta_ts": 1795626000,
+   "escalate_ts": 1795626000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
