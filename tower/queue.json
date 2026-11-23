@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795443062,
+ "generated_ts": 1795444862,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1581,6 +1581,72 @@
    "owner": "crew",
    "eta_ts": 1795617000,
    "escalate_ts": 1795617000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-0391099bc8f56207",
+   "title": "Muse.ai accounts for Rivet and Medic \u2014 step 2: Verify both new accounts exist and can be signed into",
+   "owner": "medic",
+   "eta_ts": 1795618800,
+   "escalate_ts": 1795618800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-5251503ac0cab3de",
+   "title": "GPT ads satire video \u2014 step 3: Route project based on verdict",
+   "owner": "medic",
+   "eta_ts": 1795618800,
+   "escalate_ts": 1795618800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-528a3d15819651da",
+   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 5: Step-exact send approval",
+   "owner": "bruce",
+   "eta_ts": 1795618800,
+   "escalate_ts": 1795618800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-53ec4ee82a0101fb",
+   "title": "League of Space Pirates EarthQuaker submission \u2014 step 4: Step-exact send approval",
+   "owner": "bruce",
+   "eta_ts": 1795618800,
+   "escalate_ts": 1795618800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-72ab3728e1b4a3d7",
+   "title": "Medic Bridge rollout \u2014 step 4: Closing \u2014 a fresh healthy bridge report is on record after the switch; verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795618800,
+   "escalate_ts": 1795618800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-bf17dd16df1bd8aa",
+   "title": "BoxBrain backend crew \u2014 step 5: Deploy Windows supervisor on Hex",
+   "owner": "medic",
+   "eta_ts": 1795618800,
+   "escalate_ts": 1795618800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
