@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795462881,
+ "generated_ts": 1795466460,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1988,6 +1988,50 @@
    "owner": "chet",
    "eta_ts": 1795636800,
    "escalate_ts": 1795636800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-9090ca4d111a75ac",
+   "title": "Desktop-control and screen-comms lane \u2014 step 3: Verify the laptop stays awake and the screen-comms lane captures cleanly after applying",
+   "owner": "medic",
+   "eta_ts": 1795640400,
+   "escalate_ts": 1795640400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-cb64d68e9cc62cc4",
+   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 3: Process the Nov 25 credit decisions (Reading 3, Reading 4, Genetics Vocab) at the next sync",
+   "owner": "medic",
+   "eta_ts": 1795640400,
+   "escalate_ts": 1795640400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-da63db3a3823be88",
+   "title": "BoxBrain Shared Codex environment \u2014 step 3: Closing \u2014 the shared Codex environment is named, recorded, and reachable from both sides; verified by Medic and Rivet",
+   "owner": "medic",
+   "eta_ts": 1795640400,
+   "escalate_ts": 1795640400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-eaaafa13328bc8e1",
+   "title": "Streamlined Instagram account creation \u2014 step 3: Verify Tally's completed profile loads and is reachable the same way the other crew profiles are",
+   "owner": "medic",
+   "eta_ts": 1795640400,
+   "escalate_ts": 1795640400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
