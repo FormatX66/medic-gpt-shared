@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795444862,
+ "generated_ts": 1795446659,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1647,6 +1647,28 @@
    "owner": "medic",
    "eta_ts": 1795618800,
    "escalate_ts": 1795618800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-3b67e4632ed69985",
+   "title": "BoxBrain backend crew \u2014 step 6: Deployment and asset delivery verified",
+   "owner": "rivet",
+   "eta_ts": 1795620600,
+   "escalate_ts": 1795620600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-b507bf9d84cd1cec",
+   "title": "GPT ads satire video \u2014 step 4: Project state locked",
+   "owner": "medic",
+   "eta_ts": 1795620600,
+   "escalate_ts": 1795620600,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
