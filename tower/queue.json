@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795470059,
+ "generated_ts": 1795471853,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2098,6 +2098,28 @@
    "owner": "rivet",
    "eta_ts": 1795644000,
    "escalate_ts": 1795644000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-46476469974695a2",
+   "title": "Co-op agent network (standing goal) \u2014 step 4: Close this planning pass \u2014 done = the charter follow-up is verified live (Step 1), membership state is on record from evidence (Step 2), and exactly one next action exists as a dated, o...",
+   "owner": "chet",
+   "eta_ts": 1795645800,
+   "escalate_ts": 1795645800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-5d3497b942295781",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795645800,
+   "escalate_ts": 1795645800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
