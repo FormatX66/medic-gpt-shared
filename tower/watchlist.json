@@ -1,31 +1,7 @@
 {
- "generated_ts": 1795470052,
+ "generated_ts": 1795471846,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-3affa1hc3d6bdt07",
-   "title": "Unclaimed property search and claims \u2014 step 1: Present claim packet and filing requirements to Bruce",
-   "owner": "crew",
-   "eta_ts": 1795471200,
-   "source": "planned-work-calendar",
-   "event_id": "3affa1hc3d6bdt07s0a8ngqlck"
-  },
-  {
-   "id": "cal-4fq8b8ni38scu71o",
-   "title": "GameGPT test harness \u2014 step 5: Close Nov 23 harness sweep with versioned catalog and pass/hold report; verifier Medic",
-   "owner": "crew",
-   "eta_ts": 1795471200,
-   "source": "planned-work-calendar",
-   "event_id": "4fq8b8ni38scu71ofli9ivscjk"
-  },
-  {
-   "id": "cal-pn25e3abnll0ji89",
-   "title": "BoxBrain backend crew \u2014 step 1: Execute Ledger portrait re-render",
-   "owner": "crew",
-   "eta_ts": 1795471200,
-   "source": "planned-work-calendar",
-   "event_id": "pn25e3abnll0ji89lp1l7jjsv4"
-  },
   {
    "id": "cal-ht37mik1jt0ohnn5",
    "title": "Process sample emails \u2014 evening",
@@ -961,6 +937,22 @@
    "eta_ts": 1795644000,
    "source": "planned-work-calendar",
    "event_id": "u75bdnhp7vqflf91o6i115dsoc"
+  },
+  {
+   "id": "cal-ges4d24rvvpe2klo",
+   "title": "Co-op agent network (standing goal) \u2014 step 4: Close this planning pass \u2014 done = the charter follow-up is verified live (Step 1), membership state is on record from evidence (Step 2), and exactly one next action exists as a dated, o...",
+   "owner": "crew",
+   "eta_ts": 1795645800,
+   "source": "planned-work-calendar",
+   "event_id": "ges4d24rvvpe2klo3qnh2t9leo"
+  },
+  {
+   "id": "cal-ht37mik1jt0ohnn5",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795645800,
+   "source": "planned-work-calendar",
+   "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261125T220000Z"
   }
  ]
 }
