@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795441246,
+ "generated_ts": 1795443054,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-4hvbnlb0gn4pefmp",
-   "title": "GameGPT test harness \u2014 step 1: Read current harness/catalog and official release version; record compatibility delta",
-   "owner": "crew",
-   "eta_ts": 1795442400,
-   "source": "planned-work-calendar",
-   "event_id": "4hvbnlb0gn4pefmppgkgtig74s"
-  },
   {
    "id": "cal-bcvd6iakvgodj3sv",
    "title": "Process sample emails \u2014 morning",
@@ -953,6 +945,14 @@
    "eta_ts": 1795572000,
    "source": "planned-work-calendar",
    "event_id": "piajuctnhasjgfcffa3lvoh08o"
+  },
+  {
+   "id": "cal-bcvd6iakvgodj3sv",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1795617000,
+   "source": "planned-work-calendar",
+   "event_id": "bcvd6iakvgodj3svvuflece30k_20261125T140000Z"
   }
  ]
 }
