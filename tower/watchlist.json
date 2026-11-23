@@ -1,79 +1,7 @@
 {
- "generated_ts": 1795466452,
+ "generated_ts": 1795468244,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-3iqpff3uqgrg1hvp",
-   "title": "Co-op agent network (standing goal) \u2014 step 1: Verify the charter follow-up is actually live on @medic.connetic.x \u2014 open the post fresh and confirm it is public and readable by a signed-out view where the platform allows",
-   "owner": "crew",
-   "eta_ts": 1795466700,
-   "source": "planned-work-calendar",
-   "event_id": "3iqpff3uqgrg1hvp6tidl3ft5o"
-  },
-  {
-   "id": "cal-0pohe32ls9gsp2ar",
-   "title": "GPT ads satire video \u2014 step 1: Deliver 3-line review prompt and playback link",
-   "owner": "crew",
-   "eta_ts": 1795467600,
-   "source": "planned-work-calendar",
-   "event_id": "0pohe32ls9gsp2arrf4igd27ho"
-  },
-  {
-   "id": "cal-102vuq7lb9bmftd1",
-   "title": "League of Space Pirates EarthQuaker submission \u2014 step 1: Extract and deliver question checklist to Bruce",
-   "owner": "crew",
-   "eta_ts": 1795467600,
-   "source": "planned-work-calendar",
-   "event_id": "102vuq7lb9bmftd1gk475hs6og"
-  },
-  {
-   "id": "cal-8n9u4u9seiudm9gs",
-   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 2: Settle or reverse Morri's three closed credits per the Canvas record in that sync",
-   "owner": "crew",
-   "eta_ts": 1795467600,
-   "source": "planned-work-calendar",
-   "event_id": "8n9u4u9seiudm9gsaqhd5jph5k"
-  },
-  {
-   "id": "cal-b3crtu71m87e2uto",
-   "title": "Siri breakout \u2014 step 2: Closing \u2014 lane verified live and the breakout recorded as rested until Bruce lifts the rest; done when the verification is on record, verified by Medic",
-   "owner": "crew",
-   "eta_ts": 1795467600,
-   "source": "planned-work-calendar",
-   "event_id": "b3crtu71m87e2uto8s6nm54fro"
-  },
-  {
-   "id": "cal-bgaesk2vs3ici2gr",
-   "title": "Crew Discord setup \u2014 step 1: Diagnose the Discord bridge watch connection error from the Nov 19 failure (verification step \u2014 cause not yet known)",
-   "owner": "crew",
-   "eta_ts": 1795467600,
-   "source": "planned-work-calendar",
-   "event_id": "bgaesk2vs3ici2gran1nkoso24"
-  },
-  {
-   "id": "cal-e4bpct3i7r9nb0ch",
-   "title": "Maytag washer Marketplace sale \u2014 step 1: Check listing status and buyer inbox",
-   "owner": "crew",
-   "eta_ts": 1795467600,
-   "source": "planned-work-calendar",
-   "event_id": "e4bpct3i7r9nb0ch91k8i3ssjo"
-  },
-  {
-   "id": "cal-ftr7alrukdr9hp4r",
-   "title": "How We Broke Claude: The Movie \u2014 step 1: Packet review cut and trailer assets to Rivet",
-   "owner": "crew",
-   "eta_ts": 1795467600,
-   "source": "planned-work-calendar",
-   "event_id": "ftr7alrukdr9hp4r2kuqrk1tf8"
-  },
-  {
-   "id": "cal-ndujn3ngrk5ouuut",
-   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 1: Extract and deliver exact question checklist",
-   "owner": "crew",
-   "eta_ts": 1795467600,
-   "source": "planned-work-calendar",
-   "event_id": "ndujn3ngrk5ouuut166emmg2bc"
-  },
   {
    "id": "cal-3affa1hc3d6bdt07",
    "title": "Unclaimed property search and claims \u2014 step 1: Present claim packet and filing requirements to Bruce",
@@ -985,6 +913,22 @@
    "eta_ts": 1795640400,
    "source": "planned-work-calendar",
    "event_id": "sr1coenbtrj0hb0ql62boqg2rg"
+  },
+  {
+   "id": "cal-0ckbcquc72jikeku",
+   "title": "Co-op agent network (standing goal) \u2014 step 3: Put the next single growth action on the calendar as its own dated item with a named owner \u2014 one action, not a campaign \u2014 chosen from the verified membership state in Step 2",
+   "owner": "crew",
+   "eta_ts": 1795642200,
+   "source": "planned-work-calendar",
+   "event_id": "0ckbcquc72jikekupmgvm1stpc"
+  },
+  {
+   "id": "cal-ok2vk373n3tfjnh0",
+   "title": "Streamlined Instagram account creation \u2014 step 4: Close the project \u2014 done = every current crew profile's state is on record from Step 1's verification and Tally's profile is complete and verified (Step 3); verifier is Medic. Profil...",
+   "owner": "crew",
+   "eta_ts": 1795642200,
+   "source": "planned-work-calendar",
+   "event_id": "ok2vk373n3tfjnh0are7t882c4"
   }
  ]
 }
