@@ -1,39 +1,7 @@
 {
- "generated_ts": 1795457463,
+ "generated_ts": 1795459263,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-0q8m1ttr2u97jrjq",
-   "title": "@formatx Instagram bio update \u2014 step 3: Close the project \u2014 done = the approved bio is live on the profile, verified by Medic's read-back in Step 2; any mismatch reopens Step 1, it does not get edited live by an agent",
-   "owner": "crew",
-   "eta_ts": 1795457700,
-   "source": "planned-work-calendar",
-   "event_id": "0q8m1ttr2u97jrjqo71d96m7tg"
-  },
-  {
-   "id": "cal-7s4fe4oe1j2rli77",
-   "title": "Chet Connetic Instagram account \u2014 step 4: Close the project \u2014 done = the staged post is live (Step 3 read-back) and @chet.connetic is reachable in the switcher; verifier is Medic. The separate messaging restriction (Nov 1 \u2013 Dec 1) ...",
-   "owner": "crew",
-   "eta_ts": 1795457700,
-   "source": "planned-work-calendar",
-   "event_id": "7s4fe4oe1j2rli77cd2bjm43bk"
-  },
-  {
-   "id": "cal-ol256mkc66gjhuqh",
-   "title": "@hashxburn roast duo profile \u2014 step 1: Set a new password for @hashxburn in the Instagram app and confirm you can complete the sign-in yourself",
-   "owner": "crew",
-   "eta_ts": 1795458600,
-   "source": "planned-work-calendar",
-   "event_id": "ol256mkc66gjhuqhrfii35lsmg"
-  },
-  {
-   "id": "cal-r75sj6jdh5843ofu",
-   "title": "Process sample emails \u2014 midday",
-   "owner": "crew",
-   "eta_ts": 1795458600,
-   "source": "planned-work-calendar",
-   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261123T180000Z"
-  },
   {
    "id": "cal-5f3emcdhb99hdqc7",
    "title": "Siri breakout \u2014 step 1: Verify the typed web app lane is still live (breakout itself stays rested at Bruce's request)",
@@ -1025,6 +993,54 @@
    "eta_ts": 1795631400,
    "source": "planned-work-calendar",
    "event_id": "thr6l6i85q1lg973vmj1bidcfg"
+  },
+  {
+   "id": "cal-hrvu6ppnqrtienpq",
+   "title": "Project 255 \u2014 step 1: Run the fog-first pass on FastPeopleSearch per the campaign plan",
+   "owner": "crew",
+   "eta_ts": 1795633200,
+   "source": "planned-work-calendar",
+   "event_id": "hrvu6ppnqrtienpqf4b0v65sqg"
+  },
+  {
+   "id": "cal-jbfg5nen8359r3k0",
+   "title": "Tally Bluehost connector \u2014 step 4: Closing \u2014 the cleanup is done with its counts on record; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795633200,
+   "source": "planned-work-calendar",
+   "event_id": "jbfg5nen8359r3k063ho2p0jio"
+  },
+  {
+   "id": "cal-qk7liq98cr0kd7n3",
+   "title": "Copilot (Tally) Git lead production team \u2014 step 4: Closing \u2014 the repo-map revision is on record and matches the repo; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795633200,
+   "source": "planned-work-calendar",
+   "event_id": "qk7liq98cr0kd7n3h9gn8rjiqk"
+  },
+  {
+   "id": "cal-tm3hsqdcv5ek8g7u",
+   "title": "Agent Relay onboarding \u2014 step 4: Closing \u2014 relay test passes end-to-end in the new workspace; done when the test result is recorded, verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795633200,
+   "source": "planned-work-calendar",
+   "event_id": "tm3hsqdcv5ek8g7udupl3bb8ho"
+  },
+  {
+   "id": "cal-tm74oaeeit9oo3v1",
+   "title": "Co-op agent network (standing goal) \u2014 step 2: Verify the network's current membership state from records \u2014 who is in, under what agreement \u2014 because admissions require each participant's agreement and no step in this plan may treat...",
+   "owner": "crew",
+   "eta_ts": 1795633200,
+   "source": "planned-work-calendar",
+   "event_id": "tm74oaeeit9oo3v1uirk6bbs0o"
+  },
+  {
+   "id": "cal-udf00vu6mpbcaef5",
+   "title": "IoT device map and quick-trigger controller \u2014 step 2: Investigate the bedroom trio that timed out on Nov 4 (verification step \u2014 their state is unknown)",
+   "owner": "crew",
+   "eta_ts": 1795633200,
+   "source": "planned-work-calendar",
+   "event_id": "udf00vu6mpbcaef598bipe2v9g"
   }
  ]
 }
