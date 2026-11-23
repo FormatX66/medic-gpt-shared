@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795394457,
+ "generated_ts": 1795396267,
  "horizon_h": 48,
  "items": [
   {
@@ -33,6 +33,14 @@
    "eta_ts": 1795446000,
    "source": "planned-work-calendar",
    "event_id": "f2ksooubf1tlor04ftvjkqe5ho"
+  },
+  {
+   "id": "cal-i0lcuficf0q6o3oe",
+   "title": "Crewbox (Oracle free VM) \u2014 step 1: Medic drives Oracle signup + instance create in Chrome; Bruce handles password creation, card verification, and any codes",
+   "owner": "crew",
+   "eta_ts": 1795446000,
+   "source": "planned-work-calendar",
+   "event_id": "i0lcuficf0q6o3oesc2kf7vgq4"
   },
   {
    "id": "cal-rrnnj96pqha1s8do",
@@ -233,6 +241,14 @@
    "eta_ts": 1795460400,
    "source": "planned-work-calendar",
    "event_id": "it5nor9mtbgh66v9df1i1hlbac"
+  },
+  {
+   "id": "cal-t7f18c9mlroco43e",
+   "title": "Crewbox \u2014 step 2: Medic provisions (bootstrap.sh), tailscale join, repo clones, Square seat migration + verified heartbeat",
+   "owner": "crew",
+   "eta_ts": 1795460400,
+   "source": "planned-work-calendar",
+   "event_id": "t7f18c9mlroco43e31msea0340"
   },
   {
    "id": "cal-bnv3jfumoso676mv",
@@ -561,6 +577,14 @@
    "eta_ts": 1795539600,
    "source": "planned-work-calendar",
    "event_id": "4gsno8rlmskumtj9vo70fm15h0"
+  },
+  {
+   "id": "cal-53nmoh84slf9apcd",
+   "title": "Crewbox \u2014 step 3: Medic installs wake bot up to the ChatGPT sign-in step (persistent browser + DevTools MCP), Bruce signs in once",
+   "owner": "crew",
+   "eta_ts": 1795539600,
+   "source": "planned-work-calendar",
+   "event_id": "53nmoh84slf9apcdopbi8b7i4c"
   },
   {
    "id": "cal-b0vn4q94uoca4p7u",
