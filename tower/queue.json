@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795453855,
+ "generated_ts": 1795455657,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1867,6 +1867,17 @@
    "owner": "rivet",
    "eta_ts": 1795627800,
    "escalate_ts": 1795627800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-d0723760699c4eeb",
+   "title": "Crew socials launch \u2014 step 1: Verify the closing state of the Halloween launch \u2014 confirm the finale post is live and record which crew accounts posted in the launch window, from the accounts themselves, not from memory",
+   "owner": "chet",
+   "eta_ts": 1795629600,
+   "escalate_ts": 1795629600,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
