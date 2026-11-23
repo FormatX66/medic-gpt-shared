@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795466460,
+ "generated_ts": 1795468253,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2032,6 +2032,28 @@
    "owner": "medic",
    "eta_ts": 1795640400,
    "escalate_ts": 1795640400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-23515b4a36445636",
+   "title": "Co-op agent network (standing goal) \u2014 step 3: Put the next single growth action on the calendar as its own dated item with a named owner \u2014 one action, not a campaign \u2014 chosen from the verified membership state in Step 2",
+   "owner": "medic",
+   "eta_ts": 1795642200,
+   "escalate_ts": 1795642200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-3c8215f0a3e6c7e6",
+   "title": "Streamlined Instagram account creation \u2014 step 4: Close the project \u2014 done = every current crew profile's state is on record from Step 1's verification and Tally's profile is complete and verified (Step 3); verifier is Medic. Profil...",
+   "owner": "medic",
+   "eta_ts": 1795642200,
+   "escalate_ts": 1795642200,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
