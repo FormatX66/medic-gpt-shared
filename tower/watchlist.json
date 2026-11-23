@@ -1,31 +1,7 @@
 {
- "generated_ts": 1795455650,
+ "generated_ts": 1795457463,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-1pgmud5clcbg3oqi",
-   "title": "Chet Connetic Instagram account \u2014 step 3: Verify the post is live on @chet.connetic and that the switcher moves between the crew accounts in both directions without a login wall",
-   "owner": "crew",
-   "eta_ts": 1795456800,
-   "source": "planned-work-calendar",
-   "event_id": "1pgmud5clcbg3oqij8o97ef7go"
-  },
-  {
-   "id": "cal-ahcgdicj57j9v95s",
-   "title": "GameGPT test harness \u2014 step 3: Repair isolated failures and rerun affected regressions or label unsupported version HOLD",
-   "owner": "crew",
-   "eta_ts": 1795456800,
-   "source": "planned-work-calendar",
-   "event_id": "ahcgdicj57j9v95s6rr9m7035k"
-  },
-  {
-   "id": "cal-gkunfpb4us2u64le",
-   "title": "@formatx Instagram bio update \u2014 step 2: Read back the live @formatx profile and confirm the bio matches the approved text character-for-character",
-   "owner": "crew",
-   "eta_ts": 1795456800,
-   "source": "planned-work-calendar",
-   "event_id": "gkunfpb4us2u64leedbtqbqqas"
-  },
   {
    "id": "cal-0q8m1ttr2u97jrjq",
    "title": "@formatx Instagram bio update \u2014 step 3: Close the project \u2014 done = the approved bio is live on the profile, verified by Medic's read-back in Step 2; any mismatch reopens Step 1, it does not get edited live by an agent",
@@ -1033,6 +1009,22 @@
    "eta_ts": 1795629600,
    "source": "planned-work-calendar",
    "event_id": "cqkcvsgei34e58hfq5a3gj318c"
+  },
+  {
+   "id": "cal-r75sj6jdh5843ofu",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795631400,
+   "source": "planned-work-calendar",
+   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261125T180000Z"
+  },
+  {
+   "id": "cal-thr6l6i85q1lg973",
+   "title": "Streamlined Instagram account creation \u2014 step 1: Verify the actual completion state of every current crew profile (Medic, Chet, Rivet, Tally) from the accounts themselves \u2014 which exist, which are complete, which are partial \u2014 becau...",
+   "owner": "crew",
+   "eta_ts": 1795631400,
+   "source": "planned-work-calendar",
+   "event_id": "thr6l6i85q1lg973vmj1bidcfg"
   }
  ]
 }
