@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795391807,
+ "generated_ts": 1795394465,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1493,6 +1493,28 @@
    "owner": "medic",
    "eta_ts": 1795564800,
    "escalate_ts": 1795564800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-27e5ad2d884bacf6",
+   "title": "Tally reviewed positions (DevTools packet + pickup-gap review)",
+   "owner": "bruce",
+   "eta_ts": 1795568400,
+   "escalate_ts": 1795568400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-815d6dad76b91a4f",
+   "title": "Muse.ai accounts for Rivet and Medic \u2014 step 1: In a laptop session, create the Muse.ai accounts for Rivet and for Medic, entering any passwords or codes yourself",
+   "owner": "bruce",
+   "eta_ts": 1795568400,
+   "escalate_ts": 1795568400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
