@@ -1,31 +1,7 @@
 {
- "generated_ts": 1795453849,
+ "generated_ts": 1795455650,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-2oo9labgd80otu4q",
-   "title": "Persona accounts co-pilot \u2014 step 2: Post Chet's staged Saturday post verbatim and verify it live",
-   "owner": "crew",
-   "eta_ts": 1795455000,
-   "source": "planned-work-calendar",
-   "event_id": "2oo9labgd80otu4q6rsaki0ros"
-  },
-  {
-   "id": "cal-c5gt3s3up1qmsme7",
-   "title": "Chet Connetic Instagram account \u2014 step 2: Post Chet's staged Saturday post verbatim \u2014 the staged media and caption as prepared, no rewording, no substitute content",
-   "owner": "crew",
-   "eta_ts": 1795455000,
-   "source": "planned-work-calendar",
-   "event_id": "c5gt3s3up1qmsme7hi74n6qdg0"
-  },
-  {
-   "id": "cal-cj8ebhcqk9a6dkmp",
-   "title": "@formatx Instagram bio update \u2014 step 1: Paste the approved bio text into the @formatx profile in the Instagram app, exactly as saved \u2014 no edits in the app",
-   "owner": "crew",
-   "eta_ts": 1795455000,
-   "source": "planned-work-calendar",
-   "event_id": "cj8ebhcqk9a6dkmp7ertnin03c"
-  },
   {
    "id": "cal-1pgmud5clcbg3oqi",
    "title": "Chet Connetic Instagram account \u2014 step 3: Verify the post is live on @chet.connetic and that the switcher moves between the crew accounts in both directions without a login wall",
@@ -1049,6 +1025,14 @@
    "eta_ts": 1795627800,
    "source": "planned-work-calendar",
    "event_id": "matrsk6q5tsupeacagg2pj879c"
+  },
+  {
+   "id": "cal-cqkcvsgei34e58hf",
+   "title": "Crew socials launch \u2014 step 1: Verify the closing state of the Halloween launch \u2014 confirm the finale post is live and record which crew accounts posted in the launch window, from the accounts themselves, not from memory",
+   "owner": "crew",
+   "eta_ts": 1795629600,
+   "source": "planned-work-calendar",
+   "event_id": "cqkcvsgei34e58hfq5a3gj318c"
   }
  ]
 }
