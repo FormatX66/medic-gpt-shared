@@ -1,39 +1,7 @@
 {
- "generated_ts": 1795462873,
+ "generated_ts": 1795464662,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-7hf7h2uh4j0b47pu",
-   "title": "Quest Board sync \u2014 settle Morri's three closed credits (60 HYPE expected to reverse) + fresh pull for both kids",
-   "owner": "crew",
-   "eta_ts": 1795464000,
-   "source": "planned-work-calendar",
-   "event_id": "7hf7h2uh4j0b47pumckj5uc1qc"
-  },
-  {
-   "id": "cal-li9ieo5h8eq72hng",
-   "title": "Rivet Instagram account \u2014 step 2: Confirm @rivet.connetix is reachable in the shared switcher session (roster and session history say it is the one signed-in crew account \u2014 prove it, don't assume it)",
-   "owner": "crew",
-   "eta_ts": 1795464000,
-   "source": "planned-work-calendar",
-   "event_id": "li9ieo5h8eq72hnguavnru03b0"
-  },
-  {
-   "id": "cal-lo6krabi99lvms9u",
-   "title": "GameGPT test harness \u2014 step 4: Reproduce changed-profile checks and inspect before/after catalog evidence",
-   "owner": "crew",
-   "eta_ts": 1795464000,
-   "source": "planned-work-calendar",
-   "event_id": "lo6krabi99lvms9u7fhrvnq6ps"
-  },
-  {
-   "id": "cal-p2edfaurlq5bbl3o",
-   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 1: Run the Quest Board sync for both kids",
-   "owner": "crew",
-   "eta_ts": 1795464000,
-   "source": "planned-work-calendar",
-   "event_id": "p2edfaurlq5bbl3oof9reads6o"
-  },
   {
    "id": "cal-8sdvmtr4sa7hhpvj",
    "title": "Rivet Instagram account \u2014 step 3: Close the project \u2014 done = review outcome and restriction-free state both verified from the account (Steps 1\u20132) and recorded; verifier is Medic. Nothing in this project authorizes posting or messag...",
