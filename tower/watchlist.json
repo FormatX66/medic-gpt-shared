@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795529457,
+ "generated_ts": 1795531251,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bcvd6iakvgodj3sv",
-   "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
-   "eta_ts": 1795530600,
-   "source": "planned-work-calendar",
-   "event_id": "bcvd6iakvgodj3svvuflece30k_20261124T140000Z"
-  },
   {
    "id": "cal-1kb0ljj7msr6t7c2",
    "title": "Agent Relay onboarding \u2014 step 2: Verify Medic can access the new workspace",
