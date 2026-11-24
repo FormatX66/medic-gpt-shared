@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795554303,
+ "generated_ts": 1795556453,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1638,6 +1638,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-eb4ba0f9b7bf780e",
+   "title": "RESCUE upload leg (Tally): drain D:\\RescueStaging to Google Drive per C:\\Users\\bruce\\MedicHub\\rescue\\upload-leg-spec.md - hash pass yields until rescue done",
+   "owner": "copilot",
+   "eta_ts": 1795558252,
+   "escalate_ts": 1795558252,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-d4dcd5bb767c4626",
    "title": "Process sample emails \u2014 evening",
    "owner": "crew",
@@ -2567,6 +2578,17 @@
    "owner": "rivet",
    "eta_ts": 1795726800,
    "escalate_ts": 1795726800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-83f968d6b376ae32",
+   "title": "Clock Tower migration to the Pi \u2014 step 2: Complete canonical store pinning and report it",
+   "owner": "rivet",
+   "eta_ts": 1795730400,
+   "escalate_ts": 1795730400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
