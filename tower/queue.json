@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795497885,
+ "generated_ts": 1795497960,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1054,9 +1054,9 @@
    "owner": "medic",
    "eta_ts": 1795501103,
    "escalate_ts": 1795501103,
-   "state": "queued",
+   "state": "done",
    "t_claimed": null,
-   "t_effect": null,
+   "t_effect": 1795497960,
    "source": "planned-work-calendar"
   },
   {
