@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795556453,
+ "generated_ts": 1795557896,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1613,7 +1613,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795557883
   },
   {
    "id": "cal-9a56ca5f37c8ae69",
@@ -1624,7 +1626,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795557883
   },
   {
    "id": "cal-acc3955308c73a06",
@@ -1635,7 +1639,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795557883
   },
   {
    "id": "cal-eb4ba0f9b7bf780e",
@@ -2589,6 +2595,17 @@
    "owner": "rivet",
    "eta_ts": 1795730400,
    "escalate_ts": 1795730400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-5fe562c74e5a8d75",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795732200,
+   "escalate_ts": 1795732200,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
