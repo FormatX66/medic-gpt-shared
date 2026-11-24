@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795497873,
+ "generated_ts": 1795497885,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -222,7 +222,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-8bf61096afb67d47",
@@ -235,7 +235,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-ea285c9a4d4b1f33",
@@ -248,7 +248,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-a810646ce8d32dc4",
@@ -261,7 +261,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-15b876cca89be707",
@@ -274,7 +274,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-371b720632d56b22",
@@ -287,7 +287,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-a63e55b677cdfc7e",
@@ -322,7 +322,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-3489a94a3a3bd287",
@@ -335,7 +335,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-4910479558bba13d",
@@ -359,7 +359,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-5d8fb1b10b339aab",
@@ -394,7 +394,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-bd47bf407dd6ffa4",
@@ -418,7 +418,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-ff314ee3ae12067c",
@@ -442,7 +442,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-6ee63d63d69eb7c5",
@@ -455,7 +455,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-99c47897b5715ee9",
@@ -479,7 +479,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-877e8e7336664b73",
@@ -492,7 +492,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-e5f396ee5541cff1",
@@ -505,7 +505,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-4157cc1b19a3eea8",
@@ -518,7 +518,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-fc724592abe73597",
@@ -531,7 +531,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-da899dd984e88c1f",
@@ -555,7 +555,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-053df95b9deff06a",
@@ -568,7 +568,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-183e68c500896fe9",
@@ -581,7 +581,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-78071e546468e155",
@@ -594,7 +594,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-a5a2294adf39e1e4",
@@ -607,7 +607,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-bfd64bf338fef770",
@@ -631,7 +631,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-871e8bbe78d84027",
@@ -644,7 +644,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-c2704a8e1d9a7ad1",
@@ -657,7 +657,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-45a7b5459b0da387",
@@ -670,7 +670,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-988e9d159b662b64",
@@ -683,7 +683,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-a9f4f152cbfeb147",
@@ -696,7 +696,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-d99c56bba45c3278",
@@ -709,7 +709,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-fa2a59109413da9c",
@@ -722,7 +722,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-3bd5e46255cb5bf3",
@@ -735,7 +735,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-451ab14335ea4c34",
@@ -748,7 +748,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-1dc04e0d3ba096e8",
@@ -761,7 +761,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-42aa07c9dd8e90d5",
@@ -774,7 +774,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-4c55a81c6486c315",
@@ -787,7 +787,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-70ade5eec3f85c52",
@@ -800,7 +800,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-7c33a88ad1031d57",
@@ -813,7 +813,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-a22ad7356787558e",
@@ -826,7 +826,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-da1d205e3842a5f6",
@@ -839,7 +839,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-f96552ad4be40b29",
@@ -852,7 +852,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-01d6872442119851",
@@ -865,7 +865,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-2135edc925362c91",
@@ -878,7 +878,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-67d805ae3f4a9ad1",
@@ -891,7 +891,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-fff0703ce18a2eaa",
@@ -904,7 +904,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-1a8a47fc5936f76f",
@@ -917,7 +917,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-2102396d54449157",
@@ -930,7 +930,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-43f827d45adb79e2",
@@ -954,7 +954,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-33e8a7dafb7f5ec2",
@@ -989,7 +989,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-8941bfbe22d38c2c",
@@ -1024,7 +1024,7 @@
    "t_effect": null,
    "source": "planned-work-calendar",
    "reoffered": true,
-   "reoffered_ts": 1795497749
+   "reoffered_ts": 1795497759
   },
   {
    "id": "cal-b6f42e583f57976c",
