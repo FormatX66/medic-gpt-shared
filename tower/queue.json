@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795530883,
+ "generated_ts": 1795532694,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1135,7 +1135,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795532680
   },
   {
    "id": "cal-1e0e37523a1b258e",
@@ -1146,7 +1148,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795532680
   },
   {
    "id": "cal-1f49c4163dac350f",
@@ -1157,7 +1161,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795532680
   },
   {
    "id": "cal-3c7d6bf76c385f04",
@@ -1179,7 +1185,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795532680
   },
   {
    "id": "cal-c5b0d13f0f66d851",
@@ -1190,7 +1198,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795532680
   },
   {
    "id": "cal-e7dd3593705aed62",
@@ -1201,7 +1211,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795532680
   },
   {
    "id": "cal-13f7307ecd583cae",
@@ -2386,6 +2398,17 @@
    "owner": "crew",
    "eta_ts": 1795703400,
    "escalate_ts": 1795703400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-bc392e784ea3ad72",
+   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 2: Run isolated fixture validation of the first profile and backup/restore path; attach result",
+   "owner": "rivet",
+   "eta_ts": 1795707000,
+   "escalate_ts": 1795707000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
