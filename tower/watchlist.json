@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795527648,
+ "generated_ts": 1795529457,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bp2sbbsj0elgghf4",
-   "title": "Vet Samples prospects",
-   "owner": "crew",
-   "eta_ts": 1795528200,
-   "source": "planned-work-calendar",
-   "event_id": "bp2sbbsj0elgghf4q384807m8k_20261124T133000Z"
-  },
   {
    "id": "cal-bcvd6iakvgodj3sv",
    "title": "Process sample emails \u2014 morning",
@@ -929,6 +921,14 @@
    "eta_ts": 1795701600,
    "source": "planned-work-calendar",
    "event_id": "inqj7lk3ocooavid8d427difa4"
+  },
+  {
+   "id": "cal-bcvd6iakvgodj3sv",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1795703400,
+   "source": "planned-work-calendar",
+   "event_id": "bcvd6iakvgodj3svvuflece30k_20261126T140000Z"
   }
  ]
 }
