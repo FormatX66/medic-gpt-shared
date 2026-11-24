@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795549266,
+ "generated_ts": 1795552848,
  "horizon_h": 48,
  "items": [
   {
@@ -729,6 +729,30 @@
    "eta_ts": 1795723200,
    "source": "planned-work-calendar",
    "event_id": "pu4ce9u0io0vac5susqebnjedg"
+  },
+  {
+   "id": "cal-5aicf3g59m2g3sco",
+   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 4: Process the Nov 26 credit decision (Unit 2 Reading 1) at the next sync",
+   "owner": "crew",
+   "eta_ts": 1795726800,
+   "source": "planned-work-calendar",
+   "event_id": "5aicf3g59m2g3sco4hl275pmjo"
+  },
+  {
+   "id": "cal-manv34vk8qihl38g",
+   "title": "IoT device map and quick-trigger controller \u2014 step 4: Closing \u2014 the map is current: every device answered, or its exception is named with its cause; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795726800,
+   "source": "planned-work-calendar",
+   "event_id": "manv34vk8qihl38gq93658875g"
+  },
+  {
+   "id": "cal-uolgcni3ffo1jpeb",
+   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 6: Close build-out with validated installed profile, durable result and rollback guide; verifier Medic, acceptance Bruce",
+   "owner": "crew",
+   "eta_ts": 1795726800,
+   "source": "planned-work-calendar",
+   "event_id": "uolgcni3ffo1jpebjucmffp0po"
   }
  ]
 }
