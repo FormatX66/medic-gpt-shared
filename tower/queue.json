@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795552857,
+ "generated_ts": 1795554267,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1611,6 +1611,17 @@
    "owner": "medic",
    "eta_ts": 1795557600,
    "escalate_ts": 1795557600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-acc3955308c73a06",
+   "title": "Storage hash-confirmation pass \u2014 read + execute C:\\Users\\bruce\\MedicHub\\catalog\\hashpass-spec.md on Hex: build + launch the durable MedicHashPass job per spec; effect = launched + state file path. Read-only: delete nothing.",
+   "owner": "copilot",
+   "eta_ts": 1795557866,
+   "escalate_ts": 1795557866,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
