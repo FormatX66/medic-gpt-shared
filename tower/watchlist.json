@@ -1,31 +1,7 @@
 {
- "generated_ts": 1795500650,
+ "generated_ts": 1795502447,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-rr95vafg1jpgorin",
-   "title": "Build Tally pull-and-self-start (queue poll, claim with acceptance, bounded self-start turn)",
-   "owner": "crew",
-   "eta_ts": 1795500774,
-   "source": "planned-work-calendar",
-   "event_id": "rr95vafg1jpgorinoneft8t4lo"
-  },
-  {
-   "id": "cal-hqt4vgjcsqa4cdd7",
-   "title": "Rescue batch 1 - photos from F: STORAGE GREEN to Google Drive via rclone (427.6 GB, hash-verified)",
-   "owner": "crew",
-   "eta_ts": 1795500900,
-   "source": "planned-work-calendar",
-   "event_id": "hqt4vgjcsqa4cdd74nmjc855i0"
-  },
-  {
-   "id": "cal-uuqn3hasfjh9vrov",
-   "title": "Generalize queue claims crew-wide + re-offer past-escalation items",
-   "owner": "crew",
-   "eta_ts": 1795501103,
-   "source": "planned-work-calendar",
-   "event_id": "uuqn3hasfjh9vrovco5m9h2jeo"
-  },
   {
    "id": "cal-bp2sbbsj0elgghf4",
    "title": "Vet Samples prospects",
