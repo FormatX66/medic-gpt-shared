@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795498184,
+ "generated_ts": 1795498869,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1034,6 +1034,17 @@
    "owner": "copilot",
    "eta_ts": 1795498974,
    "escalate_ts": 1795498974,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-11f69fcb564d3516",
+   "title": "PLAN: Rescue failing photo drive - full backup to Google Drive 5TB, organize, verified wipe (phase 0 inventory done; plan pending Bruce)",
+   "owner": "medic",
+   "eta_ts": 1795500000,
+   "escalate_ts": 1795500000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
