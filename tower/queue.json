@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795541688,
+ "generated_ts": 1795543485,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1387,7 +1387,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795543481
   },
   {
    "id": "cal-59d065e427887cb7",
@@ -2462,6 +2464,17 @@
    "owner": "medic",
    "eta_ts": 1795712400,
    "escalate_ts": 1795712400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-03e0ed2dfe509a35",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795717800,
+   "escalate_ts": 1795717800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
