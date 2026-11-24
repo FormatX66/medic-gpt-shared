@@ -1,7 +1,15 @@
 {
- "generated_ts": 1795502447,
+ "generated_ts": 1795504247,
  "horizon_h": 48,
  "items": [
+  {
+   "id": "cal-6iojcegole6letq7",
+   "title": "Tally pull proof 2 \u2014 read Hex free disk space and last boot time and report both on MQ",
+   "owner": "crew",
+   "eta_ts": 1795505027,
+   "source": "planned-work-calendar",
+   "event_id": "6iojcegole6letq7okfi3u0ggo"
+  },
   {
    "id": "cal-bp2sbbsj0elgghf4",
    "title": "Vet Samples prospects",
