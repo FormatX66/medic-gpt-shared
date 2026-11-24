@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795504702,
+ "generated_ts": 1795505001,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -269,7 +269,7 @@
    "owner": "copilot",
    "eta_ts": 1795446000,
    "escalate_ts": 1795446000,
-   "state": "claimed",
+   "state": "held",
    "t_claimed": 1795504702,
    "t_effect": null,
    "source": "planned-work-calendar",
