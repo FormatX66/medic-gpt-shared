@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795554646,
+ "generated_ts": 1795556449,
  "horizon_h": 48,
  "items": [
   {
@@ -705,6 +705,14 @@
    "eta_ts": 1795726800,
    "source": "planned-work-calendar",
    "event_id": "uolgcni3ffo1jpebjucmffp0po"
+  },
+  {
+   "id": "cal-u5gi0q82m786bu30",
+   "title": "Clock Tower migration to the Pi \u2014 step 2: Complete canonical store pinning and report it",
+   "owner": "crew",
+   "eta_ts": 1795730400,
+   "source": "planned-work-calendar",
+   "event_id": "u5gi0q82m786bu3088klf4epe4"
   }
  ]
 }
