@@ -1,39 +1,7 @@
 {
- "generated_ts": 1795479047,
+ "generated_ts": 1795482673,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-8nr6m5i42s6irdcl",
-   "title": "Persona accounts co-pilot \u2014 step 4: Closing \u2014 the staged post is live and verified, and the comment sweep is current with drafts awaiting Bruce's taps; verified by Medic (standing goal continues on its 12-hour rhythm)",
-   "owner": "crew",
-   "eta_ts": 1795482000,
-   "source": "planned-work-calendar",
-   "event_id": "8nr6m5i42s6irdcloqgd5dpdig"
-  },
-  {
-   "id": "cal-do0murulucdqcrlq",
-   "title": "Govee arm light control \u2014 step 1: Open the Govee app and turn on LAN Control for the H6008",
-   "owner": "crew",
-   "eta_ts": 1795482000,
-   "source": "planned-work-calendar",
-   "event_id": "do0murulucdqcrlq5migkb4ojo"
-  },
-  {
-   "id": "cal-ina61rpnp618198b",
-   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 1: Complete the pending iPhone token step on your iPhone so the relay's empty auth tokens get filled",
-   "owner": "crew",
-   "eta_ts": 1795482000,
-   "source": "planned-work-calendar",
-   "event_id": "ina61rpnp618198b505on7q69c"
-  },
-  {
-   "id": "cal-j7fbl7mbvt92vs0n",
-   "title": "EarthQuaker reply \u2014 send the pedals email from arkmatx",
-   "owner": "crew",
-   "eta_ts": 1795482000,
-   "source": "planned-work-calendar",
-   "event_id": "j7fbl7mbvt92vs0noju0ak942g"
-  },
   {
    "id": "cal-sf06lh5fvd6658u8",
    "title": "Govee arm light control \u2014 step 2: Retest LAN discovery for the H6008",
