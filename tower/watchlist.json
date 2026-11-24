@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795482673,
+ "generated_ts": 1795486251,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-sf06lh5fvd6658u8",
-   "title": "Govee arm light control \u2014 step 2: Retest LAN discovery for the H6008",
-   "owner": "crew",
-   "eta_ts": 1795485600,
-   "source": "planned-work-calendar",
-   "event_id": "sf06lh5fvd6658u8d4out9rrt8"
-  },
   {
    "id": "cal-bp2sbbsj0elgghf4",
    "title": "Vet Samples prospects",
