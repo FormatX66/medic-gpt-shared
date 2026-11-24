@@ -1,31 +1,7 @@
 {
- "generated_ts": 1795556449,
+ "generated_ts": 1795558254,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-3f86uhljtvriclpq",
-   "title": "Unclaimed property search and claims \u2014 step 3: Stage NY state filing forms and instructions",
-   "owner": "crew",
-   "eta_ts": 1795557600,
-   "source": "planned-work-calendar",
-   "event_id": "3f86uhljtvriclpqotg9eiim0g"
-  },
-  {
-   "id": "cal-ftn0j2vg7f82iisl",
-   "title": "Rivet's Bluehost mail survey \u2014 resume on a verified Hex runner receipt (Hex is back; webmail is not a route)",
-   "owner": "crew",
-   "eta_ts": 1795557600,
-   "source": "planned-work-calendar",
-   "event_id": "ftn0j2vg7f82iislfu26h2ftn0"
-  },
-  {
-   "id": "cal-3grj2fctbnk38ib4",
-   "title": "Storage hash-confirmation pass \u2014 read + execute C:\\Users\\bruce\\MedicHub\\catalog\\hashpass-spec.md on Hex: build + launch the durable MedicHashPass job per spec; effect = launched + state file path. Read-only: delete nothing.",
-   "owner": "crew",
-   "eta_ts": 1795557866,
-   "source": "planned-work-calendar",
-   "event_id": "3grj2fctbnk38ib41iv99s8go8"
-  },
   {
    "id": "cal-ht37mik1jt0ohnn5",
    "title": "Process sample emails \u2014 evening",
@@ -713,6 +689,14 @@
    "eta_ts": 1795730400,
    "source": "planned-work-calendar",
    "event_id": "u5gi0q82m786bu3088klf4epe4"
+  },
+  {
+   "id": "cal-ht37mik1jt0ohnn5",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795732200,
+   "source": "planned-work-calendar",
+   "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261126T220000Z"
   }
  ]
 }
