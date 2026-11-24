@@ -1,63 +1,7 @@
 {
- "generated_ts": 1795531251,
+ "generated_ts": 1795533061,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-1kb0ljj7msr6t7c2",
-   "title": "Agent Relay onboarding \u2014 step 2: Verify Medic can access the new workspace",
-   "owner": "crew",
-   "eta_ts": 1795532400,
-   "source": "planned-work-calendar",
-   "event_id": "1kb0ljj7msr6t7c24ebkq9v1g4"
-  },
-  {
-   "id": "cal-25gbhdkaucf3i6fu",
-   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 2: Verify the relay's auth tokens are now populated (presence only, values never read out)",
-   "owner": "crew",
-   "eta_ts": 1795532400,
-   "source": "planned-work-calendar",
-   "event_id": "25gbhdkaucf3i6fufbv8hn83gg"
-  },
-  {
-   "id": "cal-bma4lhprmur4gr2s",
-   "title": "Second Muse agent \u2014 step 2: Verify the agent's account linkage matches your confirmation",
-   "owner": "crew",
-   "eta_ts": 1795532400,
-   "source": "planned-work-calendar",
-   "event_id": "bma4lhprmur4gr2s467uq4rme0"
-  },
-  {
-   "id": "cal-f3j00kcbf7rn1scs",
-   "title": "How We Broke Claude: The Movie \u2014 step 2: Run verification pass and emit verdict",
-   "owner": "crew",
-   "eta_ts": 1795532400,
-   "source": "planned-work-calendar",
-   "event_id": "f3j00kcbf7rn1scsgu269e9ouc"
-  },
-  {
-   "id": "cal-hu7nov2g6rtqk6j8",
-   "title": "BoxBrain backend crew \u2014 step 2: Verify asset and commit to repo",
-   "owner": "crew",
-   "eta_ts": 1795532400,
-   "source": "planned-work-calendar",
-   "event_id": "hu7nov2g6rtqk6j8qslmrrl4vo"
-  },
-  {
-   "id": "cal-kkjf7l4qma4epj9j",
-   "title": "Govee arm light control \u2014 step 3: Send one control command over LAN and confirm the light responds",
-   "owner": "crew",
-   "eta_ts": 1795532400,
-   "source": "planned-work-calendar",
-   "event_id": "kkjf7l4qma4epj9jtrcb52ukpo"
-  },
-  {
-   "id": "cal-po31s07530pfqfon",
-   "title": "Maytag washer Marketplace sale \u2014 step 2: Evaluate listing refresh or price adjustment options",
-   "owner": "crew",
-   "eta_ts": 1795532400,
-   "source": "planned-work-calendar",
-   "event_id": "po31s07530pfqfonq4uhfbb83s"
-  },
   {
    "id": "cal-0od3m2hf3n1o2tl0",
    "title": "Medic-Rivet earning challenge \u2014 step 2: Ratify race terms",
@@ -921,6 +865,14 @@
    "eta_ts": 1795703400,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261126T140000Z"
+  },
+  {
+   "id": "cal-tmep8da8h06r3tgn",
+   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 2: Run isolated fixture validation of the first profile and backup/restore path; attach result",
+   "owner": "crew",
+   "eta_ts": 1795707000,
+   "source": "planned-work-calendar",
+   "event_id": "tmep8da8h06r3tgn52ki5t0v08"
   }
  ]
 }
