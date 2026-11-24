@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795547448,
+ "generated_ts": 1795549266,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-qfk96q7j5nrv2dak",
-   "title": "How We Broke Claude: The Movie \u2014 step 4: Master lock confirmed",
-   "owner": "crew",
-   "eta_ts": 1795548600,
-   "source": "planned-work-calendar",
-   "event_id": "qfk96q7j5nrv2daklq2gmgv128"
-  },
   {
    "id": "cal-32ddughmvhfd5q98",
    "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 3: Rebuild press kit markdown and asset manifest",
@@ -729,6 +721,14 @@
    "eta_ts": 1795719600,
    "source": "planned-work-calendar",
    "event_id": "6kgrg3fm44rcfvt5lei01a8thk"
+  },
+  {
+   "id": "cal-pu4ce9u0io0vac5s",
+   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 5: Verify intended game effect and restore rehearsal against saved hashes; record deviations",
+   "owner": "crew",
+   "eta_ts": 1795723200,
+   "source": "planned-work-calendar",
+   "event_id": "pu4ce9u0io0vac5susqebnjedg"
   }
  ]
 }
