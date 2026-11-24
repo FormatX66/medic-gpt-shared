@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795498862,
+ "generated_ts": 1795500650,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-uca9703l8vf6f10i",
-   "title": "Tally pull proof \u2014 read Hex free disk space and last boot time and report both on MQ",
-   "owner": "crew",
-   "eta_ts": 1795498974,
-   "source": "planned-work-calendar",
-   "event_id": "uca9703l8vf6f10i9k7pagv6tc"
-  },
-  {
-   "id": "cal-upj1riuhhh4vuif8",
-   "title": "PLAN: Rescue failing photo drive - full backup to Google Drive 5TB, organize, verified wipe (phase 0 inventory done; plan pending Bruce)",
-   "owner": "crew",
-   "eta_ts": 1795500000,
-   "source": "planned-work-calendar",
-   "event_id": "upj1riuhhh4vuif8tr0888344o"
-  },
   {
    "id": "cal-rr95vafg1jpgorin",
    "title": "Build Tally pull-and-self-start (queue poll, claim with acceptance, bounded self-start turn)",
@@ -25,6 +9,14 @@
    "eta_ts": 1795500774,
    "source": "planned-work-calendar",
    "event_id": "rr95vafg1jpgorinoneft8t4lo"
+  },
+  {
+   "id": "cal-hqt4vgjcsqa4cdd7",
+   "title": "Rescue batch 1 - photos from F: STORAGE GREEN to Google Drive via rclone (427.6 GB, hash-verified)",
+   "owner": "crew",
+   "eta_ts": 1795500900,
+   "source": "planned-work-calendar",
+   "event_id": "hqt4vgjcsqa4cdd74nmjc855i0"
   },
   {
    "id": "cal-uuqn3hasfjh9vrov",
