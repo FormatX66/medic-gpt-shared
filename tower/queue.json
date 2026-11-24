@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795558484,
+ "generated_ts": 1795559688,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1665,7 +1665,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795559685
   },
   {
    "id": "cal-2974cc4037cc9600",
@@ -2608,6 +2610,17 @@
    "owner": "crew",
    "eta_ts": 1795732200,
    "escalate_ts": 1795732200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-43653102e83a2a31",
+   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 5: Closing \u2014 every Nov 25\u201326 credit decision is settled or reversed per the Canvas record, with balances matching the board; verified by Medic against Canvas",
+   "owner": "medic",
+   "eta_ts": 1795734000,
+   "escalate_ts": 1795734000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
