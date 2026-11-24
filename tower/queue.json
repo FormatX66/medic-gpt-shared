@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795548882,
+ "generated_ts": 1795552857,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2513,6 +2513,39 @@
    "owner": "medic",
    "eta_ts": 1795723200,
    "escalate_ts": 1795723200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-4250a87c38551eab",
+   "title": "IoT device map and quick-trigger controller \u2014 step 4: Closing \u2014 the map is current: every device answered, or its exception is named with its cause; verified by Medic",
+   "owner": "medic",
+   "eta_ts": 1795726800,
+   "escalate_ts": 1795726800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-60e1122eb8ab06f5",
+   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 4: Process the Nov 26 credit decision (Unit 2 Reading 1) at the next sync",
+   "owner": "medic",
+   "eta_ts": 1795726800,
+   "escalate_ts": 1795726800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f0e787d3e6844eba",
+   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 6: Close build-out with validated installed profile, durable result and rollback guide; verifier Medic, acceptance Bruce",
+   "owner": "rivet",
+   "eta_ts": 1795726800,
+   "escalate_ts": 1795726800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
