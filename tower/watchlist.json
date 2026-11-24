@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795533061,
+ "generated_ts": 1795538450,
  "horizon_h": 48,
  "items": [
   {
@@ -873,6 +873,30 @@
    "eta_ts": 1795707000,
    "source": "planned-work-calendar",
    "event_id": "tmep8da8h06r3tgn52ki5t0v08"
+  },
+  {
+   "id": "cal-2jqj2199lmgpibb2",
+   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 3: Open BG3 locally and approve the exact GameGPT install/profile trial on his chosen save",
+   "owner": "crew",
+   "eta_ts": 1795712400,
+   "source": "planned-work-calendar",
+   "event_id": "2jqj2199lmgpibb2jmvln0c9f0"
+  },
+  {
+   "id": "cal-au9vbbkak0aip486",
+   "title": "Desktop-control and screen-comms lane \u2014 step 4: Closing \u2014 rev2 live and verified against the write-up; verified by Medic, confirmed by Rivet",
+   "owner": "crew",
+   "eta_ts": 1795712400,
+   "source": "planned-work-calendar",
+   "event_id": "au9vbbkak0aip486ds69aaejms"
+  },
+  {
+   "id": "cal-cm96nodiebtvvkur",
+   "title": "IoT device map and quick-trigger controller \u2014 step 3: Update the device map and quick-trigger controller with every device's fresh state",
+   "owner": "crew",
+   "eta_ts": 1795712400,
+   "source": "planned-work-calendar",
+   "event_id": "cm96nodiebtvvkurgshog3arvo"
   }
  ]
 }
