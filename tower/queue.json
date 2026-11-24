@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795475468,
+ "generated_ts": 1795497182,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -921,6 +921,28 @@
    "owner": "medic",
    "eta_ts": 1795485600,
    "escalate_ts": 1795485600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-b6f42e583f57976c",
+   "title": "Tally pull proof \u2014 read Hex free disk space and last boot time and report both on MQ",
+   "owner": "copilot",
+   "eta_ts": 1795498974,
+   "escalate_ts": 1795498974,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-a9bda1dc8e9ccacb",
+   "title": "Build Tally pull-and-self-start (queue poll, claim with acceptance, bounded self-start turn)",
+   "owner": "medic",
+   "eta_ts": 1795500774,
+   "escalate_ts": 1795500774,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
