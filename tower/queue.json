@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795499082,
+ "generated_ts": 1795500283,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1050,7 +1050,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795500280
   },
   {
    "id": "cal-a9bda1dc8e9ccacb",
@@ -1061,6 +1063,17 @@
    "state": "done",
    "t_claimed": null,
    "t_effect": 1795497623,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-1e1ea3e9d59f3796",
+   "title": "Rescue batch 1 - photos from F: STORAGE GREEN to Google Drive via rclone (427.6 GB, hash-verified)",
+   "owner": "medic",
+   "eta_ts": 1795500900,
+   "escalate_ts": 1795500900,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
    "source": "planned-work-calendar"
   },
   {
