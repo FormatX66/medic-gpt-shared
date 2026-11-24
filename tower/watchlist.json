@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795506048,
+ "generated_ts": 1795527648,
  "horizon_h": 48,
  "items": [
   {
@@ -913,6 +913,22 @@
    "eta_ts": 1795649400,
    "source": "planned-work-calendar",
    "event_id": "s8ilo0rf9oepgarjiit9ae32ug"
+  },
+  {
+   "id": "cal-bp2sbbsj0elgghf4",
+   "title": "Vet Samples prospects",
+   "owner": "crew",
+   "eta_ts": 1795701000,
+   "source": "planned-work-calendar",
+   "event_id": "bp2sbbsj0elgghf4q384807m8k_20261126T133000Z"
+  },
+  {
+   "id": "cal-inqj7lk3ocooavid",
+   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 1: Read guard/profile artifacts and record current hashes, supported game version and restore instructions",
+   "owner": "crew",
+   "eta_ts": 1795701600,
+   "source": "planned-work-calendar",
+   "event_id": "inqj7lk3ocooavid8d427difa4"
   }
  ]
 }
