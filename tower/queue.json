@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795543485,
+ "generated_ts": 1795545293,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1400,7 +1400,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795545283
   },
   {
    "id": "cal-0a023eadaac0233f",
@@ -2475,6 +2477,17 @@
    "owner": "crew",
    "eta_ts": 1795717800,
    "escalate_ts": 1795717800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-9ff3a53515108d30",
+   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 4: Install approved profile in the authorized session, back up the chosen save and perform one bounded profile test",
+   "owner": "rivet",
+   "eta_ts": 1795719600,
+   "escalate_ts": 1795719600,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
