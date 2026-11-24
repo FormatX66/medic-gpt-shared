@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795497960,
+ "generated_ts": 1795498080,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -214,7 +214,7 @@
   {
    "id": "cal-8e7c3017f2edde00",
    "title": "Process sample emails \u2014 evening",
-   "owner": "crew",
+   "owner": "rivet",
    "eta_ts": 1795386600,
    "escalate_ts": 1795386600,
    "state": "queued",
@@ -240,7 +240,7 @@
   {
    "id": "cal-ea285c9a4d4b1f33",
    "title": "GameGPT test harness \u2014 step 1: Read current harness/catalog and official release version; record compatibility delta",
-   "owner": "rivet",
+   "owner": "medic",
    "eta_ts": 1795442400,
    "escalate_ts": 1795442400,
    "state": "queued",
@@ -253,7 +253,7 @@
   {
    "id": "cal-a810646ce8d32dc4",
    "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
+   "owner": "rivet",
    "eta_ts": 1795444200,
    "escalate_ts": 1795444200,
    "state": "queued",
@@ -266,7 +266,7 @@
   {
    "id": "cal-15b876cca89be707",
    "title": "Tally Bluehost connector \u2014 step 1: Verify Hex is up and the Bluehost connector path is ready to run",
-   "owner": "medic",
+   "owner": "copilot",
    "eta_ts": 1795446000,
    "escalate_ts": 1795446000,
    "state": "queued",
@@ -303,7 +303,7 @@
   {
    "id": "cal-c153f44d7c7d9509",
    "title": "Crewbox (Oracle free VM) \u2014 step 1: Medic drives Oracle signup + instance create in Chrome; Bruce handles password creation, card verification, and any codes",
-   "owner": "bruce",
+   "owner": "medic",
    "eta_ts": 1795446000,
    "escalate_ts": 1795446000,
    "state": "queued",
@@ -314,7 +314,7 @@
   {
    "id": "cal-65c5ac1425aea070",
    "title": "GameGPT test harness \u2014 step 2: Run existing offline regression suite against current supported profiles",
-   "owner": "rivet",
+   "owner": "medic",
    "eta_ts": 1795449600,
    "escalate_ts": 1795449600,
    "state": "queued",
