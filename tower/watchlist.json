@@ -1,63 +1,7 @@
 {
- "generated_ts": 1795552848,
+ "generated_ts": 1795554646,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-32ddughmvhfd5q98",
-   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 3: Rebuild press kit markdown and asset manifest",
-   "owner": "crew",
-   "eta_ts": 1795554000,
-   "source": "planned-work-calendar",
-   "event_id": "32ddughmvhfd5q98lfqu9oj4rg"
-  },
-  {
-   "id": "cal-385pkv0kob6eghiu",
-   "title": "League of Space Pirates EarthQuaker submission \u2014 step 3: Draft outbound submission",
-   "owner": "crew",
-   "eta_ts": 1795554000,
-   "source": "planned-work-calendar",
-   "event_id": "385pkv0kob6eghiujpac88etgs"
-  },
-  {
-   "id": "cal-49te3bh0kv50np93",
-   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 4: Closing \u2014 the relay test reaches Bluehost and returns; verified by Medic",
-   "owner": "crew",
-   "eta_ts": 1795554000,
-   "source": "planned-work-calendar",
-   "event_id": "49te3bh0kv50np931qikjmfc4o"
-  },
-  {
-   "id": "cal-6qoqs54v8cla2iv5",
-   "title": "Samples inbox processing and audit \u2014 step 3: Closing \u2014 inbox at zero backlog, outreach resumed, and the audit log current; verified by Medic",
-   "owner": "crew",
-   "eta_ts": 1795554000,
-   "source": "planned-work-calendar",
-   "event_id": "6qoqs54v8cla2iv5vn5521974c"
-  },
-  {
-   "id": "cal-ba4dpr4p7hkv47ts",
-   "title": "Crew Discord setup \u2014 step 3: Push one test escalation through the bridge and confirm it is processed",
-   "owner": "crew",
-   "eta_ts": 1795554000,
-   "source": "planned-work-calendar",
-   "event_id": "ba4dpr4p7hkv47ts2hmj6ovan4"
-  },
-  {
-   "id": "cal-bqtqqnrkb8h28q72",
-   "title": "Medic Bridge rollout \u2014 step 3: Trigger a bridge health report and confirm it arrives fresh",
-   "owner": "crew",
-   "eta_ts": 1795554000,
-   "source": "planned-work-calendar",
-   "event_id": "bqtqqnrkb8h28q72s614mslvl4"
-  },
-  {
-   "id": "cal-j6nul1l7s33iamav",
-   "title": "Medic-Rivet earning challenge \u2014 step 3: Create Lemon Squeezy account",
-   "owner": "crew",
-   "eta_ts": 1795554000,
-   "source": "planned-work-calendar",
-   "event_id": "j6nul1l7s33iamavhnkljpeq6c"
-  },
   {
    "id": "cal-3f86uhljtvriclpq",
    "title": "Unclaimed property search and claims \u2014 step 3: Stage NY state filing forms and instructions",
@@ -73,6 +17,14 @@
    "eta_ts": 1795557600,
    "source": "planned-work-calendar",
    "event_id": "ftn0j2vg7f82iislfu26h2ftn0"
+  },
+  {
+   "id": "cal-3grj2fctbnk38ib4",
+   "title": "Storage hash-confirmation pass \u2014 read + execute C:\\Users\\bruce\\MedicHub\\catalog\\hashpass-spec.md on Hex: build + launch the durable MedicHashPass job per spec; effect = launched + state file path. Read-only: delete nothing.",
+   "owner": "crew",
+   "eta_ts": 1795557866,
+   "source": "planned-work-calendar",
+   "event_id": "3grj2fctbnk38ib41iv99s8go8"
   },
   {
    "id": "cal-ht37mik1jt0ohnn5",
