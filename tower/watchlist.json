@@ -1,71 +1,7 @@
 {
- "generated_ts": 1795545664,
+ "generated_ts": 1795547448,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-6m6d0nk5h7nfhec4",
-   "title": "Hub run 2e8958ec \u2014 Siri relay to Bluehost \u2014 step 3: Run one Siri relay test through to Bluehost",
-   "owner": "crew",
-   "eta_ts": 1795546800,
-   "source": "planned-work-calendar",
-   "event_id": "6m6d0nk5h7nfhec4ggpdba708o"
-  },
-  {
-   "id": "cal-9k37a0v3v7l7qnjn",
-   "title": "How We Broke Claude: The Movie \u2014 step 3: Commit lock pass to project ledger",
-   "owner": "crew",
-   "eta_ts": 1795546800,
-   "source": "planned-work-calendar",
-   "event_id": "9k37a0v3v7l7qnjnp6n6g3ctsc"
-  },
-  {
-   "id": "cal-f7br1vt0hi9m3qt9",
-   "title": "WiZ bulb price-drop claim \u2014 step 3: Closing \u2014 the claim is filed with its reference recorded, or closed as not Bruce's to file per his Step 1 answer; verified by Medic",
-   "owner": "crew",
-   "eta_ts": 1795546800,
-   "source": "planned-work-calendar",
-   "event_id": "f7br1vt0hi9m3qt9nd3c0kjsv4"
-  },
-  {
-   "id": "cal-hr0evn7cp49uufc6",
-   "title": "IoT device map and quick-trigger controller \u2014 step 1: Re-run the full IoT sweep against all 36 mapped lights",
-   "owner": "crew",
-   "eta_ts": 1795546800,
-   "source": "planned-work-calendar",
-   "event_id": "hr0evn7cp49uufc6gojvghsub4"
-  },
-  {
-   "id": "cal-k8h5uv1eaa22lm2s",
-   "title": "Maytag washer Marketplace sale \u2014 step 3: Review and approve listing action",
-   "owner": "crew",
-   "eta_ts": 1795546800,
-   "source": "planned-work-calendar",
-   "event_id": "k8h5uv1eaa22lm2sa2o17jhi8k"
-  },
-  {
-   "id": "cal-l687tnna33p4p8c3",
-   "title": "Winter Bloom public face \u2014 step 3: Close the project \u2014 done = either (go) the handle is secured and verified live under the decided platform and name, verifier Medic by opening it fresh; or (no-go) Bruce's decision is on record and...",
-   "owner": "crew",
-   "eta_ts": 1795546800,
-   "source": "planned-work-calendar",
-   "event_id": "l687tnna33p4p8c3tpci9kq63s"
-  },
-  {
-   "id": "cal-ouafncm57d2g0qpe",
-   "title": "BoxBrain backend crew \u2014 step 3: Draft deployment gate checklist for Windows supervisor",
-   "owner": "crew",
-   "eta_ts": 1795546800,
-   "source": "planned-work-calendar",
-   "event_id": "ouafncm57d2g0qpeeoi7p65d6c"
-  },
-  {
-   "id": "cal-pamsr0hdkd5paf3j",
-   "title": "Unclaimed property search and claims \u2014 step 2: Give filing go-ahead and verify identity docs",
-   "owner": "crew",
-   "eta_ts": 1795546800,
-   "source": "planned-work-calendar",
-   "event_id": "pamsr0hdkd5paf3j40u19g8104"
-  },
   {
    "id": "cal-qfk96q7j5nrv2dak",
    "title": "How We Broke Claude: The Movie \u2014 step 4: Master lock confirmed",
