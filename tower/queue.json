@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795506280,
+ "generated_ts": 1795528484,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1109,7 +1109,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795528482
   },
   {
    "id": "cal-a34af9b9cc877308",
@@ -2349,6 +2351,28 @@
    "owner": "medic",
    "eta_ts": 1795649400,
    "escalate_ts": 1795649400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-9cbea9e7f33cb1e2",
+   "title": "Vet Samples prospects",
+   "owner": "crew",
+   "eta_ts": 1795701000,
+   "escalate_ts": 1795701000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-f92de0e8fdb75f3f",
+   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 1: Read guard/profile artifacts and record current hashes, supported game version and restore instructions",
+   "owner": "rivet",
+   "eta_ts": 1795701600,
+   "escalate_ts": 1795701600,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
