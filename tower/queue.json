@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795532694,
+ "generated_ts": 1795538458,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2409,6 +2409,39 @@
    "owner": "rivet",
    "eta_ts": 1795707000,
    "escalate_ts": 1795707000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-832ff0cec97c11aa",
+   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 3: Open BG3 locally and approve the exact GameGPT install/profile trial on his chosen save",
+   "owner": "bruce",
+   "eta_ts": 1795712400,
+   "escalate_ts": 1795712400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-879bc6d91b12361b",
+   "title": "Desktop-control and screen-comms lane \u2014 step 4: Closing \u2014 rev2 live and verified against the write-up; verified by Medic, confirmed by Rivet",
+   "owner": "medic",
+   "eta_ts": 1795712400,
+   "escalate_ts": 1795712400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-e86583006cc97a03",
+   "title": "IoT device map and quick-trigger controller \u2014 step 3: Update the device map and quick-trigger controller with every device's fresh state",
+   "owner": "medic",
+   "eta_ts": 1795712400,
+   "escalate_ts": 1795712400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
