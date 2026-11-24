@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795497182,
+ "generated_ts": 1795497506,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -943,6 +943,17 @@
    "owner": "medic",
    "eta_ts": 1795500774,
    "escalate_ts": 1795500774,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-9d48b5e27dabbf72",
+   "title": "Generalize queue claims crew-wide + re-offer past-escalation items",
+   "owner": "medic",
+   "eta_ts": 1795501103,
+   "escalate_ts": 1795501103,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
