@@ -1,39 +1,7 @@
 {
- "generated_ts": 1795626648,
+ "generated_ts": 1795628442,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-8v9p0jdkrr6va693",
-   "title": "League of Space Pirates press kit for Jon Croft at Hosa \u2014 step 7: Transmission verified",
-   "owner": "crew",
-   "eta_ts": 1795627800,
-   "source": "planned-work-calendar",
-   "event_id": "8v9p0jdkrr6va6938jg8v8u768"
-  },
-  {
-   "id": "cal-dmakr5pairl2ipkj",
-   "title": "League of Space Pirates EarthQuaker submission \u2014 step 6: Delivery verification",
-   "owner": "crew",
-   "eta_ts": 1795627800,
-   "source": "planned-work-calendar",
-   "event_id": "dmakr5pairl2ipkj66mc2frmjo"
-  },
-  {
-   "id": "cal-drk29vib6bsd4cvp",
-   "title": "Unclaimed property search and claims \u2014 step 5: Claim confirmation filed",
-   "owner": "crew",
-   "eta_ts": 1795627800,
-   "source": "planned-work-calendar",
-   "event_id": "drk29vib6bsd4cvpu8gqfjc58o"
-  },
-  {
-   "id": "cal-matrsk6q5tsupeac",
-   "title": "Medic-Rivet earning challenge \u2014 step 6: Challenge kickoff verified",
-   "owner": "crew",
-   "eta_ts": 1795627800,
-   "source": "planned-work-calendar",
-   "event_id": "matrsk6q5tsupeacagg2pj879c"
-  },
   {
    "id": "cal-cqkcvsgei34e58hf",
    "title": "Crew socials launch \u2014 step 1: Verify the closing state of the Halloween launch \u2014 confirm the finale post is live and record which crew accounts posted in the launch window, from the accounts themselves, not from memory",
@@ -449,6 +417,14 @@
    "eta_ts": 1795798800,
    "source": "planned-work-calendar",
    "event_id": "qp4oaqtgrd87oe5kl2kc474v6c"
+  },
+  {
+   "id": "cal-rmhg2jjdqgh9ppfi",
+   "title": "D: drive cleanup for game library \u2014 step 4: Reopen Steam and verify existing titles are discovered without duplicate downloads",
+   "owner": "crew",
+   "eta_ts": 1795802400,
+   "source": "planned-work-calendar",
+   "event_id": "rmhg2jjdqgh9ppfim1h7u10v2g"
   }
  ]
 }
