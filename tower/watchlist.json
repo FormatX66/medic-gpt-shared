@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795572644,
+ "generated_ts": 1795614043,
  "horizon_h": 48,
  "items": [
   {
@@ -561,6 +561,22 @@
    "eta_ts": 1795734000,
    "source": "planned-work-calendar",
    "event_id": "rkafco1sn5q6nja2cvu3jfng7g"
+  },
+  {
+   "id": "cal-3eotaai1aitoeqbp",
+   "title": "D: drive cleanup for game library \u2014 step 1: Verify D: game inventory and existing cleanup receipt read-only",
+   "owner": "crew",
+   "eta_ts": 1795788000,
+   "source": "planned-work-calendar",
+   "event_id": "3eotaai1aitoeqbpamv2jnnl68"
+  },
+  {
+   "id": "cal-bp2sbbsj0elgghf4",
+   "title": "Vet Samples prospects",
+   "owner": "crew",
+   "eta_ts": 1795787400,
+   "source": "planned-work-calendar",
+   "event_id": "bp2sbbsj0elgghf4q384807m8k_20261127T133000Z"
   }
  ]
 }
