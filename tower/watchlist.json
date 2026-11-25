@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795569052,
+ "generated_ts": 1795572644,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-k649eoni416qgvco",
-   "title": "Copilot (Tally) Git lead production team \u2014 step 2: Deliver the revised repo-map",
-   "owner": "crew",
-   "eta_ts": 1795572000,
-   "source": "planned-work-calendar",
-   "event_id": "k649eoni416qgvcoj0luac376k"
-  },
-  {
-   "id": "cal-piajuctnhasjgfcf",
-   "title": "Tally Bluehost connector \u2014 step 2: Run the fresh Bluehost inbox cleanup through the connector",
-   "owner": "crew",
-   "eta_ts": 1795572000,
-   "source": "planned-work-calendar",
-   "event_id": "piajuctnhasjgfcffa3lvoh08o"
-  },
   {
    "id": "cal-bp2sbbsj0elgghf4",
    "title": "Vet Samples prospects",
