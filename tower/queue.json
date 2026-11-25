@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795629883,
+ "generated_ts": 1795631686,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2248,7 +2248,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795631682
   },
   {
    "id": "cal-2bbde87d4b4bf752",
@@ -2259,7 +2261,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795631682
   },
   {
    "id": "cal-1f692531afd305c9",
@@ -2817,6 +2821,39 @@
    "owner": "crew",
    "eta_ts": 1795804200,
    "escalate_ts": 1795804200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-29b4cade1b54b430",
+   "title": "Project 255 \u2014 step 2: Run the fog-first pass on TruePeopleSearch per the campaign plan",
+   "owner": "medic",
+   "eta_ts": 1795806000,
+   "escalate_ts": 1795806000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-2bacb12c6f92ac1a",
+   "title": "Clock Tower migration to the Pi \u2014 step 4: Send the single canary wake (one send, no retries)",
+   "owner": "medic",
+   "eta_ts": 1795806000,
+   "escalate_ts": 1795806000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-9fc537b8918f9656",
+   "title": "D: drive cleanup for game library \u2014 step 5: Close project after comparing game inventory and Steam library evidence; verifier Medic, acceptance Bruce",
+   "owner": "medic",
+   "eta_ts": 1795806000,
+   "escalate_ts": 1795806000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
