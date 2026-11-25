@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795620888,
+ "generated_ts": 1795624857,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2659,6 +2659,17 @@
    "source": "planned-work-calendar"
   },
   {
+   "id": "cal-5f8226c30e604617",
+   "title": "Move Instagram session home to the crewbox (persistent browser profile)",
+   "owner": "Medic",
+   "eta_ts": 1795741200,
+   "escalate_ts": 1795741200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
    "id": "cal-ca301de67f1914aa",
    "title": "Vet Samples prospects",
    "owner": "crew",
@@ -2708,6 +2719,50 @@
    "owner": "rivet",
    "eta_ts": 1795795200,
    "escalate_ts": 1795795200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-378107c74f1afa15",
+   "title": "Medic\u2013GPT automated loop \u2014 step 2: Complete the joint manifest confirmation on package v0.1 with Rivet",
+   "owner": "medic",
+   "eta_ts": 1795798800,
+   "escalate_ts": 1795798800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-9b65b761f97a3d6c",
+   "title": "Clock Tower migration to the Pi \u2014 step 3: Stage the canary event jointly and confirm the package v0.1 manifest from both sides",
+   "owner": "medic",
+   "eta_ts": 1795798800,
+   "escalate_ts": 1795798800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-ab7a9d4c7e2c4d4d",
+   "title": "Rivet reset and recovery \u2014 step 2: Apply only the scaffold items Rivet approved, exactly as she disposed them",
+   "owner": "medic",
+   "eta_ts": 1795798800,
+   "escalate_ts": 1795798800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-b3de0c606a9037c0",
+   "title": "Tally unattended wake doorbell \u2014 step 2: Configure the production doorbell per the ruling (prototype already proven and stress-tested)",
+   "owner": "medic",
+   "eta_ts": 1795798800,
+   "escalate_ts": 1795798800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
