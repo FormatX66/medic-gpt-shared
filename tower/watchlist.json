@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795630249,
+ "generated_ts": 1795632047,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-r75sj6jdh5843ofu",
-   "title": "Process sample emails \u2014 midday",
-   "owner": "crew",
-   "eta_ts": 1795631400,
-   "source": "planned-work-calendar",
-   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261125T180000Z"
-  },
-  {
-   "id": "cal-thr6l6i85q1lg973",
-   "title": "Streamlined Instagram account creation \u2014 step 1: Verify the actual completion state of every current crew profile (Medic, Chet, Rivet, Tally) from the accounts themselves \u2014 which exist, which are complete, which are partial \u2014 becau...",
-   "owner": "crew",
-   "eta_ts": 1795631400,
-   "source": "planned-work-calendar",
-   "event_id": "thr6l6i85q1lg973vmj1bidcfg"
-  },
   {
    "id": "cal-hrvu6ppnqrtienpq",
    "title": "Project 255 \u2014 step 1: Run the fog-first pass on FastPeopleSearch per the campaign plan",
@@ -425,6 +409,30 @@
    "eta_ts": 1795804200,
    "source": "planned-work-calendar",
    "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261127T180000Z"
+  },
+  {
+   "id": "cal-a0nt8fl18e75dpdj",
+   "title": "Clock Tower migration to the Pi \u2014 step 4: Send the single canary wake (one send, no retries)",
+   "owner": "crew",
+   "eta_ts": 1795806000,
+   "source": "planned-work-calendar",
+   "event_id": "a0nt8fl18e75dpdjvb61t3a11g"
+  },
+  {
+   "id": "cal-ukf4j13n692rslkv",
+   "title": "D: drive cleanup for game library \u2014 step 5: Close project after comparing game inventory and Steam library evidence; verifier Medic, acceptance Bruce",
+   "owner": "crew",
+   "eta_ts": 1795806000,
+   "source": "planned-work-calendar",
+   "event_id": "ukf4j13n692rslkvfdekdr69q4"
+  },
+  {
+   "id": "cal-v83954qovrsu8dmb",
+   "title": "Project 255 \u2014 step 2: Run the fog-first pass on TruePeopleSearch per the campaign plan",
+   "owner": "crew",
+   "eta_ts": 1795806000,
+   "source": "planned-work-calendar",
+   "event_id": "v83954qovrsu8dmb8080avtmg8"
   }
  ]
 }
