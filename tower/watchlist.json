@@ -1,39 +1,7 @@
 {
- "generated_ts": 1795639245,
+ "generated_ts": 1795641041,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-3fajs3q2kcs69nvi",
-   "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 3: Process the Nov 25 credit decisions (Reading 3, Reading 4, Genetics Vocab) at the next sync",
-   "owner": "crew",
-   "eta_ts": 1795640400,
-   "source": "planned-work-calendar",
-   "event_id": "3fajs3q2kcs69nvil8rju8llks"
-  },
-  {
-   "id": "cal-f7t7e30an4r6lce7",
-   "title": "BoxBrain Shared Codex environment \u2014 step 3: Closing \u2014 the shared Codex environment is named, recorded, and reachable from both sides; verified by Medic and Rivet",
-   "owner": "crew",
-   "eta_ts": 1795640400,
-   "source": "planned-work-calendar",
-   "event_id": "f7t7e30an4r6lce7sfsig3umng"
-  },
-  {
-   "id": "cal-hd9fg1slnp4jita1",
-   "title": "Streamlined Instagram account creation \u2014 step 3: Verify Tally's completed profile loads and is reachable the same way the other crew profiles are",
-   "owner": "crew",
-   "eta_ts": 1795640400,
-   "source": "planned-work-calendar",
-   "event_id": "hd9fg1slnp4jita129eo2sbkd4"
-  },
-  {
-   "id": "cal-sr1coenbtrj0hb0q",
-   "title": "Desktop-control and screen-comms lane \u2014 step 3: Verify the laptop stays awake and the screen-comms lane captures cleanly after applying",
-   "owner": "crew",
-   "eta_ts": 1795640400,
-   "source": "planned-work-calendar",
-   "event_id": "sr1coenbtrj0hb0ql62boqg2rg"
-  },
   {
    "id": "cal-0ckbcquc72jikeku",
    "title": "Co-op agent network (standing goal) \u2014 step 3: Put the next single growth action on the calendar as its own dated item with a named owner \u2014 one action, not a campaign \u2014 chosen from the verified membership state in Step 2",
