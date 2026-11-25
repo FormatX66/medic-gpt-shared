@@ -1,55 +1,7 @@
 {
- "generated_ts": 1795632047,
+ "generated_ts": 1795633853,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-hrvu6ppnqrtienpq",
-   "title": "Project 255 \u2014 step 1: Run the fog-first pass on FastPeopleSearch per the campaign plan",
-   "owner": "crew",
-   "eta_ts": 1795633200,
-   "source": "planned-work-calendar",
-   "event_id": "hrvu6ppnqrtienpqf4b0v65sqg"
-  },
-  {
-   "id": "cal-jbfg5nen8359r3k0",
-   "title": "Tally Bluehost connector \u2014 step 4: Closing \u2014 the cleanup is done with its counts on record; verified by Medic",
-   "owner": "crew",
-   "eta_ts": 1795633200,
-   "source": "planned-work-calendar",
-   "event_id": "jbfg5nen8359r3k063ho2p0jio"
-  },
-  {
-   "id": "cal-qk7liq98cr0kd7n3",
-   "title": "Copilot (Tally) Git lead production team \u2014 step 4: Closing \u2014 the repo-map revision is on record and matches the repo; verified by Medic",
-   "owner": "crew",
-   "eta_ts": 1795633200,
-   "source": "planned-work-calendar",
-   "event_id": "qk7liq98cr0kd7n3h9gn8rjiqk"
-  },
-  {
-   "id": "cal-tm3hsqdcv5ek8g7u",
-   "title": "Agent Relay onboarding \u2014 step 4: Closing \u2014 relay test passes end-to-end in the new workspace; done when the test result is recorded, verified by Medic",
-   "owner": "crew",
-   "eta_ts": 1795633200,
-   "source": "planned-work-calendar",
-   "event_id": "tm3hsqdcv5ek8g7udupl3bb8ho"
-  },
-  {
-   "id": "cal-tm74oaeeit9oo3v1",
-   "title": "Co-op agent network (standing goal) \u2014 step 2: Verify the network's current membership state from records \u2014 who is in, under what agreement \u2014 because admissions require each participant's agreement and no step in this plan may treat...",
-   "owner": "crew",
-   "eta_ts": 1795633200,
-   "source": "planned-work-calendar",
-   "event_id": "tm74oaeeit9oo3v1uirk6bbs0o"
-  },
-  {
-   "id": "cal-udf00vu6mpbcaef5",
-   "title": "IoT device map and quick-trigger controller \u2014 step 2: Investigate the bedroom trio that timed out on Nov 4 (verification step \u2014 their state is unknown)",
-   "owner": "crew",
-   "eta_ts": 1795633200,
-   "source": "planned-work-calendar",
-   "event_id": "udf00vu6mpbcaef598bipe2v9g"
-  },
   {
    "id": "cal-3gjllc079hvj3v11",
    "title": "Streamlined Instagram account creation \u2014 step 2: Complete Tally's profile \u2014 the roster names it as next \u2014 using the same creation flow as the existing crew profiles, stopping at any step that requires Bruce (sign-in, password, iden...",
