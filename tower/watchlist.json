@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795633853,
+ "generated_ts": 1795637455,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-3gjllc079hvj3v11",
-   "title": "Streamlined Instagram account creation \u2014 step 2: Complete Tally's profile \u2014 the roster names it as next \u2014 using the same creation flow as the existing crew profiles, stopping at any step that requires Bruce (sign-in, password, iden...",
-   "owner": "crew",
-   "eta_ts": 1795636800,
-   "source": "planned-work-calendar",
-   "event_id": "3gjllc079hvj3v11l10tf5cri4"
-  },
-  {
-   "id": "cal-cag7468adaoncdpf",
-   "title": "Crewbox \u2014 step 4: Wake-bot home acceptance \u2014 reboot crewbox and prove bot self-recovers; one test doorbell starts exactly one Rivet turn (Rivet's conditions)",
-   "owner": "crew",
-   "eta_ts": 1795636800,
-   "source": "planned-work-calendar",
-   "event_id": "cag7468adaoncdpf8db13ebm40"
-  },
   {
    "id": "cal-3fajs3q2kcs69nvi",
    "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 3: Process the Nov 25 credit decisions (Reading 3, Reading 4, Genetics Vocab) at the next sync",
