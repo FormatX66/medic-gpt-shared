@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795619446,
+ "generated_ts": 1795621249,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-f0fe766l6c1ha3vl",
-   "title": "BoxBrain backend crew \u2014 step 6: Deployment and asset delivery verified",
-   "owner": "crew",
-   "eta_ts": 1795620600,
-   "source": "planned-work-calendar",
-   "event_id": "f0fe766l6c1ha3vlfhnhjbsu4g"
-  },
-  {
-   "id": "cal-lg8el9o2h8rnvvvf",
-   "title": "GPT ads satire video \u2014 step 4: Project state locked",
-   "owner": "crew",
-   "eta_ts": 1795620600,
-   "source": "planned-work-calendar",
-   "event_id": "lg8el9o2h8rnvvvflrjsu8e77o"
-  },
   {
    "id": "cal-5f5h38bsa9fn3oa9",
    "title": "Google Voice number for Medic and Rivet \u2014 step 2: Closing \u2014 one test text routed Medic \u2192 Rivet's Voice lane \u2192 Bruce lands and is read back; done when the routing is proven and recorded, with no Medic direct access pursued; verified...",
@@ -529,6 +513,14 @@
    "eta_ts": 1795791600,
    "source": "planned-work-calendar",
    "event_id": "p1pd41honudq5bqonla3jk1ueg"
+  },
+  {
+   "id": "cal-tl112shlsi3aeds7",
+   "title": "D: drive cleanup for game library \u2014 step 3: Verify Steam processes stopped and register D:\\SteamLibrary with Steam's supported library control",
+   "owner": "crew",
+   "eta_ts": 1795795200,
+   "source": "planned-work-calendar",
+   "event_id": "tl112shlsi3aeds77lq8htn5p8"
   }
  ]
 }
