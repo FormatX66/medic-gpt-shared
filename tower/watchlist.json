@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795644651,
+ "generated_ts": 1795646451,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-ges4d24rvvpe2klo",
-   "title": "Co-op agent network (standing goal) \u2014 step 4: Close this planning pass \u2014 done = the charter follow-up is verified live (Step 1), membership state is on record from evidence (Step 2), and exactly one next action exists as a dated, o...",
-   "owner": "crew",
-   "eta_ts": 1795645800,
-   "source": "planned-work-calendar",
-   "event_id": "ges4d24rvvpe2klo3qnh2t9leo"
-  },
-  {
-   "id": "cal-ht37mik1jt0ohnn5",
-   "title": "Process sample emails \u2014 evening",
-   "owner": "crew",
-   "eta_ts": 1795645800,
-   "source": "planned-work-calendar",
-   "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261125T220000Z"
-  },
   {
    "id": "cal-il8qtmjdbumpaisv",
    "title": "Rivet reset and recovery \u2014 step 1: Make and record your new-home scaffold decisions",
