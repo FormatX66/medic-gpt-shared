@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795566282,
+ "generated_ts": 1795614053,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2637,6 +2637,28 @@
    "owner": "medic",
    "eta_ts": 1795734000,
    "escalate_ts": 1795734000,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-ca301de67f1914aa",
+   "title": "Vet Samples prospects",
+   "owner": "crew",
+   "eta_ts": 1795787400,
+   "escalate_ts": 1795787400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-eedfd11084690da7",
+   "title": "D: drive cleanup for game library \u2014 step 1: Verify D: game inventory and existing cleanup receipt read-only",
+   "owner": "rivet",
+   "eta_ts": 1795788000,
+   "escalate_ts": 1795788000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
