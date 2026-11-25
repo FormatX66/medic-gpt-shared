@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795619091,
+ "generated_ts": 1795620888,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1981,7 +1981,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795620883
   },
   {
    "id": "cal-b507bf9d84cd1cec",
@@ -1992,7 +1994,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795620883
   },
   {
    "id": "cal-1a5173798cba492f",
@@ -2693,6 +2697,17 @@
    "owner": "bruce",
    "eta_ts": 1795791600,
    "escalate_ts": 1795791600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-9ec261bd43d53fde",
+   "title": "D: drive cleanup for game library \u2014 step 3: Verify Steam processes stopped and register D:\\SteamLibrary with Steam's supported library control",
+   "owner": "rivet",
+   "eta_ts": 1795795200,
+   "escalate_ts": 1795795200,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
