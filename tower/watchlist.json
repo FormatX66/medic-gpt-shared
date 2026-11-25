@@ -1,39 +1,7 @@
 {
- "generated_ts": 1795642844,
+ "generated_ts": 1795644651,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-r5q15bt1h2pvi34q",
-   "title": "VIP Circle founding and admission handshake \u2014 step 4: Close the project \u2014 done = the founding handshake is proven working on a real batch: joint scores on record and decisions delivered (Step 3), or a verified zero-applicant state ...",
-   "owner": "crew",
-   "eta_ts": 1795644000,
-   "source": "planned-work-calendar",
-   "event_id": "r5q15bt1h2pvi34qed8b9d87kc"
-  },
-  {
-   "id": "cal-s591mcmri60rcfmg",
-   "title": "Tally unattended wake doorbell \u2014 step 1: Rule on the dispatch store for future production wake work",
-   "owner": "crew",
-   "eta_ts": 1795644000,
-   "source": "planned-work-calendar",
-   "event_id": "s591mcmri60rcfmguj4m4lqtqg"
-  },
-  {
-   "id": "cal-sdgrgt8j25sp5mkc",
-   "title": "Clock Tower migration to the Pi \u2014 step 1: Deliver the supported launcher proof for the guarded wake",
-   "owner": "crew",
-   "eta_ts": 1795644000,
-   "source": "planned-work-calendar",
-   "event_id": "sdgrgt8j25sp5mkc7mfq5su9p0"
-  },
-  {
-   "id": "cal-u75bdnhp7vqflf91",
-   "title": "PRIORITY \u2014 Clock Tower canary \u2014 joint staging once Rivet's launcher proof + store pinning land (package v0.1 only; event row still unset)",
-   "owner": "crew",
-   "eta_ts": 1795644000,
-   "source": "planned-work-calendar",
-   "event_id": "u75bdnhp7vqflf91o6i115dsoc"
-  },
   {
    "id": "cal-ges4d24rvvpe2klo",
    "title": "Co-op agent network (standing goal) \u2014 step 4: Close this planning pass \u2014 done = the charter follow-up is verified live (Step 1), membership state is on record from evidence (Step 2), and exactly one next action exists as a dated, o...",
@@ -337,6 +305,22 @@
    "eta_ts": 1795813200,
    "source": "planned-work-calendar",
    "event_id": "dr8mrp5mlgaafv1jcb0vueck90"
+  },
+  {
+   "id": "cal-ht37mik1jt0ohnn5",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795818600,
+   "source": "planned-work-calendar",
+   "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261127T220000Z"
+  },
+  {
+   "id": "cal-rgurb2881080adq3",
+   "title": "GameGPT pod research - Elden Ring (platform, state access, anti-cheat, pod host, GameGPT fit)",
+   "owner": "crew",
+   "eta_ts": 1795820400,
+   "source": "planned-work-calendar",
+   "event_id": "rgurb2881080adq3g9hf86g98g"
   }
  ]
 }
