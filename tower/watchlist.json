@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795628442,
+ "generated_ts": 1795630249,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-cqkcvsgei34e58hf",
-   "title": "Crew socials launch \u2014 step 1: Verify the closing state of the Halloween launch \u2014 confirm the finale post is live and record which crew accounts posted in the launch window, from the accounts themselves, not from memory",
-   "owner": "crew",
-   "eta_ts": 1795629600,
-   "source": "planned-work-calendar",
-   "event_id": "cqkcvsgei34e58hfq5a3gj318c"
-  },
   {
    "id": "cal-r75sj6jdh5843ofu",
    "title": "Process sample emails \u2014 midday",
@@ -425,6 +417,14 @@
    "eta_ts": 1795802400,
    "source": "planned-work-calendar",
    "event_id": "rmhg2jjdqgh9ppfim1h7u10v2g"
+  },
+  {
+   "id": "cal-r75sj6jdh5843ofu",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795804200,
+   "source": "planned-work-calendar",
+   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261127T180000Z"
   }
  ]
 }
