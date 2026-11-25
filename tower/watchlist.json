@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795615856,
+ "generated_ts": 1795617654,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bcvd6iakvgodj3sv",
-   "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
-   "eta_ts": 1795617000,
-   "source": "planned-work-calendar",
-   "event_id": "bcvd6iakvgodj3svvuflece30k_20261125T140000Z"
-  },
   {
    "id": "cal-57mbk159kvtsss33",
    "title": "League of Space Pirates EarthQuaker submission \u2014 step 4: Step-exact send approval",
@@ -577,6 +569,14 @@
    "eta_ts": 1795789800,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261127T140000Z"
+  },
+  {
+   "id": "cal-p1pd41honudq5bqo",
+   "title": "D: drive cleanup for game library \u2014 step 2: Fully exit Steam using Steam > Exit and confirm games are closed",
+   "owner": "crew",
+   "eta_ts": 1795791600,
+   "source": "planned-work-calendar",
+   "event_id": "p1pd41honudq5bqonla3jk1ueg"
   }
  ]
 }
