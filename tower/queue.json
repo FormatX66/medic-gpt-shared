@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795615863,
+ "generated_ts": 1795617288,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -1894,7 +1894,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795617286
   },
   {
    "id": "cal-0391099bc8f56207",
@@ -2672,6 +2674,17 @@
    "owner": "crew",
    "eta_ts": 1795789800,
    "escalate_ts": 1795789800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-bb4fcb1f1dfb8de5",
+   "title": "D: drive cleanup for game library \u2014 step 2: Fully exit Steam using Steam > Exit and confirm games are closed",
+   "owner": "bruce",
+   "eta_ts": 1795791600,
+   "escalate_ts": 1795791600,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
