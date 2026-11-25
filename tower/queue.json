@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795642490,
+ "generated_ts": 1795644312,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2456,7 +2456,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795644293
   },
   {
    "id": "cal-905c39c7d70b447f",
@@ -2467,7 +2469,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795644293
   },
   {
    "id": "cal-b26b62f97a186797",
@@ -2478,7 +2482,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795644293
   },
   {
    "id": "cal-bed60d7b2af25b68",
@@ -2489,7 +2495,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795644293
   },
   {
    "id": "cal-46476469974695a2",
@@ -2904,6 +2912,28 @@
    "owner": "medic",
    "eta_ts": 1795813200,
    "escalate_ts": 1795813200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-ca5a6e9c89722e93",
+   "title": "Process sample emails \u2014 evening",
+   "owner": "crew",
+   "eta_ts": 1795818600,
+   "escalate_ts": 1795818600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-6f715140b3f9d066",
+   "title": "GameGPT pod research - Elden Ring (platform, state access, anti-cheat, pod host, GameGPT fit)",
+   "owner": "Medic",
+   "eta_ts": 1795820400,
+   "escalate_ts": 1795820400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
