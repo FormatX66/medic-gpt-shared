@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795563647,
+ "generated_ts": 1795565448,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-4jrcncpac131q2ll",
-   "title": "VIP Circle founding and admission handshake \u2014 step 3: Deliver the admission decisions for the scored batch and record them against the applicants' names \u2014 a decision that exists only in a chat thread is not delivered",
-   "owner": "crew",
-   "eta_ts": 1795564800,
-   "source": "planned-work-calendar",
-   "event_id": "4jrcncpac131q2ll70pb79fcgk"
-  },
-  {
-   "id": "cal-5ta8ddit5hno0ej9",
-   "title": "Monster DNA \u2014 run the submission session with Morri (pack ready)",
-   "owner": "crew",
-   "eta_ts": 1795564800,
-   "source": "planned-work-calendar",
-   "event_id": "5ta8ddit5hno0ej92cd529m9u4"
-  },
   {
    "id": "cal-1o98kq982q2ga0sn",
    "title": "Tally reviewed positions (DevTools packet + pickup-gap review)",
