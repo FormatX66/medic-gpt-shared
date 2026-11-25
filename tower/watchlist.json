@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795565448,
+ "generated_ts": 1795569052,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-1o98kq982q2ga0sn",
-   "title": "Tally reviewed positions (DevTools packet + pickup-gap review)",
-   "owner": "crew",
-   "eta_ts": 1795568400,
-   "source": "planned-work-calendar",
-   "event_id": "1o98kq982q2ga0sngijr4tt7a0"
-  },
-  {
-   "id": "cal-30ip3318u3ro61ir",
-   "title": "Muse.ai accounts for Rivet and Medic \u2014 step 1: In a laptop session, create the Muse.ai accounts for Rivet and for Medic, entering any passwords or codes yourself",
-   "owner": "crew",
-   "eta_ts": 1795568400,
-   "source": "planned-work-calendar",
-   "event_id": "30ip3318u3ro61irsq0ameu5gg"
-  },
   {
    "id": "cal-k649eoni416qgvco",
    "title": "Copilot (Tally) Git lead production team \u2014 step 2: Deliver the revised repo-map",
