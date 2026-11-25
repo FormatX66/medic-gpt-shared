@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795646451,
+ "generated_ts": 1795648251,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-il8qtmjdbumpaisv",
-   "title": "Rivet reset and recovery \u2014 step 1: Make and record your new-home scaffold decisions",
-   "owner": "crew",
-   "eta_ts": 1795647600,
-   "source": "planned-work-calendar",
-   "event_id": "il8qtmjdbumpaisvss3u9rmapk"
-  },
-  {
-   "id": "cal-ufq3lrujvfjggqa2",
-   "title": "Crew socials launch \u2014 step 2: Decide whether a next crew socials cycle exists \u2014 a named cycle with dates, or an explicit \"launch closed, no successor\"",
-   "owner": "crew",
-   "eta_ts": 1795647600,
-   "source": "planned-work-calendar",
-   "event_id": "ufq3lrujvfjggqa2h8e7uusvt8"
-  },
   {
    "id": "cal-s8ilo0rf9oepgarj",
    "title": "Crew socials launch \u2014 step 3: Close the project \u2014 done = the Halloween launch is verified complete (Step 1) AND Bruce's Step 2 decision is on record: either a successor cycle exists as its own new project, or the launch stands clos...",
