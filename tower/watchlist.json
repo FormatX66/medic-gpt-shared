@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795641041,
+ "generated_ts": 1795642844,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-0ckbcquc72jikeku",
-   "title": "Co-op agent network (standing goal) \u2014 step 3: Put the next single growth action on the calendar as its own dated item with a named owner \u2014 one action, not a campaign \u2014 chosen from the verified membership state in Step 2",
-   "owner": "crew",
-   "eta_ts": 1795642200,
-   "source": "planned-work-calendar",
-   "event_id": "0ckbcquc72jikekupmgvm1stpc"
-  },
-  {
-   "id": "cal-ok2vk373n3tfjnh0",
-   "title": "Streamlined Instagram account creation \u2014 step 4: Close the project \u2014 done = every current crew profile's state is on record from Step 1's verification and Tally's profile is complete and verified (Step 3); verifier is Medic. Profil...",
-   "owner": "crew",
-   "eta_ts": 1795642200,
-   "source": "planned-work-calendar",
-   "event_id": "ok2vk373n3tfjnh0are7t882c4"
-  },
   {
    "id": "cal-r5q15bt1h2pvi34q",
    "title": "VIP Circle founding and admission handshake \u2014 step 4: Close the project \u2014 done = the founding handshake is proven working on a real batch: joint scores on record and decisions delivered (Step 3), or a verified zero-applicant state ...",
