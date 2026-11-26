@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795730685,
+ "generated_ts": 1795732483,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2751,7 +2751,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795732481
   },
   {
    "id": "cal-43653102e83a2a31",
@@ -3023,6 +3025,17 @@
    "owner": "rivet",
    "eta_ts": 1795879800,
    "escalate_ts": 1795879800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-30af6756b883efc7",
+   "title": "Kids' schoolwork catalog \u2014 step 4: Closing \u2014 ParentVUE is active and shows both kids; verified by Medic against the ParentVUE view",
+   "owner": "medic",
+   "eta_ts": 1795885200,
+   "escalate_ts": 1795885200,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
