@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795731063,
+ "generated_ts": 1795732849,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-ht37mik1jt0ohnn5",
-   "title": "Process sample emails \u2014 evening",
-   "owner": "crew",
-   "eta_ts": 1795732200,
-   "source": "planned-work-calendar",
-   "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261126T220000Z"
-  },
   {
    "id": "cal-rkafco1sn5q6nja2",
    "title": "Morrigan's Quest Board \u2014 schoolwork sync \u2014 step 5: Closing \u2014 every Nov 25\u201326 credit decision is settled or reversed per the Canvas record, with balances matching the board; verified by Medic against Canvas",
