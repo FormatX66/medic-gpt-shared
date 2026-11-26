@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795702248,
+ "generated_ts": 1795704077,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bcvd6iakvgodj3sv",
-   "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
-   "eta_ts": 1795703400,
-   "source": "planned-work-calendar",
-   "event_id": "bcvd6iakvgodj3svvuflece30k_20261126T140000Z"
-  },
   {
    "id": "cal-tmep8da8h06r3tgn",
    "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 2: Run isolated fixture validation of the first profile and backup/restore path; attach result",
