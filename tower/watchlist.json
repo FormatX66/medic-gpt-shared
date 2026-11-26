@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795650042,
+ "generated_ts": 1795653649,
  "horizon_h": 48,
  "items": [
   {
@@ -281,6 +281,14 @@
    "eta_ts": 1795820400,
    "source": "planned-work-calendar",
    "event_id": "rgurb2881080adq3g9hf86g98g"
+  },
+  {
+   "id": "cal-us57f0a16t5lq3oh",
+   "title": "Kids' schoolwork catalog \u2014 step 3: Activate ParentVUE using the activation code from the counseling office when it arrives",
+   "owner": "crew",
+   "eta_ts": 1795827600,
+   "source": "planned-work-calendar",
+   "event_id": "us57f0a16t5lq3ohqk62trph6g"
   }
  ]
 }
