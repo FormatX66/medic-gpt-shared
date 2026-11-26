@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795705848,
+ "generated_ts": 1795707650,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-tmep8da8h06r3tgn",
-   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 2: Run isolated fixture validation of the first profile and backup/restore path; attach result",
-   "owner": "crew",
-   "eta_ts": 1795707000,
-   "source": "planned-work-calendar",
-   "event_id": "tmep8da8h06r3tgn52ki5t0v08"
-  },
   {
    "id": "cal-2jqj2199lmgpibb2",
    "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 3: Open BG3 locally and approve the exact GameGPT install/profile trial on his chosen save",
