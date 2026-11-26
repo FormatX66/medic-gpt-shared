@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795718447,
+ "generated_ts": 1795720245,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-6kgrg3fm44rcfvt5",
-   "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 4: Install approved profile in the authorized session, back up the chosen save and perform one bounded profile test",
-   "owner": "crew",
-   "eta_ts": 1795719600,
-   "source": "planned-work-calendar",
-   "event_id": "6kgrg3fm44rcfvt5lei01a8thk"
-  },
   {
    "id": "cal-pu4ce9u0io0vac5s",
    "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 5: Verify intended game effect and restore rehearsal against saved hashes; record deviations",
