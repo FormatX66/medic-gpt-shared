@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795653658,
+ "generated_ts": 1795700444,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2953,6 +2953,28 @@
    "owner": "bruce",
    "eta_ts": 1795827600,
    "escalate_ts": 1795827600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-64130d612669a878",
+   "title": "Vet Samples prospects",
+   "owner": "crew",
+   "eta_ts": 1795873800,
+   "escalate_ts": 1795873800,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-0018ccb82566a257",
+   "title": "GameGPT live NMS edits \u2014 step 1: Read current grants/profile hashes and reconcile last harness results with installed NMS version",
+   "owner": "rivet",
+   "eta_ts": 1795874400,
+   "escalate_ts": 1795874400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
