@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795703686,
+ "generated_ts": 1795705854,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2992,6 +2992,17 @@
    "owner": "crew",
    "eta_ts": 1795876200,
    "escalate_ts": 1795876200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-8fed4bda113ac7c9",
+   "title": "GameGPT live NMS edits \u2014 step 2: Validate the exact proposed edit in fixtures and prepare one-use grant plus save rollback plan",
+   "owner": "rivet",
+   "eta_ts": 1795879800,
+   "escalate_ts": 1795879800,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
