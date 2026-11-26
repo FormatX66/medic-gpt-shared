@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795704077,
+ "generated_ts": 1795705848,
  "horizon_h": 48,
  "items": [
   {
@@ -289,6 +289,14 @@
    "eta_ts": 1795876200,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261128T140000Z"
+  },
+  {
+   "id": "cal-fjdt7rj6q9239k17",
+   "title": "GameGPT live NMS edits \u2014 step 2: Validate the exact proposed edit in fixtures and prepare one-use grant plus save rollback plan",
+   "owner": "crew",
+   "eta_ts": 1795879800,
+   "source": "planned-work-calendar",
+   "event_id": "fjdt7rj6q9239k17s8elfmpagc"
   }
  ]
 }
