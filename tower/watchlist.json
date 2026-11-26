@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795723851,
+ "generated_ts": 1795725647,
  "horizon_h": 48,
  "items": [
   {
@@ -313,6 +313,22 @@
    "eta_ts": 1795896000,
    "source": "planned-work-calendar",
    "event_id": "eorevbn45291kfc568fpdefrpg"
+  },
+  {
+   "id": "cal-f2kas0etdkcllmhq",
+   "title": "Refractive map \u2014 step 2: Process the calibration walk against the captured baseline",
+   "owner": "crew",
+   "eta_ts": 1795899600,
+   "source": "planned-work-calendar",
+   "event_id": "f2kas0etdkcllmhq82vh17m2jk"
+  },
+  {
+   "id": "cal-o53mln027dl1drs2",
+   "title": "GameGPT live NMS edits \u2014 step 6: Close this live-edit delivery with verified effect and restorable save; verifier Medic, acceptance Bruce",
+   "owner": "crew",
+   "eta_ts": 1795899600,
+   "source": "planned-work-calendar",
+   "event_id": "o53mln027dl1drs20kv9bb1mpo"
   }
  ]
 }
