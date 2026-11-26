@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795712684,
+ "generated_ts": 1795718081,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2660,7 +2660,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795718079
   },
   {
    "id": "cal-9ff3a53515108d30",
@@ -3017,6 +3019,17 @@
   {
    "id": "cal-7add3f5f509262d4",
    "title": "GameGPT live NMS edits \u2014 step 3: Start his offline NMS session and approve the exact edit on the named backed-up save",
+   "owner": "bruce",
+   "eta_ts": 1795885200,
+   "escalate_ts": 1795885200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-88137ed9af3b1371",
+   "title": "Refractive map \u2014 step 1: Walk the mapped area for the 10-minute calibration walk while Medic records",
    "owner": "bruce",
    "eta_ts": 1795885200,
    "escalate_ts": 1795885200,
