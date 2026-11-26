@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795720245,
+ "generated_ts": 1795722045,
  "horizon_h": 48,
  "items": [
   {
@@ -313,6 +313,14 @@
    "eta_ts": 1795892400,
    "source": "planned-work-calendar",
    "event_id": "kf8m5q279lscmbj725bcamb44g"
+  },
+  {
+   "id": "cal-eorevbn45291kfc5",
+   "title": "GameGPT live NMS edits \u2014 step 5: Independently compare intended effect, save integrity and grant consumption; verify rollback evidence",
+   "owner": "crew",
+   "eta_ts": 1795896000,
+   "source": "planned-work-calendar",
+   "event_id": "eorevbn45291kfc568fpdefrpg"
   }
  ]
 }
