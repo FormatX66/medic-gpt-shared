@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795701284,
+ "generated_ts": 1795701886,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2584,7 +2584,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795701884
   },
   {
    "id": "cal-10cce47013f453c8",
@@ -2977,6 +2979,17 @@
    "owner": "rivet",
    "eta_ts": 1795874400,
    "escalate_ts": 1795874400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-371ddadf45ff8f4b",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1795876200,
+   "escalate_ts": 1795876200,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
