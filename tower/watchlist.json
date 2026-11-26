@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795716649,
+ "generated_ts": 1795718447,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-r75sj6jdh5843ofu",
-   "title": "Process sample emails \u2014 midday",
-   "owner": "crew",
-   "eta_ts": 1795717800,
-   "source": "planned-work-calendar",
-   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261126T180000Z"
-  },
   {
    "id": "cal-6kgrg3fm44rcfvt5",
    "title": "Baldur's Gate 3 GameGPT build-out \u2014 step 4: Install approved profile in the authorized session, back up the chosen save and perform one bounded profile test",
@@ -321,6 +313,14 @@
    "eta_ts": 1795890600,
    "source": "planned-work-calendar",
    "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261128T180000Z"
+  },
+  {
+   "id": "cal-kf8m5q279lscmbj7",
+   "title": "GameGPT live NMS edits \u2014 step 4: Back up save and execute the one approved edit through the guarded pipeline",
+   "owner": "crew",
+   "eta_ts": 1795892400,
+   "source": "planned-work-calendar",
+   "event_id": "kf8m5q279lscmbj725bcamb44g"
   }
  ]
 }
