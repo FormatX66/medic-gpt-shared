@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795803045,
+ "generated_ts": 1795804851,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-r75sj6jdh5843ofu",
-   "title": "Process sample emails \u2014 midday",
-   "owner": "crew",
-   "eta_ts": 1795804200,
-   "source": "planned-work-calendar",
-   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261127T180000Z"
-  },
   {
    "id": "cal-a0nt8fl18e75dpdj",
    "title": "Clock Tower migration to the Pi \u2014 step 4: Send the single canary wake (one send, no retries)",
