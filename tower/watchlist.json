@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795741852,
+ "generated_ts": 1795786843,
  "horizon_h": 48,
  "items": [
   {
@@ -281,6 +281,22 @@
    "eta_ts": 1795905000,
    "source": "planned-work-calendar",
    "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261128T220000Z"
+  },
+  {
+   "id": "cal-bp2sbbsj0elgghf4",
+   "title": "Vet Samples prospects",
+   "owner": "crew",
+   "eta_ts": 1795960200,
+   "source": "planned-work-calendar",
+   "event_id": "bp2sbbsj0elgghf4q384807m8k_20261129T133000Z"
+  },
+  {
+   "id": "cal-u1s13r0voggomob1",
+   "title": "GameGPT R&D discovery copilot \u2014 step 1: Locate existing laptop findings/profile files read-only and record provenance/version",
+   "owner": "crew",
+   "eta_ts": 1795960800,
+   "source": "planned-work-calendar",
+   "event_id": "u1s13r0voggomob13ol5n6j5l8"
   }
  ]
 }
