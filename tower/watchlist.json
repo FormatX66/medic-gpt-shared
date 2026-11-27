@@ -1,31 +1,7 @@
 {
- "generated_ts": 1795804851,
+ "generated_ts": 1795806654,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-a0nt8fl18e75dpdj",
-   "title": "Clock Tower migration to the Pi \u2014 step 4: Send the single canary wake (one send, no retries)",
-   "owner": "crew",
-   "eta_ts": 1795806000,
-   "source": "planned-work-calendar",
-   "event_id": "a0nt8fl18e75dpdjvb61t3a11g"
-  },
-  {
-   "id": "cal-ukf4j13n692rslkv",
-   "title": "D: drive cleanup for game library \u2014 step 5: Close project after comparing game inventory and Steam library evidence; verifier Medic, acceptance Bruce",
-   "owner": "crew",
-   "eta_ts": 1795806000,
-   "source": "planned-work-calendar",
-   "event_id": "ukf4j13n692rslkvfdekdr69q4"
-  },
-  {
-   "id": "cal-v83954qovrsu8dmb",
-   "title": "Project 255 \u2014 step 2: Run the fog-first pass on TruePeopleSearch per the campaign plan",
-   "owner": "crew",
-   "eta_ts": 1795806000,
-   "source": "planned-work-calendar",
-   "event_id": "v83954qovrsu8dmb8080avtmg8"
-  },
   {
    "id": "cal-4or48un2u5iuu0u8",
    "title": "Clock Tower migration to the Pi \u2014 step 5: Closing \u2014 one persisted MQ ID, one new Rivet turn, the deterministic result (2080) and a durable completion receipt all read back; done when all four are on record, verified by Medic and Rivet",
@@ -265,6 +241,14 @@
    "eta_ts": 1795977000,
    "source": "planned-work-calendar",
    "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261129T180000Z"
+  },
+  {
+   "id": "cal-63ike4efuuki0vhn",
+   "title": "GameGPT R&D discovery copilot \u2014 step 5: Review provenance and reproduce selected fixture results independently",
+   "owner": "crew",
+   "eta_ts": 1795980600,
+   "source": "planned-work-calendar",
+   "event_id": "63ike4efuuki0vhns6eq8qarko"
   }
  ]
 }
