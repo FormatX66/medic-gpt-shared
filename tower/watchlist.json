@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795806654,
+ "generated_ts": 1795812042,
  "horizon_h": 48,
  "items": [
   {
@@ -249,6 +249,14 @@
    "eta_ts": 1795980600,
    "source": "planned-work-calendar",
    "event_id": "63ike4efuuki0vhns6eq8qarko"
+  },
+  {
+   "id": "cal-bornoimsclsd8sl9",
+   "title": "GameGPT R&D discovery copilot \u2014 step 6: Close discovery handoff with tested profiles, evidence index and explicit unknowns; verifier Medic",
+   "owner": "crew",
+   "eta_ts": 1795986000,
+   "source": "planned-work-calendar",
+   "event_id": "bornoimsclsd8sl9tgu66hr5do"
   }
  ]
 }
