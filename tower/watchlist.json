@@ -1,39 +1,7 @@
 {
- "generated_ts": 1795797648,
+ "generated_ts": 1795799453,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bd6tidn8gbr6tc20",
-   "title": "Clock Tower migration to the Pi \u2014 step 3: Stage the canary event jointly and confirm the package v0.1 manifest from both sides",
-   "owner": "crew",
-   "eta_ts": 1795798800,
-   "source": "planned-work-calendar",
-   "event_id": "bd6tidn8gbr6tc209hfdrffvp0"
-  },
-  {
-   "id": "cal-f1cpjas15g179lp9",
-   "title": "Rivet reset and recovery \u2014 step 2: Apply only the scaffold items Rivet approved, exactly as she disposed them",
-   "owner": "crew",
-   "eta_ts": 1795798800,
-   "source": "planned-work-calendar",
-   "event_id": "f1cpjas15g179lp9pu0nedcvrg"
-  },
-  {
-   "id": "cal-k3u3s0sbo80hec6m",
-   "title": "Medic\u2013GPT automated loop \u2014 step 2: Complete the joint manifest confirmation on package v0.1 with Rivet",
-   "owner": "crew",
-   "eta_ts": 1795798800,
-   "source": "planned-work-calendar",
-   "event_id": "k3u3s0sbo80hec6m8ljhdkq79s"
-  },
-  {
-   "id": "cal-qp4oaqtgrd87oe5k",
-   "title": "Tally unattended wake doorbell \u2014 step 2: Configure the production doorbell per the ruling (prototype already proven and stress-tested)",
-   "owner": "crew",
-   "eta_ts": 1795798800,
-   "source": "planned-work-calendar",
-   "event_id": "qp4oaqtgrd87oe5kl2kc474v6c"
-  },
   {
    "id": "cal-rmhg2jjdqgh9ppfi",
    "title": "D: drive cleanup for game library \u2014 step 4: Reopen Steam and verify existing titles are discovered without duplicate downloads",
