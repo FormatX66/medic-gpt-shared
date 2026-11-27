@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795818890,
+ "generated_ts": 1795820683,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -3009,7 +3009,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795820680
   },
   {
    "id": "cal-8d4ff5c5a57ef5f1",
