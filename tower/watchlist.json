@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795817449,
+ "generated_ts": 1795819241,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-ht37mik1jt0ohnn5",
-   "title": "Process sample emails \u2014 evening",
-   "owner": "crew",
-   "eta_ts": 1795818600,
-   "source": "planned-work-calendar",
-   "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261127T220000Z"
-  },
   {
    "id": "cal-rgurb2881080adq3",
    "title": "GameGPT pod research - Elden Ring (platform, state access, anti-cheat, pod host, GameGPT fit)",
