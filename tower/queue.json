@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795790084,
+ "generated_ts": 1795794047,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -3066,6 +3066,17 @@
    "id": "cal-7add3f5f509262d4",
    "title": "GameGPT live NMS edits \u2014 step 3: Start his offline NMS session and approve the exact edit on the named backed-up save",
    "owner": "bruce",
+   "eta_ts": 1795885200,
+   "escalate_ts": 1795885200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-7dfcfd2bb8ead1a5",
+   "title": "Tally unattended wake doorbell \u2014 step 4: Closing \u2014 Tally wakes unattended and acknowledges the test wake; verified by Medic and Tally",
+   "owner": "copilot",
    "eta_ts": 1795885200,
    "escalate_ts": 1795885200,
    "state": "queued",
