@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795795845,
+ "generated_ts": 1795797648,
  "horizon_h": 48,
  "items": [
   {
@@ -289,6 +289,14 @@
    "eta_ts": 1795969800,
    "source": "planned-work-calendar",
    "event_id": "rdu1991bl9h8fkgnfh5ptls81o"
+  },
+  {
+   "id": "cal-0jga3h7mu67e1jc8",
+   "title": "Refractive map \u2014 step 3: Closing \u2014 the map is calibrated against the walk data and the result recorded; verified by Medic",
+   "owner": "crew",
+   "eta_ts": 1795971600,
+   "source": "planned-work-calendar",
+   "event_id": "0jga3h7mu67e1jc83ficsv1m8c"
   }
  ]
 }
