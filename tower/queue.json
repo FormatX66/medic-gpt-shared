@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795802683,
+ "generated_ts": 1795804484,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2918,7 +2918,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795804481
   },
   {
    "id": "cal-29b4cade1b54b430",
@@ -3100,6 +3102,17 @@
    "id": "cal-88137ed9af3b1371",
    "title": "Refractive map \u2014 step 1: Walk the mapped area for the 10-minute calibration walk while Medic records",
    "owner": "bruce",
+   "eta_ts": 1795885200,
+   "escalate_ts": 1795885200,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-e57f4f7c4f0b9ed6",
+   "title": "Rivet reset and recovery \u2014 step 3: Closing \u2014 the scaffold stands as Rivet decided it, nothing added beyond her disposition; verified by Rivet",
+   "owner": "rivet",
    "eta_ts": 1795885200,
    "escalate_ts": 1795885200,
    "state": "queued",
