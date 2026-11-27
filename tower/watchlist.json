@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795788655,
+ "generated_ts": 1795790446,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bcvd6iakvgodj3sv",
-   "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
-   "eta_ts": 1795789800,
-   "source": "planned-work-calendar",
-   "event_id": "bcvd6iakvgodj3svvuflece30k_20261127T140000Z"
-  },
   {
    "id": "cal-p1pd41honudq5bqo",
    "title": "D: drive cleanup for game library \u2014 step 2: Fully exit Steam using Steam > Exit and confirm games are closed",
@@ -289,6 +281,14 @@
    "eta_ts": 1795962600,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261129T140000Z"
+  },
+  {
+   "id": "cal-iv1i6sdiubbam7tm",
+   "title": "GameGPT R&D discovery copilot \u2014 step 2: Copy the existing NMS findings/address report into the private handoff if no agent-readable route exists",
+   "owner": "crew",
+   "eta_ts": 1795964400,
+   "source": "planned-work-calendar",
+   "event_id": "iv1i6sdiubbam7tmusebl9e54s"
   }
  ]
 }
