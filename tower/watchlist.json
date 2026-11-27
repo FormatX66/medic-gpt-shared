@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795801255,
+ "generated_ts": 1795803045,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-rmhg2jjdqgh9ppfi",
-   "title": "D: drive cleanup for game library \u2014 step 4: Reopen Steam and verify existing titles are discovered without duplicate downloads",
-   "owner": "crew",
-   "eta_ts": 1795802400,
-   "source": "planned-work-calendar",
-   "event_id": "rmhg2jjdqgh9ppfim1h7u10v2g"
-  },
   {
    "id": "cal-r75sj6jdh5843ofu",
    "title": "Process sample emails \u2014 midday",
@@ -273,6 +265,14 @@
    "eta_ts": 1795975200,
    "source": "planned-work-calendar",
    "event_id": "v3gbq4js8qtekhbhnsos72mivs"
+  },
+  {
+   "id": "cal-r75sj6jdh5843ofu",
+   "title": "Process sample emails \u2014 midday",
+   "owner": "crew",
+   "eta_ts": 1795977000,
+   "source": "planned-work-calendar",
+   "event_id": "r75sj6jdh5843ofuuv5ijerohs_20261129T180000Z"
   }
  ]
 }
