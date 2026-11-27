@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795812042,
+ "generated_ts": 1795813846,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-4or48un2u5iuu0u8",
-   "title": "Clock Tower migration to the Pi \u2014 step 5: Closing \u2014 one persisted MQ ID, one new Rivet turn, the deterministic result (2080) and a durable completion receipt all read back; done when all four are on record, verified by Medic and Rivet",
-   "owner": "crew",
-   "eta_ts": 1795813200,
-   "source": "planned-work-calendar",
-   "event_id": "4or48un2u5iuu0u8otn4kvaobk"
-  },
-  {
-   "id": "cal-dr8mrp5mlgaafv1j",
-   "title": "Tally unattended wake doorbell \u2014 step 3: Run one production wake test to Tally",
-   "owner": "crew",
-   "eta_ts": 1795813200,
-   "source": "planned-work-calendar",
-   "event_id": "dr8mrp5mlgaafv1jcb0vueck90"
-  },
   {
    "id": "cal-ht37mik1jt0ohnn5",
    "title": "Process sample emails \u2014 evening",
