@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795790446,
+ "generated_ts": 1795792256,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-p1pd41honudq5bqo",
-   "title": "D: drive cleanup for game library \u2014 step 2: Fully exit Steam using Steam > Exit and confirm games are closed",
-   "owner": "crew",
-   "eta_ts": 1795791600,
-   "source": "planned-work-calendar",
-   "event_id": "p1pd41honudq5bqonla3jk1ueg"
-  },
   {
    "id": "cal-tl112shlsi3aeds7",
    "title": "D: drive cleanup for game library \u2014 step 3: Verify Steam processes stopped and register D:\\SteamLibrary with Steam's supported library control",
@@ -289,6 +281,14 @@
    "eta_ts": 1795964400,
    "source": "planned-work-calendar",
    "event_id": "iv1i6sdiubbam7tmusebl9e54s"
+  },
+  {
+   "id": "cal-28eos6ua7fj0rbao",
+   "title": "Medic\u2013GPT automated loop \u2014 step 4: Closing \u2014 the claim-or-hold protocol is adopted into the standing notes and the loop's convergence conditions are all met on record; verified by Medic, accepted by Bruce",
+   "owner": "crew",
+   "eta_ts": 1795966800,
+   "source": "planned-work-calendar",
+   "event_id": "28eos6ua7fj0rbaoj8nngvfkug"
   }
  ]
 }
