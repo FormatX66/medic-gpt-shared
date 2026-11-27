@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795799453,
+ "generated_ts": 1795801255,
  "horizon_h": 48,
  "items": [
   {
@@ -265,6 +265,14 @@
    "eta_ts": 1795971600,
    "source": "planned-work-calendar",
    "event_id": "0jga3h7mu67e1jc83ficsv1m8c"
+  },
+  {
+   "id": "cal-v3gbq4js8qtekhbh",
+   "title": "GameGPT R&D discovery copilot \u2014 step 4: Replay profile fixtures with address mismatch and version-drift cases; quarantine mismatches",
+   "owner": "crew",
+   "eta_ts": 1795975200,
+   "source": "planned-work-calendar",
+   "event_id": "v3gbq4js8qtekhbhnsos72mivs"
   }
  ]
 }
