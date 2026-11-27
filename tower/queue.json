@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795806290,
+ "generated_ts": 1795813486,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -2970,7 +2970,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795813482
   },
   {
    "id": "cal-fb1d795a0b7bc08c",
@@ -2981,7 +2983,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795813482
   },
   {
    "id": "cal-ca5a6e9c89722e93",
