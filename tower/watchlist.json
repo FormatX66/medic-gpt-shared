@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795734653,
+ "generated_ts": 1795741852,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-8575a6j09ccnfrm1",
-   "title": "Move Instagram session home to the crewbox (persistent browser profile)",
-   "owner": "crew",
-   "eta_ts": 1795741200,
-   "source": "planned-work-calendar",
-   "event_id": "8575a6j09ccnfrm18r3uciunso"
-  },
   {
    "id": "cal-3eotaai1aitoeqbp",
    "title": "D: drive cleanup for game library \u2014 step 1: Verify D: game inventory and existing cleanup receipt read-only",
