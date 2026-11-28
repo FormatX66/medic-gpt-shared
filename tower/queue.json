@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795876482,
+ "generated_ts": 1795880083,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -3072,7 +3072,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795880080
   },
   {
    "id": "cal-30af6756b883efc7",
@@ -3157,6 +3159,17 @@
    "owner": "rivet",
    "eta_ts": 1795892400,
    "escalate_ts": 1795892400,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-4dbd586597ddebd7",
+   "title": "GameGPT live NMS edits \u2014 step 5: Independently compare intended effect, save integrity and grant consumption; verify rollback evidence",
+   "owner": "medic",
+   "eta_ts": 1795896000,
+   "escalate_ts": 1795896000,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
