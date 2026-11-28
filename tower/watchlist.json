@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795821053,
+ "generated_ts": 1795828251,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-us57f0a16t5lq3oh",
-   "title": "Kids' schoolwork catalog \u2014 step 3: Activate ParentVUE using the activation code from the counseling office when it arrives",
-   "owner": "crew",
-   "eta_ts": 1795827600,
-   "source": "planned-work-calendar",
-   "event_id": "us57f0a16t5lq3ohqk62trph6g"
-  },
   {
    "id": "cal-9gk28njo85tqtdnn",
    "title": "GameGPT live NMS edits \u2014 step 1: Read current grants/profile hashes and reconcile last harness results with installed NMS version",
