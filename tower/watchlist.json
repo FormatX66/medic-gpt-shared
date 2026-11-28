@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795875061,
+ "generated_ts": 1795876844,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-bcvd6iakvgodj3sv",
-   "title": "Process sample emails \u2014 morning",
-   "owner": "crew",
-   "eta_ts": 1795876200,
-   "source": "planned-work-calendar",
-   "event_id": "bcvd6iakvgodj3svvuflece30k_20261128T140000Z"
-  },
   {
    "id": "cal-fjdt7rj6q9239k17",
    "title": "GameGPT live NMS edits \u2014 step 2: Validate the exact proposed edit in fixtures and prepare one-use grant plus save rollback plan",
