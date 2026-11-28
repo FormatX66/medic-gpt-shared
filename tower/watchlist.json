@@ -1,23 +1,7 @@
 {
- "generated_ts": 1795873248,
+ "generated_ts": 1795875061,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-9gk28njo85tqtdnn",
-   "title": "GameGPT live NMS edits \u2014 step 1: Read current grants/profile hashes and reconcile last harness results with installed NMS version",
-   "owner": "crew",
-   "eta_ts": 1795874400,
-   "source": "planned-work-calendar",
-   "event_id": "9gk28njo85tqtdnnhpt4ms7v5o"
-  },
-  {
-   "id": "cal-bp2sbbsj0elgghf4",
-   "title": "Vet Samples prospects",
-   "owner": "crew",
-   "eta_ts": 1795873800,
-   "source": "planned-work-calendar",
-   "event_id": "bp2sbbsj0elgghf4q384807m8k_20261128T133000Z"
-  },
   {
    "id": "cal-bcvd6iakvgodj3sv",
    "title": "Process sample emails \u2014 morning",
@@ -241,6 +225,14 @@
    "eta_ts": 1796046600,
    "source": "planned-work-calendar",
    "event_id": "bp2sbbsj0elgghf4q384807m8k_20261130T133000Z"
+  },
+  {
+   "id": "cal-bcvd6iakvgodj3sv",
+   "title": "Process sample emails \u2014 morning",
+   "owner": "crew",
+   "eta_ts": 1796049000,
+   "source": "planned-work-calendar",
+   "event_id": "bcvd6iakvgodj3svvuflece30k_20261130T140000Z"
   }
  ]
 }
