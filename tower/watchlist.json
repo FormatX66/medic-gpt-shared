@@ -1,55 +1,7 @@
 {
- "generated_ts": 1795880447,
+ "generated_ts": 1795885845,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-indchokm39o53pnq",
-   "title": "GameGPT live NMS edits \u2014 step 3: Start his offline NMS session and approve the exact edit on the named backed-up save",
-   "owner": "crew",
-   "eta_ts": 1795885200,
-   "source": "planned-work-calendar",
-   "event_id": "indchokm39o53pnq2iiccupvd4"
-  },
-  {
-   "id": "cal-mcrl7d35vucg21qq",
-   "title": "Refractive map \u2014 step 1: Walk the mapped area for the 10-minute calibration walk while Medic records",
-   "owner": "crew",
-   "eta_ts": 1795885200,
-   "source": "planned-work-calendar",
-   "event_id": "mcrl7d35vucg21qqfdo7tothh8"
-  },
-  {
-   "id": "cal-oubp1ievgfmum6ql",
-   "title": "Kids' schoolwork catalog \u2014 step 4: Closing \u2014 ParentVUE is active and shows both kids; verified by Medic against the ParentVUE view",
-   "owner": "crew",
-   "eta_ts": 1795885200,
-   "source": "planned-work-calendar",
-   "event_id": "oubp1ievgfmum6qlp8cc88n8rg"
-  },
-  {
-   "id": "cal-purk6ltn016m0h36",
-   "title": "Medic\u2013GPT automated loop \u2014 step 3: Write and deliver the final pickup-gap synthesis (loop T5) to Bruce",
-   "owner": "crew",
-   "eta_ts": 1795885200,
-   "source": "planned-work-calendar",
-   "event_id": "purk6ltn016m0h36bpo52el1o4"
-  },
-  {
-   "id": "cal-u92i7tsgr79cok1j",
-   "title": "Tally unattended wake doorbell \u2014 step 4: Closing \u2014 Tally wakes unattended and acknowledges the test wake; verified by Medic and Tally",
-   "owner": "crew",
-   "eta_ts": 1795885200,
-   "source": "planned-work-calendar",
-   "event_id": "u92i7tsgr79cok1jbkvvc9lhoc"
-  },
-  {
-   "id": "cal-ukf1a6cri7hib16f",
-   "title": "Rivet reset and recovery \u2014 step 3: Closing \u2014 the scaffold stands as Rivet decided it, nothing added beyond her disposition; verified by Rivet",
-   "owner": "crew",
-   "eta_ts": 1795885200,
-   "source": "planned-work-calendar",
-   "event_id": "ukf1a6cri7hib16fl57pbis9i8"
-  },
   {
    "id": "cal-r75sj6jdh5843ofu",
    "title": "Process sample emails \u2014 midday",
@@ -225,6 +177,14 @@
    "eta_ts": 1796054400,
    "source": "planned-work-calendar",
    "event_id": "n3n6v83aejrpdv4apf9fnd85kk"
+  },
+  {
+   "id": "cal-ufdriq5po4bmutu6",
+   "title": "Minecraft chat-to-game side quest \u2014 step 3: Launch a disposable local Minecraft world and permit the single harmless bridge test",
+   "owner": "crew",
+   "eta_ts": 1796059800,
+   "source": "planned-work-calendar",
+   "event_id": "ufdriq5po4bmutu6n040p6jd7g"
   }
  ]
 }
