@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795828251,
+ "generated_ts": 1795873248,
  "horizon_h": 48,
  "items": [
   {
@@ -225,6 +225,22 @@
    "eta_ts": 1795991400,
    "source": "planned-work-calendar",
    "event_id": "ht37mik1jt0ohnn56i9l67es9k_20261129T220000Z"
+  },
+  {
+   "id": "cal-09a5h591lnkm783r",
+   "title": "Minecraft chat-to-game side quest \u2014 step 1: Read bridge source/status and identify one supported offline test command and current failure",
+   "owner": "crew",
+   "eta_ts": 1796047200,
+   "source": "planned-work-calendar",
+   "event_id": "09a5h591lnkm783r6jbr0914u0"
+  },
+  {
+   "id": "cal-bp2sbbsj0elgghf4",
+   "title": "Vet Samples prospects",
+   "owner": "crew",
+   "eta_ts": 1796046600,
+   "source": "planned-work-calendar",
+   "event_id": "bp2sbbsj0elgghf4q384807m8k_20261130T133000Z"
   }
  ]
 }
