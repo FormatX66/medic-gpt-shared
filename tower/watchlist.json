@@ -1,15 +1,7 @@
 {
- "generated_ts": 1795876844,
+ "generated_ts": 1795880447,
  "horizon_h": 48,
  "items": [
-  {
-   "id": "cal-fjdt7rj6q9239k17",
-   "title": "GameGPT live NMS edits \u2014 step 2: Validate the exact proposed edit in fixtures and prepare one-use grant plus save rollback plan",
-   "owner": "crew",
-   "eta_ts": 1795879800,
-   "source": "planned-work-calendar",
-   "event_id": "fjdt7rj6q9239k17s8elfmpagc"
-  },
   {
    "id": "cal-indchokm39o53pnq",
    "title": "GameGPT live NMS edits \u2014 step 3: Start his offline NMS session and approve the exact edit on the named backed-up save",
@@ -225,6 +217,14 @@
    "eta_ts": 1796049000,
    "source": "planned-work-calendar",
    "event_id": "bcvd6iakvgodj3svvuflece30k_20261130T140000Z"
+  },
+  {
+   "id": "cal-n3n6v83aejrpdv4a",
+   "title": "Minecraft chat-to-game side quest \u2014 step 2: Repair smallest bridge fault and validate parsing, allowed-command checks and duplicate rejection in fixtures",
+   "owner": "crew",
+   "eta_ts": 1796054400,
+   "source": "planned-work-calendar",
+   "event_id": "n3n6v83aejrpdv4apf9fnd85kk"
   }
  ]
 }
