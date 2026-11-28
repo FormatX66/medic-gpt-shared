@@ -1,5 +1,5 @@
 {
- "generated_ts": 1795874696,
+ "generated_ts": 1795876482,
  "source": "crew-queue-projection",
  "items": [
   {
@@ -3059,7 +3059,9 @@
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
-   "source": "planned-work-calendar"
+   "source": "planned-work-calendar",
+   "reoffered": true,
+   "reoffered_ts": 1795876479
   },
   {
    "id": "cal-8fed4bda113ac7c9",
@@ -3144,6 +3146,17 @@
    "owner": "crew",
    "eta_ts": 1795890600,
    "escalate_ts": 1795890600,
+   "state": "queued",
+   "t_claimed": null,
+   "t_effect": null,
+   "source": "planned-work-calendar"
+  },
+  {
+   "id": "cal-383b98aecb99af10",
+   "title": "GameGPT live NMS edits \u2014 step 4: Back up save and execute the one approved edit through the guarded pipeline",
+   "owner": "rivet",
+   "eta_ts": 1795892400,
+   "escalate_ts": 1795892400,
    "state": "queued",
    "t_claimed": null,
    "t_effect": null,
